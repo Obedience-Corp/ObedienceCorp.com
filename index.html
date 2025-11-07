@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obedience Corp - AI Orchestration</title>
+  <meta name="description" content="Guild by Obedience Corp. The orchestration layer for aligned intelligence. One person. A thousand agents. Perfect coordination.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --neon-green: #00ff7f;
+      --deep-black: #0a0a0a;
+      --muted-gray: #9a9a9a;
+      --warning-red: #ff3333;
+      --border-gray: #1c1c1c;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      background: var(--deep-black);
+      color: #e8e8e8;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    /* Animated grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        linear-gradient(rgba(0, 255, 127, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 127, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      animation: gridMove 20s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    /* Scanline overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+      );
+      pointer-events: none;
+      z-index: 1;
+      animation: scanline 8s linear infinite;
+    }
+
+    @keyframes scanline {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100%); }
+    }
+
+    /* Content wrapper */
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Neon glow effect */
+    .neon-glow {
+      color: var(--neon-green);
+      text-shadow:
+        0 0 10px rgba(0, 255, 127, 0.8),
+        0 0 20px rgba(0, 255, 127, 0.5),
+        0 0 30px rgba(0, 255, 127, 0.3);
+    }
+
+    /* Logo with glitch effect */
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border: 2px solid var(--border-gray);
+      border-radius: 8px;
+      background: #0d0d0d;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      position: relative;
+      animation: subtle-glitch 8s infinite;
+    }
+
+    @keyframes subtle-glitch {
+      0%, 90%, 100% {
+        transform: translate(0);
+        border-color: var(--border-gray);
+      }
+      91% {
+        transform: translate(-2px, 1px);
+        border-color: var(--warning-red);
+      }
+      92% {
+        transform: translate(2px, -1px);
+        border-color: var(--neon-green);
+      }
+      93% {
+        transform: translate(0);
+        border-color: var(--border-gray);
+      }
+    }
+
+    /* Terminal cursor */
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      height: 2px;
+      background: var(--neon-green);
+      margin-left: 4px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    /* CTA button glow */
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 1px solid var(--border-gray);
+      border-radius: 8px;
+      background: #101010;
+      color: #e8e8e8;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(0, 255, 127, 0.2) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .cta-button:hover {
+      border-color: var(--neon-green);
+      box-shadow: 0 0 20px rgba(0, 255, 127, 0.3);
+    }
+
+    .cta-button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Fade in animations */
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* System initializing */
+    .system-init {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--deep-black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: initFadeOut 0.5s ease 0.5s forwards;
+    }
+
+    @keyframes initFadeOut {
+      to { opacity: 0; pointer-events: none; }
+    }
+
+    .init-text {
+      color: var(--neon-green);
+      font-size: 14px;
+      letter-spacing: 2px;
+      animation: pulse 0.5s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .logo-mark {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- System initialization overlay -->
+  <div class="system-init">
+    <div class="init-text">INITIALIZING SYSTEM...</div>
+  </div>
+
+  <!-- Main content -->
+  <div class="content-wrapper min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24">
+    <main class="w-full max-w-4xl" style="padding-left: clamp(0px, 8vw, 120px);">
+
+      <!-- Header -->
+      <header
+        class="flex items-center justify-between mb-12 text-xs md:text-sm tracking-widest font-semibold opacity-0"
+        style="color: var(--muted-gray);"
+        hx-get="#"
+        hx-trigger="load delay:300ms"
+        hx-swap="none"
+        hx-on::after-request="this.classList.add('fade-in')">
+        <div class="flex items-center gap-3">
+          <div class="logo-mark">OC</div>
+          <span>OBEDIENCE CORP</span>
+        </div>
+        <div>DENVER • <span id="year">2025</span></div>
+      </header>
+
+      <!-- Main headline -->
+      <div
+        class="mb-8 opacity-0"
+        hx-get="#"
+        hx-trigger="load delay:600ms"
+        hx-swap="none"
+        hx-on::after-request="this.classList.add('fade-in')">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
+          AI that does what you want<span class="neon-glow">.</span><br>
+          The way you want it done<span class="neon-glow">.</span>
+        </h1>
+      </div>
+
+      <!-- Tagline -->
+      <div
+        class="mb-3 opacity-0"
+        style="color: var(--muted-gray);"
+        hx-get="#"
+        hx-trigger="load delay:1000ms"
+        hx-swap="none"
+        hx-on::after-request="this.classList.add('fade-in')">
+        <p class="text-lg md:text-xl">Guild by Obedience Corp</p>
+      </div>
+
+      <!-- Subtagline -->
+      <div
+        class="mb-10 opacity-0"
+        hx-get="#"
+        hx-trigger="load delay:1300ms"
+        hx-swap="none"
+        hx-on::after-request="this.classList.add('fade-in')">
+        <p class="text-base md:text-lg" style="color: #cfcfcf;">
+          One person. A thousand agents. Perfect coordination<span class="cursor"></span>
+        </p>
+      </div>
+
+      <!-- CTA -->
+      <div
+        class="mb-12 opacity-0"
+        hx-get="#"
+        hx-trigger="load delay:1800ms"
+        hx-swap="none"
+        hx-on::after-request="this.classList.add('fade-in')">
+        <a href="mailto:contact@obediencecorp.com" class="cta-button">
+          contact@obediencecorp.com
+        </a>
+      </div>
+
+      <!-- Footer -->
+      <footer
+        class="text-xs md:text-sm opacity-0"
+        style="color: #777;"
+        hx-get="#"
+        hx-trigger="load delay:2200ms"
+        hx-swap="none"
+        hx-on::after-request="this.classList.add('fade-in')">
+        © <span id="footer-year">2025</span> Obedience Corp
+      </footer>
+
+    </main>
+  </div>
+
+  <script>
+    // Update year dynamically
+    const year = new Date().getFullYear();
+    document.getElementById('year').textContent = year;
+    document.getElementById('footer-year').textContent = year;
+  </script>
+
+</body>
+</html>
