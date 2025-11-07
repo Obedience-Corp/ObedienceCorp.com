@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Obedience Corp</title>
+    <meta
+      name="description"
+      content="Guild by Obedience Corp. The orchestration layer for aligned intelligence."
+    />
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --fg: #e8e8e8;
+        --muted: #9a9a9a;
+        --line: #1c1c1c;
+        --accent: #00ff7f;
+        --wrap-max: 64rem; /* ~1024px max text width */
+        --wrap-pad: clamp(20px, 4vw, 48px);
+        --left-pad: clamp(
+          24px,
+          10vw,
+          160px
+        ); /* anchor to the left on big screens */
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          16px/1.55 system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Arial,
+          sans-serif;
+      }
+      .wrap {
+        /* Left-anchored hero: generous left margin, flexible right space */
+        max-width: var(--wrap-max);
+        padding: calc(var(--wrap-pad) + 2vh) var(--wrap-pad);
+        margin: 8vh var(--wrap-pad) 10vh var(--left-pad);
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        color: var(--muted);
+        font-weight: 600;
+        letter-spacing: 0.4px;
+        margin-bottom: 20px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .mark {
+        width: 36px;
+        height: 36px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        background: #0d0d0d;
+        font-weight: 800;
+        flex: 0 0 36px;
+      }
+      h1 {
+        font-size: clamp(36px, 7.2vw, 84px);
+        line-height: 1.06;
+        letter-spacing: 0.2px;
+        margin-top: 6px;
+        text-wrap: balance;
+      }
+      .accent {
+        color: var(--accent);
+      }
+      .tagline {
+        color: var(--muted);
+        margin-top: 14px;
+        font-size: clamp(16px, 2.4vw, 20px);
+        text-wrap: balance;
+      }
+      .sub {
+        color: #cfcfcf;
+        margin-top: 10px;
+        font-size: clamp(15px, 2.2vw, 18px);
+        text-wrap: balance;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 28px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #101010;
+        padding: 12px 18px;
+        color: var(--fg);
+        text-decoration: none;
+        transition: border-color 0.2s ease;
+      }
+      .cta:hover {
+        border-color: #2a2a2a;
+      }
+      footer {
+        margin-top: 34px;
+        color: #777;
+        font-size: 14px;
+      }
+
+      /* On small screens, center the block and relax the left anchor */
+      @media (max-width: 900px) {
+        .wrap {
+          margin: 8vh auto 10vh;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <header>
+        <div class="brand">
+          <span class="mark">OC</span>
+          <span>OBEDIENCE CORP</span>
+        </div>
+        <div>Denver · <span id="yy"></span></div>
+      </header>
+
+      <h1>
+        AI that does what you want<span class="accent">.</span><br />
+        The way you want it done<span class="accent">.</span>
+      </h1>
+
+      <p class="tagline">Guild by Obedience Corp</p>
+      <p class="sub">One person. A thousand agents. Perfect coordination.</p>
+
+      <a class="cta" href="mailto:contact@obediencecorp.com"
+        >contact@obediencecorp.com</a
+      >
+
+      <footer>© <span id="y"></span> Obedience Corp</footer>
+    </main>
+
+    <script>
+      const now = new Date();
+      document.getElementById("y").textContent = now.getFullYear();
+      document.getElementById("yy").textContent = now.getFullYear();
+    </script>
+  </body>
+</html>
