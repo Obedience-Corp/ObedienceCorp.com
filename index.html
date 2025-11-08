@@ -49,17 +49,12 @@
         }
       }
 
-      /* Main content container */
+      /* Main content container - left-anchored */
       .container {
         flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(2rem, 6vh, 4rem) clamp(1.5rem, 6vw, 3rem);
-        max-width: 1200px;
-        width: 100%;
-        margin: 0 auto;
+        padding: clamp(4rem, 12vh, 8rem) 0 clamp(4rem, 8vh, 6rem)
+          clamp(3rem, 15vw, 12rem);
+        max-width: 900px;
       }
 
       /* Brand plate - top left */
@@ -73,9 +68,9 @@
         letter-spacing: 0.1em;
       }
 
-      /* Hero section - centered */
+      /* Hero section - left-aligned */
       .hero {
-        text-align: center;
+        text-align: left;
         max-width: 800px;
         width: 100%;
       }
@@ -94,7 +89,7 @@
         font-size: clamp(1.125rem, 2.5vw, 1.875rem);
         font-weight: 600;
         line-height: 1.35;
-        margin-bottom: clamp(3rem, 6vh, 4.5rem);
+        margin-bottom: clamp(4rem, 8vh, 6rem);
       }
 
       .tagline-line {
@@ -106,36 +101,53 @@
         color: var(--accent-green);
       }
 
-      /* CTA */
-      .cta-container {
-        margin-bottom: clamp(8vh, 12vh, 14vh);
+      /* Editorial sections */
+      .editorial-section {
+        margin-bottom: clamp(3rem, 6vh, 4.5rem);
+        max-width: 60ch;
       }
 
-      .cta-button {
-        display: inline-block;
-        padding: 1rem 2rem;
-        background: transparent;
-        border: 1px solid #2a2a2a;
+      .editorial-heading {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        color: var(--text-white);
+      }
+
+      .editorial-body {
+        font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+        line-height: 1.6;
+        color: var(--text-gray);
+        letter-spacing: 0.01em;
+      }
+
+      /* Contact section */
+      .contact-section {
+        margin-top: clamp(4rem, 8vh, 6rem);
+        margin-bottom: clamp(3rem, 6vh, 4.5rem);
+      }
+
+      .contact-email {
+        font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
         color: var(--text-white);
         text-decoration: none;
-        font-size: 0.9375rem;
         letter-spacing: 0.01em;
-        transition:
-          border-color 0.2s ease,
-          color 0.2s ease;
+        transition: color 0.2s ease;
       }
 
-      .cta-button:hover {
-        border-color: var(--accent-green);
+      .contact-email:hover {
         color: var(--accent-green);
       }
 
-      /* Guild section - separated */
+      /* Guild section */
       .guild-section {
-        text-align: center;
-        font-size: 0.875rem;
+        font-size: clamp(0.875rem, 1.6vw, 1rem);
         color: var(--text-gray);
         letter-spacing: 0.01em;
+        margin-top: clamp(3rem, 6vh, 4.5rem);
       }
 
       /* Footer */
@@ -151,6 +163,11 @@
 
       /* Responsive adjustments */
       @media (max-width: 768px) {
+        .container {
+          padding: clamp(3rem, 8vh, 5rem) clamp(1.5rem, 6vw, 2rem)
+            clamp(3rem, 6vh, 4rem) clamp(1.5rem, 6vw, 2rem);
+        }
+
         .brand {
           top: 1.5rem;
           left: 1.5rem;
@@ -164,20 +181,33 @@
 
         .tagline {
           font-size: 1.125rem;
+          margin-bottom: 3rem;
+        }
+
+        .editorial-section {
           margin-bottom: 2.5rem;
         }
 
-        .cta-container {
-          margin-bottom: 6vh;
+        .editorial-heading {
+          font-size: 0.8125rem;
         }
 
-        .cta-button {
-          padding: 0.875rem 1.75rem;
-          font-size: 0.875rem;
+        .editorial-body {
+          font-size: 0.9375rem;
+        }
+
+        .contact-section {
+          margin-top: 3rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .contact-email {
+          font-size: 0.9375rem;
         }
 
         .guild-section {
           font-size: 0.8125rem;
+          margin-top: 2.5rem;
         }
 
         footer {
@@ -201,14 +231,45 @@
           <span class="tagline-line" id="line2"></span>
         </h2>
 
-        <div class="cta-container">
-          <a href="mailto:contact@obediencecorp.com" class="cta-button"
-            >Contact</a
+        <!-- Editorial sections -->
+        <div class="editorial-section">
+          <h3 class="editorial-heading">The Problem</h3>
+          <p class="editorial-body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris.
+          </p>
+        </div>
+
+        <div class="editorial-section">
+          <h3 class="editorial-heading">Our Approach</h3>
+          <p class="editorial-body">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit.
+          </p>
+        </div>
+
+        <div class="editorial-section">
+          <h3 class="editorial-heading">Flagship: Guild</h3>
+          <p class="editorial-body">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa
+            quae ab illo inventore veritatis et quasi architecto beatae.
+          </p>
+        </div>
+
+        <!-- Contact -->
+        <div class="contact-section">
+          <a href="mailto:contact@obediencecorp.com" class="contact-email"
+            >contact@obediencecorp.com</a
           >
         </div>
 
-        <!-- Guild section - separated with space -->
-        <div class="guild-section">Building Guild: 1000 agents that obey.</div>
+        <!-- Guild section -->
+        <div class="guild-section">
+          Building Guild: 1000 agents that obey.
+        </div>
       </div>
     </div>
 
