@@ -1,337 +1,258 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Obedience Corp - AI Orchestration</title>
-  <meta name="description" content="Guild by Obedience Corp. The orchestration layer for aligned intelligence. One person. A thousand agents. Perfect coordination.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Obedience Corp</title>
+    <meta
+      name="description"
+      content="Obedience Corp. AI that does what you want. Building Guild: 1000 agents that obey you."
+    />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&display=swap");
 
-  <!-- HTMX -->
-  <script src="https://unpkg.com/htmx.org@1.9.10"></script>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --neon-green: #00ff7f;
-      --deep-black: #0a0a0a;
-      --muted-gray: #9a9a9a;
-      --warning-red: #ff3333;
-      --border-gray: #1c1c1c;
-    }
-
-    body {
-      font-family: 'JetBrains Mono', 'Courier New', monospace;
-      background: var(--deep-black);
-      color: #e8e8e8;
-      overflow-x: hidden;
-      position: relative;
-      min-height: 100vh;
-    }
-
-    /* Animated grid background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image:
-        linear-gradient(rgba(0, 255, 127, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 127, 0.03) 1px, transparent 1px);
-      background-size: 50px 50px;
-      animation: gridMove 20s linear infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    @keyframes gridMove {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
-    }
-
-    /* Scanline overlay */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.15),
-        rgba(0, 0, 0, 0.15) 1px,
-        transparent 1px,
-        transparent 2px
-      );
-      pointer-events: none;
-      z-index: 1;
-      animation: scanline 8s linear infinite;
-    }
-
-    @keyframes scanline {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(100%); }
-    }
-
-    /* Content wrapper */
-    .content-wrapper {
-      position: relative;
-      z-index: 2;
-    }
-
-    /* Neon glow effect */
-    .neon-glow {
-      color: var(--neon-green);
-      text-shadow:
-        0 0 10px rgba(0, 255, 127, 0.8),
-        0 0 20px rgba(0, 255, 127, 0.5),
-        0 0 30px rgba(0, 255, 127, 0.3);
-    }
-
-    /* Logo with glitch effect */
-    .logo-mark {
-      width: 48px;
-      height: 48px;
-      border: 2px solid var(--border-gray);
-      border-radius: 8px;
-      background: #0d0d0d;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 20px;
-      position: relative;
-      animation: subtle-glitch 8s infinite;
-    }
-
-    @keyframes subtle-glitch {
-      0%, 90%, 100% {
-        transform: translate(0);
-        border-color: var(--border-gray);
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-      91% {
-        transform: translate(-2px, 1px);
-        border-color: var(--warning-red);
+
+      :root {
+        --accent-green: #00ff7f;
+        --pure-black: #000000;
+        --text-white: #ffffff;
+        --text-gray: #a0a0a0;
       }
-      92% {
-        transform: translate(2px, -1px);
-        border-color: var(--neon-green);
+
+      body {
+        background: var(--pure-black);
+        color: var(--text-white);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
       }
-      93% {
-        transform: translate(0);
-        border-color: var(--border-gray);
+
+      /* Respect motion preferences */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
       }
-    }
 
-    /* Terminal cursor */
-    .cursor {
-      display: inline-block;
-      width: 10px;
-      height: 2px;
-      background: var(--neon-green);
-      margin-left: 4px;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0%, 49% { opacity: 1; }
-      50%, 100% { opacity: 0; }
-    }
-
-    /* CTA button glow */
-    .cta-button {
-      display: inline-block;
-      padding: 12px 24px;
-      border: 1px solid var(--border-gray);
-      border-radius: 8px;
-      background: #101010;
-      color: #e8e8e8;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-button::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: radial-gradient(circle, rgba(0, 255, 127, 0.2) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      transition: width 0.6s ease, height 0.6s ease;
-    }
-
-    .cta-button:hover {
-      border-color: var(--neon-green);
-      box-shadow: 0 0 20px rgba(0, 255, 127, 0.3);
-    }
-
-    .cta-button:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-
-    /* Fade in animations */
-    .fade-in {
-      animation: fadeIn 0.8s ease forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* System initializing */
-    .system-init {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--deep-black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-      animation: initFadeOut 0.5s ease 0.5s forwards;
-    }
-
-    @keyframes initFadeOut {
-      to { opacity: 0; pointer-events: none; }
-    }
-
-    .init-text {
-      color: var(--neon-green);
-      font-size: 14px;
-      letter-spacing: 2px;
-      animation: pulse 0.5s ease infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .logo-mark {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
+      /* Main content container */
+      .container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(2rem, 6vh, 4rem) clamp(1.5rem, 6vw, 3rem);
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <!-- System initialization overlay -->
-  <div class="system-init">
-    <div class="init-text">INITIALIZING SYSTEM...</div>
-  </div>
+      /* Brand plate - top left */
+      .brand {
+        position: absolute;
+        top: clamp(2rem, 6vh, 4rem);
+        left: clamp(1.5rem, 6vw, 8rem);
+        font-family: "IBM Plex Mono", monospace;
+        font-size: clamp(0.7rem, 1.2vw, 0.8125rem);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+      }
 
-  <!-- Main content -->
-  <div class="content-wrapper min-h-screen flex items-center justify-center px-6 md:px-12 lg:px-24">
-    <main class="w-full max-w-4xl" style="padding-left: clamp(0px, 8vw, 120px);">
+      /* Hero section - centered */
+      .hero {
+        text-align: center;
+        max-width: 800px;
+        width: 100%;
+      }
 
-      <!-- Header -->
-      <header
-        class="flex items-center justify-between mb-12 text-xs md:text-sm tracking-widest font-semibold opacity-0"
-        style="color: var(--muted-gray);"
-        hx-get="#"
-        hx-trigger="load delay:300ms"
-        hx-swap="none"
-        hx-on::after-request="this.classList.add('fade-in')">
-        <div class="flex items-center gap-3">
-          <div class="logo-mark">OC</div>
-          <span>OBEDIENCE CORP</span>
+      .company-name {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: clamp(2.5rem, 7vw, 5.5rem);
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        line-height: 1.1;
+        margin-bottom: clamp(2rem, 5vh, 3.5rem);
+      }
+
+      .tagline {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: clamp(1.125rem, 2.5vw, 1.875rem);
+        font-weight: 600;
+        line-height: 1.35;
+        margin-bottom: clamp(3rem, 6vh, 4.5rem);
+      }
+
+      .tagline-line {
+        display: block;
+        margin-bottom: 0.25em;
+      }
+
+      .period {
+        color: var(--accent-green);
+      }
+
+      /* CTA */
+      .cta-container {
+        margin-bottom: clamp(8vh, 12vh, 14vh);
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: transparent;
+        border: 1px solid #2a2a2a;
+        color: var(--text-white);
+        text-decoration: none;
+        font-size: 0.9375rem;
+        letter-spacing: 0.01em;
+        transition:
+          border-color 0.2s ease,
+          color 0.2s ease;
+      }
+
+      .cta-button:hover {
+        border-color: var(--accent-green);
+        color: var(--accent-green);
+      }
+
+      /* Guild section - separated */
+      .guild-section {
+        text-align: center;
+        font-size: 0.875rem;
+        color: var(--text-gray);
+        letter-spacing: 0.01em;
+      }
+
+      /* Footer */
+      footer {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.75rem;
+        color: #4a4a4a;
+        text-align: center;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .brand {
+          top: 1.5rem;
+          left: 1.5rem;
+          font-size: 0.7rem;
+        }
+
+        .company-name {
+          font-size: 2.25rem;
+          margin-bottom: 1.75rem;
+        }
+
+        .tagline {
+          font-size: 1.125rem;
+          margin-bottom: 2.5rem;
+        }
+
+        .cta-container {
+          margin-bottom: 6vh;
+        }
+
+        .cta-button {
+          padding: 0.875rem 1.75rem;
+          font-size: 0.875rem;
+        }
+
+        .guild-section {
+          font-size: 0.8125rem;
+        }
+
+        footer {
+          bottom: 1.5rem;
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Brand plate -->
+    <div class="brand">OBEDIENCE CORP</div>
+
+    <div class="container">
+      <!-- Hero section -->
+      <div class="hero">
+        <h1 class="company-name">OBEDIENCE CORP</h1>
+
+        <h2 class="tagline">
+          <span class="tagline-line" id="line1"></span>
+          <span class="tagline-line" id="line2"></span>
+        </h2>
+
+        <div class="cta-container">
+          <a href="mailto:contact@obediencecorp.com" class="cta-button"
+            >Contact</a
+          >
         </div>
-        <div>DENVER • <span id="year">2025</span></div>
-      </header>
 
-      <!-- Main headline -->
-      <div
-        class="mb-8 opacity-0"
-        hx-get="#"
-        hx-trigger="load delay:600ms"
-        hx-swap="none"
-        hx-on::after-request="this.classList.add('fade-in')">
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight mb-6">
-          AI that does what you want<span class="neon-glow">.</span><br>
-          The way you want it done<span class="neon-glow">.</span>
-        </h1>
+        <!-- Guild section - separated with space -->
+        <div class="guild-section">Building Guild: 1000 agents that obey.</div>
       </div>
+    </div>
 
-      <!-- Tagline -->
-      <div
-        class="mb-3 opacity-0"
-        style="color: var(--muted-gray);"
-        hx-get="#"
-        hx-trigger="load delay:1000ms"
-        hx-swap="none"
-        hx-on::after-request="this.classList.add('fade-in')">
-        <p class="text-lg md:text-xl">Guild by Obedience Corp</p>
-      </div>
+    <footer>© <span id="year"></span> Obedience Corp</footer>
 
-      <!-- Subtagline -->
-      <div
-        class="mb-10 opacity-0"
-        hx-get="#"
-        hx-trigger="load delay:1300ms"
-        hx-swap="none"
-        hx-on::after-request="this.classList.add('fade-in')">
-        <p class="text-base md:text-lg" style="color: #cfcfcf;">
-          One person. A thousand agents. Perfect coordination<span class="cursor"></span>
-        </p>
-      </div>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-      <!-- CTA -->
-      <div
-        class="mb-12 opacity-0"
-        hx-get="#"
-        hx-trigger="load delay:1800ms"
-        hx-swap="none"
-        hx-on::after-request="this.classList.add('fade-in')">
-        <a href="mailto:contact@obediencecorp.com" class="cta-button">
-          contact@obediencecorp.com
-        </a>
-      </div>
+      // Simple typing animation for tagline
+      function typeText(element, text, speed, callback) {
+        let i = 0;
+        function type() {
+          if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+          } else if (callback) {
+            callback();
+          }
+        }
+        type();
+      }
 
-      <!-- Footer -->
-      <footer
-        class="text-xs md:text-sm opacity-0"
-        style="color: #777;"
-        hx-get="#"
-        hx-trigger="load delay:2200ms"
-        hx-swap="none"
-        hx-on::after-request="this.classList.add('fade-in')">
-        © <span id="footer-year">2025</span> Obedience Corp
-      </footer>
+      // Start typing after brief delay
+      setTimeout(() => {
+        const line1 = document.getElementById("line1");
+        const line2 = document.getElementById("line2");
 
-    </main>
-  </div>
+        typeText(line1, "AI that does what you want", 40, () => {
+          const period1 = document.createElement("span");
+          period1.className = "period";
+          period1.textContent = ".";
+          line1.appendChild(period1);
 
-  <script>
-    // Update year dynamically
-    const year = new Date().getFullYear();
-    document.getElementById('year').textContent = year;
-    document.getElementById('footer-year').textContent = year;
-  </script>
-
-</body>
+          setTimeout(() => {
+            typeText(line2, "The way you want it done", 40, () => {
+              const period2 = document.createElement("span");
+              period2.className = "period";
+              period2.textContent = ".";
+              line2.appendChild(period2);
+            });
+          }, 150);
+        });
+      }, 300);
+    </script>
+  </body>
 </html>
