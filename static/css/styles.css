@@ -90,6 +90,7 @@ body {
 .tagline-line {
   display: block;
   margin-bottom: 0.25em;
+  min-height: 1.35em; /* Reserve space for line even when empty */
 }
 
 .period {
