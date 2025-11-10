@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Site.Title}}</title>
+    <meta name="description" content="{{.Site.Description}}" />
+    <link rel="stylesheet" href="static/css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Hero Box (Command/Control) -->
+      <div class="hero-box" style="grid-column: 1; grid-row: 1 / 4;">
+        <div class="brand">{{.Hero.Brand}}</div>
+
+        <h1 class="company-name">{{.Hero.Title}}</h1>
+
+        <h2 class="tagline">
+          <span class="tagline-line" id="line1"></span>
+          <span class="tagline-line" id="line2"></span>
+        </h2>
+
+        <a href="mailto:{{.Hero.ContactEmail}}" class="contact-email"
+          >{{.Hero.ContactEmail}}</a
+        >
+      </div>
+
+      <!-- Article Boxes -->
+      {{range .Articles}}
+      <div class="article-box" style="{{.Style}}">
+        <h3 class="article-title">{{.Title}}</h3>
+        <div class="article-body">
+          {{.Content}}
+        </div>
+      </div>
+      {{end}}
+    </div>
+
+    <footer>© <span id="year"></span> {{.Site.Name}}</footer>
+
+    <script src="static/js/main.js"></script>
+  </body>
+</html>

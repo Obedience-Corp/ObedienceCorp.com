@@ -1,5 +1,5 @@
-# Generated static site
-index.html
+# Generated static site (only root index.html, not templates/)
+/index.html
 
 # Go build artifacts
 *.exe
