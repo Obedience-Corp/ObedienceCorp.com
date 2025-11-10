@@ -9,10 +9,10 @@ build:
     @echo "Generating index.html..."
     @go run cmd/generate/main.go
 
-# Build and open in browser
-dev: build
-    @echo "Opening index.html in browser..."
-    @open index.html
+
+# Start local development server on port 8080
+serve: build
+    @go run cmd/serve/main.go
 
 # Remove generated files
 clean:
