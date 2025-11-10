@@ -49,47 +49,57 @@
         }
       }
 
-      /* Main content container - left-anchored */
+      /* Main content container - two-column grid */
       .container {
         flex: 1;
-        padding: clamp(4rem, 12vh, 8rem) 0 clamp(4rem, 8vh, 6rem)
-          clamp(3rem, 15vw, 12rem);
-        max-width: 900px;
+        display: grid;
+        grid-template-columns: minmax(280px, 30%) 1fr;
+        gap: clamp(3rem, 6vw, 6rem);
+        padding: clamp(3rem, 8vh, 6rem) clamp(2rem, 6vw, 4rem)
+          clamp(4rem, 8vh, 6rem) clamp(2rem, 6vw, 4rem);
+        max-width: 1400px;
+        margin: 0 auto;
       }
 
-      /* Brand plate - top left */
+      /* Left column - masthead (command/control) */
+      .masthead {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 4vh, 3rem);
+        position: sticky;
+        top: clamp(3rem, 8vh, 6rem);
+        height: fit-content;
+      }
+
+      /* Right column - dispatch feed (intelligence dissemination) */
+      .dispatch-feed {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2rem, 4vh, 3rem);
+      }
+
+      /* Masthead elements */
       .brand {
-        position: absolute;
-        top: clamp(2rem, 6vh, 4rem);
-        left: clamp(1.5rem, 6vw, 8rem);
         font-family: "IBM Plex Mono", monospace;
         font-size: clamp(0.7rem, 1.2vw, 0.8125rem);
         font-weight: 600;
         letter-spacing: 0.1em;
-      }
-
-      /* Hero section - left-aligned */
-      .hero {
-        text-align: left;
-        max-width: 800px;
-        width: 100%;
+        color: var(--text-gray);
       }
 
       .company-name {
         font-family: "IBM Plex Mono", monospace;
-        font-size: clamp(2.5rem, 7vw, 5.5rem);
+        font-size: clamp(1.875rem, 4vw, 2.75rem);
         font-weight: 700;
         letter-spacing: 0.02em;
         line-height: 1.1;
-        margin-bottom: clamp(2rem, 5vh, 3.5rem);
       }
 
       .tagline {
         font-family: "IBM Plex Mono", monospace;
-        font-size: clamp(1.125rem, 2.5vw, 1.875rem);
+        font-size: clamp(1rem, 2vw, 1.375rem);
         font-weight: 600;
         line-height: 1.35;
-        margin-bottom: clamp(4rem, 8vh, 6rem);
       }
 
       .tagline-line {
@@ -101,38 +111,9 @@
         color: var(--accent-green);
       }
 
-      /* Editorial sections */
-      .editorial-section {
-        margin-bottom: clamp(3rem, 6vh, 4.5rem);
-        max-width: 60ch;
-      }
-
-      .editorial-heading {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: clamp(0.875rem, 1.5vw, 1rem);
-        font-weight: 600;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        margin-bottom: 0.75rem;
-        color: var(--text-white);
-      }
-
-      .editorial-body {
-        font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
-        line-height: 1.6;
-        color: var(--text-gray);
-        letter-spacing: 0.01em;
-      }
-
-      /* Contact section */
-      .contact-section {
-        margin-top: clamp(4rem, 8vh, 6rem);
-        margin-bottom: clamp(3rem, 6vh, 4.5rem);
-      }
-
       .contact-email {
-        font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
-        color: var(--text-white);
+        font-size: clamp(0.875rem, 1.6vw, 0.9375rem);
+        color: var(--text-gray);
         text-decoration: none;
         letter-spacing: 0.01em;
         transition: color 0.2s ease;
@@ -142,88 +123,105 @@
         color: var(--accent-green);
       }
 
-      /* Guild section */
-      .guild-section {
-        font-size: clamp(0.875rem, 1.6vw, 1rem);
-        color: var(--text-gray);
-        letter-spacing: 0.01em;
-        margin-top: clamp(3rem, 6vh, 4.5rem);
+      .masthead-footer {
+        font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+        color: #4a4a4a;
+        margin-top: auto;
       }
 
-      /* Footer */
-      footer {
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 0.75rem;
-        color: #4a4a4a;
-        text-align: center;
+      /* Terminal article boxes */
+      .article-box {
+        border: 1px solid #333;
+        padding: clamp(1.5rem, 3vw, 2rem);
+        transition: border-color 0.3s ease;
+      }
+
+      .article-box:hover {
+        border-color: var(--accent-green);
+      }
+
+      .article-title {
+        font-family: "IBM Plex Mono", monospace;
+        font-size: clamp(0.875rem, 1.6vw, 1rem);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+        color: var(--text-white);
+      }
+
+      .article-body {
+        font-size: clamp(0.9375rem, 1.6vw, 1rem);
+        line-height: 1.65;
+        color: var(--text-gray);
+        letter-spacing: 0.01em;
+      }
+
+      .article-body p {
+        margin-bottom: 1em;
+      }
+
+      .article-body p:last-child {
+        margin-bottom: 0;
       }
 
       /* Responsive adjustments */
       @media (max-width: 768px) {
         .container {
-          padding: clamp(3rem, 8vh, 5rem) clamp(1.5rem, 6vw, 2rem)
-            clamp(3rem, 6vh, 4rem) clamp(1.5rem, 6vw, 2rem);
+          grid-template-columns: 1fr;
+          gap: clamp(3rem, 8vh, 4rem);
+          padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 6vw, 2rem);
+        }
+
+        .masthead {
+          position: static;
+          gap: clamp(1.5rem, 3vh, 2rem);
         }
 
         .brand {
-          top: 1.5rem;
-          left: 1.5rem;
           font-size: 0.7rem;
         }
 
         .company-name {
-          font-size: 2.25rem;
-          margin-bottom: 1.75rem;
+          font-size: 1.875rem;
         }
 
         .tagline {
-          font-size: 1.125rem;
-          margin-bottom: 3rem;
-        }
-
-        .editorial-section {
-          margin-bottom: 2.5rem;
-        }
-
-        .editorial-heading {
-          font-size: 0.8125rem;
-        }
-
-        .editorial-body {
-          font-size: 0.9375rem;
-        }
-
-        .contact-section {
-          margin-top: 3rem;
-          margin-bottom: 2.5rem;
+          font-size: 1rem;
         }
 
         .contact-email {
-          font-size: 0.9375rem;
+          font-size: 0.875rem;
         }
 
-        .guild-section {
-          font-size: 0.8125rem;
-          margin-top: 2.5rem;
-        }
-
-        footer {
-          bottom: 1.5rem;
+        .masthead-footer {
           font-size: 0.7rem;
+        }
+
+        .dispatch-feed {
+          gap: clamp(1.5rem, 3vh, 2rem);
+        }
+
+        .article-box {
+          padding: 1.25rem;
+        }
+
+        .article-title {
+          font-size: 0.8125rem;
+        }
+
+        .article-body {
+          font-size: 0.9375rem;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Brand plate -->
-    <div class="brand">OBEDIENCE CORP</div>
-
     <div class="container">
-      <!-- Hero section -->
-      <div class="hero">
+      <!-- Left column: Masthead (Command/Control) -->
+      <div class="masthead">
+        <div class="brand">OBEDIENCE CORP</div>
+
         <h1 class="company-name">OBEDIENCE CORP</h1>
 
         <h2 class="tagline">
@@ -231,49 +229,75 @@
           <span class="tagline-line" id="line2"></span>
         </h2>
 
-        <!-- Editorial sections -->
-        <div class="editorial-section">
-          <h3 class="editorial-heading">The Problem</h3>
-          <p class="editorial-body">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris.
-          </p>
+        <a href="mailto:contact@obediencecorp.com" class="contact-email"
+          >contact@obediencecorp.com</a
+        >
+
+        <div class="masthead-footer">
+          © <span id="year"></span> Obedience Corp
+        </div>
+      </div>
+
+      <!-- Right column: Dispatch Feed (Intelligence Dissemination) -->
+      <div class="dispatch-feed">
+        <!-- Article Box 1 -->
+        <div class="article-box">
+          <h3 class="article-title">Guild Is a Control Layer for AI</h3>
+          <div class="article-body">
+            <p>
+              Humans can't manage 1000 autonomous agents through conversation
+              alone. Coordination fails, context drifts, and intent dissolves
+              across distributed systems.
+            </p>
+            <p>
+              Guild is the orchestration framework that enforces structure on
+              multi-agent workflows. One person issues directives. A thousand
+              agents execute them with perfect alignment.
+            </p>
+            <p>Building Guild: 1000 agents that obey.</p>
+          </div>
         </div>
 
-        <div class="editorial-section">
-          <h3 class="editorial-heading">Our Approach</h3>
-          <p class="editorial-body">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit.
-          </p>
+        <!-- Article Box 2 -->
+        <div class="article-box">
+          <h3 class="article-title">Autonomy Without Chaos</h3>
+          <div class="article-body">
+            <p>
+              Alignment at scale requires more than good prompts. It demands
+              feedback loops, persistent memory, and deterministic reasoning
+              chains.
+            </p>
+            <p>
+              Guild synchronizes agent behavior across tasks, enforces business
+              rules programmatically, and maintains coherence even as systems
+              grow in complexity.
+            </p>
+            <p>
+              The future of AI isn't smarter models. It's better control
+              architecture.
+            </p>
+          </div>
         </div>
 
-        <div class="editorial-section">
-          <h3 class="editorial-heading">Flagship: Guild</h3>
-          <p class="editorial-body">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium. Totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae.
-          </p>
-        </div>
-
-        <!-- Contact -->
-        <div class="contact-section">
-          <a href="mailto:contact@obediencecorp.com" class="contact-email"
-            >contact@obediencecorp.com</a
-          >
-        </div>
-
-        <!-- Guild section -->
-        <div class="guild-section">
-          Building Guild: 1000 agents that obey.
+        <!-- Article Box 3 -->
+        <div class="article-box">
+          <h3 class="article-title">Multi-Agent Orchestration</h3>
+          <div class="article-body">
+            <p>
+              Traditional development tools treat AI as a single monolithic
+              entity. Guild treats AI as what it actually is: a distributed
+              system of specialized agents.
+            </p>
+            <p>
+              Each agent has defined roles, access patterns, and execution
+              constraints. Together, they form coordinated teams capable of
+              autonomous software delivery.
+            </p>
+            <p>One command. Coordinated execution. Zero drift.</p>
+          </div>
         </div>
       </div>
     </div>
-
-    <footer>© <span id="year"></span> Obedience Corp</footer>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
