@@ -11,6 +11,12 @@ articles:
     grid_row: "2"
     content_file: "autonomy-without-chaos.md"
 
+  - id: "alignment-infrastructure"
+    title: "Alignment Infrastructure"
+    grid_column: "1"
+    grid_row: "2 / 4"
+    content_file: "alignment-infrastructure.md"
+
   - id: "multi-agent-orchestration"
     title: "Multi-Agent Orchestration"
     grid_column: "3"
