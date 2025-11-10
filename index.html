@@ -4,231 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Obedience Corp</title>
-    <meta
-      name="description"
-      content="Obedience Corp. AI that does what you want. Building Guild: 1000 agents that obey you."
-    />
-
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&display=swap");
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      :root {
-        --accent-green: #00ff7f;
-        --pure-black: #000000;
-        --text-white: #ffffff;
-        --text-gray: #a0a0a0;
-      }
-
-      body {
-        background: var(--pure-black);
-        color: var(--text-white);
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-
-      /* Respect motion preferences */
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-        }
-      }
-
-      /* Main content container - masonry grid */
-      .container {
-        flex: 1;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: minmax(min-content, auto);
-        gap: clamp(1.5rem, 3vw, 2rem);
-        padding: clamp(3rem, 8vh, 5rem) clamp(2rem, 6vw, 3rem)
-          clamp(2rem, 4vh, 3rem) clamp(2rem, 6vw, 3rem);
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-
-      /* Hero box - styled like other boxes */
-      .hero-box {
-        border: 1px solid #333;
-        padding: clamp(1.5rem, 3vw, 2rem);
-        display: flex;
-        flex-direction: column;
-        gap: clamp(1rem, 2vh, 1.5rem);
-        transition: border-color 0.3s ease;
-      }
-
-      .hero-box:hover {
-        border-color: var(--accent-green);
-      }
-
-      .brand {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: clamp(0.7rem, 1.2vw, 0.8125rem);
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        color: var(--text-gray);
-      }
-
-      .company-name {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: clamp(1.875rem, 4vw, 2.5rem);
-        font-weight: 700;
-        letter-spacing: 0.02em;
-        line-height: 1.1;
-      }
-
-      .tagline {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
-        font-weight: 600;
-        line-height: 1.35;
-      }
-
-      .tagline-line {
-        display: block;
-        margin-bottom: 0.25em;
-      }
-
-      .period {
-        color: var(--accent-green);
-      }
-
-      .contact-email {
-        font-size: clamp(0.8125rem, 1.4vw, 0.875rem);
-        color: var(--text-gray);
-        text-decoration: none;
-        letter-spacing: 0.01em;
-        transition: color 0.2s ease;
-        margin-top: auto;
-      }
-
-      .contact-email:hover {
-        color: var(--accent-green);
-      }
-
-      /* Terminal article boxes */
-      .article-box {
-        border: 1px solid #333;
-        padding: clamp(1.5rem, 3vw, 2rem);
-        transition: border-color 0.3s ease;
-      }
-
-      .article-box:hover {
-        border-color: var(--accent-green);
-      }
-
-      .article-title {
-        font-family: "IBM Plex Mono", monospace;
-        font-size: clamp(0.875rem, 1.6vw, 1rem);
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        margin-bottom: 1rem;
-        color: var(--text-white);
-      }
-
-      .article-body {
-        font-size: clamp(0.9375rem, 1.6vw, 1rem);
-        line-height: 1.65;
-        color: var(--text-gray);
-        letter-spacing: 0.01em;
-      }
-
-      .article-body p {
-        margin-bottom: 1em;
-      }
-
-      .article-body p:last-child {
-        margin-bottom: 0;
-      }
-
-      /* Footer */
-      footer {
-        width: 100%;
-        text-align: center;
-        padding: 2rem 0;
-        font-size: clamp(0.7rem, 1.2vw, 0.75rem);
-        color: #4a4a4a;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 1024px) {
-        .container {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        /* Reset all explicit positions for tablet */
-        .hero-box,
-        .article-box {
-          grid-column: auto !important;
-          grid-row: auto !important;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .container {
-          grid-template-columns: 1fr;
-          gap: clamp(1.25rem, 3vw, 1.5rem);
-          padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 6vw, 2rem);
-        }
-
-        /* Reset all explicit positions for mobile */
-        .hero-box,
-        .article-box {
-          grid-column: auto !important;
-          grid-row: auto !important;
-          padding: 1.25rem;
-        }
-
-        .brand {
-          font-size: 0.7rem;
-        }
-
-        .company-name {
-          font-size: 1.5rem;
-        }
-
-        .tagline {
-          font-size: 0.9375rem;
-        }
-
-        .contact-email {
-          font-size: 0.8125rem;
-        }
-
-        .article-title {
-          font-size: 0.8125rem;
-        }
-
-        .article-body {
-          font-size: 0.9375rem;
-        }
-
-        footer {
-          font-size: 0.7rem;
-          padding: 1.5rem 0;
-        }
-      }
-    </style>
+    <meta name="description" content="Obedience Corp. AI that does what you want. Building Guild 1000 agents that obey you." />
+    <link rel="stylesheet" href="static/css/styles.css" />
   </head>
   <body>
     <div class="container">
-      <!-- Hero Box (Command/Control) -->
+      
       <div class="hero-box" style="grid-column: 1; grid-row: 1 / 4;">
         <div class="brand">OBEDIENCE CORP</div>
 
@@ -244,284 +25,156 @@
         >
       </div>
 
-      <!-- Article Box 1 - Featured (wide) -->
+      
+      
       <div class="article-box" style="grid-column: 2 / 4; grid-row: 1;">
         <h3 class="article-title">Guild Is a Control Layer for AI</h3>
         <div class="article-body">
-          <p>
-            Humans can't manage 1000 autonomous agents through conversation
-            alone. Coordination fails, context drifts, and intent dissolves
-            across distributed systems.
-          </p>
-          <p>
-            Guild is the orchestration framework that enforces structure on
-            multi-agent workflows. One person issues directives. A thousand
-            agents execute them with perfect alignment.
-          </p>
-          <p>Building Guild: 1000 agents that obey.</p>
+          <p>Humans can&rsquo;t manage 1000 autonomous agents through conversation alone. Coordination fails, context drifts, and intent dissolves across distributed systems.</p>
+
+<p>Guild is the orchestration framework that enforces structure on multi-agent workflows. One person issues directives. A thousand agents execute them with perfect alignment.</p>
+
+<p>Building Guild: 1000 agents that obey.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 2 - Standard -->
+      
       <div class="article-box" style="grid-column: 2; grid-row: 2;">
         <h3 class="article-title">Autonomy Without Chaos</h3>
         <div class="article-body">
-          <p>
-            Alignment at scale requires more than good prompts. It demands
-            feedback loops, persistent memory, and deterministic reasoning
-            chains.
-          </p>
-          <p>
-            Guild synchronizes agent behavior across tasks, enforces business
-            rules programmatically, and maintains coherence even as systems
-            grow in complexity.
-          </p>
+          <p>Alignment at scale requires more than good prompts. It demands feedback loops, persistent memory, and deterministic reasoning chains.</p>
+
+<p>Guild synchronizes agent behavior across tasks, enforces business rules programmatically, and maintains coherence even as systems grow in complexity.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 3 - Tall spotlight -->
+      
       <div class="article-box" style="grid-column: 3; grid-row: 2 / 4;">
         <h3 class="article-title">Multi-Agent Orchestration</h3>
         <div class="article-body">
-          <p>
-            Traditional development tools treat AI as a single monolithic
-            entity. Guild treats AI as what it actually is: a distributed
-            system of specialized agents.
-          </p>
-          <p>
-            Each agent has defined roles, access patterns, and execution
-            constraints. Together, they form coordinated teams capable of
-            autonomous software delivery.
-          </p>
-          <p>One command. Coordinated execution. Zero drift.</p>
+          <p>Traditional development tools treat AI as a single monolithic entity. Guild treats AI as what it actually is: a distributed system of specialized agents.</p>
+
+<p>Each agent has defined roles, access patterns, and execution constraints. Together, they form coordinated teams capable of autonomous software delivery.</p>
+
+<p>One command. Coordinated execution. Zero drift.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 4 - Standard -->
+      
       <div class="article-box" style="grid-column: 2; grid-row: 3;">
         <h3 class="article-title">Production-Grade AI Systems</h3>
         <div class="article-body">
-          <p>
-            Enterprise AI requires more than proof-of-concept demos. It demands
-            reliability, observability, and graceful degradation under load.
-          </p>
-          <p>
-            Guild provides the infrastructure layer for production deployments:
-            structured memory, error recovery, rate limiting, and performance
-            monitoring built in.
-          </p>
+          <p>Enterprise AI requires more than proof-of-concept demos. It demands reliability, observability, and graceful degradation under load.</p>
+
+<p>Guild provides the infrastructure layer for production deployments: structured memory, error recovery, rate limiting, and performance monitoring built in.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 5 - Wide -->
+      
       <div class="article-box" style="grid-column: 1 / 3; grid-row: 4;">
         <h3 class="article-title">Deterministic Workflows</h3>
         <div class="article-body">
-          <p>
-            AI systems fail when they operate in black boxes. Guild enforces
-            transparency through structured memory, task decomposition, and
-            auditable execution traces.
-          </p>
-          <p>
-            Every agent action is logged, reviewed, and validated against
-            defined constraints. Accountability without micromanagement.
-          </p>
+          <p>AI systems fail when they operate in black boxes. Guild enforces transparency through structured memory, task decomposition, and auditable execution traces.</p>
+
+<p>Every agent action is logged, reviewed, and validated against defined constraints. Accountability without micromanagement.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 6 - Wide secondary -->
+      
       <div class="article-box" style="grid-column: 1 / 3; grid-row: 5;">
         <h3 class="article-title">The Future of AI Development</h3>
         <div class="article-body">
-          <p>
-            Software development is becoming a coordination problem, not a
-            coding problem. The bottleneck isn't writing code—it's managing the
-            cognitive load of directing dozens of specialized AI agents across
-            complex, interdependent tasks.
-          </p>
-          <p>
-            Guild solves this by providing the control plane for multi-agent
-            systems. Define your architecture once, enforce it programmatically,
-            and let coordinated teams execute at machine speed.
-          </p>
+          <p>Software development is becoming a coordination problem, not a coding problem. The bottleneck isn&rsquo;t writing code—it&rsquo;s managing the cognitive load of directing dozens of specialized AI agents across complex, interdependent tasks.</p>
+
+<p>Guild solves this by providing the control plane for multi-agent systems. Define your architecture once, enforce it programmatically, and let coordinated teams execute at machine speed.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 7 - Standard -->
+      
       <div class="article-box" style="grid-column: 1; grid-row: 6;">
         <h3 class="article-title">About Obedience Corp</h3>
         <div class="article-body">
-          <p>
-            Obedience Corp builds infrastructure for autonomous AI systems.
-            Our focus: orchestration frameworks that enforce human intent at scale.
-          </p>
-          <p>
-            We believe AI alignment is an engineering problem, not a research
-            question. Build the right control systems, and autonomous agents
-            become predictable, auditable tools.
-          </p>
+          <p>Obedience Corp builds infrastructure for autonomous AI systems. Our focus: orchestration frameworks that enforce human intent at scale.</p>
+
+<p>We believe AI alignment is an engineering problem, not a research question. Build the right control systems, and autonomous agents become predictable, auditable tools.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 8 - Standard -->
+      
       <div class="article-box" style="grid-column: 3; grid-row: 4;">
         <h3 class="article-title">Agent Specialization</h3>
         <div class="article-body">
-          <p>
-            Generic AI assistants can't match domain-specific agents. Guild
-            enables teams of specialized agents: code reviewers, test engineers,
-            documentation writers, security auditors.
-          </p>
-          <p>
-            Each agent has narrow expertise, strict constraints, and defined
-            interfaces. Specialization without fragmentation.
-          </p>
+          <p>Generic AI assistants can&rsquo;t match domain-specific agents. Guild enables teams of specialized agents: code reviewers, test engineers, documentation writers, security auditors.</p>
+
+<p>Each agent has narrow expertise, strict constraints, and defined interfaces. Specialization without fragmentation.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 9 - Wide -->
+      
       <div class="article-box" style="grid-column: 2 / 4; grid-row: 6;">
         <h3 class="article-title">Enterprise AI Challenges</h3>
         <div class="article-body">
-          <p>
-            Enterprises face unique constraints: regulatory compliance, audit
-            trails, data governance, and reliability requirements that consumer
-            AI products ignore. Guild addresses these requirements from first
-            principles.
-          </p>
-          <p>
-            Every decision point is logged. Every action is reversible. Every
-            agent operates within defined boundaries. This isn't limiting—it's
-            what makes autonomous systems safe to deploy.
-          </p>
+          <p>Enterprises face unique constraints: regulatory compliance, audit trails, data governance, and reliability requirements that consumer AI products ignore. Guild addresses these requirements from first principles.</p>
+
+<p>Every decision point is logged. Every action is reversible. Every agent operates within defined boundaries. This isn&rsquo;t limiting—it&rsquo;s what makes autonomous systems safe to deploy.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 10 - Standard -->
+      
       <div class="article-box" style="grid-column: 3; grid-row: 5;">
         <h3 class="article-title">Control Architecture</h3>
         <div class="article-body">
-          <p>
-            Control systems for autonomous agents require state management,
-            coordination protocols, and failure recovery mechanisms.
-          </p>
-          <p>
-            Guild provides these primitives: persistent memory, event buses,
-            task queues, and coordination patterns that scale from single
-            agents to distributed teams.
-          </p>
+          <p>Control systems for autonomous agents require state management, coordination protocols, and failure recovery mechanisms.</p>
+
+<p>Guild provides these primitives: persistent memory, event buses, task queues, and coordination patterns that scale from single agents to distributed teams.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 11 - Standard -->
+      
       <div class="article-box" style="grid-column: 1; grid-row: 7;">
         <h3 class="article-title">Developer Experience</h3>
         <div class="article-body">
-          <p>
-            AI orchestration tools shouldn't require machine learning expertise.
-            Guild uses familiar patterns: configuration files, command-line
-            interfaces, and structured APIs.
-          </p>
-          <p>
-            Define agent teams in YAML. Monitor execution with standard logging.
-            Deploy with existing infrastructure. No proprietary vendor lock-in.
-          </p>
+          <p>AI orchestration tools shouldn&rsquo;t require machine learning expertise. Guild uses familiar patterns: configuration files, command-line interfaces, and structured APIs.</p>
+
+<p>Define agent teams in YAML. Monitor execution with standard logging. Deploy with existing infrastructure. No proprietary vendor lock-in.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 12 - Wide -->
+      
       <div class="article-box" style="grid-column: 2 / 4; grid-row: 7;">
         <h3 class="article-title">Building for Production</h3>
         <div class="article-body">
-          <p>
-            Obedience Corp focuses on production-grade tooling for teams running
-            AI systems at scale. We don't build demos or research prototypes.
-            Our products ship with monitoring, debugging, and operational
-            controls from day one.
-          </p>
-          <p>
-            Guild reflects this philosophy: built for reliability, designed for
-            observability, optimized for teams managing complex autonomous
-            workflows in mission-critical environments.
-          </p>
+          <p>Obedience Corp focuses on production-grade tooling for teams running AI systems at scale. We don&rsquo;t build demos or research prototypes. Our products ship with monitoring, debugging, and operational controls from day one.</p>
+
+<p>Guild reflects this philosophy: built for reliability, designed for observability, optimized for teams managing complex autonomous workflows in mission-critical environments.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 13 - Standard -->
+      
       <div class="article-box" style="grid-column: 1; grid-row: 8;">
         <h3 class="article-title">Structured Memory</h3>
         <div class="article-body">
-          <p>
-            Stateless agents can't learn from experience or maintain context
-            across conversations. Guild implements persistent memory: agents
-            remember tasks, decisions, and outcomes.
-          </p>
-          <p>
-            Memory is structured, searchable, and version-controlled. Context
-            doesn't drift—it accumulates and compounds over time.
-          </p>
+          <p>Stateless agents can&rsquo;t learn from experience or maintain context across conversations. Guild implements persistent memory: agents remember tasks, decisions, and outcomes.</p>
+
+<p>Memory is structured, searchable, and version-controlled. Context doesn&rsquo;t drift—it accumulates and compounds over time.</p>
+
         </div>
       </div>
-
-      <!-- Article Box 14 - Standard -->
+      
       <div class="article-box" style="grid-column: 2 / 4; grid-row: 8;">
         <h3 class="article-title">The Control Problem</h3>
         <div class="article-body">
-          <p>
-            AI alignment isn't about making models "good." It's about building
-            systems where autonomous agents reliably execute human intent,
-            even in complex, ambiguous environments.
-          </p>
-          <p>
-            Obedience Corp approaches this as an infrastructure challenge:
-            coordination protocols, feedback mechanisms, and architectural
-            constraints that guarantee alignment by design.
-          </p>
+          <p>AI alignment isn&rsquo;t about making models &ldquo;good.&rdquo; It&rsquo;s about building systems where autonomous agents reliably execute human intent, even in complex, ambiguous environments.</p>
+
+<p>Obedience Corp approaches this as an infrastructure challenge: coordination protocols, feedback mechanisms, and architectural constraints that guarantee alignment by design.</p>
+
         </div>
       </div>
+      
     </div>
 
     <footer>© <span id="year"></span> Obedience Corp</footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-
-      // Simple typing animation for tagline
-      function typeText(element, text, speed, callback) {
-        let i = 0;
-        function type() {
-          if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-          } else if (callback) {
-            callback();
-          }
-        }
-        type();
-      }
-
-      // Start typing after brief delay
-      setTimeout(() => {
-        const line1 = document.getElementById("line1");
-        const line2 = document.getElementById("line2");
-
-        typeText(line1, "AI that does what you want", 40, () => {
-          const period1 = document.createElement("span");
-          period1.className = "period";
-          period1.textContent = ".";
-          line1.appendChild(period1);
-
-          setTimeout(() => {
-            typeText(line2, "The way you want it done", 40, () => {
-              const period2 = document.createElement("span");
-              period2.className = "period";
-              period2.textContent = ".";
-              line2.appendChild(period2);
-            });
-          }, 150);
-        });
-      }, 300);
-    </script>
+    <script src="static/js/main.js"></script>
   </body>
 </html>

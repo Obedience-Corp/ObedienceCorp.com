@@ -1,0 +1,48 @@
+package config
+
+// SiteConfig holds the main site configuration
+type SiteConfig struct {
+	Site     Site     `yaml:"site"`
+	Hero     Hero     `yaml:"hero"`
+	Branding Branding `yaml:"branding"`
+}
+
+// Site holds basic site information
+type Site struct {
+	Name        string `yaml:"name"`
+	Title       string `yaml:"title"`
+	Description string `yaml:"description"`
+	BaseURL     string `yaml:"base_url"`
+}
+
+// Hero holds hero section configuration
+type Hero struct {
+	Brand        string `yaml:"brand"`
+	Title        string `yaml:"title"`
+	TaglineLine1 string `yaml:"tagline_line1"`
+	TaglineLine2 string `yaml:"tagline_line2"`
+	ContactEmail string `yaml:"contact_email"`
+}
+
+// Branding holds branding colors
+type Branding struct {
+	AccentColor      string `yaml:"accent_color"`
+	BackgroundColor  string `yaml:"background_color"`
+	TextColor        string `yaml:"text_color"`
+	TextGray         string `yaml:"text_gray"`
+}
+
+// ArticlesConfig holds article configuration
+type ArticlesConfig struct {
+	Articles []Article `yaml:"articles"`
+}
+
+// Article represents a single article box
+type Article struct {
+	ID          string `yaml:"id"`
+	Title       string `yaml:"title"`
+	GridColumn  string `yaml:"grid_column"`
+	GridRow     string `yaml:"grid_row"`
+	ContentFile string `yaml:"content_file"`
+	Content     string `yaml:"-"` // Populated from markdown file
+}

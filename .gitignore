@@ -1,0 +1,21 @@
+# Generated static site
+index.html
+
+# Go build artifacts
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace file
+go.work
+
+# IDE files
+.DS_Store
+.idea/
+*.swp
+*.swo
+*~

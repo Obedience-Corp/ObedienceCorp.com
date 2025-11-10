@@ -1,0 +1,18 @@
+site:
+  name: Obedience Corp
+  title: Obedience Corp
+  description: Obedience Corp. AI that does what you want. Building Guild 1000 agents that obey you.
+  base_url: https://obediencecorp.com
+
+hero:
+  brand: OBEDIENCE CORP
+  title: OBEDIENCE CORP
+  tagline_line1: AI that does what you want
+  tagline_line2: The way you want it done
+  contact_email: contact@obediencecorp.com
+
+branding:
+  accent_color: "#00ff7f"
+  background_color: "#000000"
+  text_color: "#ffffff"
+  text_gray: "#a0a0a0"

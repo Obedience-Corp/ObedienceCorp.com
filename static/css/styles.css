@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-green: #00ff7f;
+  --pure-black: #000000;
+  --text-white: #ffffff;
+  --text-gray: #a0a0a0;
+}
+
+body {
+  background: var(--pure-black);
+  color: var(--text-white);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Respect motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Main content container - masonry grid */
+.container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(min-content, auto);
+  gap: clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(3rem, 8vh, 5rem) clamp(2rem, 6vw, 3rem)
+    clamp(2rem, 4vh, 3rem) clamp(2rem, 6vw, 3rem);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Hero box - styled like other boxes */
+.hero-box {
+  border: 1px solid #333;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 2vh, 1.5rem);
+  transition: border-color 0.3s ease;
+}
+
+.hero-box:hover {
+  border-color: var(--accent-green);
+}
+
+.brand {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.7rem, 1.2vw, 0.8125rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-gray);
+}
+
+.company-name {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+}
+
+.tagline {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.9375rem, 1.8vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.tagline-line {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.period {
+  color: var(--accent-green);
+}
+
+.contact-email {
+  font-size: clamp(0.8125rem, 1.4vw, 0.875rem);
+  color: var(--text-gray);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
+  margin-top: auto;
+}
+
+.contact-email:hover {
+  color: var(--accent-green);
+}
+
+/* Terminal article boxes */
+.article-box {
+  border: 1px solid #333;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  transition: border-color 0.3s ease;
+}
+
+.article-box:hover {
+  border-color: var(--accent-green);
+}
+
+.article-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.875rem, 1.6vw, 1rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--text-white);
+}
+
+.article-body {
+  font-size: clamp(0.9375rem, 1.6vw, 1rem);
+  line-height: 1.65;
+  color: var(--text-gray);
+  letter-spacing: 0.01em;
+}
+
+.article-body p {
+  margin-bottom: 1em;
+}
+
+.article-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  color: #4a4a4a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Reset all explicit positions for tablet */
+  .hero-box,
+  .article-box {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 3vw, 1.5rem);
+    padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 6vw, 2rem);
+  }
+
+  /* Reset all explicit positions for mobile */
+  .hero-box,
+  .article-box {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    padding: 1.25rem;
+  }
+
+  .brand {
+    font-size: 0.7rem;
+  }
+
+  .company-name {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 0.9375rem;
+  }
+
+  .contact-email {
+    font-size: 0.8125rem;
+  }
+
+  .article-title {
+    font-size: 0.8125rem;
+  }
+
+  .article-body {
+    font-size: 0.9375rem;
+  }
+
+  footer {
+    font-size: 0.7rem;
+    padding: 1.5rem 0;
+  }
+}

@@ -1,109 +1,205 @@
-# Obedience Corp
+# Obedience Corp Landing Page
 
 Official landing page for Obedience Corp - AI orchestration and tooling company.
 
 ## Overview
 
-Obedience Corp is the parent company for Guild, a multi-agent AI orchestration platform, and other AI-related projects. The name plays on dystopian sci-fi themes while representing a serious AI tooling and consulting business.
+This is a YAML-driven static site with Go-based generation. Content is managed through YAML configuration files and markdown articles, making it easy to update without touching HTML/CSS/JS code.
 
-## Site Features
+## Project Structure
 
-- **Corporate Dystopian Aesthetic**: Dark, terminal-inspired design evoking nameless megacorps from Mr. Robot
-- **Progressive Reveal**: Subtle system initialization sequence
-- **Minimal & Impactful**: Say everything by saying very little
-- **Single-Page Application**: Zero build process, GitHub Pages ready
-- **Fully Responsive**: Mobile-first design
+```
+obediencecorp.com/
+├── content/               # Content configuration
+│   ├── site.yml          # Site metadata (hero, branding)
+│   ├── articles.yml      # Article box configuration
+│   └── articles/         # Markdown content for each article
+├── templates/            # Go HTML templates
+│   └── index.html       # Main template
+├── static/              # Frontend assets
+│   ├── css/
+│   │   └── styles.css   # Extracted, modular CSS
+│   └── js/
+│       └── main.js      # Typing animation script
+├── cmd/generate/        # Static site generator
+│   └── main.go         # Generator entry point
+├── internal/            # Internal packages
+│   ├── config/         # YAML config loader
+│   └── markdown/       # Markdown processor
+├── justfile            # Build commands (preferred over Makefile)
+├── go.mod              # Go dependencies
+├── .gitignore          # Ignore generated index.html
+└── README.md           # This file
+```
+
+## Content Management
+
+### Adding/Editing Articles
+
+1. **Edit article content** in `content/articles/*.md`
+2. **Update metadata** in `content/articles.yml` (title, grid position)
+3. **Rebuild**: `just build`
+
+### Updating Hero Section
+
+Edit `content/site.yml`:
+```yaml
+hero:
+  brand: OBEDIENCE CORP
+  title: OBEDIENCE CORP
+  tagline_line1: AI that does what you want
+  tagline_line2: The way you want it done
+  contact_email: contact@obediencecorp.com
+```
+
+### Adjusting Grid Layout
+
+Edit grid positioning in `content/articles.yml`:
+```yaml
+- id: "guild-control-layer"
+  title: "Guild Is a Control Layer for AI"
+  grid_column: "2 / 4"  # Span columns 2-4
+  grid_row: "1"         # Row 1
+  content_file: "guild-control-layer.md"
+```
+
+## Build Commands
+
+Using `just` (self-documenting command runner):
+
+```bash
+# List available commands
+just
+
+# Generate index.html from content
+just build
+
+# Build and open in browser
+just dev
+
+# Clean generated files
+just clean
+
+# Watch for changes and rebuild (requires watchexec)
+just watch
+```
 
 ## Tech Stack
 
-- HTML5
-- Tailwind CSS (CDN)
-- HTMX (CDN)
-- Custom CSS for cyberpunk effects (grid, scanlines, glows)
+- **Go** - Static site generator
+- **YAML** - Content configuration
+- **Markdown** - Article content
+- **Go Templates** - HTML templating
+- **CSS** - Modular, extracted stylesheets
+- **Vanilla JS** - Minimal, no frameworks
 
-## Local Development
+### Dependencies
 
-Simply open `index.html` in a browser. No build process required.
-
-```bash
-# Option 1: Open directly
-open index.html
-
-# Option 2: Serve locally (Python)
-python3 -m http.server 8000
-# Then visit http://localhost:8000
-
-# Option 3: Serve locally (Node)
-npx http-server
+```
+gopkg.in/yaml.v3              # YAML parsing
+github.com/gomarkdown/markdown # Markdown processing
 ```
 
-## Deployment to GitHub Pages
+## Development Workflow
 
-### Initial Setup
-
-1. Push this repository to GitHub
-2. Go to repository Settings → Pages
-3. Under "Source", select "Deploy from a branch"
-4. Select `main` branch and `/ (root)` folder
-5. Click Save
-
-### Custom Domain (optional)
-
-1. Add `CNAME` file with your domain:
-   ```
-   obediencecorp.com
-   ```
-
-2. Configure DNS:
-   ```
-   Type: A
-   Name: @
-   Value: 185.199.108.153
-   Value: 185.199.109.153
-   Value: 185.199.110.153
-   Value: 185.199.111.153
-
-   Type: CNAME
-   Name: www
-   Value: yourusername.github.io
-   ```
-
-3. Update Settings → Pages → Custom domain field
-
-### Updates
+### Local Development
 
 ```bash
-# Make changes to index.html
-git add index.html
-git commit -m "Update landing page"
-git push origin main
+# Install dependencies
+go mod download
+
+# Generate site
+just build
+
+# Open in browser
+just dev
+
+# Make changes to content/...
+# Rebuild
+just build
 ```
 
-GitHub Pages will automatically deploy within 1-2 minutes.
+### Adding New Article
+
+1. Create markdown file:
+```bash
+vim content/articles/new-article.md
+```
+
+2. Add to `content/articles.yml`:
+```yaml
+- id: "new-article"
+  title: "New Article Title"
+  grid_column: "1"
+  grid_row: "9"
+  content_file: "new-article.md"
+```
+
+3. Rebuild:
+```bash
+just build
+```
+
+## Deployment
+
+### GitHub Pages
+
+1. Generate site: `just build`
+2. Commit `index.html` (normally gitignored for dev)
+3. Push to GitHub
+4. Configure Pages to serve from root
+
+### Custom Domain
+
+Add `CNAME` file:
+```
+obediencecorp.com
+```
+
+Configure DNS A records:
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+## Design Philosophy
+
+- **YAML as CMS**: All content in version-controlled YAML/markdown
+- **Modular assets**: Separate CSS/JS for maintainability
+- **Static generation**: Fast, secure, GitHub Pages compatible
+- **No build complexity**: Simple Go generator, no npm/webpack
+- **Self-documenting**: Justfile replaces README for commands
 
 ## Brand Guidelines
 
 - **Company Name**: Obedience Corp
 - **Tagline**: "AI that does what you want. The way you want it done."
-- **Product**: Guild by Obedience Corp
-- **Product Tagline**: "One person. A thousand agents. Perfect coordination."
-- **Location**: Denver, Colorado
+- **Product**: Guild
+- **Product Tagline**: "Building Guild: 1000 agents that obey."
 - **Contact**: contact@obediencecorp.com
 
-## Design Philosophy
+## Aesthetic
 
-The design intentionally evokes:
-- Mr. Robot's fsociety and E-Corp aesthetic
-- Blade Runner 2049's corporate brutalism
-- Nameless megacorps from sci-fi dystopias
-- Professional yet unsettling
+- Corporate dystopian (Mr. Robot E-Corp style)
+- Pure black background (#000000)
+- IBM Plex Mono typography
+- Terminal-inspired article boxes
+- Green accent (#00ff7f)
+- Newspaper-style asymmetric grid
 
-This creates intrigue and memorability while maintaining corporate professionalism.
+## Future Enhancements
 
-## Archive
+When ready for Go backend:
+1. Keep same content structure
+2. Replace static generator with HTTP server
+3. Add HTMX for dynamic interactions
+4. Enable live content updates
 
-Previous design iterations are stored in `archive/`:
-- `site.html` - Card-based layout with panels
-- `site2.html` - Similar to site.html with refined copy
-- `site3.html` - Simplified centered layout
-- `site4.html` - Left-aligned minimal design (basis for current version)
+## Notes
+
+- `index.html` is **generated** - edit `content/` and `templates/` instead
+- Use `just` not `make` (simpler, self-documenting)
+- Grid positioning uses CSS Grid with explicit placement
+- Markdown is processed to HTML with syntax highlighting support
