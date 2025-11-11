@@ -39,10 +39,12 @@ type ArticlesConfig struct {
 
 // Article represents a single article box
 type Article struct {
-	ID          string `yaml:"id"`
-	Title       string `yaml:"title"`
-	GridColumn  string `yaml:"grid_column"`
-	GridRow     string `yaml:"grid_row"`
-	ContentFile string `yaml:"content_file"`
-	Content     string `yaml:"-"` // Populated from markdown file
+	ID               string `yaml:"id"`
+	Title            string `yaml:"title"`
+	GridColumn       string `yaml:"grid_column"`
+	GridRow          string `yaml:"grid_row"`
+	ContentFile      string `yaml:"content_file"`
+	ModalContentFile string `yaml:"modal_content_file"`
+	Content          string `yaml:"-"` // Populated from markdown file
+	ModalContent     string `yaml:"-"` // Populated from modal markdown file
 }

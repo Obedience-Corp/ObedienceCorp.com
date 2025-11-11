@@ -12,9 +12,12 @@ import (
 )
 
 type EnrichedArticle struct {
-	Title   string
-	Style   template.CSS
-	Content template.HTML
+	ID           string
+	Title        string
+	Style        template.CSS
+	Content      template.HTML
+	ModalContent template.HTML
+	HasModal     bool
 }
 
 type PageData struct {
@@ -48,13 +51,28 @@ func main() {
 			log.Fatalf("Failed to load article %s: %v", article.ID, err)
 		}
 
+		// Load modal content if specified
+		var modalContent template.HTML
+		hasModal := article.ModalContentFile != ""
+		if hasModal {
+			modalPath := filepath.Join("content", "articles", article.ModalContentFile)
+			modalContent, err = markdown.ProcessFile(modalPath)
+			if err != nil {
+				log.Printf("Warning: Failed to load modal content for %s: %v", article.ID, err)
+				hasModal = false
+			}
+		}
+
 		// Build complete style attribute
 		styleAttr := fmt.Sprintf("grid-column: %s; grid-row: %s;", article.GridColumn, article.GridRow)
 
 		enrichedArticles[i] = EnrichedArticle{
-			Title:   article.Title,
-			Style:   template.CSS(styleAttr),
-			Content: content,
+			ID:           article.ID,
+			Title:        article.Title,
+			Style:        template.CSS(styleAttr),
+			Content:      content,
+			ModalContent: modalContent,
+			HasModal:     hasModal,
 		}
 	}
 
