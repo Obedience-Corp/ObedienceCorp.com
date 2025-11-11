@@ -97,6 +97,15 @@ body {
   color: var(--accent-green);
 }
 
+.slogan {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.8125rem, 1.4vw, 0.9375rem);
+  font-weight: 600;
+  color: var(--text-gray);
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
 .contact-email {
   font-size: clamp(0.8125rem, 1.4vw, 0.875rem);
   color: var(--text-gray);
