@@ -105,7 +105,3 @@ With Guild's control architecture:
 - You can prevent what they shouldn't do (enforcement)
 
 This is control as engineering discipline.
-
----
-
-**Building Guild: 1000 agents that obey.**

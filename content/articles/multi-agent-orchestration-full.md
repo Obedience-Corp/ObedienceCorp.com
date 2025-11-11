@@ -64,7 +64,3 @@ With Guild orchestration:
 - Humans oversee, not micromanage
 
 This is how you scale from prototype to production.
-
----
-
-**Building Guild: 1000 agents that obey.**

@@ -103,7 +103,3 @@ But only when the infrastructure supports enterprise requirements.
 Guild doesn't make you choose between "innovative AI" and "enterprise-ready systems."
 
 You get both. AI that's powerful enough to deliver value, but **controlled enough to deploy in production**.
-
----
-
-**Building Guild: 1000 agents that obey.**

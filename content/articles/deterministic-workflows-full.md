@@ -71,7 +71,3 @@ With Guild:
 - Compliance becomes provable conformance
 
 You don't eliminate randomness. You **control its impact**.
-
----
-
-**Building Guild: 1000 agents that obey.**

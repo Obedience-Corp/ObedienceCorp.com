@@ -80,7 +80,3 @@ With specialized agents:
 - Scaling is easier (add specialists as needed)
 
 Specialization isn't a limitation. It's **how you build systems that work**.
-
----
-
-**Building Guild: 1000 agents that obey.**

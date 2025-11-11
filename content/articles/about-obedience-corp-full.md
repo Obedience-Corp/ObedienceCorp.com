@@ -69,7 +69,3 @@ With Obedience Corp infrastructure:
 - Your control is maintained
 
 This is AI for production systems, not science experiments.
-
----
-
-**Building Guild: 1000 agents that obey.**

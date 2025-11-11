@@ -78,7 +78,3 @@ You're not building a prototype that you'll rewrite for production. You're build
 Teams using Guild move from prototype to production in weeks, not months.
 
 Not because Guild does the work for you—because Guild **makes production deployment a solved problem**.
-
----
-
-**Building Guild: 1000 agents that obey.**

@@ -40,7 +40,3 @@ When Guild manages your agents:
 - Results are **reproducible**
 
 This is what obedience looks like at scale.
-
----
-
-**Building Guild: 1000 agents that obey.**

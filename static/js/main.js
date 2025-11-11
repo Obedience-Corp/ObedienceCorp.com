@@ -1,5 +1,7 @@
 // Set current year in footer
-document.getElementById("year").textContent = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
+document.getElementById("year").textContent = currentYear;
+document.querySelector(".modal-year").textContent = currentYear;
 
 // Simple typing animation for tagline
 function typeText(element, text, speed, callback) {

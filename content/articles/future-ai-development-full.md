@@ -70,7 +70,3 @@ The companies that win will treat AI agents like they treat microservices:
 - Production-grade reliability
 
 This is the future Guild is building.
-
----
-
-**Building Guild: 1000 agents that obey.**

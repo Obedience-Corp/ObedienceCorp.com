@@ -166,7 +166,3 @@ Step-by-step guides for:
 Guild respects developers. You're not clicking through GUIs. You're writing code.
 
 **Professional tools for professional developers.**
-
----
-
-**Building Guild: 1000 agents that obey.**

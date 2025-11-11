@@ -136,7 +136,3 @@ You focus on business logic. Guild handles:
 - Operational tools
 
 This is how you ship production systems in **weeks**, not months.
-
----
-
-**Building Guild: 1000 agents that obey.**

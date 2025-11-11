@@ -52,7 +52,3 @@ Alignment stops being a hope and becomes a **contractual guarantee**:
 - Humans maintain control at all scales
 
 This is alignment as engineering discipline, not moral philosophy.
-
----
-
-**Building Guild: 1000 agents that obey.**

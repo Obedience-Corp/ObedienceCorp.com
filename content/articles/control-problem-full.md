@@ -152,7 +152,3 @@ The control problem isn't philosophical. It's **architectural**.
 You don't solve it by training better models. You solve it by building **better infrastructure for managing models**.
 
 Guild is that infrastructure.
-
----
-
-**Building Guild: 1000 agents that obey.**

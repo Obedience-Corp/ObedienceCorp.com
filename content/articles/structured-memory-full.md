@@ -166,7 +166,3 @@ With structured memory:
 - Debugging is simple (query exact state at any time)
 
 Memory becomes **infrastructure**, not a research problem.
-
----
-
-**Building Guild: 1000 agents that obey.**

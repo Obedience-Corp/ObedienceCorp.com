@@ -56,7 +56,3 @@ Guild-managed agents:
 - Operate predictably
 
 This isn't limiting agents—it's making them production-ready.
-
----
-
-**Building Guild: 1000 agents that obey.**
