@@ -21,7 +21,6 @@ type Hero struct {
 	Title        string `yaml:"title"`
 	TaglineLine1 string `yaml:"tagline_line1"`
 	TaglineLine2 string `yaml:"tagline_line2"`
-	Slogan       string `yaml:"slogan"`
 	ContactEmail string `yaml:"contact_email"`
 }
 

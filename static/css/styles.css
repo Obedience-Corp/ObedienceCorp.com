@@ -26,6 +26,49 @@ body {
   flex-direction: column;
 }
 
+/* Navigation bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: clamp(0.75rem, 2vh, 1rem) clamp(1.5rem, 4vw, 2rem);
+  background: var(--pure-black);
+  border-bottom: 1px solid #333;
+  z-index: 999;
+}
+
+.nav-brand {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.7rem, 1.2vw, 0.8125rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--text-gray);
+}
+
+.nav-slogan {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  font-weight: 600;
+  color: var(--text-gray);
+  letter-spacing: 0.05em;
+}
+
+.nav-contact {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  color: var(--text-gray);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-contact:hover {
+  color: var(--accent-green);
+}
+
 /* Respect motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -48,6 +91,7 @@ body {
     clamp(2rem, 4vh, 3rem) clamp(2rem, 6vw, 3rem);
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: clamp(50px, 8vh, 70px); /* Account for fixed navbar */
 }
 
 /* Hero box - styled like other boxes */
@@ -95,15 +139,6 @@ body {
 
 .period {
   color: var(--accent-green);
-}
-
-.slogan {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(0.8125rem, 1.4vw, 0.9375rem);
-  font-weight: 600;
-  color: var(--text-gray);
-  letter-spacing: 0.05em;
-  line-height: 1.4;
 }
 
 .contact-email {
@@ -178,10 +213,22 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .nav-slogan {
+    display: none; /* Hide slogan on mobile to save space */
+  }
+
   .container {
     grid-template-columns: 1fr;
     gap: clamp(1.25rem, 3vw, 1.5rem);
     padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 6vw, 2rem);
+    margin-top: 60px; /* Adjusted for mobile nav height */
   }
 
   /* Reset all explicit positions for mobile */

@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="static/css/styles.css" />
   </head>
   <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-brand">{{.Hero.Brand}}</div>
+      <div class="nav-slogan">Building Guild: 1000 agents that obey.</div>
+      <a href="mailto:{{.Hero.ContactEmail}}" class="nav-contact">{{.Hero.ContactEmail}}</a>
+    </nav>
+
     <div class="container">
       <!-- Hero Box (Command/Control) -->
       <div class="hero-box" style="grid-column: 1; grid-row: 1;">
@@ -19,8 +26,6 @@
           <span class="tagline-line" id="line1"></span>
           <span class="tagline-line" id="line2"></span>
         </h2>
-
-        <p class="slogan">{{.Hero.Slogan}}</p>
 
         <a href="mailto:{{.Hero.ContactEmail}}" class="contact-email"
           >{{.Hero.ContactEmail}}</a
