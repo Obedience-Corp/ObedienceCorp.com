@@ -280,16 +280,31 @@ footer {
   width: 6px;
 }
 
-.bulletin-board::-webkit-scrollbar-track {
+/* Left side scrollbar (red theme) */
+.bulletin-left::-webkit-scrollbar-track {
   background: #0d0000;
 }
 
-.bulletin-board::-webkit-scrollbar-thumb {
+.bulletin-left::-webkit-scrollbar-thumb {
   background: #400000;
   border-radius: 0;
 }
 
-.bulletin-board::-webkit-scrollbar-thumb:hover {
+.bulletin-left::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+/* Right side scrollbar (green theme) */
+.bulletin-right::-webkit-scrollbar-track {
+  background: #001a00;
+}
+
+.bulletin-right::-webkit-scrollbar-thumb {
+  background: #003300;
+  border-radius: 0;
+}
+
+.bulletin-right::-webkit-scrollbar-thumb:hover {
   background: var(--accent-green);
 }
 
