@@ -199,6 +199,107 @@ footer {
   color: #4a4a4a;
 }
 
+/* Bulletin Boards */
+.bulletin-board {
+  display: none; /* Hidden by default, shown on large screens */
+  position: fixed;
+  top: clamp(70px, 10vh, 90px);
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  padding: 1rem;
+  gap: 1rem;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.bulletin-left {
+  left: 1rem;
+  right: calc(50vw + 800px + 2rem); /* Fill space from edge to content */
+}
+
+.bulletin-right {
+  right: 1rem;
+  left: calc(50vw + 800px + 2rem); /* Fill space from content to edge */
+}
+
+.bulletin-card {
+  display: block;
+  background: #0d0000;
+  border: 1px solid #400000;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: var(--text-gray);
+  transition: all 0.3s ease;
+}
+
+.bulletin-card:hover {
+  border-color: var(--accent-green);
+  background: #1a0000;
+}
+
+.bulletin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bulletin-source {
+  color: #ff4444;
+  font-weight: 600;
+}
+
+.bulletin-date {
+  color: #666;
+}
+
+.bulletin-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+  letter-spacing: 0.02em;
+}
+
+.bulletin-excerpt {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+/* Custom scrollbar for bulletin boards */
+.bulletin-board::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bulletin-board::-webkit-scrollbar-track {
+  background: #0d0000;
+}
+
+.bulletin-board::-webkit-scrollbar-thumb {
+  background: #400000;
+  border-radius: 0;
+}
+
+.bulletin-board::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+/* Show bulletin boards on large screens */
+@media (min-width: 1440px) {
+  .bulletin-board {
+    display: flex;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .container {

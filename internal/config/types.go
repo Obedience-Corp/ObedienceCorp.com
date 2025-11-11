@@ -48,3 +48,17 @@ type Article struct {
 	Content          string `yaml:"-"` // Populated from markdown file
 	ModalContent     string `yaml:"-"` // Populated from modal markdown file
 }
+
+// BulletinConfig holds bulletin board configuration
+type BulletinConfig struct {
+	Bulletins []Bulletin `yaml:"bulletins"`
+}
+
+// Bulletin represents a single bulletin article card
+type Bulletin struct {
+	Title   string `yaml:"title"`
+	Source  string `yaml:"source"`
+	URL     string `yaml:"url"`
+	Excerpt string `yaml:"excerpt"`
+	Date    string `yaml:"date"`
+}

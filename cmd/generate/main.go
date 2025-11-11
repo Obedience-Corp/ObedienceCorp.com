@@ -21,10 +21,12 @@ type EnrichedArticle struct {
 }
 
 type PageData struct {
-	Site     config.Site
-	Hero     config.Hero
-	Branding config.Branding
-	Articles []EnrichedArticle
+	Site         config.Site
+	Hero         config.Hero
+	Branding     config.Branding
+	Articles     []EnrichedArticle
+	BulletinLeft []config.Bulletin
+	BulletinRight []config.Bulletin
 }
 
 func main() {
@@ -38,6 +40,17 @@ func main() {
 	articlesConfig, err := config.LoadArticlesConfig("content/articles.yml")
 	if err != nil {
 		log.Fatalf("Failed to load articles config: %v", err)
+	}
+
+	// Load bulletin board configurations
+	bulletinLeftConfig, err := config.LoadBulletinConfig("content/bulletin-left.yml")
+	if err != nil {
+		log.Fatalf("Failed to load left bulletin config: %v", err)
+	}
+
+	bulletinRightConfig, err := config.LoadBulletinConfig("content/bulletin-right.yml")
+	if err != nil {
+		log.Fatalf("Failed to load right bulletin config: %v", err)
 	}
 
 	// Load markdown content for each article and create enriched article data
@@ -78,10 +91,12 @@ func main() {
 
 	// Prepare template data
 	data := PageData{
-		Site:     siteConfig.Site,
-		Hero:     siteConfig.Hero,
-		Branding: siteConfig.Branding,
-		Articles: enrichedArticles,
+		Site:          siteConfig.Site,
+		Hero:          siteConfig.Hero,
+		Branding:      siteConfig.Branding,
+		Articles:      enrichedArticles,
+		BulletinLeft:  bulletinLeftConfig.Bulletins,
+		BulletinRight: bulletinRightConfig.Bulletins,
 	}
 
 	// Parse template

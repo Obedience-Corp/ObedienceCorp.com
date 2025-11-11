@@ -35,3 +35,18 @@ func LoadArticlesConfig(path string) (*ArticlesConfig, error) {
 
 	return &config, nil
 }
+
+// LoadBulletinConfig loads the bulletin board configuration from a YAML file
+func LoadBulletinConfig(path string) (*BulletinConfig, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	var config BulletinConfig
+	if err := yaml.Unmarshal(data, &config); err != nil {
+		return nil, err
+	}
+
+	return &config, nil
+}

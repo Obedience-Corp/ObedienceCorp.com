@@ -1,0 +1,42 @@
+bulletins:
+  - title: "AI Infrastructure Funding Reaches Record High"
+    source: "Bloomberg"
+    url: "https://bloomberg.com"
+    excerpt: "Q1 2025 sees unprecedented investment in AI tooling and orchestration platforms, with agent frameworks leading the charge."
+    date: "2025-01-12"
+
+  - title: "The Rise of Agentic Workflows in Production"
+    source: "The Information"
+    url: "https://theinformation.com"
+    excerpt: "Engineering teams are replacing traditional microservices with agent-based architectures. Early results show promise."
+    date: "2025-01-09"
+
+  - title: "From Monolithic LLMs to Agent Ecosystems"
+    source: "Hacker News"
+    url: "https://news.ycombinator.com"
+    excerpt: "Discussion: Why the future of AI is thousands of specialized agents, not one giant model. 847 points, 312 comments."
+    date: "2025-01-06"
+
+  - title: "OpenAI's Agent Strategy Signals Market Shift"
+    source: "The Verge"
+    url: "https://theverge.com"
+    excerpt: "Major AI labs are pivoting from model-centric to agent-centric architectures. The tooling gap is massive."
+    date: "2024-12-30"
+
+  - title: "JPMorgan Deploys 1000+ AI Agents Across Trading Floors"
+    source: "Financial Times"
+    url: "https://ft.com"
+    excerpt: "Wall Street giant credits agent orchestration platform for 40% reduction in manual processes. Other banks racing to follow."
+    date: "2024-12-22"
+
+  - title: "Microsoft Announces Agent Mesh for Azure"
+    source: "Ars Technica"
+    url: "https://arstechnica.com"
+    excerpt: "New cloud service for deploying and coordinating distributed AI agents at scale. Beta waitlist already at 10K companies."
+    date: "2024-12-18"
+
+  - title: "Y Combinator's Winter Batch: 30% Are Building Agent Infrastructure"
+    source: "TechCrunch"
+    url: "https://techcrunch.com"
+    excerpt: "Startup accelerator sees massive shift toward multi-agent tooling and orchestration platforms. Market timing couldn't be better."
+    date: "2024-12-12"
