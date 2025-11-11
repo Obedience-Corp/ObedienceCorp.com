@@ -293,6 +293,97 @@ footer {
   background: var(--accent-green);
 }
 
+/* Left bulletin scrollbar on left side */
+.bulletin-left {
+  direction: rtl; /* Flip container direction */
+}
+
+.bulletin-left > * {
+  direction: ltr; /* Reset content direction */
+}
+
+/* Dispatch Cards (Right Side - Green Theme) */
+.dispatch-card {
+  display: block;
+  background: #001a00;
+  border: 1px solid #003300;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  color: var(--text-gray);
+  transition: all 0.3s ease;
+}
+
+.dispatch-card:hover {
+  border-color: var(--accent-green);
+  background: #002200;
+}
+
+.dispatch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.dispatch-status {
+  font-weight: 600;
+  padding: 0.15rem 0.4rem;
+  border-radius: 2px;
+}
+
+.dispatch-status-OPERATIONAL {
+  background: rgba(0, 255, 127, 0.1);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+}
+
+.dispatch-status-IN\ PROGRESS {
+  background: rgba(255, 191, 0, 0.1);
+  color: #ffbf00;
+  border: 1px solid #ffbf00;
+}
+
+.dispatch-status-CLASSIFIED {
+  background: rgba(255, 68, 68, 0.1);
+  color: #ff4444;
+  border: 1px solid #ff4444;
+}
+
+.dispatch-status-ARCHIVED {
+  background: rgba(128, 128, 128, 0.1);
+  color: #808080;
+  border: 1px solid #808080;
+}
+
+.dispatch-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: var(--text-white);
+  letter-spacing: 0.02em;
+}
+
+.dispatch-excerpt {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-gray);
+  margin: 0;
+}
+
+.dispatch-date {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.625rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 /* Show bulletin boards on large screens */
 @media (min-width: 1440px) {
   .bulletin-board {

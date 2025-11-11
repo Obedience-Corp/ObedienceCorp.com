@@ -62,3 +62,17 @@ type Bulletin struct {
 	Excerpt string `yaml:"excerpt"`
 	Date    string `yaml:"date"`
 }
+
+// DispatchConfig holds internal dispatch configuration
+type DispatchConfig struct {
+	Dispatches []Dispatch `yaml:"dispatches"`
+}
+
+// Dispatch represents a single internal dispatch card
+type Dispatch struct {
+	DispatchPath string `yaml:"dispatch_path"`
+	Status       string `yaml:"status"`
+	Title        string `yaml:"title"`
+	Excerpt      string `yaml:"excerpt"`
+	Date         string `yaml:"date"`
+}

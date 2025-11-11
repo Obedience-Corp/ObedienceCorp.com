@@ -21,12 +21,12 @@ type EnrichedArticle struct {
 }
 
 type PageData struct {
-	Site         config.Site
-	Hero         config.Hero
-	Branding     config.Branding
-	Articles     []EnrichedArticle
-	BulletinLeft []config.Bulletin
-	BulletinRight []config.Bulletin
+	Site       config.Site
+	Hero       config.Hero
+	Branding   config.Branding
+	Articles   []EnrichedArticle
+	Bulletins  []config.Bulletin
+	Dispatches []config.Dispatch
 }
 
 func main() {
@@ -42,15 +42,16 @@ func main() {
 		log.Fatalf("Failed to load articles config: %v", err)
 	}
 
-	// Load bulletin board configurations
-	bulletinLeftConfig, err := config.LoadBulletinConfig("content/bulletin-left.yml")
+	// Load bulletin board configuration (left side - external signals)
+	bulletinConfig, err := config.LoadBulletinConfig("content/bulletin-left.yml")
 	if err != nil {
-		log.Fatalf("Failed to load left bulletin config: %v", err)
+		log.Fatalf("Failed to load bulletin config: %v", err)
 	}
 
-	bulletinRightConfig, err := config.LoadBulletinConfig("content/bulletin-right.yml")
+	// Load dispatch configuration (right side - internal dispatches)
+	dispatchConfig, err := config.LoadDispatchConfig("content/bulletin-right.yml")
 	if err != nil {
-		log.Fatalf("Failed to load right bulletin config: %v", err)
+		log.Fatalf("Failed to load dispatch config: %v", err)
 	}
 
 	// Load markdown content for each article and create enriched article data
@@ -91,12 +92,12 @@ func main() {
 
 	// Prepare template data
 	data := PageData{
-		Site:          siteConfig.Site,
-		Hero:          siteConfig.Hero,
-		Branding:      siteConfig.Branding,
-		Articles:      enrichedArticles,
-		BulletinLeft:  bulletinLeftConfig.Bulletins,
-		BulletinRight: bulletinRightConfig.Bulletins,
+		Site:       siteConfig.Site,
+		Hero:       siteConfig.Hero,
+		Branding:   siteConfig.Branding,
+		Articles:   enrichedArticles,
+		Bulletins:  bulletinConfig.Bulletins,
+		Dispatches: dispatchConfig.Dispatches,
 	}
 
 	// Parse template

@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="static/css/styles.css" />
   </head>
   <body>
-    <!-- Left Bulletin Board -->
+    <!-- Left Bulletin Board (External Signals) -->
     <aside class="bulletin-board bulletin-left">
-      {{range .BulletinLeft}}
+      {{range .Bulletins}}
       <a href="{{.URL}}" target="_blank" rel="noopener noreferrer" class="bulletin-card">
         <div class="bulletin-header">
           <span class="bulletin-source">{{.Source}}</span>
@@ -22,17 +22,17 @@
       {{end}}
     </aside>
 
-    <!-- Right Bulletin Board -->
+    <!-- Right Dispatch Board (Internal Dispatches) -->
     <aside class="bulletin-board bulletin-right">
-      {{range .BulletinRight}}
-      <a href="{{.URL}}" target="_blank" rel="noopener noreferrer" class="bulletin-card">
-        <div class="bulletin-header">
-          <span class="bulletin-source">{{.Source}}</span>
-          <span class="bulletin-date">{{.Date}}</span>
+      {{range .Dispatches}}
+      <div class="dispatch-card">
+        <div class="dispatch-header">
+          <span class="dispatch-status dispatch-status-{{.Status}}">{{.Status}}</span>
+          <span class="dispatch-date">{{.Date}}</span>
         </div>
-        <h4 class="bulletin-title">{{.Title}}</h4>
-        <p class="bulletin-excerpt">{{.Excerpt}}</p>
-      </a>
+        <h4 class="dispatch-title">{{.Title}}</h4>
+        <p class="dispatch-excerpt">{{.Excerpt}}</p>
+      </div>
       {{end}}
     </aside>
 

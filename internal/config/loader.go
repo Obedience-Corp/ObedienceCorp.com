@@ -50,3 +50,18 @@ func LoadBulletinConfig(path string) (*BulletinConfig, error) {
 
 	return &config, nil
 }
+
+// LoadDispatchConfig loads the dispatch board configuration from a YAML file
+func LoadDispatchConfig(path string) (*DispatchConfig, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	var config DispatchConfig
+	if err := yaml.Unmarshal(data, &config); err != nil {
+		return nil, err
+	}
+
+	return &config, nil
+}
