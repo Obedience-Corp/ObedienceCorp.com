@@ -1,3 +1,51 @@
+// Theme management
+const THEME_KEY = "obedience-theme";
+const DEFAULT_THEME = "dark";
+
+function initTheme() {
+  // Check localStorage first, then system preference, then default
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  const systemPrefersDark = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  const theme = savedTheme || (systemPrefersDark ? "dark" : DEFAULT_THEME);
+
+  setTheme(theme);
+}
+
+function setTheme(theme) {
+  const darkIcon = document.querySelector(".theme-icon-dark");
+  const lightIcon = document.querySelector(".theme-icon-light");
+
+  if (theme === "light") {
+    document.documentElement.setAttribute("data-theme", "light");
+    if (darkIcon) darkIcon.style.display = "none";
+    if (lightIcon) lightIcon.style.display = "inline";
+  } else {
+    document.documentElement.removeAttribute("data-theme");
+    if (darkIcon) darkIcon.style.display = "inline";
+    if (lightIcon) lightIcon.style.display = "none";
+  }
+  localStorage.setItem(THEME_KEY, theme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  setTheme(newTheme);
+}
+
+// Initialize theme on load
+initTheme();
+
+// Attach theme toggle handler
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleButton = document.getElementById("theme-toggle");
+  if (toggleButton) {
+    toggleButton.addEventListener("click", toggleTheme);
+  }
+});
+
 // Set current year in footer
 const currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear;

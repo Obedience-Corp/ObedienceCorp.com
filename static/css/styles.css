@@ -7,15 +7,99 @@
 }
 
 :root {
+  /* Accent colors */
   --accent-green: #00ff7f;
+
+  /* Backgrounds - Dark Mode (Default) */
+  --bg-primary: #000000;
+  --bg-secondary: rgba(255, 255, 255, 0.02);
+  --bg-hero: rgba(0, 255, 127, 0.02);
+
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+
+  /* Borders */
+  --border-primary: #333;
+  --border-hero: #333;
+
+  /* Bulletin board (left - articles/red theme) */
+  --bulletin-bg: #0d0000;
+  --bulletin-border: #400000;
+  --bulletin-hover: #ff4444;
+  --bulletin-scroll-track: #0d0000;
+  --bulletin-scroll-thumb: #400000;
+  --bulletin-source-color: #ff4444;
+
+  /* Dispatch board (right - green theme) */
+  --dispatch-bg: #001a00;
+  --dispatch-border: #003300;
+  --dispatch-scroll-track: #001a00;
+  --dispatch-scroll-thumb: #003300;
+
+  /* Footer */
+  --footer-text: #4a4a4a;
+
+  /* Modal */
+  --modal-bg: #000000;
+  --modal-border: #00ff7f;
+  --modal-overlay-bg: rgba(0, 0, 0, 0.9);
+
+  /* Legacy variables for compatibility */
   --pure-black: #000000;
   --text-white: #ffffff;
   --text-gray: #a0a0a0;
 }
 
+/* Light Mode Theme */
+[data-theme="light"] {
+  /* Accent - darker green for better contrast on light */
+  --accent-green: #00a854;
+
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-hero: rgba(0, 168, 84, 0.05);
+
+  /* Text colors */
+  --text-primary: #000000;
+  --text-secondary: #404040;
+
+  /* Borders */
+  --border-primary: #d0d0d0;
+  --border-hero: #d0d0d0;
+
+  /* Bulletin board (left - articles/red theme) */
+  --bulletin-bg: #fff5f5;
+  --bulletin-border: #ffcccc;
+  --bulletin-hover: #cc0000;
+  --bulletin-scroll-track: #fff5f5;
+  --bulletin-scroll-thumb: #ffcccc;
+  --bulletin-source-color: #cc0000;
+
+  /* Dispatch board (right - green theme) */
+  --dispatch-bg: #f0fff0;
+  --dispatch-border: #ccffcc;
+  --dispatch-scroll-track: #f0fff0;
+  --dispatch-scroll-thumb: #ccffcc;
+
+  /* Footer */
+  --footer-text: #999999;
+
+  /* Modal */
+  --modal-bg: #ffffff;
+  --modal-border: #00a854;
+  --modal-overlay-bg: rgba(255, 255, 255, 0.95);
+
+  /* Legacy variables */
+  --pure-black: #ffffff;
+  --text-white: #000000;
+  --text-gray: #404040;
+}
+
 body {
-  background: var(--pure-black);
-  color: var(--text-white);
+  background: var(--bg-primary);
+  color: var(--text-primary);
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
@@ -36,8 +120,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: clamp(0.75rem, 2vh, 1rem) clamp(1.5rem, 4vw, 2rem);
-  background: var(--pure-black);
-  border-bottom: 1px solid #333;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-primary);
   z-index: 999;
 }
 
@@ -69,6 +153,29 @@ body {
   color: var(--accent-green);
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.2rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
 /* Respect motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -97,8 +204,8 @@ body {
 
 /* Hero box - more prominent than article boxes */
 .hero-box {
-  border: 2px solid #333;
-  background: rgba(0, 255, 127, 0.02);
+  border: 2px solid var(--border-hero);
+  background: var(--bg-hero);
   padding: clamp(2rem, 3vw, 3.5rem);
   display: flex;
   flex-direction: column;
@@ -175,8 +282,8 @@ body {
 
 /* Terminal article boxes */
 .article-box {
-  border: 1px solid #333;
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
   padding: clamp(1.5rem, 2vw, 2.5rem);
   transition: border-color 0.3s ease;
 }
@@ -216,7 +323,7 @@ footer {
   text-align: center;
   padding: 2rem 0;
   font-size: clamp(0.7rem, 1.2vw, 0.75rem);
-  color: #4a4a4a;
+  color: var(--footer-text);
 }
 
 /* Bulletin Boards */
@@ -244,18 +351,19 @@ footer {
 
 .bulletin-card {
   display: block;
-  background: #0d0000;
-  border: 1px solid #400000;
+  background: var(--bulletin-bg);
+  border: 1px solid var(--bulletin-border);
   padding: 1rem;
   margin-bottom: 1rem;
   text-decoration: none;
-  color: var(--text-gray);
+  color: var(--text-secondary);
   transition: all 0.3s ease;
 }
 
 .bulletin-card:hover {
   border-color: var(--accent-green);
-  background: #1a0000;
+  background: var(--bulletin-bg);
+  filter: brightness(1.2);
 }
 
 .bulletin-header {
@@ -270,12 +378,13 @@ footer {
 }
 
 .bulletin-source {
-  color: #ff4444;
+  color: var(--bulletin-source-color);
   font-weight: 600;
 }
 
 .bulletin-date {
-  color: #666;
+  color: var(--text-secondary);
+  opacity: 0.7;
 }
 
 .bulletin-title {
@@ -302,25 +411,25 @@ footer {
 
 /* Left side scrollbar (red theme) */
 .bulletin-left::-webkit-scrollbar-track {
-  background: #0d0000;
+  background: var(--bulletin-scroll-track);
 }
 
 .bulletin-left::-webkit-scrollbar-thumb {
-  background: #400000;
+  background: var(--bulletin-scroll-thumb);
   border-radius: 0;
 }
 
 .bulletin-left::-webkit-scrollbar-thumb:hover {
-  background: #ff4444;
+  background: var(--bulletin-hover);
 }
 
 /* Right side scrollbar (green theme) */
 .bulletin-right::-webkit-scrollbar-track {
-  background: #001a00;
+  background: var(--dispatch-scroll-track);
 }
 
 .bulletin-right::-webkit-scrollbar-thumb {
-  background: #003300;
+  background: var(--dispatch-scroll-thumb);
   border-radius: 0;
 }
 
@@ -340,17 +449,18 @@ footer {
 /* Dispatch Cards (Right Side - Green Theme) */
 .dispatch-card {
   display: block;
-  background: #001a00;
-  border: 1px solid #003300;
+  background: var(--dispatch-bg);
+  border: 1px solid var(--dispatch-border);
   padding: 1rem;
   margin-bottom: 1rem;
-  color: var(--text-gray);
+  color: var(--text-secondary);
   transition: all 0.3s ease;
 }
 
 .dispatch-card:hover {
   border-color: var(--accent-green);
-  background: #002200;
+  background: var(--dispatch-bg);
+  filter: brightness(1.2);
 }
 
 .dispatch-header {
@@ -452,6 +562,11 @@ footer {
     display: none; /* Hide slogan on mobile to save space */
   }
 
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   .container {
     grid-template-columns: 1fr;
     gap: clamp(1.25rem, 3vw, 1.5rem);
@@ -514,7 +629,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: var(--modal-overlay-bg);
   z-index: 1000;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -532,8 +647,8 @@ footer {
   width: 90%;
   max-width: 900px;
   max-height: 85vh;
-  background: var(--pure-black);
-  border: 2px solid var(--accent-green);
+  background: var(--modal-bg);
+  border: 2px solid var(--modal-border);
   padding: clamp(2rem, 4vw, 3rem);
   overflow-y: auto;
   transform: scale(0.9);

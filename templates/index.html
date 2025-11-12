@@ -40,7 +40,13 @@
     <nav class="navbar">
       <div class="nav-brand">{{.Hero.Brand}}</div>
       <div class="nav-slogan">Building Guild: 1000 agents that obey.</div>
-      <a href="mailto:{{.Hero.ContactEmail}}" class="nav-contact">{{.Hero.ContactEmail}}</a>
+      <div class="nav-right">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon-dark">◐</span>
+          <span class="theme-icon-light" style="display: none;">◑</span>
+        </button>
+        <a href="mailto:{{.Hero.ContactEmail}}" class="nav-contact">{{.Hero.ContactEmail}}</a>
+      </div>
     </nav>
 
     <div class="container">
