@@ -317,6 +317,34 @@ body {
   margin-bottom: 0;
 }
 
+/* Section Headers */
+.section-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: clamp(1rem, 2vh, 1.5rem) 0;
+  margin-top: clamp(1rem, 2vh, 1.5rem);
+}
+
+.section-header::before,
+.section-header::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-primary);
+}
+
+.section-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.75rem, 1.4vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
 /* Footer */
 footer {
   width: 100%;

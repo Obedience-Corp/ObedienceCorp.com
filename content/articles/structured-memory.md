@@ -1,3 +1,5 @@
-Stateless agents can't learn from experience or maintain context across conversations. Guild implements persistent memory: agents remember tasks, decisions, and outcomes.
+Works with any LLM provider. Anthropic, OpenAI, Ollama, DeepSeek, emerging providers.
 
-Memory is structured, searchable, and version-controlled. Context doesn't drift—it accumulates and compounds over time.
+No vendor lock-in. Optimize cost and performance across changing conditions. Your autonomous infrastructure outlives any individual provider.
+
+Provider landscape shifts. Your configured teams remain stable.

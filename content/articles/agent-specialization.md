@@ -1,3 +1,5 @@
-Generic AI assistants can't match domain-specific agents. Guild enables teams of specialized agents: code reviewers, test engineers, documentation writers, security auditors.
+Domain-specific workflows. Fully autonomous operations configured for your specific industry and processes.
 
-Each agent has narrow expertise, strict constraints, and defined interfaces. Specialization without fragmentation.
+Collaborative configuration of specialized teams. Decision offloading for complex domain judgment. Autonomous execution of niche business functions.
+
+Infrastructure that extends from your domain expertise to Fortune 500-scale operations.

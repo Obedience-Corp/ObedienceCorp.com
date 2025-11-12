@@ -1,168 +1,92 @@
-# Structured Memory
+# Provider Agnostic Infrastructure
 
-## The Memory Problem
+Guild works with any LLM provider. Your autonomous teams don't depend on any single vendor. Infrastructure built to outlive provider volatility.
 
-AI agents have context windows. Limited. Expensive. Ephemeral.
+## No Vendor Lock-In
 
-Traditional approaches:
-- **RAG**: Retrieve relevant documents, inject into context
-- **Summarization**: Compress history into shorter text
-- **Vector search**: Find semantically similar content
+The AI provider market changes rapidly:
+- Pricing shifts unpredictably
+- New providers enter constantly
+- Model capabilities evolve continuously
+- Terms of service change without warning
 
-These work for small-scale problems. They break at large scale.
+Organizations coupled to specific providers face continuous refactoring costs and negotiation weakness.
 
-## Why Traditional Memory Fails
+Guild decouples autonomous execution from provider implementation.
 
-### 1. Retrieval Precision
-Vector search returns "similar" content, not "correct" content. False positives drown signal in noise.
+## Provider-Agnostic Architecture
 
-### 2. Context Coherence
-Injecting random documents creates incoherent context. The agent wastes tokens reconciling contradictions.
+**Unified Interface**
+- Single configuration system regardless of backend
+- Consistent behavior across different providers
+- Provider-specific features through standardized abstractions
+- Switch providers without reconfiguring workflows
 
-### 3. Update Consistency
-Multiple agents reading and writing memory create race conditions. Information becomes inconsistent.
+**Multi-Provider Operations**
+- Run different teams on different providers
+- Optimize cost by routing to cheaper models
+- Optimize performance with specialized models
+- Maintain fallback providers for reliability
 
-### 4. Query Performance
-Searching large vector databases is slow. Latency kills user experience.
+**Dynamic Provider Selection**
+- Route based on current pricing and availability
+- Automatically fail over to backup providers
+- Test new providers without disrupting operations
+- Switch seamlessly as market conditions change
 
-## Guild's Structured Approach
+## Cost Optimization
 
-### Schema-First Memory
-Memory isn't free-form text. It's **structured data**:
+Provider agnosticism enables cost optimization:
 
-```go
-type ProjectState struct {
-    ID          string
-    Status      ProjectStatus
-    Tasks       []Task
-    LastUpdated time.Time
-    Owner       string
-}
-```
+**Task-Based Routing**
+- Simple decisions to inexpensive models
+- Complex judgment to capable models
+- Automatic routing based on configured criteria
+- Cost savings without quality degradation
 
-Benefits:
-- Type-safe reads and writes
-- Queryable by structured fields
-- Validated on every update
-- Versioned for rollback
+**Market Responsiveness**
+- Shift to providers with better pricing
+- Negotiate from position of flexibility
+- Volume distributed across providers
+- No single point of pricing pressure
 
-### Transactional Updates
-Memory modifications are atomic transactions:
-- Read current state
-- Modify in isolation
-- Commit with validation
-- Rollback on conflict
+## Performance Optimization
 
-No race conditions. No inconsistent state.
+Different providers excel at different capabilities:
 
-### Hierarchical Organization
-Memory is organized in a tree structure:
-```
-Project
-├── Overview
-├── Tasks
-│   ├── Task 1
-│   └── Task 2
-├── Team
-│   ├── Member 1
-│   └── Member 2
-└── Resources
-```
+**Model Specialization**
+- Route to providers with optimal models
+- Leverage specialized capabilities
+- Mix providers within single workflows
+- Best tool for each specific task
 
-Agents access only relevant subtrees. No context pollution.
+**Reliability Through Diversity**
+- Provider outages don't halt operations
+- Automatic failover to alternatives
+- Distributed load reduces rate limiting
+- Operational resilience through redundancy
 
-### Cached Access
-Frequently accessed memory is cached in-process:
-- Sub-millisecond read latency
-- Automatic cache invalidation
-- Consistency guarantees
-- Memory pressure management
+## Stability Through Abstraction
 
-## Memory Operations
+Your configured teams remain stable while provider landscape shifts:
 
-### Read
-```go
-project, err := memory.Read[ProjectState](ctx, projectID)
-```
-Type-safe retrieval with validation.
+- New providers integrate without workflow rewrites
+- Pricing changes don't force infrastructure redesign
+- Model updates don't break autonomous execution
+- Your investment in configuration outlives individual providers
 
-### Write
-```go
-err := memory.Write(ctx, projectID, updatedProject)
-```
-Atomic updates with schema enforcement.
+## The Alternative
 
-### Query
-```go
-tasks := memory.Query[Task](ctx,
-    memory.Where("status", "in_progress"),
-    memory.OrderBy("priority", "desc"),
-)
-```
-Structured queries, not vector search.
+Organizations tightly coupled to specific providers:
+- Refactoring costs when providers change terms
+- Weak negotiating position (no alternatives)
+- Operational risk from single point of failure
+- Limited to capabilities of one provider ecosystem
 
-### Watch
-```go
-memory.Watch(ctx, projectID, func(state ProjectState) {
-    // React to state changes
-})
-```
-Real-time notifications on memory updates.
+## Guild's Approach
 
-## Multi-Agent Coordination
+Provider agnostic from the foundation. Your autonomous company infrastructure outlives any individual vendor.
 
-With structured memory, agents coordinate reliably:
+Configure once. Run on any provider. Switch seamlessly.
 
-### Read-Modify-Write
-```go
-tx := memory.BeginTx(ctx)
-state := tx.Read(projectID)
-state.Status = "completed"
-tx.Commit()
-```
-Atomic transactions prevent conflicts.
-
-### Optimistic Concurrency
-```go
-for {
-    state := memory.Read(projectID)
-    state.ModifyField()
-    if memory.CompareAndSwap(projectID, state) {
-        break  // Success
-    }
-    // Retry with fresh state
-}
-```
-Concurrent updates without locks.
-
-### Event Sourcing
-All memory changes are events:
-```go
-memory.Append(Event{
-    Type: "TaskCompleted",
-    Data: completedTask,
-    Timestamp: time.Now(),
-})
-```
-Complete audit trail of all state changes.
-
-## The Persistence Layer
-
-Guild's memory is backed by SQLite:
-- **Fast**: Local file access, no network latency
-- **Reliable**: ACID transactions, crash recovery
-- **Portable**: Single-file database, easy backups
-- **Scalable**: Handles millions of records
-
-For distributed deployments, PostgreSQL backend available.
-
-## The Result
-
-With structured memory:
-- Agents see consistent state (no race conditions)
-- Queries are precise (no vector similarity noise)
-- Performance is fast (cached, indexed access)
-- History is complete (event sourcing)
-- Debugging is simple (query exact state at any time)
-
-Memory becomes **infrastructure**, not a research problem.
+The AI landscape changes. Your autonomous teams remain stable.

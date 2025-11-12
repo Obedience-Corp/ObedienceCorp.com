@@ -1,3 +1,5 @@
-AI alignment isn't about making models "good." It's about building systems where autonomous agents reliably execute human intent, even in complex, ambiguous environments.
+Models are commoditized. Access is universal. The defensible value is infrastructure for autonomous execution at scale.
 
-Obedience Corp approaches this as an infrastructure challenge: coordination protocols, feedback mechanisms, and architectural constraints that guarantee alignment by design.
+Building autonomous companies requires: collaborative configuration systems, decision offloading infrastructure, and persistent organizational memory.
+
+Obedience Corp builds this infrastructure.

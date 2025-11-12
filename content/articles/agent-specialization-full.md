@@ -1,82 +1,83 @@
-# Agent Specialization
+# Domain-Specific Autonomous Workflows
 
-## The Generalist Trap
+Guild is built for domain experts who want to extend their expertise to Fortune 500-scale operations. Not generic task automation. Infrastructure for fully autonomous execution of your specific industry workflows.
 
-General-purpose AI agents promise versatility. They can handle anything you throw at them.
+## Your Domain, Autonomous at Scale
 
-In practice, generalists are:
-- **Mediocre** at most tasks
-- **Slow** because they waste cycles on irrelevant context
-- **Expensive** because they load large, unfocused models
-- **Unreliable** because their behavior varies by context
+**Domain Expertise Configuration**
+- Configure teams with your industry-specific knowledge
+- Embed domain judgment in decision criteria
+- Set quality standards specific to your field
+- Define workflows that match your processes
 
-## The Case for Specialists
+**Specialized Decision-Making**
+- Agents make domain-specific judgments
+- Configured criteria reflect industry nuances
+- Quality decisions in specialized contexts
+- Autonomous execution of niche processes
 
-In human organizations, we don't hire "general workers." We hire:
-- Accountants who do accounting
-- Engineers who do engineering
-- Lawyers who do legal work
-- Marketers who do marketing
+## Collaborative Setup, Autonomous Execution
 
-Each role is **specialized**. Each specialist is **excellent at their domain**.
+**Work WITH Agents to Configure**
+- Collaborate on domain-specific workflows
+- Define how specialized work should be done
+- Set criteria for domain-specific decisions
+- Configure quality gates specific to your field
 
-AI systems should work the same way.
+**Autonomous Execution of Configured Workflows**
+- Teams operate with domain expertise
+- Complex industry-specific decisions made autonomously
+- Quality maintained through configured standards
+- Specialized processes run 24/7 without oversight
 
-## Guild's Specialization Model
+## Built for Complex Domains
 
-### Single-Purpose Agents
-Each agent has:
-- **One job** - Narrowly defined responsibility
-- **One model** - Optimized for that specific task
-- **One prompt** - Tuned for domain expertise
-- **One output format** - Structured and validated
+**Multi-Project Workspace Management**
+- Organize related projects into campaigns
+- Maintain consistent configuration across efforts
+- Share domain knowledge between projects
+- Isolate unrelated work appropriately
 
-### The Benefits
+**Automated Domain-Specific Scaffolding**
+- Project setup configured for your industry
+- Consistent structure across domain efforts
+- Pre-configured teams for common workflows
+- Extensible templates for specialized needs
 
-**Performance**: Specialized prompts with minimal context produce better results faster.
+**Codebase and Knowledge Analysis**
+- Analyze domain-specific repositories
+- Extract relevant context for specialized tasks
+- Build semantic indices of technical knowledge
+- Maintain understanding of complex systems
 
-**Cost**: Smaller, focused models are cheaper than large general models.
+**Persistent Domain Memory**
+- Context accumulates across months
+- Domain-specific decisions inform future work
+- Specialized knowledge builds over time
+- Teams learn from domain-specific experience
 
-**Reliability**: Single-purpose agents have predictable behavior.
+## Task Decomposition for Complex Work
 
-**Debugging**: When something breaks, you know exactly which agent failed.
+**Hierarchical Breakdown**
+- Decompose complex domain projects
+- Assign specialized teams to appropriate work
+- Track dependencies in complex workflows
+- Monitor progress at multiple levels
 
-## Building Specialized Guilds
-
-Guild enables you to construct teams of specialists:
-
-### Example: Code Review Guild
-- **Style Agent**: Checks formatting and conventions
-- **Security Agent**: Scans for vulnerabilities
-- **Performance Agent**: Identifies optimization opportunities
-- **Documentation Agent**: Verifies comments and docs
-- **Testing Agent**: Analyzes test coverage
-
-Each agent is small, fast, and excellent at its domain. Together, they provide comprehensive code review.
-
-### Example: Content Production Guild
-- **Research Agent**: Gathers information
-- **Outline Agent**: Structures content
-- **Writing Agent**: Generates prose
-- **Editing Agent**: Improves clarity
-- **SEO Agent**: Optimizes for search
-- **Fact-Checking Agent**: Verifies accuracy
-
-Each specialist contributes their expertise. The orchestra produces quality results.
-
-## Composition Over Capability
-
-Instead of one massive agent trying to do everything, Guild coordinates many specialists each doing one thing excellently.
-
-This is how complex systems are built—through **composition of simple components**.
+**Domain-Specific Kanban**
+- Visualize specialized work across projects
+- Track domain-specific workflow stages
+- Identify bottlenecks in complex processes
+- Rebalance specialized workloads
 
 ## The Result
 
-With specialized agents:
-- Tasks complete faster (parallel execution)
-- Results are better (domain expertise)
-- Costs are lower (right-sized models)
-- Debugging is simpler (clear responsibility)
-- Scaling is easier (add specialists as needed)
+Infrastructure that lets domain experts:
+- Configure teams with specialized knowledge
+- Offload complex domain-specific decisions
+- Operate at Fortune 500 scale in niche fields
+- Maintain quality in specialized contexts
 
-Specialization isn't a limitation. It's **how you build systems that work**.
+Not generic automation. Fully autonomous execution of your specific domain expertise at scale.
+
+Your knowledge. Your workflows. Your standards. Fortune 500 scale.

@@ -1,3 +1,5 @@
-AI systems fail when they operate in black boxes. Guild enforces transparency through structured memory, task decomposition, and auditable execution traces.
+Guild provides infrastructure for collaborative configuration and autonomous execution at scale.
 
-Every agent action is logged, reviewed, and validated against defined constraints. Accountability without micromanagement.
+Work WITH agents to define workflows. Configure teams to make decisions like you would. Offload entire categories of judgment to autonomous teams.
+
+Built for Fortune 500-scale operations controlled by one person.

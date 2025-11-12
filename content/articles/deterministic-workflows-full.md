@@ -1,73 +1,73 @@
-# Deterministic Workflows
+# Collaborative Configuration, Autonomous Execution
 
-## The Stochastic Problem
+Guild provides infrastructure for building autonomous companies. Not task automation. Complete systems for collaborative configuration and autonomous execution at Fortune 500 scale.
 
-AI systems are inherently non-deterministic. Same input, different output. This makes everything harder:
+## Collaborative Configuration
 
-- **Debugging**: "It worked yesterday" isn't reproducible
-- **Testing**: Can't write assertions for unpredictable outputs
-- **Auditing**: Can't verify compliance when results vary
-- **Scaling**: Can't trust automation that produces random results
+**Define How Work Should Be Done**
+- Collaborate with agents to establish workflows
+- Set decision criteria and quality standards
+- Configure team structures and reporting chains
+- Establish escalation paths for edge cases
 
-## Making Chaos Deterministic
+**Configure Star Employee Behavior**
+- Define how agents should make decisions
+- Set priorities and trade-off criteria
+- Configure judgment calls for common scenarios
+- Establish quality gates and validation rules
 
-Guild doesn't eliminate AI's non-deterministic nature. It **contains it**.
+**Build Organizational Structure**
+- Create teams with clear responsibilities
+- Define departments and their relationships
+- Set coordination protocols between groups
+- Configure information flow and reporting
 
-### Deterministic Orchestration
-Even when agent outputs vary, workflow execution follows predictable paths:
+## Autonomous Execution
 
-```
-Input → Validation → Agent Pool → Output Validation → Result
-```
+**Decision Offloading**
+- Agents make quality decisions without approval loops
+- Configured criteria guide judgment calls
+- Escalation only when truly outside parameters
+- Your decision-making capacity extends to 24/7 operation
 
-Same input always triggers the same sequence of steps. Agent responses may vary, but the **process is fixed**.
+**Persistent Operations**
+- Teams work continuously without oversight
+- Progress happens across dozens of parallel efforts
+- Context maintains across days, weeks, months
+- Autonomous problem-solving within configured bounds
 
-### Reproducible Execution
-Guild logs every parameter that affects execution:
-- Model versions
-- Temperature settings
-- Random seeds
-- Input data
-- Timestamp
+**Quality Without Micromanagement**
+- Standards enforced through configuration, not review
+- Validation happens automatically at defined gates
+- Deviations trigger escalation, not silent failure
+- Quality maintained at scale without constant supervision
 
-Given these parameters, you can **replay any workflow exactly**.
+## Built for Scale
 
-### Bounded Outputs
-Agents produce variable outputs, but Guild enforces:
-- Output schemas that constrain format
-- Validation rules that reject invalid results
-- Retry logic that eliminates transient failures
-- Fallback behaviors when variance exceeds thresholds
+**Hierarchical Teams**
+- Organize agents into teams, departments, divisions
+- Clear reporting relationships and responsibilities
+- Information flows through configured channels
+- Coordination happens automatically
 
-## Why This Matters
+**Provider Flexibility**
+- Works with any LLM provider
+- Mix models within single workflows
+- Optimize cost and performance dynamically
+- No vendor lock-in or proprietary constraints
 
-### For Debugging
-When something breaks, you can:
-1. Reproduce the failure exactly
-2. Modify one variable at a time
-3. Identify the root cause
-4. Verify the fix works
-
-### For Testing
-Write test assertions against:
-- Workflow structure (always the same)
-- Validation rules (predictable)
-- Failure modes (deterministic)
-- Recovery paths (fixed)
-
-### For Compliance
-Auditors need to verify:
-- What happened (complete logs)
-- Why it happened (deterministic causes)
-- Whether it was correct (validation proofs)
-- That it will happen again (reproducible)
+**Domain-Specific Configuration**
+- Configure for your specific industry and workflows
+- Domain knowledge embedded in team configuration
+- Specialized judgment for niche requirements
+- Autonomous execution of domain-specific processes
 
 ## The Result
 
-With Guild:
-- Non-deterministic AI produces deterministic **outcomes**
-- Debugging becomes systematic investigation
-- Testing becomes automated verification
-- Compliance becomes provable conformance
+Infrastructure that lets one person:
+- Collaboratively configure autonomous teams
+- Offload decision-making to configured agents
+- Operate at Fortune 500 scale
+- Maintain quality without micromanagement
 
-You don't eliminate randomness. You **control its impact**.
+Not faster task completion. Autonomous execution of entire business functions.
