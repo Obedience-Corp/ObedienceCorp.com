@@ -1,5 +1,5 @@
-Chat-based AI tools scale human effort linearly. More agents require more human oversight.
+Current AI tools require constant human decisions. Chat interfaces. Manual task assignment. Continuous oversight. Scaling agents means scaling your workload.
 
-Guild breaks the linear constraint. Configure autonomous teams once. They make decisions and execute work without waiting for your input.
+Guild breaks the linear constraint. Configure how work should be done once. Agents execute autonomously based on that configuration.
 
-Autonomous execution at Fortune 500 scale, controlled by one person.
+Nonlinear scaling through collaborative configuration and autonomous execution.

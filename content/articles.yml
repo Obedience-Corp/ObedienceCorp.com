@@ -1,11 +1,11 @@
 articles:
-  # Row 1: The Collaboration Gap (col 3) - Hero already spans cols 1-2
-  - id: "coordination-problem"
-    title: "The Collaboration Gap"
+  # Row 1: About (col 3) - Hero already spans cols 1-2
+  - id: "about"
+    title: "About"
     grid_column: "3"
     grid_row: "1"
-    content_file: "coordination-problem.md"
-    modal_content_file: "coordination-problem-full.md"
+    content_file: "about.md"
+    modal_content_file: "about-full.md"
 
   # Row 2: THESIS section
   - id: "control-not-conversation"
@@ -52,9 +52,9 @@ articles:
     content_file: "production-grade-systems.md"
     modal_content_file: "production-grade-systems-full.md"
 
-  - id: "track-progress"
-    title: "Obedience Corp"
+  - id: "contact"
+    title: "Contact"
     grid_column: "3"
     grid_row: "4"
-    content_file: "track-progress.md"
-    modal_content_file: "track-progress-full.md"
+    content_file: "contact.md"
+    modal_content_file: "contact-full.md"

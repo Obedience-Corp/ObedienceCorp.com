@@ -46,12 +46,12 @@ Guild development is driven by real requirements for autonomous company operatio
 
 Guild isn't vaporware. Features exist because they were necessary to solve real problems:
 
-**Collaborative Configuration Systems**
+**Collaborative Configuration**
 - Built to handle actual domain complexity
-- Refined through real configuration challenges
-- Validated with complex workflow requirements
+- Refined through real challenges
+- Validated with complex workflows
 
-**Decision Offloading Infrastructure**
+**Decision Offloading**
 - Tested with real judgment scenarios
 - Proven to maintain quality at scale
 - Validated across multiple domains
@@ -61,14 +61,8 @@ Guild isn't vaporware. Features exist because they were necessary to solve real 
 - Proven reliable under real conditions
 - Validated across diverse workflows
 
-## No Theoretical Claims
+## Why Guild Exists
 
-We don't project what Guild "could" do. Documented features work in practice.
+Simpler tools failed under real conditions.
 
-Tested with real autonomous workflows. Validated through actual usage. Built to solve problems that emerged during real autonomous operations.
-
-## Obedience Corp's Approach
-
-Build infrastructure that solves actual problems. Test under real conditions. Ship when it works reliably.
-
-No demos that impress but don't deploy. No prototypes that work sometimes. Infrastructure for autonomous companies that actually operate.
+We needed infrastructure that actually works for autonomous operations. So we built it.

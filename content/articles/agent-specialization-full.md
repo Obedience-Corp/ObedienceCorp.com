@@ -1,6 +1,6 @@
 # Domain-Specific Autonomous Workflows
 
-Guild is built for domain experts who want to extend their expertise to Fortune 500-scale operations. Not generic task automation. Infrastructure for fully autonomous execution of your specific industry workflows.
+Built for domain experts who want to extend their expertise to Fortune 500-scale operations. Not generic task automation. Infrastructure for fully autonomous execution of your specific industry workflows.
 
 ## Your Domain, Autonomous at Scale
 

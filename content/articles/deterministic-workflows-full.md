@@ -1,6 +1,6 @@
 # Collaborative Configuration, Autonomous Execution
 
-Guild provides infrastructure for building autonomous companies. Not task automation. Complete systems for collaborative configuration and autonomous execution at Fortune 500 scale.
+Infrastructure for building autonomous companies. Not task automation. Complete systems for collaborative configuration and autonomous execution at Fortune 500 scale.
 
 ## Collaborative Configuration
 
@@ -65,8 +65,8 @@ Guild provides infrastructure for building autonomous companies. Not task automa
 ## The Result
 
 Infrastructure that lets one person:
-- Collaboratively configure autonomous teams
-- Offload decision-making to configured agents
+- Configure autonomous teams
+- Offload decision-making to agents
 - Operate at Fortune 500 scale
 - Maintain quality without micromanagement
 

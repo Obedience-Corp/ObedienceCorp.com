@@ -59,14 +59,6 @@ Provider agnostic. Domain flexible. Built for autonomous companies.
 
 Not vaporware. Infrastructure that works.
 
-## Our Market
-
-**Today**: Domain experts who want to extend their capacity
-**Near-term**: Technical founders building autonomous operations
-**Long-term**: One-person Fortune 500-scale companies
-
-The market for autonomous company infrastructure grows with every person who sees the linear constraint of chat-based tools.
-
 ## Contact
 
 For investors, early adopters, or partnership inquiries:
