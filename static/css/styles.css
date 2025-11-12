@@ -536,6 +536,163 @@ footer {
   }
 }
 
+/* Hover Zones - invisible triggers at viewport edges */
+.hover-zone {
+  display: none; /* Hidden by default, shown < 1800px */
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 15px;
+  z-index: 998;
+  cursor: pointer;
+}
+
+.hover-zone-left {
+  left: 0;
+}
+
+.hover-zone-right {
+  right: 0;
+}
+
+/* Optional: subtle indicator on hover (can be removed for completely invisible) */
+.hover-zone-left:hover {
+  background: linear-gradient(to right, rgba(255, 68, 68, 0.3), transparent);
+}
+
+.hover-zone-right:hover {
+  background: linear-gradient(to left, rgba(0, 255, 127, 0.3), transparent);
+}
+
+/* Drawer Overlay System */
+.drawer-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.drawer-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+.drawer-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+/* Drawer Container */
+.drawer-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 85%;
+  max-width: 400px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease-out;
+}
+
+.drawer-container-left {
+  left: 0;
+  border-left: none;
+  transform: translateX(-100%);
+}
+
+.drawer-container-right {
+  right: 0;
+  border-right: none;
+  transform: translateX(100%);
+}
+
+.drawer-overlay.active .drawer-container-left {
+  transform: translateX(0);
+}
+
+.drawer-overlay.active .drawer-container-right {
+  transform: translateX(0);
+}
+
+/* Drawer Header */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-primary);
+  flex-shrink: 0;
+}
+
+.drawer-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-white);
+}
+
+.drawer-close {
+  background: transparent;
+  border: 1px solid var(--text-gray);
+  color: var(--text-gray);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.drawer-close:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+/* Drawer Content */
+.drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Custom scrollbar for drawer content */
+.drawer-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.drawer-content::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+.drawer-content::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 0;
+}
+
+.drawer-content::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-green);
+}
+
+/* Show hover zones when bulletins are hidden */
+@media (max-width: 1799px) {
+  .hover-zone {
+    display: block;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .container {

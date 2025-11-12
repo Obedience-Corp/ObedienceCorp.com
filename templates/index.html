@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="static/css/styles.css" />
   </head>
   <body>
+    <!-- Hover Zones (visible < 1800px) -->
+    <div class="hover-zone hover-zone-left" aria-label="Hover to view bulletins"></div>
+    <div class="hover-zone hover-zone-right" aria-label="Hover to view dispatches"></div>
+
     <!-- Left Bulletin Board (External Signals) -->
     <aside class="bulletin-board bulletin-left">
       {{range .Bulletins}}
@@ -35,6 +39,51 @@
       </div>
       {{end}}
     </aside>
+
+    <!-- Drawer Overlays (visible < 1800px when opened) -->
+    <div class="drawer-overlay drawer-overlay-left">
+      <div class="drawer-scrim"></div>
+      <div class="drawer-container drawer-container-left">
+        <div class="drawer-header">
+          <h2 class="drawer-title">Bulletins</h2>
+          <button class="drawer-close drawer-close-left" aria-label="Close bulletins">[X]</button>
+        </div>
+        <div class="drawer-content">
+          {{range .Bulletins}}
+          <a href="{{.URL}}" target="_blank" rel="noopener noreferrer" class="bulletin-card">
+            <div class="bulletin-header">
+              <span class="bulletin-source">{{.Source}}</span>
+              <span class="bulletin-date">{{.Date}}</span>
+            </div>
+            <h4 class="bulletin-title">{{.Title}}</h4>
+            <p class="bulletin-excerpt">{{.Excerpt}}</p>
+          </a>
+          {{end}}
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-overlay drawer-overlay-right">
+      <div class="drawer-scrim"></div>
+      <div class="drawer-container drawer-container-right">
+        <div class="drawer-header">
+          <h2 class="drawer-title">Dispatches</h2>
+          <button class="drawer-close drawer-close-right" aria-label="Close dispatches">[X]</button>
+        </div>
+        <div class="drawer-content">
+          {{range .Dispatches}}
+          <div class="dispatch-card">
+            <div class="dispatch-header">
+              <span class="dispatch-status dispatch-status-{{.Status}}">{{.Status}}</span>
+              <span class="dispatch-date">{{.Date}}</span>
+            </div>
+            <h4 class="dispatch-title">{{.Title}}</h4>
+            <p class="dispatch-excerpt">{{.Excerpt}}</p>
+          </div>
+          {{end}}
+        </div>
+      </div>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
