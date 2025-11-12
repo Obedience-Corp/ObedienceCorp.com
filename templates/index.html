@@ -45,15 +45,15 @@
 
     <div class="container">
       <!-- Hero Box (Command/Control) -->
-      <div class="hero-box" style="grid-column: 1; grid-row: 1;">
-        <div class="brand">{{.Hero.Brand}}</div>
-
+      <div class="hero-box" style="grid-column: 1 / 3; grid-row: 1;">
         <h1 class="company-name">{{.Hero.Title}}</h1>
 
         <h2 class="tagline">
           <span class="tagline-line" id="line1"></span>
           <span class="tagline-line" id="line2"></span>
         </h2>
+
+        <div class="mission-statement">Infrastructure for autonomous AI systems</div>
 
         <a href="mailto:{{.Hero.ContactEmail}}" class="contact-email"
           >{{.Hero.ContactEmail}}</a

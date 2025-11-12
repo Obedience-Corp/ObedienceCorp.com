@@ -95,13 +95,14 @@ body {
   margin-top: clamp(50px, 8vh, 70px); /* Account for fixed navbar */
 }
 
-/* Hero box - styled like other boxes */
+/* Hero box - more prominent than article boxes */
 .hero-box {
-  border: 1px solid #333;
-  padding: clamp(1.5rem, 2vw, 2.5rem);
+  border: 2px solid #333;
+  background: rgba(0, 255, 127, 0.02);
+  padding: clamp(2rem, 3vw, 3.5rem);
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 2vh, 1.5rem);
+  gap: clamp(1.5rem, 3vh, 2rem);
   transition: border-color 0.3s ease;
 }
 
@@ -117,9 +118,18 @@ body {
   color: var(--text-gray);
 }
 
+.descriptor {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.75rem, 1.4vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+}
+
 .company-name {
   font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(1.875rem, 4vw, 2.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: 0.02em;
   line-height: 1.1;
@@ -142,6 +152,15 @@ body {
   color: var(--accent-green);
 }
 
+.mission-statement {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.875rem, 1.6vw, 1rem);
+  font-weight: 500;
+  color: var(--text-gray);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
 .contact-email {
   font-size: clamp(0.8125rem, 1.4vw, 0.875rem);
   color: var(--text-gray);
@@ -157,6 +176,7 @@ body {
 /* Terminal article boxes */
 .article-box {
   border: 1px solid #333;
+  background: rgba(255, 255, 255, 0.02);
   padding: clamp(1.5rem, 2vw, 2.5rem);
   transition: border-color 0.3s ease;
 }
@@ -291,7 +311,7 @@ footer {
 }
 
 .bulletin-left::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-green);
+  background: #ff4444;
 }
 
 /* Right side scrollbar (green theme) */

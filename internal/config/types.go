@@ -18,6 +18,7 @@ type Site struct {
 // Hero holds hero section configuration
 type Hero struct {
 	Brand        string `yaml:"brand"`
+	Descriptor   string `yaml:"descriptor"`
 	Title        string `yaml:"title"`
 	TaglineLine1 string `yaml:"tagline_line1"`
 	TaglineLine2 string `yaml:"tagline_line2"`

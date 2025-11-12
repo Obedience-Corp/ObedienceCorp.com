@@ -1,8 +1,8 @@
 articles:
   - id: "guild-control-layer"
     title: "Guild Is a Control Layer for AI"
-    grid_column: "2 / 4"
-    grid_row: "1"
+    grid_column: "3"
+    grid_row: "2 / 4"
     content_file: "guild-control-layer.md"
     modal_content_file: "guild-control-layer-full.md"
 
@@ -23,7 +23,7 @@ articles:
   - id: "multi-agent-orchestration"
     title: "Multi-Agent Orchestration"
     grid_column: "3"
-    grid_row: "2 / 4"
+    grid_row: "1"
     content_file: "multi-agent-orchestration.md"
     modal_content_file: "multi-agent-orchestration-full.md"
 
