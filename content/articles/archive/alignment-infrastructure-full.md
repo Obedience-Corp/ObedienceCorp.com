@@ -22,18 +22,23 @@ These aren't philosophical puzzles. They're **engineering requirements**.
 ## Guild's Infrastructure Approach
 
 ### 1. Explicit Directive Encoding
+
 No natural language ambiguity. Directives are structured, versioned, and type-checked.
 
 ### 2. Validation Pipelines
+
 Every agent output passes through validation layers before execution continues.
 
 ### 3. State Consistency
+
 Shared memory architecture ensures all agents see the same ground truth.
 
 ### 4. Audit Trails
+
 Complete logging of decisions, actions, and outcomes. Alignment failures are traceable.
 
 ### 5. Rollback Mechanisms
+
 When alignment breaks, Guild can revert to last-known-good state automatically.
 
 ## Why This Works

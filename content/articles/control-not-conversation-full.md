@@ -5,18 +5,21 @@ Current AI tools require constant human decisions. Chat interfaces, manual task 
 ## The Micromanagement Trap
 
 **Chat Interfaces**
+
 - Every task needs explicit human instruction
 - Agents wait for your next command
 - Context resets between conversations
 - You remain the bottleneck
 
 **Manual Coordination**
+
 - You decide what each agent should do
 - You route work between specialized tools
 - You monitor progress manually
 - Scaling requires more of your time
 
 **Continuous Oversight**
+
 - Agents can't make decisions without you
 - Progress stops when you're unavailable
 - Quality depends on constant review
@@ -47,18 +50,21 @@ Not faster task completion. Offloading entire categories of decisions to configu
 Guild enables **nonlinear scaling**:
 
 **Configure Once**
+
 - Define how work should be done
 - Set decision criteria and priorities
 - Establish quality standards
 - Configure team structures and workflows
 
 **Execute Autonomously**
+
 - Agents make decisions based on that configuration
 - Teams operate without waiting for input
 - Work continues 24/7 without oversight
 - Quality maintained through those standards
 
 **Scale Beyond Human Limits**
+
 - 100 agents don't require 100× your time
 - Autonomous teams extend your decision-making capacity
 - One person commands Fortune 500-scale operations

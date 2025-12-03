@@ -34,6 +34,7 @@ Guild exposes the internal structure:
 The difference between a prototype and production is control.
 
 When Guild manages your agents:
+
 - Intent doesn't drift across conversations
 - Context doesn't degrade over time
 - Coordination doesn't break under load

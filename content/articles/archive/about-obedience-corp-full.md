@@ -19,12 +19,15 @@ Smarter AI without control mechanisms is **more dangerous at scale**, not less. 
 ## Our Approach
 
 ### 1. Obedience Through Architecture
+
 We don't rely on training AI to be obedient. We build systems that **enforce obedience through structure**.
 
 ### 2. Control Through Infrastructure
+
 Our frameworks don't hope agents will follow instructions. They **guarantee compliance through architectural constraints**.
 
 ### 3. Scale Through Engineering
+
 We don't optimize for small deployments. Guild is designed for **1000 agents operating in parallel**.
 
 ## Guild Framework
@@ -32,6 +35,7 @@ We don't optimize for small deployments. Guild is designed for **1000 agents ope
 Our flagship product: the orchestration framework that brings industrial-grade control to multi-agent AI systems.
 
 Guild provides:
+
 - Deterministic workflow execution
 - Structured memory systems
 - Agent specialization and management
@@ -41,12 +45,15 @@ Guild provides:
 ## Who We Serve
 
 ### Teams Hitting Scale Problems
+
 You prototyped with ChatGPT. It works great for demos. Now you need to deploy at scale—and conversation-based interfaces are breaking down.
 
 ### Organizations Requiring Compliance
+
 You need audit trails. Reproducible outcomes. Provable conformance to specifications. "The AI decided to do it differently" isn't acceptable.
 
 ### Developers Building AI Infrastructure
+
 You're not building another chatbot. You're building systems where AI agents are **components**, not products.
 
 ## Why "Obedience"
@@ -62,6 +69,7 @@ That requires obedience. Not as a philosophical stance—as an engineering requi
 ## The Result
 
 With Obedience Corp infrastructure:
+
 - Your agents do what you tell them
 - Your workflows execute deterministically
 - Your deployments scale reliably

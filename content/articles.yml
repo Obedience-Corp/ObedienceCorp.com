@@ -57,4 +57,3 @@ articles:
     grid_column: "3"
     grid_row: "4"
     content_file: "contact.md"
-    modal_content_file: "contact-full.md"

@@ -43,6 +43,7 @@ obediencecorp.com/
 ### Updating Hero Section
 
 Edit `content/site.yml`:
+
 ```yaml
 hero:
   brand: OBEDIENCE CORP
@@ -55,6 +56,7 @@ hero:
 ### Adjusting Grid Layout
 
 Edit grid positioning in `content/articles.yml`:
+
 ```yaml
 - id: "guild-control-layer"
   title: "Guild Is a Control Layer for AI"
@@ -122,11 +124,13 @@ just build
 ### Adding New Article
 
 1. Create markdown file:
+
 ```bash
 vim content/articles/new-article.md
 ```
 
 2. Add to `content/articles.yml`:
+
 ```yaml
 - id: "new-article"
   title: "New Article Title"
@@ -136,6 +140,7 @@ vim content/articles/new-article.md
 ```
 
 3. Rebuild:
+
 ```bash
 just build
 ```
@@ -152,11 +157,13 @@ just build
 ### Custom Domain
 
 Add `CNAME` file:
+
 ```
 obediencecorp.com
 ```
 
 Configure DNS A records:
+
 ```
 185.199.108.153
 185.199.109.153
@@ -178,7 +185,7 @@ Configure DNS A records:
 - **Tagline**: "AI that does what you want. The way you want it done."
 - **Product**: Guild
 - **Product Tagline**: "Building Guild: 1000 agents that obey."
-- **Contact**: contact@obediencecorp.com
+- **Contact**: <contact@obediencecorp.com>
 
 ## Aesthetic
 
@@ -192,6 +199,7 @@ Configure DNS A records:
 ## Future Enhancements
 
 When ready for Go backend:
+
 1. Keep same content structure
 2. Replace static generator with HTTP server
 3. Add HTMX for dynamic interactions

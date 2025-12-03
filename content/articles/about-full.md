@@ -13,6 +13,7 @@ Build the wrong systems, and agents remain chat assistants waiting for your next
 ## What We Build
 
 **Infrastructure for Autonomous Companies**
+
 - Not models or training systems
 - Not individual agents or chat interfaces
 - Not consulting or integration services
@@ -22,6 +23,7 @@ We build the systems that enable collaborative configuration and autonomous exec
 ## Why It Matters
 
 The AI landscape is shifting:
+
 - Models are commoditized
 - Access is universal
 - Individual agent capability converges
@@ -32,18 +34,21 @@ The defensible value layer is infrastructure for autonomous execution. Organizat
 ## Our Approach
 
 **Collaborative Configuration**
+
 - Work WITH agents to define how things should be done
 - Configure teams to make decisions like you would
 - Set quality standards and escalation criteria
 - Build organizational structures collaboratively
 
 **Autonomous Execution**
+
 - Offload entire categories of decisions
 - Teams operate 24/7 without oversight
 - Quality maintained through configured standards
 - Progress on dozens of parallel fronts
 
 **Fortune 500 Scale**
+
 - One person commanding autonomous organizations
 - Domain expertise extended to massive scale
 - Operations that were impossible solo
@@ -62,7 +67,7 @@ Not vaporware. Infrastructure that works.
 ## Contact
 
 For investors, early adopters, or partnership inquiries:
-**contact@obediencecorp.com**
+**<contact@obediencecorp.com>**
 
 ---
 
