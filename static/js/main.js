@@ -66,19 +66,23 @@ function typeText(element, text, speed, callback) {
   type();
 }
 
-// Start typing after brief delay
+// Start typing after brief delay - read taglines from data attributes
 setTimeout(() => {
+  const heroBox = document.querySelector(".hero-box");
   const line1 = document.getElementById("line1");
   const line2 = document.getElementById("line2");
 
-  typeText(line1, "AI that does what you want", 40, () => {
+  const tagline1 = heroBox?.dataset.tagline1 || "AI that does what you want";
+  const tagline2 = heroBox?.dataset.tagline2 || "The way you want it done";
+
+  typeText(line1, tagline1, 40, () => {
     const period1 = document.createElement("span");
     period1.className = "period";
     period1.textContent = ".";
     line1.appendChild(period1);
 
     setTimeout(() => {
-      typeText(line2, "The way you want it done", 40, () => {
+      typeText(line2, tagline2, 40, () => {
         const period2 = document.createElement("span");
         period2.className = "period";
         period2.textContent = ".";

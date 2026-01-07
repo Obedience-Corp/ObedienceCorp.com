@@ -1,0 +1,8 @@
+page:
+  name: "guild"
+  title: "Guild - Obedience Corp"
+  description: "Guild: AI agent orchestration infrastructure. Build teams of specialized agents that work together autonomously."
+  hero_title: "GUILD"
+  tagline_line1: "Agent orchestration"
+  tagline_line2: "Infrastructure that scales"
+  mission: "Build teams of AI agents that actually work together"

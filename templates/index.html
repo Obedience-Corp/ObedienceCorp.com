@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{.Site.Title}}</title>
-    <meta name="description" content="{{.Site.Description}}" />
-    <link rel="stylesheet" href="static/css/styles.css" />
+    <title>{{.Page.Title}}</title>
+    <meta name="description" content="{{.Page.Description}}" />
+    <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
   <body>
     <!-- Hover Zones (visible < 1800px) -->
@@ -131,15 +131,17 @@
 
     <div class="container">
       <!-- Hero Box (Command/Control) -->
-      <div class="hero-box" style="grid-column: 1 / 3; grid-row: 1;">
-        <h1 class="company-name">{{.Hero.Title}}</h1>
+      <div class="hero-box" style="grid-column: 1 / 3; grid-row: 1;"
+           data-tagline1="{{.Page.TaglineLine1}}"
+           data-tagline2="{{.Page.TaglineLine2}}">
+        <h1 class="company-name">{{.Page.HeroTitle}}</h1>
 
         <h2 class="tagline">
           <span class="tagline-line" id="line1"></span>
           <span class="tagline-line" id="line2"></span>
         </h2>
 
-        <div class="mission-statement">Infrastructure for autonomous AI systems</div>
+        <div class="mission-statement">{{.Page.Mission}}</div>
 
         <a href="mailto:{{.Hero.ContactEmail}}" class="contact-email"
           >{{.Hero.ContactEmail}}</a
@@ -182,6 +184,6 @@
 
     <footer>© <span id="year"></span> {{.Site.Name}}</footer>
 
-    <script src="static/js/main.js"></script>
+    <script src="/static/js/main.js"></script>
   </body>
 </html>

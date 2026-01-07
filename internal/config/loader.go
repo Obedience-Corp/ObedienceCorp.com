@@ -80,3 +80,18 @@ func LoadNavigationConfig(path string) (*NavigationConfig, error) {
 
 	return &wrapper.Navigation, nil
 }
+
+// LoadPageConfig loads a page-specific configuration from a YAML file
+func LoadPageConfig(path string) (*PageConfig, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	var wrapper PageConfigWrapper
+	if err := yaml.Unmarshal(data, &wrapper); err != nil {
+		return nil, err
+	}
+
+	return &wrapper.Page, nil
+}

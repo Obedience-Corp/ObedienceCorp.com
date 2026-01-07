@@ -21,8 +21,12 @@ type EnrichedArticle struct {
 }
 
 type PageData struct {
+	// Page-specific data
+	Page config.PageConfig
+
+	// Shared site data
 	Site       config.Site
-	Hero       config.Hero
+	Hero       config.Hero // For brand, contact_email
 	Branding   config.Branding
 	Articles   []EnrichedArticle
 	Bulletins  []config.Bulletin
@@ -31,7 +35,12 @@ type PageData struct {
 }
 
 func main() {
-	// Load site configuration
+	// Ensure dist directory exists
+	if err := os.MkdirAll("dist", 0755); err != nil {
+		log.Fatalf("Failed to create dist directory: %v", err)
+	}
+
+	// Load shared site configuration
 	siteConfig, err := config.LoadSiteConfig("content/site.yml")
 	if err != nil {
 		log.Fatalf("Failed to load site config: %v", err)
@@ -61,7 +70,7 @@ func main() {
 		log.Fatalf("Failed to load navigation config: %v", err)
 	}
 
-	// Load markdown content for each article and create enriched article data
+	// Load markdown content for each article
 	enrichedArticles := make([]EnrichedArticle, len(articlesConfig.Articles))
 	for i := range articlesConfig.Articles {
 		article := &articlesConfig.Articles[i]
@@ -72,7 +81,6 @@ func main() {
 			log.Fatalf("Failed to load article %s: %v", article.ID, err)
 		}
 
-		// Load modal content if specified
 		var modalContent template.HTML
 		hasModal := article.ModalContentFile != ""
 		if hasModal {
@@ -84,7 +92,6 @@ func main() {
 			}
 		}
 
-		// Build complete style attribute
 		styleAttr := fmt.Sprintf("grid-column: %s; grid-row: %s;", article.GridColumn, article.GridRow)
 
 		enrichedArticles[i] = EnrichedArticle{
@@ -97,30 +104,39 @@ func main() {
 		}
 	}
 
-	// Prepare template data
-	data := PageData{
-		Site:       siteConfig.Site,
-		Hero:       siteConfig.Hero,
-		Branding:   siteConfig.Branding,
-		Articles:   enrichedArticles,
-		Bulletins:  bulletinConfig.Bulletins,
-		Dispatches: dispatchConfig.Dispatches,
-		Navigation: navConfig.Items,
-	}
-
 	// Parse template
 	tmpl, err := template.ParseFiles("templates/index.html")
 	if err != nil {
 		log.Fatalf("Failed to parse template: %v", err)
 	}
 
-	// Pages to generate (all use same template and data for now)
-	pages := []string{"index.html", "guild.html", "fest.html"}
+	// Pages to generate
+	pageConfigs := []string{"index", "guild", "fest"}
 
-	for _, pageName := range pages {
-		outFile, err := os.Create(pageName)
+	for _, pageName := range pageConfigs {
+		// Load page-specific config
+		pageConfig, err := config.LoadPageConfig(filepath.Join("content", "pages", pageName+".yml"))
 		if err != nil {
-			log.Fatalf("Failed to create output file %s: %v", pageName, err)
+			log.Fatalf("Failed to load page config for %s: %v", pageName, err)
+		}
+
+		// Build page data with page-specific overrides
+		data := PageData{
+			Page:       *pageConfig,
+			Site:       siteConfig.Site,
+			Hero:       siteConfig.Hero,
+			Branding:   siteConfig.Branding,
+			Articles:   enrichedArticles,
+			Bulletins:  bulletinConfig.Bulletins,
+			Dispatches: dispatchConfig.Dispatches,
+			Navigation: navConfig.Items,
+		}
+
+		// Create output file in dist/
+		outPath := filepath.Join("dist", pageName+".html")
+		outFile, err := os.Create(outPath)
+		if err != nil {
+			log.Fatalf("Failed to create output file %s: %v", outPath, err)
 		}
 
 		if err := tmpl.Execute(outFile, data); err != nil {
@@ -129,6 +145,9 @@ func main() {
 		}
 		outFile.Close()
 
-		fmt.Printf("✓ Successfully generated %s\n", pageName)
+		fmt.Printf("✓ Generated dist/%s.html\n", pageName)
 	}
+
+	// Copy static directory to dist
+	fmt.Println("✓ Build complete")
 }

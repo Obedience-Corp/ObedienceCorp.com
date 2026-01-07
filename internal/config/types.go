@@ -94,3 +94,19 @@ type NavItem struct {
 	Path  string `yaml:"path"`
 	Type  string `yaml:"type"` // "internal" or "external"
 }
+
+// PageConfigWrapper holds the root YAML structure for page config
+type PageConfigWrapper struct {
+	Page PageConfig `yaml:"page"`
+}
+
+// PageConfig holds page-specific configuration
+type PageConfig struct {
+	Name         string `yaml:"name"`
+	Title        string `yaml:"title"`
+	Description  string `yaml:"description"`
+	HeroTitle    string `yaml:"hero_title"`
+	TaglineLine1 string `yaml:"tagline_line1"`
+	TaglineLine2 string `yaml:"tagline_line2"`
+	Mission      string `yaml:"mission"`
+}

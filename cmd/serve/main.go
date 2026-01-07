@@ -4,31 +4,42 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
+	"path/filepath"
 )
 
 func main() {
 	port := "8734"
 
-	// Serve static files
+	// Serve static files from /static/
 	staticFS := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", staticFS))
 
-	// Route handlers for pages
+	// Page routes - serve from dist/
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path == "/" {
-			http.ServeFile(w, r, "index.html")
+		path := r.URL.Path
+
+		// Map routes to HTML files in dist/
+		var htmlFile string
+		switch path {
+		case "/":
+			htmlFile = "dist/index.html"
+		case "/guild":
+			htmlFile = "dist/guild.html"
+		case "/fest":
+			htmlFile = "dist/fest.html"
+		default:
+			// Try to serve as a file from dist/
+			filePath := filepath.Join("dist", path)
+			if _, err := os.Stat(filePath); err == nil {
+				http.ServeFile(w, r, filePath)
+				return
+			}
+			http.NotFound(w, r)
 			return
 		}
-		// Let other paths fall through to file server
-		http.ServeFile(w, r, r.URL.Path[1:])
-	})
 
-	http.HandleFunc("/guild", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "guild.html")
-	})
-
-	http.HandleFunc("/fest", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "fest.html")
+		http.ServeFile(w, r, htmlFile)
 	})
 
 	fmt.Printf("Starting development server on http://localhost:%s\n", port)
