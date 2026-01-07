@@ -53,6 +53,17 @@ status:
         echo "Dev server not running"; \
     fi
 
+# Format Go code
+fmt:
+    @go fmt ./...
+
+# Run static analysis
+vet:
+    @go vet ./...
+
+# Format and vet
+lint: fmt vet
+
 # Remove generated files
 clean:
     @echo "Cleaning generated files..."

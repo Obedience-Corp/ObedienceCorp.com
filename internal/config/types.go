@@ -27,10 +27,10 @@ type Hero struct {
 
 // Branding holds branding colors
 type Branding struct {
-	AccentColor      string `yaml:"accent_color"`
-	BackgroundColor  string `yaml:"background_color"`
-	TextColor        string `yaml:"text_color"`
-	TextGray         string `yaml:"text_gray"`
+	AccentColor     string `yaml:"accent_color"`
+	BackgroundColor string `yaml:"background_color"`
+	TextColor       string `yaml:"text_color"`
+	TextGray        string `yaml:"text_gray"`
 }
 
 // ArticlesConfig holds article configuration
