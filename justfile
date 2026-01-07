@@ -10,7 +10,7 @@ build:
     @go run cmd/generate/main.go
 
 
-# Start local development server on port 8080
+# Start local development server on port 8734
 serve: build
     @go run cmd/serve/main.go
 

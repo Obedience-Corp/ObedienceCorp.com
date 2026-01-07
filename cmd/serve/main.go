@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	port := "8080"
+	port := "8734"
 
 	// Serve current directory
 	fs := http.FileServer(http.Dir("."))
