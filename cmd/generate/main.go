@@ -27,6 +27,7 @@ type PageData struct {
 	Articles   []EnrichedArticle
 	Bulletins  []config.Bulletin
 	Dispatches []config.Dispatch
+	Navigation []config.NavItem
 }
 
 func main() {
@@ -52,6 +53,12 @@ func main() {
 	dispatchConfig, err := config.LoadDispatchConfig("content/bulletin-right.yml")
 	if err != nil {
 		log.Fatalf("Failed to load dispatch config: %v", err)
+	}
+
+	// Load navigation configuration
+	navConfig, err := config.LoadNavigationConfig("content/navigation.yml")
+	if err != nil {
+		log.Fatalf("Failed to load navigation config: %v", err)
 	}
 
 	// Load markdown content for each article and create enriched article data
@@ -98,6 +105,7 @@ func main() {
 		Articles:   enrichedArticles,
 		Bulletins:  bulletinConfig.Bulletins,
 		Dispatches: dispatchConfig.Dispatches,
+		Navigation: navConfig.Items,
 	}
 
 	// Parse template
@@ -106,17 +114,21 @@ func main() {
 		log.Fatalf("Failed to parse template: %v", err)
 	}
 
-	// Create output file
-	outFile, err := os.Create("index.html")
-	if err != nil {
-		log.Fatalf("Failed to create output file: %v", err)
-	}
-	defer outFile.Close()
+	// Pages to generate (all use same template and data for now)
+	pages := []string{"index.html", "guild.html", "fest.html"}
 
-	// Execute template
-	if err := tmpl.Execute(outFile, data); err != nil {
-		log.Fatalf("Failed to execute template: %v", err)
-	}
+	for _, pageName := range pages {
+		outFile, err := os.Create(pageName)
+		if err != nil {
+			log.Fatalf("Failed to create output file %s: %v", pageName, err)
+		}
 
-	fmt.Println("✓ Successfully generated index.html")
+		if err := tmpl.Execute(outFile, data); err != nil {
+			outFile.Close()
+			log.Fatalf("Failed to execute template for %s: %v", pageName, err)
+		}
+		outFile.Close()
+
+		fmt.Printf("✓ Successfully generated %s\n", pageName)
+	}
 }

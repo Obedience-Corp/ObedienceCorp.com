@@ -65,3 +65,18 @@ func LoadDispatchConfig(path string) (*DispatchConfig, error) {
 
 	return &config, nil
 }
+
+// LoadNavigationConfig loads the navigation menu configuration from a YAML file
+func LoadNavigationConfig(path string) (*NavigationConfig, error) {
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+
+	var wrapper NavigationConfigWrapper
+	if err := yaml.Unmarshal(data, &wrapper); err != nil {
+		return nil, err
+	}
+
+	return &wrapper.Navigation, nil
+}

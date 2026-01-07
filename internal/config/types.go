@@ -77,3 +77,20 @@ type Dispatch struct {
 	Excerpt      string `yaml:"excerpt"`
 	Date         string `yaml:"date"`
 }
+
+// NavigationConfigWrapper holds the root YAML structure for navigation
+type NavigationConfigWrapper struct {
+	Navigation NavigationConfig `yaml:"navigation"`
+}
+
+// NavigationConfig holds navigation menu configuration
+type NavigationConfig struct {
+	Items []NavItem `yaml:"items"`
+}
+
+// NavItem represents a single navigation menu item
+type NavItem struct {
+	Label string `yaml:"label"`
+	Path  string `yaml:"path"`
+	Type  string `yaml:"type"` // "internal" or "external"
+}

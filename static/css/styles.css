@@ -176,6 +176,135 @@ body {
   color: var(--accent-green);
 }
 
+/* Navigation Menu (Desktop) */
+.nav-menu {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-item {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.7rem, 1.2vw, 0.75rem);
+  color: var(--text-gray);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: var(--accent-green);
+}
+
+/* Hamburger Button (Mobile Only) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background: var(--text-gray);
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover .hamburger-line {
+  background: var(--accent-green);
+}
+
+/* Mobile Navigation Drawer */
+.nav-drawer-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.nav-drawer-overlay.active {
+  display: block;
+}
+
+.nav-drawer-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.nav-drawer-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px;
+  max-width: 80vw;
+  height: 100%;
+  background: var(--bg-primary);
+  border-left: 1px solid var(--border-primary);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.nav-drawer-overlay.active .nav-drawer-container {
+  transform: translateX(0);
+}
+
+.nav-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.nav-drawer-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.nav-drawer-close {
+  background: transparent;
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+  font-family: "IBM Plex Mono", monospace;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.nav-drawer-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.nav-drawer-item {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border-primary);
+  transition: color 0.2s ease;
+}
+
+.nav-drawer-item:hover {
+  color: var(--accent-green);
+}
+
 /* Respect motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -709,19 +838,27 @@ footer {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
+  }
+
+  .nav-menu {
+    display: none;
   }
 
   .nav-slogan {
     display: none; /* Hide slogan on mobile to save space */
   }
 
+  .hamburger {
+    display: flex;
+  }
+
   .nav-right {
-    width: 100%;
-    justify-content: space-between;
+    margin-left: auto;
   }
 
   .container {

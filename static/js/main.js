@@ -362,3 +362,51 @@ setTimeout(() => {
     });
   });
 })();
+
+// Navigation hamburger menu
+(function() {
+  const hamburger = document.getElementById('hamburger-toggle');
+  const drawer = document.getElementById('nav-drawer');
+  const closeBtn = document.getElementById('nav-drawer-close');
+  const scrim = drawer?.querySelector('.nav-drawer-scrim');
+
+  function openDrawer() {
+    if (drawer) {
+      drawer.classList.add('active');
+      document.body.classList.add('modal-open');
+    }
+  }
+
+  function closeDrawer() {
+    if (drawer) {
+      drawer.classList.remove('active');
+      const anyDrawerOpen = document.querySelector('.drawer-overlay.active');
+      const modalOpen = document.querySelector('.modal-overlay.active');
+      if (!anyDrawerOpen && !modalOpen) {
+        document.body.classList.remove('modal-open');
+      }
+    }
+  }
+
+  // Hamburger click
+  if (hamburger) {
+    hamburger.addEventListener('click', openDrawer);
+  }
+
+  // Close button click
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeDrawer);
+  }
+
+  // Scrim click
+  if (scrim) {
+    scrim.addEventListener('click', closeDrawer);
+  }
+
+  // ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+})();
