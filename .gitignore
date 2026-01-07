@@ -16,3 +16,6 @@ go.work
 *.swp
 *.swo
 *~
+
+# Dev server
+.dev.pid
