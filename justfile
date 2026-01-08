@@ -1,6 +1,9 @@
 # Obedience Corp static site generator
 
+set dotenv-load
+
 pid_file := ".dev.pid"
+port := env_var_or_default("PORT", "8734")
 
 # List available commands
 default:
@@ -10,9 +13,9 @@ default:
 build:
     @go run cmd/generate/main.go
 
-# Start local development server on port 8734 (foreground)
+# Start local development server (foreground)
 serve: build
-    @go run cmd/serve/main.go
+    @PORT={{port}} go run cmd/serve/main.go
 
 # Start dev server with file watcher in background
 dev: build stop
@@ -25,11 +28,11 @@ dev: build stop
     done) &
     WATCH_PID=$!
     # Start server in background
-    go run cmd/serve/main.go &
+    PORT={{port}} go run cmd/serve/main.go &
     SERVER_PID=$!
     # Save PIDs
     echo "$SERVER_PID $WATCH_PID" > {{pid_file}}
-    echo "Dev server running at http://localhost:8734"
+    echo "Dev server running at http://localhost:{{port}}"
     echo "File watcher active (content/, templates/, static/)"
     echo "Run 'just stop' to stop"
 
@@ -41,14 +44,14 @@ stop:
         kill $SERVER_PID $WATCH_PID 2>/dev/null || true
         rm -f {{pid_file}}
     fi
-    lsof -ti:8734 | xargs kill -9 2>/dev/null || true
+    lsof -ti:{{port}} | xargs kill -9 2>/dev/null || true
     echo "Server stopped"
 
 # Show dev server status
 status:
     @if [ -f {{pid_file}} ]; then \
-        echo "Dev server running at http://localhost:8734"; \
-        curl -s -o /dev/null -w "Health: %{http_code}\n" http://localhost:8734/ || echo "Health: not responding"; \
+        echo "Dev server running at http://localhost:{{port}}"; \
+        curl -s -o /dev/null -w "Health: %{http_code}\n" http://localhost:{{port}}/ || echo "Health: not responding"; \
     else \
         echo "Dev server not running"; \
     fi

@@ -9,7 +9,10 @@ import (
 )
 
 func main() {
-	port := "8734"
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8734"
+	}
 
 	// Serve static files from /static/
 	staticFS := http.FileServer(http.Dir("static"))

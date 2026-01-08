@@ -19,3 +19,4 @@ go.work
 
 # Dev server
 .dev.pid
+.env
