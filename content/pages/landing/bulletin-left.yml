@@ -1,0 +1,42 @@
+bulletins:
+  - title: "Multi-Agent Systems Are Eating Software Development"
+    source: "VentureBeat"
+    url: "https://venturebeat.com"
+    excerpt: "Enterprise AI teams are moving beyond single LLM calls to orchestrated agent workflows, with early adopters seeing 10x productivity gains."
+    date: "2025-01-10"
+
+  - title: "Why Agent Orchestration Will Define 2026"
+    source: "TechCrunch"
+    url: "https://techcrunch.com"
+    excerpt: "VCs are betting billions on agent infrastructure. The control layer for autonomous AI is the next platform shift."
+    date: "2025-01-08"
+
+  - title: "The Control Plane Problem in AI Systems"
+    source: "InfoQ"
+    url: "https://infoq.com"
+    excerpt: "As AI systems scale, coordinating hundreds of specialized agents becomes the bottleneck. Infrastructure tooling is years behind demand."
+    date: "2025-01-05"
+
+  - title: "Enterprise AI Adoption Hits Inflection Point"
+    source: "Forbes"
+    url: "https://forbes.com"
+    excerpt: "Fortune 500 companies are deploying agent teams internally. The race is on to build reliable orchestration frameworks."
+    date: "2024-12-28"
+
+  - title: "Gartner Predicts Agentic AI Will Disrupt 60% of Workflows by 2027"
+    source: "Gartner"
+    url: "https://gartner.com"
+    excerpt: "New research shows coordinated AI agents will replace traditional automation in most enterprise workflows within three years."
+    date: "2024-12-20"
+
+  - title: "Google DeepMind Announces Multi-Agent Research Initiative"
+    source: "MIT Technology Review"
+    url: "https://technologyreview.com"
+    excerpt: "Major AI lab pivots to agent coordination challenges, citing orchestration as the next frontier in artificial intelligence."
+    date: "2024-12-15"
+
+  - title: "Why Software 3.0 Is Agent-Native Architecture"
+    source: "a16z"
+    url: "https://a16z.com"
+    excerpt: "Andreessen Horowitz publishes thesis on agent-first development paradigm. Infrastructure layer is wide open for disruption."
+    date: "2024-12-10"
