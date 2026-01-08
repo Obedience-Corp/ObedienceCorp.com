@@ -47,7 +47,7 @@ stop:
 # Show dev server status
 status:
     @if [ -f {{pid_file}} ]; then \
-        echo "Dev server running (PIDs: $(cat {{pid_file}}))"; \
+        echo "Dev server running at http://localhost:8734"; \
         curl -s -o /dev/null -w "Health: %{http_code}\n" http://localhost:8734/ || echo "Health: not responding"; \
     else \
         echo "Dev server not running"; \
