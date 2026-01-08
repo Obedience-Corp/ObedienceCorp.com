@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Obedience Corp Site Config",
+  "type": "object",
+  "properties": {
+    "site": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "base_url": { "type": "string", "format": "uri" }
+      },
+      "required": ["name", "title"]
+    },
+    "hero": {
+      "type": "object",
+      "properties": {
+        "brand": { "type": "string" },
+        "descriptor": { "type": "string" },
+        "title": { "type": "string" },
+        "tagline_line1": { "type": "string" },
+        "tagline_line2": { "type": "string" },
+        "contact_email": { "type": "string", "format": "email" }
+      }
+    },
+    "branding": {
+      "type": "object",
+      "properties": {
+        "accent_color": { "type": "string" },
+        "background_color": { "type": "string" },
+        "text_color": { "type": "string" },
+        "text_gray": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

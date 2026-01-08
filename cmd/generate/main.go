@@ -11,6 +11,13 @@ import (
 	"obediencecorp.com/internal/markdown"
 )
 
+// PageDef defines a page to generate
+type PageDef struct {
+	Dir        string // Directory name under content/pages/
+	Output     string // Output filename (without .html)
+	ConfigFile string // Config filename within the directory
+}
+
 type EnrichedArticle struct {
 	ID           string
 	Title        string
@@ -46,62 +53,10 @@ func main() {
 		log.Fatalf("Failed to load site config: %v", err)
 	}
 
-	// Load articles configuration
-	articlesConfig, err := config.LoadArticlesConfig("content/articles.yml")
-	if err != nil {
-		log.Fatalf("Failed to load articles config: %v", err)
-	}
-
-	// Load bulletin board configuration (left side - external signals)
-	bulletinConfig, err := config.LoadBulletinConfig("content/bulletin-left.yml")
-	if err != nil {
-		log.Fatalf("Failed to load bulletin config: %v", err)
-	}
-
-	// Load dispatch configuration (right side - internal dispatches)
-	dispatchConfig, err := config.LoadDispatchConfig("content/bulletin-right.yml")
-	if err != nil {
-		log.Fatalf("Failed to load dispatch config: %v", err)
-	}
-
-	// Load navigation configuration
+	// Load navigation configuration (site-wide)
 	navConfig, err := config.LoadNavigationConfig("content/navigation.yml")
 	if err != nil {
 		log.Fatalf("Failed to load navigation config: %v", err)
-	}
-
-	// Load markdown content for each article
-	enrichedArticles := make([]EnrichedArticle, len(articlesConfig.Articles))
-	for i := range articlesConfig.Articles {
-		article := &articlesConfig.Articles[i]
-		contentPath := filepath.Join("content", "articles", article.ContentFile)
-
-		content, err := markdown.ProcessFile(contentPath)
-		if err != nil {
-			log.Fatalf("Failed to load article %s: %v", article.ID, err)
-		}
-
-		var modalContent template.HTML
-		hasModal := article.ModalContentFile != ""
-		if hasModal {
-			modalPath := filepath.Join("content", "articles", article.ModalContentFile)
-			modalContent, err = markdown.ProcessFile(modalPath)
-			if err != nil {
-				log.Printf("Warning: Failed to load modal content for %s: %v", article.ID, err)
-				hasModal = false
-			}
-		}
-
-		styleAttr := fmt.Sprintf("grid-column: %s; grid-row: %s;", article.GridColumn, article.GridRow)
-
-		enrichedArticles[i] = EnrichedArticle{
-			ID:           article.ID,
-			Title:        article.Title,
-			Style:        template.CSS(styleAttr),
-			Content:      content,
-			ModalContent: modalContent,
-			HasModal:     hasModal,
-		}
 	}
 
 	// Parse template
@@ -110,17 +65,75 @@ func main() {
 		log.Fatalf("Failed to parse template: %v", err)
 	}
 
-	// Pages to generate
-	pageConfigs := []string{"index", "guild", "fest"}
+	// Pages to generate: directory -> output file mapping
+	pages := []PageDef{
+		{Dir: "landing", Output: "index", ConfigFile: "index.yml"},
+		{Dir: "guild", Output: "guild", ConfigFile: "guild.yml"},
+		{Dir: "fest", Output: "fest", ConfigFile: "fest.yml"},
+	}
 
-	for _, pageName := range pageConfigs {
+	for _, page := range pages {
+		pageDir := filepath.Join("content", "pages", page.Dir)
+
 		// Load page-specific config
-		pageConfig, err := config.LoadPageConfig(filepath.Join("content", "pages", pageName+".yml"))
+		pageConfig, err := config.LoadPageConfig(filepath.Join(pageDir, page.ConfigFile))
 		if err != nil {
-			log.Fatalf("Failed to load page config for %s: %v", pageName, err)
+			log.Fatalf("Failed to load page config for %s: %v", page.Dir, err)
 		}
 
-		// Build page data with page-specific overrides
+		// Load page-specific articles
+		articlesConfig, err := config.LoadArticlesConfig(filepath.Join(pageDir, "articles.yml"))
+		if err != nil {
+			log.Fatalf("Failed to load articles config for %s: %v", page.Dir, err)
+		}
+
+		// Load page-specific bulletins (left drawer)
+		bulletinConfig, err := config.LoadBulletinConfig(filepath.Join(pageDir, "bulletin-left.yml"))
+		if err != nil {
+			log.Fatalf("Failed to load bulletin config for %s: %v", page.Dir, err)
+		}
+
+		// Load page-specific dispatches (right drawer)
+		dispatchConfig, err := config.LoadDispatchConfig(filepath.Join(pageDir, "bulletin-right.yml"))
+		if err != nil {
+			log.Fatalf("Failed to load dispatch config for %s: %v", page.Dir, err)
+		}
+
+		// Load markdown content for each article
+		enrichedArticles := make([]EnrichedArticle, len(articlesConfig.Articles))
+		for i := range articlesConfig.Articles {
+			article := &articlesConfig.Articles[i]
+			contentPath := filepath.Join(pageDir, "articles", article.ContentFile)
+
+			content, err := markdown.ProcessFile(contentPath)
+			if err != nil {
+				log.Fatalf("Failed to load article %s for page %s: %v", article.ID, page.Dir, err)
+			}
+
+			var modalContent template.HTML
+			hasModal := article.ModalContentFile != ""
+			if hasModal {
+				modalPath := filepath.Join(pageDir, "articles", article.ModalContentFile)
+				modalContent, err = markdown.ProcessFile(modalPath)
+				if err != nil {
+					log.Printf("Warning: Failed to load modal content for %s: %v", article.ID, err)
+					hasModal = false
+				}
+			}
+
+			styleAttr := fmt.Sprintf("grid-column: %s; grid-row: %s;", article.GridColumn, article.GridRow)
+
+			enrichedArticles[i] = EnrichedArticle{
+				ID:           article.ID,
+				Title:        article.Title,
+				Style:        template.CSS(styleAttr),
+				Content:      content,
+				ModalContent: modalContent,
+				HasModal:     hasModal,
+			}
+		}
+
+		// Build page data
 		data := PageData{
 			Page:       *pageConfig,
 			Site:       siteConfig.Site,
@@ -133,7 +146,7 @@ func main() {
 		}
 
 		// Create output file in dist/
-		outPath := filepath.Join("dist", pageName+".html")
+		outPath := filepath.Join("dist", page.Output+".html")
 		outFile, err := os.Create(outPath)
 		if err != nil {
 			log.Fatalf("Failed to create output file %s: %v", outPath, err)
@@ -141,13 +154,12 @@ func main() {
 
 		if err := tmpl.Execute(outFile, data); err != nil {
 			outFile.Close()
-			log.Fatalf("Failed to execute template for %s: %v", pageName, err)
+			log.Fatalf("Failed to execute template for %s: %v", page.Dir, err)
 		}
 		outFile.Close()
 
-		fmt.Printf("✓ Generated dist/%s.html\n", pageName)
+		fmt.Printf("✓ Generated dist/%s.html\n", page.Output)
 	}
 
-	// Copy static directory to dist
 	fmt.Println("✓ Build complete")
 }
