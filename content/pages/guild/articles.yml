@@ -1,8 +1,8 @@
 articles:
-  # Row 1: About (cols 1-2) - Hero in col 3 for product pages
+  # Row 1: About (full width intro for product page)
   - id: "about"
-    title: "About"
-    grid_column: "1 / 3"
+    title: "About Guild"
+    grid_column: "1 / 4"
     grid_row: "1"
     content_file: "about.md"
     modal_content_file: "about-full.md"
@@ -22,7 +22,7 @@ articles:
     content_file: "control-problem.md"
     modal_content_file: "control-problem-full.md"
 
-  # Row 3: PRODUCT section
+  # Row 3: PRODUCT section - three equal columns
   - id: "deterministic-workflows"
     title: "Collaborative Configuration"
     grid_column: "1"

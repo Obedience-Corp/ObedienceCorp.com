@@ -316,6 +316,58 @@ body {
   }
 }
 
+/* Page Header - Stark hacker newspaper aesthetic */
+.page-header {
+  padding: clamp(2rem, 4vh, 3rem) clamp(4vw, 6vw, 6rem);
+  padding-bottom: 0;
+  margin-top: clamp(50px, 8vh, 70px); /* Account for fixed navbar */
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.page-subtitle {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: var(--accent-green);
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.page-taglines {
+  margin-top: 1rem;
+}
+
+.page-taglines .tagline-line {
+  display: block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  line-height: 1.4;
+  min-height: 1.4em;
+}
+
+.page-mission {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.875rem, 1.6vw, 1rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-top: 1.5rem;
+  max-width: 600px;
+}
+
 /* Main content container - masonry grid */
 .container {
   flex: 1;
@@ -324,11 +376,10 @@ body {
   grid-auto-rows: minmax(min-content, auto);
   gap: clamp(1.5rem, 3vw, 2rem);
   row-gap: clamp(2rem, 3vh, 3rem);
-  padding: clamp(3rem, 8vh, 5rem) clamp(4vw, 6vw, 6rem)
+  padding: clamp(2rem, 4vh, 3rem) clamp(4vw, 6vw, 6rem)
     clamp(2rem, 4vh, 3rem) clamp(4vw, 6vw, 6rem);
   max-width: 1600px;
   margin: 0 auto;
-  margin-top: clamp(50px, 8vh, 70px); /* Account for fixed navbar */
 }
 
 /* Hero box - more prominent than article boxes */
@@ -837,10 +888,13 @@ footer {
   }
 
   /* Reset all explicit positions for tablet */
-  .hero-box,
   .article-box {
     grid-column: auto !important;
     grid-row: auto !important;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
   }
 }
 
@@ -869,15 +923,30 @@ footer {
     margin-left: auto;
   }
 
-  .container {
-    grid-template-columns: 1fr;
-    gap: clamp(1.25rem, 3vw, 1.5rem);
-    padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 6vw, 2rem);
+  .page-header {
+    padding: clamp(1.5rem, 4vh, 2rem) clamp(1.5rem, 6vw, 2rem);
     margin-top: 60px; /* Adjusted for mobile nav height */
   }
 
+  .page-title {
+    font-size: clamp(2rem, 10vw, 2.5rem);
+  }
+
+  .page-taglines .tagline-line {
+    font-size: 1rem;
+  }
+
+  .page-mission {
+    font-size: 0.875rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: clamp(1.25rem, 3vw, 1.5rem);
+    padding: clamp(1.5rem, 4vh, 2rem) clamp(1.5rem, 6vw, 2rem);
+  }
+
   /* Reset all explicit positions for mobile */
-  .hero-box,
   .article-box {
     grid-column: auto !important;
     grid-row: auto !important;
@@ -886,18 +955,6 @@ footer {
 
   .brand {
     font-size: 0.7rem;
-  }
-
-  .company-name {
-    font-size: 1.5rem;
-  }
-
-  .tagline {
-    font-size: 0.9375rem;
-  }
-
-  .contact-email {
-    font-size: 0.8125rem;
   }
 
   .article-title {

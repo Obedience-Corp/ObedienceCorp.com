@@ -68,13 +68,13 @@ function typeText(element, text, speed, callback) {
 
 // Start typing after brief delay - read taglines from data attributes
 setTimeout(() => {
-  const heroBox = document.querySelector(".hero-box");
+  const pageHeader = document.querySelector(".page-header");
   const line1 = document.getElementById("line1");
   const line2 = document.getElementById("line2");
 
-  const tagline1 = heroBox?.dataset.tagline1 || "AI that does what you want";
-  const tagline2 = heroBox?.dataset.tagline2 || "The way you want it done";
-  const shouldAnimate = heroBox?.dataset.animate === "true";
+  const tagline1 = pageHeader?.dataset.tagline1 || "AI that does what you want";
+  const tagline2 = pageHeader?.dataset.tagline2 || "The way you want it done";
+  const shouldAnimate = pageHeader?.dataset.animate === "true";
 
   if (shouldAnimate) {
     // Animated typing effect
