@@ -6,3 +6,5 @@ page:
   tagline_line1: "Festival methodology"
   tagline_line2: "AI-native project planning"
   mission: "Ship complex projects with autonomous AI agents"
+  layout: "hero-right"
+  animate_tagline: false

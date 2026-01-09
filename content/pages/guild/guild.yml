@@ -6,3 +6,6 @@ page:
   tagline_line1: "Agent orchestration"
   tagline_line2: "Infrastructure that scales"
   mission: "Build teams of AI agents that actually work together"
+  layout: "hero-right"
+  animate_tagline: false
+  subtitle: "1000 agents that obey"

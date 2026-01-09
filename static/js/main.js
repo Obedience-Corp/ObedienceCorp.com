@@ -74,22 +74,30 @@ setTimeout(() => {
 
   const tagline1 = heroBox?.dataset.tagline1 || "AI that does what you want";
   const tagline2 = heroBox?.dataset.tagline2 || "The way you want it done";
+  const shouldAnimate = heroBox?.dataset.animate === "true";
 
-  typeText(line1, tagline1, 40, () => {
-    const period1 = document.createElement("span");
-    period1.className = "period";
-    period1.textContent = ".";
-    line1.appendChild(period1);
+  if (shouldAnimate) {
+    // Animated typing effect
+    typeText(line1, tagline1, 40, () => {
+      const period1 = document.createElement("span");
+      period1.className = "period";
+      period1.textContent = ".";
+      line1.appendChild(period1);
 
-    setTimeout(() => {
-      typeText(line2, tagline2, 40, () => {
-        const period2 = document.createElement("span");
-        period2.className = "period";
-        period2.textContent = ".";
-        line2.appendChild(period2);
-      });
-    }, 150);
-  });
+      setTimeout(() => {
+        typeText(line2, tagline2, 40, () => {
+          const period2 = document.createElement("span");
+          period2.className = "period";
+          period2.textContent = ".";
+          line2.appendChild(period2);
+        });
+      }, 150);
+    });
+  } else {
+    // No animation - display immediately
+    line1.textContent = tagline1 + ".";
+    line2.textContent = tagline2 + ".";
+  }
 }, 300);
 
 // Modal functionality

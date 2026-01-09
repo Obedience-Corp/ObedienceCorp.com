@@ -102,11 +102,14 @@ type PageConfigWrapper struct {
 
 // PageConfig holds page-specific configuration
 type PageConfig struct {
-	Name         string `yaml:"name"`
-	Title        string `yaml:"title"`
-	Description  string `yaml:"description"`
-	HeroTitle    string `yaml:"hero_title"`
-	TaglineLine1 string `yaml:"tagline_line1"`
-	TaglineLine2 string `yaml:"tagline_line2"`
-	Mission      string `yaml:"mission"`
+	Name           string `yaml:"name"`
+	Title          string `yaml:"title"`
+	Description    string `yaml:"description"`
+	HeroTitle      string `yaml:"hero_title"`
+	TaglineLine1   string `yaml:"tagline_line1"`
+	TaglineLine2   string `yaml:"tagline_line2"`
+	Mission        string `yaml:"mission"`
+	Layout         string `yaml:"layout"`          // "hero-left" (default) or "hero-right"
+	AnimateTagline bool   `yaml:"animate_tagline"` // Enable typing animation
+	Subtitle       string `yaml:"subtitle"`        // Optional subtitle under hero title
 }

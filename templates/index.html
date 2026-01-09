@@ -88,7 +88,6 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
       <div class="nav-brand">{{.Hero.Brand}}</div>
-      <div class="nav-slogan">Building Guild: 1000 agents that obey.</div>
 
       <!-- Desktop Navigation Menu -->
       <div class="nav-menu">
@@ -109,7 +108,7 @@
           <span class="theme-icon-dark">◐</span>
           <span class="theme-icon-light" style="display: none;">◑</span>
         </button>
-        <a href="mailto:{{.Hero.ContactEmail}}" class="nav-contact">{{.Hero.ContactEmail}}</a>
+        <a href="mailto:{{.Hero.ContactEmail}}" class="nav-contact" title="{{.Hero.ContactEmail}}">&#9993;</a>
       </div>
     </nav>
 
@@ -131,10 +130,12 @@
 
     <div class="container">
       <!-- Hero Box (Command/Control) -->
-      <div class="hero-box" style="grid-column: 1 / 3; grid-row: 1;"
+      <div class="hero-box" style="grid-column: {{if eq .Page.Layout "hero-right"}}3{{else}}1 / 3{{end}}; grid-row: 1;"
            data-tagline1="{{.Page.TaglineLine1}}"
-           data-tagline2="{{.Page.TaglineLine2}}">
+           data-tagline2="{{.Page.TaglineLine2}}"
+           data-animate="{{.Page.AnimateTagline}}">
         <h1 class="company-name">{{.Page.HeroTitle}}</h1>
+        {{if .Page.Subtitle}}<div class="hero-subtitle">{{.Page.Subtitle}}</div>{{end}}
 
         <h2 class="tagline">
           <span class="tagline-line" id="line1"></span>

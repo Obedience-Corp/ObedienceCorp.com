@@ -371,6 +371,14 @@ body {
   line-height: 1.1;
 }
 
+.hero-subtitle {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: var(--accent-green);
+  margin-top: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
 .tagline {
   font-family: "IBM Plex Mono", monospace;
   font-size: clamp(0.9375rem, 1.8vw, 1.125rem);

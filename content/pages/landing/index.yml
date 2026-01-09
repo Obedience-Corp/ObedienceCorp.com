@@ -6,3 +6,5 @@ page:
   tagline_line1: "AI that does what you want"
   tagline_line2: "The way you want it done"
   mission: "Infrastructure for autonomous AI systems"
+  layout: "hero-left"
+  animate_tagline: true
