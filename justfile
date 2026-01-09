@@ -9,13 +9,19 @@ port := env_var_or_default("PORT", "8734")
 default:
     @just --list
 
+# Compile binaries to bin/
+compile:
+    @mkdir -p bin
+    @go build -o bin/generate ./cmd/generate
+    @go build -o bin/serve ./cmd/serve
+
 # Generate HTML files to dist/
-build:
-    @go run cmd/generate/main.go
+build: compile
+    @./bin/generate
 
 # Start local development server (foreground)
 serve: build
-    @PORT={{port}} go run cmd/serve/main.go
+    @PORT={{port}} ./bin/serve
 
 # Start dev server with file watcher in background
 dev: build stop
@@ -23,12 +29,12 @@ dev: build stop
     set -e
     # Start watcher in background
     (while true; do
-        find content templates static -type f -newer dist/index.html 2>/dev/null | grep -q . && go run cmd/generate/main.go
+        find content templates static -type f -newer dist/index.html 2>/dev/null | grep -q . && ./bin/generate
         sleep 1
     done) &
     WATCH_PID=$!
     # Start server in background
-    PORT={{port}} go run cmd/serve/main.go &
+    PORT={{port}} ./bin/serve &
     SERVER_PID=$!
     # Save PIDs
     echo "$SERVER_PID $WATCH_PID" > {{pid_file}}
@@ -67,7 +73,7 @@ vet:
 # Format and vet
 lint: fmt vet
 
-# Remove generated files
+# Remove generated files and binaries
 clean:
-    @echo "Cleaning generated files..."
-    @rm -rf dist/
+    @echo "Cleaning..."
+    @rm -rf dist/ bin/
