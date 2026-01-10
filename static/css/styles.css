@@ -318,8 +318,8 @@ body {
 
 /* Page Header - Stark hacker newspaper aesthetic */
 .page-header {
-  padding: clamp(2rem, 4vh, 3rem) clamp(4vw, 6vw, 6rem);
-  padding-bottom: 0;
+  width: 100%;
+  padding: clamp(3rem, 8vh, 5rem) clamp(4vw, 6vw, 6rem) 0 clamp(4vw, 6vw, 6rem);
   margin-top: clamp(50px, 8vh, 70px); /* Account for fixed navbar */
   max-width: 1600px;
   margin-left: auto;
