@@ -68,13 +68,16 @@ function typeText(element, text, speed, callback) {
 
 // Start typing after brief delay - read taglines from data attributes
 setTimeout(() => {
-  const pageHeader = document.querySelector(".page-header");
+  // Support both landing page (hero-box) and product pages (page-taglines)
+  const heroBox = document.querySelector(".hero-box");
+  const pageTaglines = document.querySelector(".page-taglines");
+  const dataSource = heroBox || pageTaglines;
   const line1 = document.getElementById("line1");
   const line2 = document.getElementById("line2");
 
-  const tagline1 = pageHeader?.dataset.tagline1 || "AI that does what you want";
-  const tagline2 = pageHeader?.dataset.tagline2 || "The way you want it done";
-  const shouldAnimate = pageHeader?.dataset.animate === "true";
+  const tagline1 = dataSource?.dataset.tagline1 || "AI that does what you want";
+  const tagline2 = dataSource?.dataset.tagline2 || "The way you want it done";
+  const shouldAnimate = dataSource?.dataset.animate === "true";
 
   if (shouldAnimate) {
     // Animated typing effect

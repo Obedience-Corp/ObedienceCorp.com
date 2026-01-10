@@ -128,14 +128,30 @@
       </div>
     </div>
 
-    <!-- Page Header -->
-    <header class="page-header"
-            data-tagline1="{{.Page.TaglineLine1}}"
-            data-tagline2="{{.Page.TaglineLine2}}"
-            data-animate="{{.Page.AnimateTagline}}">
+    {{if eq .Page.Name "index"}}
+    <!-- Landing Page: Hero in grid -->
+    <div class="container">
+      <div class="hero-box" style="grid-column: 1 / 3; grid-row: 1;"
+           data-tagline1="{{.Page.TaglineLine1}}"
+           data-tagline2="{{.Page.TaglineLine2}}"
+           data-animate="{{.Page.AnimateTagline}}">
+        <h1 class="company-name">{{.Page.HeroTitle}}</h1>
+        <h2 class="tagline">
+          <span class="tagline-line" id="line1"></span>
+          <span class="tagline-line" id="line2"></span>
+        </h2>
+        <div class="mission-statement">{{.Page.Mission}}</div>
+        <a href="mailto:{{.Hero.ContactEmail}}" class="contact-email">{{.Hero.ContactEmail}}</a>
+      </div>
+    {{else}}
+    <!-- Product Pages: Page header above grid -->
+    <header class="page-header">
       <h1 class="page-title">{{.Page.HeroTitle}}</h1>
       {{if .Page.Subtitle}}<div class="page-subtitle">{{.Page.Subtitle}}</div>{{end}}
-      <div class="page-taglines">
+      <div class="page-taglines"
+           data-tagline1="{{.Page.TaglineLine1}}"
+           data-tagline2="{{.Page.TaglineLine2}}"
+           data-animate="{{.Page.AnimateTagline}}">
         <span class="tagline-line" id="line1"></span>
         <span class="tagline-line" id="line2"></span>
       </div>
@@ -143,6 +159,7 @@
     </header>
 
     <div class="container">
+    {{end}}
       <!-- Article Boxes -->
       {{range .Articles}}
       <div class="article-box{{if .HasModal}} clickable{{end}}" style="{{.Style}}"{{if .HasModal}} data-modal-id="{{.ID}}"{{end}}>

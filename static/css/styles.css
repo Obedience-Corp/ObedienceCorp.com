@@ -376,10 +376,17 @@ body {
   grid-auto-rows: minmax(min-content, auto);
   gap: clamp(1.5rem, 3vw, 2rem);
   row-gap: clamp(2rem, 3vh, 3rem);
-  padding: clamp(2rem, 4vh, 3rem) clamp(4vw, 6vw, 6rem)
+  padding: clamp(3rem, 8vh, 5rem) clamp(4vw, 6vw, 6rem)
     clamp(2rem, 4vh, 3rem) clamp(4vw, 6vw, 6rem);
   max-width: 1600px;
   margin: 0 auto;
+  margin-top: clamp(50px, 8vh, 70px); /* Account for fixed navbar */
+}
+
+/* Product pages: page-header handles navbar offset, container doesn't need it */
+.page-header + .container {
+  margin-top: 0;
+  padding-top: clamp(2rem, 4vh, 3rem);
 }
 
 /* Hero box - more prominent than article boxes */
