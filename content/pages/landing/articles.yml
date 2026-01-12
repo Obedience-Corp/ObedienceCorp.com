@@ -1,59 +1,21 @@
 articles:
-  # Row 1: About (col 3) - Hero now in page header
-  - id: "about"
-    title: "About"
-    grid_column: "3"
+  # Problem Statement - spans full width
+  - id: "problem-statement"
+    title: "The Problem"
+    grid_column: "1 / 3"
     grid_row: "1"
-    content_file: "about.md"
-    modal_content_file: "about-full.md"
+    content_file: "problem-statement.md"
 
-  # Row 2: THESIS section
-  - id: "control-not-conversation"
-    title: "Breaking the Linear Constraint"
-    grid_column: "1 / 3"
-    grid_row: "2"
-    content_file: "control-not-conversation.md"
-    modal_content_file: "control-not-conversation-full.md"
-
-  - id: "control-problem"
-    title: "Infrastructure for Autonomous Companies"
-    grid_column: "3"
-    grid_row: "2"
-    content_file: "control-problem.md"
-    modal_content_file: "control-problem-full.md"
-
-  # Row 3: PRODUCT section
-  - id: "deterministic-workflows"
-    title: "Collaborative Configuration"
+  # Guild Product Card
+  - id: "guild-card"
+    title: "GUILD"
     grid_column: "1"
-    grid_row: "3"
-    content_file: "deterministic-workflows.md"
-    modal_content_file: "deterministic-workflows-full.md"
+    grid_row: "2"
+    content_file: "guild-card.md"
 
-  - id: "structured-memory"
-    title: "Provider Agnostic"
+  # Fest Product Card
+  - id: "fest-card"
+    title: "FEST"
     grid_column: "2"
-    grid_row: "3"
-    content_file: "structured-memory.md"
-    modal_content_file: "structured-memory-full.md"
-
-  - id: "agent-specialization"
-    title: "Domain-Specific Autonomy"
-    grid_column: "3"
-    grid_row: "3"
-    content_file: "agent-specialization.md"
-    modal_content_file: "agent-specialization-full.md"
-
-  # Row 4: PROOF section
-  - id: "production-grade-systems"
-    title: "Tested with Real Autonomous Workflows"
-    grid_column: "1 / 3"
-    grid_row: "4"
-    content_file: "production-grade-systems.md"
-    modal_content_file: "production-grade-systems-full.md"
-
-  - id: "contact"
-    title: "Contact"
-    grid_column: "3"
-    grid_row: "4"
-    content_file: "contact.md"
+    grid_row: "2"
+    content_file: "fest-card.md"
