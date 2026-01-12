@@ -1,5 +1,5 @@
-Guild provides infrastructure for collaborative configuration and autonomous execution at scale.
+Every task is marked High, Medium, or Low autonomy. High: AI completes independently. Medium: may need clarification. Low: expects collaboration.
 
-Work WITH agents to define workflows. Configure teams to make decisions like you would. Offload entire categories of judgment to autonomous teams.
+AI knows when to proceed and when to ask.
 
-Built for Fortune 500-scale operations controlled by one person.
+**Autonomy without chaos.**

@@ -1,94 +1,173 @@
-# Domain-Specific Autonomous Workflows
+# Context Preservation
 
-Built for domain experts who want to extend their expertise to Fortune 500-scale operations. Not generic task automation. Infrastructure for fully autonomous execution of your specific industry workflows.
+Festival Methodology maintains context across sessions through structured documentation.
 
-## Your Domain, Autonomous at Scale
+## The Problem
 
-**Domain Expertise Configuration**
+AI conversations lose context:
+- Session ends, context gone
+- Tomorrow starts from scratch
+- Decisions forgotten
+- Lessons lost
+- Progress unclear
 
-- Configure teams with your industry-specific knowledge
-- Embed domain judgment in decision criteria
-- Set quality standards specific to your field
-- Define workflows that match your processes
+Multi-day projects become impossible.
 
-**Specialized Decision-Making**
+## The Solution
 
-- Agents make domain-specific judgments
-- Configured criteria reflect industry nuances
-- Quality decisions in specialized contexts
-- Autonomous execution of niche processes
+### CONTEXT.md
 
-## Collaborative Setup, Autonomous Execution
+Every festival has a CONTEXT.md file:
 
-**Work WITH Agents to Configure**
+```markdown
+# Context
 
-- Collaborate on domain-specific workflows
-- Define how specialized work should be done
-- Set criteria for domain-specific decisions
-- Configure quality gates specific to your field
+## Key Decisions
 
-**Autonomous Execution of Configured Workflows**
+### 2024-01-15: Auth Strategy
+**Decision:** JWT with refresh tokens
+**Rationale:** Stateless, scalable, standard practice
+**Alternatives Rejected:** Sessions (state management), API keys (less secure)
 
-- Teams operate with domain expertise
-- Complex industry-specific decisions made autonomously
-- Quality maintained through configured standards
-- Specialized processes run 24/7 without oversight
+### 2024-01-14: Database Choice
+**Decision:** PostgreSQL
+**Rationale:** Strong typing, JSON support, team familiarity
+**Trade-offs:** More setup than SQLite
 
-## Built for Complex Domains
+## Session Notes
 
-**Multi-Project Workspace Management**
+### Session: 2024-01-15 14:30
+**Completed:**
+- Auth service implementation
+- Login/logout endpoints
+- Token refresh flow
 
-- Organize related projects into campaigns
-- Maintain consistent configuration across efforts
-- Share domain knowledge between projects
-- Isolate unrelated work appropriately
+**In Progress:**
+- Permission system (blocked on decision)
 
-**Automated Domain-Specific Scaffolding**
+**Next:**
+- Resolve permission model question
+- Implement role-based access
 
-- Project setup configured for your industry
-- Consistent structure across domain efforts
-- Pre-configured teams for common workflows
-- Extensible templates for specialized needs
+### Session: 2024-01-14 09:00
+**Completed:**
+- Database schema design
+- Migration setup
+- User model
 
-**Codebase and Knowledge Analysis**
+## Open Questions
 
-- Analyze domain-specific repositories
-- Extract relevant context for specialized tasks
-- Build semantic indices of technical knowledge
-- Maintain understanding of complex systems
+- [ ] Permission model: RBAC vs ABAC?
+- [ ] Token expiry: 15min or 1hr?
 
-**Persistent Domain Memory**
+## Lessons Learned
 
-- Context accumulates across months
-- Domain-specific decisions inform future work
-- Specialized knowledge builds over time
-- Teams learn from domain-specific experience
+- JWT validation should happen in middleware, not handlers
+- Use database transactions for multi-step operations
+```
 
-## Task Decomposition for Complex Work
+## What Gets Captured
 
-**Hierarchical Breakdown**
+**Decisions**
+- What was decided
+- Why it was decided
+- What alternatives were considered
+- Trade-offs accepted
 
-- Decompose complex domain projects
-- Assign specialized teams to appropriate work
-- Track dependencies in complex workflows
-- Monitor progress at multiple levels
+**Progress**
+- What was completed this session
+- What's in progress
+- What's blocked and why
+- What comes next
 
-**Domain-Specific Kanban**
+**Questions**
+- Open questions for human input
+- Unresolved ambiguities
+- Decisions pending approval
 
-- Visualize specialized work across projects
-- Track domain-specific workflow stages
-- Identify bottlenecks in complex processes
-- Rebalance specialized workloads
+**Lessons**
+- What worked well
+- What to avoid
+- Patterns discovered
+- Gotchas encountered
+
+## How It's Used
+
+**Session Start**
+
+AI reads CONTEXT.md to understand:
+- Where we are in the project
+- What decisions have been made
+- What's currently in progress
+- What questions need answers
+
+**During Work**
+
+AI updates CONTEXT.md when:
+- Making significant decisions
+- Completing major work
+- Encountering blockers
+- Learning something important
+
+**Session End**
+
+AI writes handoff notes:
+- What was accomplished
+- What's in progress
+- What's next
+- Any blockers
+
+## Multi-Day Continuity
+
+Day 1: Implement auth service
+```
+Session notes: Auth service complete. Login works.
+Blocked on permission model decision.
+```
+
+Day 2: Continue with context
+```
+Reading CONTEXT.md...
+- Auth service done ✓
+- Blocked on permission model
+- Need to resolve RBAC vs ABAC question
+
+Asking human for decision...
+```
+
+Work continues seamlessly. No context lost.
+
+## The fest CLI
+
+```bash
+# View current context
+fest context
+
+# Add a decision
+fest context add-decision "Auth Strategy" "JWT with refresh"
+
+# Add session notes
+fest context session-end
+```
+
+## Why It Matters
+
+**Without Context Preservation**
+- Every session starts over
+- Decisions repeated
+- Mistakes repeated
+- Progress slow
+
+**With Context Preservation**
+- Sessions build on each other
+- Decisions inform future work
+- Lessons compound
+- Progress accelerates
 
 ## The Result
 
-Infrastructure that lets domain experts:
+AI can work on projects spanning days or weeks.
 
-- Configure teams with specialized knowledge
-- Offload complex domain-specific decisions
-- Operate at Fortune 500 scale in niche fields
-- Maintain quality in specialized contexts
+Context accumulates. Decisions inform. Lessons compound.
 
-Not generic automation. Fully autonomous execution of your specific domain expertise at scale.
-
-Your knowledge. Your workflows. Your standards. Fortune 500 scale.
+Long-running autonomous work becomes possible.

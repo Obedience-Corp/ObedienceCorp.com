@@ -1,5 +1,5 @@
-Building infrastructure for autonomous companies. Infrastructure for AI that does what you want, the way you want it done.
+Goal-oriented project management designed for AI execution. Break complex projects into Phases, Sequences, and Tasks. Each level has clear success criteria.
 
-Collaborative configuration systems. Decision offloading infrastructure. Autonomous execution at Fortune 500 scale.
+AI agents execute tasks autonomously. Humans guide the goals.
 
-**Building Guild: 1000 agents that obey.**
+**Plan for AI. Execute with AI.**

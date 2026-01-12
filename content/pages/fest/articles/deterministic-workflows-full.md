@@ -1,83 +1,148 @@
-# Collaborative Configuration, Autonomous Execution
+# Autonomy Levels
 
-Infrastructure for building autonomous companies. Not task automation. Complete systems for collaborative configuration and autonomous execution at Fortune 500 scale.
+Every task in Festival Methodology has an autonomy level that guides AI execution.
 
-## Collaborative Configuration
+## The Three Levels
 
-**Define How Work Should Be Done**
+### High Autonomy
 
-- Collaborate with agents to establish workflows
-- Set decision criteria and quality standards
-- Configure team structures and reporting chains
-- Establish escalation paths for edge cases
+AI completes the task independently.
 
-**Configure Star Employee Behavior**
+```markdown
+> **Autonomy Level**: high
 
-- Define how agents should make decisions
-- Set priorities and trade-off criteria
-- Configure judgment calls for common scenarios
-- Establish quality gates and validation rules
+## Objective
+Write unit tests for the user service.
+```
 
-**Build Organizational Structure**
+**Characteristics:**
+- Clear, unambiguous requirements
+- No open design decisions
+- Standard patterns apply
+- Success criteria is objective
 
-- Create teams with clear responsibilities
-- Define departments and their relationships
-- Set coordination protocols between groups
-- Configure information flow and reporting
+**AI Behavior:**
+- Executes without asking questions
+- Makes standard implementation choices
+- Completes and moves to next task
+- Reports results
 
-## Autonomous Execution
+### Medium Autonomy
 
-**Decision Offloading**
+AI may need clarification on edge cases.
 
-- Agents make quality decisions without approval loops
-- Configured criteria guide judgment calls
-- Escalation only when truly outside parameters
-- Your decision-making capacity extends to 24/7 operation
+```markdown
+> **Autonomy Level**: medium
 
-**Persistent Operations**
+## Objective
+Implement error handling strategy for API endpoints.
+```
 
-- Teams work continuously without oversight
-- Progress happens across dozens of parallel efforts
-- Context maintains across days, weeks, months
-- Autonomous problem-solving within configured bounds
+**Characteristics:**
+- Some judgment calls required
+- Edge cases may need discussion
+- Multiple valid approaches exist
+- Requirements are mostly clear
 
-**Quality Without Micromanagement**
+**AI Behavior:**
+- Proceeds with reasonable defaults
+- Notes decisions for review
+- Asks about ambiguous cases
+- Completes with documented assumptions
 
-- Standards enforced through configuration, not review
-- Validation happens automatically at defined gates
-- Deviations trigger escalation, not silent failure
-- Quality maintained at scale without constant supervision
+### Low Autonomy
 
-## Built for Scale
+Human collaboration expected.
 
-**Hierarchical Teams**
+```markdown
+> **Autonomy Level**: low
 
-- Organize agents into teams, departments, divisions
-- Clear reporting relationships and responsibilities
-- Information flows through configured channels
-- Coordination happens automatically
+## Objective
+Design the user permission system architecture.
+```
 
-**Provider Flexibility**
+**Characteristics:**
+- Significant design decisions
+- Business logic interpretation needed
+- Multiple stakeholders affected
+- Long-term implications
 
-- Works with any LLM provider
-- Mix models within single workflows
-- Optimize cost and performance dynamically
-- No vendor lock-in or proprietary constraints
+**AI Behavior:**
+- Proposes options instead of deciding
+- Requests human input at decision points
+- Documents trade-offs clearly
+- Waits for approval before proceeding
 
-**Domain-Specific Configuration**
+## Why Autonomy Levels Matter
 
-- Configure for your specific industry and workflows
-- Domain knowledge embedded in team configuration
-- Specialized judgment for niche requirements
-- Autonomous execution of domain-specific processes
+**For AI Agents**
+
+Without autonomy levels:
+- AI doesn't know when to ask
+- Over-asks (annoying, slow)
+- Under-asks (makes wrong decisions)
+- Inconsistent behavior
+
+With autonomy levels:
+- Clear expectations per task
+- Appropriate independence
+- Right level of human involvement
+- Predictable execution
+
+**For Humans**
+
+Without autonomy levels:
+- Constant interruptions
+- Or silent wrong decisions
+- No control over involvement
+- Surprise at outcomes
+
+With autonomy levels:
+- Know which tasks need attention
+- Trust AI on high-autonomy work
+- Focus on important decisions
+- Predictable oversight burden
+
+## Setting Autonomy Levels
+
+**High Autonomy Tasks:**
+- Unit tests
+- Code formatting
+- Documentation generation
+- Mechanical refactoring
+- Standard CRUD operations
+
+**Medium Autonomy Tasks:**
+- Feature implementation
+- Bug fixes
+- API design
+- Performance optimization
+- Integration work
+
+**Low Autonomy Tasks:**
+- Architecture decisions
+- Security design
+- Breaking changes
+- User-facing copy
+- Business logic interpretation
+
+## In Practice
+
+```
+fest status
+
+Phase 002_IMPLEMENTATION
+├── Sequence 01: auth_service
+│   ├── 01_create_service (high) ✓
+│   ├── 02_add_endpoints (high) ✓
+│   ├── 03_error_handling (medium) - in progress
+│   └── 04_permission_design (low) - pending review
+```
+
+High autonomy tasks complete fast. Low autonomy tasks wait for human input.
 
 ## The Result
 
-Infrastructure that lets one person:
+AI knows how to behave. Humans know what to expect.
 
-- Configure autonomous teams
-- Offload decision-making to agents
-- Operate at Fortune 500 scale
-- Maintain quality without micromanagement
-
-Not faster task completion. Autonomous execution of entire business functions.
+Autonomy without uncertainty. Control without micromanagement.

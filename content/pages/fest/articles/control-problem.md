@@ -1,5 +1,5 @@
-Models are commoditized. Access is universal. The defensible value is infrastructure for autonomous execution at scale.
+Festivals contain Phases. Phases contain Sequences. Sequences contain Tasks.
 
-Building autonomous companies requires: collaborative configuration systems, decision offloading infrastructure, and persistent organizational memory.
+Each level has a goal document defining success. Work flows from high-level objectives to concrete executable steps.
 
-Obedience Corp builds this infrastructure.
+**Hierarchy that AI can navigate.**

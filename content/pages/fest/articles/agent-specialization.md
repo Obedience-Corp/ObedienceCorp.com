@@ -1,5 +1,5 @@
-Domain-specific workflows. Fully autonomous operations configured for your specific industry and processes.
+CONTEXT.md captures decisions, rationale, and lessons learned. Session handoff notes ensure continuity.
 
-Collaborative configuration of specialized teams. Decision offloading for complex domain judgment. Autonomous execution of niche business functions.
+Multi-day autonomous work without losing context. Pick up exactly where you left off.
 
-Infrastructure that extends from your domain expertise to Fortune 500-scale operations.
+**Memory that persists.**

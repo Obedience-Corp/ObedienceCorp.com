@@ -1,80 +1,112 @@
-# Breaking the Linear Constraint
+# Steps, Not Time
 
-Current AI tools require constant human decisions. Chat interfaces, manual task assignment, continuous oversight. Scaling agents means scaling your workload.
+Traditional project management assumes human execution. Festival Methodology assumes AI execution.
 
-## The Micromanagement Trap
+## The Time Problem
 
-**Chat Interfaces**
+**Traditional PM**
 
-- Every task needs explicit human instruction
-- Agents wait for your next command
-- Context resets between conversations
-- You remain the bottleneck
+- "This feature will take 2 weeks"
+- "Sprint capacity is 40 story points"
+- "Estimate in hours, track in days"
+- "Review in standup tomorrow"
 
-**Manual Coordination**
+Time-based planning assumes predictable human velocity.
 
-- You decide what each agent should do
-- You route work between specialized tools
-- You monitor progress manually
-- Scaling requires more of your time
+**AI Reality**
 
-**Continuous Oversight**
+- AI executes 30-100x faster than humans
+- Speed varies by task complexity, not skill
+- Work happens 24/7 when configured
+- "2 weeks" might be "4 hours"
 
-- Agents can't make decisions without you
-- Progress stops when you're unavailable
-- Quality depends on constant review
-- Your capacity limits the entire system
+Time estimates become meaningless.
 
-## The Linear Constraint
+## The Step Alternative
 
-**10 agents = 10× your oversight burden**
-**100 agents = 100× your micromanagement**
+Festival Methodology plans in **logical steps toward goals**, not time estimates.
 
-Each agent waits for your decisions. Your capacity becomes the hard ceiling.
+**Festival Planning**
 
-This isn't assistance. It's amplified micromanagement.
+```
+Phase: Build Authentication
+├── Sequence: Research existing auth
+│   ├── Task: Analyze current codebase
+│   ├── Task: Document patterns used
+│   └── Task: Identify integration points
+├── Sequence: Implement login flow
+│   ├── Task: Create auth service
+│   ├── Task: Build login endpoint
+│   ├── Task: Add session management
+│   └── Quality gates (test, review)
+└── Sequence: Deploy and validate
+    ├── Task: Integration tests
+    └── Task: Documentation
+```
 
-## What's Missing
+Steps are concrete. Order is logical. No time attached.
 
-Infrastructure for **collaborative configuration** plus **autonomous execution**:
+## Why Steps Work Better
 
-1. Work WITH agents to define how work should be done
-2. Configure teams to make decisions like you would
-3. Agents operate autonomously based on that configuration
-4. Your decision-making capacity extends to Fortune 500 scale
+**Clarity**
 
-Not faster task completion. Offloading entire categories of decisions to configured autonomous teams.
+- Each step has clear success criteria
+- No ambiguity about "80% done"
+- Either complete or not
 
-## Breaking the Constraint
+**Progress Tracking**
 
-Guild enables **nonlinear scaling**:
+- Count completed steps
+- Calculate percentage
+- Know exactly where you are
 
-**Configure Once**
+**AI Compatibility**
 
-- Define how work should be done
-- Set decision criteria and priorities
-- Establish quality standards
-- Configure team structures and workflows
+- AI can execute clear steps
+- No interpretation of vague estimates
+- Concrete deliverables per task
 
-**Execute Autonomously**
+**Human Oversight**
 
-- Agents make decisions based on that configuration
-- Teams operate without waiting for input
-- Work continues 24/7 without oversight
-- Quality maintained through those standards
+- Review at step boundaries
+- Quality gates at sequence ends
+- Control without micromanagement
 
-**Scale Beyond Human Limits**
+## The Velocity Question
 
-- 100 agents don't require 100× your time
-- Autonomous teams extend your decision-making capacity
-- One person commands Fortune 500-scale operations
-- Your judgment replicated, not your hours
+"How do I know when it will be done?"
 
-## The Result
+**With Festival Methodology:**
 
-From: "AI assistant that waits for commands"
-To: "Autonomous teams that execute configured strategy"
+1. Count total steps
+2. Track completion rate
+3. Project remaining time
 
-Configure teams to make decisions like you would. Let them work autonomously. Collaborate on strategy, not tasks.
+AI velocity becomes observable through step completion, not estimated through guesswork.
 
-Nonlinear scaling through collaborative configuration and autonomous execution.
+## Example
+
+**Traditional:**
+> "Authentication feature - Est: 2 weeks"
+
+**Festival:**
+```
+Phase: Authentication (12 tasks)
+├── Research (3 tasks) ✓
+├── Implementation (6 tasks) - 4 complete
+└── Deployment (3 tasks) - pending
+
+Progress: 7/12 tasks (58%)
+Current: Implementing session management
+```
+
+Which tells you more about actual status?
+
+## The Shift
+
+Stop asking: "How long will this take?"
+Start asking: "What steps are needed?"
+
+AI doesn't need deadlines. It needs clear steps to execute.
+
+Define the work. Let AI do it. Track by completion.

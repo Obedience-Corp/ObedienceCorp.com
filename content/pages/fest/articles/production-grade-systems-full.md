@@ -1,77 +1,202 @@
-# Tested with Real Autonomous Workflows
+# The fest CLI
 
-Guild development is driven by real requirements for autonomous company operations. Not academic research. Not simplified demos. Infrastructure built to solve actual challenges in collaborative configuration and autonomous execution.
+Command-line tool for creating and managing festivals.
 
-## Real-World Testing
+## Core Commands
 
-**Domain-Specific Autonomous Operations**
+### fest create
 
-- Tested with complex industry-specific workflows
-- Autonomous decision-making in specialized domains
-- Extended operations across multiple business functions
-- Real decision offloading, not task automation
+Create festival structure:
 
-**Complex Decision Scenarios**
+```bash
+# Create a new festival
+fest create festival --name "auth-system"
 
-- Agents making judgment calls in ambiguous situations
-- Quality decisions without human approval loops
-- Escalation patterns tested under real conditions
-- Configured criteria validated against actual outcomes
+# Create a phase
+fest create phase --name "IMPLEMENTATION" --type implementation
 
-**Extended Autonomous Execution**
+# Create a sequence
+fest create sequence --name "build_login"
 
-- Long-running operations spanning weeks
-- Autonomous teams operating without constant oversight
-- Context maintained across extended timeframes
-- State consistency across interruptions and failures
+# Create a task
+fest create task --name "implement_endpoint" --autonomy high
+```
 
-## Built for Operational Reality
+### fest status
 
-**Collaborative Configuration at Scale**
+View current progress:
 
-- Working WITH agents to configure complex workflows
-- Iterative refinement of decision criteria
-- Team structure evolution based on actual needs
-- Real configuration complexity, not toy examples
+```bash
+fest status
 
-**Decision Offloading Validation**
+STATUS
+──────
+Festival: auth-system
+Progress: 62%
+Phases: 3/5 complete
+Sequences: 7/12 complete
+Tasks: 18/29 complete
 
-- Testing which decisions can be offloaded safely
-- Refining escalation criteria through real usage
-- Quality maintained through configured standards
-- Autonomous judgment validated in production contexts
+Current Phase: 002_IMPLEMENTATION
+Current Sequence: 01_build_login
+Current Task: 03_add_validation
+```
 
-**Provider Reliability Under Real Conditions**
+### fest next
 
-- Handling actual rate limits and service degradation
-- Failover tested with real provider outages
-- Cost optimization validated with actual usage patterns
-- Multi-provider operations tested at scale
+Get the next work item:
 
-## What This Means
+```bash
+fest next
 
-Guild isn't vaporware. Features exist because they were necessary to solve real problems:
+NEXT TASK
+─────────
+Task: 03_add_validation
+Path: 002_IMPLEMENTATION/01_build_login/03_add_validation.md
+Sequence: 01_build_login
+Phase: 002_IMPLEMENTATION
+Autonomy: high
+```
 
-**Collaborative Configuration**
+### fest validate
 
-- Built to handle actual domain complexity
-- Refined through real challenges
-- Validated with complex workflows
+Check festival structure:
 
-**Decision Offloading**
+```bash
+fest validate
 
-- Tested with real judgment scenarios
-- Proven to maintain quality at scale
-- Validated across multiple domains
+✓ Festival structure valid
+✓ All phases have goals
+✓ All sequences have goals
+✓ All tasks have required fields
+✓ Numbering is sequential
+```
 
-**Autonomous Execution Capabilities**
+### fest progress
 
-- Demonstrated in extended operations
-- Proven reliable under real conditions
-- Validated across diverse workflows
+Track task completion:
 
-## Why Guild Exists
+```bash
+# Mark task complete
+fest progress --path 002/01/03_add_validation.md --complete
 
-Simpler tools failed under real conditions.
+# View progress history
+fest progress --history
+```
 
-We needed infrastructure that actually works for autonomous operations. So we built it.
+### fest go
+
+Navigate to locations:
+
+```bash
+# Go to a phase
+fest go 002
+
+# Go to a sequence
+fest go 002/01
+
+# Go to festival root
+fest go
+```
+
+### fest understand
+
+Learn the methodology:
+
+```bash
+# Get overview
+fest understand
+
+# Learn about phases
+fest understand phases
+
+# Learn about tasks
+fest understand tasks
+```
+
+## Workflow Example
+
+```bash
+# 1. Create festival
+fest create festival --name "new-feature"
+
+# 2. Add phases
+fest create phase --name "RESEARCH" --type research
+fest create phase --name "IMPLEMENTATION" --type implementation
+
+# 3. Add sequences to implementation
+fest go 002
+fest create sequence --name "build_core"
+fest create sequence --name "add_tests"
+
+# 4. Add tasks
+fest go 002/01
+fest create task --name "implement" --autonomy high
+fest create task --name "test" --autonomy high
+fest create task --name "review" --autonomy medium
+
+# 5. Apply quality gates
+fest gates apply 002/01
+
+# 6. Start working
+fest next
+# ... do the work ...
+fest progress --complete
+
+fest next
+# ... continue ...
+```
+
+## JSON Output
+
+All commands support `--json` for automation:
+
+```bash
+fest status --json
+```
+
+```json
+{
+  "festival": "auth-system",
+  "progress": 0.62,
+  "phases": {"complete": 3, "total": 5},
+  "sequences": {"complete": 7, "total": 12},
+  "tasks": {"complete": 18, "total": 29}
+}
+```
+
+Integrate with scripts, CI/CD, or other tools.
+
+## Key Features
+
+**Structure Creation**
+- Festivals, phases, sequences, tasks
+- Proper numbering automatic
+- Goal documents generated
+- Templates applied
+
+**Progress Tracking**
+- Task completion
+- Percentage calculation
+- History logging
+- Status at any level
+
+**Validation**
+- Structure correctness
+- Required fields present
+- Numbering sequential
+- Goals defined
+
+**Navigation**
+- Go to any location
+- Find next task
+- Context-aware paths
+- Relative and absolute
+
+## The Result
+
+Festival Methodology from the command line.
+
+Create structure. Track progress. Validate correctness. Navigate efficiently.
+
+AI agents use fest to manage their work. So can you.

@@ -1,5 +1,5 @@
-Current AI tools require constant human decisions. Chat interfaces. Manual task assignment. Continuous oversight. Scaling agents means scaling your workload.
+Traditional PM estimates time. Festival plans steps. AI executes 30-100x faster than humans. Time estimates are obsolete.
 
-Guild breaks the linear constraint. Configure how work should be done once. Agents execute autonomously based on that configuration.
+Define what needs to happen, not when. Break work into logical progression. Let AI move through it.
 
-Nonlinear scaling through collaborative configuration and autonomous execution.
+**Steps to completion. Not days to deadline.**

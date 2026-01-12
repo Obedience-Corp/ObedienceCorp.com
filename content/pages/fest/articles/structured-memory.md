@@ -1,5 +1,5 @@
-Works with any LLM provider. Anthropic, OpenAI, Ollama, DeepSeek, emerging providers.
+Every implementation sequence ends with: testing, code review, results iteration.
 
-No vendor lock-in. Optimize cost and performance across changing conditions. Your autonomous infrastructure outlives any individual provider.
+No shortcuts. Quality is enforced by structure. Tasks don't complete until gates pass.
 
-Provider landscape shifts. Your configured teams remain stable.
+**Built-in quality assurance.**

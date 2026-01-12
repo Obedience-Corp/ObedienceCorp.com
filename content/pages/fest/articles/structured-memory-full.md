@@ -1,101 +1,163 @@
-# Provider Agnostic Infrastructure
+# Quality Gates
 
-Guild works with any LLM provider. Your autonomous teams don't depend on any single vendor. Infrastructure built to outlive provider volatility.
+Every implementation sequence in Festival Methodology ends with mandatory quality gates.
 
-## No Vendor Lock-In
+## The Standard Gates
 
-The AI provider market changes rapidly:
+```
+01_build_feature/
+├── 01_implement.md          # Build it
+├── 02_testing_and_verify.md # Test it
+├── 03_code_review.md        # Review it
+├── 04_review_results_iterate.md  # Fix issues
+└── 05_commit.md             # Commit it
+```
 
-- Pricing shifts unpredictably
-- New providers enter constantly
-- Model capabilities evolve continuously
-- Terms of service change without warning
+**Testing and Verification**
+- Run test suite
+- Verify requirements met
+- Check edge cases
+- Document any failures
 
-Organizations coupled to specific providers face continuous refactoring costs and negotiation weakness.
+**Code Review**
+- Self-review for quality
+- Check style guidelines
+- Verify best practices
+- Note concerns
 
-Guild decouples autonomous execution from provider implementation.
+**Review Results & Iterate**
+- Address test failures
+- Fix review issues
+- Iterate until passing
+- Document changes
 
-## Provider-Agnostic Architecture
+**Commit**
+- Only after gates pass
+- With meaningful message
+- Changes are atomic
+- Ready for next sequence
 
-**Unified Interface**
+## Why Gates Matter
 
-- Single configuration system regardless of backend
-- Consistent behavior across different providers
-- Provider-specific features through standardized abstractions
-- Switch providers without reconfiguring workflows
+**Without Gates**
 
-**Multi-Provider Operations**
+- AI implements features but skips testing
+- Quality issues compound
+- Problems discovered late
+- Technical debt accumulates
 
-- Run different teams on different providers
-- Optimize cost by routing to cheaper models
-- Optimize performance with specialized models
-- Maintain fallback providers for reliability
+**With Gates**
 
-**Dynamic Provider Selection**
+- Every feature is tested
+- Issues caught early
+- Quality maintained
+- Debt prevented
 
-- Route based on current pricing and availability
-- Automatically fail over to backup providers
-- Test new providers without disrupting operations
-- Switch seamlessly as market conditions change
+## Applying Gates
 
-## Cost Optimization
+Use the fest CLI to add gates:
 
-Provider agnosticism enables cost optimization:
+```bash
+# Add gates to a sequence
+fest gates apply 002_IMPLEMENTATION/01_build_feature
 
-**Task-Based Routing**
+# Creates testing, review, iterate, commit tasks
+```
 
-- Simple decisions to inexpensive models
-- Complex judgment to capable models
-- Automatic routing based on configured criteria
-- Cost savings without quality degradation
+Gates are applied automatically to implementation sequences.
 
-**Market Responsiveness**
+## Gate Behavior
 
-- Shift to providers with better pricing
-- Negotiate from position of flexibility
-- Volume distributed across providers
-- No single point of pricing pressure
+**Testing Task**
 
-## Performance Optimization
+```markdown
+# Task: testing_and_verify
 
-Different providers excel at different capabilities:
+## Objective
+Verify the implementation meets requirements.
 
-**Model Specialization**
+## Requirements
+- [ ] All tests pass
+- [ ] Edge cases covered
+- [ ] No regressions
+- [ ] Performance acceptable
 
-- Route to providers with optimal models
-- Leverage specialized capabilities
-- Mix providers within single workflows
-- Best tool for each specific task
+## Implementation Steps
+1. Run existing tests
+2. Write new tests for feature
+3. Verify requirements checklist
+4. Document any issues found
+```
 
-**Reliability Through Diversity**
+**Code Review Task**
 
-- Provider outages don't halt operations
-- Automatic failover to alternatives
-- Distributed load reduces rate limiting
-- Operational resilience through redundancy
+```markdown
+# Task: code_review
 
-## Stability Through Abstraction
+## Objective
+Review code quality and adherence to standards.
 
-Your configured teams remain stable while provider landscape shifts:
+## Requirements
+- [ ] Follows style guide
+- [ ] No obvious bugs
+- [ ] Clear naming
+- [ ] Appropriate abstraction
 
-- New providers integrate without workflow rewrites
-- Pricing changes don't force infrastructure redesign
-- Model updates don't break autonomous execution
-- Your investment in configuration outlives individual providers
+## Implementation Steps
+1. Review all changes
+2. Check style compliance
+3. Verify patterns used correctly
+4. Document any concerns
+```
 
-## The Alternative
+**Iteration Task**
 
-Organizations tightly coupled to specific providers:
+```markdown
+# Task: review_results_iterate
 
-- Refactoring costs when providers change terms
-- Weak negotiating position (no alternatives)
-- Operational risk from single point of failure
-- Limited to capabilities of one provider ecosystem
+## Objective
+Address issues found in testing and review.
 
-## Guild's Approach
+## Requirements
+- [ ] All test failures fixed
+- [ ] Review concerns addressed
+- [ ] Documentation updated
+- [ ] Ready for commit
 
-Provider agnostic from the foundation. Your autonomous company infrastructure outlives any individual vendor.
+## Implementation Steps
+1. Review findings from testing
+2. Address each issue
+3. Re-run tests
+4. Confirm all gates pass
+```
 
-Configure once. Run on any provider. Switch seamlessly.
+## Sequence Flow
 
-The AI landscape changes. Your autonomous teams remain stable.
+```
+implement → test → fails → fix → test → passes → review → concerns → fix → review → approved → commit
+```
+
+The sequence doesn't end until all gates pass.
+
+## Customizing Gates
+
+Different sequence types may have different gates:
+
+**Implementation Sequences**
+- Test, review, iterate, commit
+
+**Research Sequences**
+- Verify, document
+
+**Deployment Sequences**
+- Test, stage, verify, deploy
+
+Gates match the work type.
+
+## The Result
+
+Quality isn't optional. It's structural.
+
+Every implementation is tested. Every change is reviewed. Issues are fixed before commit.
+
+Quality through process, not hope.
