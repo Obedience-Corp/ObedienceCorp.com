@@ -1,10 +1,10 @@
 page:
   name: "index"
   title: "Obedience Corp"
-  description: "Obedience Corp. AI that does what you want. Building Guild: 1000 agents that obey you."
+  description: "Obedience Corp. AI that does what you want, the way you want it done. Infrastructure for fully autonomous AI agents."
   hero_title: "OBEDIENCE CORP"
-  tagline_line1: "AI that does what you want"
-  tagline_line2: "The way you want it done"
-  mission: "Infrastructure for autonomous AI systems"
+  tagline_line1: "AI that does what you want,"
+  tagline_line2: "the way you want it done"
+  mission: "Infrastructure for fully autonomous AI agents."
   layout: "hero-left"
   animate_tagline: true

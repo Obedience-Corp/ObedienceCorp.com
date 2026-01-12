@@ -68,10 +68,11 @@ function typeText(element, text, speed, callback) {
 
 // Start typing after brief delay - read taglines from data attributes
 setTimeout(() => {
-  // Support both landing page (hero-box) and product pages (page-taglines)
+  // Support landing hero, product pages (page-taglines), and legacy hero-box
+  const landingHero = document.querySelector(".landing-hero");
   const heroBox = document.querySelector(".hero-box");
   const pageTaglines = document.querySelector(".page-taglines");
-  const dataSource = heroBox || pageTaglines;
+  const dataSource = landingHero || heroBox || pageTaglines;
   const line1 = document.getElementById("line1");
   const line2 = document.getElementById("line2");
 
@@ -82,24 +83,34 @@ setTimeout(() => {
   if (shouldAnimate) {
     // Animated typing effect
     typeText(line1, tagline1, 40, () => {
-      const period1 = document.createElement("span");
-      period1.className = "period";
-      period1.textContent = ".";
-      line1.appendChild(period1);
+      // Only add period if line doesn't already end with punctuation
+      const lastChar1 = tagline1.slice(-1);
+      if (!['.', ',', '!', '?', ';', ':'].includes(lastChar1)) {
+        const period1 = document.createElement("span");
+        period1.className = "period";
+        period1.textContent = ".";
+        line1.appendChild(period1);
+      }
 
       setTimeout(() => {
         typeText(line2, tagline2, 40, () => {
-          const period2 = document.createElement("span");
-          period2.className = "period";
-          period2.textContent = ".";
-          line2.appendChild(period2);
+          // Only add period if line doesn't already end with punctuation
+          const lastChar2 = tagline2.slice(-1);
+          if (!['.', ',', '!', '?', ';', ':'].includes(lastChar2)) {
+            const period2 = document.createElement("span");
+            period2.className = "period";
+            period2.textContent = ".";
+            line2.appendChild(period2);
+          }
         });
       }, 150);
     });
   } else {
-    // No animation - display immediately
-    line1.textContent = tagline1 + ".";
-    line2.textContent = tagline2 + ".";
+    // No animation - display immediately (add period only if needed)
+    const needsPeriod1 = !['.', ',', '!', '?', ';', ':'].includes(tagline1.slice(-1));
+    const needsPeriod2 = !['.', ',', '!', '?', ';', ':'].includes(tagline2.slice(-1));
+    line1.textContent = tagline1 + (needsPeriod1 ? "." : "");
+    line2.textContent = tagline2 + (needsPeriod2 ? "." : "");
   }
 }, 300);
 

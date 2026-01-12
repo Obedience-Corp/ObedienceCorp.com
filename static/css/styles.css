@@ -368,6 +368,64 @@ body {
   max-width: 600px;
 }
 
+/* Landing Page Hero - Full width above grid */
+.landing-hero {
+  width: 100%;
+  padding: clamp(4rem, 12vh, 8rem) clamp(4vw, 6vw, 6rem);
+  margin-top: clamp(50px, 8vh, 70px); /* Account for fixed navbar */
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 2vh, 1.5rem);
+}
+
+.landing-hero-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(3rem, 10vw, 6rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.landing-hero-tagline {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.landing-hero-tagline .tagline-line {
+  display: block;
+  min-height: 1.4em;
+}
+
+.landing-hero-mission {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.875rem, 1.8vw, 1.125rem);
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin-top: 1rem;
+  max-width: 600px;
+}
+
+/* Landing page container - no extra top margin since hero handles it */
+.landing-container {
+  margin-top: 0 !important;
+  padding-top: clamp(2rem, 4vh, 3rem);
+  /* Use 2-column grid for minimal landing page layout */
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* Main content container - masonry grid */
 .container {
   flex: 1;
@@ -945,6 +1003,29 @@ footer {
 
   .page-mission {
     font-size: 0.875rem;
+  }
+
+  /* Landing hero mobile adjustments */
+  .landing-hero {
+    padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 6vw, 2rem);
+    margin-top: 60px;
+  }
+
+  .landing-hero-title {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .landing-hero-tagline {
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+
+  .landing-hero-mission {
+    font-size: 0.875rem;
+  }
+
+  /* Landing container on mobile stays 1 column */
+  .landing-container {
+    grid-template-columns: 1fr;
   }
 
   .container {
