@@ -1,59 +1,121 @@
-# Infrastructure for Autonomous Companies
+# The Agent Reliability Problem
 
-The AI landscape has shifted. Models are commoditized. Access is universal. Individual agent capability converges. The defensible layer is infrastructure for autonomous execution at Fortune 500 scale.
+AI agents are powerful but unreliable. Guild provides infrastructure to make them work.
 
-## Where Value Concentrates
+## What Goes Wrong
 
-**Commoditized:**
+**Context Loss**
 
-- Foundation models (multiple providers, comparable capabilities)
-- API access (competitive pricing, converging features)
-- Individual agent performance (easily replicated)
-- Chat interfaces (every tool has one)
+- Sessions reset, work forgotten
+- Previous decisions not available
+- Agents repeat mistakes
+- No institutional memory
 
-**Defensible:**
+**Hallucination**
 
-- Infrastructure for collaborative configuration
-- Systems that enable decision offloading
-- Autonomous execution frameworks at scale
-- Organizational memory that persists across sessions
+- Confident but wrong outputs
+- Made-up code references
+- Invented APIs and features
+- No verification loop
 
-## Requirements for Autonomous Companies
+**Task Abandonment**
 
-Building systems that operate at Fortune 500 scale with one person requires new infrastructure primitives:
+- Agents stop mid-execution
+- Complex workflows break
+- No recovery mechanism
+- Manual intervention required
 
-**Collaborative Configuration**
+**Coordination Failure**
 
-- Work WITH agents to define goals and workflows
-- Configure decision-making criteria collaboratively
-- Set quality standards and constraints
-- Define team structures and reporting relationships
+- Multiple agents conflict
+- No shared context
+- Duplicate or contradictory work
+- You become the bottleneck
 
-**Decision Offloading**
+## How Guild Addresses This
 
-- Agents make judgments based on your configuration
-- Quality decisions without human approval loops
-- Autonomous problem-solving within defined parameters
-- Escalation only when truly needed
+**Persistent Memory**
 
-**Persistent Organizational Memory**
+Guild stores reasoning and context:
+- SQLite-backed persistence
+- Reasoning extracted from responses
+- Context available across sessions
+- Decisions inform future work
 
-- Context accumulates across months of operation
-- Decisions inform future choices automatically
-- Institutional knowledge builds over time
-- Teams learn from experience
+```
+// Memory chain example
+Session 1: "User prefers tabs over spaces"
+Session 47: Agent remembers preference
+```
 
-**Autonomous Execution Infrastructure**
+**Cost Transparency**
 
-- Teams operate 24/7 without oversight
-- Work continues when you're unavailable
-- Progress happens on dozens of parallel fronts
-- Quality maintained through configured standards
+Real-time tracking per agent:
+- Token counts per request
+- Cost per agent, per model
+- Budget limits and alerts
+- No surprise bills
 
-## Obedience Corp's Focus
+**Reasoning Extraction**
 
-We build infrastructure for autonomous companies. Not models. Not agents. Not consulting.
+Guild captures how agents think:
+- Thinking blocks extracted
+- Pattern analysis (backtracking, rapid reasoning)
+- Inspect why decisions were made
+- Debug agent behavior
 
-The systems that let one person collaboratively configure and command Fortune 500-scale autonomous operations.
+**Session Management**
 
-Infrastructure for AI that does what you want, the way you want it done.
+Robust session handling:
+- Save and restore sessions
+- Export conversation history
+- Recovery from interruptions
+- State persistence across failures
+
+## The Tool System
+
+Agents need capabilities. Guild provides them safely:
+
+**LSP Integration**
+
+- Code intelligence across languages
+- Go-to-definition, references
+- Semantic understanding
+- Not just text manipulation
+
+**Multi-File Editing**
+
+- Atomic changes across files
+- Coordinated modifications
+- Rollback support
+- Safe workspace isolation
+
+**Web Access**
+
+- Search and fetch content
+- Retrieve documentation
+- Stay current with information
+- Controlled external access
+
+## Quality Through Architecture
+
+Guild's 6-layer prompt system provides consistent context:
+
+1. **Platform** - Safety boundaries
+2. **Guild** - Project-wide goals
+3. **Role** - Agent specialization
+4. **Domain** - Technical context
+5. **Session** - User preferences
+6. **Turn** - Immediate instruction
+
+Each layer scoped appropriately. Agents get what they need.
+
+## The Result
+
+Infrastructure that makes agents:
+- Reliable through persistent memory
+- Transparent through cost tracking
+- Debuggable through reasoning capture
+- Capable through integrated tools
+
+Not hoping agents work. Building systems that ensure they do.

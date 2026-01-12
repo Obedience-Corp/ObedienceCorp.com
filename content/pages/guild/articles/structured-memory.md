@@ -1,5 +1,5 @@
-Works with any LLM provider. Anthropic, OpenAI, Ollama, DeepSeek, emerging providers.
+OpenAI. Anthropic. DeepSeek. Ollama. DeepInfra. Ora.
 
-No vendor lock-in. Optimize cost and performance across changing conditions. Your autonomous infrastructure outlives any individual provider.
+Use any provider. Mix models in the same workflow. Your backend agent runs GPT-4, your test agent runs Claude, your docs agent runs DeepSeek.
 
-Provider landscape shifts. Your configured teams remain stable.
+No vendor lock-in. Best tool for each task.

@@ -1,5 +1,5 @@
-Guild development driven by real autonomous workflow requirements. Not theoretical research. Not toy demos.
+Built by using it. Festival Methodology was developed with Guild. The fest CLI was planned and executed by Guild agents.
 
-Tested with domain-specific autonomous operations. Complex decision offloading. Extended autonomous execution across multiple domains.
+Real multi-agent workflows. Real complexity. Real production use.
 
-Infrastructure built to solve actual autonomous company challenges.
+Not vaporware. Infrastructure that works.

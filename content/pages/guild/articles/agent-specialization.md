@@ -1,5 +1,5 @@
-Domain-specific workflows. Fully autonomous operations configured for your specific industry and processes.
+~2000 lines of production terminal UI. @agent messaging. Real-time streaming. Markdown rendering. Vim mode. Session export.
 
-Collaborative configuration of specialized teams. Decision offloading for complex domain judgment. Autonomous execution of niche business functions.
+Built for developers who live in the terminal. Not a web chat. Not a desktop app. A proper TUI.
 
-Infrastructure that extends from your domain expertise to Fortune 500-scale operations.
+Command your agents from the command line.

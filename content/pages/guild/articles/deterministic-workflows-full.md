@@ -1,83 +1,124 @@
-# Collaborative Configuration, Autonomous Execution
+# Campaigns, Guilds, and Festivals
 
-Infrastructure for building autonomous companies. Not task automation. Complete systems for collaborative configuration and autonomous execution at Fortune 500 scale.
+Guild uses a hierarchical configuration system for organizing agent work.
 
-## Collaborative Configuration
+## Campaign Workspaces
 
-**Define How Work Should Be Done**
+A campaign is a workspace containing related projects.
 
-- Collaborate with agents to establish workflows
-- Set decision criteria and quality standards
-- Configure team structures and reporting chains
-- Establish escalation paths for edge cases
+**Campaign Structure**
 
-**Configure Star Employee Behavior**
+```
+.campaign/
+├── campaign.yaml      # Workspace configuration
+├── memory.db         # SQLite archive
+├── guilds/           # Team configurations
+├── agents/           # Individual agent configs
+├── archives/         # Workspace memory
+└── prompts/          # Project-specific templates
+```
 
-- Define how agents should make decisions
-- Set priorities and trade-off criteria
-- Configure judgment calls for common scenarios
-- Establish quality gates and validation rules
+**What Campaigns Provide**
 
-**Build Organizational Structure**
+- Shared context across projects
+- Unified memory storage
+- Consistent agent configurations
+- Workspace-level settings
 
-- Create teams with clear responsibilities
-- Define departments and their relationships
-- Set coordination protocols between groups
-- Configure information flow and reporting
+Multiple repositories, one campaign. Agents understand the whole workspace.
 
-## Autonomous Execution
+## Guild Teams
 
-**Decision Offloading**
+Guilds are configured teams of agents that work together.
 
-- Agents make quality decisions without approval loops
-- Configured criteria guide judgment calls
-- Escalation only when truly outside parameters
-- Your decision-making capacity extends to 24/7 operation
+**Defining a Guild**
 
-**Persistent Operations**
+```yaml
+guild:
+  name: "backend-team"
+  agents:
+    - role: "architect"
+      provider: "anthropic"
+      model: "claude-sonnet-4-20250514"
+    - role: "implementer"
+      provider: "openai"
+      model: "gpt-4"
+    - role: "reviewer"
+      provider: "deepseek"
+      model: "deepseek-coder"
+```
 
-- Teams work continuously without oversight
-- Progress happens across dozens of parallel efforts
-- Context maintains across days, weeks, months
-- Autonomous problem-solving within configured bounds
+**Team Coordination**
 
-**Quality Without Micromanagement**
+- Agents know their teammates
+- Work routes to appropriate roles
+- Context flows between agents
+- Different providers in same team
 
-- Standards enforced through configuration, not review
-- Validation happens automatically at defined gates
-- Deviations trigger escalation, not silent failure
-- Quality maintained at scale without constant supervision
+## Festival Planning
 
-## Built for Scale
+Festivals define project specifications as structured markdown.
 
-**Hierarchical Teams**
+**Festival Structure**
 
-- Organize agents into teams, departments, divisions
-- Clear reporting relationships and responsibilities
-- Information flows through configured channels
-- Coordination happens automatically
+```
+festival/
+├── FESTIVAL_GOAL.md    # Overall objective
+├── 001_PHASE/
+│   ├── PHASE_GOAL.md
+│   └── 01_sequence/
+│       └── 01_task.md
+```
 
-**Provider Flexibility**
+**What Festivals Provide**
 
-- Works with any LLM provider
-- Mix models within single workflows
-- Optimize cost and performance dynamically
-- No vendor lock-in or proprietary constraints
+- Task decomposition
+- Complexity estimation
+- Status tracking
+- Dependencies and ordering
+- AI-powered planning
 
-**Domain-Specific Configuration**
+Work defined in steps, not time. Agents execute festival tasks autonomously.
 
-- Configure for your specific industry and workflows
-- Domain knowledge embedded in team configuration
-- Specialized judgment for niche requirements
-- Autonomous execution of domain-specific processes
+## The Medieval Naming
 
-## The Result
+Guild uses medieval terminology throughout:
 
-Infrastructure that lets one person:
+| Concept | Term |
+|---------|------|
+| Agent | Artisan |
+| Agent team | Guild |
+| Tool | Implement |
+| Workspace | Campaign |
+| Memory store | Archives |
+| Task board | Workshop Board |
+| Global config | Guild Hall |
 
-- Configure autonomous teams
-- Offload decision-making to agents
-- Operate at Fortune 500 scale
-- Maintain quality without micromanagement
+Consistent vocabulary. Clear mental model.
 
-Not faster task completion. Autonomous execution of entire business functions.
+## How It Fits Together
+
+1. **Campaign** defines the workspace
+2. **Guild** defines the team
+3. **Festival** defines the work
+4. **Agents** execute with full context
+
+Configure the hierarchy. Agents inherit what they need at each level.
+
+## Configuration Example
+
+```yaml
+# campaign.yaml
+campaign:
+  name: "ecommerce-platform"
+  guilds:
+    - "backend-team"
+    - "frontend-team"
+    - "devops-team"
+
+# Each guild has its agents
+# Each agent knows campaign context
+# Festivals define what to build
+```
+
+Hierarchical configuration for complex, multi-team projects.

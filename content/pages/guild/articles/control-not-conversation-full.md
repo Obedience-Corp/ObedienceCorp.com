@@ -1,80 +1,104 @@
-# Breaking the Linear Constraint
+# Beyond Chat Interfaces
 
-Current AI tools require constant human decisions. Chat interfaces, manual task assignment, continuous oversight. Scaling agents means scaling your workload.
+Chat interfaces treat AI as a conversation partner. Guild treats AI as a coordinated workforce.
 
-## The Micromanagement Trap
+## The Chat Limitation
 
-**Chat Interfaces**
+**Single Agent Model**
 
-- Every task needs explicit human instruction
-- Agents wait for your next command
-- Context resets between conversations
-- You remain the bottleneck
+- One conversation thread
+- Context resets between sessions
+- No memory of past decisions
+- You remain the only coordinator
 
-**Manual Coordination**
+**Manual Everything**
 
-- You decide what each agent should do
-- You route work between specialized tools
-- You monitor progress manually
-- Scaling requires more of your time
+- You route every task manually
+- You remember what each tool does
+- You handle all handoffs
+- You maintain all context
 
-**Continuous Oversight**
+**Linear Interaction**
 
-- Agents can't make decisions without you
-- Progress stops when you're unavailable
-- Quality depends on constant review
-- Your capacity limits the entire system
+- Prompt. Wait. Response. Repeat.
+- One thing at a time
+- Progress bottlenecked by interaction
+- Scaling means more conversations
 
-## The Linear Constraint
+## What Orchestration Enables
 
-**10 agents = 10× your oversight burden**
-**100 agents = 100× your micromanagement**
+**Multiple Specialized Agents**
 
-Each agent waits for your decisions. Your capacity becomes the hard ceiling.
+Guild coordinates teams of agents:
+- Backend Craftsman for server code
+- Frontend Artisan for UI work
+- Test Marshal for validation
+- Docs Scribe for documentation
 
-This isn't assistance. It's amplified micromanagement.
+Each agent has its role. Guild manages coordination.
 
-## What's Missing
+**@Agent Routing**
 
-Infrastructure for **collaborative configuration** plus **autonomous execution**:
+Direct work to specific agents:
+```
+@backend implement the API endpoint
+@frontend build the form component
+@tests write coverage for the new code
+```
 
-1. Work WITH agents to define how work should be done
-2. Configure teams to make decisions like you would
-3. Agents operate autonomously based on that configuration
-4. Your decision-making capacity extends to Fortune 500 scale
+Messages route to the right agent. Context flows automatically.
 
-Not faster task completion. Offloading entire categories of decisions to configured autonomous teams.
+**Persistent Memory Chains**
 
-## Breaking the Constraint
+- Context accumulates across sessions
+- Decisions inform future work
+- Project knowledge builds over time
+- No "starting from scratch" on day 2
 
-Guild enables **nonlinear scaling**:
+**Real-Time Streaming**
 
-**Configure Once**
+- See agent responses as they generate
+- Multiple agents working in parallel
+- Progress visible across the team
+- Not waiting for one completion to start another
 
-- Define how work should be done
-- Set decision criteria and priorities
-- Establish quality standards
-- Configure team structures and workflows
+## The Architecture
 
-**Execute Autonomously**
+**Daemon Background Server**
 
-- Agents make decisions based on that configuration
-- Teams operate without waiting for input
-- Work continues 24/7 without oversight
-- Quality maintained through those standards
+Guild runs as a background service:
+- gRPC server for agent communication
+- Unix socket for local IPC
+- Auto-lifecycle management
+- Persistent across restarts
 
-**Scale Beyond Human Limits**
+**6-Layer Prompt System**
 
-- 100 agents don't require 100× your time
-- Autonomous teams extend your decision-making capacity
-- One person commands Fortune 500-scale operations
-- Your judgment replicated, not your hours
+Context builds through layers:
+1. Platform - Safety guidelines
+2. Guild - Project goals
+3. Role - Agent definition
+4. Domain - Project type
+5. Session - User preferences
+6. Turn - Current instruction
 
-## The Result
+Each layer adds appropriate context without manual management.
 
-From: "AI assistant that waits for commands"
-To: "Autonomous teams that execute configured strategy"
+**Tool Registry**
 
-Configure teams to make decisions like you would. Let them work autonomously. Collaborate on strategy, not tasks.
+Agents access tools through a unified registry:
+- LSP for code intelligence
+- Multi-file atomic editing
+- Web search and fetching
+- Workspace isolation
 
-Nonlinear scaling through collaborative configuration and autonomous execution.
+Tools available to agents, coordinated by Guild.
+
+## The Shift
+
+**From:** Chat assistant that waits for prompts
+**To:** Agent team that executes coordinated work
+
+Configure your agents. Route work with @mentions. Let Guild handle coordination.
+
+Not faster chat. Actual orchestration.

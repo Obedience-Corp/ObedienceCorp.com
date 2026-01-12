@@ -1,77 +1,126 @@
-# Tested with Real Autonomous Workflows
+# Built by Using It
 
-Guild development is driven by real requirements for autonomous company operations. Not academic research. Not simplified demos. Infrastructure built to solve actual challenges in collaborative configuration and autonomous execution.
+Guild development is driven by building real systems with Guild.
 
-## Real-World Testing
+## Dogfooding
 
-**Domain-Specific Autonomous Operations**
+**Festival Methodology**
 
-- Tested with complex industry-specific workflows
-- Autonomous decision-making in specialized domains
-- Extended operations across multiple business functions
-- Real decision offloading, not task automation
+The entire Festival Methodology was developed using Guild:
+- Planning done by Guild agents
+- Implementation coordinated through Guild
+- Documentation written by Guild teams
+- Testing validated by Guild workflows
 
-**Complex Decision Scenarios**
+**fest CLI**
 
-- Agents making judgment calls in ambiguous situations
-- Quality decisions without human approval loops
-- Escalation patterns tested under real conditions
-- Configured criteria validated against actual outcomes
+The fest command-line tool:
+- Planned in Guild festivals
+- Implemented by Guild agents
+- Tested through Guild sessions
+- Documented by Guild teams
 
-**Extended Autonomous Execution**
+Building tools by using the tools they're built with.
 
-- Long-running operations spanning weeks
-- Autonomous teams operating without constant oversight
-- Context maintained across extended timeframes
-- State consistency across interruptions and failures
+## What This Validates
 
-## Built for Operational Reality
+**Multi-Agent Coordination**
 
-**Collaborative Configuration at Scale**
+Not theoretical multi-agent workflows. Actual coordination:
+- Multiple agents on the same project
+- Hand-offs between specialized roles
+- Context maintained across agents
+- Quality preserved through process
 
-- Working WITH agents to configure complex workflows
-- Iterative refinement of decision criteria
-- Team structure evolution based on actual needs
-- Real configuration complexity, not toy examples
+**Session Persistence**
 
-**Decision Offloading Validation**
+Long-running work across sessions:
+- Work spanning days and weeks
+- Context preserved between sessions
+- Decisions inform future work
+- No starting from scratch
 
-- Testing which decisions can be offloaded safely
-- Refining escalation criteria through real usage
-- Quality maintained through configured standards
-- Autonomous judgment validated in production contexts
+**Provider Reliability**
 
-**Provider Reliability Under Real Conditions**
+Real usage across providers:
+- Switching between providers
+- Fallback handling
+- Cost optimization in practice
+- API edge cases encountered
 
-- Handling actual rate limits and service degradation
-- Failover tested with real provider outages
-- Cost optimization validated with actual usage patterns
-- Multi-provider operations tested at scale
+**Tool Integration**
 
-## What This Means
+Tools used in real workflows:
+- LSP for actual code navigation
+- File editing for real changes
+- Web fetch for real documentation
+- Workspace isolation for safety
 
-Guild isn't vaporware. Features exist because they were necessary to solve real problems:
+## Production Patterns
 
-**Collaborative Configuration**
+**What Works**
 
-- Built to handle actual domain complexity
-- Refined through real challenges
-- Validated with complex workflows
+Patterns that emerged from real use:
 
-**Decision Offloading**
+- Clear agent specialization
+- Explicit context handoffs
+- Festival-based planning
+- Session save points
+- Cost monitoring
 
-- Tested with real judgment scenarios
-- Proven to maintain quality at scale
-- Validated across multiple domains
+**What Changed**
 
-**Autonomous Execution Capabilities**
+Features refined through actual needs:
 
-- Demonstrated in extended operations
-- Proven reliable under real conditions
-- Validated across diverse workflows
+- Session recovery (needed after crashes)
+- Cost tracking granularity (needed for budgeting)
+- Agent context management (needed for long sessions)
+- Error handling (needed for real API failures)
 
-## Why Guild Exists
+## Why This Matters
 
-Simpler tools failed under real conditions.
+**Not Vaporware**
 
-We needed infrastructure that actually works for autonomous operations. So we built it.
+Features exist because they were necessary:
+- Session management because sessions crash
+- Cost tracking because costs matter
+- Error recovery because APIs fail
+- Context persistence because work spans days
+
+**Battle-Tested**
+
+Problems solved by encountering them:
+- Rate limits handled because we hit them
+- Timeouts managed because they happen
+- State recovery because state corrupts
+- Fallbacks implemented because providers fail
+
+## The Proof
+
+Guild's internal projects:
+- festival-methodology (planning system)
+- fest (CLI tool)
+- guild-chat (Rust TUI client)
+- guild-scaffold (project scaffolding)
+- obediencecorp.com (this website)
+
+All built or maintained using Guild.
+
+## Current Status
+
+**Reference Implementation**
+
+guild-core is the reference implementation. Core features are being extracted into:
+- festival-methodology (Go, standalone)
+- guild-chat (Rust, TUI client)
+- guild-scaffold (Go, templating)
+
+**V3 Development**
+
+Next-generation architecture in progress. Lessons from production use informing design.
+
+## The Result
+
+Infrastructure built by people who use it to build other things.
+
+Not demo-ware. Production-tested through actual production use.

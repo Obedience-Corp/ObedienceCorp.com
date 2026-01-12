@@ -1,101 +1,134 @@
-# Provider Agnostic Infrastructure
+# Provider Agnostic Architecture
 
-Guild works with any LLM provider. Your autonomous teams don't depend on any single vendor. Infrastructure built to outlive provider volatility.
+Guild works with any LLM provider. Mix and match within the same workflow.
 
-## No Vendor Lock-In
+## Supported Providers
 
-The AI provider market changes rapidly:
+**Commercial APIs**
 
-- Pricing shifts unpredictably
-- New providers enter constantly
-- Model capabilities evolve continuously
-- Terms of service change without warning
+- OpenAI (GPT-4, GPT-4o, O3)
+- Anthropic (Claude 4, 200K context)
+- DeepSeek (cost-effective reasoning)
+- DeepInfra (Llama, Mistral, Qwen)
+- Ora (DeepSeek models)
 
-Organizations coupled to specific providers face continuous refactoring costs and negotiation weakness.
+**Local Models**
 
-Guild decouples autonomous execution from provider implementation.
+- Ollama (any Ollama-supported model)
+- Self-hosted inference
 
-## Provider-Agnostic Architecture
+**Developer Tools**
 
-**Unified Interface**
+- Claude Code CLI (with MCP support)
 
-- Single configuration system regardless of backend
-- Consistent behavior across different providers
-- Provider-specific features through standardized abstractions
-- Switch providers without reconfiguring workflows
+## Why Provider Agnostic Matters
 
-**Multi-Provider Operations**
+**Cost Optimization**
 
-- Run different teams on different providers
-- Optimize cost by routing to cheaper models
-- Optimize performance with specialized models
-- Maintain fallback providers for reliability
+Different tasks need different models:
 
-**Dynamic Provider Selection**
+```yaml
+agents:
+  - role: "architect"
+    provider: "anthropic"
+    model: "claude-sonnet-4-20250514"  # Complex reasoning
 
-- Route based on current pricing and availability
-- Automatically fail over to backup providers
-- Test new providers without disrupting operations
-- Switch seamlessly as market conditions change
+  - role: "implementer"
+    provider: "deepseek"
+    model: "deepseek-coder"     # Cost-effective coding
 
-## Cost Optimization
+  - role: "reviewer"
+    provider: "openai"
+    model: "gpt-4o"             # Fast validation
+```
 
-Provider agnosticism enables cost optimization:
+Route expensive tasks to capable models. Route simple tasks to cheaper ones.
 
-**Task-Based Routing**
+**Capability Matching**
 
-- Simple decisions to inexpensive models
-- Complex judgment to capable models
-- Automatic routing based on configured criteria
-- Cost savings without quality degradation
+Models have different strengths:
 
-**Market Responsiveness**
+- Claude excels at nuanced reasoning
+- GPT-4 excels at broad knowledge
+- DeepSeek excels at code generation
+- Local models for privacy-sensitive work
 
-- Shift to providers with better pricing
-- Negotiate from position of flexibility
-- Volume distributed across providers
-- No single point of pricing pressure
+Mix providers to leverage each strength.
 
-## Performance Optimization
+**No Vendor Lock-In**
 
-Different providers excel at different capabilities:
+The provider landscape shifts:
+- Pricing changes
+- New providers emerge
+- Models deprecated
+- Terms of service evolve
 
-**Model Specialization**
+Guild decouples your workflows from any single provider.
 
-- Route to providers with optimal models
-- Leverage specialized capabilities
-- Mix providers within single workflows
-- Best tool for each specific task
+## Multi-Provider Workflows
 
-**Reliability Through Diversity**
+**Team-Level Configuration**
 
-- Provider outages don't halt operations
-- Automatic failover to alternatives
-- Distributed load reduces rate limiting
-- Operational resilience through redundancy
+```yaml
+guild:
+  name: "full-stack-team"
+  agents:
+    - role: "backend"
+      provider: "anthropic"
+    - role: "frontend"
+      provider: "openai"
+    - role: "testing"
+      provider: "deepseek"
+    - role: "docs"
+      provider: "ollama"
+```
 
-## Stability Through Abstraction
+Four agents. Four providers. One coordinated team.
 
-Your configured teams remain stable while provider landscape shifts:
+**Dynamic Routing**
 
-- New providers integrate without workflow rewrites
-- Pricing changes don't force infrastructure redesign
-- Model updates don't break autonomous execution
-- Your investment in configuration outlives individual providers
+- Route based on task complexity
+- Fallback to alternatives on failure
+- Load balance across providers
+- Optimize cost dynamically
 
-## The Alternative
+## Unified Interface
 
-Organizations tightly coupled to specific providers:
+Regardless of provider:
+- Same agent configuration
+- Same tool access
+- Same memory system
+- Same session management
 
-- Refactoring costs when providers change terms
-- Weak negotiating position (no alternatives)
-- Operational risk from single point of failure
-- Limited to capabilities of one provider ecosystem
+Provider is just a config option. Behavior stays consistent.
 
-## Guild's Approach
+## Cost Tracking Per Provider
 
-Provider agnostic from the foundation. Your autonomous company infrastructure outlives any individual vendor.
+Guild tracks costs across providers:
 
-Configure once. Run on any provider. Switch seamlessly.
+```
+Session Summary:
+  anthropic/claude-4:    $0.42 (12 requests)
+  openai/gpt-4:          $0.28 (8 requests)
+  deepseek/coder:        $0.03 (15 requests)
+  Total:                 $0.73
+```
 
-The AI landscape changes. Your autonomous teams remain stable.
+Know exactly what each provider costs. Optimize with data.
+
+## Migration Path
+
+Switch providers without rewriting:
+
+1. Change provider in config
+2. Test with new provider
+3. Roll out to team
+4. No code changes
+
+Your workflows survive provider changes.
+
+## The Result
+
+Use the best model for each task. Pay appropriately for each. Switch freely as the landscape evolves.
+
+Provider agnostic by design. Lock-in by choice, not necessity.

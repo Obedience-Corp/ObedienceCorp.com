@@ -1,5 +1,5 @@
-Models are commoditized. Access is universal. The defensible value is infrastructure for autonomous execution at scale.
+Agents lose context. They hallucinate. They stop mid-task. Single-agent systems don't scale.
 
-Building autonomous companies requires: collaborative configuration systems, decision offloading infrastructure, and persistent organizational memory.
+Guild solves agent coordination. Multiple agents with persistent memory. Real-time cost tracking. Reasoning you can inspect.
 
-Obedience Corp builds this infrastructure.
+Infrastructure for agents that actually work.

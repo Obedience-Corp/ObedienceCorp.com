@@ -1,5 +1,5 @@
-Current AI tools require constant human decisions. Chat interfaces. Manual task assignment. Continuous oversight. Scaling agents means scaling your workload.
+Chat interfaces treat AI as a conversation partner. One prompt, one response, repeat.
 
-Guild breaks the linear constraint. Configure how work should be done once. Agents execute autonomously based on that configuration.
+Guild treats AI as a workforce. Multiple specialized agents. Persistent memory. Coordinated execution. @agent routing to direct work.
 
-Nonlinear scaling through collaborative configuration and autonomous execution.
+From chat to orchestration.

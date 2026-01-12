@@ -1,5 +1,5 @@
-Building infrastructure for autonomous companies. Infrastructure for AI that does what you want, the way you want it done.
+AI agent orchestration framework. Build teams of specialized agents that work together on complex projects.
 
-Collaborative configuration systems. Decision offloading infrastructure. Autonomous execution at Fortune 500 scale.
+Each agent has distinct capabilities, persistent memory, and access to specific tools. Guild coordinates how they collaborate.
 
-**Building Guild: 1000 agents that obey.**
+**Multi-agent orchestration that actually works.**

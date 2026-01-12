@@ -1,94 +1,151 @@
-# Domain-Specific Autonomous Workflows
+# Production Terminal UI
 
-Built for domain experts who want to extend their expertise to Fortune 500-scale operations. Not generic task automation. Infrastructure for fully autonomous execution of your specific industry workflows.
+Guild includes a full-featured TUI for developers who prefer the terminal.
 
-## Your Domain, Autonomous at Scale
+## Interface Features
 
-**Domain Expertise Configuration**
+**@Agent Messaging**
 
-- Configure teams with your industry-specific knowledge
-- Embed domain judgment in decision criteria
-- Set quality standards specific to your field
-- Define workflows that match your processes
+Direct messages to specific agents:
 
-**Specialized Decision-Making**
+```
+@backend implement the user authentication API
+@frontend create the login form component
+@tests write integration tests for auth flow
+```
 
-- Agents make domain-specific judgments
-- Configured criteria reflect industry nuances
-- Quality decisions in specialized contexts
-- Autonomous execution of niche processes
+Messages route to the right agent. Responses stream back in context.
 
-## Collaborative Setup, Autonomous Execution
+**Real-Time Streaming**
 
-**Work WITH Agents to Configure**
+- See responses as they generate
+- Token-by-token streaming
+- Multiple agent responses visible
+- Progress indication during generation
 
-- Collaborate on domain-specific workflows
-- Define how specialized work should be done
-- Set criteria for domain-specific decisions
-- Configure quality gates specific to your field
+**Markdown Rendering**
 
-**Autonomous Execution of Configured Workflows**
+- Code blocks with syntax highlighting
+- Tables, lists, emphasis
+- Links and references
+- Rendered inline in terminal
 
-- Teams operate with domain expertise
-- Complex industry-specific decisions made autonomously
-- Quality maintained through configured standards
-- Specialized processes run 24/7 without oversight
+**Vim Mode**
 
-## Built for Complex Domains
+- Full vim keybindings
+- Modal editing
+- Familiar navigation
+- Works like you expect
 
-**Multi-Project Workspace Management**
+## Session Management
 
-- Organize related projects into campaigns
-- Maintain consistent configuration across efforts
-- Share domain knowledge between projects
-- Isolate unrelated work appropriately
+**Save and Restore**
 
-**Automated Domain-Specific Scaffolding**
+```
+/save my-session
+/load my-session
+```
 
-- Project setup configured for your industry
-- Consistent structure across domain efforts
-- Pre-configured teams for common workflows
-- Extensible templates for specialized needs
+Pick up where you left off. Context preserved.
 
-**Codebase and Knowledge Analysis**
+**Export History**
 
-- Analyze domain-specific repositories
-- Extract relevant context for specialized tasks
-- Build semantic indices of technical knowledge
-- Maintain understanding of complex systems
+```
+/export markdown
+/export json
+```
 
-**Persistent Domain Memory**
+Export conversation for documentation or analysis.
 
-- Context accumulates across months
-- Domain-specific decisions inform future work
-- Specialized knowledge builds over time
-- Teams learn from domain-specific experience
+**Session Recovery**
 
-## Task Decomposition for Complex Work
+- Auto-save on exit
+- Recovery from crashes
+- Persistent state
+- No lost work
 
-**Hierarchical Breakdown**
+## Production Features
 
-- Decompose complex domain projects
-- Assign specialized teams to appropriate work
-- Track dependencies in complex workflows
-- Monitor progress at multiple levels
+**Multi-Agent View**
 
-**Domain-Specific Kanban**
+See multiple agent contexts:
+- Active agent highlighted
+- Switch between agents
+- Parallel conversations
+- Team overview
 
-- Visualize specialized work across projects
-- Track domain-specific workflow stages
-- Identify bottlenecks in complex processes
-- Rebalance specialized workloads
+**Cost Dashboard**
+
+Real-time cost tracking:
+- Per-agent costs
+- Per-model breakdown
+- Session totals
+- Budget alerts
+
+**Keyboard Shortcuts**
+
+Everything accessible from keyboard:
+- Agent switching
+- Session management
+- View controls
+- Quick commands
+
+## Architecture
+
+**Built with Charm**
+
+Guild's TUI uses Charm libraries:
+- BubbleTea for architecture
+- Lipgloss for styling
+- Glamour for markdown
+- Production-tested components
+
+**Cross-Platform**
+
+Works on:
+- macOS
+- Linux
+- Windows (via WSL)
+- Remote SSH sessions
+
+**Terminal Detection**
+
+Adapts to terminal capabilities:
+- True color when supported
+- 256 color fallback
+- Basic color fallback
+- Feature detection
+
+## Why TUI?
+
+**Developer Workflow**
+
+Developers live in terminals:
+- tmux sessions
+- SSH access
+- CI environments
+- Server administration
+
+Guild fits that workflow.
+
+**Resource Efficiency**
+
+Lighter than alternatives:
+- No browser overhead
+- No Electron memory
+- Works over slow connections
+- Runs on minimal systems
+
+**Script Integration**
+
+Combine with other tools:
+- Pipe output
+- Script interactions
+- Integrate with workflows
+- Automation-friendly
 
 ## The Result
 
-Infrastructure that lets domain experts:
+A terminal interface for agent orchestration that feels native to developer workflows.
 
-- Configure teams with specialized knowledge
-- Offload complex domain-specific decisions
-- Operate at Fortune 500 scale in niche fields
-- Maintain quality in specialized contexts
-
-Not generic automation. Fully autonomous execution of your specific domain expertise at scale.
-
-Your knowledge. Your workflows. Your standards. Fortune 500 scale.
+Not a web UI ported to terminal. A TUI built for developers.

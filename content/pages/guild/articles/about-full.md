@@ -1,76 +1,75 @@
-# Obedience Corp
+# Guild
 
-Building infrastructure for autonomous companies. Our focus: systems that enable one person to collaboratively configure and command Fortune 500-scale autonomous operations.
+AI agent orchestration framework for developers building production agent systems.
 
-## Our Thesis
+## What Guild Does
 
-Autonomous companies require engineering infrastructure, not better models.
+Guild coordinates multiple specialized AI agents working together on complex software projects. Not a chat interface. Not a single agent. A framework for building agent teams.
 
-Build the right collaborative configuration systems, and agents become reliable extensions of your judgment. Build the right decision offloading infrastructure, and autonomous teams operate at Fortune 500 scale.
+## Core Architecture
 
-Build the wrong systems, and agents remain chat assistants waiting for your next command.
+**Agents as Artisans**
 
-## What We Build
+Each agent has:
+- Distinct role (Guild Master, Backend Craftsman, Frontend Artisan)
+- Specialized capabilities and backstory
+- Access to specific tools
+- Persistent memory chains
+- Individual cost tracking
 
-**Infrastructure for Autonomous Companies**
+**Daemon Architecture**
 
-- Not models or training systems
-- Not individual agents or chat interfaces
-- Not consulting or integration services
+- Background gRPC server
+- Unix socket IPC
+- Auto-lifecycle management
+- Cross-platform support
 
-We build the systems that enable collaborative configuration and autonomous execution at scale.
+**6-Layer Prompt System**
 
-## Why It Matters
+1. Platform Layer - Safety guidelines
+2. Guild Layer - Project goals
+3. Role Layer - Agent definitions
+4. Domain Layer - Project type
+5. Session Layer - User preferences
+6. Turn Layer - Current instruction
 
-The AI landscape is shifting:
+## Key Capabilities
 
-- Models are commoditized
-- Access is universal
-- Individual agent capability converges
-- Chat interfaces are everywhere
+**Multi-Agent Orchestration**
 
-The defensible value layer is infrastructure for autonomous execution. Organizations that enable decision offloading at scale win. Organizations stuck in micromanagement loops remain limited.
+Coordinate agents with different specializations. Backend agent writes code. Test agent validates. Docs agent documents. Guild manages the workflow.
 
-## Our Approach
+**Provider Agnostic**
 
-**Collaborative Configuration**
+OpenAI, Anthropic, DeepSeek, Ollama, DeepInfra. Mix providers and models in the same workflow. Your backend agent runs GPT-4, your test agent runs Claude.
 
-- Work WITH agents to define how things should be done
-- Configure teams to make decisions like you would
-- Set quality standards and escalation criteria
-- Build organizational structures collaboratively
+**Persistent Reasoning**
 
-**Autonomous Execution**
+Guild extracts and stores agent thinking. See how decisions were made. Build on past reasoning. Don't lose context between sessions.
 
-- Offload entire categories of decisions
-- Teams operate 24/7 without oversight
-- Quality maintained through configured standards
-- Progress on dozens of parallel fronts
+**Production TUI**
 
-**Fortune 500 Scale**
+~2000 lines of terminal UI. @agent messaging. Real-time streaming. Markdown rendering. Vim mode. Session export. Built for developers in the terminal.
 
-- One person commanding autonomous organizations
-- Domain expertise extended to massive scale
-- Operations that were impossible solo
-- Your judgment replicated, not your hours
+**Tool Integration**
 
-## Guild
+- LSP for code intelligence
+- Multi-file atomic editing
+- Web search and content fetching
+- Workspace isolation for safety
 
-Our first product. Infrastructure for collaborative configuration and autonomous execution.
+## How It's Different
 
-Build teams and departments of agents. Configure them to make decisions like your best employees. Offload judgment, not just tasks. Operate at Fortune 500 scale.
+| Guild | Others |
+|-------|--------|
+| Mix-and-match providers per agent | Single provider |
+| Persistent memory chains | Session-only context |
+| Reasoning extraction & storage | Lost after response |
+| Real-time cost tracking | Estimated only |
+| Production TUI | Basic chat or web |
 
-Provider agnostic. Domain flexible. Built for autonomous companies.
+## The Result
 
-Not vaporware. Infrastructure that works.
+Infrastructure for building teams of AI agents that actually work together.
 
-## Contact
-
-For investors, early adopters, or partnership inquiries:
-**<contact@obediencecorp.com>**
-
----
-
-**Building Guild: 1000 agents that obey.**
-
-Infrastructure for AI that does what you want, the way you want it done.
+Configure agents. Coordinate workflows. Scale beyond single-agent limits.

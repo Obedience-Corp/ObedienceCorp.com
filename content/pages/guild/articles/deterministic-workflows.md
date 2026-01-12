@@ -1,5 +1,5 @@
-Guild provides infrastructure for collaborative configuration and autonomous execution at scale.
+Campaigns organize related projects. Guilds define agent teams. Festivals plan work.
 
-Work WITH agents to define workflows. Configure teams to make decisions like you would. Offload entire categories of judgment to autonomous teams.
+Configure once. Structure persists. Agents inherit context from the campaign, roles from the guild, tasks from the festival.
 
-Built for Fortune 500-scale operations controlled by one person.
+Hierarchical configuration for hierarchical work.
