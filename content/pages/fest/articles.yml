@@ -16,7 +16,7 @@ articles:
     modal_content_file: "control-not-conversation-full.md"
 
   - id: "control-problem"
-    title: "Three-Level Hierarchy"
+    title: "Hierarchical Structure"
     grid_column: "3"
     grid_row: "2"
     content_file: "control-problem.md"

@@ -47,7 +47,7 @@ Not faster task completion. Offloading entire categories of decisions to configu
 
 ## Breaking the Constraint
 
-Guild enables **nonlinear scaling**:
+Obey enables **nonlinear scaling**:
 
 **Configure Once**
 

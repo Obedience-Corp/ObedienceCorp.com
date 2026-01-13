@@ -1,72 +1,42 @@
-# Guild
+# Obey
 
 AI agent orchestration framework for developers building production agent systems.
 
-## What Guild Does
+## What Obey Does
 
-Guild coordinates multiple specialized AI agents working together on complex software projects. Not a chat interface. Not a single agent. A framework for building agent teams.
+Obey coordinates multiple specialized AI agents working together on complex software projects. Not a chat interface. Not a single agent. A framework for building agent teams.
 
-## Core Architecture
+## Core Concepts
 
-**Agents as Artisans**
+**Specialized Agents**
 
-Each agent has:
-- Distinct role (Guild Master, Backend Craftsman, Frontend Artisan)
-- Specialized capabilities and backstory
-- Access to specific tools
-- Persistent memory chains
-- Individual cost tracking
+Each agent has a distinct role and capabilities. Backend agents write server code. Frontend agents handle UI. Test agents validate. Documentation agents explain. Each optimized for their domain.
 
-**Daemon Architecture**
+**Hierarchical Configuration**
 
-- Background gRPC server
-- Unix socket IPC
-- Auto-lifecycle management
-- Cross-platform support
+Organize context efficiently. Set it once at the right level, everything below inherits. No copy-pasting prompts between agents. No drift. No manual coordination.
 
-**6-Layer Prompt System**
+**Persistent Context**
 
-1. Platform Layer - Safety guidelines
-2. Guild Layer - Project goals
-3. Role Layer - Agent definitions
-4. Domain Layer - Project type
-5. Session Layer - User preferences
-6. Turn Layer - Current instruction
+Context accumulates across sessions. Decisions inform future work. Agents build on what they learned instead of starting fresh every time.
 
 ## Key Capabilities
 
 **Multi-Agent Orchestration**
 
-Coordinate agents with different specializations. Backend agent writes code. Test agent validates. Docs agent documents. Guild manages the workflow.
+Coordinate agents with different specializations. They work in parallel. Obey manages the workflow.
 
 **Provider Agnostic**
 
-OpenAI, Anthropic, DeepSeek, Ollama, DeepInfra. Mix providers and models in the same workflow. Your backend agent runs GPT-4, your test agent runs Claude.
-
-**Persistent Reasoning**
-
-Guild extracts and stores agent thinking. See how decisions were made. Build on past reasoning. Don't lose context between sessions.
+Use any provider. Mix models in the same workflow. Best tool for each task. No vendor lock-in.
 
 **Production TUI**
 
-~2000 lines of terminal UI. @agent messaging. Real-time streaming. Markdown rendering. Vim mode. Session export. Built for developers in the terminal.
+Terminal interface for developers. Multi-agent views. Real-time streaming. Session management. Built for the command line.
 
-**Tool Integration**
+**Consistent Results**
 
-- LSP for code intelligence
-- Multi-file atomic editing
-- Web search and content fetching
-- Workspace isolation for safety
-
-## How It's Different
-
-| Guild | Others |
-|-------|--------|
-| Mix-and-match providers per agent | Single provider |
-| Persistent memory chains | Session-only context |
-| Reasoning extraction & storage | Lost after response |
-| Real-time cost tracking | Estimated only |
-| Production TUI | Basic chat or web |
+Same hierarchy produces same results regardless of which model executes. Model differences show in speed, not output quality.
 
 ## The Result
 

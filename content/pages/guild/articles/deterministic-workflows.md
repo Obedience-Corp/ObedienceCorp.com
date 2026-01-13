@@ -1,5 +1,5 @@
-Campaigns organize related projects. Guilds define agent teams. Festivals plan work.
+Hierarchy for multi-step goals. Break work into manageable pieces. Quality checks at every level.
 
-Configure once. Structure persists. Agents inherit context from the campaign, roles from the guild, tasks from the festival.
+Adaptable project planning that keeps agents on track. Goals decompose into steps sized for execution.
 
-Hierarchical configuration for hierarchical work.
+Structure that makes complex work reliable.

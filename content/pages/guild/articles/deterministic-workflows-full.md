@@ -1,124 +1,53 @@
-# Campaigns, Guilds, and Festivals
+# Hierarchical Configuration
 
-Guild uses a hierarchical configuration system for organizing agent work.
+An adaptable project planning system built for AI agents.
 
-## Campaign Workspaces
+## The Problem
 
-A campaign is a workspace containing related projects.
+AI agents struggle with large, ambiguous goals. They lose track. They skip steps. They forget what they were trying to accomplish.
 
-**Campaign Structure**
+## The Solution
 
-```
-.campaign/
-├── campaign.yaml      # Workspace configuration
-├── memory.db         # SQLite archive
-├── guilds/           # Team configurations
-├── agents/           # Individual agent configs
-├── archives/         # Workspace memory
-└── prompts/          # Project-specific templates
-```
+Break goals into hierarchy. Check quality at each level. Compare results against intent.
 
-**What Campaigns Provide**
+**Multi-level structure**
 
-- Shared context across projects
-- Unified memory storage
-- Consistent agent configurations
-- Workspace-level settings
+Goals break into phases. Phases break into sequences. Sequences break into tasks. Each level has clear success criteria.
 
-Multiple repositories, one campaign. Agents understand the whole workspace.
+**Quality gates**
 
-## Guild Teams
+Don't proceed until the current step meets spec. Check work against goals before moving forward. Catch drift early.
 
-Guilds are configured teams of agents that work together.
+**Adaptable depth**
 
-**Defining a Guild**
+Simple work needs simple structure. Complex work gets more levels. The system adapts to the project, not the other way around.
 
-```yaml
-guild:
-  name: "backend-team"
-  agents:
-    - role: "architect"
-      provider: "anthropic"
-      model: "claude-sonnet-4-20250514"
-    - role: "implementer"
-      provider: "openai"
-      model: "gpt-4"
-    - role: "reviewer"
-      provider: "deepseek"
-      model: "deepseek-coder"
-```
+## How It Works
 
-**Team Coordination**
+**Start with the goal**
 
-- Agents know their teammates
-- Work routes to appropriate roles
-- Context flows between agents
-- Different providers in same team
+What are you actually trying to accomplish? Define success criteria upfront.
 
-## Festival Planning
+**Break it down**
 
-Festivals define project specifications as structured markdown.
+Decompose into manageable pieces. Each piece small enough for an agent to complete without losing context.
 
-**Festival Structure**
+**Execute and verify**
 
-```
-festival/
-├── FESTIVAL_GOAL.md    # Overall objective
-├── 001_PHASE/
-│   ├── PHASE_GOAL.md
-│   └── 01_sequence/
-│       └── 01_task.md
-```
+Work through the hierarchy. Check each step against its goals. Adjust when reality doesn't match the plan.
 
-**What Festivals Provide**
+**Iterate**
 
-- Task decomposition
-- Complexity estimation
-- Status tracking
-- Dependencies and ordering
-- AI-powered planning
+Plans change. The structure supports revision without losing progress.
 
-Work defined in steps, not time. Agents execute festival tasks autonomously.
+## Why This Works
 
-## The Medieval Naming
+Same principle as organizations with people of varying capabilities. Break work into pieces sized for the person doing it. Verify against spec. Coordinate the whole.
 
-Guild uses medieval terminology throughout:
+Agents work the same way. Give them appropriately sized chunks with clear success criteria. They deliver.
 
-| Concept | Term |
-|---------|------|
-| Agent | Artisan |
-| Agent team | Guild |
-| Tool | Implement |
-| Workspace | Campaign |
-| Memory store | Archives |
-| Task board | Workshop Board |
-| Global config | Guild Hall |
+## The Result
 
-Consistent vocabulary. Clear mental model.
+Projects that stay on track. Work that matches intent. Quality that compounds instead of degrades.
 
-## How It Fits Together
-
-1. **Campaign** defines the workspace
-2. **Guild** defines the team
-3. **Festival** defines the work
-4. **Agents** execute with full context
-
-Configure the hierarchy. Agents inherit what they need at each level.
-
-## Configuration Example
-
-```yaml
-# campaign.yaml
-campaign:
-  name: "ecommerce-platform"
-  guilds:
-    - "backend-team"
-    - "frontend-team"
-    - "devops-team"
-
-# Each guild has its agents
-# Each agent knows campaign context
-# Festivals define what to build
-```
-
-Hierarchical configuration for complex, multi-team projects.
+Structure that makes agents reliable.

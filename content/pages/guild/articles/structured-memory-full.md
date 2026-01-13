@@ -1,134 +1,45 @@
-# Provider Agnostic Architecture
+# Provider Agnostic
 
-Guild works with any LLM provider. Mix and match within the same workflow.
+Models matter less than the market currently believes.
 
-## Supported Providers
+## The Insight
 
-**Commercial APIs**
+With proper orchestration, you get the same end results with much less capable models. The secret is breaking work into smaller chunks.
 
-- OpenAI (GPT-4, GPT-4o, O3)
-- Anthropic (Claude 4, 200K context)
-- DeepSeek (cost-effective reasoning)
-- DeepInfra (Llama, Mistral, Qwen)
-- Ora (DeepSeek models)
+Think about how companies work. People of varying intelligence come together. Each does their piece to spec. The whole exceeds what any individual could produce.
 
-**Local Models**
+AI agents work the same way.
 
-- Ollama (any Ollama-supported model)
-- Self-hosted inference
+## The Strategy
 
-**Developer Tools**
+**Big model for the plan**
 
-- Claude Code CLI (with MCP support)
+Use your most capable model for high-level thinking. Architecture. Strategy. Decomposition. This is where intelligence matters most.
 
-## Why Provider Agnostic Matters
+**Cheap model for execution**
 
-**Cost Optimization**
+Once the plan is clear, execution doesn't need genius. Smaller, faster, cheaper models can follow well-defined specs reliably.
 
-Different tasks need different models:
+**Right-size every task**
 
-```yaml
-agents:
-  - role: "architect"
-    provider: "anthropic"
-    model: "claude-sonnet-4-20250514"  # Complex reasoning
+Match model capability to task complexity. Don't pay for power you don't need. Don't under-resource decisions that matter.
 
-  - role: "implementer"
-    provider: "deepseek"
-    model: "deepseek-coder"     # Cost-effective coding
+## Why This Matters
 
-  - role: "reviewer"
-    provider: "openai"
-    model: "gpt-4o"             # Fast validation
-```
+**Economics**
 
-Route expensive tasks to capable models. Route simple tasks to cheaper ones.
+The cost difference between frontier and commodity models is enormous. Orchestration lets you use frontier models sparingly, commodity models heavily.
 
-**Capability Matching**
+**Speed**
 
-Models have different strengths:
+Smaller models are faster. When your execution layer runs on efficient models, throughput increases dramatically.
 
-- Claude excels at nuanced reasoning
-- GPT-4 excels at broad knowledge
-- DeepSeek excels at code generation
-- Local models for privacy-sensitive work
+**Flexibility**
 
-Mix providers to leverage each strength.
-
-**No Vendor Lock-In**
-
-The provider landscape shifts:
-- Pricing changes
-- New providers emerge
-- Models deprecated
-- Terms of service evolve
-
-Guild decouples your workflows from any single provider.
-
-## Multi-Provider Workflows
-
-**Team-Level Configuration**
-
-```yaml
-guild:
-  name: "full-stack-team"
-  agents:
-    - role: "backend"
-      provider: "anthropic"
-    - role: "frontend"
-      provider: "openai"
-    - role: "testing"
-      provider: "deepseek"
-    - role: "docs"
-      provider: "ollama"
-```
-
-Four agents. Four providers. One coordinated team.
-
-**Dynamic Routing**
-
-- Route based on task complexity
-- Fallback to alternatives on failure
-- Load balance across providers
-- Optimize cost dynamically
-
-## Unified Interface
-
-Regardless of provider:
-- Same agent configuration
-- Same tool access
-- Same memory system
-- Same session management
-
-Provider is just a config option. Behavior stays consistent.
-
-## Cost Tracking Per Provider
-
-Guild tracks costs across providers:
-
-```
-Session Summary:
-  anthropic/claude-4:    $0.42 (12 requests)
-  openai/gpt-4:          $0.28 (8 requests)
-  deepseek/coder:        $0.03 (15 requests)
-  Total:                 $0.73
-```
-
-Know exactly what each provider costs. Optimize with data.
-
-## Migration Path
-
-Switch providers without rewriting:
-
-1. Change provider in config
-2. Test with new provider
-3. Roll out to team
-4. No code changes
-
-Your workflows survive provider changes.
+Models improve constantly. New providers emerge. Pricing shifts. When you're not locked to one model for everything, you adapt easily.
 
 ## The Result
 
-Use the best model for each task. Pay appropriately for each. Switch freely as the landscape evolves.
+Same quality output. Lower cost. Faster execution. Provider flexibility.
 
-Provider agnostic by design. Lock-in by choice, not necessity.
+The orchestration layer is where the value lives. Models are interchangeable components.

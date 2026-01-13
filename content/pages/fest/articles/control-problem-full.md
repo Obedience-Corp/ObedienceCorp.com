@@ -1,155 +1,45 @@
-# Three-Level Hierarchy
+# Hierarchical Structure
 
-Festival Methodology uses a three-level structure to organize complex projects.
+Festival Methodology organizes complex projects into manageable pieces.
 
 ## The Levels
 
-### Festival
+**Festival**
 
-The complete project. A festival represents a significant deliverable or initiative.
+The complete project. Defines what success looks like, key deliverables, and boundaries.
 
-```
-festival/
-├── FESTIVAL_GOAL.md    # What success looks like
-├── 001_PHASE/
-├── 002_PHASE/
-└── 003_PHASE/
-```
+**Phase**
 
-**FESTIVAL_GOAL.md** defines:
-- Overall objective
-- Success criteria
-- Key deliverables
-- Constraints and boundaries
+A major milestone. Phases represent distinct stages—research, planning, implementation, review, deployment.
 
-### Phase
+**Sequence**
 
-A major milestone within the festival. Phases represent distinct stages of work.
+A unit of related work within a phase. Groups tasks toward a specific goal.
 
-```
-001_RESEARCH/
-├── PHASE_GOAL.md       # Phase objective
-├── 01_sequence/
-└── 02_sequence/
-```
+**Task**
 
-**Common Phase Types:**
-- **Research** - Explore, analyze, gather information
-- **Planning** - Define requirements, architecture
-- **Implementation** - Build with quality gates
-- **Review** - Validation, testing, UAT
-- **Deployment** - Release, launch, handoff
+A single piece of executable work. Concrete enough for an AI agent to complete.
 
-**PHASE_GOAL.md** defines:
-- Phase objective
-- Expected outcomes
-- Evaluation criteria
+## Why Hierarchy Works
 
-### Sequence
+**Prevents overwhelm**
 
-A unit of related work within a phase. Sequences group tasks toward a specific goal.
+A project might have 100+ tasks. Flat lists become unmanageable. Hierarchy keeps things navigable at every level.
 
-```
-01_build_auth/
-├── SEQUENCE_GOAL.md    # Sequence objective
-├── 01_implement.md
-├── 02_test.md
-└── 03_review.md
-```
+**Enables focus**
 
-**SEQUENCE_GOAL.md** defines:
-- What this sequence achieves
-- How success is measured
-- Dependencies on other sequences
+Work on one task at a time while understanding which sequence it completes, which phase that serves, and what the festival achieves. Context without overwhelm.
 
-### Task
+**Supports quality gates**
 
-A single piece of executable work. Tasks are concrete enough for AI to complete.
+Each level has a goal document defining success. Check work against goals before proceeding. Catch drift early.
 
-```markdown
-# Task: 01_implement_login
+**Adaptable depth**
 
-## Objective
-Create the login endpoint with session management.
-
-## Requirements
-- [ ] Accept email/password
-- [ ] Validate credentials
-- [ ] Create session token
-- [ ] Return user data
-
-## Implementation Steps
-1. Create auth service
-2. Add login handler
-3. Implement session storage
-4. Write response formatter
-
-## Deliverables
-- `auth/service.go`
-- `handlers/login.go`
-- Unit tests passing
-```
-
-## Why Three Levels?
-
-**Prevents Overwhelm**
-
-A project might have 100+ tasks. Without hierarchy:
-- Flat list is unmanageable
-- Dependencies become tangled
-- Progress is hard to track
-
-With hierarchy:
-- 5-7 phases, each clear
-- 3-5 sequences per phase
-- 5-10 tasks per sequence
-
-Manageable at every level.
-
-**Enables Focus**
-
-AI works on one task at a time but understands:
-- Which sequence it's completing
-- Which phase that sequence serves
-- What the festival achieves
-
-Context without overwhelm.
-
-**Supports Progress Tracking**
-
-```
-Festival: 62% complete
-├── Phase 001: ✓ Complete
-├── Phase 002: ✓ Complete
-├── Phase 003: In Progress (75%)
-│   └── Sequence 01: 3/4 tasks done
-└── Phase 004: Pending
-```
-
-Progress visible at any granularity.
-
-## Navigation
-
-The fest CLI makes navigation easy:
-
-```bash
-# See current status
-fest status
-
-# Go to a phase
-fest go 002
-
-# See next task
-fest next
-```
-
-AI agents can navigate the hierarchy to find work and understand context.
+Simple projects need less structure. Complex projects get more levels. The system adapts to the work.
 
 ## The Result
 
-Complex projects broken into:
-- Manageable phases
-- Focused sequences
-- Executable tasks
+Complex projects broken into manageable phases, focused sequences, and executable tasks.
 
-Each level has clear goals. Progress is always measurable.
+Each level has clear goals. Progress is always measurable. Quality compounds instead of degrades.

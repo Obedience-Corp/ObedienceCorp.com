@@ -54,7 +54,7 @@ The defensible value layer is infrastructure for autonomous execution. Organizat
 - Operations that were impossible solo
 - Your judgment replicated, not your hours
 
-## Guild
+## Obey
 
 Our first product. Infrastructure for collaborative configuration and autonomous execution.
 
@@ -71,6 +71,6 @@ For investors, early adopters, or partnership inquiries:
 
 ---
 
-**Building Guild: 1000 agents that obey.**
+**Building Obey: 1000 agents that obey.**
 
 Infrastructure for AI that does what you want, the way you want it done.

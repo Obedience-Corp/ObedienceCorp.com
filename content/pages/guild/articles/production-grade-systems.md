@@ -1,5 +1,5 @@
-Built by using it. Festival Methodology was developed with Guild. The fest CLI was planned and executed by Guild agents.
+Daily R&D since March 2025. Patterns extracted from heavy AI agent usage across complex, long-running projects.
 
-Real multi-agent workflows. Real complexity. Real production use.
+Proven system. Working subsystems. Productivity multiplied.
 
-Not vaporware. Infrastructure that works.
+[See the work in progress.](https://github.com/lancekrogers/guild-core)

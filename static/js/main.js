@@ -51,14 +51,21 @@ const currentYear = new Date().getFullYear();
 document.getElementById("year").textContent = currentYear;
 document.querySelector(".modal-year").textContent = currentYear;
 
-// Simple typing animation for tagline
+// Simple typing animation for tagline with sentence pause
 function typeText(element, text, speed, callback) {
   let i = 0;
   function type() {
     if (i < text.length) {
       element.textContent += text.charAt(i);
+      const currentChar = text.charAt(i);
+      const nextChar = text.charAt(i + 1);
       i++;
-      setTimeout(type, speed);
+      // Add longer pause after sentence-ending punctuation followed by space
+      if ((currentChar === '.' || currentChar === '!' || currentChar === '?') && nextChar === ' ') {
+        setTimeout(type, 800); // 800ms pause between sentences
+      } else {
+        setTimeout(type, speed);
+      }
     } else if (callback) {
       callback();
     }
@@ -80,9 +87,12 @@ setTimeout(() => {
   const tagline2 = dataSource?.dataset.tagline2 || "The way you want it done";
   const shouldAnimate = dataSource?.dataset.animate === "true";
 
+  // Only run if both line elements exist
+  if (!line1 || !line2) return;
+
   if (shouldAnimate) {
     // Animated typing effect
-    typeText(line1, tagline1, 40, () => {
+    typeText(line1, tagline1, 70, () => {
       // Only add period if line doesn't already end with punctuation
       const lastChar1 = tagline1.slice(-1);
       if (!['.', ',', '!', '?', ';', ':'].includes(lastChar1)) {
@@ -93,7 +103,7 @@ setTimeout(() => {
       }
 
       setTimeout(() => {
-        typeText(line2, tagline2, 40, () => {
+        typeText(line2, tagline2, 70, () => {
           // Only add period if line doesn't already end with punctuation
           const lastChar2 = tagline2.slice(-1);
           if (!['.', ',', '!', '?', ';', ':'].includes(lastChar2)) {

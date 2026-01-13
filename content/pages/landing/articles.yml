@@ -6,9 +6,9 @@ articles:
     grid_row: "1"
     content_file: "problem-statement.md"
 
-  # Guild Product Card
-  - id: "guild-card"
-    title: "GUILD"
+  # Obey Product Card
+  - id: "obey-card"
+    title: "OBEY"
     grid_column: "1"
     grid_row: "2"
     content_file: "guild-card.md"

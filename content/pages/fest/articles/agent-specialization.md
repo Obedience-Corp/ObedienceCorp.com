@@ -1,5 +1,5 @@
-CONTEXT.md captures decisions, rationale, and lessons learned. Session handoff notes ensure continuity.
+Context chains through the festival structure. Each level provides context for the level below.
 
-Multi-day autonomous work without losing context. Pick up exactly where you left off.
+Goal documents at every level. Work products become context for future work. Progress encoded in structure.
 
-**Memory that persists.**
+Multi-day autonomous work without losing context.

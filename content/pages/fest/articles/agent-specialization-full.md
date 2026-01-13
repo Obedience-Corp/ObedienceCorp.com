@@ -1,6 +1,6 @@
 # Context Preservation
 
-Festival Methodology maintains context across sessions through structured documentation.
+Festival Methodology maintains context through structure, not documentation tricks.
 
 ## The Problem
 
@@ -8,166 +8,64 @@ AI conversations lose context:
 - Session ends, context gone
 - Tomorrow starts from scratch
 - Decisions forgotten
-- Lessons lost
 - Progress unclear
 
-Multi-day projects become impossible.
+Multi-day projects become impossible without structure.
 
-## The Solution
+## How Structure Preserves Context
 
-### CONTEXT.md
+**Context chains through hierarchy**
 
-Every festival has a CONTEXT.md file:
+The festival structure itself is the context preservation mechanism. Each level provides context for the level below:
 
-```markdown
-# Context
+- Festival goal informs phase goals
+- Phase goals inform sequence goals
+- Sequence goals inform task work
+- Task work connects back to festival purpose
 
-## Key Decisions
+An agent working on a task understands why that task exists—because the structure makes the chain explicit.
 
-### 2024-01-15: Auth Strategy
-**Decision:** JWT with refresh tokens
-**Rationale:** Stateless, scalable, standard practice
-**Alternatives Rejected:** Sessions (state management), API keys (less secure)
+**Goal documents at every level**
 
-### 2024-01-14: Database Choice
-**Decision:** PostgreSQL
-**Rationale:** Strong typing, JSON support, team familiarity
-**Trade-offs:** More setup than SQLite
+Each level has a goal document defining success criteria. When an agent starts work, it reads up the chain:
+- What is this task trying to accomplish?
+- What sequence does it belong to?
+- What phase is that sequence serving?
+- What festival are we completing?
 
-## Session Notes
+Context flows through the hierarchy naturally.
 
-### Session: 2024-01-15 14:30
-**Completed:**
-- Auth service implementation
-- Login/logout endpoints
-- Token refresh flow
+**Work products become context**
 
-**In Progress:**
-- Permission system (blocked on decision)
-
-**Next:**
-- Resolve permission model question
-- Implement role-based access
-
-### Session: 2024-01-14 09:00
-**Completed:**
-- Database schema design
-- Migration setup
-- User model
-
-## Open Questions
-
-- [ ] Permission model: RBAC vs ABAC?
-- [ ] Token expiry: 15min or 1hr?
-
-## Lessons Learned
-
-- JWT validation should happen in middleware, not handlers
-- Use database transactions for multi-step operations
-```
-
-## What Gets Captured
-
-**Decisions**
-- What was decided
-- Why it was decided
-- What alternatives were considered
-- Trade-offs accepted
-
-**Progress**
-- What was completed this session
-- What's in progress
-- What's blocked and why
-- What comes next
-
-**Questions**
-- Open questions for human input
-- Unresolved ambiguities
-- Decisions pending approval
-
-**Lessons**
-- What worked well
-- What to avoid
-- Patterns discovered
-- Gotchas encountered
-
-## How It's Used
-
-**Session Start**
-
-AI reads CONTEXT.md to understand:
-- Where we are in the project
-- What decisions have been made
-- What's currently in progress
-- What questions need answers
-
-**During Work**
-
-AI updates CONTEXT.md when:
-- Making significant decisions
-- Completing major work
-- Encountering blockers
-- Learning something important
-
-**Session End**
-
-AI writes handoff notes:
-- What was accomplished
-- What's in progress
-- What's next
-- Any blockers
+Completed tasks become context for future tasks. The structure preserves what was done:
+- Completed phases inform current work
+- Sequence outputs feed into next sequences
+- Progress is visible and traceable
 
 ## Multi-Day Continuity
 
-Day 1: Implement auth service
-```
-Session notes: Auth service complete. Login works.
-Blocked on permission model decision.
-```
+Day 1: Complete Phase 1
 
-Day 2: Continue with context
-```
-Reading CONTEXT.md...
-- Auth service done ✓
-- Blocked on permission model
-- Need to resolve RBAC vs ABAC question
+Day 2: Start Phase 2—but Phase 1's outputs are there. The structure captured what happened. The agent reads the hierarchy and continues.
 
-Asking human for decision...
-```
+No special handoff documents needed. The work itself is the context.
 
-Work continues seamlessly. No context lost.
+## Why This Works
 
-## The fest CLI
+**Structure is durable**
 
-```bash
-# View current context
-fest context
+Files in a hierarchy don't disappear between sessions. The festival structure persists exactly as it was left.
 
-# Add a decision
-fest context add-decision "Auth Strategy" "JWT with refresh"
+**Hierarchy is navigable**
 
-# Add session notes
-fest context session-end
-```
+An agent can always trace back up the chain to understand purpose. Why this task? Check the sequence goal. Why this sequence? Check the phase goal.
 
-## Why It Matters
+**Progress is visible**
 
-**Without Context Preservation**
-- Every session starts over
-- Decisions repeated
-- Mistakes repeated
-- Progress slow
-
-**With Context Preservation**
-- Sessions build on each other
-- Decisions inform future work
-- Lessons compound
-- Progress accelerates
+What's done, what's in progress, what's next—all encoded in the structure. Status is state, not documentation.
 
 ## The Result
 
 AI can work on projects spanning days or weeks.
 
-Context accumulates. Decisions inform. Lessons compound.
-
-Long-running autonomous work becomes possible.
+Context accumulates through structure. Each level informs the next. Long-running autonomous work becomes possible.

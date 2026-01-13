@@ -25,7 +25,7 @@ dispatches:
 
   - dispatch_path: "/guild/core"
     status: "OPERATIONAL"
-    title: "Guild Core Reference Complete"
+    title: "Obey Reference Complete"
     excerpt: "Monolith implementation validated. Core patterns extracted for modular deployment."
     date: "2024-12-22"
 

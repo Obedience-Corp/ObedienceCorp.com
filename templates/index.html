@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
   <body>
+    {{if ne .Page.Name "index"}}
     <!-- Hover Zones (visible < 1800px) -->
     <div class="hover-zone hover-zone-left" aria-label="Hover to view bulletins"></div>
     <div class="hover-zone hover-zone-right" aria-label="Hover to view dispatches"></div>
@@ -84,6 +85,7 @@
         </div>
       </div>
     </div>
+    {{end}}
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -129,7 +131,7 @@
     </div>
 
     {{if eq .Page.Name "index"}}
-    <!-- Landing Page: Hero above grid -->
+    <!-- Landing Page: Hero only, centered -->
     <header class="landing-hero" role="banner" aria-label="Site introduction"
             data-tagline1="{{.Page.TaglineLine1}}"
             data-tagline2="{{.Page.TaglineLine2}}"
@@ -139,15 +141,37 @@
         <span class="tagline-line" id="line1"></span>
         <span class="tagline-line" id="line2"></span>
       </h2>
-      <div class="landing-hero-mission">{{.Page.Mission}}</div>
     </header>
 
-    <div class="container landing-container">
+    {{if .CTA.Headline}}
+    <!-- CTA Section -->
+    <section class="landing-cta">
+      <h2 class="cta-headline">{{.CTA.Headline}}</h2>
+      {{if .CTA.Description}}<p class="cta-description">{{.CTA.Description}}</p>{{end}}
+      {{if .CTA.Links}}
+      <div class="cta-links">
+        {{range .CTA.Links}}
+        <a href="{{.Path}}" class="cta-link">
+          <span class="cta-link-label">{{.Label}}</span>
+          {{if .Description}}<span class="cta-link-desc">{{.Description}}</span>{{end}}
+        </a>
+        {{end}}
+      </div>
+      {{end}}
+      {{if .CTA.ContactEmail}}
+      <div class="cta-contact">
+        {{if .CTA.ContactText}}<span class="cta-contact-text">{{.CTA.ContactText}}</span>{{end}}
+        <a href="mailto:{{.CTA.ContactEmail}}" class="cta-contact-email">{{.CTA.ContactEmail}}</a>
+      </div>
+      {{end}}
+    </section>
+    {{end}}
     {{else}}
     <!-- Product Pages: Page header above grid -->
     <header class="page-header">
       <h1 class="page-title">{{.Page.HeroTitle}}</h1>
       {{if .Page.Subtitle}}<div class="page-subtitle">{{.Page.Subtitle}}</div>{{end}}
+      {{if or .Page.TaglineLine1 .Page.TaglineLine2}}
       <div class="page-taglines"
            data-tagline1="{{.Page.TaglineLine1}}"
            data-tagline2="{{.Page.TaglineLine2}}"
@@ -155,11 +179,11 @@
         <span class="tagline-line" id="line1"></span>
         <span class="tagline-line" id="line2"></span>
       </div>
-      <div class="page-mission">{{.Page.Mission}}</div>
+      {{end}}
+      {{if .Page.Mission}}<div class="page-mission">{{.Page.Mission}}</div>{{end}}
     </header>
 
     <div class="container">
-    {{end}}
       <!-- Article Boxes -->
       {{range .Articles}}
       <div class="article-box{{if .HasModal}} clickable{{end}}" style="{{.Style}}"{{if .HasModal}} data-modal-id="{{.ID}}"{{end}}>
@@ -170,6 +194,7 @@
       </div>
       {{end}}
     </div>
+    {{end}}
 
     <!-- Modal -->
     <div id="modal-overlay" class="modal-overlay">

@@ -1,7 +1,7 @@
 articles:
   # Row 1: About (full width intro for product page)
   - id: "about"
-    title: "About Guild"
+    title: "About Obey"
     grid_column: "1 / 4"
     grid_row: "1"
     content_file: "about.md"
@@ -24,7 +24,7 @@ articles:
 
   # Row 3: PRODUCT section - three equal columns
   - id: "deterministic-workflows"
-    title: "Campaigns, Guilds, and Festivals"
+    title: "Hierarchical Configuration"
     grid_column: "1"
     grid_row: "3"
     content_file: "deterministic-workflows.md"
@@ -46,7 +46,7 @@ articles:
 
   # Row 4: PROOF section
   - id: "production-grade-systems"
-    title: "Built by Using It"
+    title: "Proven in Production"
     grid_column: "1 / 3"
     grid_row: "4"
     content_file: "production-grade-systems.md"

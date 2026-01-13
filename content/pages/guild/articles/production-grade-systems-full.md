@@ -1,126 +1,33 @@
-# Built by Using It
+# Proven in Production
 
-Guild development is driven by building real systems with Guild.
+Daily R&D since March 2025. Obey's architecture emerged from solving real workflow problems every day. Not theoretical research. Not toy demos. Patterns extracted from heavy AI agent usage across complex, long-running projects.
 
-## Dogfooding
+## Real Results
 
-**Festival Methodology**
+**Productivity Multiplied**
 
-The entire Festival Methodology was developed using Guild:
-- Planning done by Guild agents
-- Implementation coordinated through Guild
-- Documentation written by Guild teams
-- Testing validated by Guild workflows
+Engineers using these techniques consistently outperform similarly skilled engineers using other AI tools heavily. Not marginal gains. Multiples.
 
-**fest CLI**
+**System Proven**
 
-The fest command-line tool:
-- Planned in Guild festivals
-- Implemented by Guild agents
-- Tested through Guild sessions
-- Documented by Guild teams
+The core architecture works. Multi-agent coordination, session persistence, provider switching, context management—all refined through actual use.
 
-Building tools by using the tools they're built with.
+**Subsystems Working**
 
-## What This Validates
-
-**Multi-Agent Coordination**
-
-Not theoretical multi-agent workflows. Actual coordination:
-- Multiple agents on the same project
-- Hand-offs between specialized roles
-- Context maintained across agents
-- Quality preserved through process
-
-**Session Persistence**
-
-Long-running work across sessions:
-- Work spanning days and weeks
-- Context preserved between sessions
-- Decisions inform future work
-- No starting from scratch
-
-**Provider Reliability**
-
-Real usage across providers:
-- Switching between providers
-- Fallback handling
-- Cost optimization in practice
-- API edge cases encountered
-
-**Tool Integration**
-
-Tools used in real workflows:
-- LSP for actual code navigation
-- File editing for real changes
-- Web fetch for real documentation
-- Workspace isolation for safety
-
-## Production Patterns
-
-**What Works**
-
-Patterns that emerged from real use:
-
-- Clear agent specialization
-- Explicit context handoffs
-- Festival-based planning
-- Session save points
-- Cost monitoring
-
-**What Changed**
-
-Features refined through actual needs:
-
-- Session recovery (needed after crashes)
-- Cost tracking granularity (needed for budgeting)
-- Agent context management (needed for long sessions)
-- Error handling (needed for real API failures)
-
-## Why This Matters
-
-**Not Vaporware**
-
-Features exist because they were necessary:
-- Session management because sessions crash
-- Cost tracking because costs matter
-- Error recovery because APIs fail
-- Context persistence because work spans days
-
-**Battle-Tested**
-
-Problems solved by encountering them:
-- Rate limits handled because we hit them
-- Timeouts managed because they happen
-- State recovery because state corrupts
-- Fallbacks implemented because providers fail
-
-## The Proof
-
-Guild's internal projects:
-- festival-methodology (planning system)
-- fest (CLI tool)
-- guild-chat (Rust TUI client)
-- guild-scaffold (project scaffolding)
-- obediencecorp.com (this website)
-
-All built or maintained using Guild.
+Individual components are operational. Festival planning system complete. Provider integrations stable. The pieces work.
 
 ## Current Status
 
-**Reference Implementation**
+**Core System**: Proven and working
 
-guild-core is the reference implementation. Core features are being extracted into:
-- festival-methodology (Go, standalone)
-- guild-chat (Rust, TUI client)
-- guild-scaffold (Go, templating)
+**Remaining Work**: Unified UX to bring everything together
 
-**V3 Development**
-
-Next-generation architecture in progress. Lessons from production use informing design.
+The hard problems are solved. What remains is packaging them into a cohesive interface.
 
 ## The Result
 
-Infrastructure built by people who use it to build other things.
+Infrastructure built by people who use AI agents daily for real work.
 
-Not demo-ware. Production-tested through actual production use.
+[See the work in progress.](https://github.com/lancekrogers/guild-core)
+
+Not vaporware. Proven techniques awaiting final packaging.

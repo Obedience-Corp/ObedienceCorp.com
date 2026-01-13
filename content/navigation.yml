@@ -3,7 +3,7 @@ navigation:
     - label: "Home"
       path: "/"
       type: "internal"
-    - label: "Guild"
+    - label: "Obey"
       path: "/guild"
       type: "internal"
     - label: "Fest"

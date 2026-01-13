@@ -1,5 +1,5 @@
-OpenAI. Anthropic. DeepSeek. Ollama. DeepInfra. Ora.
+Models matter less than the market believes. With proper orchestration, same results from less capable models.
 
-Use any provider. Mix models in the same workflow. Your backend agent runs GPT-4, your test agent runs Claude, your docs agent runs DeepSeek.
+Big model for the plan. Cheap model for execution. Right-size every task.
 
-No vendor lock-in. Best tool for each task.
+The orchestration layer is where the value lives.

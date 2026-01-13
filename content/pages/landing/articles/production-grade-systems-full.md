@@ -1,6 +1,6 @@
 # Tested with Real Autonomous Workflows
 
-Guild development is driven by real requirements for autonomous company operations. Not academic research. Not simplified demos. Infrastructure built to solve actual challenges in collaborative configuration and autonomous execution.
+Obey development is driven by real requirements for autonomous company operations. Not academic research. Not simplified demos. Infrastructure built to solve actual challenges in collaborative configuration and autonomous execution.
 
 ## Real-World Testing
 
@@ -50,7 +50,7 @@ Guild development is driven by real requirements for autonomous company operatio
 
 ## What This Means
 
-Guild isn't vaporware. Features exist because they were necessary to solve real problems:
+Obey isn't vaporware. Features exist because they were necessary to solve real problems:
 
 **Collaborative Configuration**
 
@@ -70,7 +70,7 @@ Guild isn't vaporware. Features exist because they were necessary to solve real 
 - Proven reliable under real conditions
 - Validated across diverse workflows
 
-## Why Guild Exists
+## Why Obey Exists
 
 Simpler tools failed under real conditions.
 

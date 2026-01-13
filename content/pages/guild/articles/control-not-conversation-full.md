@@ -1,104 +1,45 @@
 # Beyond Chat Interfaces
 
-Chat interfaces treat AI as a conversation partner. Guild treats AI as a coordinated workforce.
+Chat interfaces treat AI as a conversation partner. Obey treats AI as a coordinated workforce.
 
 ## The Chat Limitation
 
-**Single Agent Model**
+**Single agent, single thread**
 
-- One conversation thread
-- Context resets between sessions
-- No memory of past decisions
-- You remain the only coordinator
+One conversation. Context resets between sessions. No memory of past decisions. You remain the only coordinator.
 
-**Manual Everything**
+**Manual coordination**
 
-- You route every task manually
-- You remember what each tool does
-- You handle all handoffs
-- You maintain all context
+You route every task. You remember what each tool does. You handle all handoffs. You maintain all context.
 
-**Linear Interaction**
+**Linear interaction**
 
-- Prompt. Wait. Response. Repeat.
-- One thing at a time
-- Progress bottlenecked by interaction
-- Scaling means more conversations
+Prompt. Wait. Response. Repeat. One thing at a time. Progress bottlenecked by you.
 
 ## What Orchestration Enables
 
-**Multiple Specialized Agents**
+**Specialized agent teams**
 
-Guild coordinates teams of agents:
-- Backend Craftsman for server code
-- Frontend Artisan for UI work
-- Test Marshal for validation
-- Docs Scribe for documentation
+Configure agents for specific roles. Backend work goes to backend agents. Frontend to frontend. Testing to test specialists. Each agent optimized for its domain.
 
-Each agent has its role. Guild manages coordination.
+**Automatic routing**
 
-**@Agent Routing**
+Direct work to the right agent naturally. Messages go where they need to go. Context flows without manual management.
 
-Direct work to specific agents:
-```
-@backend implement the API endpoint
-@frontend build the form component
-@tests write coverage for the new code
-```
+**Persistent context**
 
-Messages route to the right agent. Context flows automatically.
+Context accumulates across sessions. Decisions inform future work. Project knowledge builds over time. No starting from scratch every day.
 
-**Persistent Memory Chains**
+**Parallel execution**
 
-- Context accumulates across sessions
-- Decisions inform future work
-- Project knowledge builds over time
-- No "starting from scratch" on day 2
-
-**Real-Time Streaming**
-
-- See agent responses as they generate
-- Multiple agents working in parallel
-- Progress visible across the team
-- Not waiting for one completion to start another
-
-## The Architecture
-
-**Daemon Background Server**
-
-Guild runs as a background service:
-- gRPC server for agent communication
-- Unix socket for local IPC
-- Auto-lifecycle management
-- Persistent across restarts
-
-**6-Layer Prompt System**
-
-Context builds through layers:
-1. Platform - Safety guidelines
-2. Guild - Project goals
-3. Role - Agent definition
-4. Domain - Project type
-5. Session - User preferences
-6. Turn - Current instruction
-
-Each layer adds appropriate context without manual management.
-
-**Tool Registry**
-
-Agents access tools through a unified registry:
-- LSP for code intelligence
-- Multi-file atomic editing
-- Web search and fetching
-- Workspace isolation
-
-Tools available to agents, coordinated by Guild.
+Multiple agents working simultaneously. See progress across the team. Not waiting for one completion to start another.
 
 ## The Shift
 
 **From:** Chat assistant that waits for prompts
+
 **To:** Agent team that executes coordinated work
 
-Configure your agents. Route work with @mentions. Let Guild handle coordination.
+Configure your agents. Route work naturally. Let Obey handle the coordination.
 
 Not faster chat. Actual orchestration.

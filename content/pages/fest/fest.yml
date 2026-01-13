@@ -1,10 +1,11 @@
 page:
   name: "fest"
-  title: "Fest - Obedience Corp"
+  title: "Festival Methodology - Obedience Corp"
   description: "Festival Methodology: Goal-oriented project management for AI-assisted development workflows."
-  hero_title: "FEST"
-  tagline_line1: "Festival methodology"
-  tagline_line2: "AI-native project planning"
-  mission: "Ship complex projects with autonomous AI agents"
+  hero_title: "FESTIVAL METHODOLOGY"
+  subtitle: "AI-native project planning"
+  tagline_line1: ""
+  tagline_line2: ""
+  mission: ""
   layout: "hero-right"
   animate_tagline: false

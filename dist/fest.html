@@ -3,11 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fest - Obedience Corp</title>
+    <title>Festival Methodology - Obedience Corp</title>
     <meta name="description" content="Festival Methodology: Goal-oriented project management for AI-assisted development workflows." />
     <link rel="stylesheet" href="/static/css/styles.css" />
   </head>
   <body>
+    
     
     <div class="hover-zone hover-zone-left" aria-label="Hover to view bulletins"></div>
     <div class="hover-zone hover-zone-right" aria-label="Hover to view dispatches"></div>
@@ -300,6 +301,7 @@
         </div>
       </div>
     </div>
+    
 
     
     <nav class="navbar">
@@ -310,7 +312,7 @@
         
         <a href="/" class="nav-item">Home</a>
         
-        <a href="/guild" class="nav-item">Guild</a>
+        <a href="/guild" class="nav-item">Obey</a>
         
         <a href="/fest" class="nav-item">Fest</a>
         
@@ -348,7 +350,7 @@
           
           <a href="/" class="nav-drawer-item">Home</a>
           
-          <a href="/guild" class="nav-drawer-item">Guild</a>
+          <a href="/guild" class="nav-drawer-item">Obey</a>
           
           <a href="/fest" class="nav-drawer-item">Fest</a>
           
@@ -363,20 +365,13 @@
     
     
     <header class="page-header">
-      <h1 class="page-title">FEST</h1>
+      <h1 class="page-title">FESTIVAL METHODOLOGY</h1>
+      <div class="page-subtitle">AI-native project planning</div>
       
-      <div class="page-taglines"
-           data-tagline1="Festival methodology"
-           data-tagline2="AI-native project planning"
-           data-animate="false">
-        <span class="tagline-line" id="line1"></span>
-        <span class="tagline-line" id="line2"></span>
-      </div>
-      <div class="page-mission">Ship complex projects with autonomous AI agents</div>
+      
     </header>
 
     <div class="container">
-    
       
       
       <div class="article-box clickable" style="grid-column: 1 / 4; grid-row: 1;" data-modal-id="about">
@@ -404,13 +399,13 @@
       </div>
       
       <div class="article-box clickable" style="grid-column: 3; grid-row: 2;" data-modal-id="control-problem">
-        <h3 class="article-title">Three-Level Hierarchy</h3>
+        <h3 class="article-title">Hierarchical Structure</h3>
         <div class="article-body">
           <p>Festivals contain Phases. Phases contain Sequences. Sequences contain Tasks.</p>
 
-<p>Each level has a goal document defining success. Work flows from high-level objectives to concrete executable steps.</p>
+<p>Each level has a goal document defining success. Quality gates at every level.</p>
 
-<p><strong>Hierarchy that AI can navigate.</strong></p>
+<p>Hierarchy that AI can navigate.</p>
 
         </div>
       </div>
@@ -442,11 +437,11 @@
       <div class="article-box clickable" style="grid-column: 3; grid-row: 3;" data-modal-id="agent-specialization">
         <h3 class="article-title">Context Preservation</h3>
         <div class="article-body">
-          <p>CONTEXT.md captures decisions, rationale, and lessons learned. Session handoff notes ensure continuity.</p>
+          <p>Context chains through the festival structure. Each level provides context for the level below.</p>
 
-<p>Multi-day autonomous work without losing context. Pick up exactly where you left off.</p>
+<p>Goal documents at every level. Work products become context for future work. Progress encoded in structure.</p>
 
-<p><strong>Memory that persists.</strong></p>
+<p>Multi-day autonomous work without losing context.</p>
 
         </div>
       </div>
@@ -466,9 +461,11 @@
       <div class="article-box" style="grid-column: 3; grid-row: 4;">
         <h3 class="article-title">Get Started</h3>
         <div class="article-body">
-          <p>Festival Methodology and fest CLI are part of the Guild ecosystem.</p>
+          <p>Festival Methodology is open source.</p>
 
-<p>For early access, integration support, or partnership inquiries.</p>
+<p><a href="https://github.com/lancekrogers/festival-methodology"><strong>GitHub Repository</strong></a></p>
+
+<p>For integration support or partnership inquiries:</p>
 
 <p><a href="mailto:contact@obediencecorp.com"><strong>contact@obediencecorp.com</strong></a></p>
 
@@ -476,6 +473,7 @@
       </div>
       
     </div>
+    
 
     
     <div id="modal-overlay" class="modal-overlay">
@@ -544,9 +542,9 @@ A single piece of executable work. Has requirements, steps, and deliverables con
 
 <ul>
 <li>Progress visible at a glance</li>
-<li>Decisions captured in CONTEXT.md</li>
 <li>Humans guide goals, AI executes work</li>
 <li>Review points built into structure</li>
+<li>Quality gates at every level</li>
 </ul>
 
 <h2 id="the-key-shift">The Key Shift</h2>
@@ -707,155 +705,51 @@ Start asking: &ldquo;What steps are needed?&rdquo;</p>
           
           
           <div class="modal-article-content" data-article-id="control-problem" style="display: none;">
-            <h1 id="three-level-hierarchy">Three-Level Hierarchy</h1>
+            <h1 id="hierarchical-structure">Hierarchical Structure</h1>
 
-<p>Festival Methodology uses a three-level structure to organize complex projects.</p>
+<p>Festival Methodology organizes complex projects into manageable pieces.</p>
 
 <h2 id="the-levels">The Levels</h2>
 
-<h3 id="festival">Festival</h3>
+<p><strong>Festival</strong></p>
 
-<p>The complete project. A festival represents a significant deliverable or initiative.</p>
+<p>The complete project. Defines what success looks like, key deliverables, and boundaries.</p>
 
-<pre><code>festival/
-├── FESTIVAL_GOAL.md    # What success looks like
-├── 001_PHASE/
-├── 002_PHASE/
-└── 003_PHASE/
-</code></pre>
+<p><strong>Phase</strong></p>
 
-<p><strong>FESTIVAL_GOAL.md</strong> defines:
-- Overall objective
-- Success criteria
-- Key deliverables
-- Constraints and boundaries</p>
+<p>A major milestone. Phases represent distinct stages—research, planning, implementation, review, deployment.</p>
 
-<h3 id="phase">Phase</h3>
+<p><strong>Sequence</strong></p>
 
-<p>A major milestone within the festival. Phases represent distinct stages of work.</p>
+<p>A unit of related work within a phase. Groups tasks toward a specific goal.</p>
 
-<pre><code>001_RESEARCH/
-├── PHASE_GOAL.md       # Phase objective
-├── 01_sequence/
-└── 02_sequence/
-</code></pre>
+<p><strong>Task</strong></p>
 
-<p><strong>Common Phase Types:</strong>
-- <strong>Research</strong> - Explore, analyze, gather information
-- <strong>Planning</strong> - Define requirements, architecture
-- <strong>Implementation</strong> - Build with quality gates
-- <strong>Review</strong> - Validation, testing, UAT
-- <strong>Deployment</strong> - Release, launch, handoff</p>
+<p>A single piece of executable work. Concrete enough for an AI agent to complete.</p>
 
-<p><strong>PHASE_GOAL.md</strong> defines:
-- Phase objective
-- Expected outcomes
-- Evaluation criteria</p>
+<h2 id="why-hierarchy-works">Why Hierarchy Works</h2>
 
-<h3 id="sequence">Sequence</h3>
+<p><strong>Prevents overwhelm</strong></p>
 
-<p>A unit of related work within a phase. Sequences group tasks toward a specific goal.</p>
+<p>A project might have 100+ tasks. Flat lists become unmanageable. Hierarchy keeps things navigable at every level.</p>
 
-<pre><code>01_build_auth/
-├── SEQUENCE_GOAL.md    # Sequence objective
-├── 01_implement.md
-├── 02_test.md
-└── 03_review.md
-</code></pre>
+<p><strong>Enables focus</strong></p>
 
-<p><strong>SEQUENCE_GOAL.md</strong> defines:
-- What this sequence achieves
-- How success is measured
-- Dependencies on other sequences</p>
+<p>Work on one task at a time while understanding which sequence it completes, which phase that serves, and what the festival achieves. Context without overwhelm.</p>
 
-<h3 id="task">Task</h3>
+<p><strong>Supports quality gates</strong></p>
 
-<p>A single piece of executable work. Tasks are concrete enough for AI to complete.</p>
+<p>Each level has a goal document defining success. Check work against goals before proceeding. Catch drift early.</p>
 
-<pre><code class="language-markdown"># Task: 01_implement_login
+<p><strong>Adaptable depth</strong></p>
 
-## Objective
-Create the login endpoint with session management.
-
-## Requirements
-- [ ] Accept email/password
-- [ ] Validate credentials
-- [ ] Create session token
-- [ ] Return user data
-
-## Implementation Steps
-1. Create auth service
-2. Add login handler
-3. Implement session storage
-4. Write response formatter
-
-## Deliverables
-- `auth/service.go`
-- `handlers/login.go`
-- Unit tests passing
-</code></pre>
-
-<h2 id="why-three-levels">Why Three Levels?</h2>
-
-<p><strong>Prevents Overwhelm</strong></p>
-
-<p>A project might have 100+ tasks. Without hierarchy:
-- Flat list is unmanageable
-- Dependencies become tangled
-- Progress is hard to track</p>
-
-<p>With hierarchy:
-- 5-7 phases, each clear
-- 3-5 sequences per phase
-- 5-10 tasks per sequence</p>
-
-<p>Manageable at every level.</p>
-
-<p><strong>Enables Focus</strong></p>
-
-<p>AI works on one task at a time but understands:
-- Which sequence it&rsquo;s completing
-- Which phase that sequence serves
-- What the festival achieves</p>
-
-<p>Context without overwhelm.</p>
-
-<p><strong>Supports Progress Tracking</strong></p>
-
-<pre><code>Festival: 62% complete
-├── Phase 001: ✓ Complete
-├── Phase 002: ✓ Complete
-├── Phase 003: In Progress (75%)
-│   └── Sequence 01: 3/4 tasks done
-└── Phase 004: Pending
-</code></pre>
-
-<p>Progress visible at any granularity.</p>
-
-<h2 id="navigation">Navigation</h2>
-
-<p>The fest CLI makes navigation easy:</p>
-
-<pre><code class="language-bash"># See current status
-fest status
-
-# Go to a phase
-fest go 002
-
-# See next task
-fest next
-</code></pre>
-
-<p>AI agents can navigate the hierarchy to find work and understand context.</p>
+<p>Simple projects need less structure. Complex projects get more levels. The system adapts to the work.</p>
 
 <h2 id="the-result">The Result</h2>
 
-<p>Complex projects broken into:
-- Manageable phases
-- Focused sequences
-- Executable tasks</p>
+<p>Complex projects broken into manageable phases, focused sequences, and executable tasks.</p>
 
-<p>Each level has clear goals. Progress is always measurable.</p>
+<p>Each level has clear goals. Progress is always measurable. Quality compounds instead of degrades.</p>
 
           </div>
           
@@ -1181,7 +1075,7 @@ Address issues found in testing and review.
           <div class="modal-article-content" data-article-id="agent-specialization" style="display: none;">
             <h1 id="context-preservation">Context Preservation</h1>
 
-<p>Festival Methodology maintains context across sessions through structured documentation.</p>
+<p>Festival Methodology maintains context through structure, not documentation tricks.</p>
 
 <h2 id="the-problem">The Problem</h2>
 
@@ -1189,167 +1083,69 @@ Address issues found in testing and review.
 - Session ends, context gone
 - Tomorrow starts from scratch
 - Decisions forgotten
-- Lessons lost
 - Progress unclear</p>
 
-<p>Multi-day projects become impossible.</p>
+<p>Multi-day projects become impossible without structure.</p>
 
-<h2 id="the-solution">The Solution</h2>
+<h2 id="how-structure-preserves-context">How Structure Preserves Context</h2>
 
-<h3 id="context-md">CONTEXT.md</h3>
+<p><strong>Context chains through hierarchy</strong></p>
 
-<p>Every festival has a CONTEXT.md file:</p>
+<p>The festival structure itself is the context preservation mechanism. Each level provides context for the level below:</p>
 
-<pre><code class="language-markdown"># Context
+<ul>
+<li>Festival goal informs phase goals</li>
+<li>Phase goals inform sequence goals</li>
+<li>Sequence goals inform task work</li>
+<li>Task work connects back to festival purpose</li>
+</ul>
 
-## Key Decisions
+<p>An agent working on a task understands why that task exists—because the structure makes the chain explicit.</p>
 
-### 2024-01-15: Auth Strategy
-**Decision:** JWT with refresh tokens
-**Rationale:** Stateless, scalable, standard practice
-**Alternatives Rejected:** Sessions (state management), API keys (less secure)
+<p><strong>Goal documents at every level</strong></p>
 
-### 2024-01-14: Database Choice
-**Decision:** PostgreSQL
-**Rationale:** Strong typing, JSON support, team familiarity
-**Trade-offs:** More setup than SQLite
+<p>Each level has a goal document defining success criteria. When an agent starts work, it reads up the chain:
+- What is this task trying to accomplish?
+- What sequence does it belong to?
+- What phase is that sequence serving?
+- What festival are we completing?</p>
 
-## Session Notes
+<p>Context flows through the hierarchy naturally.</p>
 
-### Session: 2024-01-15 14:30
-**Completed:**
-- Auth service implementation
-- Login/logout endpoints
-- Token refresh flow
+<p><strong>Work products become context</strong></p>
 
-**In Progress:**
-- Permission system (blocked on decision)
-
-**Next:**
-- Resolve permission model question
-- Implement role-based access
-
-### Session: 2024-01-14 09:00
-**Completed:**
-- Database schema design
-- Migration setup
-- User model
-
-## Open Questions
-
-- [ ] Permission model: RBAC vs ABAC?
-- [ ] Token expiry: 15min or 1hr?
-
-## Lessons Learned
-
-- JWT validation should happen in middleware, not handlers
-- Use database transactions for multi-step operations
-</code></pre>
-
-<h2 id="what-gets-captured">What Gets Captured</h2>
-
-<p><strong>Decisions</strong>
-- What was decided
-- Why it was decided
-- What alternatives were considered
-- Trade-offs accepted</p>
-
-<p><strong>Progress</strong>
-- What was completed this session
-- What&rsquo;s in progress
-- What&rsquo;s blocked and why
-- What comes next</p>
-
-<p><strong>Questions</strong>
-- Open questions for human input
-- Unresolved ambiguities
-- Decisions pending approval</p>
-
-<p><strong>Lessons</strong>
-- What worked well
-- What to avoid
-- Patterns discovered
-- Gotchas encountered</p>
-
-<h2 id="how-it-s-used">How It&rsquo;s Used</h2>
-
-<p><strong>Session Start</strong></p>
-
-<p>AI reads CONTEXT.md to understand:
-- Where we are in the project
-- What decisions have been made
-- What&rsquo;s currently in progress
-- What questions need answers</p>
-
-<p><strong>During Work</strong></p>
-
-<p>AI updates CONTEXT.md when:
-- Making significant decisions
-- Completing major work
-- Encountering blockers
-- Learning something important</p>
-
-<p><strong>Session End</strong></p>
-
-<p>AI writes handoff notes:
-- What was accomplished
-- What&rsquo;s in progress
-- What&rsquo;s next
-- Any blockers</p>
+<p>Completed tasks become context for future tasks. The structure preserves what was done:
+- Completed phases inform current work
+- Sequence outputs feed into next sequences
+- Progress is visible and traceable</p>
 
 <h2 id="multi-day-continuity">Multi-Day Continuity</h2>
 
-<p>Day 1: Implement auth service</p>
+<p>Day 1: Complete Phase 1</p>
 
-<pre><code>Session notes: Auth service complete. Login works.
-Blocked on permission model decision.
-</code></pre>
+<p>Day 2: Start Phase 2—but Phase 1&rsquo;s outputs are there. The structure captured what happened. The agent reads the hierarchy and continues.</p>
 
-<p>Day 2: Continue with context</p>
+<p>No special handoff documents needed. The work itself is the context.</p>
 
-<pre><code>Reading CONTEXT.md...
-- Auth service done ✓
-- Blocked on permission model
-- Need to resolve RBAC vs ABAC question
+<h2 id="why-this-works">Why This Works</h2>
 
-Asking human for decision...
-</code></pre>
+<p><strong>Structure is durable</strong></p>
 
-<p>Work continues seamlessly. No context lost.</p>
+<p>Files in a hierarchy don&rsquo;t disappear between sessions. The festival structure persists exactly as it was left.</p>
 
-<h2 id="the-fest-cli">The fest CLI</h2>
+<p><strong>Hierarchy is navigable</strong></p>
 
-<pre><code class="language-bash"># View current context
-fest context
+<p>An agent can always trace back up the chain to understand purpose. Why this task? Check the sequence goal. Why this sequence? Check the phase goal.</p>
 
-# Add a decision
-fest context add-decision &quot;Auth Strategy&quot; &quot;JWT with refresh&quot;
+<p><strong>Progress is visible</strong></p>
 
-# Add session notes
-fest context session-end
-</code></pre>
-
-<h2 id="why-it-matters">Why It Matters</h2>
-
-<p><strong>Without Context Preservation</strong>
-- Every session starts over
-- Decisions repeated
-- Mistakes repeated
-- Progress slow</p>
-
-<p><strong>With Context Preservation</strong>
-- Sessions build on each other
-- Decisions inform future work
-- Lessons compound
-- Progress accelerates</p>
+<p>What&rsquo;s done, what&rsquo;s in progress, what&rsquo;s next—all encoded in the structure. Status is state, not documentation.</p>
 
 <h2 id="the-result">The Result</h2>
 
 <p>AI can work on projects spanning days or weeks.</p>
 
-<p>Context accumulates. Decisions inform. Lessons compound.</p>
-
-<p>Long-running autonomous work becomes possible.</p>
+<p>Context accumulates through structure. Each level informs the next. Long-running autonomous work becomes possible.</p>
 
           </div>
           

@@ -1,151 +1,49 @@
 # Production Terminal UI
 
-Guild includes a full-featured TUI for developers who prefer the terminal.
+Obey starts with a terminal interface. Here's why.
 
-## Interface Features
+## Why Terminal First
 
-**@Agent Messaging**
+**Where files live**
 
-Direct messages to specific agents:
+AI agents work with code, configs, and documents. The terminal is where those files already are. No upload dialogs. No sync issues. Direct access.
 
-```
-@backend implement the user authentication API
-@frontend create the login form component
-@tests write integration tests for auth flow
-```
+**Tools wire easily**
 
-Messages route to the right agent. Responses stream back in context.
+Pipe output. Chain commands. Integrate with git, make, scripts, whatever you already use. The terminal is the universal connector.
 
-**Real-Time Streaming**
+**Personalized workflows**
 
-- See responses as they generate
-- Token-by-token streaming
-- Multiple agent responses visible
-- Progress indication during generation
+Everyone works differently. Terminal interfaces adapt to your patterns instead of forcing you into someone else's UX decisions.
 
-**Markdown Rendering**
+**No context switching**
 
-- Code blocks with syntax highlighting
-- Tables, lists, emphasis
-- Links and references
-- Rendered inline in terminal
+Editor to Obey and back in the same app. Stay in flow. The terminal is already where you're working.
 
-**Vim Mode**
+## In Progress
 
-- Full vim keybindings
-- Modal editing
-- Familiar navigation
-- Works like you expect
+**Multi-agent interface**
 
-## Session Management
+See and interact with multiple agents simultaneously. Switch contexts without losing state. Route work naturally.
 
-**Save and Restore**
+**Session management**
 
-```
-/save my-session
-/load my-session
-```
+Save sessions. Restore later. Export for documentation. Auto-recovery from interruptions.
 
-Pick up where you left off. Context preserved.
+**Real-time streaming**
 
-**Export History**
+See responses as they generate. Watch multiple agents work in parallel. Progress visible across your team.
 
-```
-/export markdown
-/export json
-```
+**Speed**
 
-Export conversation for documentation or analysis.
+Keyboard-first design. Vim keybindings. No mouse required. As fast as you can type.
 
-**Session Recovery**
+## What Comes Next
 
-- Auto-save on exit
-- Recovery from crashes
-- Persistent state
-- No lost work
-
-## Production Features
-
-**Multi-Agent View**
-
-See multiple agent contexts:
-- Active agent highlighted
-- Switch between agents
-- Parallel conversations
-- Team overview
-
-**Cost Dashboard**
-
-Real-time cost tracking:
-- Per-agent costs
-- Per-model breakdown
-- Session totals
-- Budget alerts
-
-**Keyboard Shortcuts**
-
-Everything accessible from keyboard:
-- Agent switching
-- Session management
-- View controls
-- Quick commands
-
-## Architecture
-
-**Built with Charm**
-
-Guild's TUI uses Charm libraries:
-- BubbleTea for architecture
-- Lipgloss for styling
-- Glamour for markdown
-- Production-tested components
-
-**Cross-Platform**
-
-Works on:
-- macOS
-- Linux
-- Windows (via WSL)
-- Remote SSH sessions
-
-**Terminal Detection**
-
-Adapts to terminal capabilities:
-- True color when supported
-- 256 color fallback
-- Basic color fallback
-- Feature detection
-
-## Why TUI?
-
-**Developer Workflow**
-
-Developers live in terminals:
-- tmux sessions
-- SSH access
-- CI environments
-- Server administration
-
-Guild fits that workflow.
-
-**Resource Efficiency**
-
-Lighter than alternatives:
-- No browser overhead
-- No Electron memory
-- Works over slow connections
-- Runs on minimal systems
-
-**Script Integration**
-
-Combine with other tools:
-- Pipe output
-- Script interactions
-- Integrate with workflows
-- Automation-friendly
+The terminal version helps us build what comes after. Same orchestration engine, different interfaces. The non-developer version is coming—built by using the developer version daily.
 
 ## The Result
 
-A terminal interface for agent orchestration that feels native to developer workflows.
+A terminal interface that fits how serious work actually happens.
 
-Not a web UI ported to terminal. A TUI built for developers.
+Not a limitation. A foundation.

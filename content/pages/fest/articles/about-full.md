@@ -51,9 +51,9 @@ Each level has a goal document. Each task has executable specifications.
 **For Human Oversight**
 
 - Progress visible at a glance
-- Decisions captured in CONTEXT.md
 - Humans guide goals, AI executes work
 - Review points built into structure
+- Quality gates at every level
 
 ## The Key Shift
 

@@ -1,10 +1,23 @@
 page:
   name: "index"
   title: "Obedience Corp"
-  description: "Obedience Corp. AI that does what you want, the way you want it done. Infrastructure for fully autonomous AI agents."
+  description: "Obedience Corp. AI that does what you want, the way you want it done. Infrastructure for autonomous companies."
   hero_title: "OBEDIENCE CORP"
-  tagline_line1: "AI that does what you want,"
-  tagline_line2: "the way you want it done"
-  mission: "Infrastructure for fully autonomous AI agents."
+  tagline_line1: "AI that does what you want."
+  tagline_line2: "The way you want it done."
+  mission: ""
   layout: "hero-left"
   animate_tagline: true
+
+cta:
+  headline: "Building infrastructure for autonomous companies."
+  description: "We build tools that give you complete control over AI agents. Deterministic workflows. Structured memory. Hierarchical orchestration. Systems that do exactly what you specify, every time."
+  links:
+    - label: "Obey"
+      path: "/guild"
+      description: "Agent orchestration framework"
+    - label: "Fest"
+      path: "/fest"
+      description: "AI-native project planning"
+  contact_text: "Interested?"
+  contact_email: "contact@obediencecorp.com"

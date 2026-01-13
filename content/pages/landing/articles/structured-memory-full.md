@@ -1,6 +1,6 @@
 # Provider Agnostic Infrastructure
 
-Guild works with any LLM provider. Your autonomous teams don't depend on any single vendor. Infrastructure built to outlive provider volatility.
+Obey works with any LLM provider. Your autonomous teams don't depend on any single vendor. Infrastructure built to outlive provider volatility.
 
 ## No Vendor Lock-In
 
@@ -13,7 +13,7 @@ The AI provider market changes rapidly:
 
 Organizations coupled to specific providers face continuous refactoring costs and negotiation weakness.
 
-Guild decouples autonomous execution from provider implementation.
+Obey decouples autonomous execution from provider implementation.
 
 ## Provider-Agnostic Architecture
 
@@ -92,7 +92,7 @@ Organizations tightly coupled to specific providers:
 - Operational risk from single point of failure
 - Limited to capabilities of one provider ecosystem
 
-## Guild's Approach
+## Obey's Approach
 
 Provider agnostic from the foundation. Your autonomous company infrastructure outlives any individual vendor.
 

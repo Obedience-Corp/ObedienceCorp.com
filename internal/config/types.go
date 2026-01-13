@@ -98,6 +98,7 @@ type NavItem struct {
 // PageConfigWrapper holds the root YAML structure for page config
 type PageConfigWrapper struct {
 	Page PageConfig `yaml:"page"`
+	CTA  CTAConfig  `yaml:"cta"`
 }
 
 // PageConfig holds page-specific configuration
@@ -112,4 +113,20 @@ type PageConfig struct {
 	Layout         string `yaml:"layout"`          // "hero-left" (default) or "hero-right"
 	AnimateTagline bool   `yaml:"animate_tagline"` // Enable typing animation
 	Subtitle       string `yaml:"subtitle"`        // Optional subtitle under hero title
+}
+
+// CTAConfig holds call-to-action section configuration
+type CTAConfig struct {
+	Headline     string    `yaml:"headline"`
+	Description  string    `yaml:"description"`
+	Links        []CTALink `yaml:"links"`
+	ContactText  string    `yaml:"contact_text"`
+	ContactEmail string    `yaml:"contact_email"`
+}
+
+// CTALink represents a single CTA link
+type CTALink struct {
+	Label       string `yaml:"label"`
+	Path        string `yaml:"path"`
+	Description string `yaml:"description"`
 }
