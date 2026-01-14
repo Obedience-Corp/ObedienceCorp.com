@@ -7,7 +7,7 @@ page:
   tagline_line2: "The way you want it done."
   mission: ""
   layout: "hero-left"
-  animate_tagline: true
+  animate_tagline: false
 
 cta:
   headline: "Building infrastructure for autonomous companies."
