@@ -1,35 +1,45 @@
 # Proven in Production
 
-Obey's architecture emerged from solving real organizational problems. Daily. Since March 2025.
+This R&D created more than architecture. It created a daily development workflow and tool suite that has been used to ship multiple complex products for startups. Products that are in production with thousands of users.
 
-Not theoretical research. Not demos. Patterns extracted from actually running an AI organization.
+In some cases, delivered what millions in investment could not. In compressed timelines.
+
+## The Workflow
+
+Campaigns and festivals aren't just concepts. They're a daily practice. Every project, every feature, every complex system built using these techniques.
+
+The tooling evolved through constant use. What works gets refined. What doesn't gets cut.
 
 ## Real Results
 
-**Productivity multiplied**
+**Complex products shipped**
 
-One person managing what would typically require teams. Not marginal gains. Order of magnitude improvement.
+Complete developer tool ecosystems, blockchain gaming backends, trading compliance systems with CRM integration. Products that provided real value to companies who had struggled to build these systems for years.
 
-**Scale validated**
+Not demos. Not prototypes. Production systems handling real load, real users, real money.
 
-Hundreds of agents. Multiple campaigns. Dozens of parallel projects. The organizational model works.
+**Compressed timelines**
 
-**Patterns proven**
+In one case, a system that had over 90M in prior investment was built in 6 months, in another case an app that had 1.5 years of development with nothing useful to show was rebuilt and launched to fully replace a complex manual workflow in 3 months.
 
-Campaign structure. Session management. Festival-based execution. All refined through actual use.
+## What This Demonstrates
 
-## Current Status
+**The techniques work**
 
-**Core architecture**: Proven and working
+Battle-tested daily since March 2025. Refined through real shipping pressure, real engineering workflows, not theoretical research.
 
-**Festival planning**: Complete and operational
+**Continuous improvement and Daily Feedback**
 
-**What's next**: Unified interface to bring everything together
+We use our own products on a daily basis, if a subsystem isn't useful in obey until a later date, we build products we can use or launch based on the subsystem to speed up our feedback loop.
 
-The hard organizational problems are solved. What remains is packaging them into a cohesive product.
+The obey ecosystem improves daily, often with exponential improvements in quality, speed and reduction in token usage for the same result.
 
-## The Result
+## Products based on core obey architecture
 
-Infrastructure built by someone who runs an AI organization daily.
+**[Brainyard](https://brainyard.ai)**
 
-Not vaporware. Proven techniques awaiting final packaging.
+Multi-agent chat application. Built on the orchestration system developed for early Obey (guild-core).
+
+**[Anywhr](https://www.anywr.ai/)**
+
+Shared context workspace for teams and communities. Built on Obey's campaign RAG system. Built over Christmas.

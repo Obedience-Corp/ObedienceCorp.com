@@ -1024,7 +1024,8 @@ footer {
   position: fixed;
   top: 0;
   height: 100%;
-  width: 15px;
+  width: 3vw;
+  min-width: 40px; /* Floor for very small screens */
   z-index: 998;
   cursor: pointer;
 }
