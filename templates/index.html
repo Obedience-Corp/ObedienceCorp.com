@@ -165,17 +165,6 @@
     </section>
     {{end}}
 
-    <!-- Features Section -->
-    {{range .Sections}}
-    {{if eq .Type "features"}}
-    <section class="landing-section section-features">
-      <div class="feature-chips">
-        {{range .Items}}<span class="feature-chip">{{.}}</span>{{end}}
-      </div>
-    </section>
-    {{end}}
-    {{end}}
-
     {{if .CTA.ContactEmail}}
     <!-- Contact Section -->
     <section class="landing-section section-contact">
