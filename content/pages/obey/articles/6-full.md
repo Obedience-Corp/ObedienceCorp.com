@@ -1,18 +1,18 @@
 # Proven in Production
 
-This R&D created more than architecture. It created a daily development workflow and tool suite that has been used to ship multiple complex products for startups. Products that are in production with thousands of users.
+This R&D created more than architecture. It created a daily development workflow and tool suite that has been used to ship AAA gaming backends, blockchain developer tool suites, trading compliance systems. Niche, deeply technical products that are used daily in production
 
-In some cases, delivered what millions in investment could not. In compressed timelines.
+In some cases, delivered what multiple years and significant capital investment could not, in months while development was done in parallel.
 
 ## The Workflow
 
-Campaigns and festivals aren't just concepts. They're a daily practice. Every project, every feature, every complex system built using these techniques.
+Campaigns and festivals aren't just concepts. They're a daily practice. Every project, every feature, every complex system we build is built using these techniques.
 
-The tooling evolved through constant use. What works gets refined. What doesn't gets cut.
+The tooling evolved through constant use and actual needs. What works gets refined. What doesn't gets cut.
 
 ## Real Results
 
-**Complex products shipped**
+**Multiple parallel products shipped shipped**
 
 Complete developer tool ecosystems, blockchain gaming backends, trading compliance systems with CRM integration. Products that provided real value to companies who had struggled to build these systems for years.
 
@@ -34,12 +34,12 @@ We use our own products on a daily basis, if a subsystem isn't useful in obey un
 
 The obey ecosystem improves daily, often with exponential improvements in quality, speed and reduction in token usage for the same result.
 
-## Products based on core obey architecture
+## Subsystems Turned Products
 
 **[Brainyard](https://brainyard.ai)**
 
-Multi-agent chat application. Built on the orchestration system developed for early Obey (guild-core).
+Multi-agent chat application. Based on the orchestration system developed for early Obey ([guild-core](https://github.com/lancekrogers/guild-core)).
 
 **[Anywhr](https://www.anywr.ai/)**
 
-Shared context workspace for teams and communities. Built on Obey's campaign RAG system. Built over Christmas.
+Shared context workspace for teams and communities. Built on Obey's campaign RAG system. Built during Christmas 2025.
