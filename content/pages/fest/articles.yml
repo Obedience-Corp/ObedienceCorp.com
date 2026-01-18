@@ -24,14 +24,14 @@ articles:
 
   # Row 3: HOW IT WORKS section
   - id: "deterministic-workflows"
-    title: "Autonomy Levels"
+    title: "Agent Guidance System"
     grid_column: "1"
     grid_row: "3"
     content_file: "deterministic-workflows.md"
     modal_content_file: "deterministic-workflows-full.md"
 
   - id: "structured-memory"
-    title: "Quality Gates"
+    title: "Visualization"
     grid_column: "2"
     grid_row: "3"
     content_file: "structured-memory.md"
@@ -46,7 +46,7 @@ articles:
 
   # Row 4: CLI & CTA section
   - id: "production-grade-systems"
-    title: "The fest CLI"
+    title: "Self-Improving System"
     grid_column: "1 / 3"
     grid_row: "4"
     content_file: "production-grade-systems.md"

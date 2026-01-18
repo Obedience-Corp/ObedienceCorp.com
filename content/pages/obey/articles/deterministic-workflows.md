@@ -1,5 +1,5 @@
-Hierarchy for multi-step goals. Break work into manageable pieces. Quality checks at every level.
+Workspaces for unified initiatives. Related projects sharing context.
 
-Adaptable project planning that keeps agents on track. Goals decompose into steps sized for execution.
+One campaign might have dozens of projects building in parallel. Each with its own sessions and agents.
 
-Structure that makes complex work reliable.
+**Organize at scale.**

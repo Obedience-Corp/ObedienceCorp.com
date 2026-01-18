@@ -1,45 +1,35 @@
-# Beyond Chat Interfaces
+# The Scale Problem
 
-Chat interfaces treat AI as a conversation partner. Obey treats AI as a coordinated workforce.
+Everyone is focused on model intelligence. AGI. Benchmarks. Who has the best reasoning.
 
-## The Chat Limitation
+That's the wrong problem.
 
-**Single agent, single thread**
+## The Capability Already Exists
 
-One conversation. Context resets between sessions. No memory of past decisions. You remain the only coordinator.
+Current models can replicate the majority of human tasks. Faster. Often better.
 
-**Manual coordination**
+The bottleneck isn't intelligence. It's direction.
 
-You route every task. You remember what each tool does. You handle all handoffs. You maintain all context.
+## The Real Problem
 
-**Linear interaction**
+We build tools and systems problem-by-problem. AI helps, but that approach only scales so far.
 
-Prompt. Wait. Response. Repeat. One thing at a time. Progress bottlenecked by you.
+There's no organizational layer. No way to direct thousands of capable subsystems toward a unified goal.
 
-## What Orchestration Enables
+## What Obey Provides
 
-**Specialized agent teams**
+A corporate org structure for AI. Break goals into sub-goals. Direct complex systems at scale.
 
-Configure agents for specific roles. Backend work goes to backend agents. Frontend to frontend. Testing to test specialists. Each agent optimized for its domain.
+**The abstraction hierarchy:**
+- Obey: The organization
+- Campaigns: Initiatives
+- Projects: Focused work
+- Festivals: Task execution
 
-**Automatic routing**
+The abstraction goes as deep as needed. Theoretically infinite. Each layer handles its own complexity.
 
-Direct work to the right agent naturally. Messages go where they need to go. Context flows without manual management.
+## The Result
 
-**Persistent context**
+Not smarter AI. Directed AI.
 
-Context accumulates across sessions. Decisions inform future work. Project knowledge builds over time. No starting from scratch every day.
-
-**Parallel execution**
-
-Multiple agents working simultaneously. See progress across the team. Not waiting for one completion to start another.
-
-## The Shift
-
-**From:** Chat assistant that waits for prompts
-
-**To:** Agent team that executes coordinated work
-
-Configure your agents. Route work naturally. Let Obey handle the coordination.
-
-Not faster chat. Actual orchestration.
+The intelligence exists. Obey makes it useful at scale.

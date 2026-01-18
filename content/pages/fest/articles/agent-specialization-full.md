@@ -23,7 +23,7 @@ The festival structure itself is the context preservation mechanism. Each level 
 - Sequence goals inform task work
 - Task work connects back to festival purpose
 
-An agent working on a task understands why that task exists—because the structure makes the chain explicit.
+An agent working on a task understands why that task exists because the structure makes the chain explicit.
 
 **Goal documents at every level**
 
@@ -46,7 +46,7 @@ Completed tasks become context for future tasks. The structure preserves what wa
 
 Day 1: Complete Phase 1
 
-Day 2: Start Phase 2—but Phase 1's outputs are there. The structure captured what happened. The agent reads the hierarchy and continues.
+Day 2: Start Phase 2, but Phase 1's outputs are there. The structure captured what happened. The agent reads the hierarchy and continues.
 
 No special handoff documents needed. The work itself is the context.
 
@@ -62,7 +62,7 @@ An agent can always trace back up the chain to understand purpose. Why this task
 
 **Progress is visible**
 
-What's done, what's in progress, what's next—all encoded in the structure. Status is state, not documentation.
+What's done, what's in progress, what's next. All encoded in the structure. Status is state, not documentation.
 
 ## The Result
 

@@ -1,11 +1,11 @@
 page:
   name: "obey"
   title: "Obey - Obedience Corp"
-  description: "Obey: AI agent orchestration infrastructure. Build teams of specialized agents that work together autonomously."
+  description: "Obey: A unified command center for managing AI organizations. One person. Multiple campaigns. Hundreds of agents."
   hero_title: "Obey"
-  subtitle: "Agent orchestration infrastructure"
+  subtitle: "Hierarchical execution that scales."
   tagline_line1: ""
   tagline_line2: ""
-  mission: ""
+  mission: "Be the CEO of your agents."
   layout: "hero-right"
   animate_tagline: false

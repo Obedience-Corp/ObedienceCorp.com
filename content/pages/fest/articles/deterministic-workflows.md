@@ -1,5 +1,5 @@
-Every task is marked High, Medium, or Low autonomy. High: AI completes independently. Medium: may need clarification. Low: expects collaboration.
+Fest CLI teaches agents the methodology on-demand. Just-in-time context loading.
 
-AI knows when to proceed and when to ask.
+**94% token reduction.** Planning that took 2 weeks now takes 30 minutes.
 
-**Autonomy without chaos.**
+**Guidance, not guesswork.**

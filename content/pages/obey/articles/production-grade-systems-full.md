@@ -1,33 +1,35 @@
 # Proven in Production
 
-Daily R&D since March 2025. Obey's architecture emerged from solving real workflow problems every day. Not theoretical research. Not toy demos. Patterns extracted from heavy AI agent usage across complex, long-running projects.
+Obey's architecture emerged from solving real organizational problems. Daily. Since March 2025.
+
+Not theoretical research. Not demos. Patterns extracted from actually running an AI organization.
 
 ## Real Results
 
-**Productivity Multiplied**
+**Productivity multiplied**
 
-Engineers using these techniques consistently outperform similarly skilled engineers using other AI tools heavily. Not marginal gains. Multiples.
+One person managing what would typically require teams. Not marginal gains. Order of magnitude improvement.
 
-**System Proven**
+**Scale validated**
 
-The core architecture works. Multi-agent coordination, session persistence, provider switching, context management—all refined through actual use.
+Hundreds of agents. Multiple campaigns. Dozens of parallel projects. The organizational model works.
 
-**Subsystems Working**
+**Patterns proven**
 
-Individual components are operational. Festival planning system complete. Provider integrations stable. The pieces work.
+Campaign structure. Session management. Festival-based execution. All refined through actual use.
 
 ## Current Status
 
-**Core System**: Proven and working
+**Core architecture**: Proven and working
 
-**Remaining Work**: Unified UX to bring everything together
+**Festival planning**: Complete and operational
 
-The hard problems are solved. What remains is packaging them into a cohesive interface.
+**What's next**: Unified interface to bring everything together
+
+The hard organizational problems are solved. What remains is packaging them into a cohesive product.
 
 ## The Result
 
-Infrastructure built by people who use AI agents daily for real work.
-
-[See the work in progress.](https://github.com/lancekrogers/guild-core)
+Infrastructure built by someone who runs an AI organization daily.
 
 Not vaporware. Proven techniques awaiting final packaging.

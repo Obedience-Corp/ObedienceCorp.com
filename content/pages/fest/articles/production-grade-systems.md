@@ -1,5 +1,5 @@
-Create festivals, phases, sequences, tasks. Track progress. Validate structure. Get the next work item. Navigate the hierarchy.
+Agents use fest. Agents give feedback. Feedback becomes a festival. Fest gets better.
 
-All from the command line. All JSON-enabled for automation.
+This cycle runs daily. The system improves itself using its own methodology.
 
-`fest create` • `fest status` • `fest next` • `fest validate`
+**94% token savings. Nearly 100% accuracy. Getting better every day.**

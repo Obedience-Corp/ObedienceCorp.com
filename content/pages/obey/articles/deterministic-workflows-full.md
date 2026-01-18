@@ -1,53 +1,37 @@
-# Hierarchical Configuration
+# Campaigns
 
-An adaptable project planning system built for AI agents.
+A campaign is a workspace for a unified initiative. Related projects that share context. The organizational unit that makes scale manageable.
 
-## The Problem
+## The Structure
 
-AI agents struggle with large, ambiguous goals. They lose track. They skip steps. They forget what they were trying to accomplish.
+**Campaign level**
 
-## The Solution
+The initiative. Your company's AI infrastructure. A product launch. A research program. Whatever needs unified coordination.
 
-Break goals into hierarchy. Check quality at each level. Compare results against intent.
+**Sessions within campaigns**
 
-**Multi-level structure**
+Each session represents focused work. Multiple agents collaborating on a specific goal. Many sessions can run simultaneously.
 
-Goals break into phases. Phases break into sequences. Sequences break into tasks. Each level has clear success criteria.
+**Agents within sessions**
 
-**Quality gates**
+The actual workforce. Different models, different specializations, all coordinated by the session structure.
 
-Don't proceed until the current step meets spec. Check work against goals before moving forward. Catch drift early.
+## What Campaigns Enable
 
-**Adaptable depth**
+**Parallel execution**
 
-Simple work needs simple structure. Complex work gets more levels. The system adapts to the project, not the other way around.
+Dozens of projects building at once. Different sessions, different goals, same campaign context.
 
-## How It Works
+**Shared knowledge**
 
-**Start with the goal**
+Context flows between sessions. Decisions in one place inform work elsewhere. No siloed agents.
 
-What are you actually trying to accomplish? Define success criteria upfront.
+**Cross-machine coordination**
 
-**Break it down**
-
-Decompose into manageable pieces. Each piece small enough for an agent to complete without losing context.
-
-**Execute and verify**
-
-Work through the hierarchy. Check each step against its goals. Adjust when reality doesn't match the plan.
-
-**Iterate**
-
-Plans change. The structure supports revision without losing progress.
-
-## Why This Works
-
-Same principle as organizations with people of varying capabilities. Break work into pieces sized for the person doing it. Verify against spec. Coordinate the whole.
-
-Agents work the same way. Give them appropriately sized chunks with clear success criteria. They deliver.
+Campaigns can span multiple machines. Your desktop, VPS, servers. All appearing as one unified workspace.
 
 ## The Result
 
-Projects that stay on track. Work that matches intent. Quality that compounds instead of degrades.
+One campaign. Many projects. Hundreds of agents.
 
-Structure that makes agents reliable.
+All organized, all visible, all manageable from a single view.

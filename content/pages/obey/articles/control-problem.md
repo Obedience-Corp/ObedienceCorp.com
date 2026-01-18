@@ -1,5 +1,5 @@
-Agents lose context. They hallucinate. They stop mid-task. Single-agent systems don't scale.
+Like a VP with 20+ teams. You manage the organization, not the individuals.
 
-Obey solves agent coordination. Multiple agents with persistent memory. Real-time cost tracking. Reasoning you can inspect.
+Each team's complexity is abstracted away. You think at the level that matters.
 
-Infrastructure for agents that actually work.
+**Executive control. Not micromanagement.**

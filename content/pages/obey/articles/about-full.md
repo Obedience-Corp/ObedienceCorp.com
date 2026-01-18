@@ -1,45 +1,43 @@
 # Obey
 
-AI agent orchestration framework for developers building production agent systems.
+Run an AI organization at executive scale.
 
-## What Obey Does
+## The Scale
 
-Obey coordinates multiple specialized AI agents working together on complex software projects. Not a chat interface. Not a single agent. A framework for building agent teams.
+Imagine you're a VP with 20+ teams of 5-10 people each. That's 100-200 people. You can't manage them all directly. You need abstraction.
 
-## Core Concepts
+Obey lets you manage hundreds of agents the same way. Not by tracking each one, but by managing at the right level of abstraction.
 
-**Specialized Agents**
+## How It Works
 
-Each agent has a distinct role and capabilities. Backend agents write server code. Frontend agents handle UI. Test agents validate. Documentation agents explain. Each optimized for their domain.
+**Campaigns**
 
-**Hierarchical Configuration**
+A campaign is a workspace for a unified initiative. Related projects that share context. One campaign might have dozens of projects building in parallel.
 
-Organize context efficiently. Set it once at the right level, everything below inherits. No copy-pasting prompts between agents. No drift. No manual coordination.
+**Sessions**
 
-**Persistent Context**
+Each session can have multiple agents working together. Visualize how they coordinate. Monitor progress. See what's happening without micromanaging.
 
-Context accumulates across sessions. Decisions inform future work. Agents build on what they learned instead of starting fresh every time.
+**Festivals**
 
-## Key Capabilities
+See festival progress across everything. Know which phase, which sequence, which task. Monitor execution at whatever level makes sense.
 
-**Multi-Agent Orchestration**
+## What This Enables
 
-Coordinate agents with different specializations. They work in parallel. Obey manages the workflow.
+**Organizational Workflows**
 
-**Provider Agnostic**
+Build systems that automate complex organizational workflows. Not just tasks, but how entire initiatives operate.
 
-Use any provider. Mix models in the same workflow. Best tool for each task. No vendor lock-in.
+**Executive Decisions**
 
-**Production TUI**
+Make high-level decisions. The abstraction handles team-level complexity. You focus on what matters.
 
-Terminal interface for developers. Multi-agent views. Real-time streaming. Session management. Built for the command line.
+**Scale Without Overhead**
 
-**Consistent Results**
-
-Same hierarchy produces same results regardless of which model executes. Model differences show in speed, not output quality.
+More agents. More sessions. More campaigns. Same mental overhead. The complexity doesn't grow linearly with scale.
 
 ## The Result
 
-Infrastructure for building teams of AI agents that actually work together.
+One person managing what would normally require an entire management layer.
 
-Configure agents. Coordinate workflows. Scale beyond single-agent limits.
+Hundreds of agents. One window. Executive control.

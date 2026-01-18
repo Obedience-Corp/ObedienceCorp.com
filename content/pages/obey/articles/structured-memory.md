@@ -1,5 +1,5 @@
-Models matter less than the market believes. With proper orchestration, same results from less capable models.
+Plan every micro decision without actually planning them. The system handles decomposition, quality gates, and execution tracking.
 
-Big model for the plan. Cheap model for execution. Right-size every task.
+You make high-level decisions. Obey handles the rest.
 
-The orchestration layer is where the value lives.
+**Abstraction that lets you manage at scale.**

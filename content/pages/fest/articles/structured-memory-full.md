@@ -1,163 +1,43 @@
-# Quality Gates
+# Visualization
 
-Every implementation sequence in Festival Methodology ends with mandatory quality gates.
+Fest CLI gives you complete visibility into what agents will do, are doing, and have done.
 
-## The Standard Gates
+## See Before They Do
 
-```
-01_build_feature/
-├── 01_implement.md          # Build it
-├── 02_testing_and_verify.md # Test it
-├── 03_code_review.md        # Review it
-├── 04_review_results_iterate.md  # Fix issues
-└── 05_commit.md             # Commit it
-```
+Every festival is a complete plan. Before any agent executes, you see:
 
-**Testing and Verification**
-- Run test suite
-- Verify requirements met
-- Check edge cases
-- Document any failures
+- Every phase, sequence, and task
+- The full hierarchy of work
+- Dependencies and order of execution
 
-**Code Review**
-- Self-review for quality
-- Check style guidelines
-- Verify best practices
-- Note concerns
+No surprises. You approve the plan before work begins.
 
-**Review Results & Iterate**
-- Address test failures
-- Fix review issues
-- Iterate until passing
-- Document changes
+## See During Execution
 
-**Commit**
-- Only after gates pass
-- With meaningful message
-- Changes are atomic
-- Ready for next sequence
+While agents work autonomously:
 
-## Why Gates Matter
+- Know exactly which task they're on
+- See progress through sequences and phases
+- Track multiple festivals simultaneously
 
-**Without Gates**
+Manage many large-scale projects building at the same time.
 
-- AI implements features but skips testing
-- Quality issues compound
-- Problems discovered late
-- Technical debt accumulates
+## Audit Trail
 
-**With Gates**
+After execution:
 
-- Every feature is tested
-- Issues caught early
-- Quality maintained
-- Debt prevented
+- What they did
+- When they did it
+- Verification that claims match reality
 
-## Applying Gates
+If an agent says it completed a task, you can verify. Quickly spot mistakes, understand why they happened, adjust for next time.
 
-Use the fest CLI to add gates:
+## Reduced Review Burden
 
-```bash
-# Add gates to a sequence
-fest gates apply 002_IMPLEMENTATION/01_build_feature
+High visibility means high confidence. You don't need to review every line of code. The structure tells you:
 
-# Creates testing, review, iterate, commit tasks
-```
+- What was supposed to happen
+- What actually happened
+- Where to look if something's wrong
 
-Gates are applied automatically to implementation sequences.
-
-## Gate Behavior
-
-**Testing Task**
-
-```markdown
-# Task: testing_and_verify
-
-## Objective
-Verify the implementation meets requirements.
-
-## Requirements
-- [ ] All tests pass
-- [ ] Edge cases covered
-- [ ] No regressions
-- [ ] Performance acceptable
-
-## Implementation Steps
-1. Run existing tests
-2. Write new tests for feature
-3. Verify requirements checklist
-4. Document any issues found
-```
-
-**Code Review Task**
-
-```markdown
-# Task: code_review
-
-## Objective
-Review code quality and adherence to standards.
-
-## Requirements
-- [ ] Follows style guide
-- [ ] No obvious bugs
-- [ ] Clear naming
-- [ ] Appropriate abstraction
-
-## Implementation Steps
-1. Review all changes
-2. Check style compliance
-3. Verify patterns used correctly
-4. Document any concerns
-```
-
-**Iteration Task**
-
-```markdown
-# Task: review_results_iterate
-
-## Objective
-Address issues found in testing and review.
-
-## Requirements
-- [ ] All test failures fixed
-- [ ] Review concerns addressed
-- [ ] Documentation updated
-- [ ] Ready for commit
-
-## Implementation Steps
-1. Review findings from testing
-2. Address each issue
-3. Re-run tests
-4. Confirm all gates pass
-```
-
-## Sequence Flow
-
-```
-implement → test → fails → fix → test → passes → review → concerns → fix → review → approved → commit
-```
-
-The sequence doesn't end until all gates pass.
-
-## Customizing Gates
-
-Different sequence types may have different gates:
-
-**Implementation Sequences**
-- Test, review, iterate, commit
-
-**Research Sequences**
-- Verify, document
-
-**Deployment Sequences**
-- Test, stage, verify, deploy
-
-Gates match the work type.
-
-## The Result
-
-Quality isn't optional. It's structural.
-
-Every implementation is tested. Every change is reviewed. Issues are fixed before commit.
-
-Quality through process, not hope.
+**Total visibility. Zero surprises.**

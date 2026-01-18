@@ -1,5 +1,5 @@
-Daily R&D since March 2025. Patterns extracted from heavy AI agent usage across complex, long-running projects.
+Daily R&D since March 2025. Patterns extracted from managing hundreds of agents across complex, long-running projects.
 
-Proven system. Working subsystems. Productivity multiplied.
+Architecture designed for executive-scale AI management. Not theoretical. Battle-tested.
 
-[See the work in progress.](https://github.com/lancekrogers/guild-core)
+**Built by someone who uses it every day.**

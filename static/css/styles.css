@@ -374,7 +374,7 @@ body {
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh; /* Modern browsers, handles mobile address bar */
-  padding: clamp(50px, 8vh, 70px) clamp(4vw, 6vw, 6rem) 4rem; /* Top padding for navbar */
+  padding: clamp(50px, 8vh, 70px) clamp(4vw, 6vw, 6rem) 6rem;
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -385,6 +385,7 @@ body {
   justify-content: center;
   gap: clamp(1rem, 2vh, 1.5rem);
   box-sizing: border-box;
+  position: relative;
 }
 
 .landing-hero-title {
@@ -426,14 +427,17 @@ body {
 .hero-products {
   display: flex;
   gap: 1.5rem;
-  margin-top: 5rem;
+  position: absolute;
+  bottom: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hero-products .product-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 2.5rem;
+  padding: 1.5rem 3.5rem;
   border: 1px solid var(--border-primary);
   background: var(--bg-secondary);
   text-decoration: none;
@@ -447,7 +451,7 @@ body {
 
 .hero-products .product-link-label {
   font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -824,6 +828,7 @@ footer {
 .bulletin-right {
   right: 1rem;
   left: calc(50vw + 50rem + 2rem); /* Fill space from content to edge */
+  display: none !important; /* Temporarily hidden - remove this line to restore */
 }
 
 .bulletin-card {
@@ -1030,6 +1035,7 @@ footer {
 
 .hover-zone-right {
   right: 0;
+  display: none !important; /* Temporarily hidden - remove this line to restore */
 }
 
 /* Optional: subtle indicator on hover (can be removed for completely invisible) */

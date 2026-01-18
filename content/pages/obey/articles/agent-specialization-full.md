@@ -1,49 +1,37 @@
-# Production Terminal UI
+# Work From Anywhere
 
-Obey starts with a terminal interface. Here's why.
+Your AI organization shouldn't be tied to one machine. Obey runs where you run.
 
-## Why Terminal First
+## Device Agnostic
 
-**Where files live**
+**TUI first**
 
-AI agents work with code, configs, and documents. The terminal is where those files already are. No upload dialogs. No sync issues. Direct access.
+Terminal interface for power users. Keyboard-first. Fast. Where serious work happens.
 
-**Tools wire easily**
+**Mobile follows**
 
-Pipe output. Chain commands. Integrate with git, make, scripts, whatever you already use. The terminal is the universal connector.
+iPhone. iPad. Android. Same campaigns, same sessions, same control. Different screen.
 
-**Personalized workflows**
+**Desktop everywhere**
 
-Everyone works differently. Terminal interfaces adapt to your patterns instead of forcing you into someone else's UX decisions.
+macOS. Linux. Windows. The daemon runs on your infrastructure. The client runs anywhere.
 
-**No context switching**
+## Infrastructure Anywhere
 
-Editor to Obey and back in the same app. Stay in flow. The terminal is already where you're working.
+**Central daemon**
 
-## In Progress
+Obey daemon runs on your main work machine. The brain of your AI organization.
 
-**Multi-agent interface**
+**Remote campaigns**
 
-See and interact with multiple agents simultaneously. Switch contexts without losing state. Route work naturally.
+Connect to campaigns running on VPS, other desktops, onsite servers. All appearing local.
 
-**Session management**
+**Unified view**
 
-Save sessions. Restore later. Export for documentation. Auto-recovery from interruptions.
-
-**Real-time streaming**
-
-See responses as they generate. Watch multiple agents work in parallel. Progress visible across your team.
-
-**Speed**
-
-Keyboard-first design. Vim keybindings. No mouse required. As fast as you can type.
-
-## What Comes Next
-
-The terminal version helps us build what comes after. Same orchestration engine, different interfaces. The non-developer version is coming—built by using the developer version daily.
+Doesn't matter where the compute lives. You see one coherent organization.
 
 ## The Result
 
-A terminal interface that fits how serious work actually happens.
+Start work on your desktop. Continue on your iPad. Check progress from your phone.
 
-Not a limitation. A foundation.
+Your AI workforce runs 24/7. You manage it from wherever you are.

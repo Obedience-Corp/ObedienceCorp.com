@@ -1,45 +1,47 @@
-# Provider Agnostic
+# Complexity Abstraction
 
-Models matter less than the market currently believes.
+Plan every micro decision without actually planning them.
 
-## The Insight
+## The Problem
 
-With proper orchestration, you get the same end results with much less capable models. The secret is breaking work into smaller chunks.
+Complex projects have thousands of decisions. Architecture choices. Implementation details. Edge cases. Error handling. Testing strategies.
 
-Think about how companies work. People of varying intelligence come together. Each does their piece to spec. The whole exceeds what any individual could produce.
+Planning all of this manually doesn't scale. You'd spend more time planning than building.
 
-AI agents work the same way.
+## How Abstraction Works
 
-## The Strategy
+**Hierarchical Decomposition**
 
-**Big model for the plan**
+High-level goals decompose into phases. Phases into sequences. Sequences into tasks. Each level handles its own detail.
 
-Use your most capable model for high-level thinking. Architecture. Strategy. Decomposition. This is where intelligence matters most.
+You define what you want. The system decomposes how to get there.
 
-**Cheap model for execution**
+**Quality Gates**
 
-Once the plan is clear, execution doesn't need genius. Smaller, faster, cheaper models can follow well-defined specs reliably.
+Every level has checkpoints. Testing. Review. Validation. Quality is structural, not optional.
 
-**Right-size every task**
+You don't manually verify each step. The structure enforces it.
 
-Match model capability to task complexity. Don't pay for power you don't need. Don't under-resource decisions that matter.
+**Execution Tracking**
 
-## Why This Matters
+See progress at any level. Know what's done, what's in progress, what's next. All without micromanaging.
 
-**Economics**
+## What This Enables
 
-The cost difference between frontier and commodity models is enormous. Orchestration lets you use frontier models sparingly, commodity models heavily.
+**Scale Without Complexity**
 
-**Speed**
+More projects. More parallel work. Same mental overhead. The abstraction handles the growth.
 
-Smaller models are faster. When your execution layer runs on efficient models, throughput increases dramatically.
+**CEO-Level Management**
 
-**Flexibility**
+Make high-level decisions. Delegate details to the structure. Focus on what matters.
 
-Models improve constantly. New providers emerge. Pricing shifts. When you're not locked to one model for everything, you adapt easily.
+**Consistent Quality**
+
+Quality gates run automatically. Nothing ships without passing. No manual checklist required.
 
 ## The Result
 
-Same quality output. Lower cost. Faster execution. Provider flexibility.
+Plan at the level that matters. Let abstraction handle the rest.
 
-The orchestration layer is where the value lives. Models are interchangeable components.
+You're the CEO of your agents, not their manager.

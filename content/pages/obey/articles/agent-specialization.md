@@ -1,5 +1,5 @@
-Terminal first. Where files live, tools wire easily, workflows personalize.
+TUI first. Then mobile. iPhone, iPad, Android, desktop.
 
-Editor to Obey and back without context switching. Speed without compromise.
+Connect to Obey daemon from any device. Campaigns across machines as if they're local.
 
-Interface in progress.
+**Manage your AI organization from anywhere.**

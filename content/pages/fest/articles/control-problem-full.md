@@ -10,7 +10,7 @@ The complete project. Defines what success looks like, key deliverables, and bou
 
 **Phase**
 
-A major milestone. Phases represent distinct stages—research, planning, implementation, review, deployment.
+A major milestone. Phases represent distinct stages: research, planning, implementation, review, deployment.
 
 **Sequence**
 

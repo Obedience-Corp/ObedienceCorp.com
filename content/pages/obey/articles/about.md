@@ -1,5 +1,5 @@
-AI agent orchestration framework. Build teams of specialized agents that work together on complex projects.
+Hundreds of agents. One window. Run an AI organization at executive scale.
 
-Each agent has distinct capabilities, persistent memory, and access to specific tools. Obey coordinates how they collaborate.
+Like managing 20 teams without managing any of them directly. The complexity of each team is abstracted away.
 
-**Multi-agent orchestration that actually works.**
+**Be the executive. Not the manager.**

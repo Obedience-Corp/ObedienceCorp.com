@@ -1,5 +1,5 @@
-Every implementation sequence ends with: testing, code review, results iteration.
+See what agents will do before they do it. Know what they're working on. Verify what they did.
 
-No shortcuts. Quality is enforced by structure. Tasks don't complete until gates pass.
+Audit trail for every action. Manage many projects at once.
 
-**Built-in quality assurance.**
+**Total visibility. Zero surprises.**

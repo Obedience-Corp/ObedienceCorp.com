@@ -1,148 +1,73 @@
-# Autonomy Levels
+# Agent Guidance System
 
-Every task in Festival Methodology has an autonomy level that guides AI execution.
+Fest CLI is an AI guidance system that teaches agents the methodology and guides them through execution.
 
-## The Three Levels
+## Results
 
-### High Autonomy
+- **94% token reduction** through just-in-time context loading
+- **Planning time: 2 weeks → 30 minutes** for the same complexity
+- In production since **May 2025**, refined daily
+- Formalized and open-sourced **September 2025**
 
-AI completes the task independently.
+## Just-in-Time Learning
 
-```markdown
-> **Autonomy Level**: high
+Agents don't need to read documentation upfront. Fest teaches them what they need, when they need it:
 
-## Objective
-Write unit tests for the user service.
+```bash
+fest intro                    # Getting started
+fest understand methodology   # Core principles
+fest understand structure     # 3-level hierarchy
 ```
 
-**Characteristics:**
-- Clear, unambiguous requirements
-- No open design decisions
-- Standard patterns apply
-- Success criteria is objective
+**Why this matters:**
+- Preserves context window for actual work
+- Agents learn incrementally
+- No upfront context dump
+- Self-documenting commands
 
-**AI Behavior:**
-- Executes without asking questions
-- Makes standard implementation choices
-- Completes and moves to next task
-- Reports results
+## What To Do Next
 
-### Medium Autonomy
+`fest next` tells agents exactly what to work on:
 
-AI may need clarification on edge cases.
+```bash
+fest next
 
-```markdown
-> **Autonomy Level**: medium
-
-## Objective
-Implement error handling strategy for API endpoints.
+Next task: 02_implement_validation
+Phase: 001_FOUNDATION
+Sequence: 02_input_handling
+Path: festivals/active/my-project/001_FOUNDATION/02_input_handling/02_implement_validation.md
 ```
 
-**Characteristics:**
-- Some judgment calls required
-- Edge cases may need discussion
-- Multiple valid approaches exist
-- Requirements are mostly clear
+No guessing. No searching. The agent knows exactly where to go and what to do.
 
-**AI Behavior:**
-- Proceeds with reasonable defaults
-- Notes decisions for review
-- Asks about ambiguous cases
-- Completes with documented assumptions
+## Guided Execution
 
-### Low Autonomy
+`fest execute` orchestrates task execution systematically:
 
-Human collaboration expected.
+```bash
+fest execute
 
-```markdown
-> **Autonomy Level**: low
-
-## Objective
-Design the user permission system architecture.
+Executing festival: my-project
+Phase: 001_FOUNDATION (3 sequences)
+  Sequence 01: setup ✓
+  Sequence 02: input_handling - in progress
+    Task: 02_implement_validation
 ```
 
-**Characteristics:**
-- Significant design decisions
-- Business logic interpretation needed
-- Multiple stakeholders affected
-- Long-term implications
+Agents work through the hierarchy methodically. When one task completes, fest points to the next.
 
-**AI Behavior:**
-- Proposes options instead of deciding
-- Requests human input at decision points
-- Documents trade-offs clearly
-- Waits for approval before proceeding
+## Context Preservation
 
-## Why Autonomy Levels Matter
-
-**For AI Agents**
-
-Without autonomy levels:
-- AI doesn't know when to ask
-- Over-asks (annoying, slow)
-- Under-asks (makes wrong decisions)
-- Inconsistent behavior
-
-With autonomy levels:
-- Clear expectations per task
-- Appropriate independence
-- Right level of human involvement
-- Predictable execution
-
-**For Humans**
-
-Without autonomy levels:
-- Constant interruptions
-- Or silent wrong decisions
-- No control over involvement
-- Surprise at outcomes
-
-With autonomy levels:
-- Know which tasks need attention
-- Trust AI on high-autonomy work
-- Focus on important decisions
-- Predictable oversight burden
-
-## Setting Autonomy Levels
-
-**High Autonomy Tasks:**
-- Unit tests
-- Code formatting
-- Documentation generation
-- Mechanical refactoring
-- Standard CRUD operations
-
-**Medium Autonomy Tasks:**
-- Feature implementation
-- Bug fixes
-- API design
-- Performance optimization
-- Integration work
-
-**Low Autonomy Tasks:**
-- Architecture decisions
-- Security design
-- Breaking changes
-- User-facing copy
-- Business logic interpretation
-
-## In Practice
+Every task links back to its parent structure:
 
 ```
-fest status
-
-Phase 002_IMPLEMENTATION
-├── Sequence 01: auth_service
-│   ├── 01_create_service (high) ✓
-│   ├── 02_add_endpoints (high) ✓
-│   ├── 03_error_handling (medium) - in progress
-│   └── 04_permission_design (low) - pending review
+Festival → Phase → Sequence → Task
 ```
 
-High autonomy tasks complete fast. Low autonomy tasks wait for human input.
+A new agent session can pick up exactly where the last one left off. No context is lost between sessions.
 
 ## The Result
 
-AI knows how to behave. Humans know what to expect.
+Agents don't wander. They don't guess. They follow the guidance system.
 
-Autonomy without uncertainty. Control without micromanagement.
+**Guidance, not guesswork.**

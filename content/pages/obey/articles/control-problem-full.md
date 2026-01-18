@@ -1,45 +1,39 @@
-# The Agent Reliability Problem
+# Organizational Abstraction
 
-AI agents are powerful but unreliable. That's the gap Obey fills.
+VPs don't manage 200 people directly. They manage at the right level of abstraction.
 
-## What Goes Wrong
+Obey applies the same principle to AI agents.
 
-**Context Loss**
+## The Abstraction
 
-Sessions reset. Work forgotten. Agents repeat mistakes because they don't remember what happened yesterday.
+**You're the executive**
 
-**Coordination Failure**
+High-level decisions. Strategic direction. Initiative oversight.
 
-Multiple agents working on the same project conflict, duplicate work, or produce contradictory outputs. You become the bottleneck manually coordinating everything.
+**Sessions are your teams**
 
-**Inconsistent Results**
+Each session handles its own complexity. Multiple agents working together. You don't need to track each one.
 
-Same prompt, different outputs. Quality varies by model, by day, by phase of the moon. No repeatability.
+**Campaigns are your divisions**
 
-**Task Abandonment**
+Unified workspaces for related initiatives. Dozens of projects building in parallel with shared context.
 
-Agents stop mid-execution. Complex workflows break. No recovery mechanism beyond starting over.
+## What This Enables
 
-## How Obey Addresses This
+**Scale without overhead**
 
-**Persistent Memory**
+More agents doesn't mean more management burden. The abstraction handles the complexity growth.
 
-Context carries across sessions. Decisions inform future work. Agents build on what they learned instead of starting fresh every time.
+**Right-level thinking**
 
-**Structured Coordination**
+You think about outcomes, not task routing. About initiatives, not individual agent prompts.
 
-Hierarchy handles agent coordination. Teams know their roles. Work flows without your constant intervention.
+**Organizational workflows**
 
-**Consistency Through Architecture**
-
-Same hierarchy, same results. Model differences show in speed, not output quality. Repeatable outcomes regardless of which AI executes.
-
-**Session Recovery**
-
-Work survives interruptions. State persists across failures. No lost progress.
+Build systems that automate how entire initiatives operate. Not just tasks. Entire operational patterns.
 
 ## The Result
 
-Agents that work reliably. Systems you can depend on. Infrastructure that makes the unreliable reliable.
+One person managing what would normally require an entire management layer.
 
-Not hoping agents work. Building systems that ensure they do.
+The complexity exists. It's just abstracted at the right level so you can actually manage it.

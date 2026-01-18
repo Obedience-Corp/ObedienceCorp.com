@@ -1,5 +1,5 @@
-Chat interfaces treat AI as a conversation partner. One prompt, one response, repeat.
+The industry is racing to build smarter models. That's not the problem.
 
-Obey treats AI as a workforce. Multiple specialized agents. Persistent context. Coordinated execution.
+We already have AI that can do most human tasks. What we don't have is a way to direct it at scale.
 
-From chat to orchestration.
+**Obey is the organizational layer that's missing.**
