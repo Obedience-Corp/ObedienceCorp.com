@@ -97,8 +97,16 @@ type NavItem struct {
 
 // PageConfigWrapper holds the root YAML structure for page config
 type PageConfigWrapper struct {
-	Page PageConfig `yaml:"page"`
-	CTA  CTAConfig  `yaml:"cta"`
+	Page     PageConfig       `yaml:"page"`
+	CTA      CTAConfig        `yaml:"cta"`
+	Sections []LandingSection `yaml:"sections"`
+}
+
+// LandingSection represents a content section on the landing page
+type LandingSection struct {
+	Type  string   `yaml:"type"`  // "features" or "promise"
+	Items []string `yaml:"items"` // For features type
+	Text  string   `yaml:"text"`  // For promise type
 }
 
 // PageConfig holds page-specific configuration

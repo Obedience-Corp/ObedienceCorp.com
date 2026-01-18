@@ -29,8 +29,9 @@ type EnrichedArticle struct {
 
 type PageData struct {
 	// Page-specific data
-	Page config.PageConfig
-	CTA  config.CTAConfig
+	Page     config.PageConfig
+	CTA      config.CTAConfig
+	Sections []config.LandingSection
 
 	// Shared site data
 	Site       config.Site
@@ -77,7 +78,7 @@ func main() {
 		pageDir := filepath.Join("content", "pages", page.Dir)
 
 		// Load page-specific config
-		pageConfig, ctaConfig, err := config.LoadPageConfig(filepath.Join(pageDir, page.ConfigFile))
+		pageConfig, ctaConfig, sections, err := config.LoadPageConfig(filepath.Join(pageDir, page.ConfigFile))
 		if err != nil {
 			log.Fatalf("Failed to load page config for %s: %v", page.Dir, err)
 		}
@@ -138,6 +139,7 @@ func main() {
 		data := PageData{
 			Page:       *pageConfig,
 			CTA:        *ctaConfig,
+			Sections:   sections,
 			Site:       siteConfig.Site,
 			Hero:       siteConfig.Hero,
 			Branding:   siteConfig.Branding,

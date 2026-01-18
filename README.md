@@ -1,6 +1,25 @@
-# Obedience Corp Landing Page
+# OBEDIENCE CORP
 
-Official landing page for Obedience Corp - AI orchestration and tooling company.
+**AI that does what you want. The way you want it done.**
+
+Building infrastructure for autonomous companies.
+
+Command AI like you command human organizations. Executive decisions at the top. Specialized teams below. Hierarchical execution that scales.
+
+**Deterministic workflows. Shared domain knowledge. Hierarchical orchestration.**
+
+Systems that do exactly what you want them to do, every time.
+
+---
+
+## Contact
+
+contact@obediencecorp.com
+
+---
+
+<details>
+<summary>Development</summary>
 
 ## Overview
 
@@ -179,14 +198,6 @@ Configure DNS A records:
 - **No build complexity**: Simple Go generator, no npm/webpack
 - **Self-documenting**: Justfile replaces README for commands
 
-## Brand Guidelines
-
-- **Company Name**: Obedience Corp
-- **Tagline**: "AI that does what you want. The way you want it done."
-- **Product**: Guild
-- **Product Tagline**: "Building Guild: 1000 agents that obey."
-- **Contact**: <contact@obediencecorp.com>
-
 ## Aesthetic
 
 - Corporate dystopian (Mr. Robot E-Corp style)
@@ -211,3 +222,5 @@ When ready for Go backend:
 - Use `just` not `make` (simpler, self-documenting)
 - Grid positioning uses CSS Grid with explicit placement
 - Markdown is processed to HTML with syntax highlighting support
+
+</details>

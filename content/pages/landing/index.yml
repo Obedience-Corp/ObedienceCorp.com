@@ -11,7 +11,7 @@ page:
 
 cta:
   headline: "Building infrastructure for autonomous companies."
-  description: "We build tools that give you complete control over AI agents. Deterministic workflows. Structured memory. Hierarchical orchestration. Systems that do exactly what you specify, every time."
+  description: "Command AI like you command human organizations. Executive decisions at the top. Specialized teams below. Hierarchical execution that scales."
   links:
     - label: "Obey"
       path: "/guild"
@@ -21,3 +21,12 @@ cta:
       description: "AI-native project planning"
   contact_text: "Interested?"
   contact_email: "contact@obediencecorp.com"
+
+sections:
+  - type: "features"
+    items:
+      - "Deterministic workflows"
+      - "Shared domain knowledge"
+      - "Hierarchical orchestration"
+  - type: "promise"
+    text: "Systems that do exactly what you want them to do, every time."
