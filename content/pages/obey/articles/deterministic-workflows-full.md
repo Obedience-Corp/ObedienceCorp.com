@@ -1,37 +1,45 @@
 # Campaigns
 
-A campaign is a workspace for a unified initiative. Related projects that share context. The organizational unit that makes scale manageable.
+Workspaces for unified initiatives. But you don't run just one.
 
-## The Structure
+## The Multiplication
 
-**Campaign level**
+**Campaigns in parallel**
 
-The initiative. Your company's AI infrastructure. A product launch. A research program. Whatever needs unified coordination.
+Run 5, 10, or more campaigns simultaneously. Each is an independent initiative with its own context.
 
-**Sessions within campaigns**
+**Projects per campaign**
 
-Each session represents focused work. Multiple agents collaborating on a specific goal. Many sessions can run simultaneously.
+Each campaign can have dozens of projects building in parallel. Related work that shares context.
 
-**Agents within sessions**
+**Agents per project**
 
-The actual workforce. Different models, different specializations, all coordinated by the session structure.
+One agent per project is often more effective than multiple agents on the same work. But you can configure it either way.
 
-## What Campaigns Enable
+## The Math
 
-**Parallel execution**
+```
+5 campaigns × 5 projects × 1 agent = 25 agents
+10 campaigns × 10 projects × 1 agent = 100 agents
+10 campaigns × 10 projects × 2 agents = 200 agents
+```
 
-Dozens of projects building at once. Different sessions, different goals, same campaign context.
+Nothing is limited. Scale as deep as you need.
 
-**Shared knowledge**
+## What This Enables
 
-Context flows between sessions. Decisions in one place inform work elsewhere. No siloed agents.
+**Multiplicative scale**
 
-**Cross-machine coordination**
+Small numbers at each level compound into large workforce capacity.
 
-Campaigns can span multiple machines. Your desktop, VPS, servers. All appearing as one unified workspace.
+**Flexible configuration**
+
+More campaigns with fewer agents each. Fewer campaigns with more projects. Whatever matches your work.
+
+**Single view**
+
+All campaigns. All projects. All agents. One window.
 
 ## The Result
 
-One campaign. Many projects. Hundreds of agents.
-
-All organized, all visible, all manageable from a single view.
+The scale multiplies. The interface stays simple.

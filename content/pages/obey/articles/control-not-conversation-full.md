@@ -18,13 +18,32 @@ There's no executive layer. No way to direct thousands of capable subsystems tow
 
 ## What Obey Provides
 
-A corporate org structure for AI. Break goals into sub-goals. Direct complex systems at scale.
+Human civilization doesn't rely on the most intelligent people to do all work. We break work down. Distribute it across the population in manageable chunks. Create governance around it. Direct it toward a vision.
+
+That's what Obey enables for AI.
+
+**The decomposition:**
+
+```
+Vision & Strategy
+└── Initiatives
+    └── Projects
+        └── Goals
+            └── Subgoals
+                └── Tasks (smallest reliable chunk)
+```
 
 **The abstraction hierarchy:**
-- Obey: The organization
-- Campaigns: Initiatives
-- Projects: Focused work
-- Festivals: Task execution
+
+```
+Obey (Executive layer)
+└── Campaigns (Initiatives)
+    └── Projects (Focused work)
+        └── Festivals
+            └── Phases
+                └── Sequences
+                    └── Tasks
+```
 
 The abstraction goes as deep as needed. Theoretically infinite. Each layer handles its own complexity.
 

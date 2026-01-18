@@ -89,16 +89,16 @@ func main() {
 			log.Fatalf("Failed to load articles config for %s: %v", page.Dir, err)
 		}
 
-		// Load page-specific bulletins (left drawer)
-		bulletinConfig, err := config.LoadBulletinConfig(filepath.Join(pageDir, "bulletin-left.yml"))
+		// Load shared bulletins (left drawer)
+		bulletinConfig, err := config.LoadBulletinConfig(filepath.Join("content/pages", "bulletin-left.yml"))
 		if err != nil {
-			log.Fatalf("Failed to load bulletin config for %s: %v", page.Dir, err)
+			log.Fatalf("Failed to load bulletin config: %v", err)
 		}
 
-		// Load page-specific dispatches (right drawer)
-		dispatchConfig, err := config.LoadDispatchConfig(filepath.Join(pageDir, "bulletin-right.yml"))
+		// Load shared dispatches (right drawer)
+		dispatchConfig, err := config.LoadDispatchConfig(filepath.Join("content/pages", "bulletin-right.yml"))
 		if err != nil {
-			log.Fatalf("Failed to load dispatch config for %s: %v", page.Dir, err)
+			log.Fatalf("Failed to load dispatch config: %v", err)
 		}
 
 		// Load markdown content for each article

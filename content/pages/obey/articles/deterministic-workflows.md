@@ -1,5 +1,5 @@
-Workspaces for unified initiatives. Related projects sharing context.
+Run many campaigns in parallel. Each campaign runs many projects. Each project runs agents.
 
-One campaign might have dozens of projects building in parallel. Each with its own sessions and agents.
+10 campaigns × 10 projects × 2 agents = 200 agents. One window.
 
-**Organize at scale.**
+**It scales to your vision.**
