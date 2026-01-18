@@ -7,7 +7,6 @@ page:
   tagline_line2: ""
   mission: ""
   layout: "hero-left"
-  animate_tagline: false
 
 cta:
   headline: "Hierarchical execution that scales."

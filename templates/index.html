@@ -132,14 +132,11 @@
 
     {{if eq .Page.Name "index"}}
     <!-- Landing Page: Single unified hero -->
-    <header class="landing-hero" role="banner" aria-label="Site introduction"
-            data-tagline1="{{.Page.TaglineLine1}}"
-            data-tagline2="{{.Page.TaglineLine2}}"
-            data-animate="{{.Page.AnimateTagline}}">
+    <header class="landing-hero" role="banner" aria-label="Site introduction">
       <h1 class="landing-hero-title">{{.Page.HeroTitle}}</h1>
       <h2 class="landing-hero-tagline">
-        <span class="tagline-line" id="line1"></span>
-        <span class="tagline-line" id="line2"></span>
+        {{if .Page.TaglineLine1}}<span class="tagline-line">{{.Page.TaglineLine1}}</span>{{end}}
+        {{if .Page.TaglineLine2}}<span class="tagline-line">{{.Page.TaglineLine2}}</span>{{end}}
       </h2>
 
       <div class="hero-products">
