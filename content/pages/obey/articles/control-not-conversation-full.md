@@ -14,7 +14,7 @@ The bottleneck isn't intelligence. It's direction.
 
 We build tools and systems problem-by-problem. AI helps, but that approach only scales so far.
 
-There's no organizational layer. No way to direct thousands of capable subsystems toward a unified goal.
+There's no executive layer. No way to direct thousands of capable subsystems toward a unified goal.
 
 ## What Obey Provides
 
