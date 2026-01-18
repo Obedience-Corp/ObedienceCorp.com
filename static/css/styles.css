@@ -783,12 +783,12 @@ footer {
 
 .bulletin-left {
   left: 1rem;
-  right: calc(50vw + 800px + 2rem); /* Fill space from edge to content */
+  right: calc(50vw + 50rem + 2rem); /* Fill space from edge to content */
 }
 
 .bulletin-right {
   right: 1rem;
-  left: calc(50vw + 800px + 2rem); /* Fill space from content to edge */
+  left: calc(50vw + 50rem + 2rem); /* Fill space from content to edge */
 }
 
 .bulletin-card {
@@ -971,8 +971,8 @@ footer {
   letter-spacing: 0.08em;
 }
 
-/* Show bulletin boards on large screens with sufficient margin space */
-@media (min-width: 1800px) {
+/* Show bulletin boards on ultra-wide screens with sufficient margin space */
+@media (min-width: 137.5em) {
   .bulletin-board {
     display: flex;
   }
@@ -980,7 +980,7 @@ footer {
 
 /* Hover Zones - invisible triggers at viewport edges */
 .hover-zone {
-  display: none; /* Hidden by default, shown < 1800px */
+  display: none; /* Hidden by default, shown < 137.5em */
   position: fixed;
   top: 0;
   height: 100%;

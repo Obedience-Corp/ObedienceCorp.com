@@ -27,8 +27,8 @@ func main() {
 		switch path {
 		case "/":
 			htmlFile = "dist/index.html"
-		case "/guild":
-			htmlFile = "dist/guild.html"
+		case "/obey":
+			htmlFile = "dist/obey.html"
 		case "/fest":
 			htmlFile = "dist/fest.html"
 		default:

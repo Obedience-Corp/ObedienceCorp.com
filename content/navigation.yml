@@ -4,7 +4,7 @@ navigation:
       path: "/"
       type: "internal"
     - label: "Obey"
-      path: "/guild"
+      path: "/obey"
       type: "internal"
     - label: "Fest"
       path: "/fest"

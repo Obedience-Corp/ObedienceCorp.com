@@ -70,7 +70,7 @@ func main() {
 	// Pages to generate: directory -> output file mapping
 	pages := []PageDef{
 		{Dir: "landing", Output: "index", ConfigFile: "index.yml"},
-		{Dir: "guild", Output: "guild", ConfigFile: "guild.yml"},
+		{Dir: "obey", Output: "obey", ConfigFile: "obey.yml"},
 		{Dir: "fest", Output: "fest", ConfigFile: "fest.yml"},
 	}
 

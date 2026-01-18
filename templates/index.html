@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{.Page.Title}}</title>
     <meta name="description" content="{{.Page.Description}}" />
-    <link rel="stylesheet" href="/static/css/styles.css?v=5" />
+    <link rel="stylesheet" href="/static/css/styles.css?v=6" />
   </head>
   <body>
     {{if ne .Page.Name "index"}}
@@ -151,21 +151,6 @@
     </section>
     {{end}}
 
-    <!-- Features & Promise Sections -->
-    {{range .Sections}}
-    {{if eq .Type "features"}}
-    <section class="landing-section section-features">
-      <div class="feature-chips">
-        {{range .Items}}<span class="feature-chip">{{.}}</span>{{end}}
-      </div>
-    </section>
-    {{else if eq .Type "promise"}}
-    <section class="landing-section section-promise">
-      <p class="promise-text">{{.Text}}</p>
-    </section>
-    {{end}}
-    {{end}}
-
     {{if .CTA.Links}}
     <!-- Products Section -->
     <section class="landing-section section-products">
@@ -180,12 +165,32 @@
     </section>
     {{end}}
 
+    <!-- Features Section -->
+    {{range .Sections}}
+    {{if eq .Type "features"}}
+    <section class="landing-section section-features">
+      <div class="feature-chips">
+        {{range .Items}}<span class="feature-chip">{{.}}</span>{{end}}
+      </div>
+    </section>
+    {{end}}
+    {{end}}
+
     {{if .CTA.ContactEmail}}
     <!-- Contact Section -->
     <section class="landing-section section-contact">
       {{if .CTA.ContactText}}<span class="contact-text">{{.CTA.ContactText}}</span>{{end}}
       <a href="mailto:{{.CTA.ContactEmail}}" class="contact-email">{{.CTA.ContactEmail}}</a>
     </section>
+    {{end}}
+
+    <!-- Promise Section -->
+    {{range .Sections}}
+    {{if eq .Type "promise"}}
+    <section class="landing-section section-promise">
+      <p class="promise-text">{{.Text}}</p>
+    </section>
+    {{end}}
     {{end}}
     {{else}}
     <!-- Product Pages: Page header above grid -->
