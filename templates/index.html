@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{.Page.Title}}</title>
     <meta name="description" content="{{.Page.Description}}" />
-    <link rel="stylesheet" href="/static/css/styles.css?v=6" />
+    <link rel="stylesheet" href="/static/css/styles.css?v=7" />
   </head>
   <body>
     {{if ne .Page.Name "index"}}
@@ -131,7 +131,7 @@
     </div>
 
     {{if eq .Page.Name "index"}}
-    <!-- Landing Page: Hero only, centered -->
+    <!-- Landing Page: Single unified hero -->
     <header class="landing-hero" role="banner" aria-label="Site introduction"
             data-tagline1="{{.Page.TaglineLine1}}"
             data-tagline2="{{.Page.TaglineLine2}}"
@@ -141,46 +141,20 @@
         <span class="tagline-line" id="line1"></span>
         <span class="tagline-line" id="line2"></span>
       </h2>
-    </header>
 
-    {{if .CTA.Headline}}
-    <!-- Mission Section -->
-    <section class="landing-section section-mission">
-      <h2 class="section-headline">{{.CTA.Headline}}</h2>
-      {{if .CTA.Description}}<p class="section-description">{{.CTA.Description}}</p>{{end}}
-    </section>
-    {{end}}
-
-    {{if .CTA.Links}}
-    <!-- Products Section -->
-    <section class="landing-section section-products">
-      <div class="product-links">
+      <div class="hero-products">
         {{range .CTA.Links}}
         <a href="{{.Path}}" class="product-link">
           <span class="product-link-label">{{.Label}}</span>
-          {{if .Description}}<span class="product-link-desc">{{.Description}}</span>{{end}}
+        </a>
+        {{end}}
+        {{if .CTA.ContactEmail}}
+        <a href="mailto:{{.CTA.ContactEmail}}" class="product-link">
+          <span class="product-link-label">Contact</span>
         </a>
         {{end}}
       </div>
-    </section>
-    {{end}}
-
-    {{if .CTA.ContactEmail}}
-    <!-- Contact Section -->
-    <section class="landing-section section-contact">
-      {{if .CTA.ContactText}}<span class="contact-text">{{.CTA.ContactText}}</span>{{end}}
-      <a href="mailto:{{.CTA.ContactEmail}}" class="contact-email">{{.CTA.ContactEmail}}</a>
-    </section>
-    {{end}}
-
-    <!-- Promise Section -->
-    {{range .Sections}}
-    {{if eq .Type "promise"}}
-    <section class="landing-section section-promise">
-      <p class="promise-text">{{.Text}}</p>
-    </section>
-    {{end}}
-    {{end}}
+    </header>
     {{else}}
     <!-- Product Pages: Page header above grid -->
     <header class="page-header">

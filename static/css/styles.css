@@ -369,11 +369,12 @@ body {
   max-width: 600px;
 }
 
-/* Landing Page Hero - Full width above grid */
+/* Landing Page Hero - Full viewport height */
 .landing-hero {
   width: 100%;
-  padding: clamp(4rem, 12vh, 8rem) clamp(4vw, 6vw, 6rem);
-  margin-top: clamp(50px, 8vh, 70px); /* Account for fixed navbar */
+  min-height: 100vh;
+  min-height: 100dvh; /* Modern browsers, handles mobile address bar */
+  padding: clamp(50px, 8vh, 70px) clamp(4vw, 6vw, 6rem) 4rem; /* Top padding for navbar */
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
@@ -381,7 +382,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: clamp(1rem, 2vh, 1.5rem);
+  box-sizing: border-box;
 }
 
 .landing-hero-title {
@@ -417,6 +420,38 @@ body {
   letter-spacing: 0.02em;
   margin-top: 1rem;
   max-width: 600px;
+}
+
+/* Hero Products */
+.hero-products {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 5rem;
+}
+
+.hero-products .product-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--border-primary);
+  background: var(--bg-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.hero-products .product-link:hover {
+  border-color: var(--accent-green);
+  background: rgba(0, 255, 127, 0.05);
+}
+
+.hero-products .product-link-label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
 }
 
 /* Landing Page Sections - Shared Base */
@@ -1129,7 +1164,7 @@ footer {
 }
 
 /* Show hover zones when bulletins are hidden */
-@media (max-width: 1799px) {
+@media (max-width: 137.4375em) {
   .hover-zone {
     display: block;
   }
@@ -1196,8 +1231,7 @@ footer {
 
   /* Landing hero mobile adjustments */
   .landing-hero {
-    padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 6vw, 2rem);
-    margin-top: 60px;
+    padding: 60px clamp(1.5rem, 6vw, 2rem) 2rem; /* Top padding for navbar */
   }
 
   .landing-hero-title {
