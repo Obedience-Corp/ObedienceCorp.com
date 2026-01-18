@@ -419,60 +419,106 @@ body {
   max-width: 600px;
 }
 
-/* Landing CTA Section */
-.landing-cta {
+/* Landing Page Sections - Shared Base */
+.landing-section {
   width: 100%;
-  max-width: 800px;
   margin: 0 auto;
-  padding: clamp(3rem, 8vh, 5rem) clamp(2rem, 6vw, 4rem);
+  padding: 4rem clamp(2rem, 10vw, 8rem);
   text-align: center;
 }
 
-.cta-headline {
+/* Mission Section */
+.section-mission {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+.section-headline {
   font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
   font-weight: 700;
   color: var(--accent-green);
   letter-spacing: 0.02em;
   margin: 0 0 1.5rem 0;
 }
 
-.cta-description {
+.section-description {
   font-family: "IBM Plex Mono", monospace;
   font-size: clamp(0.9rem, 1.6vw, 1.1rem);
   color: var(--text-secondary);
-  line-height: 1.6;
-  margin: 0 0 2.5rem 0;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: 1.7;
+  margin: 0;
 }
 
-.cta-links {
+/* Features Section */
+.section-features {
+  padding: 3rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.feature-chips {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
 
-.cta-link {
+.feature-chip {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(0.85rem, 1.4vw, 1rem);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+  padding: 1rem 1.5rem;
+  background: transparent;
+  letter-spacing: 0.02em;
+}
+
+/* Promise Section */
+.section-promise {
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.promise-text {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Products Section */
+.section-products {
+  padding: 4rem 2rem;
+}
+
+.product-links {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.product-link {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 2.5rem;
+  padding: 1.75rem 3rem;
   border: 1px solid var(--border-primary);
   background: var(--bg-secondary);
   text-decoration: none;
   transition: all 0.3s ease;
-  min-width: 180px;
+  min-width: 200px;
 }
 
-.cta-link:hover {
+.product-link:hover {
   border-color: var(--accent-green);
   background: var(--bg-hero);
 }
 
-.cta-link-label {
+.product-link-label {
   font-family: "IBM Plex Mono", monospace;
   font-size: clamp(1.25rem, 2.5vw, 1.5rem);
   font-weight: 700;
@@ -481,95 +527,73 @@ body {
   text-transform: uppercase;
 }
 
-.cta-link-desc {
+.product-link-desc {
   font-family: "IBM Plex Mono", monospace;
   font-size: clamp(0.75rem, 1.2vw, 0.875rem);
   color: var(--text-secondary);
   margin-top: 0.5rem;
 }
 
-.cta-contact {
-  margin-top: 3rem;
+/* Contact Section */
+.section-contact {
+  padding: 3rem 2rem 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(0.875rem, 1.4vw, 1rem);
+  font-size: clamp(0.9rem, 1.4vw, 1rem);
 }
 
-.cta-contact-text {
+.contact-text {
   color: var(--text-secondary);
   margin-right: 0.5rem;
 }
 
-.cta-contact-email {
+.contact-email {
   color: var(--text-primary);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.cta-contact-email:hover {
+.contact-email:hover {
   color: var(--accent-green);
 }
 
-/* Mobile CTA adjustments */
+/* Mobile Landing Sections */
 @media (max-width: 768px) {
-  .landing-cta {
-    padding: clamp(2rem, 6vh, 3rem) clamp(1.5rem, 6vw, 2rem);
+  .landing-section {
+    padding: 2.5rem 1.5rem;
   }
 
-  .cta-links {
+  .section-features {
+    padding: 2rem 1.5rem;
+  }
+
+  .feature-chips {
+    gap: 1rem;
+  }
+
+  .feature-chip {
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .section-promise {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .section-products {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .product-links {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
   }
 
-  .cta-link {
+  .product-link {
     width: 100%;
     max-width: 280px;
     padding: 1.25rem 2rem;
-  }
-}
-
-/* Landing page sections */
-.landing-features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 2.5rem 0;
-}
-
-.feature-chip {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
-  color: var(--accent-green);
-  border: 1px solid var(--accent-green);
-  padding: 0.6rem 1.2rem;
-  background: transparent;
-  letter-spacing: 0.02em;
-}
-
-.landing-promise {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.landing-promise p {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: clamp(1rem, 1.8vw, 1.25rem);
-  color: var(--text-secondary);
-  font-style: italic;
-  margin: 0;
-}
-
-/* Mobile landing sections */
-@media (max-width: 768px) {
-  .landing-features {
-    gap: 0.75rem;
-    margin: 1.5rem 0;
-  }
-
-  .feature-chip {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.75rem;
   }
 }
 

@@ -83,17 +83,15 @@ setTimeout(() => {
   const line1 = document.getElementById("line1");
   const line2 = document.getElementById("line2");
 
-  const tagline1 = dataSource?.dataset.tagline1 || "AI that does what you want";
-  const tagline2 = dataSource?.dataset.tagline2 || "The way you want it done";
+  const tagline1 = dataSource?.dataset.tagline1 || "";
+  const tagline2 = dataSource?.dataset.tagline2 || "";
   const shouldAnimate = dataSource?.dataset.animate === "true";
 
-  // Only run if both line elements exist
-  if (!line1 || !line2) return;
+  if (!line1) return;
 
   if (shouldAnimate) {
     // Animated typing effect
     typeText(line1, tagline1, 70, () => {
-      // Only add period if line doesn't already end with punctuation
       const lastChar1 = tagline1.slice(-1);
       if (!['.', ',', '!', '?', ';', ':'].includes(lastChar1)) {
         const period1 = document.createElement("span");
@@ -102,25 +100,29 @@ setTimeout(() => {
         line1.appendChild(period1);
       }
 
-      setTimeout(() => {
-        typeText(line2, tagline2, 70, () => {
-          // Only add period if line doesn't already end with punctuation
-          const lastChar2 = tagline2.slice(-1);
-          if (!['.', ',', '!', '?', ';', ':'].includes(lastChar2)) {
-            const period2 = document.createElement("span");
-            period2.className = "period";
-            period2.textContent = ".";
-            line2.appendChild(period2);
-          }
-        });
-      }, 150);
+      if (tagline2 && line2) {
+        setTimeout(() => {
+          typeText(line2, tagline2, 70, () => {
+            const lastChar2 = tagline2.slice(-1);
+            if (!['.', ',', '!', '?', ';', ':'].includes(lastChar2)) {
+              const period2 = document.createElement("span");
+              period2.className = "period";
+              period2.textContent = ".";
+              line2.appendChild(period2);
+            }
+          });
+        }, 150);
+      }
     });
   } else {
-    // No animation - display immediately (add period only if needed)
-    const needsPeriod1 = !['.', ',', '!', '?', ';', ':'].includes(tagline1.slice(-1));
-    const needsPeriod2 = !['.', ',', '!', '?', ';', ':'].includes(tagline2.slice(-1));
+    // No animation - display immediately
+    const needsPeriod1 = tagline1 && !['.', ',', '!', '?', ';', ':'].includes(tagline1.slice(-1));
     line1.textContent = tagline1 + (needsPeriod1 ? "." : "");
-    line2.textContent = tagline2 + (needsPeriod2 ? "." : "");
+
+    if (tagline2 && line2) {
+      const needsPeriod2 = !['.', ',', '!', '?', ';', ':'].includes(tagline2.slice(-1));
+      line2.textContent = tagline2 + (needsPeriod2 ? "." : "");
+    }
   }
 }, 300);
 

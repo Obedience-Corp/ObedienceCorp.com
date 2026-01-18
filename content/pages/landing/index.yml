@@ -3,15 +3,15 @@ page:
   title: "Obedience Corp"
   description: "Obedience Corp. AI that does what you want, the way you want it done. Infrastructure for autonomous companies."
   hero_title: "OBEDIENCE CORP"
-  tagline_line1: "AI that does what you want."
-  tagline_line2: "The way you want it done."
+  tagline_line1: "Infrastructure for autonomous companies."
+  tagline_line2: ""
   mission: ""
   layout: "hero-left"
   animate_tagline: false
 
 cta:
-  headline: "Building infrastructure for autonomous companies."
-  description: "Command AI like you command human organizations. Executive decisions at the top. Specialized teams below. Hierarchical execution that scales."
+  headline: "Hierarchical execution that scales."
+  description: "Command AI like you command human organizations. Executive decisions at the top. Specialized teams below."
   links:
     - label: "Obey"
       path: "/guild"
