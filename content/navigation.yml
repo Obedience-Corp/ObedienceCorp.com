@@ -1,17 +1,8 @@
 navigation:
   items:
-    - label: "Home"
-      path: "/"
-      type: "internal"
     - label: "Obey"
       path: "/obey"
       type: "internal"
     - label: "Fest"
       path: "/fest"
       type: "internal"
-    - label: "Anywhere"
-      path: "https://www.anywr.ai/"
-      type: "external"
-    - label: "Brainyard"
-      path: "https://brainyard.ai"
-      type: "external"
