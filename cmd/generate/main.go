@@ -44,9 +44,9 @@ type PageData struct {
 }
 
 func main() {
-	// Ensure dist directory exists
-	if err := os.MkdirAll("dist", 0755); err != nil {
-		log.Fatalf("Failed to create dist directory: %v", err)
+	// Ensure docs directory exists
+	if err := os.MkdirAll("docs", 0755); err != nil {
+		log.Fatalf("Failed to create docs directory: %v", err)
 	}
 
 	// Load shared site configuration
@@ -149,8 +149,8 @@ func main() {
 			Navigation: navConfig.Items,
 		}
 
-		// Create output file in dist/
-		outPath := filepath.Join("dist", page.Output+".html")
+		// Create output file in docs/
+		outPath := filepath.Join("docs", page.Output+".html")
 		outFile, err := os.Create(outPath)
 		if err != nil {
 			log.Fatalf("Failed to create output file %s: %v", outPath, err)
@@ -162,7 +162,7 @@ func main() {
 		}
 		outFile.Close()
 
-		fmt.Printf("✓ Generated dist/%s.html\n", page.Output)
+		fmt.Printf("✓ Generated docs/%s.html\n", page.Output)
 	}
 
 	fmt.Println("✓ Build complete")
