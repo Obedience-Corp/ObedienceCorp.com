@@ -18,22 +18,22 @@ func main() {
 	staticFS := http.FileServer(http.Dir("static"))
 	http.Handle("/static/", http.StripPrefix("/static/", staticFS))
 
-	// Page routes - serve from dist/
+	// Page routes - serve from docs/
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		path := r.URL.Path
 
-		// Map routes to HTML files in dist/
+		// Map routes to HTML files in docs/
 		var htmlFile string
 		switch path {
 		case "/":
-			htmlFile = "dist/index.html"
+			htmlFile = "docs/index.html"
 		case "/obey":
-			htmlFile = "dist/obey.html"
+			htmlFile = "docs/obey.html"
 		case "/fest":
-			htmlFile = "dist/fest.html"
+			htmlFile = "docs/fest.html"
 		default:
-			// Try to serve as a file from dist/
-			filePath := filepath.Join("dist", path)
+			// Try to serve as a file from docs/
+			filePath := filepath.Join("docs", path)
 			if _, err := os.Stat(filePath); err == nil {
 				http.ServeFile(w, r, filePath)
 				return
