@@ -15,9 +15,10 @@ compile:
     @go build -o bin/generate ./cmd/generate
     @go build -o bin/serve ./cmd/serve
 
-# Generate HTML files to dist/
+# Generate HTML files to docs/
 build: compile
     @./bin/generate
+    @cp -r static docs/
 
 # Start local development server (foreground)
 serve: build
@@ -29,7 +30,7 @@ dev: build stop
     set -e
     # Start watcher in background
     (while true; do
-        find content templates static -type f -newer dist/index.html 2>/dev/null | grep -q . && ./bin/generate
+        find content templates static -type f -newer docs/index.html 2>/dev/null | grep -q . && ./bin/generate
         sleep 1
     done) &
     WATCH_PID=$!
@@ -76,4 +77,4 @@ lint: fmt vet
 # Remove generated files and binaries
 clean:
     @echo "Cleaning..."
-    @rm -rf dist/ bin/
+    @rm -rf docs/ bin/
