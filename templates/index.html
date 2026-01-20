@@ -126,6 +126,7 @@
           {{range .Navigation}}
           <a href="{{.Path}}" class="nav-drawer-item"{{if eq .Type "external"}} target="_blank" rel="noopener noreferrer"{{end}}>{{.Label}}</a>
           {{end}}
+          <a href="mailto:{{.Hero.ContactEmail}}" class="nav-drawer-item">Contact</a>
         </div>
       </div>
     </div>
