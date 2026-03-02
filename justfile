@@ -74,6 +74,26 @@ vet:
 # Format and vet
 lint: fmt vet
 
+# Build festival docs into dist/docs/ (requires ../festival sibling repo)
+docs:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    festival_dir="$(cd ../festival && pwd)"
+    if [ ! -d "$festival_dir" ]; then
+        echo "Error: festival repo not found at ../festival"
+        echo "Expected sibling directory in the campaign workspace"
+        exit 1
+    fi
+    cd "$festival_dir"
+    HUGO_BASEURL="https://obediencecorp.com/festival/" just docs build
+    cd - > /dev/null
+    rm -rf dist/festival
+    cp -r "$festival_dir/public" dist/festival
+    echo "Festival docs built to dist/festival/"
+
+# Build everything (site + docs)
+build-all: build docs
+
 # Remove generated files and binaries
 clean:
     @echo "Cleaning..."
