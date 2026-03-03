@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Festival</title><link>https://obediencecorp.com/festival/</link><description>Recent content on Festival</description><generator>Hugo</generator><language>en</language><atom:link href="https://obediencecorp.com/festival/index.xml" rel="self" type="application/rss+xml"/><item><title>Installation</title><link>https://obediencecorp.com/festival/docs/getting-started/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/getting-started/installation/</guid><description>&lt;h1 id="installation"&gt;Installation&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Festival</title><link>https://obediencecorp.com/festival/</link><description>Recent content on Festival</description><generator>Hugo</generator><language>en</language><atom:link href="https://obediencecorp.com/festival/index.xml" rel="self" type="application/rss+xml"/><item><title>camp Reference</title><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</guid><description>&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
+&lt;p&gt;Campaign management CLI for multi-project AI workspaces&lt;/p&gt;
+&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
+&lt;p&gt;Camp manages multi-project AI workspaces with fast navigation.&lt;/p&gt;
+&lt;p&gt;Camp provides structure and navigation for AI-powered development workflows.
+It creates standardized campaign directories, manages git submodules as projects,
+and enables lightning-fast navigation through category shortcuts and TUI fuzzy finding.&lt;/p&gt;
+&lt;p&gt;GETTING STARTED:
+camp init Initialize a new campaign in the current directory
+camp project list List all projects in the campaign
+camp list Show all registered campaigns&lt;/p&gt;</description></item><item><title>fest Reference</title><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest-reference/</guid><description>&lt;h2 id="fest"&gt;fest&lt;/h2&gt;
+&lt;p&gt;Festival Methodology CLI - goal-oriented project management for AI agents&lt;/p&gt;
+&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
+&lt;p&gt;fest manages Festival Methodology - a goal-oriented project management
+system designed for AI agent development workflows.&lt;/p&gt;
+&lt;p&gt;GETTING STARTED (for AI agents):
+fest understand methodology Learn core principles first
+fest understand structure Understand the 3-level hierarchy
+fest understand tasks Learn when/how to create task files
+fest validate Check if a festival is properly structured&lt;/p&gt;
+&lt;p&gt;COMMON WORKFLOWS:
+fest create festival Create a new festival (interactive TUI)
+fest create phase/sequence Add phases or sequences to existing festival
+fest validate &amp;ndash;fix Fix common structure issues automatically
+fest go Navigate to festivals directory&lt;/p&gt;</description></item><item><title>Installation</title><link>https://obediencecorp.com/festival/docs/getting-started/installation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/getting-started/installation/</guid><description>&lt;h1 id="installation"&gt;Installation&lt;/h1&gt;
 &lt;p&gt;Festival includes two CLI tools: &lt;strong&gt;fest&lt;/strong&gt; (festival planning) and &lt;strong&gt;camp&lt;/strong&gt; (campaign management). All installation methods install both.&lt;/p&gt;
 
 
@@ -115,7 +139,7 @@ and unambiguous completion criteria.&lt;/p&gt;</description></item><item><title>
 &lt;p&gt;Create sequences when you have concrete requirements to implement.&lt;/p&gt;</description></item><item><title>Tasks</title><link>https://obediencecorp.com/festival/docs/methodology/tasks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/methodology/tasks/</guid><description>&lt;h1 id="tasks"&gt;Tasks&lt;/h1&gt;
 &lt;p&gt;Tasks are the atomic work units of the Festival Methodology, sitting at the bottom of the hierarchy: &lt;strong&gt;Campaign &amp;gt; Festival &amp;gt; Phase &amp;gt; Sequence &amp;gt; Task&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="what-is-a-task"&gt;What is a Task?&lt;/h2&gt;
-&lt;p&gt;Tasks are NOT single to-dos. They are comprehensive work units &amp;ndash; think of them like a Claude Code plan. Each task document contains multiple actions, acceptance criteria, context, and testing commands. A task is a self-contained blueprint that tells a developer (human or AI) exactly what to build, how to verify it, and what &amp;ldquo;done&amp;rdquo; looks like.&lt;/p&gt;</description></item><item><title>Agent Workflows</title><link>https://obediencecorp.com/festival/docs/guides/agent-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/guides/agent-workflows/</guid><description>&lt;h1 id="agent-workflows"&gt;Agent Workflows&lt;/h1&gt;
+&lt;p&gt;Tasks are NOT single to-dos. They are comprehensive work units &amp;ndash; think of them like an agent&amp;rsquo;s implementation plan. Each task document contains multiple actions, acceptance criteria, context, and testing commands. A task is a self-contained blueprint that tells a developer (human or AI) exactly what to build, how to verify it, and what &amp;ldquo;done&amp;rdquo; looks like.&lt;/p&gt;</description></item><item><title>Agent Workflows</title><link>https://obediencecorp.com/festival/docs/guides/agent-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/guides/agent-workflows/</guid><description>&lt;h1 id="agent-workflows"&gt;Agent Workflows&lt;/h1&gt;
 &lt;p&gt;How to use Festival Methodology with AI agents for autonomous development sessions.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="why-festival-for-ai-agents"&gt;Why Festival for AI Agents&lt;/h2&gt;
@@ -180,24 +204,7 @@ and unambiguous completion criteria.&lt;/p&gt;</description></item><item><title>
 &lt;p&gt;Add camp and fest shell functions to your shell config:&lt;/p&gt;</description></item><item><title>CI Integration</title><link>https://obediencecorp.com/festival/docs/tutorials/ci-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/ci-integration/</guid><description>&lt;h1 id="ci-integration"&gt;CI Integration&lt;/h1&gt;
 &lt;!-- TODO: Write tutorial for integrating fest into CI/CD pipelines --&gt;
 &lt;p&gt;How to integrate Festival Methodology into your CI/CD pipeline for automated planning validation.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Tutorial coming soon.&lt;/em&gt;&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</guid><description>&lt;h1 id="camp-cli-reference"&gt;camp CLI Reference&lt;/h1&gt;
-&lt;hr&gt;
-&lt;hr&gt;
-&lt;h2 id="weight-52"&gt;title: &amp;ldquo;camp CLI&amp;rdquo;
-weight: 52&lt;/h2&gt;
-&lt;h1 id="camp-cli-reference-1"&gt;camp CLI Reference&lt;/h1&gt;
-&lt;!-- This page will be auto-generated by `just docs camp` --&gt;
-&lt;p&gt;CLI reference documentation for &lt;code&gt;camp&lt;/code&gt; will be auto-generated from the binary.&lt;/p&gt;
-&lt;p&gt;Generate with:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;just docs camp
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
-&lt;p&gt;Campaign management CLI for multi-project AI workspaces&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Camp manages multi-project AI workspaces with fast navigation.&lt;/p&gt;
-&lt;p&gt;Camp provides structure and navigation for AI-powered development workflows.
-It creates standardized campaign directories, manages git submodules as projects,
-and enables lightning-fast navigation through category shortcuts and TUI fuzzy finding.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</guid><description>&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Tutorial coming soon.&lt;/em&gt;&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</guid><description>&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
 &lt;p&gt;Campaign management CLI for multi-project AI workspaces&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Camp manages multi-project AI workspaces with fast navigation.&lt;/p&gt;
@@ -1779,27 +1786,7 @@ camp version &amp;ndash;json Output as JSON&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="camp.md"&gt;camp&lt;/a&gt;	 - Campaign management CLI for multi-project AI workspaces&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest-reference/</guid><description>&lt;h1 id="fest-cli-reference"&gt;fest CLI Reference&lt;/h1&gt;
-&lt;hr&gt;
-&lt;hr&gt;
-&lt;h2 id="weight-51"&gt;title: &amp;ldquo;fest CLI&amp;rdquo;
-weight: 51&lt;/h2&gt;
-&lt;h1 id="fest-cli-reference-1"&gt;fest CLI Reference&lt;/h1&gt;
-&lt;!-- This page will be auto-generated by `just docs fest` --&gt;
-&lt;p&gt;CLI reference documentation for &lt;code&gt;fest&lt;/code&gt; will be auto-generated from the binary.&lt;/p&gt;
-&lt;p&gt;Generate with:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;just docs fest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
-&lt;h2 id="fest"&gt;fest&lt;/h2&gt;
-&lt;p&gt;Festival Methodology CLI - goal-oriented project management for AI agents&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;fest manages Festival Methodology - a goal-oriented project management
-system designed for AI agent development workflows.&lt;/p&gt;
-&lt;p&gt;GETTING STARTED (for AI agents):
-fest understand methodology Learn core principles first
-fest understand structure Understand the 3-level hierarchy
-fest understand tasks Learn when/how to create task files
-fest validate Check if a festival is properly structured&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest/</guid><description>&lt;h2 id="fest"&gt;fest&lt;/h2&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest/</guid><description>&lt;h2 id="fest"&gt;fest&lt;/h2&gt;
 &lt;p&gt;Festival Methodology CLI - goal-oriented project management for AI agents&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;fest manages Festival Methodology - a goal-oriented project management
@@ -1983,12 +1970,29 @@ a linked project directory (see &amp;lsquo;fest link&amp;rsquo;), or use &amp;nd
 &lt;p&gt;Query git commits that reference festival elements.&lt;/p&gt;
 &lt;p&gt;Search commits by task ID, sequence, or phase. Uses git log with grep
 to find commits that contain festival references in their messages.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest commits # All commits for current festival
-fest commits &amp;ndash;task FEST-a3b2c1 # Commits for specific task
-fest commits &amp;ndash;sequence 01_foundation # Commits for sequence
-fest commits &amp;ndash;phase 002_IMPLEMENT # Commits for phase
-fest commits &amp;ndash;limit 20 # Limit results&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_completion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_completion/</guid><description>&lt;h2 id="fest-completion"&gt;fest completion&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest commits # All commits for current festival
+ fest commits --task FEST-a3b2c1 # Commits for specific task
+ fest commits --sequence 01_foundation # Commits for sequence
+ fest commits --phase 002_IMPLEMENT # Commits for phase
+ fest commits --limit 20 # Limit results
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest commits [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for commits
+ --json output as JSON
+ --limit int maximum number of commits to return (default 50)
+ --phase string query commits for phase
+ --sequence string query commits for sequence
+ --task string query commits for specific task (e.g., FEST-a3b2c1)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_completion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_completion/</guid><description>&lt;h2 id="fest-completion"&gt;fest completion&lt;/h2&gt;
 &lt;p&gt;Generate shell completion scripts&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Generate shell completion scripts for fest.&lt;/p&gt;
@@ -2234,12 +2238,27 @@ contents are used for templates, policies, plugins, and extensions.&lt;/p&gt;
 minimal - Immediate goals, dependencies, autonomy level
 standard - + Rules, recent decisions (5)
 full - + All decisions, dependency outputs&lt;/p&gt;
-&lt;p&gt;Examples:
-fest context # Context for current location
-fest context &amp;ndash;depth full # Full context with all details
-fest context &amp;ndash;task my_task # Context for a specific task
-fest context &amp;ndash;json # Output as JSON
-fest context &amp;ndash;verbose # Explanatory output for agents&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_create/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_create/</guid><description>&lt;h2 id="fest-create"&gt;fest create&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest context # Context for current location
+ fest context --depth full # Full context with all details
+ fest context --task my_task # Context for a specific task
+ fest context --json # Output as JSON
+ fest context --verbose # Explanatory output for agents
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest context [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --depth string context depth (minimal, standard, full) (default &amp;#34;standard&amp;#34;)
+ -h, --help help for context
+ --json output as JSON
+ --task string get context for a specific task
+ --verbose output with explanatory text for agents
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_create/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_create/</guid><description>&lt;h2 id="fest-create"&gt;fest create&lt;/h2&gt;
 &lt;p&gt;Create festivals, phases, sequences, or tasks (TUI)&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;fest create [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
@@ -2341,23 +2360,59 @@ This avoids the common mistake of all tasks getting numbered 01_.&lt;/p&gt;
 &lt;p&gt;Takes structured JSON input (inline or file) and produces a parseable WORKFLOW.md
 that matches the format expected by the workflow parser.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
-&lt;h1 id="from-a-steps-file"&gt;From a steps file&lt;/h1&gt;
-&lt;p&gt;fest create workflow &amp;ndash;steps-file steps.json &amp;ndash;position after&lt;/p&gt;
-&lt;h1 id="inline-json-for-agents"&gt;Inline JSON (for agents)&lt;/h1&gt;
-&lt;p&gt;fest create workflow &amp;ndash;steps &amp;lsquo;{&amp;ldquo;title&amp;rdquo;:&amp;ldquo;Review&amp;rdquo;,&amp;ldquo;steps&amp;rdquo;:[&amp;hellip;]}&amp;rsquo; &amp;ndash;position before&lt;/p&gt;
-&lt;h1 id="with-explicit-phase-path"&gt;With explicit phase path&lt;/h1&gt;
-&lt;p&gt;fest create workflow &amp;ndash;steps-file steps.json &amp;ndash;path ./004_POLISH&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_deps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_deps/</guid><description>&lt;h2 id="fest-deps"&gt;fest deps&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; # From a steps file
+ fest create workflow --steps-file steps.json --position after
+
+ # Inline JSON (for agents)
+ fest create workflow --steps &amp;#39;{&amp;#34;title&amp;#34;:&amp;#34;Review&amp;#34;,&amp;#34;steps&amp;#34;:[...]}&amp;#39; --position before
+
+ # With explicit phase path
+ fest create workflow --steps-file steps.json --path ./004_POLISH
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest create workflow [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --agent Strict agent mode (implies --json)
+ --festival string Festival root override
+ -h, --help help for workflow
+ --json Emit JSON output
+ --path string Phase directory path (default &amp;#34;.&amp;#34;)
+ --position string Workflow position relative to sequences (before|after) (default &amp;#34;after&amp;#34;)
+ --steps string Inline JSON with workflow definition
+ --steps-file string Path to JSON file with workflow definition
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_create.md"&gt;fest create&lt;/a&gt;	 - Create festivals, phases, sequences, or tasks (TUI)&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_deps/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_deps/</guid><description>&lt;h2 id="fest-deps"&gt;fest deps&lt;/h2&gt;
 &lt;p&gt;Show task dependencies&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Display dependency information for tasks in the festival.&lt;/p&gt;
 &lt;p&gt;Without arguments, shows the dependency graph for the current sequence.
 With a task name, shows dependencies for that specific task.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest deps # Show all deps in current sequence
-fest deps 02_implement # Show deps for specific task
-fest deps &amp;ndash;all # Show all deps in festival
-fest deps &amp;ndash;json # Output as JSON
-fest deps &amp;ndash;critical-path # Show critical path through the DAG&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore/</guid><description>&lt;h2 id="fest-explore"&gt;fest explore&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest deps # Show all deps in current sequence
+ fest deps 02_implement # Show deps for specific task
+ fest deps --all # Show all deps in festival
+ fest deps --json # Output as JSON
+ fest deps --critical-path # Show critical path through the DAG
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest deps [task] [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --all show all dependencies in festival
+ --critical-path show the critical path
+ -h, --help help for deps
+ --json output as JSON
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore/</guid><description>&lt;h2 id="fest-explore"&gt;fest explore&lt;/h2&gt;
 &lt;p&gt;Interactive festival explorer with hierarchy drilldown&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Explore festivals interactively with vim-style navigation.&lt;/p&gt;
@@ -2449,12 +2504,12 @@ Otherwise, shows all active festivals by default.&lt;/p&gt;
 &lt;p&gt;Collect and manage structured feedback during festival execution.&lt;/p&gt;
 &lt;p&gt;Feedback allows agents to record observations based on defined criteria
 for later aggregation and analysis.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest feedback init &amp;ndash;criteria &amp;ldquo;Code quality&amp;rdquo; &amp;ndash;criteria &amp;ldquo;Performance&amp;rdquo;
-fest feedback add &amp;ndash;criteria &amp;ldquo;Code quality&amp;rdquo; &amp;ndash;observation &amp;ldquo;Found duplication&amp;rdquo;
-fest feedback view
-fest feedback export &amp;ndash;format markdown&lt;/p&gt;
-&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest feedback init --criteria &amp;#34;Code quality&amp;#34; --criteria &amp;#34;Performance&amp;#34;
+ fest feedback add --criteria &amp;#34;Code quality&amp;#34; --observation &amp;#34;Found duplication&amp;#34;
+ fest feedback view
+ fest feedback export --format markdown
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for feedback
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
@@ -2473,11 +2528,11 @@ fest feedback export &amp;ndash;format markdown&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Add a feedback observation for a defined criteria.&lt;/p&gt;
 &lt;p&gt;Use either flags or JSON input to add an observation.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest feedback add &amp;ndash;criteria &amp;ldquo;Code quality&amp;rdquo; &amp;ndash;observation &amp;ldquo;Found duplicate logic&amp;rdquo;
-fest feedback add &amp;ndash;json &amp;lsquo;{&amp;ldquo;criteria&amp;rdquo;: &amp;ldquo;Performance&amp;rdquo;, &amp;ldquo;observation&amp;rdquo;: &amp;ldquo;N+1 query&amp;rdquo;}&amp;rsquo;
-fest feedback add &amp;ndash;criteria &amp;ldquo;Code quality&amp;rdquo; &amp;ndash;observation &amp;ldquo;&amp;hellip;&amp;rdquo; &amp;ndash;severity high &amp;ndash;suggestion &amp;ldquo;Refactor&amp;rdquo;&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest feedback add [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest feedback add --criteria &amp;#34;Code quality&amp;#34; --observation &amp;#34;Found duplicate logic&amp;#34;
+ fest feedback add --json &amp;#39;{&amp;#34;criteria&amp;#34;: &amp;#34;Performance&amp;#34;, &amp;#34;observation&amp;#34;: &amp;#34;N+1 query&amp;#34;}&amp;#39;
+ fest feedback add --criteria &amp;#34;Code quality&amp;#34; --observation &amp;#34;...&amp;#34; --severity high --suggestion &amp;#34;Refactor&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest feedback add [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --criteria string criteria category
  -h, --help help for add
@@ -2499,11 +2554,11 @@ fest feedback add &amp;ndash;criteria &amp;ldquo;Code quality&amp;rdquo; &amp;nd
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Export collected feedback to a file format.&lt;/p&gt;
 &lt;p&gt;Supports markdown, JSON, and YAML output formats.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest feedback export &amp;ndash;format markdown &amp;gt; report.md
-fest feedback export &amp;ndash;format json &amp;gt; report.json
-fest feedback export &amp;ndash;format yaml&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest feedback export [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest feedback export --format markdown &amp;gt; report.md
+ fest feedback export --format json &amp;gt; report.json
+ fest feedback export --format yaml
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest feedback export [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --format string output format: markdown, json, yaml (default &amp;#34;markdown&amp;#34;)
  -h, --help help for export
@@ -2521,10 +2576,10 @@ fest feedback export &amp;ndash;format yaml&lt;/p&gt;
 &lt;p&gt;Initialize feedback collection with defined criteria.&lt;/p&gt;
 &lt;p&gt;Creates a feedback/ directory in the current festival with
 configuration for the specified criteria.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest feedback init &amp;ndash;criteria &amp;ldquo;Code quality observations&amp;rdquo;
-fest feedback init &amp;ndash;criteria &amp;ldquo;Performance concerns&amp;rdquo; &amp;ndash;criteria &amp;ldquo;Methodology suggestions&amp;rdquo;&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest feedback init [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest feedback init --criteria &amp;#34;Code quality observations&amp;#34;
+ fest feedback init --criteria &amp;#34;Performance concerns&amp;#34; --criteria &amp;#34;Methodology suggestions&amp;#34;
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest feedback init [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --criteria strings feedback criteria (required)
  -h, --help help for init
@@ -2541,13 +2596,13 @@ fest feedback init &amp;ndash;criteria &amp;ldquo;Performance concerns&amp;rdquo
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;View collected feedback observations.&lt;/p&gt;
 &lt;p&gt;Filter by criteria or severity, or view a summary of all feedback.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest feedback view
-fest feedback view &amp;ndash;criteria &amp;ldquo;Code quality&amp;rdquo;
-fest feedback view &amp;ndash;severity high
-fest feedback view &amp;ndash;summary
-fest feedback view &amp;ndash;json&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest feedback view [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest feedback view
+ fest feedback view --criteria &amp;#34;Code quality&amp;#34;
+ fest feedback view --severity high
+ fest feedback view --summary
+ fest feedback view --json
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest feedback view [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --criteria string filter by criteria
  -h, --help help for view
@@ -2793,10 +2848,37 @@ current directory:&lt;/p&gt;
 &lt;li&gt;In linked project: moves TO festival&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
-&lt;h1 id="in-project-directory-move-file-to-festival"&gt;In project directory, move file to festival&lt;/h1&gt;
-&lt;p&gt;fest move ./analysis.md&lt;/p&gt;
-&lt;h1 id="in-festival-directory-move-file-to-project"&gt;In festival directory, move file to project&lt;/h1&gt;
-&lt;p&gt;fest move ./specs/api.go &amp;ndash;to-project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_go_project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_go_project/</guid><description>&lt;h2 id="fest-go-project"&gt;fest go project&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; # In project directory, move file to festival
+ fest move ./analysis.md
+
+ # In festival directory, move file to project
+ fest move ./specs/api.go --to-project
+
+ # Copy instead of move (keeps original)
+ fest move --copy ./notes.md
+
+ # Force overwrite existing files
+ fest move --force ./config.yml
+
+Requirements:
+ - Festival must have project_path set in fest.yaml
+ - Must be in either festival or linked project directory
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest go move &amp;lt;source&amp;gt; [destination] [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; -c, --copy copy instead of move
+ -f, --force overwrite existing files
+ -h, --help help for move
+ --json output in JSON format
+ --to-project move from festival to project
+ -v, --verbose show detailed output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_go.md"&gt;fest go&lt;/a&gt;	 - Navigate to festivals/ - use &amp;lsquo;fgo&amp;rsquo; after shell-init setup&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_go_project/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_go_project/</guid><description>&lt;h2 id="fest-go-project"&gt;fest go project&lt;/h2&gt;
 &lt;p&gt;Navigate to linked project directory&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Navigate to the project directory linked to the current festival.&lt;/p&gt;
@@ -2838,10 +2920,10 @@ current directory:&lt;/p&gt;
 &lt;p&gt;Display the festival ID for the current location.&lt;/p&gt;
 &lt;p&gt;Works from inside a festival directory or from a project linked to one.
 The ID is read from fest.yaml metadata, falling back to the directory name.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest id # Print the festival ID (e.g., SR0001)
-fest id &amp;ndash;json # Output as JSON with id, name, and path&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest id [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest id # Print the festival ID (e.g., SR0001)
+ fest id --json # Output as JSON with id, name, and path
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest id [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for id
  --json output as JSON
@@ -3274,12 +3356,40 @@ the overall festival goals.&lt;/p&gt;
 &lt;p&gt;This allows agents to fill marker values without manually typing hint strings,
 eliminating typos and reducing token usage.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
-&lt;h1 id="generate-from-built-in-template"&gt;Generate from built-in template&lt;/h1&gt;
-&lt;p&gt;fest markers scaffold &amp;ndash;template task-simple&lt;/p&gt;
-&lt;h1 id="generate-from-existing-file"&gt;Generate from existing file&lt;/h1&gt;
-&lt;p&gt;fest markers scaffold &amp;ndash;file PHASE_GOAL.md&lt;/p&gt;
-&lt;h1 id="output-as-yaml-to-a-file"&gt;Output as YAML to a file&lt;/h1&gt;
-&lt;p&gt;fest markers scaffold &amp;ndash;template sequence &amp;ndash;format yaml &amp;ndash;output markers.yaml&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_markers_validate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_markers_validate/</guid><description>&lt;h2 id="fest-markers-validate"&gt;fest markers validate&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; # Generate from built-in template
+ fest markers scaffold --template task-simple
+
+ # Generate from existing file
+ fest markers scaffold --file PHASE_GOAL.md
+
+ # Output as YAML to a file
+ fest markers scaffold --template sequence --format yaml --output markers.yaml
+
+Available template aliases:
+ task, task-simple, task-minimal Task templates
+ sequence, sequence-minimal Sequence templates
+ phase, phase-impl, phase-planning Phase templates
+ festival, festival-overview Festival templates
+ gate-testing, gate-review Quality gate templates
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest markers scaffold [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --file string Path to file with markers
+ --format string Output format: json or yaml (default &amp;#34;json&amp;#34;)
+ -h, --help help for scaffold
+ --output string Output file path (default: stdout)
+ --template string Built-in template name (e.g., task, phase, sequence)
+ --with-hints Include hint descriptions as comments
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --json Output results as JSON
+ --no-color disable colored output
+ --path string Festival path (default: current directory)
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_markers.md"&gt;fest markers&lt;/a&gt;	 - Manage template markers in festival files&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_markers_validate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_markers_validate/</guid><description>&lt;h2 id="fest-markers-validate"&gt;fest markers validate&lt;/h2&gt;
 &lt;p&gt;Validate marker JSON against template&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Validate a marker JSON or YAML file against a template to detect issues.&lt;/p&gt;
@@ -3291,10 +3401,32 @@ eliminating typos and reducing token usage.&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;In strict mode (&amp;ndash;strict), unknown markers cause validation to fail.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
-&lt;h1 id="validate-against-built-in-template"&gt;Validate against built-in template&lt;/h1&gt;
-&lt;p&gt;fest markers validate &amp;ndash;file markers.json &amp;ndash;template task-simple&lt;/p&gt;
-&lt;h1 id="validate-against-existing-file"&gt;Validate against existing file&lt;/h1&gt;
-&lt;p&gt;fest markers validate &amp;ndash;file markers.json &amp;ndash;source PHASE_GOAL.md&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate/</guid><description>&lt;h2 id="fest-migrate"&gt;fest migrate&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; # Validate against built-in template
+ fest markers validate --file markers.json --template task-simple
+
+ # Validate against existing file
+ fest markers validate --file markers.json --source PHASE_GOAL.md
+
+ # Strict mode - fail on unknown markers
+ fest markers validate --file markers.json --template task --strict
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest markers validate [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --file string Marker file to validate (required)
+ -h, --help help for validate
+ --source string Source file to validate against
+ --strict Fail on unknown markers
+ --template string Template to validate against
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --json Output results as JSON
+ --no-color disable colored output
+ --path string Festival path (default: current directory)
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_markers.md"&gt;fest markers&lt;/a&gt;	 - Manage template markers in festival files&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate/</guid><description>&lt;h2 id="fest-migrate"&gt;fest migrate&lt;/h2&gt;
 &lt;p&gt;Migrate festival documents&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Migrate festival documents to add missing features or update formats.&lt;/p&gt;
@@ -3302,24 +3434,52 @@ eliminating typos and reducing token usage.&lt;/p&gt;
 frontmatter Add YAML frontmatter to existing documents
 metadata Add ID and metadata to existing festivals
 times Populate time tracking data from file modification times&lt;/p&gt;
-&lt;p&gt;Examples:
-fest migrate frontmatter # Add frontmatter to all docs
-fest migrate frontmatter &amp;ndash;dry-run # Preview changes
-fest migrate frontmatter &amp;ndash;fix # Auto-fix existing frontmatter
-fest migrate metadata # Add IDs to all festivals
-fest migrate metadata &amp;ndash;dry-run # Preview ID migrations
-fest migrate times # Populate time data from file stats
-fest migrate times &amp;ndash;dry-run # Preview time migrations&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_frontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_frontmatter/</guid><description>&lt;h2 id="fest-migrate-frontmatter"&gt;fest migrate frontmatter&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest migrate frontmatter # Add frontmatter to all docs
+ fest migrate frontmatter --dry-run # Preview changes
+ fest migrate frontmatter --fix # Auto-fix existing frontmatter
+ fest migrate metadata # Add IDs to all festivals
+ fest migrate metadata --dry-run # Preview ID migrations
+ fest migrate times # Populate time data from file stats
+ fest migrate times --dry-run # Preview time migrations
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for migrate
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
+&lt;li&gt;&lt;a href="fest_migrate_frontmatter.md"&gt;fest migrate frontmatter&lt;/a&gt;	 - Add YAML frontmatter to existing documents&lt;/li&gt;
+&lt;li&gt;&lt;a href="fest_migrate_metadata.md"&gt;fest migrate metadata&lt;/a&gt;	 - Add metadata to existing festivals&lt;/li&gt;
+&lt;li&gt;&lt;a href="fest_migrate_times.md"&gt;fest migrate times&lt;/a&gt;	 - Populate time tracking data from file modification times&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_frontmatter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_frontmatter/</guid><description>&lt;h2 id="fest-migrate-frontmatter"&gt;fest migrate frontmatter&lt;/h2&gt;
 &lt;p&gt;Add YAML frontmatter to existing documents&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Add YAML frontmatter to festival documents that don&amp;rsquo;t have it.&lt;/p&gt;
 &lt;p&gt;This command walks through all festival documents and adds frontmatter
 to any that are missing it. Existing frontmatter is preserved.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest migrate frontmatter # Add frontmatter to all docs
-fest migrate frontmatter &amp;ndash;dry-run # Preview changes without writing
-fest migrate frontmatter &amp;ndash;fix # Update/fix existing frontmatter
-fest migrate frontmatter &amp;ndash;verbose # Show detailed progress&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_metadata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_metadata/</guid><description>&lt;h2 id="fest-migrate-metadata"&gt;fest migrate metadata&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest migrate frontmatter # Add frontmatter to all docs
+ fest migrate frontmatter --dry-run # Preview changes without writing
+ fest migrate frontmatter --fix # Update/fix existing frontmatter
+ fest migrate frontmatter --verbose # Show detailed progress
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest migrate frontmatter [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --dry-run preview changes without writing
+ --fix update/fix existing frontmatter
+ -h, --help help for frontmatter
+ --verbose show detailed progress
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_migrate.md"&gt;fest migrate&lt;/a&gt;	 - Migrate festival documents&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_metadata/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_metadata/</guid><description>&lt;h2 id="fest-migrate-metadata"&gt;fest migrate metadata&lt;/h2&gt;
 &lt;p&gt;Add metadata to existing festivals&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Migrate existing festivals to use the ID system.&lt;/p&gt;
@@ -3330,10 +3490,23 @@ fest migrate frontmatter &amp;ndash;verbose # Show detailed progress&lt;/p&gt;</
 &lt;li&gt;Renames the festival directory to include the ID suffix&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The migration is idempotent - running it multiple times is safe.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest migrate metadata # Migrate all festivals
-fest migrate metadata ./active/my-fest # Migrate specific festival
-fest migrate metadata &amp;ndash;dry-run # Preview changes only&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_times/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_times/</guid><description>&lt;h2 id="fest-migrate-times"&gt;fest migrate times&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest migrate metadata # Migrate all festivals
+ fest migrate metadata ./active/my-fest # Migrate specific festival
+ fest migrate metadata --dry-run # Preview changes only
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest migrate metadata [path] [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --dry-run preview changes without making them
+ -h, --help help for metadata
+ -v, --verbose show detailed progress
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_migrate.md"&gt;fest migrate&lt;/a&gt;	 - Migrate festival documents&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_times/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_migrate_times/</guid><description>&lt;h2 id="fest-migrate-times"&gt;fest migrate times&lt;/h2&gt;
 &lt;p&gt;Populate time tracking data from file modification times&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Retroactively populate time tracking data for existing festivals.&lt;/p&gt;
@@ -3357,10 +3530,37 @@ current directory:&lt;/p&gt;
 &lt;li&gt;In linked project: moves TO festival&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
-&lt;h1 id="in-project-directory-move-file-to-festival"&gt;In project directory, move file to festival&lt;/h1&gt;
-&lt;p&gt;fest move ./analysis.md&lt;/p&gt;
-&lt;h1 id="in-festival-directory-move-file-to-project"&gt;In festival directory, move file to project&lt;/h1&gt;
-&lt;p&gt;fest move ./specs/api.go &amp;ndash;to-project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_next/</guid><description>&lt;h2 id="fest-next"&gt;fest next&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; # In project directory, move file to festival
+ fest move ./analysis.md
+
+ # In festival directory, move file to project
+ fest move ./specs/api.go --to-project
+
+ # Copy instead of move (keeps original)
+ fest move --copy ./notes.md
+
+ # Force overwrite existing files
+ fest move --force ./config.yml
+
+Requirements:
+ - Festival must have project_path set in fest.yaml
+ - Must be in either festival or linked project directory
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest move &amp;lt;source&amp;gt; [destination] [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; -c, --copy copy instead of move
+ -f, --force overwrite existing files
+ -h, --help help for move
+ --json output in JSON format
+ --to-project move from festival to project
+ -v, --verbose show detailed output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_next/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_next/</guid><description>&lt;h2 id="fest-next"&gt;fest next&lt;/h2&gt;
 &lt;p&gt;Find the next task to work on&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Determine the next task to work on based on dependencies and progress.&lt;/p&gt;
@@ -3379,15 +3579,34 @@ complete context for execution.&lt;/p&gt;</description></item><item><title/><lin
 &lt;p&gt;Parse festival documents into structured JSON or YAML output.&lt;/p&gt;
 &lt;p&gt;This command walks the festival hierarchy and produces structured output
 suitable for external tool integration (e.g., Guild v3, visualization tools).&lt;/p&gt;
-&lt;p&gt;Examples:
-fest parse # Parse current festival as JSON
-fest parse &amp;ndash;format yaml # Output as YAML
-fest parse &amp;ndash;type task # Output flat list of tasks
-fest parse &amp;ndash;type gate # Output only gates
-fest parse &amp;ndash;all # Parse all festivals
-fest parse &amp;ndash;compact # Summary only (no children)
-fest parse &amp;ndash;full # Include document content
-fest parse -o output.json # Write to file&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_progress/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_progress/</guid><description>&lt;h2 id="fest-progress"&gt;fest progress&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest parse # Parse current festival as JSON
+ fest parse --format yaml # Output as YAML
+ fest parse --type task # Output flat list of tasks
+ fest parse --type gate # Output only gates
+ fest parse --all # Parse all festivals
+ fest parse --compact # Summary only (no children)
+ fest parse --full # Include document content
+ fest parse -o output.json # Write to file
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest parse [path] [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --all parse all festivals in workspace
+ --compact compact output (summary only)
+ --format string output format (json, yaml) (default &amp;#34;json&amp;#34;)
+ --full include document content
+ -h, --help help for parse
+ --infer infer frontmatter when missing (default true)
+ -o, --output string write output to file
+ --type string filter by entity type (task, gate, phase, sequence)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_progress/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_progress/</guid><description>&lt;h2 id="fest-progress"&gt;fest progress&lt;/h2&gt;
 &lt;p&gt;Track and display festival execution progress&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Track and display progress for festival execution.&lt;/p&gt;
@@ -3886,11 +4105,11 @@ for existing runs.&lt;/p&gt;
 &lt;p&gt;The scaffold command reads a markdown plan document (like STRUCTURE.md) and
 generates the corresponding festival directory structure with phases, sequences,
 and tasks pre-populated from the plan.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest scaffold from-plan &amp;ndash;plan path/to/STRUCTURE.md &amp;ndash;name my-festival
-fest scaffold from-plan &amp;ndash;plan STRUCTURE.md &amp;ndash;dry-run
-fest scaffold from-plan &amp;ndash;plan STRUCTURE.md &amp;ndash;name my-fest &amp;ndash;json&lt;/p&gt;
-&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest scaffold from-plan --plan path/to/STRUCTURE.md --name my-festival
+ fest scaffold from-plan --plan STRUCTURE.md --dry-run
+ fest scaffold from-plan --plan STRUCTURE.md --name my-fest --json
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for scaffold
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
@@ -3908,12 +4127,32 @@ fest scaffold from-plan &amp;ndash;plan STRUCTURE.md &amp;ndash;name my-fest &am
 &lt;p&gt;The plan document should follow the STRUCTURE.md format with a hierarchy section
 containing phases, sequences, and tasks.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
-&lt;h1 id="generate-from-a-plan-document"&gt;Generate from a plan document&lt;/h1&gt;
-&lt;p&gt;fest scaffold from-plan &amp;ndash;plan path/to/STRUCTURE.md &amp;ndash;name my-festival&lt;/p&gt;
-&lt;h1 id="preview-what-would-be-created"&gt;Preview what would be created&lt;/h1&gt;
-&lt;p&gt;fest scaffold from-plan &amp;ndash;plan STRUCTURE.md &amp;ndash;name my-fest &amp;ndash;dry-run&lt;/p&gt;
-&lt;h1 id="agent-mode-with-json-output"&gt;Agent mode with JSON output&lt;/h1&gt;
-&lt;p&gt;fest scaffold from-plan &amp;ndash;plan STRUCTURE.md &amp;ndash;name my-fest &amp;ndash;agent&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_search/</guid><description>&lt;h2 id="fest-search"&gt;fest search&lt;/h2&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; # Generate from a plan document
+ fest scaffold from-plan --plan path/to/STRUCTURE.md --name my-festival
+
+ # Preview what would be created
+ fest scaffold from-plan --plan STRUCTURE.md --name my-fest --dry-run
+
+ # Agent mode with JSON output
+ fest scaffold from-plan --plan STRUCTURE.md --name my-fest --agent
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest scaffold from-plan [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --agent Agent mode: JSON output
+ --dest string Destination: active or planning (default &amp;#34;active&amp;#34;)
+ --dry-run Preview without creating files
+ -h, --help help for from-plan
+ --json Emit JSON output
+ --name string Festival name (required)
+ --plan string Path to the plan document (required)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_scaffold.md"&gt;fest scaffold&lt;/a&gt;	 - Generate festival structures from plans&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_search/</guid><description>&lt;h2 id="fest-search"&gt;fest search&lt;/h2&gt;
 &lt;p&gt;Search festivals by name, ID, or goal text&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Search across all festivals in the workspace using fuzzy matching.&lt;/p&gt;
@@ -4301,11 +4540,11 @@ When [task] is omitted, the command auto-detects the current task:
 &lt;p&gt;Create, apply, and manage templates for repetitive tasks.&lt;/p&gt;
 &lt;p&gt;Agent templates use simple {{variable}} syntax for substitution.
 Templates are stored in .templates/ within the festival directory.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest templates create component_test
-fest templates apply component_test &amp;ndash;vars &amp;lsquo;{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;UserService&amp;rdquo;}&amp;rsquo;
-fest templates list&lt;/p&gt;
-&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest templates create component_test
+ fest templates apply component_test --vars &amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;UserService&amp;#34;}&amp;#39;
+ fest templates list
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for templates
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
@@ -4327,10 +4566,10 @@ fest templates list&lt;/p&gt;
 &lt;li&gt;JSON string: &amp;ndash;vars &amp;lsquo;{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;value&amp;rdquo;}&amp;rsquo;&lt;/li&gt;
 &lt;li&gt;File reference: &amp;ndash;vars @variables.json&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Examples:
-fest templates apply component_test &amp;ndash;vars &amp;lsquo;{&amp;ldquo;name&amp;rdquo;: &amp;ldquo;UserService&amp;rdquo;}&amp;rsquo;
-fest templates apply api_endpoint -o ./api.md &amp;ndash;vars @vars.json&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest templates apply &amp;lt;name&amp;gt; [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest templates apply component_test --vars &amp;#39;{&amp;#34;name&amp;#34;: &amp;#34;UserService&amp;#34;}&amp;#39;
+ fest templates apply api_endpoint -o ./api.md --vars @vars.json
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest templates apply &amp;lt;name&amp;gt; [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for apply
  -o, --output string output file path (default: stdout)
@@ -4406,11 +4645,25 @@ fest templates apply api_endpoint -o ./api.md &amp;ndash;vars @vars.json&lt;/p&g
 &lt;p&gt;Explore available template types at each festival level.&lt;/p&gt;
 &lt;p&gt;Template types define the structure and purpose of festivals, phases,
 sequences, and tasks. Custom types can be added in .festival/templates/.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest types list # List all available types
-fest types list &amp;ndash;level task # List task-level types only
-fest types show feature # Show details about a type
-fest types show implementation &amp;ndash;level phase&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_festival/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_festival/</guid><description>&lt;h2 id="fest-types-festival"&gt;fest types festival&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest types list # List all available types
+ fest types list --level task # List task-level types only
+ fest types show feature # Show details about a type
+ fest types show implementation --level phase
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for types
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
+&lt;li&gt;&lt;a href="fest_types_festival.md"&gt;fest types festival&lt;/a&gt;	 - Discover festival types&lt;/li&gt;
+&lt;li&gt;&lt;a href="fest_types_list.md"&gt;fest types list&lt;/a&gt;	 - List available template types&lt;/li&gt;
+&lt;li&gt;&lt;a href="fest_types_show.md"&gt;fest types show&lt;/a&gt;	 - Show details about a template type&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_festival/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_festival/</guid><description>&lt;h2 id="fest-types-festival"&gt;fest types festival&lt;/h2&gt;
 &lt;p&gt;Discover festival types&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Discover available festival types and their phase structures.&lt;/p&gt;
@@ -4422,21 +4675,37 @@ fest types show implementation &amp;ndash;level phase&lt;/p&gt;</description></i
 &lt;li&gt;quick: Fast, minimal overhead workflow&lt;/li&gt;
 &lt;li&gt;ritual: Simple repeating patterns&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Examples:
-fest types festival # List all festival types
-fest types festival list # Same as above
-fest types festival standard # Show details for standard type
-fest types festival show implementation # Show details for implementation type
-fest types festival &amp;ndash;phases standard # Show only phases for standard type
-fest types festival &amp;ndash;json # Machine-readable JSON output&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_festival_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_festival_list/</guid><description>&lt;h2 id="fest-types-festival-list"&gt;fest types festival list&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest types festival # List all festival types
+ fest types festival list # Same as above
+ fest types festival standard # Show details for standard type
+ fest types festival show implementation # Show details for implementation type
+ fest types festival --phases standard # Show only phases for standard type
+ fest types festival --json # Machine-readable JSON output
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest types festival [type-name] [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for festival
+ --json Output as JSON
+ --phases Show only phases for the specified type
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_types.md"&gt;fest types&lt;/a&gt;	 - Discover and explore template types&lt;/li&gt;
+&lt;li&gt;&lt;a href="fest_types_festival_list.md"&gt;fest types festival list&lt;/a&gt;	 - List all festival types&lt;/li&gt;
+&lt;li&gt;&lt;a href="fest_types_festival_show.md"&gt;fest types festival show&lt;/a&gt;	 - Show details for a festival type&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_festival_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_festival_list/</guid><description>&lt;h2 id="fest-types-festival-list"&gt;fest types festival list&lt;/h2&gt;
 &lt;p&gt;List all festival types&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List all available festival types with their descriptions.&lt;/p&gt;
 &lt;p&gt;Shows all festival types defined in the configuration, marking the default type.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest types festival list # List all festival types
-fest types festival list &amp;ndash;json # JSON output&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest types festival list [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest types festival list # List all festival types
+ fest types festival list --json # JSON output
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest types festival list [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for list
  --json Output as JSON
@@ -4454,12 +4723,12 @@ fest types festival list &amp;ndash;json # JSON output&lt;/p&gt;
 &lt;p&gt;Display detailed information about a specific festival type.&lt;/p&gt;
 &lt;p&gt;Shows the type&amp;rsquo;s description, phase structure, auto-scaffolded phases,
 and manually-created phases.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest types festival show standard # Show standard type details
-fest types festival show implementation # Show implementation type
-fest types festival show standard &amp;ndash;phases # Show only phases
-fest types festival show quick &amp;ndash;json # JSON output&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest types festival show &amp;lt;type-name&amp;gt; [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest types festival show standard # Show standard type details
+ fest types festival show implementation # Show implementation type
+ fest types festival show standard --phases # Show only phases
+ fest types festival show quick --json # JSON output
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest types festival show &amp;lt;type-name&amp;gt; [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for show
  --json Output as JSON
@@ -4481,22 +4750,38 @@ fest types festival show quick &amp;ndash;json # JSON output&lt;/p&gt;
 &lt;li&gt;Built-in templates (~/.config/fest/templates/)&lt;/li&gt;
 &lt;li&gt;Custom templates (.festival/templates/ in a festival)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Examples:
-fest types list # List all types grouped by level
-fest types list &amp;ndash;level task # List task-level types only
-fest types list &amp;ndash;custom # Show only custom types
-fest types list &amp;ndash;all # Include marker counts
-fest types list &amp;ndash;json # Machine-readable output&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_show/</guid><description>&lt;h2 id="fest-types-show"&gt;fest types show&lt;/h2&gt;
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest types list # List all types grouped by level
+ fest types list --level task # List task-level types only
+ fest types list --custom # Show only custom types
+ fest types list --all # Include marker counts
+ fest types list --json # Machine-readable output
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest types list [flags]
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; -a, --all Show additional details including marker counts
+ -c, --custom Show only custom (user-defined) types
+ -h, --help help for list
+ --json Output as JSON
+ -l, --level string Filter by level (festival, phase, sequence, task)
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
+ --debug enable debug logging
+ --no-color disable colored output
+ --verbose enable verbose output
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="fest_types.md"&gt;fest types&lt;/a&gt;	 - Discover and explore template types&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_types_show/</guid><description>&lt;h2 id="fest-types-show"&gt;fest types show&lt;/h2&gt;
 &lt;p&gt;Show details about a template type&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Display detailed information about a specific template type.&lt;/p&gt;
 &lt;p&gt;Shows the type&amp;rsquo;s level, description, number of markers, template files,
 and example usage.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest types show feature # Show feature type details
-fest types show implementation &amp;ndash;level phase # Show phase-level implementation
-fest types show simple &amp;ndash;level task &amp;ndash;json # JSON output&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest types show &amp;lt;type-name&amp;gt; [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest types show feature # Show feature type details
+ fest types show implementation --level phase # Show phase-level implementation
+ fest types show simple --level task --json # JSON output
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest types show &amp;lt;type-name&amp;gt; [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for show
  --json Output as JSON
@@ -4931,11 +5216,11 @@ but don&amp;rsquo;t know what specific work to perform.&lt;/p&gt;
 &lt;p&gt;Show version information&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Show fest version, build information, and runtime details.&lt;/p&gt;
-&lt;p&gt;Examples:
-fest version Show full version info
-fest version &amp;ndash;short Show only version number
-fest version &amp;ndash;json Output as JSON&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest version [flags]
+&lt;p&gt;Examples:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest version Show full version info
+ fest version --short Show only version number
+ fest version --json Output as JSON
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest version [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for version
  --json output as JSON
