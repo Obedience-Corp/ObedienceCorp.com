@@ -91,8 +91,13 @@ docs:
     cp -r "$festival_dir/public" dist/festival
     echo "Festival docs built to dist/festival/"
 
-# Build everything (site + docs)
+# Build everything (site + docs) and stage festival docs for GitHub Pages
 build-all: build docs
+    @rm -rf docs/festival && cp -r dist/festival docs/festival
+    @echo "Festival docs staged to docs/festival/"
+
+# Rebuild everything from scratch (site + festival docs)
+refresh: clean build-all
 
 # Remove generated files and binaries
 clean:
