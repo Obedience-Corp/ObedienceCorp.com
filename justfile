@@ -93,7 +93,7 @@ docs:
 
 # Build everything (site + docs) and stage festival docs for GitHub Pages
 build-all: build docs
-    @cp -r dist/festival docs/festival
+    @rm -rf docs/festival && cp -r dist/festival docs/festival
     @echo "Festival docs staged to docs/festival/"
 
 # Rebuild everything from scratch (site + festival docs)
