@@ -2422,9 +2422,11 @@ When run with a status argument, lists all festivals with that status.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fest show dungeon List festivals in dungeon/ directory
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fest show all List all festivals grouped by status
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fest show &amp;lt;name&amp;gt; Show details of a specific festival by name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fest show --festival &amp;lt;selector&amp;gt; Show a festival by explicit selector &lt;span style="color:#ff79c6"&gt;(&lt;/span&gt;campaign workspace&lt;span style="color:#ff79c6"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest show [status|festival-name] [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --collapsed show collapsed tree with counters only
+ --festival string festival selector (name or ID) from within a campaign workspace
  --goals show goals for phases and sequences
  -h, --help help for show
  --inprogress expand only in-progress phases and sequences

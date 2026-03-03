@@ -1,21 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Festival</title><link>https://obediencecorp.com/festival/</link><description>Recent content on Festival</description><generator>Hugo</generator><language>en</language><atom:link href="https://obediencecorp.com/festival/index.xml" rel="self" type="application/rss+xml"/><item><title>camp Reference</title><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</guid><description>&lt;h1 id="camp-cli-reference"&gt;camp CLI Reference&lt;/h1&gt;
-&lt;hr&gt;
-&lt;hr&gt;
-&lt;h2 id="redirectto-docscli-referencecampcamp-reference"&gt;title: &amp;quot;camp CLI&amp;quot;
-weight: 52
-redirectTo: &amp;quot;docs/cli-reference/camp/camp-reference/&amp;quot;&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
-&lt;p&gt;Campaign management CLI for multi-project AI workspaces&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Camp manages multi-project AI workspaces with fast navigation.&lt;/p&gt;
-&lt;p&gt;Camp provides structure and navigation for AI-powered development workflows.
-It creates standardized campaign directories, manages git submodules as projects,
-and enables lightning-fast navigation through category shortcuts and TUI fuzzy finding.&lt;/p&gt;
-&lt;p&gt;GETTING STARTED:
-camp init Initialize a new campaign in the current directory
-camp project list List all projects in the campaign
-camp list Show all registered campaigns&lt;/p&gt;</description></item><item><title>fest Reference</title><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest-reference/</guid><description>&lt;h1 id="fest-cli-reference"&gt;fest CLI Reference&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Festival</title><link>https://obediencecorp.com/festival/</link><description>Recent content on Festival</description><generator>Hugo</generator><language>en</language><atom:link href="https://obediencecorp.com/festival/index.xml" rel="self" type="application/rss+xml"/><item><title>fest Reference</title><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest-reference/</guid><description>&lt;h1 id="fest-cli-reference"&gt;fest CLI Reference&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id="fest"&gt;fest&lt;/h2&gt;
 &lt;p&gt;Festival Methodology CLI - goal-oriented project management for AI agents&lt;/p&gt;
@@ -206,7 +189,24 @@ and unambiguous completion criteria.&lt;/p&gt;</description></item><item><title>
 &lt;p&gt;Add camp and fest shell functions to your shell config:&lt;/p&gt;</description></item><item><title>CI Integration</title><link>https://obediencecorp.com/festival/docs/tutorials/ci-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/ci-integration/</guid><description>&lt;h1 id="ci-integration"&gt;CI Integration&lt;/h1&gt;
 &lt;!-- TODO: Write tutorial for integrating fest into CI/CD pipelines --&gt;
 &lt;p&gt;How to integrate Festival Methodology into your CI/CD pipeline for automated planning validation.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Tutorial coming soon.&lt;/em&gt;&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</guid><description>&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Tutorial coming soon.&lt;/em&gt;&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</guid><description>&lt;h1 id="camp-cli-reference"&gt;camp CLI Reference&lt;/h1&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="redirectto-docscli-referencecampcamp-reference"&gt;title: &amp;quot;camp CLI&amp;quot;
+weight: 52
+redirectTo: &amp;quot;docs/cli-reference/camp/camp-reference/&amp;quot;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
+&lt;p&gt;Campaign management CLI for multi-project AI workspaces&lt;/p&gt;
+&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
+&lt;p&gt;Camp manages multi-project AI workspaces with fast navigation.&lt;/p&gt;
+&lt;p&gt;Camp provides structure and navigation for AI-powered development workflows.
+It creates standardized campaign directories, manages git submodules as projects,
+and enables lightning-fast navigation through category shortcuts and TUI fuzzy finding.&lt;/p&gt;
+&lt;p&gt;GETTING STARTED:
+camp init Initialize a new campaign in the current directory
+camp project list List all projects in the campaign
+camp list Show all registered campaigns&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</guid><description>&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
 &lt;p&gt;Campaign management CLI for multi-project AI workspaces&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Camp manages multi-project AI workspaces with fast navigation.&lt;/p&gt;
@@ -4200,9 +4200,11 @@ When run with a status argument, lists all festivals with that status.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fest show dungeon List festivals in dungeon/ directory
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fest show all List all festivals grouped by status
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fest show &amp;lt;name&amp;gt; Show details of a specific festival by name
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; fest show --festival &amp;lt;selector&amp;gt; Show a festival by explicit selector &lt;span style="color:#ff79c6"&gt;(&lt;/span&gt;campaign workspace&lt;span style="color:#ff79c6"&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre tabindex="0"&gt;&lt;code&gt;fest show [status|festival-name] [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --collapsed show collapsed tree with counters only
+ --festival string festival selector (name or ID) from within a campaign workspace
  --goals show goals for phases and sequences
  -h, --help help for show
  --inprogress expand only in-progress phases and sequences
