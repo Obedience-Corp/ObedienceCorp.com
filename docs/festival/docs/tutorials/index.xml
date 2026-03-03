@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tutorials on Festival</title><link>https://obediencecorp.com/festival/docs/tutorials/</link><description>Recent content in Tutorials on Festival</description><generator>Hugo</generator><language>en</language><atom:link href="https://obediencecorp.com/festival/docs/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Your First Festival</title><link>https://obediencecorp.com/festival/docs/tutorials/first-festival/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/first-festival/</guid><description>&lt;h1 id="your-first-festival"&gt;Your First Festival&lt;/h1&gt;
+&lt;p&gt;You are going to create a festival from scratch, add phases and sequences, write tasks, execute them with &lt;code&gt;fest next&lt;/code&gt;, run quality gates, and mark the festival complete.&lt;/p&gt;
+&lt;h2 id="choose-your-festival-type"&gt;Choose Your Festival Type&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Type&lt;/th&gt;
+ &lt;th&gt;When to Use&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;standard&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Requirements need discovery before implementation.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;implementation&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Requirements fully defined. Skip planning, start building.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;research&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Exploring a problem space, evaluating options.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;strong&gt;ritual&lt;/strong&gt;&lt;/td&gt;
+ &lt;td&gt;Recurring processes like code reviews or releases.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For this tutorial, use &lt;code&gt;implementation&lt;/code&gt; &amp;ndash; you already know what you are building.&lt;/p&gt;</description></item><item><title>Campaign Setup</title><link>https://obediencecorp.com/festival/docs/tutorials/campaign-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/campaign-setup/</guid><description>&lt;h1 id="campaign-setup"&gt;Campaign Setup&lt;/h1&gt;
+&lt;p&gt;Set up a campaign workspace from scratch. You will create the workspace, add shell integration, bring in your projects as submodules, navigate efficiently with shortcuts, and connect festival planning to your codebase.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="create-a-campaign"&gt;Create a Campaign&lt;/h2&gt;
+&lt;p&gt;Start by initializing a new campaign workspace:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;camp init my-startup
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; my-startup
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This creates the following directory structure:&lt;/p&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;my-startup/
+├── projects/ # Git submodules for all your codebases
+├── festivals/ # Festival Methodology workspace
+├── docs/ # Human-authored documentation
+├── ai_docs/ # AI research and documentation
+├── workflow/ # Workflow management (reviews, pipelines, design)
+├── dungeon/ # Archived and deprioritized work
+├── justfile # Command runner recipes
+└── CLAUDE.md # Agent memory document
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id="shell-integration"&gt;Shell Integration&lt;/h2&gt;
+&lt;p&gt;Add camp and fest shell functions to your shell config:&lt;/p&gt;</description></item><item><title>CI Integration</title><link>https://obediencecorp.com/festival/docs/tutorials/ci-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/ci-integration/</guid><description>&lt;h1 id="ci-integration"&gt;CI Integration&lt;/h1&gt;
+&lt;!-- TODO: Write tutorial for integrating fest into CI/CD pipelines --&gt;
+&lt;p&gt;How to integrate Festival Methodology into your CI/CD pipeline for automated planning validation.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Tutorial coming soon.&lt;/em&gt;&lt;/p&gt;</description></item></channel></rss>
