@@ -95,6 +95,7 @@ docs:
 build-all: build docs
     @rm -rf docs/festival && cp -r dist/festival docs/festival
     @echo "Festival docs staged to docs/festival/"
+    @echo "obediencecorp.com" > docs/CNAME
 
 # Rebuild everything from scratch (site + festival docs)
 refresh: clean build-all
