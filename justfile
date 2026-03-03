@@ -96,6 +96,9 @@ build-all: build docs
     @cp -r dist/festival docs/festival
     @echo "Festival docs staged to docs/festival/"
 
+# Rebuild everything from scratch (site + festival docs)
+refresh: clean build-all
+
 # Remove generated files and binaries
 clean:
     @echo "Cleaning..."

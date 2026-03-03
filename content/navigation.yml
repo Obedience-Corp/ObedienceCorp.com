@@ -3,6 +3,6 @@ navigation:
     - label: "Obey"
       path: "/obey"
       type: "internal"
-    - label: "Fest"
-      path: "/fest"
+    - label: "Festival"
+      path: "/festival/"
       type: "internal"
