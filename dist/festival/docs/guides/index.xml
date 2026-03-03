@@ -2,7 +2,7 @@
 &lt;p&gt;How to use Festival Methodology with AI agents for autonomous development sessions.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="why-festival-for-ai-agents"&gt;Why Festival for AI Agents&lt;/h2&gt;
-&lt;p&gt;AI coding agents are powerful but stateless. Every session starts from zero - the agent doesn&amp;rsquo;t know what was planned, what&amp;rsquo;s already done, or what comes next. Without structure, you get duplicated work, missed steps, and sessions that spend half their context window figuring out where they are.&lt;/p&gt;
+&lt;p&gt;AI coding agents are powerful but stateless. Every session starts from zero - the agent doesn't know what was planned, what's already done, or what comes next. Without structure, you get duplicated work, missed steps, and sessions that spend half their context window figuring out where they are.&lt;/p&gt;
 &lt;p&gt;Festival solves this by putting all project state in the filesystem. Plans, progress, and context are markdown files that any agent can read. There is no external database, no API, and no proprietary format. An agent that can run bash commands and read files can use Festival immediately.&lt;/p&gt;</description></item><item><title>Team Planning</title><link>https://obediencecorp.com/festival/docs/guides/team-planning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/guides/team-planning/</guid><description>&lt;h1 id="team-planning"&gt;Team Planning&lt;/h1&gt;
 &lt;p&gt;How teams -human, AI agent, or mixed -use the Festival Methodology to coordinate work.&lt;/p&gt;
 &lt;hr&gt;
@@ -12,5 +12,5 @@
 &lt;p&gt;Patterns and recommendations for getting the most out of Festival Methodology. Follow these to avoid common mistakes and keep your festivals productive.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="planning"&gt;Planning&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Set concrete, outcome-focused goals.&lt;/strong&gt; A festival goal like &amp;ldquo;implement JWT auth with 7-day expiry and refresh token rotation&amp;rdquo; gives agents and collaborators something to verify against. &amp;ldquo;Add authentication&amp;rdquo; does not. If you can&amp;rsquo;t tell when the goal is done, rewrite it.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Don&amp;rsquo;t pre-plan phases.&lt;/strong&gt; Start with a single phase covering the immediate work. Add phases as requirements emerge during execution. Trying to design the entire festival upfront leads to speculative structure that gets rewritten anyway.&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;&lt;strong&gt;Set concrete, outcome-focused goals.&lt;/strong&gt; A festival goal like &amp;quot;implement JWT auth with 7-day expiry and refresh token rotation&amp;quot; gives agents and collaborators something to verify against. &amp;quot;Add authentication&amp;quot; does not. If you can't tell when the goal is done, rewrite it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Don't pre-plan phases.&lt;/strong&gt; Start with a single phase covering the immediate work. Add phases as requirements emerge during execution. Trying to design the entire festival upfront leads to speculative structure that gets rewritten anyway.&lt;/p&gt;</description></item></channel></rss>

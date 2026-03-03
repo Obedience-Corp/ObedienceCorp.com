@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>camp CLI on Festival</title><link>https://obediencecorp.com/festival/docs/cli-reference/camp/</link><description>Recent content in camp CLI on Festival</description><generator>Hugo</generator><language>en</language><atom:link href="https://obediencecorp.com/festival/docs/cli-reference/camp/index.xml" rel="self" type="application/rss+xml"/><item><title>camp Reference</title><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</guid><description>&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>camp CLI on Festival</title><link>https://obediencecorp.com/festival/docs/cli-reference/camp/</link><description>Recent content in camp CLI on Festival</description><generator>Hugo</generator><language>en</language><atom:link href="https://obediencecorp.com/festival/docs/cli-reference/camp/index.xml" rel="self" type="application/rss+xml"/><item><title>camp Reference</title><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp-reference/</guid><description>&lt;h1 id="camp-cli-reference"&gt;camp CLI Reference&lt;/h1&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="redirectto-docscli-referencecampcamp-reference"&gt;title: &amp;quot;camp CLI&amp;quot;
+weight: 52
+redirectTo: &amp;quot;docs/cli-reference/camp/camp-reference/&amp;quot;&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
 &lt;p&gt;Campaign management CLI for multi-project AI workspaces&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Camp manages multi-project AI workspaces with fast navigation.&lt;/p&gt;
@@ -107,13 +114,13 @@ and have matching URLs.&lt;/p&gt;</description></item><item><title/><link>https:
 stale lock files from crashed processes.&lt;/p&gt;
 &lt;p&gt;At the campaign root, submodule ref changes (projects/*) are excluded
 from staging by default to prevent accidental ref conflicts across
-machines. Use &amp;ndash;include-refs to stage them explicitly.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;sub to commit in the submodule detected from your current directory.
-Use -p/&amp;ndash;project to commit in a specific project (e.g., -p projects/camp).&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_completion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_completion/</guid><description>&lt;h2 id="camp-completion"&gt;camp completion&lt;/h2&gt;
+machines. Use --include-refs to stage them explicitly.&lt;/p&gt;
+&lt;p&gt;Use --sub to commit in the submodule detected from your current directory.
+Use -p/--project to commit in a specific project (e.g., -p projects/camp).&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_completion/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_completion/</guid><description>&lt;h2 id="camp-completion"&gt;camp completion&lt;/h2&gt;
 &lt;p&gt;Generate the autocompletion script for the specified shell&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Generate the autocompletion script for camp for the specified shell.
-See each sub-command&amp;rsquo;s help for details on how to use the generated script.&lt;/p&gt;
+See each sub-command's help for details on how to use the generated script.&lt;/p&gt;
 &lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for completion
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
@@ -131,8 +138,8 @@ See each sub-command&amp;rsquo;s help for details on how to use the generated sc
 &lt;p&gt;Generate the autocompletion script for bash&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Generate the autocompletion script for the bash shell.&lt;/p&gt;
-&lt;p&gt;This script depends on the &amp;lsquo;bash-completion&amp;rsquo; package.
-If it is not installed already, you can install it via your OS&amp;rsquo;s package manager.&lt;/p&gt;
+&lt;p&gt;This script depends on the 'bash-completion' package.
+If it is not installed already, you can install it via your OS's package manager.&lt;/p&gt;
 &lt;p&gt;To load completions in your current shell session:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;source &amp;lt;(camp completion bash)
 &lt;/code&gt;&lt;/pre&gt;
@@ -213,10 +220,10 @@ to enable it. You can execute the following once:&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Copy a file or directory within the current campaign.&lt;/p&gt;
 &lt;p&gt;Paths are resolved relative to the current directory, matching standard
-&amp;lsquo;cp&amp;rsquo; behavior and tab completion.&lt;/p&gt;
+'cp' behavior and tab completion.&lt;/p&gt;
 &lt;p&gt;Use @ prefix for campaign shortcuts (e.g., @p/fest, @f/active/).
 Available shortcuts are defined in campaign config.&lt;/p&gt;
-&lt;p&gt;If the destination is an existing directory or ends with &amp;lsquo;/&amp;rsquo;, the source
+&lt;p&gt;If the destination is an existing directory or ends with '/', the source
 is placed inside it with the same basename. Directories are copied
 recursively.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_date/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_date/</guid><description>&lt;h2 id="camp-date"&gt;camp date&lt;/h2&gt;
 &lt;p&gt;Append date suffix to file or directory name&lt;/p&gt;
@@ -225,15 +232,15 @@ recursively.&lt;/p&gt;</description></item><item><title/><link>https://obedience
 &lt;p&gt;Renames a file or directory by appending a date to its name.
 Shows a preview of the rename and asks for confirmation.&lt;/p&gt;
 &lt;p&gt;Date source (in priority order):
-&amp;ndash;mtime Use the file&amp;rsquo;s last modified date
-&amp;ndash;ago N Use today minus N days
-(default) Use today&amp;rsquo;s date&lt;/p&gt;
+--mtime Use the file's last modified date
+--ago N Use today minus N days
+(default) Use today's date&lt;/p&gt;
 &lt;p&gt;Examples:
 camp date old-project # old-project -&amp;gt; old-project-2026-01-27
 camp date ./docs/archive.md # archive.md -&amp;gt; archive-2026-01-27.md
-camp date old-project &amp;ndash;yes # Skip confirmation
-camp date old-project &amp;ndash;ago 3 # Use date from 3 days ago
-camp date old-project &amp;ndash;mtime # Use file&amp;rsquo;s last modified date
+camp date old-project --yes # Skip confirmation
+camp date old-project --ago 3 # Use date from 3 days ago
+camp date old-project --mtime # Use file's last modified date
 camp date old-project -f 20060102 # Use different date format&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_doctor/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_doctor/</guid><description>&lt;h2 id="camp-doctor"&gt;camp doctor&lt;/h2&gt;
 &lt;p&gt;Diagnose and fix campaign health issues&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
@@ -254,7 +261,7 @@ lock Stale git index.lock files&lt;/p&gt;
 &lt;p&gt;Manage the campaign dungeon&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Manage the campaign dungeon - a holding area for uncertain work.&lt;/p&gt;
-&lt;p&gt;The dungeon is where you put work you&amp;rsquo;re unsure about or want out of the way.
+&lt;p&gt;The dungeon is where you put work you're unsure about or want out of the way.
 It keeps items visible without them competing for your attention.&lt;/p&gt;
 &lt;p&gt;Commands:
 add Initialize dungeon structure with documentation
@@ -266,12 +273,12 @@ move Move items between dungeon statuses (agent-friendly)&lt;/p&gt;</description
 &lt;p&gt;Initialize the dungeon directory with documentation and structure.&lt;/p&gt;
 &lt;p&gt;Creates the dungeon directory with:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;OBEY.md: Documentation explaining the dungeon&amp;rsquo;s purpose&lt;/li&gt;
+&lt;li&gt;OBEY.md: Documentation explaining the dungeon's purpose&lt;/li&gt;
 &lt;li&gt;completed/: Successfully finished work&lt;/li&gt;
 &lt;li&gt;archived/: Preserved for history, truly done&lt;/li&gt;
 &lt;li&gt;someday/: Low priority, might revisit&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;This creates the same dungeon structure as &amp;lsquo;camp flow init&amp;rsquo; but without
+&lt;p&gt;This creates the same dungeon structure as 'camp flow init' but without
 the full workflow (no .workflow.yaml, active/, or ready/ directories).
 Useful when you only need a dungeon for idea capture or temporary holding.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_crawl/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_crawl/</guid><description>&lt;h2 id="camp-dungeon-crawl"&gt;camp dungeon crawl&lt;/h2&gt;
 &lt;p&gt;Interactive dungeon review&lt;/p&gt;
@@ -283,35 +290,35 @@ Useful when you only need a dungeon for idea capture or temporary holding.&lt;/p
 &lt;li&gt;Dungeon items exist → inner mode (keep/archive dungeon items)&lt;/li&gt;
 &lt;li&gt;Both exist → runs triage first, then inner&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Use &amp;ndash;triage or &amp;ndash;inner to force a specific mode.&lt;/p&gt;
-&lt;p&gt;For each item, you&amp;rsquo;ll be prompted to decide its fate.
+&lt;p&gt;Use --triage or --inner to force a specific mode.&lt;/p&gt;
+&lt;p&gt;For each item, you'll be prompted to decide its fate.
 Statistics are gathered when available (requires scc or fest).
 All decisions are logged to crawl.jsonl for history.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_list/</guid><description>&lt;h2 id="camp-dungeon-list"&gt;camp dungeon list&lt;/h2&gt;
 &lt;p&gt;List dungeon items&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List items in the dungeon or parent items eligible for triage.&lt;/p&gt;
 &lt;p&gt;By default, lists items at the dungeon root (items already in the dungeon).
-Use &amp;ndash;triage to list parent directory items that could be moved into the dungeon.&lt;/p&gt;
+Use --triage to list parent directory items that could be moved into the dungeon.&lt;/p&gt;
 &lt;p&gt;OUTPUT FORMATS:
 table (default) Human-readable table with columns
 simple Names only, one per line (for scripting)
 json Full metadata in JSON format&lt;/p&gt;
 &lt;p&gt;Examples:
 camp dungeon list List dungeon root items
-camp dungeon list &amp;ndash;triage List parent items eligible for triage
+camp dungeon list --triage List parent items eligible for triage
 camp dungeon list -f json JSON output for scripting
 camp dungeon list -f simple Names only, pipe to other commands&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_move/</guid><description>&lt;h2 id="camp-dungeon-move"&gt;camp dungeon move&lt;/h2&gt;
 &lt;p&gt;Move dungeon items between statuses&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Move items within the dungeon or from the parent directory into the dungeon.&lt;/p&gt;
-&lt;p&gt;Without &amp;ndash;triage, moves an item already in the dungeon root to a status directory.
-With &amp;ndash;triage, moves an item from the parent directory into the dungeon.&lt;/p&gt;
+&lt;p&gt;Without --triage, moves an item already in the dungeon root to a status directory.
+With --triage, moves an item from the parent directory into the dungeon.&lt;/p&gt;
 &lt;p&gt;Statuses: completed, archived, someday&lt;/p&gt;
 &lt;p&gt;Examples:
 camp dungeon move old-feature archived Move dungeon item to archived
 camp dungeon move stale-doc completed Move dungeon item to completed
-camp dungeon move old-project &amp;ndash;triage Move parent item into dungeon root
-camp dungeon move old-project archived &amp;ndash;triage Move parent item directly to archived&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</guid><description>&lt;h2 id="camp-flow"&gt;camp flow&lt;/h2&gt;
+camp dungeon move old-project --triage Move parent item into dungeon root
+camp dungeon move old-project archived --triage Move parent item directly to archived&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</guid><description>&lt;h2 id="camp-flow"&gt;camp flow&lt;/h2&gt;
 &lt;p&gt;Manage status workflows for organizing work&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Manage status workflows for organizing work.&lt;/p&gt;
@@ -337,21 +344,21 @@ Uses workflow schema v2 (dungeon-centric model) where:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;If dungeon/ already exists, only creates .workflow.yaml.
 If both exist, displays a notice.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;force to overwrite an existing workflow configuration.&lt;/p&gt;
+&lt;p&gt;Use --force to overwrite an existing workflow configuration.&lt;/p&gt;
 &lt;p&gt;Provide name/description via flags, JSON, or interactive TUI:
-&amp;ndash;name/-n and &amp;ndash;description/-d Set via flags
-&amp;ndash;json/-j &amp;lsquo;{&amp;ldquo;name&amp;rdquo;:&amp;quot;&amp;hellip;&amp;quot;,&amp;ldquo;description&amp;rdquo;:&amp;quot;&amp;hellip;&amp;quot;}&amp;rsquo; Set via JSON
-&amp;ndash;json - Read JSON from stdin (for piping)&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_items/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_items/</guid><description>&lt;h2 id="camp-flow-items"&gt;camp flow items&lt;/h2&gt;
+--name/-n and --description/-d Set via flags
+--json/-j '{&amp;quot;name&amp;quot;:&amp;quot;...&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;...&amp;quot;}' Set via JSON
+--json - Read JSON from stdin (for piping)&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_items/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_items/</guid><description>&lt;h2 id="camp-flow-items"&gt;camp flow items&lt;/h2&gt;
 &lt;p&gt;List items in a status directory&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List items in a status directory.&lt;/p&gt;
-&lt;p&gt;If no status is specified, lists items in the default status (usually &amp;lsquo;active&amp;rsquo;).
-Use &amp;ndash;all to list items in all status directories.&lt;/p&gt;
+&lt;p&gt;If no status is specified, lists items in the default status (usually 'active').
+Use --all to list items in all status directories.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp flow items List items in default status
 camp flow items active List items in active/
 camp flow items dungeon/completed List items in dungeon/completed/
-camp flow items &amp;ndash;all List items in all statuses&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_list/</guid><description>&lt;h2 id="camp-flow-list"&gt;camp flow list&lt;/h2&gt;
+camp flow items --all List items in all statuses&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_list/</guid><description>&lt;h2 id="camp-flow-list"&gt;camp flow list&lt;/h2&gt;
 &lt;p&gt;List registered flows from the registry&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List all flows registered in .campaign/flows/registry.yaml.&lt;/p&gt;
@@ -384,29 +391,29 @@ camp flow list&lt;/p&gt;
 &lt;li&gt;Empty active/ and ready/ directories are removed&lt;/li&gt;
 &lt;li&gt;Schema is updated to version 2&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Use &amp;ndash;dry-run to preview changes without applying them.
-Use &amp;ndash;force to skip confirmation prompts.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_move/</guid><description>&lt;h2 id="camp-flow-move"&gt;camp flow move&lt;/h2&gt;
+&lt;p&gt;Use --dry-run to preview changes without applying them.
+Use --force to skip confirmation prompts.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_move/</guid><description>&lt;h2 id="camp-flow-move"&gt;camp flow move&lt;/h2&gt;
 &lt;p&gt;Move an item to a new status&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Move an item from its current status to a new status.&lt;/p&gt;
 &lt;p&gt;The item is moved from wherever it currently exists to the specified status.
-Transitions are validated against the workflow schema unless &amp;ndash;force is used.&lt;/p&gt;
+Transitions are validated against the workflow schema unless --force is used.&lt;/p&gt;
 &lt;p&gt;Auto-commit behavior is controlled by .workflow.yaml auto_commit settings.
-Use &amp;ndash;commit to force a commit or &amp;ndash;no-commit to skip it.&lt;/p&gt;
+Use --commit to force a commit or --no-commit to skip it.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp flow move project-1 ready Move to ready/
 camp flow move old-project dungeon/completed Move to dungeon/completed/
-camp flow move project-1 ready &amp;ndash;reason &amp;ldquo;Ready for review&amp;rdquo;
-camp flow move project-1 active &amp;ndash;force Force move (skip validation)
-camp flow move project-1 ready &amp;ndash;commit Force auto-commit&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_run/</guid><description>&lt;h2 id="camp-flow-run"&gt;camp flow run&lt;/h2&gt;
+camp flow move project-1 ready --reason &amp;quot;Ready for review&amp;quot;
+camp flow move project-1 active --force Force move (skip validation)
+camp flow move project-1 ready --commit Force auto-commit&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_run/</guid><description>&lt;h2 id="camp-flow-run"&gt;camp flow run&lt;/h2&gt;
 &lt;p&gt;Execute a registered flow by name&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Execute a registered flow from .campaign/flows/registry.yaml.&lt;/p&gt;
-&lt;p&gt;Extra arguments after &amp;ndash; are appended to the flow&amp;rsquo;s command.&lt;/p&gt;
+&lt;p&gt;Extra arguments after -- are appended to the flow's command.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp flow run build
-camp flow run test &amp;ndash; &amp;ndash;verbose
-camp flow run deploy &amp;ndash; production&lt;/p&gt;
+camp flow run test -- --verbose
+camp flow run deploy -- production&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp flow run &amp;lt;name&amp;gt; [-- extra-args...] [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for run
@@ -423,10 +430,10 @@ camp flow run deploy &amp;ndash; production&lt;/p&gt;
 &lt;p&gt;Display the workflow structure and configuration.&lt;/p&gt;
 &lt;p&gt;Shows the directories defined in the workflow, their descriptions,
 and transition rules.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;schema to display the raw .workflow.yaml file.&lt;/p&gt;
+&lt;p&gt;Use --schema to display the raw .workflow.yaml file.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp flow show Show workflow structure
-camp flow show &amp;ndash;schema Show raw schema file&lt;/p&gt;
+camp flow show --schema Show raw schema file&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp flow show [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for show
@@ -460,12 +467,12 @@ camp flow status Show workflow statistics&lt;/p&gt;
 &lt;p&gt;Sync directories with schema&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Synchronize directories with the workflow schema.&lt;/p&gt;
-&lt;p&gt;Creates any directories defined in .workflow.yaml that don&amp;rsquo;t exist yet.
-Does not remove directories that aren&amp;rsquo;t in the schema.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;dry-run to see what would be created without making changes.&lt;/p&gt;
+&lt;p&gt;Creates any directories defined in .workflow.yaml that don't exist yet.
+Does not remove directories that aren't in the schema.&lt;/p&gt;
+&lt;p&gt;Use --dry-run to see what would be created without making changes.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp flow sync Create missing directories
-camp flow sync &amp;ndash;dry-run Preview changes without creating&lt;/p&gt;
+camp flow sync --dry-run Preview changes without creating&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp flow sync [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -n, --dry-run preview changes without creating directories
@@ -512,11 +519,11 @@ preserving any checkbox state from previous runs.&lt;/p&gt;</description></item>
 &lt;p&gt;Navigate within the campaign using shortcuts.&lt;/p&gt;
 &lt;p&gt;Usage patterns:
 camp go Toggle between campaign root and last location
-camp go &amp;ndash;root Jump to campaign root (ignore toggle)
+camp go --root Jump to campaign root (ignore toggle)
 camp go t Jump to last visited location (cd - equivalent)
 camp go p Jump to projects/
 camp go f Jump to festivals/
-camp go p api Fuzzy search projects/ for &amp;ldquo;api&amp;rdquo;&lt;/p&gt;
+camp go p api Fuzzy search projects/ for &amp;quot;api&amp;quot;&lt;/p&gt;
 &lt;p&gt;Toggle behavior (no args):&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;From anywhere: jump to campaign root, save current location&lt;/li&gt;
@@ -543,11 +550,11 @@ workflow/intents/ - Intent documents&lt;/p&gt;</description></item><item><title/
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Manage intents for ideas and features not yet ready for full planning.&lt;/p&gt;
 &lt;p&gt;Intents capture ideas, bugs, features, and research topics that depend on work
-not yet completed. They serve as structured storage for ideas that aren&amp;rsquo;t ready
+not yet completed. They serve as structured storage for ideas that aren't ready
 to become Festivals but need to be tracked.&lt;/p&gt;
 &lt;p&gt;CAPTURE MODES:
 Fast (default) Quick capture with minimal fields
-Deep (&amp;ndash;edit) Open in editor for full context&lt;/p&gt;
+Deep (--edit) Open in editor for full context&lt;/p&gt;
 &lt;p&gt;INTENT LIFECYCLE:
 inbox → Captured, not yet reviewed
 active → Being enriched with details
@@ -560,18 +567,18 @@ killed → Abandoned&lt;/p&gt;</description></item><item><title/><link>https://o
 &lt;p&gt;CAPTURE MODES:
 Ultra-fast Title provided as argument → immediate creation
 Fast TUI (default) Step-through form (title, type, concept)
-Full TUI (&amp;ndash;full) Step-through form including body textarea
-Deep (&amp;ndash;edit) Full template in $EDITOR&lt;/p&gt;
+Full TUI (--full) Step-through form including body textarea
+Deep (--edit) Full template in $EDITOR&lt;/p&gt;
 &lt;p&gt;Fast capture is optimized for speed - ideas are saved immediately.
-Use &amp;ndash;full when you want to add a body description in the form.
-Use &amp;ndash;edit when you need the complete template in your editor.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_archive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_archive/</guid><description>&lt;h2 id="camp-intent-archive"&gt;camp intent archive&lt;/h2&gt;
+Use --full when you want to add a body description in the form.
+Use --edit when you need the complete template in your editor.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_archive/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_archive/</guid><description>&lt;h2 id="camp-intent-archive"&gt;camp intent archive&lt;/h2&gt;
 &lt;p&gt;Archive an intent&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Archive an intent by moving it to the killed status.&lt;/p&gt;
 &lt;p&gt;This is a convenience command equivalent to:
 camp intent move &lt;id&gt; killed&lt;/p&gt;
 &lt;p&gt;Archived intents are retained but hidden from default listings.
-Use &amp;lsquo;camp intent move &lt;id&gt; inbox&amp;rsquo; to un-archive if needed.&lt;/p&gt;
+Use 'camp intent move &lt;id&gt; inbox' to un-archive if needed.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp intent archive add-dark Archive by partial ID
 camp intent archive 20260119-153412 Archive by full ID&lt;/p&gt;
@@ -619,9 +626,9 @@ Time suffix: 153412-add-retry
 Slug portion: add-retry&lt;/p&gt;
 &lt;p&gt;Examples:
 camp intent edit Interactive picker
-camp intent edit 20260119-153412&amp;hellip; Direct edit by full ID
+camp intent edit 20260119-153412... Direct edit by full ID
 camp intent edit retry-logic Partial match edit
-camp intent edit &amp;ndash;status active Picker filtered by status&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_explore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_explore/</guid><description>&lt;h2 id="camp-intent-explore"&gt;camp intent explore&lt;/h2&gt;
+camp intent edit --status active Picker filtered by status&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_explore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_explore/</guid><description>&lt;h2 id="camp-intent-explore"&gt;camp intent explore&lt;/h2&gt;
 &lt;p&gt;Interactive intent explorer&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Launch the interactive Intent Explorer TUI.&lt;/p&gt;
@@ -654,40 +661,40 @@ simple IDs only, one per line (for scripting)
 json Full metadata in JSON format&lt;/p&gt;
 &lt;p&gt;Examples:
 camp intent find List all intents
-camp intent find dark Find intents containing &amp;ldquo;dark&amp;rdquo;
-camp intent find &amp;ldquo;bug fix&amp;rdquo; Find intents with &amp;ldquo;bug fix&amp;rdquo;
+camp intent find dark Find intents containing &amp;quot;dark&amp;quot;
+camp intent find &amp;quot;bug fix&amp;quot; Find intents with &amp;quot;bug fix&amp;quot;
 camp intent find -f simple auth Get IDs of auth-related intents&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_gather/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_gather/</guid><description>&lt;h2 id="camp-intent-gather"&gt;camp intent gather&lt;/h2&gt;
 &lt;p&gt;Gather related intents into a unified document&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Gather multiple related intents into a single unified document.&lt;/p&gt;
 &lt;p&gt;DISCOVERY MODES:
 By IDs Explicitly specify intent IDs to gather
-&amp;ndash;tag Find intents with a specific frontmatter tag
-&amp;ndash;hashtag Find intents containing a specific #hashtag
-&amp;ndash;similar Find intents similar to a given ID (TF-IDF)&lt;/p&gt;
+--tag Find intents with a specific frontmatter tag
+--hashtag Find intents containing a specific #hashtag
+--similar Find intents similar to a given ID (TF-IDF)&lt;/p&gt;
 &lt;p&gt;The gather process:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Find related intents using the specified discovery method&lt;/li&gt;
 &lt;li&gt;Merge their content with full metadata preservation&lt;/li&gt;
 &lt;li&gt;Create a new unified intent in inbox status&lt;/li&gt;
-&lt;li&gt;Archive source intents (unless &amp;ndash;no-archive)&lt;/li&gt;
+&lt;li&gt;Archive source intents (unless --no-archive)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Source intents are preserved with a &amp;lsquo;gathered_into&amp;rsquo; reference.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_list/</guid><description>&lt;h2 id="camp-intent-list"&gt;camp intent list&lt;/h2&gt;
+&lt;p&gt;Source intents are preserved with a 'gathered_into' reference.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_list/</guid><description>&lt;h2 id="camp-intent-list"&gt;camp intent list&lt;/h2&gt;
 &lt;p&gt;List intents in the campaign&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List intents with filtering, sorting, and output format options.&lt;/p&gt;
 &lt;p&gt;By default, lists intents in inbox, active, and ready status.
-Use &amp;ndash;all to include done and killed intents.&lt;/p&gt;
+Use --all to include done and killed intents.&lt;/p&gt;
 &lt;p&gt;OUTPUT FORMATS:
 table (default) Human-readable table with columns
 simple IDs only, one per line (for scripting)
 json Full metadata in JSON format&lt;/p&gt;
 &lt;p&gt;Examples:
 camp intent list List active intents
-camp intent ls &amp;ndash;status inbox List inbox only
+camp intent ls --status inbox List inbox only
 camp intent list -f json JSON output
-camp intent list -f simple | xargs &amp;hellip; Pipe IDs to commands
-camp intent list &amp;ndash;all Include archived&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_move/</guid><description>&lt;h2 id="camp-intent-move"&gt;camp intent move&lt;/h2&gt;
+camp intent list -f simple | xargs ... Pipe IDs to commands
+camp intent list --all Include archived&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_move/</guid><description>&lt;h2 id="camp-intent-move"&gt;camp intent move&lt;/h2&gt;
 &lt;p&gt;Move intent to a different status&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Transition an intent between lifecycle statuses.&lt;/p&gt;
@@ -710,14 +717,14 @@ camp intent move add-dark killed Archive/abandon intent&lt;/p&gt;</description><
 &lt;p&gt;Promote an intent to a Festival&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Promote a ready intent to a Festival.&lt;/p&gt;
-&lt;p&gt;The intent should be in &amp;lsquo;ready&amp;rsquo; status before promotion. Use &amp;ndash;force to
+&lt;p&gt;The intent should be in 'ready' status before promotion. Use --force to
 promote from any status.&lt;/p&gt;
-&lt;p&gt;After promotion, the intent will be moved to &amp;lsquo;done&amp;rsquo; status with a reference
+&lt;p&gt;After promotion, the intent will be moved to 'done' status with a reference
 to the created Festival.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp intent promote add-dark Promote by partial ID
-camp intent promote add-dark &amp;ndash;force Force promote from any status
-camp intent promote add-dark &amp;ndash;dry-run Preview without changes&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_show/</guid><description>&lt;h2 id="camp-intent-show"&gt;camp intent show&lt;/h2&gt;
+camp intent promote add-dark --force Force promote from any status
+camp intent promote add-dark --dry-run Preview without changes&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_intent_show/</guid><description>&lt;h2 id="camp-intent-show"&gt;camp intent show&lt;/h2&gt;
 &lt;p&gt;Show detailed intent information&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Display detailed information about a specific intent.&lt;/p&gt;
@@ -732,7 +739,7 @@ text (default) Human-readable detailed view
 json Full metadata in JSON format
 yaml Full metadata in YAML format&lt;/p&gt;
 &lt;p&gt;Examples:
-camp intent show 20260119-153412&amp;hellip; Show by full ID
+camp intent show 20260119-153412... Show by full ID
 camp intent show retry-logic Show by partial match
 camp intent show retry -f json JSON output
 camp intent show retry -f yaml YAML output&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage/</guid><description>&lt;h2 id="camp-leverage"&gt;camp leverage&lt;/h2&gt;
@@ -746,62 +753,62 @@ traditional estimation models predict for the same team and time.&lt;/p&gt;
 SimpleLeverage = EstimatedPeople / ActualPeople&lt;/p&gt;
 &lt;p&gt;Examples:
 camp leverage Show team leverage (auto-detect authors from git)
-camp leverage &amp;ndash;author &lt;a href="mailto:lance@example.com"&gt;lance@example.com&lt;/a&gt; Show personal leverage
-camp leverage &amp;ndash;project camp Show score for specific project
-camp leverage &amp;ndash;json Output as JSON
-camp leverage &amp;ndash;people 2 Override team size
-camp leverage &amp;ndash;verbose Show diagnostic details&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</guid><description>&lt;h2 id="camp-leverage-backfill"&gt;camp leverage backfill&lt;/h2&gt;
+camp leverage --author &lt;a href="mailto:lance@example.com"&gt;lance@example.com&lt;/a&gt; Show personal leverage
+camp leverage --project camp Show score for specific project
+camp leverage --json Output as JSON
+camp leverage --people 2 Override team size
+camp leverage --verbose Show diagnostic details&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</guid><description>&lt;h2 id="camp-leverage-backfill"&gt;camp leverage backfill&lt;/h2&gt;
 &lt;p&gt;Reconstruct historical leverage data from git history&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Backfill analyzes past commits to build leverage-over-time data.&lt;/p&gt;
 &lt;p&gt;Uses git worktrees to check out weekly snapshots, run scc analysis,
 and compute leverage scores at each point in time. Results are stored
-as snapshots for later retrieval via &amp;lsquo;camp leverage history&amp;rsquo;.&lt;/p&gt;
+as snapshots for later retrieval via 'camp leverage history'.&lt;/p&gt;
 &lt;p&gt;Backfill is incremental: re-running only processes dates without
 existing snapshots.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp leverage backfill Backfill all projects
-camp leverage backfill &amp;ndash;project camp Backfill specific project
-camp leverage backfill &amp;ndash;workers 2 Limit concurrency
-camp leverage backfill &amp;ndash;since 2025-06-01 Backfill from June 2025&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_config/</guid><description>&lt;h2 id="camp-leverage-config"&gt;camp leverage config&lt;/h2&gt;
+camp leverage backfill --project camp Backfill specific project
+camp leverage backfill --workers 2 Limit concurrency
+camp leverage backfill --since 2025-06-01 Backfill from June 2025&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_config/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_config/</guid><description>&lt;h2 id="camp-leverage-config"&gt;camp leverage config&lt;/h2&gt;
 &lt;p&gt;View or update leverage configuration&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;View or update leverage score configuration settings.&lt;/p&gt;
 &lt;p&gt;Without flags, displays the current configuration. With flags, updates
 the configuration and saves it to .campaign/leverage/config.json.&lt;/p&gt;
 &lt;p&gt;Configuration parameters:
-&amp;ndash;people Number of developers on the team
-&amp;ndash;start Project start date (YYYY-MM-DD format)
-&amp;ndash;cocomo-type COCOMO project type (organic, semi-detached, embedded)
-&amp;ndash;exclude Exclude a project from leverage scoring
-&amp;ndash;include Include a previously excluded project&lt;/p&gt;
+--people Number of developers on the team
+--start Project start date (YYYY-MM-DD format)
+--cocomo-type COCOMO project type (organic, semi-detached, embedded)
+--exclude Exclude a project from leverage scoring
+--include Include a previously excluded project&lt;/p&gt;
 &lt;p&gt;Examples:
 camp leverage config Show current config
-camp leverage config &amp;ndash;people 3 Set team size to 3
-camp leverage config &amp;ndash;start 2025-01-01 Set project start date
-camp leverage config &amp;ndash;exclude obey-daemon Exclude a project
-camp leverage config &amp;ndash;include obey-daemon Re-include a project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_history/</guid><description>&lt;h2 id="camp-leverage-history"&gt;camp leverage history&lt;/h2&gt;
+camp leverage config --people 3 Set team size to 3
+camp leverage config --start 2025-01-01 Set project start date
+camp leverage config --exclude obey-daemon Exclude a project
+camp leverage config --include obey-daemon Re-include a project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_history/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_history/</guid><description>&lt;h2 id="camp-leverage-history"&gt;camp leverage history&lt;/h2&gt;
 &lt;p&gt;Show leverage score history over time&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Display leverage data aggregated over time from stored snapshots.&lt;/p&gt;
-&lt;p&gt;Shows how leverage has changed week by week. Use &amp;ndash;by-author to see
+&lt;p&gt;Shows how leverage has changed week by week. Use --by-author to see
 per-contributor leverage breakdown based on git blame attribution.&lt;/p&gt;
-&lt;p&gt;Requires snapshot data from &amp;lsquo;camp leverage backfill&amp;rsquo; or &amp;lsquo;camp leverage snapshot&amp;rsquo;.&lt;/p&gt;
+&lt;p&gt;Requires snapshot data from 'camp leverage backfill' or 'camp leverage snapshot'.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp leverage history Show all history
-camp leverage history &amp;ndash;project camp Filter to one project
-camp leverage history &amp;ndash;since 2025-06-01 Start from June 2025
-camp leverage history &amp;ndash;json Output as JSON
-camp leverage history &amp;ndash;by-author Per-author breakdown&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_reset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_reset/</guid><description>&lt;h2 id="camp-leverage-reset"&gt;camp leverage reset&lt;/h2&gt;
+camp leverage history --project camp Filter to one project
+camp leverage history --since 2025-06-01 Start from June 2025
+camp leverage history --json Output as JSON
+camp leverage history --by-author Per-author breakdown&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_reset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_reset/</guid><description>&lt;h2 id="camp-leverage-reset"&gt;camp leverage reset&lt;/h2&gt;
 &lt;p&gt;Clear all cached leverage data to allow full recomputation&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Reset deletes cached snapshots and blame data so that leverage can
 recompute from scratch.&lt;/p&gt;
-&lt;p&gt;Without flags, all project caches are removed. Use &amp;ndash;project to clear
-only a single project&amp;rsquo;s data.&lt;/p&gt;
+&lt;p&gt;Without flags, all project caches are removed. Use --project to clear
+only a single project's data.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp leverage reset Clear all cached data
-camp leverage reset &amp;ndash;project camp Clear only camp&amp;rsquo;s cached data&lt;/p&gt;
+camp leverage reset --project camp Clear only camp's cached data&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp leverage reset [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for reset
@@ -824,12 +831,12 @@ LOC attribution from git blame.&lt;/p&gt;
 Re-running on the same date overwrites the previous snapshot.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp leverage snapshot Snapshot all projects
-camp leverage snapshot &amp;ndash;project camp Snapshot specific project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_list/</guid><description>&lt;h2 id="camp-list"&gt;camp list&lt;/h2&gt;
+camp leverage snapshot --project camp Snapshot specific project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_list/</guid><description>&lt;h2 id="camp-list"&gt;camp list&lt;/h2&gt;
 &lt;p&gt;List all registered campaigns&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List all campaigns registered in the global registry.&lt;/p&gt;
-&lt;p&gt;Campaigns are registered when created with &amp;lsquo;camp init&amp;rsquo; or manually
-with &amp;lsquo;camp register&amp;rsquo;. The registry lives at ~/.obey/campaign/registry.yaml.&lt;/p&gt;
+&lt;p&gt;Campaigns are registered when created with 'camp init' or manually
+with 'camp register'. The registry lives at ~/.obey/campaign/registry.yaml.&lt;/p&gt;
 &lt;p&gt;Output formats:
 table - Aligned columns with headers (default)
 simple - Campaign names only, one per line
@@ -843,27 +850,27 @@ type - Alphabetically by type&lt;/p&gt;</description></item><item><title/><link>
 &lt;p&gt;Show git log of the campaign root repository.&lt;/p&gt;
 &lt;p&gt;Works from anywhere within the campaign - always shows the log
 of the campaign root repository.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;sub to show log of the submodule detected from your current directory.
-Use &amp;ndash;project/-p to show log of a specific project.&lt;/p&gt;
+&lt;p&gt;Use --sub to show log of the submodule detected from your current directory.
+Use --project/-p to show log of a specific project.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp log # Full log
 camp log -5 # Last 5 commits
-camp log &amp;ndash;oneline # One line per commit
-camp log &amp;ndash;graph # Show branch graph
-camp log &amp;ndash;sub # Log of current submodule
-camp log -p projects/camp &amp;ndash;oneline # Log of camp project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_move/</guid><description>&lt;h2 id="camp-move"&gt;camp move&lt;/h2&gt;
+camp log --oneline # One line per commit
+camp log --graph # Show branch graph
+camp log --sub # Log of current submodule
+camp log -p projects/camp --oneline # Log of camp project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_move/</guid><description>&lt;h2 id="camp-move"&gt;camp move&lt;/h2&gt;
 &lt;p&gt;Move a file or directory within the campaign&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Move a file or directory within the current campaign.&lt;/p&gt;
 &lt;p&gt;Paths are resolved relative to the current directory, matching standard
-&amp;lsquo;mv&amp;rsquo; behavior and tab completion.&lt;/p&gt;
+'mv' behavior and tab completion.&lt;/p&gt;
 &lt;p&gt;Use @ prefix for campaign shortcuts (e.g., @p/fest, @f/active/).
 Available shortcuts are defined in campaign config.&lt;/p&gt;
-&lt;p&gt;If the destination is an existing directory or ends with &amp;lsquo;/&amp;rsquo;, the source
+&lt;p&gt;If the destination is an existing directory or ends with '/', the source
 is placed inside it with the same basename.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_pin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_pin/</guid><description>&lt;h2 id="camp-pin"&gt;camp pin&lt;/h2&gt;
 &lt;p&gt;Bookmark a directory&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Bookmark a directory for quick navigation with &amp;lsquo;camp jump&amp;rsquo;.&lt;/p&gt;
+&lt;p&gt;Bookmark a directory for quick navigation with 'camp jump'.&lt;/p&gt;
 &lt;p&gt;If path is omitted, the current working directory is used.&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp pin &amp;lt;name&amp;gt; [path] [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="examples"&gt;Examples&lt;/h3&gt;
@@ -881,7 +888,7 @@ is placed inside it with the same basename.&lt;/p&gt;</description></item><item>
 &lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_pins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_pins/</guid><description>&lt;h2 id="camp-pins"&gt;camp pins&lt;/h2&gt;
 &lt;p&gt;List all pinned directories&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;List all pinned directory bookmarks. Use &amp;lsquo;camp pin&amp;rsquo; to add and &amp;lsquo;camp unpin&amp;rsquo; to remove.&lt;/p&gt;
+&lt;p&gt;List all pinned directory bookmarks. Use 'camp pin' to add and 'camp unpin' to remove.&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp pins [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for pins
@@ -930,24 +937,24 @@ A worktree directory is also created for future parallel development.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SSH URL: &lt;a href="mailto:git@github.com"&gt;git@github.com&lt;/a&gt;:org/repo.git&lt;/li&gt;
 &lt;li&gt;HTTPS URL: &lt;a href="https://github.com/org/repo.git"&gt;https://github.com/org/repo.git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Local path (with &amp;ndash;local): ./existing-repo&lt;/li&gt;
+&lt;li&gt;Local path (with --local): ./existing-repo&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Examples:
 camp project add &lt;a href="mailto:git@github.com"&gt;git@github.com&lt;/a&gt;:org/api.git # Add remote repo
 camp project add &lt;a href="https://github.com/org/web.git"&gt;https://github.com/org/web.git&lt;/a&gt; # Add via HTTPS
-camp project add &amp;ndash;local ./my-repo &amp;ndash;name my-project # Add existing local repo
-camp project add &lt;a href="mailto:git@github.com"&gt;git@github.com&lt;/a&gt;:org/api.git &amp;ndash;name backend # Custom name&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_commit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_commit/</guid><description>&lt;h2 id="camp-project-commit"&gt;camp project commit&lt;/h2&gt;
+camp project add --local ./my-repo --name my-project # Add existing local repo
+camp project add &lt;a href="mailto:git@github.com"&gt;git@github.com&lt;/a&gt;:org/api.git --name backend # Custom name&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_commit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_commit/</guid><description>&lt;h2 id="camp-project-commit"&gt;camp project commit&lt;/h2&gt;
 &lt;p&gt;Commit changes in a project submodule&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Commit changes within a project submodule.&lt;/p&gt;
 &lt;p&gt;Auto-detects the current project from your working directory,
-or use &amp;ndash;project to specify a project by name.&lt;/p&gt;
+or use --project to specify a project by name.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;h1 id="from-within-a-project-directory"&gt;From within a project directory&lt;/h1&gt;
 &lt;p&gt;cd projects/my-api
-camp project commit -m &amp;ldquo;Fix bug&amp;rdquo;&lt;/p&gt;
+camp project commit -m &amp;quot;Fix bug&amp;quot;&lt;/p&gt;
 &lt;h1 id="specify-project-by-name"&gt;Specify project by name&lt;/h1&gt;
-&lt;p&gt;camp project commit &amp;ndash;project my-api -m &amp;ldquo;Update deps&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;camp project commit --project my-api -m &amp;quot;Update deps&amp;quot;&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp project commit [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -a, --all Stage all changes (default true)
@@ -976,8 +983,8 @@ simple - Project names only, one per line
 json - JSON array for scripting&lt;/p&gt;
 &lt;p&gt;Examples:
 camp project list List projects in table format
-camp project list &amp;ndash;format json Output as JSON
-camp project list &amp;ndash;format simple Names only for scripting&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_new/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_new/</guid><description>&lt;h2 id="camp-project-new"&gt;camp project new&lt;/h2&gt;
+camp project list --format json Output as JSON
+camp project list --format simple Names only for scripting&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_new/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_new/</guid><description>&lt;h2 id="camp-project-new"&gt;camp project new&lt;/h2&gt;
 &lt;p&gt;Create a new project in campaign&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Create a new local project as a git submodule in the campaign.&lt;/p&gt;
@@ -988,7 +995,7 @@ cd projects/&lt;name&gt;
 git remote add origin &lt;a href="mailto:git@github.com"&gt;git@github.com&lt;/a&gt;:org/&lt;name&gt;.git&lt;/p&gt;
 &lt;p&gt;Examples:
 camp project new my-service # Create new project
-camp project new my-service &amp;ndash;no-commit # Skip auto-commit to campaign&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_prune/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_prune/</guid><description>&lt;h2 id="camp-project-prune"&gt;camp project prune&lt;/h2&gt;
+camp project new my-service --no-commit # Skip auto-commit to campaign&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_prune/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_prune/</guid><description>&lt;h2 id="camp-project-prune"&gt;camp project prune&lt;/h2&gt;
 &lt;p&gt;Delete merged branches in a project&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Delete local branches that have been merged into the default branch.&lt;/p&gt;
@@ -999,9 +1006,9 @@ or accepts a project name as a positional argument.&lt;/p&gt;
 camp project prune # Prune current project
 camp project prune camp # Prune by name
 camp project prune -p camp # Prune by flag
-camp project prune &amp;ndash;dry-run # Preview what would be deleted
-camp project prune &amp;ndash;remote # Also prune stale remote tracking refs
-camp project prune &amp;ndash;remote-delete # Also delete merged branches on origin&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_prune_all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_prune_all/</guid><description>&lt;h2 id="camp-project-prune-all"&gt;camp project prune all&lt;/h2&gt;
+camp project prune --dry-run # Preview what would be deleted
+camp project prune --remote # Also prune stale remote tracking refs
+camp project prune --remote-delete # Also delete merged branches on origin&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_prune_all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_prune_all/</guid><description>&lt;h2 id="camp-project-prune-all"&gt;camp project prune all&lt;/h2&gt;
 &lt;p&gt;Delete merged branches across all projects&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Delete local branches that have been merged into the default branch,
@@ -1009,40 +1016,40 @@ across every project submodule in the campaign.&lt;/p&gt;
 &lt;p&gt;Produces a per-project summary showing what was (or would be) pruned.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp project prune all # Prune all projects
-camp project prune all &amp;ndash;dry-run # Preview across all projects
-camp project prune all &amp;ndash;force # Skip confirmation for each project
-camp project prune all &amp;ndash;remote # Also prune stale remote tracking refs&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_remove/</guid><description>&lt;h2 id="camp-project-remove"&gt;camp project remove&lt;/h2&gt;
+camp project prune all --dry-run # Preview across all projects
+camp project prune all --force # Skip confirmation for each project
+camp project prune all --remote # Also prune stale remote tracking refs&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_remove/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_remove/</guid><description>&lt;h2 id="camp-project-remove"&gt;camp project remove&lt;/h2&gt;
 &lt;p&gt;Remove a project from campaign&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Remove a project from the campaign.&lt;/p&gt;
 &lt;p&gt;By default, this only removes the project from git submodule tracking.
 The project files remain in place for you to handle manually.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;delete to also remove all project files. This is destructive
-and requires confirmation unless &amp;ndash;force is also specified.&lt;/p&gt;
+&lt;p&gt;Use --delete to also remove all project files. This is destructive
+and requires confirmation unless --force is also specified.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp project remove api-service # Unregister submodule only
-camp project remove api-service &amp;ndash;delete # Also delete files (confirms)
-camp project remove api-service &amp;ndash;delete &amp;ndash;force # Delete without confirmation
-camp project remove api-service &amp;ndash;dry-run # Show what would be done&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_run/</guid><description>&lt;h2 id="camp-project-run"&gt;camp project run&lt;/h2&gt;
+camp project remove api-service --delete # Also delete files (confirms)
+camp project remove api-service --delete --force # Delete without confirmation
+camp project remove api-service --dry-run # Show what would be done&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_run/</guid><description>&lt;h2 id="camp-project-run"&gt;camp project run&lt;/h2&gt;
 &lt;p&gt;Run a command inside a project directory&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Run any shell command inside a project directory from anywhere in the campaign.&lt;/p&gt;
 &lt;p&gt;The project is resolved in this order:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&amp;ndash;project / -p flag (explicit project name)&lt;/li&gt;
+&lt;li&gt;--project / -p flag (explicit project name)&lt;/li&gt;
 &lt;li&gt;Auto-detect from current working directory&lt;/li&gt;
 &lt;li&gt;Interactive fuzzy picker (if neither above applies)&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;Use &amp;ndash; to separate camp flags from the command to execute.&lt;/p&gt;
+&lt;p&gt;Use -- to separate camp flags from the command to execute.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;h1 id="interactive-project-picker-then-run-command"&gt;Interactive project picker, then run command&lt;/h1&gt;
-&lt;p&gt;camp project run &amp;ndash; ls -la&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_worktree/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_worktree/</guid><description>&lt;h2 id="camp-project-worktree"&gt;camp project worktree&lt;/h2&gt;
+&lt;p&gt;camp project run -- ls -la&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_worktree/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_worktree/</guid><description>&lt;h2 id="camp-project-worktree"&gt;camp project worktree&lt;/h2&gt;
 &lt;p&gt;Manage worktrees for a project&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Manage git worktrees for the current project.&lt;/p&gt;
 &lt;p&gt;Worktrees allow you to have multiple working directories for the same repository,
 enabling parallel development on different branches without stashing or switching.&lt;/p&gt;
-&lt;p&gt;Auto-detects the current project from your working directory, or use &amp;ndash;project
+&lt;p&gt;Auto-detects the current project from your working directory, or use --project
 to specify explicitly.&lt;/p&gt;
 &lt;p&gt;All worktrees are created at: projects/worktrees/&lt;project&gt;/&lt;worktree-name&gt;/&lt;/p&gt;
 &lt;p&gt;Commands:
@@ -1052,25 +1059,25 @@ remove Remove a worktree&lt;/p&gt;</description></item><item><title/><link>https
 &lt;p&gt;Create a new worktree for the project&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Create a new git worktree for the current project.&lt;/p&gt;
-&lt;p&gt;Auto-detects the project from your current directory, or use &amp;ndash;project
+&lt;p&gt;Auto-detects the project from your current directory, or use --project
 to specify explicitly.&lt;/p&gt;
 &lt;p&gt;The worktree will be created at: projects/worktrees/&lt;project&gt;/&lt;name&gt;/&lt;/p&gt;
 &lt;p&gt;By default, creates a new branch with the worktree name based on the current branch.
-Use &amp;ndash;branch to checkout an existing branch instead.&lt;/p&gt;
+Use --branch to checkout an existing branch instead.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;h1 id="create-worktree-with-new-branch-based-on-current-branch-default"&gt;Create worktree with new branch based on current branch (default)&lt;/h1&gt;
 &lt;p&gt;camp project worktree add feature-auth&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_worktree_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_project_worktree_list/</guid><description>&lt;h2 id="camp-project-worktree-list"&gt;camp project worktree list&lt;/h2&gt;
 &lt;p&gt;List worktrees for the project&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List all worktrees for the current project.&lt;/p&gt;
-&lt;p&gt;Auto-detects the project from your current directory, or use &amp;ndash;project
+&lt;p&gt;Auto-detects the project from your current directory, or use --project
 to specify explicitly.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;h1 id="from-within-a-project"&gt;From within a project&lt;/h1&gt;
 &lt;p&gt;cd projects/my-api
 camp project worktree list&lt;/p&gt;
 &lt;h1 id="explicit-project"&gt;Explicit project&lt;/h1&gt;
-&lt;p&gt;camp project worktree list &amp;ndash;project my-api&lt;/p&gt;
+&lt;p&gt;camp project worktree list --project my-api&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp project worktree list [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for list
@@ -1086,16 +1093,16 @@ camp project worktree list&lt;/p&gt;
 &lt;p&gt;Remove a worktree&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Remove a worktree from the current project.&lt;/p&gt;
-&lt;p&gt;Auto-detects the project from your current directory, or use &amp;ndash;project
+&lt;p&gt;Auto-detects the project from your current directory, or use --project
 to specify explicitly.&lt;/p&gt;
 &lt;p&gt;Examples:&lt;/p&gt;
 &lt;h1 id="from-within-a-project"&gt;From within a project&lt;/h1&gt;
 &lt;p&gt;cd projects/my-api
 camp project worktree remove feature-auth&lt;/p&gt;
 &lt;h1 id="force-remove-even-with-uncommitted-changes"&gt;Force remove (even with uncommitted changes)&lt;/h1&gt;
-&lt;p&gt;camp project worktree remove experiment &amp;ndash;force&lt;/p&gt;
+&lt;p&gt;camp project worktree remove experiment --force&lt;/p&gt;
 &lt;h1 id="explicit-project"&gt;Explicit project&lt;/h1&gt;
-&lt;p&gt;camp project worktree remove feature &amp;ndash;project my-api&lt;/p&gt;
+&lt;p&gt;camp project worktree remove feature --project my-api&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp project worktree remove &amp;lt;name&amp;gt; [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -f, --force Force removal even with uncommitted changes
@@ -1114,18 +1121,18 @@ camp project worktree remove feature-auth&lt;/p&gt;
 &lt;p&gt;Pull latest changes from the remote repository.&lt;/p&gt;
 &lt;p&gt;Works from anywhere within the campaign - always pulls to
 the campaign root repository.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;sub to pull the submodule detected from your current directory.
-Use &amp;ndash;project/-p to pull a specific project.
-Use &amp;lsquo;camp pull all&amp;rsquo; to pull all repos with upstream tracking.&lt;/p&gt;
-&lt;p&gt;Any git pull flags are passed through (e.g. &amp;ndash;rebase, &amp;ndash;ff-only).&lt;/p&gt;
+&lt;p&gt;Use --sub to pull the submodule detected from your current directory.
+Use --project/-p to pull a specific project.
+Use 'camp pull all' to pull all repos with upstream tracking.&lt;/p&gt;
+&lt;p&gt;Any git pull flags are passed through (e.g. --rebase, --ff-only).&lt;/p&gt;
 &lt;p&gt;Examples:
 camp pull # Pull current branch (merge)
-camp pull &amp;ndash;rebase # Pull with rebase
-camp pull &amp;ndash;ff-only # Fast-forward only
-camp pull &amp;ndash;sub # Pull current submodule
+camp pull --rebase # Pull with rebase
+camp pull --ff-only # Fast-forward only
+camp pull --sub # Pull current submodule
 camp pull -p projects/camp # Pull camp project
 camp pull all # Pull all repos
-camp pull all &amp;ndash;ff-only # Pull all repos, fast-forward only&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_pull_all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_pull_all/</guid><description>&lt;h2 id="camp-pull-all"&gt;camp pull all&lt;/h2&gt;
+camp pull all --ff-only # Pull all repos, fast-forward only&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_pull_all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_pull_all/</guid><description>&lt;h2 id="camp-pull-all"&gt;camp pull all&lt;/h2&gt;
 &lt;p&gt;Pull latest changes for all repos&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Pull latest changes for all repositories in the campaign.&lt;/p&gt;
@@ -1133,7 +1140,7 @@ camp pull all &amp;ndash;ff-only # Pull all repos, fast-forward only&lt;/p&gt;</
 branch with upstream, and pulls them. Any extra flags are passed through
 to git pull for each repo.&lt;/p&gt;
 &lt;p&gt;Repos in detached HEAD state or without upstream tracking are skipped.
-Use &amp;ndash;default-branch to auto-checkout each submodule&amp;rsquo;s default branch
+Use --default-branch to auto-checkout each submodule's default branch
 before pulling. This is useful when submodules are on stale feature
 branches whose remote tracking branch has been deleted.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_push/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_push/</guid><description>&lt;h2 id="camp-push"&gt;camp push&lt;/h2&gt;
 &lt;p&gt;Push campaign changes to remote&lt;/p&gt;
@@ -1141,18 +1148,18 @@ branches whose remote tracking branch has been deleted.&lt;/p&gt;</description><
 &lt;p&gt;Push campaign changes to the remote repository.&lt;/p&gt;
 &lt;p&gt;Works from anywhere within the campaign - always pushes from
 the campaign root repository.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;sub to push from the submodule detected from your current directory.
-Use &amp;ndash;project/-p to push from a specific project.
-Use &amp;lsquo;camp push all&amp;rsquo; to push all repos that have unpushed commits.&lt;/p&gt;
+&lt;p&gt;Use --sub to push from the submodule detected from your current directory.
+Use --project/-p to push from a specific project.
+Use 'camp push all' to push all repos that have unpushed commits.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp push # Push current branch
 camp push origin main # Push to specific remote/branch
-camp push &amp;ndash;force # Force push
+camp push --force # Force push
 camp push -u origin feature # Push and set upstream
-camp push &amp;ndash;sub # Push current submodule
+camp push --sub # Push current submodule
 camp push -p projects/camp # Push camp project
 camp push all # Push all repos with unpushed commits
-camp push all &amp;ndash;force # Force push all repos&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_push_all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_push_all/</guid><description>&lt;h2 id="camp-push-all"&gt;camp push all&lt;/h2&gt;
+camp push all --force # Force push all repos&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_push_all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_push_all/</guid><description>&lt;h2 id="camp-push-all"&gt;camp push all&lt;/h2&gt;
 &lt;p&gt;Push all repos with unpushed commits&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Push all repositories in the campaign that have unpushed commits.&lt;/p&gt;
@@ -1160,21 +1167,21 @@ camp push all &amp;ndash;force # Force push all repos&lt;/p&gt;</description></i
 ahead of their upstream, and pushes them. Any extra flags are passed
 through to git push for each repo.&lt;/p&gt;
 &lt;p&gt;By default, nested submodules (e.g. inside monorepos) are included.
-Use &amp;ndash;no-recurse to only push top-level submodules.&lt;/p&gt;
+Use --no-recurse to only push top-level submodules.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp push all # Push all repos with unpushed commits
-camp push all &amp;ndash;force # Force push all repos
+camp push all --force # Force push all repos
 camp push all -u origin # Push and set upstream for all
-camp push all &amp;ndash;no-recurse # Only top-level submodules&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_refs-sync/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_refs-sync/</guid><description>&lt;h2 id="camp-refs-sync"&gt;camp refs-sync&lt;/h2&gt;
+camp push all --no-recurse # Only top-level submodules&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_refs-sync/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_refs-sync/</guid><description>&lt;h2 id="camp-refs-sync"&gt;camp refs-sync&lt;/h2&gt;
 &lt;p&gt;Sync submodule ref pointers in campaign root&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Update the campaign root&amp;rsquo;s recorded submodule pointers to match
-each submodule&amp;rsquo;s current HEAD. Creates a single atomic commit.&lt;/p&gt;
+&lt;p&gt;Update the campaign root's recorded submodule pointers to match
+each submodule's current HEAD. Creates a single atomic commit.&lt;/p&gt;
 &lt;p&gt;Without arguments, syncs all submodules. Specify paths to sync specific ones.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp refs-sync # Sync all dirty refs
 camp refs-sync projects/camp # Sync specific submodule
-camp refs-sync &amp;ndash;dry-run # Show plan without executing&lt;/p&gt;
+camp refs-sync --dry-run # Show plan without executing&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp refs-sync [submodule...] [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -n, --dry-run Show plan without executing
@@ -1192,11 +1199,11 @@ camp refs-sync &amp;ndash;dry-run # Show plan without executing&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Register an existing campaign in the global registry.&lt;/p&gt;
 &lt;p&gt;This adds the campaign to the registry at ~/.obey/campaign/registry.yaml,
-enabling it to appear in &amp;lsquo;camp list&amp;rsquo; and be accessible via navigation commands.&lt;/p&gt;
-&lt;p&gt;Note: &amp;lsquo;camp init&amp;rsquo; automatically registers new campaigns. This command is for
-registering existing campaigns that weren&amp;rsquo;t created with camp or were unregistered.&lt;/p&gt;
+enabling it to appear in 'camp list' and be accessible via navigation commands.&lt;/p&gt;
+&lt;p&gt;Note: 'camp init' automatically registers new campaigns. This command is for
+registering existing campaigns that weren't created with camp or were unregistered.&lt;/p&gt;
 &lt;p&gt;If the specified path is not a campaign (has no .campaign/ directory),
-you&amp;rsquo;ll be offered the option to initialize it.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry/</guid><description>&lt;h2 id="camp-registry"&gt;camp registry&lt;/h2&gt;
+you'll be offered the option to initialize it.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry/</guid><description>&lt;h2 id="camp-registry"&gt;camp registry&lt;/h2&gt;
 &lt;p&gt;Manage the campaign registry&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Manage the campaign registry at ~/.obey/campaign/registry.json.&lt;/p&gt;
@@ -1208,7 +1215,7 @@ sync Update registry entry for current campaign
 check Validate registry integrity&lt;/p&gt;
 &lt;p&gt;Examples:
 camp registry prune Remove entries for non-existent campaigns
-camp registry prune &amp;ndash;dry-run Show what would be removed
+camp registry prune --dry-run Show what would be removed
 camp registry sync Update path for current campaign
 camp registry check Check for issues&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry_check/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry_check/</guid><description>&lt;h2 id="camp-registry-check"&gt;camp registry check&lt;/h2&gt;
 &lt;p&gt;Check registry integrity&lt;/p&gt;
@@ -1216,7 +1223,7 @@ camp registry check Check for issues&lt;/p&gt;</description></item><item><title/
 &lt;p&gt;Validate the registry and report any issues found.&lt;/p&gt;
 &lt;p&gt;Checks for:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Stale entries (paths that don&amp;rsquo;t exist)&lt;/li&gt;
+&lt;li&gt;Stale entries (paths that don't exist)&lt;/li&gt;
 &lt;li&gt;Missing .campaign/ directories&lt;/li&gt;
 &lt;li&gt;Campaigns in /tmp/ directories&lt;/li&gt;
 &lt;li&gt;Duplicate entries (multiple IDs pointing to the same path)&lt;/li&gt;
@@ -1243,12 +1250,12 @@ camp registry check Show any registry issues&lt;/p&gt;
 &lt;li&gt;The path has no .campaign/ directory&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Options:
-&amp;ndash;dry-run Show what would be removed without making changes
-&amp;ndash;include-temp Also remove entries in /tmp/ directories&lt;/p&gt;
+--dry-run Show what would be removed without making changes
+--include-temp Also remove entries in /tmp/ directories&lt;/p&gt;
 &lt;p&gt;Examples:
 camp registry prune Remove stale entries
-camp registry prune &amp;ndash;dry-run Preview what would be removed
-camp registry prune &amp;ndash;include-temp Also clean up test campaigns&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry_sync/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry_sync/</guid><description>&lt;h2 id="camp-registry-sync"&gt;camp registry sync&lt;/h2&gt;
+camp registry prune --dry-run Preview what would be removed
+camp registry prune --include-temp Also clean up test campaigns&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry_sync/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_registry_sync/</guid><description>&lt;h2 id="camp-registry-sync"&gt;camp registry sync&lt;/h2&gt;
 &lt;p&gt;Sync current campaign with registry&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Update the registry entry for the current campaign.&lt;/p&gt;
@@ -1273,7 +1280,7 @@ camp registry sync # Run from inside a campaign&lt;/p&gt;
 &lt;p&gt;Execute any command from the campaign root directory, or run just recipes
 in a project directory.&lt;/p&gt;
 &lt;p&gt;If the first argument exactly matches a project name (a directory in projects/
-with a git repo), camp dispatches to &amp;lsquo;just&amp;rsquo; in that project&amp;rsquo;s directory.
+with a git repo), camp dispatches to 'just' in that project's directory.
 Any remaining arguments are passed as the recipe and arguments to just.&lt;/p&gt;
 &lt;p&gt;If the first argument does not match a project, it is treated as a shell command
 and executed from the campaign root directory.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_settings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_settings/</guid><description>&lt;h2 id="camp-settings"&gt;camp settings&lt;/h2&gt;
@@ -1295,8 +1302,8 @@ and executed from the campaign root directory.&lt;/p&gt;</description></item><it
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Output shell initialization code for your shell config.&lt;/p&gt;
 &lt;p&gt;Add to your shell config:
-zsh: eval &amp;ldquo;$(camp shell-init zsh)&amp;rdquo;
-bash: eval &amp;ldquo;$(camp shell-init bash)&amp;rdquo;
+zsh: eval &amp;quot;$(camp shell-init zsh)&amp;quot;
+bash: eval &amp;quot;$(camp shell-init bash)&amp;quot;
 fish: camp shell-init fish | source&lt;/p&gt;
 &lt;p&gt;This provides:&lt;/p&gt;
 &lt;ul&gt;
@@ -1307,8 +1314,8 @@ fish: camp shell-init fish | source&lt;/p&gt;
 &lt;p&gt;The cgo function enables quick navigation:
 cgo Interactive picker or jump to campaign root
 cgo p Jump to projects/
-cgo p api Fuzzy find &amp;ldquo;api&amp;rdquo; in projects/
-cgo -c p ls Run &amp;ldquo;ls&amp;rdquo; in projects/ directory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_shortcuts/</guid><description>&lt;h2 id="camp-shortcuts"&gt;camp shortcuts&lt;/h2&gt;
+cgo p api Fuzzy find &amp;quot;api&amp;quot; in projects/
+cgo -c p ls Run &amp;quot;ls&amp;quot; in projects/ directory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_shortcuts/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_shortcuts/</guid><description>&lt;h2 id="camp-shortcuts"&gt;camp shortcuts&lt;/h2&gt;
 &lt;p&gt;List all available shortcuts&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List all navigation and command shortcuts from .campaign/campaign.yaml.&lt;/p&gt;
@@ -1317,8 +1324,8 @@ These shortcuts jump to directories within the campaign.
 Usage: camp go &lt;shortcut&gt;&lt;/p&gt;
 &lt;p&gt;Command shortcuts (command-based):
 These shortcuts execute commands from specified directories.
-Usage: camp run &lt;shortcut&gt; [args&amp;hellip;]&lt;/p&gt;
-&lt;p&gt;Default shortcuts are added when you run &amp;lsquo;camp init&amp;rsquo;.
+Usage: camp run &lt;shortcut&gt; [args...]&lt;/p&gt;
+&lt;p&gt;Default shortcuts are added when you run 'camp init'.
 You can customize shortcuts by editing .campaign/campaign.yaml.&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp shortcuts [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="examples"&gt;Examples&lt;/h3&gt;
@@ -1418,10 +1425,10 @@ link Project per-skill symlinks into a tool-specific skills directory
 status Show projection status for tool-specific skills directories
 unlink Remove projected skill symlinks&lt;/p&gt;
 &lt;p&gt;Examples:
-camp skills link &amp;ndash;tool claude Project skills into .claude/skills/
-camp skills link &amp;ndash;tool agents Project skills into .agents/skills/
+camp skills link --tool claude Project skills into .claude/skills/
+camp skills link --tool agents Project skills into .agents/skills/
 camp skills status Show all skill projection states
-camp skills unlink &amp;ndash;tool claude Remove projected symlinks from .claude/skills/&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_link/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_link/</guid><description>&lt;h2 id="camp-skills-link"&gt;camp skills link&lt;/h2&gt;
+camp skills unlink --tool claude Remove projected symlinks from .claude/skills/&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_link/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_link/</guid><description>&lt;h2 id="camp-skills-link"&gt;camp skills link&lt;/h2&gt;
 &lt;p&gt;Project campaign skill bundles into tool-specific skills directories&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Project campaign skill bundles from .campaign/skills/ into tool-specific
@@ -1429,19 +1436,19 @@ skills directories.&lt;/p&gt;
 &lt;p&gt;This command creates one symlink per skill bundle. It does not replace entire
 provider skills directories, so existing user skills remain intact.&lt;/p&gt;
 &lt;p&gt;Examples:
-camp skills link &amp;ndash;tool claude Project skills into .claude/skills/
-camp skills link &amp;ndash;tool agents Project skills into .agents/skills/
-camp skills link &amp;ndash;path custom/dir Project skills into custom/dir
-camp skills link &amp;ndash;tool claude -n Dry run — show what would happen
-camp skills link &amp;ndash;tool claude -f Replace conflicting symlink entries&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_status/</guid><description>&lt;h2 id="camp-skills-status"&gt;camp skills status&lt;/h2&gt;
+camp skills link --tool claude Project skills into .claude/skills/
+camp skills link --tool agents Project skills into .agents/skills/
+camp skills link --path custom/dir Project skills into custom/dir
+camp skills link --tool claude -n Dry run — show what would happen
+camp skills link --tool claude -f Replace conflicting symlink entries&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_status/</guid><description>&lt;h2 id="camp-skills-status"&gt;camp skills status&lt;/h2&gt;
 &lt;p&gt;Show the current state of projected skill bundle symlinks&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Show projection status for campaign skill bundles across tool targets.&lt;/p&gt;
-&lt;p&gt;Reports whether each tool&amp;rsquo;s skills directory has projected entries from
+&lt;p&gt;Reports whether each tool's skills directory has projected entries from
 .campaign/skills/, is partially projected, missing, broken, or blocked.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp skills status Show projection states in table format
-camp skills status &amp;ndash;json Machine-readable JSON output&lt;/p&gt;
+camp skills status --json Machine-readable JSON output&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp skills status [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for status
@@ -1457,36 +1464,36 @@ camp skills status &amp;ndash;json Machine-readable JSON output&lt;/p&gt;
 &lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_unlink/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_skills_unlink/</guid><description>&lt;h2 id="camp-skills-unlink"&gt;camp skills unlink&lt;/h2&gt;
 &lt;p&gt;Remove projected skill bundle symlinks&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Remove managed skill bundle symlinks created by &amp;lsquo;camp skills link&amp;rsquo;.&lt;/p&gt;
+&lt;p&gt;Remove managed skill bundle symlinks created by 'camp skills link'.&lt;/p&gt;
 &lt;p&gt;Only removes projected symlink entries created from .campaign/skills bundles.
 It never removes non-symlink files/directories or foreign symlinks.&lt;/p&gt;
 &lt;p&gt;Examples:
-camp skills unlink &amp;ndash;tool claude Remove projected entries in .claude/skills/
-camp skills unlink &amp;ndash;tool agents Remove projected entries in .agents/skills/
-camp skills unlink &amp;ndash;path custom/dir Remove projected entries in custom/dir
-camp skills unlink &amp;ndash;tool claude -n Dry run — show what would happen&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_status/</guid><description>&lt;h2 id="camp-status"&gt;camp status&lt;/h2&gt;
+camp skills unlink --tool claude Remove projected entries in .claude/skills/
+camp skills unlink --tool agents Remove projected entries in .agents/skills/
+camp skills unlink --path custom/dir Remove projected entries in custom/dir
+camp skills unlink --tool claude -n Dry run — show what would happen&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_status/</guid><description>&lt;h2 id="camp-status"&gt;camp status&lt;/h2&gt;
 &lt;p&gt;Show git status of the campaign&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Show git status of the campaign root directory.&lt;/p&gt;
 &lt;p&gt;Works from anywhere within the campaign - always shows the status
 of the campaign root repository.&lt;/p&gt;
-&lt;p&gt;Use &amp;ndash;sub to show status of the submodule detected from your current directory.
-Use &amp;ndash;project/-p to show status of a specific project.&lt;/p&gt;
+&lt;p&gt;Use --sub to show status of the submodule detected from your current directory.
+Use --project/-p to show status of a specific project.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp status # Full status
 camp status -s # Short format (git flag)
-camp status &amp;ndash;short # Short format (git flag)
-camp status &amp;ndash;sub # Status of current submodule
+camp status --short # Short format (git flag)
+camp status --sub # Status of current submodule
 camp status -p projects/camp # Status of camp project&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_status_all/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_status_all/</guid><description>&lt;h2 id="camp-status-all"&gt;camp status all&lt;/h2&gt;
 &lt;p&gt;Show git status of all submodules&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Show a visual overview of git status for all submodules in the campaign.&lt;/p&gt;
-&lt;p&gt;Displays a table with each submodule&amp;rsquo;s name, branch, clean/dirty state,
+&lt;p&gt;Displays a table with each submodule's name, branch, clean/dirty state,
 and push status. Results are cached for quick subsequent lookups.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp status all # Show all submodule statuses
-camp status all &amp;ndash;json # Output as JSON
-camp status all &amp;ndash;no-cache # Skip cache, refresh all&lt;/p&gt;
+camp status all --json # Output as JSON
+camp status all --no-cache # Skip cache, refresh all&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp status all [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for all
@@ -1511,8 +1518,8 @@ With an argument, looks up the campaign by name or ID prefix.&lt;/p&gt;
 cgo switch # Interactive campaign picker
 cgo switch my-campaign # Switch by name
 cgo switch a1b2 # Switch by ID prefix&lt;/p&gt;
-&lt;p&gt;The &amp;ndash;print flag outputs just the path for shell integration:
-cd &amp;ldquo;$(camp switch &amp;ndash;print)&amp;rdquo;&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_sync/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_sync/</guid><description>&lt;h2 id="camp-sync"&gt;camp sync&lt;/h2&gt;
+&lt;p&gt;The --print flag outputs just the path for shell integration:
+cd &amp;quot;$(camp switch --print)&amp;quot;&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_sync/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_sync/</guid><description>&lt;h2 id="camp-sync"&gt;camp sync&lt;/h2&gt;
 &lt;p&gt;Safely synchronize submodules&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Synchronize submodules with pre-flight safety checks.&lt;/p&gt;
@@ -1539,11 +1546,11 @@ when URLs change on remote repositories.&lt;/p&gt;</description></item><item><ti
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Copy files between different campaigns using campaign:path syntax.&lt;/p&gt;
 &lt;p&gt;Transfer always copies — it never moves or deletes the source.
-Either the source or destination (or both) can use &amp;ldquo;campaign:path&amp;rdquo;
+Either the source or destination (or both) can use &amp;quot;campaign:path&amp;quot;
 notation to reference a different registered campaign. Paths without
 a campaign prefix resolve relative to the current campaign root.&lt;/p&gt;
 &lt;p&gt;At least one side must reference a different campaign. For copies
-within the same campaign, use &amp;lsquo;camp copy&amp;rsquo; instead.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_unpin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_unpin/</guid><description>&lt;h2 id="camp-unpin"&gt;camp unpin&lt;/h2&gt;
+within the same campaign, use 'camp copy' instead.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_unpin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_unpin/</guid><description>&lt;h2 id="camp-unpin"&gt;camp unpin&lt;/h2&gt;
 &lt;p&gt;Remove a directory bookmark&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Remove a pinned directory bookmark by name.&lt;/p&gt;
@@ -1576,8 +1583,8 @@ tracking in the global registry. Use this when:&lt;/p&gt;
 &lt;p&gt;Show camp version, build information, and runtime details.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp version Show full version info
-camp version &amp;ndash;short Show only version number
-camp version &amp;ndash;json Output as JSON&lt;/p&gt;
+camp version --short Show only version number
+camp version --json Output as JSON&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;camp version [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for version

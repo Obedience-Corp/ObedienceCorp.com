@@ -2,13 +2,13 @@
 &lt;div id="install-macos" class="install-platform" style="display:none"&gt;
 &lt;h2 id="macos"&gt;macOS&lt;/h2&gt;
 &lt;p&gt;The fastest way to install:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;brew install Obedience-Corp/tap/festival
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install Obedience-Corp/tap/festival
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or download the latest macOS release directly:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/Obedience-Corp/festival/releases/latest" class="btn btn--primary"&gt;Download for macOS&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id="install-linux" class="install-platform" style="display:none"&gt;
 &lt;h2 id="linux"&gt;Linux&lt;/h2&gt;
-&lt;p&gt;Choose your distribution&amp;rsquo;s package format:&lt;/p&gt;
+&lt;p&gt;Choose your distribution's package format:&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
@@ -40,6 +40,6 @@
 &lt;div id="install-windows" class="install-platform" style="display:none"&gt;
 &lt;h2 id="windows"&gt;Windows&lt;/h2&gt;
 &lt;p&gt;Install with Scoop:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;scoop&lt;/span&gt; &lt;span class="n"&gt;bucket&lt;/span&gt; &lt;span class="n"&gt;add&lt;/span&gt; &lt;span class="n"&gt;obey&lt;/span&gt; &lt;span class="n"&gt;https&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="p"&gt;//&lt;/span&gt;&lt;span class="n"&gt;github&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;Obedience-Corp&lt;/span&gt;&lt;span class="p"&gt;/&lt;/span&gt;&lt;span class="nb"&gt;scoop-bucket&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;scoop&lt;/span&gt; &lt;span class="n"&gt;install&lt;/span&gt; &lt;span class="n"&gt;festival&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop bucket add obey https://github.com/&lt;span style="color:#8be9fd;font-style:italic"&gt;Obedience-Corp&lt;/span&gt;/&lt;span style="color:#8be9fd;font-style:italic"&gt;scoop-bucket&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop install festival
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or download the &lt;code&gt;.zip&lt;/code&gt; directly:&lt;/p&gt;</description></item></channel></rss>
