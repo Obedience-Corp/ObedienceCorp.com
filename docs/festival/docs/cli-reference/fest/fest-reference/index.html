@@ -1522,15 +1522,17 @@ When run with a status argument, lists all festivals with that status.</p><p>SUB
 </span></span><span style=display:flex><span>  fest show dungeon      List festivals in dungeon/ directory
 </span></span><span style=display:flex><span>  fest show all          List all festivals grouped by status
 </span></span><span style=display:flex><span>  fest show &lt;name&gt;       Show details of a specific festival by name
+</span></span><span style=display:flex><span>  fest show --festival &lt;selector&gt;  Show a festival by explicit selector <span style=color:#ff79c6>(</span>campaign workspace<span style=color:#ff79c6>)</span>
 </span></span></code></pre></div><pre tabindex=0><code>fest show [status|festival-name] [flags]
-</code></pre><h3 id=options-109>Options</h3><pre tabindex=0><code>      --collapsed    show collapsed tree with counters only
-      --goals        show goals for phases and sequences
-  -h, --help         help for show
-      --inprogress   expand only in-progress phases and sequences
-      --json         output in JSON format
-      --roadmap      show full execution roadmap with task statuses
-      --summary      show aggregate summary instead of tree view
-      --watch        continuously refresh display
+</code></pre><h3 id=options-109>Options</h3><pre tabindex=0><code>      --collapsed         show collapsed tree with counters only
+      --festival string   festival selector (name or ID) from within a campaign workspace
+      --goals             show goals for phases and sequences
+  -h, --help              help for show
+      --inprogress        expand only in-progress phases and sequences
+      --json              output in JSON format
+      --roadmap           show full execution roadmap with task statuses
+      --summary           show aggregate summary instead of tree view
+      --watch             continuously refresh display
 </code></pre><h3 id=options-inherited-from-parent-commands-108>Options inherited from parent commands</h3><pre tabindex=0><code>      --config string   config file (default: ~/.config/fest/config.json)
       --debug           enable debug logging
       --no-color        disable colored output
