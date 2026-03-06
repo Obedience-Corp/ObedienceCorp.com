@@ -20,6 +20,7 @@ Festival</a><nav class=site-header__nav><a href=/festival/docs/getting-started/q
 </a><a href=/festival/docs/tutorials/campaign-setup/ class=sidebar__link>Campaign Setup
 </a><a href=/festival/docs/tutorials/ci-integration/ class=sidebar__link>CI Integration</a></div><div class=sidebar__section><div class=sidebar__section-title>CLI Reference</div><a href=/festival/docs/cli-reference/fest/ class=sidebar__link>fest
 </a><a href=/festival/docs/cli-reference/camp/ class=sidebar__link>camp</a></div></nav><main class=content-area><div class=content><article><h2 id=camp-dungeon-crawl>camp dungeon crawl</h2><p>Interactive dungeon review</p><h3 id=synopsis>Synopsis</h3><p>Interactively review and archive dungeon contents.</p><p>Without flags, auto-detects what to crawl:</p><ul><li>Parent items exist → triage mode (move items into dungeon)</li><li>Dungeon items exist → inner mode (keep/archive dungeon items)</li><li>Both exist → runs triage first, then inner</li></ul><p>Use --triage or --inner to force a specific mode.</p><p>For each item, you'll be prompted to decide its fate.
+Triage mode includes a route-to-docs action for existing campaign-root docs/<subdirectory>.
 Statistics are gathered when available (requires scc or fest).
 All decisions are logged to crawl.jsonl for history.</p><p>Examples:
 camp dungeon crawl Auto-detect mode

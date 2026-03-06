@@ -287,33 +287,33 @@ Useful when you only need a dungeon for idea capture or temporary holding.&lt;/p
 &lt;/ul&gt;
 &lt;p&gt;Use --triage or --inner to force a specific mode.&lt;/p&gt;
 &lt;p&gt;For each item, you'll be prompted to decide its fate.
+Triage mode includes a route-to-docs action for existing campaign-root docs/&lt;subdirectory&gt;.
 Statistics are gathered when available (requires scc or fest).
 All decisions are logged to crawl.jsonl for history.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_list/</guid><description>&lt;h2 id="camp-dungeon-list"&gt;camp dungeon list&lt;/h2&gt;
 &lt;p&gt;List dungeon items&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;List items in the dungeon or parent items eligible for triage.&lt;/p&gt;
 &lt;p&gt;By default, lists items at the dungeon root (items already in the dungeon).
-Use --triage to list parent directory items that could be moved into the dungeon.&lt;/p&gt;
+Use --triage to list parent directory items that could be moved into the dungeon.
+The command resolves dungeon context by walking from the current directory up to
+campaign root and using the nearest available dungeon.&lt;/p&gt;
 &lt;p&gt;OUTPUT FORMATS:
 table (default) Human-readable table with columns
 simple Names only, one per line (for scripting)
-json Full metadata in JSON format&lt;/p&gt;
-&lt;p&gt;Examples:
-camp dungeon list List dungeon root items
-camp dungeon list --triage List parent items eligible for triage
-camp dungeon list -f json JSON output for scripting
-camp dungeon list -f simple Names only, pipe to other commands&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_move/</guid><description>&lt;h2 id="camp-dungeon-move"&gt;camp dungeon move&lt;/h2&gt;
+json Full metadata in JSON format&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_dungeon_move/</guid><description>&lt;h2 id="camp-dungeon-move"&gt;camp dungeon move&lt;/h2&gt;
 &lt;p&gt;Move dungeon items between statuses&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Move items within the dungeon or from the parent directory into the dungeon.&lt;/p&gt;
 &lt;p&gt;Without --triage, moves an item already in the dungeon root to a status directory.
-With --triage, moves an item from the parent directory into the dungeon.&lt;/p&gt;
+With --triage, moves an item from the parent directory into the dungeon.
+With --triage and --to-docs, routes an item to an existing campaign-root docs/&lt;subdirectory&gt;.&lt;/p&gt;
 &lt;p&gt;Statuses: completed, archived, someday&lt;/p&gt;
 &lt;p&gt;Examples:
 camp dungeon move old-feature archived Move dungeon item to archived
 camp dungeon move stale-doc completed Move dungeon item to completed
 camp dungeon move old-project --triage Move parent item into dungeon root
-camp dungeon move old-project archived --triage Move parent item directly to archived&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</guid><description>&lt;h2 id="camp-flow"&gt;camp flow&lt;/h2&gt;
+camp dungeon move old-project archived --triage Move parent item directly to archived
+camp dungeon move stale-note.md --triage --to-docs architecture/api Route to docs subdirectory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</guid><description>&lt;h2 id="camp-flow"&gt;camp flow&lt;/h2&gt;
 &lt;p&gt;Manage status workflows for organizing work&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Manage status workflows for organizing work.&lt;/p&gt;

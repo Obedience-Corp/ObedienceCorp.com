@@ -20,14 +20,17 @@ Festival</a><nav class=site-header__nav><a href=/festival/docs/getting-started/q
 </a><a href=/festival/docs/tutorials/campaign-setup/ class=sidebar__link>Campaign Setup
 </a><a href=/festival/docs/tutorials/ci-integration/ class=sidebar__link>CI Integration</a></div><div class=sidebar__section><div class=sidebar__section-title>CLI Reference</div><a href=/festival/docs/cli-reference/fest/ class=sidebar__link>fest
 </a><a href=/festival/docs/cli-reference/camp/ class=sidebar__link>camp</a></div></nav><main class=content-area><div class=content><article><h2 id=camp-dungeon-move>camp dungeon move</h2><p>Move dungeon items between statuses</p><h3 id=synopsis>Synopsis</h3><p>Move items within the dungeon or from the parent directory into the dungeon.</p><p>Without --triage, moves an item already in the dungeon root to a status directory.
-With --triage, moves an item from the parent directory into the dungeon.</p><p>Statuses: completed, archived, someday</p><p>Examples:
+With --triage, moves an item from the parent directory into the dungeon.
+With --triage and --to-docs, routes an item to an existing campaign-root docs/<subdirectory>.</p><p>Statuses: completed, archived, someday</p><p>Examples:
 camp dungeon move old-feature archived Move dungeon item to archived
 camp dungeon move stale-doc completed Move dungeon item to completed
 camp dungeon move old-project --triage Move parent item into dungeon root
-camp dungeon move old-project archived --triage Move parent item directly to archived</p><pre tabindex=0><code>camp dungeon move &lt;item&gt; [status] [flags]
-</code></pre><h3 id=options>Options</h3><pre tabindex=0><code>  -h, --help        help for move
-      --no-commit   Don&#39;t create a git commit
-      --triage      Move from parent directory (not from dungeon root)
+camp dungeon move old-project archived --triage Move parent item directly to archived
+camp dungeon move stale-note.md --triage --to-docs architecture/api Route to docs subdirectory</p><pre tabindex=0><code>camp dungeon move &lt;item&gt; [status] [flags]
+</code></pre><h3 id=options>Options</h3><pre tabindex=0><code>  -h, --help             help for move
+      --no-commit        Don&#39;t create a git commit
+      --to-docs string   Route triage item into an existing campaign-root docs/&lt;subdir&gt; (requires --triage)
+      --triage           Move from parent directory (not from dungeon root)
 </code></pre><h3 id=options-inherited-from-parent-commands>Options inherited from parent commands</h3><pre tabindex=0><code>      --config string   config file (default: ~/.obey/campaign/config.yaml)
       --no-color        disable colored output
       --verbose         enable verbose output
