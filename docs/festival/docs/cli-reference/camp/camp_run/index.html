@@ -26,13 +26,14 @@ Any remaining arguments are passed as the recipe and arguments to just.</p><p>If
 and executed from the campaign root directory.</p><p>Use @shortcut prefix to run from a shortcut's directory instead of root.
 Only navigation shortcuts (those with paths) can be used.</p><p>All arguments after 'run' (or '@shortcut') are passed directly to the shell.</p><pre tabindex=0><code>camp run [project | @shortcut] [command | recipe] [args...] [flags]
 </code></pre><h3 id=examples>Examples</h3><pre tabindex=0><code>  # Project just dispatch (first arg matches a project name):
-  camp run fest              # Show just recipes for fest project
-  camp run fest build        # Run &#39;just build&#39; in projects/fest/
+  camp run camp              # Show just recipes for camp project
   camp run camp test all     # Run &#39;just test all&#39; in projects/camp/
+  camp run festival build    # Run &#39;just build&#39; in projects/festival/
 
   # Raw command from campaign root (first arg is not a project):
-  camp run ls -la            # List campaign root contents
   camp run just --list       # Show just recipes from root
+  camp run git status        # Run git status from campaign root
+  camp run ls -la            # List campaign root contents
 
   # Shortcut-based execution:
   camp run @p ls             # List projects/ directory

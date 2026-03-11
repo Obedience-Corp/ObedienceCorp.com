@@ -22,12 +22,14 @@ Festival</a><nav class=site-header__nav><a href=/festival/docs/getting-started/q
 </a><a href=/festival/docs/cli-reference/camp/ class=sidebar__link>camp</a></div></nav><main class=content-area><div class=content><article><h2 id=camp-status-all>camp status all</h2><p>Show git status of all submodules</p><h3 id=synopsis>Synopsis</h3><p>Show a visual overview of git status for all submodules in the campaign.</p><p>Displays a table with each submodule's name, branch, clean/dirty state,
 and push status. Results are cached for quick subsequent lookups.</p><p>Examples:
 camp status all # Show all submodule statuses
+camp status all --remote-url # Show remote URLs instead of names
 camp status all --json # Output as JSON
 camp status all --no-cache # Skip cache, refresh all</p><pre tabindex=0><code>camp status all [flags]
 </code></pre><h3 id=options>Options</h3><pre tabindex=0><code>  -h, --help         help for all
       --json         Output as JSON
       --no-cache     Skip cache and refresh
       --no-recurse   Only list top-level submodules
+      --remote-url   Show remote URLs instead of remote names
       --view         Open interactive TUI viewer
 </code></pre><h3 id=options-inherited-from-parent-commands>Options inherited from parent commands</h3><pre tabindex=0><code>      --config string   config file (default: ~/.obey/campaign/config.yaml)
       --no-color        disable colored output

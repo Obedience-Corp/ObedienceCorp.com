@@ -313,173 +313,7 @@ camp dungeon move old-feature archived Move dungeon item to archived
 camp dungeon move stale-doc completed Move dungeon item to completed
 camp dungeon move old-project --triage Move parent item into dungeon root
 camp dungeon move old-project archived --triage Move parent item directly to archived
-camp dungeon move stale-note.md --triage --to-docs architecture/api Route to docs subdirectory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</guid><description>&lt;h2 id="camp-flow"&gt;camp flow&lt;/h2&gt;
-&lt;p&gt;Manage status workflows for organizing work&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Manage status workflows for organizing work.&lt;/p&gt;
-&lt;p&gt;A workflow defines status directories that items can move between,
-with optional transition rules and history tracking. The workflow is
-configured via a .workflow.yaml file.&lt;/p&gt;
-&lt;p&gt;GETTING STARTED:
-camp flow init Initialize a new workflow
-camp flow sync Create missing directories from schema
-camp flow status Show workflow statistics&lt;/p&gt;
-&lt;p&gt;MANAGING ITEMS:
-camp flow list List registered flows
-camp flow items List items in a status directory
-camp flow move &lt;item&gt; &lt;to&gt; Move an item to a new status&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_add/</guid><description>&lt;h2 id="camp-flow-add"&gt;camp flow add&lt;/h2&gt;
-&lt;p&gt;Add workflow tracking to current directory&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Add workflow tracking to the current directory.&lt;/p&gt;
-&lt;p&gt;Creates a .workflow.yaml file, dungeon/ directory structure, and root OBEY.md.
-Uses workflow schema v2 (dungeon-centric model) where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Root directory (.) = active work&lt;/li&gt;
-&lt;li&gt;dungeon/ = all other statuses&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If dungeon/ already exists, only creates .workflow.yaml.
-If both exist, displays a notice.&lt;/p&gt;
-&lt;p&gt;Use --force to overwrite an existing workflow configuration.&lt;/p&gt;
-&lt;p&gt;Provide name/description via flags, JSON, or interactive TUI:
---name/-n and --description/-d Set via flags
---json/-j '{&amp;quot;name&amp;quot;:&amp;quot;...&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;...&amp;quot;}' Set via JSON
---json - Read JSON from stdin (for piping)&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_items/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_items/</guid><description>&lt;h2 id="camp-flow-items"&gt;camp flow items&lt;/h2&gt;
-&lt;p&gt;List items in a status directory&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;List items in a status directory.&lt;/p&gt;
-&lt;p&gt;If no status is specified, lists items in the default status (usually 'active').
-Use --all to list items in all status directories.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow items List items in default status
-camp flow items active List items in active/
-camp flow items dungeon/completed List items in dungeon/completed/
-camp flow items --all List items in all statuses&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_list/</guid><description>&lt;h2 id="camp-flow-list"&gt;camp flow list&lt;/h2&gt;
-&lt;p&gt;List registered flows from the registry&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;List all flows registered in .campaign/flows/registry.yaml.&lt;/p&gt;
-&lt;p&gt;Shows flow name, description, and tags in table format.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow list&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow list [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for list
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_migrate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_migrate/</guid><description>&lt;h2 id="camp-flow-migrate"&gt;camp flow migrate&lt;/h2&gt;
-&lt;p&gt;Migrate workflow to latest schema version&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Migrate a workflow to the latest schema version.&lt;/p&gt;
-&lt;p&gt;Supports two migration paths:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Legacy dungeon → v1 workflow (creates .workflow.yaml)&lt;/li&gt;
-&lt;li&gt;v1 → v2 (dungeon-centric model)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For v1→v2 migration:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;active/ items move to root directory&lt;/li&gt;
-&lt;li&gt;ready/ items move to dungeon/ready/&lt;/li&gt;
-&lt;li&gt;Empty active/ and ready/ directories are removed&lt;/li&gt;
-&lt;li&gt;Schema is updated to version 2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Use --dry-run to preview changes without applying them.
-Use --force to skip confirmation prompts.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_move/</guid><description>&lt;h2 id="camp-flow-move"&gt;camp flow move&lt;/h2&gt;
-&lt;p&gt;Move an item to a new status&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Move an item from its current status to a new status.&lt;/p&gt;
-&lt;p&gt;The item is moved from wherever it currently exists to the specified status.
-Transitions are validated against the workflow schema unless --force is used.&lt;/p&gt;
-&lt;p&gt;Auto-commit behavior is controlled by .workflow.yaml auto_commit settings.
-Use --commit to force a commit or --no-commit to skip it.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow move project-1 ready Move to ready/
-camp flow move old-project dungeon/completed Move to dungeon/completed/
-camp flow move project-1 ready --reason &amp;quot;Ready for review&amp;quot;
-camp flow move project-1 active --force Force move (skip validation)
-camp flow move project-1 ready --commit Force auto-commit&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_run/</guid><description>&lt;h2 id="camp-flow-run"&gt;camp flow run&lt;/h2&gt;
-&lt;p&gt;Execute a registered flow by name&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Execute a registered flow from .campaign/flows/registry.yaml.&lt;/p&gt;
-&lt;p&gt;Extra arguments after -- are appended to the flow's command.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow run build
-camp flow run test -- --verbose
-camp flow run deploy -- production&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow run &amp;lt;name&amp;gt; [-- extra-args...] [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for run
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_show/</guid><description>&lt;h2 id="camp-flow-show"&gt;camp flow show&lt;/h2&gt;
-&lt;p&gt;Show workflow structure&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Display the workflow structure and configuration.&lt;/p&gt;
-&lt;p&gt;Shows the directories defined in the workflow, their descriptions,
-and transition rules.&lt;/p&gt;
-&lt;p&gt;Use --schema to display the raw .workflow.yaml file.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow show Show workflow structure
-camp flow show --schema Show raw schema file&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow show [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for show
- -s, --schema show raw schema file
- -t, --tree display as tree
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_status/</guid><description>&lt;h2 id="camp-flow-status"&gt;camp flow status&lt;/h2&gt;
-&lt;p&gt;Show workflow statistics&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Show workflow statistics including item counts per status.&lt;/p&gt;
-&lt;p&gt;Displays the workflow name, location, and counts for each status directory.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow status Show workflow statistics&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow status [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for status
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_sync/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_sync/</guid><description>&lt;h2 id="camp-flow-sync"&gt;camp flow sync&lt;/h2&gt;
-&lt;p&gt;Sync directories with schema&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Synchronize directories with the workflow schema.&lt;/p&gt;
-&lt;p&gt;Creates any directories defined in .workflow.yaml that don't exist yet.
-Does not remove directories that aren't in the schema.&lt;/p&gt;
-&lt;p&gt;Use --dry-run to see what would be created without making changes.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow sync Create missing directories
-camp flow sync --dry-run Preview changes without creating&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow sync [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -n, --dry-run preview changes without creating directories
- -h, --help help for sync
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_gather/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_gather/</guid><description>&lt;h2 id="camp-gather"&gt;camp gather&lt;/h2&gt;
+camp dungeon move stale-note.md --triage --to-docs architecture/api Route to docs subdirectory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_gather/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_gather/</guid><description>&lt;h2 id="camp-gather"&gt;camp gather&lt;/h2&gt;
 &lt;p&gt;Import external data into the intent system&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Gather external data sources into trackable intents.&lt;/p&gt;
@@ -752,7 +586,9 @@ camp leverage --author &lt;a href="mailto:lance@example.com"&gt;lance@example.co
 camp leverage --project camp Show score for specific project
 camp leverage --json Output as JSON
 camp leverage --people 2 Override team size
-camp leverage --verbose Show diagnostic details&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</guid><description>&lt;h2 id="camp-leverage-backfill"&gt;camp leverage backfill&lt;/h2&gt;
+camp leverage --verbose Show diagnostic details
+camp leverage . Score current directory only
+camp leverage --dir /path/to/repo Score a specific directory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</guid><description>&lt;h2 id="camp-leverage-backfill"&gt;camp leverage backfill&lt;/h2&gt;
 &lt;p&gt;Reconstruct historical leverage data from git history&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Backfill analyzes past commits to build leverage-over-time data.&lt;/p&gt;
@@ -1487,23 +1323,9 @@ camp status -p projects/camp # Status of camp project&lt;/p&gt;</description></i
 and push status. Results are cached for quick subsequent lookups.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp status all # Show all submodule statuses
+camp status all --remote-url # Show remote URLs instead of names
 camp status all --json # Output as JSON
-camp status all --no-cache # Skip cache, refresh all&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp status all [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for all
- --json Output as JSON
- --no-cache Skip cache and refresh
- --no-recurse Only list top-level submodules
- --view Open interactive TUI viewer
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_status.md"&gt;camp status&lt;/a&gt;	 - Show git status of the campaign&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_switch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_switch/</guid><description>&lt;h2 id="camp-switch"&gt;camp switch&lt;/h2&gt;
+camp status all --no-cache # Skip cache, refresh all&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_switch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_switch/</guid><description>&lt;h2 id="camp-switch"&gt;camp switch&lt;/h2&gt;
 &lt;p&gt;Switch to a different campaign&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Switch to a registered campaign by name or ID.&lt;/p&gt;

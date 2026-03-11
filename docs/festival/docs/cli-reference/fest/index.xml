@@ -641,92 +641,6 @@ With a task name, shows dependencies for that specific task.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore/</guid><description>&lt;h2 id="fest-explore"&gt;fest explore&lt;/h2&gt;
-&lt;p&gt;Interactive festival explorer with hierarchy drilldown&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Explore festivals interactively with vim-style navigation.&lt;/p&gt;
-&lt;p&gt;If inside a festival directory, shows that festival's phase/sequence/task hierarchy.
-If in the festivals/ directory, shows a list of festivals for the detected status.
-Otherwise, shows all active festivals by default.&lt;/p&gt;
-&lt;p&gt;STATUS can be: active, planning, completed, dungeon&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore [status] [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="examples"&gt;Examples&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; fest explore # Auto-detect context and explore
- fest explore active # Explore active festivals
- fest explore planning # Explore planning festivals
- fest explore completed # Explore completed festivals
- fest explore dungeon # Explore dungeon festivals
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for explore
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
-&lt;li&gt;&lt;a href="fest_explore_active.md"&gt;fest explore active&lt;/a&gt;	 - Explore active festivals&lt;/li&gt;
-&lt;li&gt;&lt;a href="fest_explore_completed.md"&gt;fest explore completed&lt;/a&gt;	 - Explore completed festivals&lt;/li&gt;
-&lt;li&gt;&lt;a href="fest_explore_dungeon.md"&gt;fest explore dungeon&lt;/a&gt;	 - Explore dungeon festivals&lt;/li&gt;
-&lt;li&gt;&lt;a href="fest_explore_planning.md"&gt;fest explore planning&lt;/a&gt;	 - Explore planning festivals&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_active/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_active/</guid><description>&lt;h2 id="fest-explore-active"&gt;fest explore active&lt;/h2&gt;
-&lt;p&gt;Explore active festivals&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore active [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for active
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest_explore.md"&gt;fest explore&lt;/a&gt;	 - Interactive festival explorer with hierarchy drilldown&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_completed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_completed/</guid><description>&lt;h2 id="fest-explore-completed"&gt;fest explore completed&lt;/h2&gt;
-&lt;p&gt;Explore completed festivals&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore completed [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for completed
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest_explore.md"&gt;fest explore&lt;/a&gt;	 - Interactive festival explorer with hierarchy drilldown&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_dungeon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_dungeon/</guid><description>&lt;h2 id="fest-explore-dungeon"&gt;fest explore dungeon&lt;/h2&gt;
-&lt;p&gt;Explore dungeon festivals&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore dungeon [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for dungeon
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest_explore.md"&gt;fest explore&lt;/a&gt;	 - Interactive festival explorer with hierarchy drilldown&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_planning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_planning/</guid><description>&lt;h2 id="fest-explore-planning"&gt;fest explore planning&lt;/h2&gt;
-&lt;p&gt;Explore planning festivals&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore planning [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for planning
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest_explore.md"&gt;fest explore&lt;/a&gt;	 - Interactive festival explorer with hierarchy drilldown&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_feedback/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_feedback/</guid><description>&lt;h2 id="fest-feedback"&gt;fest feedback&lt;/h2&gt;
 &lt;p&gt;Manage structured feedback collection&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
@@ -2679,16 +2593,21 @@ repository and stores it locally for use with 'fest init' and 'fest system updat
 &lt;p&gt;Run this periodically to get the latest methodology templates and documentation.&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;fest system sync [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="examples"&gt;Examples&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; fest system sync # Use defaults from config
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest system sync # Use defaults (channel-based)
+ fest system sync --channel stable # Sync latest stable tag
+ fest system sync --tag v0.1.0 # Sync exact tag
+ fest system sync --branch main # Sync from branch
  fest system sync --source github.com/user/repo # Sync from specific repo
  fest system sync --force # Overwrite existing cache
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --branch string Git branch to sync from (default: from config or &amp;#39;main&amp;#39;)
+ --channel string Release channel: stable or dev
  --dry-run show what would be downloaded
  --force overwrite existing files without checking
  -h, --help help for sync
  --retry int number of retry attempts (default 3)
  --source string GitHub repository URL
+ --tag string Exact git tag to sync from (e.g., v0.1.0)
  --timeout int timeout in seconds (default 30)
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)

@@ -9,7 +9,7 @@
  
  &lt;button class="tabs__btn" data-tab="1"&gt;Linux&lt;/button&gt;
  
- &lt;button class="tabs__btn" data-tab="2"&gt;Windows&lt;/button&gt;
+ &lt;button class="tabs__btn" data-tab="2"&gt;Windows (Temporarily Paused)&lt;/button&gt;
  
  &lt;/div&gt;
  
@@ -17,7 +17,7 @@
  
  &lt;div class="tabs__panel tabs__panel--active" data-panel="0"&gt;
  &lt;h3 id="homebrew-recommended"&gt;Homebrew (Recommended)&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install Obedience-Corp/tap/festival
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install --cask Obedience-Corp/tap/festival
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="direct-download"&gt;Direct Download&lt;/h3&gt;
 &lt;p&gt;Download the latest &lt;code&gt;.tar.gz&lt;/code&gt; for your Mac from
 &lt;a href="https://github.com/Obedience-Corp/festival/releases/latest"&gt;GitHub Releases&lt;/a&gt;,
@@ -49,13 +49,7 @@ extract, and move to your PATH:&lt;/p&gt;
  
  
  &lt;div class="tabs__panel" data-panel="2"&gt;
- &lt;h3 id="scoop-recommended"&gt;Scoop (Recommended)&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop bucket add obey https://github.com/&lt;span style="color:#8be9fd;font-style:italic"&gt;Obedience-Corp&lt;/span&gt;/&lt;span style="color:#8be9fd;font-style:italic"&gt;scoop-bucket&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop install festival
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="direct-download"&gt;Direct Download&lt;/h3&gt;
-&lt;p&gt;Download the &lt;code&gt;.zip&lt;/code&gt; from
-&lt;a href="https://github.com/Obedience-Corp/festival/releases/latest"&gt;GitHub Releases&lt;/a&gt;,
-extract, and add the directory to your PATH.&lt;/p&gt;</description></item><item><title>Quick Start</title><link>https://obediencecorp.com/festival/docs/getting-started/quickstart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/getting-started/quickstart/</guid><description>&lt;h1 id="quick-start"&gt;Quick Start&lt;/h1&gt;
+ &lt;p&gt;Stable Windows packages are temporarily paused while Windows support is being hardened.&lt;/p&gt;</description></item><item><title>Quick Start</title><link>https://obediencecorp.com/festival/docs/getting-started/quickstart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/getting-started/quickstart/</guid><description>&lt;h1 id="quick-start"&gt;Quick Start&lt;/h1&gt;
 &lt;p&gt;Create your first campaign and festival in under 5 minutes.&lt;/p&gt;
 &lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;fest&lt;/code&gt; and &lt;code&gt;camp&lt;/code&gt; should already be installed. If not, see the &lt;a href="https://obediencecorp.com/festival/docs/getting-started/installation/"&gt;Installation&lt;/a&gt; guide.&lt;/p&gt;
