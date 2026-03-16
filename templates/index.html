@@ -140,15 +140,20 @@
         {{if .Page.TaglineLine2}}<span class="tagline-line">{{.Page.TaglineLine2}}</span>{{end}}
       </h2>
 
+      <div class="hero-headline">{{.CTA.Headline}}</div>
+      <div class="hero-description">{{.CTA.Description}}</div>
+
       <div class="hero-products">
         {{range .CTA.Links}}
-        <a href="{{.Path}}" class="product-link">
+        <a href="{{.Path}}" class="product-link"{{if hasPrefix .Path "https://"}} target="_blank" rel="noopener noreferrer"{{end}}>
           <span class="product-link-label">{{.Label}}</span>
+          {{if .Description}}<span class="product-link-desc">{{.Description}}</span>{{end}}
         </a>
         {{end}}
         {{if .CTA.ContactEmail}}
         <a href="mailto:{{.CTA.ContactEmail}}" class="product-link">
           <span class="product-link-label">Contact</span>
+          <span class="product-link-desc">Get in touch</span>
         </a>
         {{end}}
       </div>

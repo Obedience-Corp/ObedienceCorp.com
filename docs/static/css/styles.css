@@ -460,6 +460,31 @@ body {
   color: var(--text-primary);
 }
 
+.hero-headline {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.hero-description {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.hero-products .product-link-desc {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.3rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 /* Landing Page Sections - Shared Base */
 .landing-section {
   width: 100%;

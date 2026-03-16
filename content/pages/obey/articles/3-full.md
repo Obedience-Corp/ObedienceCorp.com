@@ -1,45 +1,9 @@
-# Campaigns
+Obey's session management is built on a pluggable adapter system. Each provider implements the same interface: start, send message, stream activity, stop.
 
-Workspaces for unified initiatives. But you don't run just one.
+This means switching providers is a configuration change, not a rewrite. Running multiple providers simultaneously is native — Claude Code on one project, Codex on another, both managed by the same daemon.
 
-## The Multiplication
+Sessions support grouping (coordinate multiple agents) and chaining (sequential execution pipelines). Parent-child spawning enables hierarchical agent orchestration.
 
-**Campaigns in parallel**
+All sessions are persisted, so daemon restarts don't lose state. Activity streams can be consumed by any client — CLI, TUI, web dashboard, or mobile app.
 
-Run 5, 10, or more campaigns simultaneously. Each is an independent initiative with its own context.
-
-**Projects per campaign**
-
-Each campaign can have dozens of projects building in parallel. Related work that shares context.
-
-**Agents per project**
-
-One agent per project is often more effective than multiple agents on the same work. But you can configure it either way.
-
-## The Math
-
-```
-5 campaigns × 5 projects × 1 agent = 25 agents
-10 campaigns × 10 projects × 1 agent = 100 agents
-10 campaigns × 10 projects × 2 agents = 200 agents
-```
-
-Nothing is limited. Scale as deep as you need.
-
-## What This Enables
-
-**Multiplicative scale**
-
-Small numbers at each level compound into large workforce capacity.
-
-**Flexible configuration**
-
-More campaigns with fewer agents each. Fewer campaigns with more projects. Whatever matches your work.
-
-**Single view**
-
-All campaigns. All projects. All agents. One window.
-
-## The Result
-
-The scale multiplies. The interface stays simple.
+**One daemon. Many agents. Any provider. Full lifecycle control.**

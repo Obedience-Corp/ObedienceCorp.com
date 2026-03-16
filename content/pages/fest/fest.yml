@@ -1,9 +1,9 @@
 page:
   name: "fest"
-  title: "Festival Methodology - Obedience Corp"
-  description: "Festival Methodology: AI-native project planning for complex, hierarchical work. Fest CLI guides agents through execution."
-  hero_title: "FESTIVAL METHODOLOGY"
-  subtitle: "AI-native project planning"
+  title: "Festival - Obedience Corp"
+  description: "Festival: AI-native workspace and planning system. Structure multi-project campaigns into phases, sequences, and tasks."
+  hero_title: "FESTIVAL"
+  subtitle: "AI workspace and planning system."
   tagline_line1: ""
   tagline_line2: ""
   mission: ""

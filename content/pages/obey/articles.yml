@@ -1,5 +1,5 @@
 articles:
-  # Row 1: About (full width intro for product page)
+  # Row 1: About (full width intro)
   - id: "about"
     title: "About Obey"
     grid_column: "1 / 4"
@@ -16,22 +16,22 @@ articles:
     modal_content_file: "1-full.md"
 
   - id: "2"
-    title: "Organizational Abstraction"
+    title: "Runtime, Not Planning"
     grid_column: "3"
     grid_row: "2"
     content_file: "2.md"
     modal_content_file: "2-full.md"
 
-  # Row 3: PRODUCT section - three equal columns
+  # Row 3: PRODUCT section
   - id: "3"
-    title: "Campaigns"
+    title: "Session Management"
     grid_column: "1"
     grid_row: "3"
     content_file: "3.md"
     modal_content_file: "3-full.md"
 
   - id: "4"
-    title: "Complexity Abstraction"
+    title: "Safety & Auditability"
     grid_column: "2"
     grid_row: "3"
     content_file: "4.md"

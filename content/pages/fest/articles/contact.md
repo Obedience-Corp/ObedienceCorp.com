@@ -1,7 +1,7 @@
-Festival Methodology is open source.
+Festival is open source and free to use.
 
-[**GitHub Repository**](https://github.com/lancekrogers/festival-methodology)
+[**Read the Docs**](https://docs.fest.build/)
 
-For integration support or partnership inquiries:
+[**Install Festival**](https://docs.fest.build/getting-started/installation/)
 
-[**contact@obediencecorp.com**](mailto:contact@obediencecorp.com)
+[**GitHub**](https://github.com/Obedience-Corp/festival)

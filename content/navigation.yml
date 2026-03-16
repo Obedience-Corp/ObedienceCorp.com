@@ -4,5 +4,5 @@ navigation:
       path: "/obey"
       type: "internal"
     - label: "Festival"
-      path: "/festival/"
-      type: "internal"
+      path: "https://docs.fest.build/"
+      type: "external"

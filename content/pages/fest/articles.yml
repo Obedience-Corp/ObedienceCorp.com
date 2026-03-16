@@ -1,13 +1,13 @@
 articles:
-  # Row 1: About (full width intro for product page)
+  # Row 1: About (full width intro)
   - id: "about"
-    title: "What Is Festival Methodology?"
+    title: "What Is Festival?"
     grid_column: "1 / 4"
     grid_row: "1"
     content_file: "about.md"
     modal_content_file: "about-full.md"
 
-  # Row 2: PHILOSOPHY section
+  # Row 2: KEY CONCEPTS
   - id: "1"
     title: "Steps, Not Time"
     grid_column: "1 / 3"
@@ -22,31 +22,30 @@ articles:
     content_file: "2.md"
     modal_content_file: "2-full.md"
 
-  # Row 3: HOW IT WORKS section
+  # Row 3: CAPABILITIES
   - id: "3"
-    title: "Agent Guidance System"
+    title: "Agent Guidance"
     grid_column: "1"
     grid_row: "3"
     content_file: "3.md"
     modal_content_file: "3-full.md"
 
   - id: "4"
-    title: "Visualization"
+    title: "Context Preservation"
     grid_column: "2"
     grid_row: "3"
     content_file: "4.md"
     modal_content_file: "4-full.md"
 
   - id: "5"
-    title: "Context Preservation"
+    title: "Works With Any AI Tool"
     grid_column: "3"
     grid_row: "3"
     content_file: "5.md"
-    modal_content_file: "5-full.md"
 
-  # Row 4: CLI & CTA section
+  # Row 4: CTA
   - id: "6"
-    title: "Self-Improving System"
+    title: "Open Source"
     grid_column: "1 / 3"
     grid_row: "4"
     content_file: "6.md"

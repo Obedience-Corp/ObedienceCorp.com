@@ -9,23 +9,23 @@ page:
   layout: "hero-left"
 
 cta:
-  headline: "Hierarchical execution that scales."
-  description: "Command AI like you command human organizations. Executive decisions at the top. Specialized teams below."
+  headline: "Plan with Festival. Execute with Obey."
+  description: "Two products. One stack. Complete AI infrastructure."
   links:
     - label: "Obey"
       path: "/obey"
-      description: "Agent orchestration framework"
+      description: "Agent runtime and control plane"
     - label: "Festival"
-      path: "/festival/"
-      description: "AI-native project planning"
+      path: "https://docs.fest.build/"
+      description: "AI workspace and planning system"
   contact_text: "Interested?"
   contact_email: "contact@obediencecorp.com"
 
 sections:
   - type: "features"
     items:
-      - "Deterministic workflows"
-      - "Shared domain knowledge"
-      - "Hierarchical orchestration"
+      - "Agent runtime and control plane"
+      - "Structured AI workspace management"
+      - "Real-time execution monitoring"
   - type: "promise"
     text: "AI systems that do exactly what you want them to do, every time."

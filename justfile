@@ -19,6 +19,7 @@ compile:
 build: compile
     @./bin/generate
     @cp -r static docs/
+    @echo "obediencecorp.com" > docs/CNAME
 
 # Start local development server (foreground)
 serve: build
