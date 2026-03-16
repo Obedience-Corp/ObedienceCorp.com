@@ -1,5 +1,5 @@
-Goal-oriented project management designed for AI execution. Break complex projects into Phases, Sequences, and Tasks. Each level has clear success criteria.
+The workspace and planning system for AI-driven development. Structure complex projects into campaigns, festivals, phases, sequences, and tasks — then let agents execute without losing context.
 
-AI agents execute tasks autonomously. Humans guide the goals.
+Works with Claude Code, Codex, OpenCode, Cursor, Aider, and any AI coding tool.
 
 **Plan for AI. Execute with AI.**

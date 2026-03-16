@@ -1,5 +1,5 @@
-Hundreds of agents. One window. Run an AI organization at executive scale.
+The agent runtime that sits between you and your AI workforce. One daemon. Many agents. Total control.
 
-Like managing 20 teams without managing any of them directly. The complexity of each team is abstracted away.
+Festival plans the work. Obey runs it. Session management, security boundaries, real-time monitoring — the execution layer your agents need.
 
-**Be the executive. Not the manager.**
+**Your agents. Your rules. Your runtime.**

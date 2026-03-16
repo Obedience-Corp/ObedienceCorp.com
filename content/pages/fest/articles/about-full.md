@@ -1,73 +1,7 @@
-# Festival Methodology
+Festival is a goal-oriented project management system designed for AI execution. It structures work into a clear hierarchy that agents can navigate autonomously across sessions.
 
-Goal-oriented project management designed for AI execution.
+**Campaigns** are workspaces that hold projects, festivals, documentation, and research. **Festivals** break large goals into execution-ready work. **Phases** define major milestones. **Sequences** group related tasks. **Tasks** are the atomic unit of work — scoped, verifiable, with clear success criteria.
 
-## What It Is
+The fest CLI teaches agents the methodology on-demand with just-in-time context loading. 94% token reduction compared to loading everything upfront. Planning that took 2 weeks now takes 30 minutes.
 
-Festival Methodology structures complex software projects for autonomous AI execution. Instead of tracking tasks for human developers, it creates executable specifications that AI agents can complete independently.
-
-## The Structure
-
-**Festival**
-The complete project. Contains phases, has overall success criteria.
-
-**Phase**
-A major milestone (Research, Planning, Implementation, Review). Contains sequences toward a specific objective.
-
-**Sequence**
-A unit of related work with a clear goal. Contains tasks that together achieve that goal.
-
-**Task**
-A single piece of executable work. Has requirements, steps, and deliverables concrete enough for AI execution.
-
-## How It Works
-
-```
-festival/
-├── FESTIVAL_GOAL.md           # Overall success criteria
-├── 001_RESEARCH/
-│   ├── PHASE_GOAL.md          # Phase objective
-│   └── 01_explore_codebase/
-│       ├── SEQUENCE_GOAL.md   # Sequence objective
-│       └── 01_analyze.md      # Executable task
-├── 002_IMPLEMENTATION/
-│   └── 01_build_feature/
-│       ├── 01_implement.md
-│       ├── 02_test.md
-│       └── 03_review.md
-```
-
-Each level has a goal document. Each task has executable specifications.
-
-## Why It Works
-
-**For AI Execution**
-
-- Tasks are concrete enough to execute without clarification
-- Autonomy levels tell AI when to proceed vs. ask
-- Quality gates ensure completion before moving on
-- Context preserved across sessions
-
-**For Human Oversight**
-
-- Progress visible at a glance
-- Humans guide goals, AI executes work
-- Review points built into structure
-- Quality gates at every level
-
-## The Key Shift
-
-Traditional PM: Estimate time, track tasks, humans execute.
-
-Festival: Define steps, specify success, AI executes.
-
-Time estimates are obsolete when AI works 30-100x faster. Define what needs to happen, not when.
-
-## Real Results
-
-- **Active festivals**: Multiple long-running projects
-- **Autonomy rate**: ~90% autonomous execution
-- **Time horizon**: AI works days, not minutes
-- **Scale**: 100+ tasks across 10+ phases
-
-Festival Methodology enables AI to work at scales that overwhelm traditional approaches.
+**Plan for AI. Execute with AI.**

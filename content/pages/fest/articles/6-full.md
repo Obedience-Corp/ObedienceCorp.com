@@ -1,42 +1,30 @@
-# Self-Improving System
+# Open Source
 
-Fest CLI improves itself using its own methodology.
+Festival is built in the open and free to use.
 
-## The Feedback Loop
+## What's Included
 
-1. **Agents use fest** - They execute festivals, navigate hierarchy, track progress
-2. **Agents give feedback** - Pain points, friction, suggestions for improvement
-3. **Feedback becomes a festival** - Improvements are planned using the methodology
-4. **Fest gets better** - Changes ship, agents benefit
-5. **Repeat daily**
+- **fest CLI** — Festival planning, execution, and navigation
+- **camp CLI** — Campaign workspace management and project coordination
+- **Methodology docs** — Complete documentation at [docs.fest.build](https://docs.fest.build/)
+- **Templates** — Ready-made festival structures for common project types
 
-The tool that manages AI work is itself improved by AI work.
+## Getting Started
 
-## Why This Matters
+Install with Homebrew:
 
-Most software improves through human observation and manual iteration. Fest improves through direct agent feedback at scale.
+```bash
+brew install --cask Obedience-Corp/tap/festival
+```
 
-Every agent session is a beta test. Every friction point is captured. Every improvement benefits all future sessions.
+Or download binaries directly from [GitHub Releases](https://github.com/Obedience-Corp/festival/releases).
 
-## The Results
+## Built With Festival
 
-- **94% token reduction** - Agents load only what they need
-- **Nearly 100% execution accuracy** - Plans execute exactly as specified
-- **1000+ hours production usage** - Consistent across Claude Code, Codex, various models
-- **Daily improvements** - The system gets better continuously
+Festival was used to build festival. The methodology was used to formalize the methodology. It's been in daily production use since May 2025.
 
-## Bootstrapping
+- **94% token reduction** compared to upfront context loading
+- **Nearly 100% execution accuracy** across Claude Code, Codex, and other tools
+- **1000+ hours production usage** across multiple startups and products
 
-Fest was used to build fest. The methodology was used to formalize the methodology.
-
-This isn't theoretical. It's operational. Running daily since May 2025.
-
-## What This Enables
-
-A system that:
-- Learns from its own usage
-- Fixes its own pain points
-- Improves its own performance
-- Gets better without manual intervention
-
-**AI that makes itself better.**
+**Open source. Production tested. Getting better every day.**

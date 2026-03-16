@@ -1,11 +1,11 @@
 page:
   name: "obey"
   title: "Obey - Obedience Corp"
-  description: "Obey: A unified command center for managing AI organizations. One person. Multiple campaigns. Hundreds of agents."
+  description: "Obey: Agent runtime and control plane. Run AI agents at scale with safety, auditability, and real-time monitoring."
   hero_title: "Obey"
-  subtitle: "Hierarchical execution that scales."
-  tagline_line1: ""
+  subtitle: "Agent runtime and control plane."
+  tagline_line1: "Run your agents. Control the execution."
   tagline_line2: ""
-  mission: "Be the CEO of your agents."
+  mission: ""
   layout: "hero-right"
   animate_tagline: false
