@@ -10,7 +10,7 @@ page:
 
 cta:
   headline: "Plan with Festival. Execute with Obey."
-  description: "Two products. One stack. Complete AI infrastructure."
+  description: ""
   links:
     - label: "Obey"
       path: "/obey"

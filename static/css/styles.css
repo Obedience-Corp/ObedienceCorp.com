@@ -375,7 +375,7 @@ body {
 .landing-hero {
   width: 100%;
   min-height: 100vh;
-  min-height: 100dvh; /* Modern browsers, handles mobile address bar */
+  min-height: 100dvh;
   padding: clamp(50px, 8vh, 70px) clamp(4vw, 6vw, 6rem) 6rem;
   max-width: 1600px;
   margin-left: auto;
@@ -385,7 +385,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 2vh, 1.5rem);
+  gap: clamp(0.5rem, 1.5vh, 1rem);
   box-sizing: border-box;
   position: relative;
 }
@@ -429,17 +429,16 @@ body {
 .hero-products {
   display: flex;
   gap: 1.5rem;
-  position: absolute;
-  bottom: 6rem;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: clamp(3rem, 8vh, 6rem);
 }
 
 .hero-products .product-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 3.5rem;
+  padding: 1.5rem 2.5rem;
+  min-width: 200px;
   border: 1px solid var(--border-primary);
   background: var(--bg-secondary);
   text-decoration: none;
@@ -473,7 +472,7 @@ body {
   font-family: "IBM Plex Mono", monospace;
   font-size: 0.95rem;
   color: var(--text-secondary);
-  margin-bottom: 2.5rem;
+  margin-bottom: 0;
 }
 
 .hero-products .product-link-desc {
@@ -1288,12 +1287,9 @@ footer {
 
   /* Hero products mobile - stack vertically */
   .hero-products {
-    position: static;
-    transform: none;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    margin-top: 2rem;
     width: 100%;
   }
 

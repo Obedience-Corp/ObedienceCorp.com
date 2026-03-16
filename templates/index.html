@@ -140,8 +140,8 @@
         {{if .Page.TaglineLine2}}<span class="tagline-line">{{.Page.TaglineLine2}}</span>{{end}}
       </h2>
 
-      <div class="hero-headline">{{.CTA.Headline}}</div>
-      <div class="hero-description">{{.CTA.Description}}</div>
+      {{if .CTA.Headline}}<div class="hero-headline">{{.CTA.Headline}}</div>{{end}}
+      {{if .CTA.Description}}<div class="hero-description">{{.CTA.Description}}</div>{{end}}
 
       <div class="hero-products">
         {{range .CTA.Links}}
