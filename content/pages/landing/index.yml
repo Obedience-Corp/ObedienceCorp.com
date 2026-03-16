@@ -16,7 +16,7 @@ cta:
       path: "/obey"
       description: "Agent orchestration framework"
     - label: "Festival"
-      path: "/festival/"
+      path: "https://docs.fest.build/"
       description: "AI-native project planning"
   contact_text: "Interested?"
   contact_email: "contact@obediencecorp.com"

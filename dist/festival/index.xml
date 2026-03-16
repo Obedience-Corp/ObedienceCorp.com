@@ -33,7 +33,7 @@ system designed for AI agent development workflows.&lt;/p&gt;
  
  &lt;button class="tabs__btn" data-tab="1"&gt;Linux&lt;/button&gt;
  
- &lt;button class="tabs__btn" data-tab="2"&gt;Windows&lt;/button&gt;
+ &lt;button class="tabs__btn" data-tab="2"&gt;Windows (Temporarily Paused)&lt;/button&gt;
  
  &lt;/div&gt;
  
@@ -41,7 +41,7 @@ system designed for AI agent development workflows.&lt;/p&gt;
  
  &lt;div class="tabs__panel tabs__panel--active" data-panel="0"&gt;
  &lt;h3 id="homebrew-recommended"&gt;Homebrew (Recommended)&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install Obedience-Corp/tap/festival
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install --cask Obedience-Corp/tap/festival
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="direct-download"&gt;Direct Download&lt;/h3&gt;
 &lt;p&gt;Download the latest &lt;code&gt;.tar.gz&lt;/code&gt; for your Mac from
 &lt;a href="https://github.com/Obedience-Corp/festival/releases/latest"&gt;GitHub Releases&lt;/a&gt;,
@@ -73,13 +73,7 @@ extract, and move to your PATH:&lt;/p&gt;
  
  
  &lt;div class="tabs__panel" data-panel="2"&gt;
- &lt;h3 id="scoop-recommended"&gt;Scoop (Recommended)&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop bucket add obey https://github.com/&lt;span style="color:#8be9fd;font-style:italic"&gt;Obedience-Corp&lt;/span&gt;/&lt;span style="color:#8be9fd;font-style:italic"&gt;scoop-bucket&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop install festival
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="direct-download"&gt;Direct Download&lt;/h3&gt;
-&lt;p&gt;Download the &lt;code&gt;.zip&lt;/code&gt; from
-&lt;a href="https://github.com/Obedience-Corp/festival/releases/latest"&gt;GitHub Releases&lt;/a&gt;,
-extract, and add the directory to your PATH.&lt;/p&gt;</description></item><item><title>Quick Start</title><link>https://obediencecorp.com/festival/docs/getting-started/quickstart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/getting-started/quickstart/</guid><description>&lt;h1 id="quick-start"&gt;Quick Start&lt;/h1&gt;
+ &lt;p&gt;Stable Windows packages are temporarily paused while Windows support is being hardened.&lt;/p&gt;</description></item><item><title>Quick Start</title><link>https://obediencecorp.com/festival/docs/getting-started/quickstart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/getting-started/quickstart/</guid><description>&lt;h1 id="quick-start"&gt;Quick Start&lt;/h1&gt;
 &lt;p&gt;Create your first campaign and festival in under 5 minutes.&lt;/p&gt;
 &lt;h2 id="prerequisites"&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;fest&lt;/code&gt; and &lt;code&gt;camp&lt;/code&gt; should already be installed. If not, see the &lt;a href="https://obediencecorp.com/festival/docs/getting-started/installation/"&gt;Installation&lt;/a&gt; guide.&lt;/p&gt;
@@ -138,7 +132,17 @@ and unambiguous completion criteria.&lt;/p&gt;</description></item><item><title>
 &lt;p&gt;Create sequences when you have concrete requirements to implement.&lt;/p&gt;</description></item><item><title>Tasks</title><link>https://obediencecorp.com/festival/docs/methodology/tasks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/methodology/tasks/</guid><description>&lt;h1 id="tasks"&gt;Tasks&lt;/h1&gt;
 &lt;p&gt;Tasks are the atomic work units of the Festival Methodology, sitting at the bottom of the hierarchy: &lt;strong&gt;Campaign &amp;gt; Festival &amp;gt; Phase &amp;gt; Sequence &amp;gt; Task&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id="what-is-a-task"&gt;What is a Task?&lt;/h2&gt;
-&lt;p&gt;Tasks are NOT single to-dos. They are comprehensive work units -- think of them like an agent's implementation plan. Each task document contains multiple actions, acceptance criteria, context, and testing commands. A task is a self-contained blueprint that tells a developer (human or AI) exactly what to build, how to verify it, and what &amp;quot;done&amp;quot; looks like.&lt;/p&gt;</description></item><item><title>Agent Workflows</title><link>https://obediencecorp.com/festival/docs/guides/agent-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/guides/agent-workflows/</guid><description>&lt;h1 id="agent-workflows"&gt;Agent Workflows&lt;/h1&gt;
+&lt;p&gt;Tasks are NOT single to-dos. They are comprehensive work units -- think of them like an agent's implementation plan. Each task document contains multiple actions, acceptance criteria, context, and testing commands. A task is a self-contained blueprint that tells a developer (human or AI) exactly what to build, how to verify it, and what &amp;quot;done&amp;quot; looks like.&lt;/p&gt;</description></item><item><title>Intent vs Design vs Festival</title><link>https://obediencecorp.com/festival/docs/guides/intent-design-festival/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/guides/intent-design-festival/</guid><description>&lt;h1 id="intent-vs-design-vs-festival"&gt;Intent vs Design vs Festival&lt;/h1&gt;
+&lt;p&gt;Use this guide when you're about to create planning work and you're not sure which artifact to start with.&lt;/p&gt;
+&lt;p&gt;The beginner default is simple:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;If the work is still fuzzy, start with an intent or a design doc.&lt;/li&gt;
+&lt;li&gt;If the work needs structured planning and multi-step execution, create a standard festival.&lt;/li&gt;
+&lt;li&gt;If a single agent can probably finish it from a short description, do not reach for a festival yet.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="use-an-intent-for-fast-capture-and-small-actionable-work"&gt;Use an Intent for Fast Capture and Small Actionable Work&lt;/h2&gt;
+&lt;p&gt;Use &lt;code&gt;camp intent add&lt;/code&gt; when the main job is to capture something quickly or queue a small piece of work without losing it.&lt;/p&gt;</description></item><item><title>Agent Workflows</title><link>https://obediencecorp.com/festival/docs/guides/agent-workflows/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/guides/agent-workflows/</guid><description>&lt;h1 id="agent-workflows"&gt;Agent Workflows&lt;/h1&gt;
 &lt;p&gt;How to use Festival Methodology with AI agents for autonomous development sessions.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="why-festival-for-ai-agents"&gt;Why Festival for AI Agents&lt;/h2&gt;
@@ -152,7 +156,7 @@ and unambiguous completion criteria.&lt;/p&gt;</description></item><item><title>
 &lt;hr&gt;
 &lt;h2 id="planning"&gt;Planning&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Start with whatever you have.&lt;/strong&gt; A festival goal can be rough -- &amp;quot;overhaul the auth system&amp;quot; is enough to start. INGEST and PLAN phase workflows exist precisely to take rough ideas and refine them into concrete requirements, architecture decisions, and detailed task breakdowns. You don't need a polished spec to create a festival; you need a direction. The structured planning phases produce the specificity.&lt;/p&gt;</description></item><item><title>Your First Festival</title><link>https://obediencecorp.com/festival/docs/tutorials/first-festival/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/first-festival/</guid><description>&lt;h1 id="your-first-festival"&gt;Your First Festival&lt;/h1&gt;
-&lt;p&gt;You are going to create a festival from scratch, add phases and sequences, write tasks, execute them with &lt;code&gt;fest next&lt;/code&gt;, run quality gates, and mark the festival complete.&lt;/p&gt;
+&lt;p&gt;You are going to create a festival from scratch, prepare it correctly for first execution, and reach a clean first &lt;code&gt;fest next&lt;/code&gt; without falling into missing-marker or wrong-type confusion.&lt;/p&gt;
 &lt;h2 id="choose-your-festival-type"&gt;Choose Your Festival Type&lt;/h2&gt;
 &lt;table&gt;
  &lt;thead&gt;
@@ -164,11 +168,11 @@ and unambiguous completion criteria.&lt;/p&gt;</description></item><item><title>
  &lt;tbody&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;standard&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;Requirements need discovery before implementation.&lt;/td&gt;
+ &lt;td&gt;Requirements need discovery before implementation. This is the first-run path.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;implementation&lt;/strong&gt;&lt;/td&gt;
- &lt;td&gt;Requirements fully defined. Skip planning, start building.&lt;/td&gt;
+ &lt;td&gt;Requirements fully defined. Skip planning and start building.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;tr&gt;
  &lt;td&gt;&lt;strong&gt;research&lt;/strong&gt;&lt;/td&gt;
@@ -180,7 +184,7 @@ and unambiguous completion criteria.&lt;/p&gt;</description></item><item><title>
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;For this tutorial, use &lt;code&gt;implementation&lt;/code&gt; -- you already know what you are building.&lt;/p&gt;</description></item><item><title>Campaign Setup</title><link>https://obediencecorp.com/festival/docs/tutorials/campaign-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/campaign-setup/</guid><description>&lt;h1 id="campaign-setup"&gt;Campaign Setup&lt;/h1&gt;
+&lt;p&gt;For this tutorial, use &lt;code&gt;standard&lt;/code&gt;. It gives you the ingest and planning scaffolding a new user needs before implementation.&lt;/p&gt;</description></item><item><title>Campaign Setup</title><link>https://obediencecorp.com/festival/docs/tutorials/campaign-setup/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/campaign-setup/</guid><description>&lt;h1 id="campaign-setup"&gt;Campaign Setup&lt;/h1&gt;
 &lt;p&gt;Set up a campaign workspace from scratch. You will create the workspace, add shell integration, bring in your projects as submodules, navigate efficiently with shortcuts, and connect festival planning to your codebase.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id="create-a-campaign"&gt;Create a Campaign&lt;/h2&gt;
@@ -199,9 +203,25 @@ and unambiguous completion criteria.&lt;/p&gt;</description></item><item><title>
 └── CLAUDE.md # Agent memory document
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id="shell-integration"&gt;Shell Integration&lt;/h2&gt;
 &lt;p&gt;Add camp and fest shell functions to your shell config:&lt;/p&gt;</description></item><item><title>CI Integration</title><link>https://obediencecorp.com/festival/docs/tutorials/ci-integration/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/tutorials/ci-integration/</guid><description>&lt;h1 id="ci-integration"&gt;CI Integration&lt;/h1&gt;
-&lt;!-- TODO: Write tutorial for integrating fest into CI/CD pipelines --&gt;
-&lt;p&gt;How to integrate Festival Methodology into your CI/CD pipeline for automated planning validation.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Tutorial coming soon.&lt;/em&gt;&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</guid><description>&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
+&lt;p&gt;How to keep the public Festival release path aligned with the same beginner smoke check local contributors run.&lt;/p&gt;
+&lt;h2 id="release-smoke-ownership"&gt;Release Smoke Ownership&lt;/h2&gt;
+&lt;p&gt;The release-facing Festival repo owns the canonical beginner-path smoke entrypoint:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;just &lt;span style="color:#8be9fd;font-style:italic"&gt;test&lt;/span&gt; beginner-path-smoke
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;That command runs &lt;code&gt;scripts/smoke_beginner_path.sh&lt;/code&gt;, which exercises the audited no-network launch path:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a temporary campaign with &lt;code&gt;camp init&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add one local git repo with &lt;code&gt;camp project add --local&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a standard festival with &lt;code&gt;fest create festival --name ... --type standard --markers-file ...&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;fest validate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;fest next&lt;/code&gt; and confirm it enters &lt;code&gt;001_INGEST&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="where-it-runs"&gt;Where It Runs&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Local contributors can run &lt;code&gt;just test beginner-path-smoke&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;just release preflight&lt;/code&gt; runs the same smoke before any release tag flow proceeds&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.github/workflows/release.yaml&lt;/code&gt; runs the same smoke before the GoReleaser step&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This keeps release automation and local verification on one path. Do not add a separate CI-only beginner smoke.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp/</guid><description>&lt;h2 id="camp"&gt;camp&lt;/h2&gt;
 &lt;p&gt;Campaign management CLI for multi-project AI workspaces&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Camp manages multi-project AI workspaces with fast navigation.&lt;/p&gt;
@@ -504,173 +524,7 @@ camp dungeon move old-feature archived Move dungeon item to archived
 camp dungeon move stale-doc completed Move dungeon item to completed
 camp dungeon move old-project --triage Move parent item into dungeon root
 camp dungeon move old-project archived --triage Move parent item directly to archived
-camp dungeon move stale-note.md --triage --to-docs architecture/api Route to docs subdirectory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow/</guid><description>&lt;h2 id="camp-flow"&gt;camp flow&lt;/h2&gt;
-&lt;p&gt;Manage status workflows for organizing work&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Manage status workflows for organizing work.&lt;/p&gt;
-&lt;p&gt;A workflow defines status directories that items can move between,
-with optional transition rules and history tracking. The workflow is
-configured via a .workflow.yaml file.&lt;/p&gt;
-&lt;p&gt;GETTING STARTED:
-camp flow init Initialize a new workflow
-camp flow sync Create missing directories from schema
-camp flow status Show workflow statistics&lt;/p&gt;
-&lt;p&gt;MANAGING ITEMS:
-camp flow list List registered flows
-camp flow items List items in a status directory
-camp flow move &lt;item&gt; &lt;to&gt; Move an item to a new status&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_add/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_add/</guid><description>&lt;h2 id="camp-flow-add"&gt;camp flow add&lt;/h2&gt;
-&lt;p&gt;Add workflow tracking to current directory&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Add workflow tracking to the current directory.&lt;/p&gt;
-&lt;p&gt;Creates a .workflow.yaml file, dungeon/ directory structure, and root OBEY.md.
-Uses workflow schema v2 (dungeon-centric model) where:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Root directory (.) = active work&lt;/li&gt;
-&lt;li&gt;dungeon/ = all other statuses&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;If dungeon/ already exists, only creates .workflow.yaml.
-If both exist, displays a notice.&lt;/p&gt;
-&lt;p&gt;Use --force to overwrite an existing workflow configuration.&lt;/p&gt;
-&lt;p&gt;Provide name/description via flags, JSON, or interactive TUI:
---name/-n and --description/-d Set via flags
---json/-j '{&amp;quot;name&amp;quot;:&amp;quot;...&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;...&amp;quot;}' Set via JSON
---json - Read JSON from stdin (for piping)&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_items/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_items/</guid><description>&lt;h2 id="camp-flow-items"&gt;camp flow items&lt;/h2&gt;
-&lt;p&gt;List items in a status directory&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;List items in a status directory.&lt;/p&gt;
-&lt;p&gt;If no status is specified, lists items in the default status (usually 'active').
-Use --all to list items in all status directories.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow items List items in default status
-camp flow items active List items in active/
-camp flow items dungeon/completed List items in dungeon/completed/
-camp flow items --all List items in all statuses&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_list/</guid><description>&lt;h2 id="camp-flow-list"&gt;camp flow list&lt;/h2&gt;
-&lt;p&gt;List registered flows from the registry&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;List all flows registered in .campaign/flows/registry.yaml.&lt;/p&gt;
-&lt;p&gt;Shows flow name, description, and tags in table format.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow list&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow list [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for list
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_migrate/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_migrate/</guid><description>&lt;h2 id="camp-flow-migrate"&gt;camp flow migrate&lt;/h2&gt;
-&lt;p&gt;Migrate workflow to latest schema version&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Migrate a workflow to the latest schema version.&lt;/p&gt;
-&lt;p&gt;Supports two migration paths:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Legacy dungeon → v1 workflow (creates .workflow.yaml)&lt;/li&gt;
-&lt;li&gt;v1 → v2 (dungeon-centric model)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For v1→v2 migration:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;active/ items move to root directory&lt;/li&gt;
-&lt;li&gt;ready/ items move to dungeon/ready/&lt;/li&gt;
-&lt;li&gt;Empty active/ and ready/ directories are removed&lt;/li&gt;
-&lt;li&gt;Schema is updated to version 2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Use --dry-run to preview changes without applying them.
-Use --force to skip confirmation prompts.&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_move/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_move/</guid><description>&lt;h2 id="camp-flow-move"&gt;camp flow move&lt;/h2&gt;
-&lt;p&gt;Move an item to a new status&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Move an item from its current status to a new status.&lt;/p&gt;
-&lt;p&gt;The item is moved from wherever it currently exists to the specified status.
-Transitions are validated against the workflow schema unless --force is used.&lt;/p&gt;
-&lt;p&gt;Auto-commit behavior is controlled by .workflow.yaml auto_commit settings.
-Use --commit to force a commit or --no-commit to skip it.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow move project-1 ready Move to ready/
-camp flow move old-project dungeon/completed Move to dungeon/completed/
-camp flow move project-1 ready --reason &amp;quot;Ready for review&amp;quot;
-camp flow move project-1 active --force Force move (skip validation)
-camp flow move project-1 ready --commit Force auto-commit&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_run/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_run/</guid><description>&lt;h2 id="camp-flow-run"&gt;camp flow run&lt;/h2&gt;
-&lt;p&gt;Execute a registered flow by name&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Execute a registered flow from .campaign/flows/registry.yaml.&lt;/p&gt;
-&lt;p&gt;Extra arguments after -- are appended to the flow's command.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow run build
-camp flow run test -- --verbose
-camp flow run deploy -- production&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow run &amp;lt;name&amp;gt; [-- extra-args...] [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for run
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_show/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_show/</guid><description>&lt;h2 id="camp-flow-show"&gt;camp flow show&lt;/h2&gt;
-&lt;p&gt;Show workflow structure&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Display the workflow structure and configuration.&lt;/p&gt;
-&lt;p&gt;Shows the directories defined in the workflow, their descriptions,
-and transition rules.&lt;/p&gt;
-&lt;p&gt;Use --schema to display the raw .workflow.yaml file.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow show Show workflow structure
-camp flow show --schema Show raw schema file&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow show [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for show
- -s, --schema show raw schema file
- -t, --tree display as tree
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_status/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_status/</guid><description>&lt;h2 id="camp-flow-status"&gt;camp flow status&lt;/h2&gt;
-&lt;p&gt;Show workflow statistics&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Show workflow statistics including item counts per status.&lt;/p&gt;
-&lt;p&gt;Displays the workflow name, location, and counts for each status directory.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow status Show workflow statistics&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow status [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for status
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_sync/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_flow_sync/</guid><description>&lt;h2 id="camp-flow-sync"&gt;camp flow sync&lt;/h2&gt;
-&lt;p&gt;Sync directories with schema&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Synchronize directories with the workflow schema.&lt;/p&gt;
-&lt;p&gt;Creates any directories defined in .workflow.yaml that don't exist yet.
-Does not remove directories that aren't in the schema.&lt;/p&gt;
-&lt;p&gt;Use --dry-run to see what would be created without making changes.&lt;/p&gt;
-&lt;p&gt;Examples:
-camp flow sync Create missing directories
-camp flow sync --dry-run Preview changes without creating&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp flow sync [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -n, --dry-run preview changes without creating directories
- -h, --help help for sync
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_flow.md"&gt;camp flow&lt;/a&gt;	 - Manage status workflows for organizing work&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_gather/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_gather/</guid><description>&lt;h2 id="camp-gather"&gt;camp gather&lt;/h2&gt;
+camp dungeon move stale-note.md --triage --to-docs architecture/api Route to docs subdirectory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_gather/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_gather/</guid><description>&lt;h2 id="camp-gather"&gt;camp gather&lt;/h2&gt;
 &lt;p&gt;Import external data into the intent system&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Gather external data sources into trackable intents.&lt;/p&gt;
@@ -943,7 +797,9 @@ camp leverage --author &lt;a href="mailto:lance@example.com"&gt;lance@example.co
 camp leverage --project camp Show score for specific project
 camp leverage --json Output as JSON
 camp leverage --people 2 Override team size
-camp leverage --verbose Show diagnostic details&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</guid><description>&lt;h2 id="camp-leverage-backfill"&gt;camp leverage backfill&lt;/h2&gt;
+camp leverage --verbose Show diagnostic details
+camp leverage . Score current directory only
+camp leverage --dir /path/to/repo Score a specific directory&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_leverage_backfill/</guid><description>&lt;h2 id="camp-leverage-backfill"&gt;camp leverage backfill&lt;/h2&gt;
 &lt;p&gt;Reconstruct historical leverage data from git history&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Backfill analyzes past commits to build leverage-over-time data.&lt;/p&gt;
@@ -1678,23 +1534,9 @@ camp status -p projects/camp # Status of camp project&lt;/p&gt;</description></i
 and push status. Results are cached for quick subsequent lookups.&lt;/p&gt;
 &lt;p&gt;Examples:
 camp status all # Show all submodule statuses
+camp status all --remote-url # Show remote URLs instead of names
 camp status all --json # Output as JSON
-camp status all --no-cache # Skip cache, refresh all&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;camp status all [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for all
- --json Output as JSON
- --no-cache Skip cache and refresh
- --no-recurse Only list top-level submodules
- --view Open interactive TUI viewer
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.obey/campaign/config.yaml)
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="camp_status.md"&gt;camp status&lt;/a&gt;	 - Show git status of the campaign&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_switch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_switch/</guid><description>&lt;h2 id="camp-switch"&gt;camp switch&lt;/h2&gt;
+camp status all --no-cache # Skip cache, refresh all&lt;/p&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_switch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/camp/camp_switch/</guid><description>&lt;h2 id="camp-switch"&gt;camp switch&lt;/h2&gt;
 &lt;p&gt;Switch to a different campaign&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
 &lt;p&gt;Switch to a registered campaign by name or ID.&lt;/p&gt;
@@ -2414,92 +2256,6 @@ With a task name, shows dependencies for that specific task.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore/</guid><description>&lt;h2 id="fest-explore"&gt;fest explore&lt;/h2&gt;
-&lt;p&gt;Interactive festival explorer with hierarchy drilldown&lt;/p&gt;
-&lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
-&lt;p&gt;Explore festivals interactively with vim-style navigation.&lt;/p&gt;
-&lt;p&gt;If inside a festival directory, shows that festival's phase/sequence/task hierarchy.
-If in the festivals/ directory, shows a list of festivals for the detected status.
-Otherwise, shows all active festivals by default.&lt;/p&gt;
-&lt;p&gt;STATUS can be: active, planning, completed, dungeon&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore [status] [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="examples"&gt;Examples&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; fest explore # Auto-detect context and explore
- fest explore active # Explore active festivals
- fest explore planning # Explore planning festivals
- fest explore completed # Explore completed festivals
- fest explore dungeon # Explore dungeon festivals
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for explore
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest.md"&gt;fest&lt;/a&gt;	 - Festival Methodology CLI - goal-oriented project management for AI agents&lt;/li&gt;
-&lt;li&gt;&lt;a href="fest_explore_active.md"&gt;fest explore active&lt;/a&gt;	 - Explore active festivals&lt;/li&gt;
-&lt;li&gt;&lt;a href="fest_explore_completed.md"&gt;fest explore completed&lt;/a&gt;	 - Explore completed festivals&lt;/li&gt;
-&lt;li&gt;&lt;a href="fest_explore_dungeon.md"&gt;fest explore dungeon&lt;/a&gt;	 - Explore dungeon festivals&lt;/li&gt;
-&lt;li&gt;&lt;a href="fest_explore_planning.md"&gt;fest explore planning&lt;/a&gt;	 - Explore planning festivals&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_active/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_active/</guid><description>&lt;h2 id="fest-explore-active"&gt;fest explore active&lt;/h2&gt;
-&lt;p&gt;Explore active festivals&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore active [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for active
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest_explore.md"&gt;fest explore&lt;/a&gt;	 - Interactive festival explorer with hierarchy drilldown&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_completed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_completed/</guid><description>&lt;h2 id="fest-explore-completed"&gt;fest explore completed&lt;/h2&gt;
-&lt;p&gt;Explore completed festivals&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore completed [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for completed
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest_explore.md"&gt;fest explore&lt;/a&gt;	 - Interactive festival explorer with hierarchy drilldown&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_dungeon/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_dungeon/</guid><description>&lt;h2 id="fest-explore-dungeon"&gt;fest explore dungeon&lt;/h2&gt;
-&lt;p&gt;Explore dungeon festivals&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore dungeon [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for dungeon
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest_explore.md"&gt;fest explore&lt;/a&gt;	 - Interactive festival explorer with hierarchy drilldown&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_planning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_explore_planning/</guid><description>&lt;h2 id="fest-explore-planning"&gt;fest explore planning&lt;/h2&gt;
-&lt;p&gt;Explore planning festivals&lt;/p&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt;fest explore planning [flags]
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; -h, --help help for planning
- --json Output as JSON
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
- --debug enable debug logging
- --no-color disable colored output
- --verbose enable verbose output
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="see-also"&gt;SEE ALSO&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="fest_explore.md"&gt;fest explore&lt;/a&gt;	 - Interactive festival explorer with hierarchy drilldown&lt;/li&gt;
 &lt;/ul&gt;</description></item><item><title/><link>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_feedback/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://obediencecorp.com/festival/docs/cli-reference/fest/fest_feedback/</guid><description>&lt;h2 id="fest-feedback"&gt;fest feedback&lt;/h2&gt;
 &lt;p&gt;Manage structured feedback collection&lt;/p&gt;
 &lt;h3 id="synopsis"&gt;Synopsis&lt;/h3&gt;
@@ -4452,16 +4208,21 @@ repository and stores it locally for use with 'fest init' and 'fest system updat
 &lt;p&gt;Run this periodically to get the latest methodology templates and documentation.&lt;/p&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt;fest system sync [flags]
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="examples"&gt;Examples&lt;/h3&gt;
-&lt;pre tabindex="0"&gt;&lt;code&gt; fest system sync # Use defaults from config
+&lt;pre tabindex="0"&gt;&lt;code&gt; fest system sync # Use defaults (channel-based)
+ fest system sync --channel stable # Sync latest stable tag
+ fest system sync --tag v0.1.0 # Sync exact tag
+ fest system sync --branch main # Sync from branch
  fest system sync --source github.com/user/repo # Sync from specific repo
  fest system sync --force # Overwrite existing cache
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options"&gt;Options&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --branch string Git branch to sync from (default: from config or &amp;#39;main&amp;#39;)
+ --channel string Release channel: stable or dev
  --dry-run show what would be downloaded
  --force overwrite existing files without checking
  -h, --help help for sync
  --retry int number of retry attempts (default 3)
  --source string GitHub repository URL
+ --tag string Exact git tag to sync from (e.g., v0.1.0)
  --timeout int timeout in seconds (default 30)
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id="options-inherited-from-parent-commands"&gt;Options inherited from parent commands&lt;/h3&gt;
 &lt;pre tabindex="0"&gt;&lt;code&gt; --config string config file (default: ~/.config/fest/config.json)
@@ -5462,7 +5223,7 @@ Example: backfilling earlier phases for ai-investor-outreach-system-AI0001.&lt;/
 &lt;div id="install-macos" class="install-platform" style="display:none"&gt;
 &lt;h2 id="macos"&gt;macOS&lt;/h2&gt;
 &lt;p&gt;The fastest way to install:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install Obedience-Corp/tap/festival
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;brew install --cask Obedience-Corp/tap/festival
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or download the latest macOS release directly:&lt;/p&gt;
 &lt;p&gt;&lt;a href="https://github.com/Obedience-Corp/festival/releases/latest" class="btn btn--primary"&gt;Download for macOS&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
@@ -5499,7 +5260,4 @@ Example: backfilling earlier phases for ai-investor-outreach-system-AI0001.&lt;/
 &lt;/div&gt;
 &lt;div id="install-windows" class="install-platform" style="display:none"&gt;
 &lt;h2 id="windows"&gt;Windows&lt;/h2&gt;
-&lt;p&gt;Install with Scoop:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop bucket add obey https://github.com/&lt;span style="color:#8be9fd;font-style:italic"&gt;Obedience-Corp&lt;/span&gt;/&lt;span style="color:#8be9fd;font-style:italic"&gt;scoop-bucket&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;scoop install festival
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Or download the &lt;code&gt;.zip&lt;/code&gt; directly:&lt;/p&gt;</description></item></channel></rss>
+&lt;p&gt;Stable Windows packages are temporarily paused while Windows support is being hardened.&lt;/p&gt;</description></item></channel></rss>

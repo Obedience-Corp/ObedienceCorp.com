@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"obediencecorp.com/internal/config"
 	"obediencecorp.com/internal/markdown"
@@ -62,7 +63,10 @@ func main() {
 	}
 
 	// Parse template
-	tmpl, err := template.ParseFiles("templates/index.html")
+	funcMap := template.FuncMap{
+		"hasPrefix": strings.HasPrefix,
+	}
+	tmpl, err := template.New("index.html").Funcs(funcMap).ParseFiles("templates/index.html")
 	if err != nil {
 		log.Fatalf("Failed to parse template: %v", err)
 	}

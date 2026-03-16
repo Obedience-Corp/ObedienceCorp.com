@@ -142,7 +142,7 @@
 
       <div class="hero-products">
         {{range .CTA.Links}}
-        <a href="{{.Path}}" class="product-link">
+        <a href="{{.Path}}" class="product-link"{{if hasPrefix .Path "https://"}} target="_blank" rel="noopener noreferrer"{{end}}>
           <span class="product-link-label">{{.Label}}</span>
         </a>
         {{end}}

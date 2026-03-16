@@ -28,9 +28,12 @@ camp leverage --author <a href=mailto:lance@example.com>lance@example.com</a> Sh
 camp leverage --project camp Show score for specific project
 camp leverage --json Output as JSON
 camp leverage --people 2 Override team size
-camp leverage --verbose Show diagnostic details</p><pre tabindex=0><code>camp leverage [flags]
+camp leverage --verbose Show diagnostic details
+camp leverage . Score current directory only
+camp leverage --dir /path/to/repo Score a specific directory</p><pre tabindex=0><code>camp leverage [directory] [flags]
 </code></pre><h3 id=options>Options</h3><pre tabindex=0><code>      --author string    filter by author email (git substring match — &#39;alice@co&#39; matches &#39;alice@co.com&#39;)
       --by-author        show per-author leverage breakdown
+      --dir string       score a specific directory (skips campaign project resolution)
   -h, --help             help for leverage
       --json             output as JSON
       --no-legend        hide the leverage formula legend
