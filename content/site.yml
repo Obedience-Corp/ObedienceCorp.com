@@ -2,12 +2,12 @@
 site:
   name: Obedience Corp
   title: Obedience Corp
-  description: "Obedience Corp. AI that does what you want. Building Obey: 1000 agents that obey."
+  description: "Obedience Corp — AI lab building infrastructure for highly scalable AI workflows."
   base_url: https://obediencecorp.com
 
 hero:
   brand: OBEDIENCE CORP
-  descriptor: AI Orchestration Infrastructure
+  descriptor: AI Lab for Scalable AI Workflows
   title: OBEDIENCE CORP
   tagline_line1: AI that does what you want
   tagline_line2: The way you want it done

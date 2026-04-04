@@ -1,31 +1,24 @@
 page:
   name: "index"
   title: "Obedience Corp"
-  description: "Obedience Corp. AI that does what you want, the way you want it done. Infrastructure for autonomous companies."
+  description: "Obedience Corp — Frontier AI lab building cognitive infrastructure for ambitious work."
   hero_title: "OBEDIENCE CORP"
-  tagline_line1: "Infrastructure for autonomous companies."
+  tagline_line1: "Frontier AI lab building cognitive infrastructure for ambitious work."
   tagline_line2: ""
-  mission: ""
+  mission: "Reduce the cost of coordination, proof, and execution so small teams can pursue institution-scale missions."
   layout: "hero-left"
 
 cta:
-  headline: "Plan with Festival. Execute with Obey."
+  headline: ""
   description: ""
   links:
-    - label: "Obey"
-      path: "/obey"
-      description: "Agent runtime and control plane"
-    - label: "Festival"
-      path: "https://docs.fest.build/"
-      description: "AI workspace and planning system"
-  contact_text: "Interested?"
+    - label: "Products"
+      path: "/products"
+      description: "What we've built"
+    - label: "GitHub"
+      path: "https://github.com/Obedience-Corp"
+      description: "Open source"
+  contact_text: "Investors & partnerships"
   contact_email: "contact@obediencecorp.com"
 
-sections:
-  - type: "features"
-    items:
-      - "Agent runtime and control plane"
-      - "Structured AI workspace management"
-      - "Real-time execution monitoring"
-  - type: "promise"
-    text: "AI systems that do exactly what you want them to do, every time."
+sections: []

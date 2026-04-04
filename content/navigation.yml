@@ -1,8 +1,11 @@
 navigation:
   items:
-    - label: "Obey"
-      path: "/obey"
+    - label: "Thesis"
+      path: "/"
       type: "internal"
-    - label: "Festival"
-      path: "https://docs.fest.build/"
+    - label: "Products"
+      path: "/products"
+      type: "internal"
+    - label: "GitHub"
+      path: "https://github.com/Obedience-Corp"
       type: "external"

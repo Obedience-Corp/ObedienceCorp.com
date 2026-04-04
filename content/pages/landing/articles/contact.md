@@ -1,5 +1,5 @@
-For investor inquiries, early access, or partnership opportunities.
+**Investors & partnerships**
 
-[**contact@obediencecorp.com**](mailto:contact@obediencecorp.com)
+contact@obediencecorp.com
 
-Infrastructure for autonomous companies.
+We're building the infrastructure layer for AI-native work. If you're interested in what we're doing, we'd like to hear from you.

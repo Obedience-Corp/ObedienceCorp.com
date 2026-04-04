@@ -1,0 +1,20 @@
+page:
+  name: "products"
+  title: "Products - Obedience Corp"
+  description: "Products built by Obedience Corp. Cognitive infrastructure for AI workflows."
+  hero_title: "Products"
+  subtitle: "What we've built."
+  tagline_line1: ""
+  tagline_line2: ""
+  mission: ""
+  layout: "hero-left"
+  animate_tagline: false
+
+cta:
+  headline: ""
+  description: ""
+  links: []
+  contact_text: ""
+  contact_email: ""
+
+sections: []

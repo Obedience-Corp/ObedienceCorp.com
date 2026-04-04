@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Festival - Obedience Corp</title>
-    <meta name="description" content="Festival: AI-native workspace and planning system. Structure multi-project campaigns into phases, sequences, and tasks." />
+    <title>Products - Obedience Corp</title>
+    <meta name="description" content="Products built by Obedience Corp. Cognitive infrastructure for AI workflows." />
     <link rel="stylesheet" href="/static/css/styles.css?v=7" />
   </head>
   <body>
@@ -358,8 +358,8 @@
     
     
     <header class="page-header">
-      <h1 class="page-title">FESTIVAL</h1>
-      <div class="page-subtitle">AI workspace and planning system.</div>
+      <h1 class="page-title">Products</h1>
+      <div class="page-subtitle">What we&#39;ve built.</div>
       
       
     </header>
@@ -367,100 +367,71 @@
     <div class="container">
       
       
-      <div class="article-box clickable" style="grid-column: 1 / 4; grid-row: 1;" data-modal-id="about">
-        <h3 class="article-title">What Is Festival?</h3>
+      <div class="article-box clickable" style="grid-column: 1 / 3; grid-row: 1;" data-modal-id="festival">
+        <h3 class="article-title">FESTIVAL</h3>
         <div class="article-body">
-          <p>The workspace and planning system for AI-driven development. Structure complex projects into campaigns, festivals, phases, sequences, and tasks — then let agents execute without losing context.</p>
+          <p><strong>STATUS: RELEASED</strong> | <a href="https://fest.build">fest.build</a> | <a href="https://docs.fest.build">Docs</a> | <a href="https://github.com/Obedience-Corp/festival">GitHub</a></p>
 
-<p>Works with Claude Code, Codex, OpenCode, Cursor, Aider, and any AI coding tool.</p>
+<p>Hierarchical planning for autonomous AI agent orchestration across projects.</p>
 
-<p><strong>Plan for AI. Execute with AI.</strong></p>
+<p><strong>Campaign → Festival → Phase → Sequence → Task</strong></p>
+
+<p>One command — <code>fest next</code> — always returns the next actionable step. Agents call it in a loop and build autonomously. Everything lives in git, fully auditable.</p>
+
+<p>CLI-native. Works with Claude Code, Codex, Gemini CLI, and any terminal-based AI agent.</p>
 
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 1 / 3; grid-row: 2;" data-modal-id="1">
-        <h3 class="article-title">Steps, Not Time</h3>
+      <div class="article-box" style="grid-column: 1; grid-row: 2;">
+        <h3 class="article-title">FESTIVAL APP</h3>
         <div class="article-body">
-          <p>Traditional PM estimates time. Festival plans steps. AI executes 30-100x faster than humans. Time estimates are obsolete.</p>
+          <p><strong>STATUS: IN DEVELOPMENT</strong></p>
 
-<p>Define what needs to happen, not when. Break work into logical progression. Let AI move through it.</p>
+<p>Desktop app for campaign visualization and agent session management.</p>
 
-<p><strong>Steps to completion. Not days to deadline.</strong></p>
+<p>The visual surface on top of the Festival CLI. Browse projects, view files, track festival progress, manage agent sessions.</p>
+
+<p><strong>Stack:</strong> Tauri v2, React 18, TypeScript, Rust
+<strong>Platforms:</strong> macOS, Windows, Linux</p>
 
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 3; grid-row: 2;" data-modal-id="2">
-        <h3 class="article-title">Hierarchical Structure</h3>
+      <div class="article-box" style="grid-column: 2; grid-row: 2;">
+        <h3 class="article-title">OBEY</h3>
         <div class="article-body">
-          <p>Festivals contain Phases. Phases contain Sequences. Sequences contain Tasks.</p>
+          <p><strong>STATUS: IN DEVELOPMENT</strong></p>
 
-<p>Each level has a goal document defining success. Quality gates at every level.</p>
+<p>Agent runtime and control plane.</p>
 
-<p>Hierarchy that AI can navigate.</p>
+<p>Session orchestration via gRPC. Multi-agent coordination, campaign state watching, activity stream monitoring.</p>
+
+<p>Festival plans the work. Obey executes it.</p>
 
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 1; grid-row: 3;" data-modal-id="3">
-        <h3 class="article-title">Agent Guidance</h3>
+      <div class="article-box" style="grid-column: 1; grid-row: 3;">
+        <h3 class="article-title">CLAUDE-CODE-GO</h3>
         <div class="article-body">
-          <p>Fest CLI teaches agents the methodology on-demand. Just-in-time context loading.</p>
+          <p><strong>STATUS: RELEASED</strong> | <a href="https://github.com/lancekrogers/claude-code-go">GitHub</a></p>
 
-<p><strong>94% token reduction.</strong> Planning that took 2 weeks now takes 30 minutes.</p>
+<p>First Go SDK for Claude Code.</p>
 
-<p><strong>Guidance, not guesswork.</strong></p>
+<p>37 stars, 7 forks, ~12 clones per day. Open source. Built within 3 days of Claude Code&rsquo;s launch.</p>
 
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 2; grid-row: 3;" data-modal-id="4">
-        <h3 class="article-title">Context Preservation</h3>
+      <div class="article-box" style="grid-column: 2; grid-row: 3;">
+        <h3 class="article-title">CAMP</h3>
         <div class="article-body">
-          <p>Context chains through the festival structure. Each level provides context for the level below.</p>
+          <p><strong>STATUS: RELEASED</strong> | <a href="https://github.com/Obedience-Corp/camp">GitHub</a></p>
 
-<p>Goal documents at every level. Work products become context for future work. Multi-day autonomous execution without losing the thread.</p>
+<p>Campaign workspace management CLI.</p>
 
-<p><strong>Context that survives across sessions.</strong></p>
-
-        </div>
-      </div>
-      
-      <div class="article-box" style="grid-column: 3; grid-row: 3;">
-        <h3 class="article-title">Works With Any AI Tool</h3>
-        <div class="article-body">
-          <p>Festival is agent-agnostic. It works with any AI coding tool that can run bash commands.</p>
-
-<p>Claude Code, Codex, OpenCode, Crush, Aider, Cursor Agents — <code>fest next</code> gives any agent its next task with full context.</p>
-
-<p><strong>Your tools. Your workflow. Festival structures the work.</strong></p>
-
-        </div>
-      </div>
-      
-      <div class="article-box clickable" style="grid-column: 1 / 3; grid-row: 4;" data-modal-id="6">
-        <h3 class="article-title">Open Source</h3>
-        <div class="article-body">
-          <p>Festival is open source and built in the open. The fest and camp CLIs, the methodology documentation, and the release infrastructure are all available on GitHub.</p>
-
-<p>Install with <code>brew install --cask Obedience-Corp/tap/festival</code> and start planning in minutes.</p>
-
-<p><strong>Free to use. Open to contribute.</strong></p>
-
-        </div>
-      </div>
-      
-      <div class="article-box" style="grid-column: 3; grid-row: 4;">
-        <h3 class="article-title">Get Started</h3>
-        <div class="article-body">
-          <p>Festival is open source and free to use.</p>
-
-<p><a href="https://docs.fest.build/"><strong>Read the Docs</strong></a></p>
-
-<p><a href="https://docs.fest.build/getting-started/installation/"><strong>Install Festival</strong></a></p>
-
-<p><a href="https://github.com/Obedience-Corp/festival"><strong>GitHub</strong></a></p>
+<p>Initialize campaigns, manage projects, navigate workspaces, track leverage metrics. The foundation layer that organizes multi-project AI work.</p>
 
         </div>
       </div>
@@ -479,333 +450,44 @@
           
           
           
-          <div class="modal-article-content" data-article-id="about" style="display: none;">
-            <p>Festival is a goal-oriented project management system designed for AI execution. It structures work into a clear hierarchy that agents can navigate autonomously across sessions.</p>
+          <div class="modal-article-content" data-article-id="festival" style="display: none;">
+            <h2 id="festival">Festival</h2>
 
-<p><strong>Campaigns</strong> are workspaces that hold projects, festivals, documentation, and research. <strong>Festivals</strong> break large goals into execution-ready work. <strong>Phases</strong> define major milestones. <strong>Sequences</strong> group related tasks. <strong>Tasks</strong> are the atomic unit of work — scoped, verifiable, with clear success criteria.</p>
+<p>Hierarchical planning for autonomous AI agent orchestration across multiple projects.</p>
 
-<p>The fest CLI teaches agents the methodology on-demand with just-in-time context loading. 94% token reduction compared to loading everything upfront. Planning that took 2 weeks now takes 30 minutes.</p>
+<h3 id="the-hierarchy">The Hierarchy</h3>
 
-<p><strong>Plan for AI. Execute with AI.</strong></p>
+<p><strong>Campaign</strong> — a workspace organizing multiple projects, plans, and context in one place.</p>
 
-          </div>
-          
-          
-          
-          <div class="modal-article-content" data-article-id="1" style="display: none;">
-            <h1 id="steps-not-time">Steps, Not Time</h1>
+<p><strong>Festival</strong> — a structured plan for a piece of work. A feature, a migration, a research effort, or any goal.</p>
 
-<p>Traditional project management assumes human execution. Festival Methodology assumes AI execution.</p>
+<p><strong>Phase</strong> — a major stage of work. Ingest context, plan the approach, implement, review.</p>
 
-<h2 id="the-time-problem">The Time Problem</h2>
+<p><strong>Sequence</strong> — an ordered group of related tasks within a phase.</p>
 
-<p><strong>Traditional PM</strong></p>
+<p><strong>Task</strong> — an atomic unit of work that one agent completes in one session.</p>
 
-<ul>
-<li>&ldquo;This feature will take 2 weeks&rdquo;</li>
-<li>&ldquo;Sprint capacity is 40 story points&rdquo;</li>
-<li>&ldquo;Estimate in hours, track in days&rdquo;</li>
-<li>&ldquo;Review in standup tomorrow&rdquo;</li>
-</ul>
+<h3 id="the-loop">The Loop</h3>
 
-<p>Time-based planning assumes predictable human velocity.</p>
-
-<p><strong>AI Reality</strong></p>
-
-<ul>
-<li>AI executes 30-100x faster than humans</li>
-<li>Speed varies by task complexity, not skill</li>
-<li>Work happens <sup>24</sup>&frasl;<sub>7</sub> when configured</li>
-<li>&ldquo;2 weeks&rdquo; might be &ldquo;4 hours&rdquo;</li>
-</ul>
-
-<p>Time estimates become meaningless.</p>
-
-<h2 id="the-step-alternative">The Step Alternative</h2>
-
-<p>Festival Methodology plans in <strong>logical steps toward goals</strong>, not time estimates.</p>
-
-<p><strong>Festival Planning</strong></p>
-
-<pre><code>Phase: Build Authentication
-├── Sequence: Research existing auth
-│   ├── Task: Analyze current codebase
-│   ├── Task: Document patterns used
-│   └── Task: Identify integration points
-├── Sequence: Implement login flow
-│   ├── Task: Create auth service
-│   ├── Task: Build login endpoint
-│   ├── Task: Add session management
-│   └── Quality gates (test, review)
-└── Sequence: Deploy and validate
-    ├── Task: Integration tests
-    └── Task: Documentation
+<pre><code>fest next → agent executes → fest commit → fest next → repeat
 </code></pre>
 
-<p>Steps are concrete. Order is logical. No time attached.</p>
+<p>One command. Always knows what to do next. From project creation to task execution to completion tracking.</p>
 
-<h2 id="why-steps-work-better">Why Steps Work Better</h2>
+<h3 id="why-festival">Why Festival?</h3>
 
-<p><strong>Clarity</strong></p>
+<p><strong>vs GSD (46K GitHub stars):</strong> Festival manages work structure across projects. GSD manages context windows within a single repo.</p>
 
-<ul>
-<li>Each step has clear success criteria</li>
-<li>No ambiguity about &ldquo;80% done&rdquo;</li>
-<li>Either complete or not</li>
-</ul>
+<p><strong>vs 8090 Software Factory ($200/seat/month):</strong> Festival is open, CLI-native, and designed for autonomous agents. No vendor lock-in. No per-seat pricing.</p>
 
-<p><strong>Progress Tracking</strong></p>
+<h3 id="install">Install</h3>
 
-<ul>
-<li>Count completed steps</li>
-<li>Calculate percentage</li>
-<li>Know exactly where you are</li>
-</ul>
-
-<p><strong>AI Compatibility</strong></p>
-
-<ul>
-<li>AI can execute clear steps</li>
-<li>No interpretation of vague estimates</li>
-<li>Concrete deliverables per task</li>
-</ul>
-
-<p><strong>Human Oversight</strong></p>
-
-<ul>
-<li>Review at step boundaries</li>
-<li>Quality gates at sequence ends</li>
-<li>Control without micromanagement</li>
-</ul>
-
-<h2 id="the-velocity-question">The Velocity Question</h2>
-
-<p>&ldquo;How do I know when it will be done?&rdquo;</p>
-
-<p><strong>With Festival Methodology:</strong></p>
-
-<ol>
-<li>Count total steps</li>
-<li>Track completion rate</li>
-<li>Project remaining time</li>
-</ol>
-
-<p>AI velocity becomes observable through step completion, not estimated through guesswork.</p>
-
-<h2 id="example">Example</h2>
-
-<p><strong>Traditional:</strong></p>
-
-<blockquote>
-<p>&ldquo;Authentication feature - Est: 2 weeks&rdquo;</p>
-</blockquote>
-
-<p><strong>Festival:</strong></p>
-
-<pre><code>Phase: Authentication (12 tasks)
-├── Research (3 tasks) ✓
-├── Implementation (6 tasks) - 4 complete
-└── Deployment (3 tasks) - pending
-
-Progress: 7/12 tasks (58%)
-Current: Implementing session management
+<pre><code>brew install Obedience-Corp/tap/festival
+eval &quot;$(fest shell-init zsh)&quot;
+fest next
 </code></pre>
 
-<p>Which tells you more about actual status?</p>
-
-<h2 id="the-shift">The Shift</h2>
-
-<p>Stop asking: &ldquo;How long will this take?&rdquo;
-Start asking: &ldquo;What steps are needed?&rdquo;</p>
-
-<p>AI doesn&rsquo;t need deadlines. It needs clear steps to execute.</p>
-
-<p>Define the work. Let AI do it. Track by completion.</p>
-
-          </div>
-          
-          
-          
-          <div class="modal-article-content" data-article-id="2" style="display: none;">
-            <h1 id="hierarchical-structure">Hierarchical Structure</h1>
-
-<p>Festival Methodology organizes complex projects into manageable pieces.</p>
-
-<h2 id="the-levels">The Levels</h2>
-
-<p><strong>Festival</strong></p>
-
-<p>The complete project. Defines what success looks like, key deliverables, and boundaries.</p>
-
-<p><strong>Phase</strong></p>
-
-<p>A major milestone. Phases represent distinct stages: research, planning, implementation, review, deployment.</p>
-
-<p><strong>Sequence</strong></p>
-
-<p>A unit of related work within a phase. Groups tasks toward a specific goal.</p>
-
-<p><strong>Task</strong></p>
-
-<p>A single piece of executable work. Concrete enough for an AI agent to complete.</p>
-
-<h2 id="why-hierarchy-works">Why Hierarchy Works</h2>
-
-<p><strong>Prevents overwhelm</strong></p>
-
-<p>A project might have 100+ tasks. Flat lists become unmanageable. Hierarchy keeps things navigable at every level.</p>
-
-<p><strong>Enables focus</strong></p>
-
-<p>Work on one task at a time while understanding which sequence it completes, which phase that serves, and what the festival achieves. Context without overwhelm.</p>
-
-<p><strong>Supports quality gates</strong></p>
-
-<p>Each level has a goal document defining success. Check work against goals before proceeding. Catch drift early.</p>
-
-<p><strong>Adaptable depth</strong></p>
-
-<p>Simple projects need less structure. Complex projects get more levels. The system adapts to the work.</p>
-
-<h2 id="the-result">The Result</h2>
-
-<p>Complex projects broken into manageable phases, focused sequences, and executable tasks.</p>
-
-<p>Each level has clear goals. Progress is always measurable. Quality compounds instead of degrades.</p>
-
-          </div>
-          
-          
-          
-          <div class="modal-article-content" data-article-id="3" style="display: none;">
-            <h1 id="agent-guidance-system">Agent Guidance System</h1>
-
-<p>Fest CLI is an AI guidance system that teaches agents the methodology and guides them through execution.</p>
-
-<h2 id="results">Results</h2>
-
-<ul>
-<li><strong>94% token reduction</strong> through just-in-time context loading</li>
-<li><strong>Planning time: 2 weeks → 30 minutes</strong> for the same complexity</li>
-<li>In production since <strong>May 2025</strong>, refined daily</li>
-<li>Formalized and open-sourced <strong>September 2025</strong></li>
-</ul>
-
-<h2 id="just-in-time-learning">Just-in-Time Learning</h2>
-
-<p>Agents don&rsquo;t need to read documentation upfront. Fest teaches them what they need, when they need it:</p>
-
-<pre><code class="language-bash">fest intro                    # Getting started
-fest understand methodology   # Core principles
-fest understand structure     # 3-level hierarchy
-</code></pre>
-
-<p><strong>Why this matters:</strong>
-- Preserves context window for actual work
-- Agents learn incrementally
-- No upfront context dump
-- Self-documenting commands</p>
-
-<h2 id="what-to-do-next">What To Do Next</h2>
-
-<p><code>fest next</code> tells agents exactly what to work on:</p>
-
-<pre><code class="language-bash">fest next
-
-Next task: 02_implement_validation
-Phase: 001_FOUNDATION
-Sequence: 02_input_handling
-Path: festivals/active/my-project/001_FOUNDATION/02_input_handling/02_implement_validation.md
-</code></pre>
-
-<p>No guessing. No searching. The agent knows exactly where to go and what to do.</p>
-
-<h2 id="guided-execution">Guided Execution</h2>
-
-<p><code>fest execute</code> orchestrates task execution systematically:</p>
-
-<pre><code class="language-bash">fest execute
-
-Executing festival: my-project
-Phase: 001_FOUNDATION (3 sequences)
-  Sequence 01: setup ✓
-  Sequence 02: input_handling - in progress
-    Task: 02_implement_validation
-</code></pre>
-
-<p>Agents work through the hierarchy methodically. When one task completes, fest points to the next.</p>
-
-<h2 id="context-preservation">Context Preservation</h2>
-
-<p>Every task links back to its parent structure:</p>
-
-<pre><code>Festival → Phase → Sequence → Task
-</code></pre>
-
-<p>A new agent session can pick up exactly where the last one left off. No context is lost between sessions.</p>
-
-<h2 id="the-result">The Result</h2>
-
-<p>Agents don&rsquo;t wander. They don&rsquo;t guess. They follow the guidance system.</p>
-
-<p><strong>Guidance, not guesswork.</strong></p>
-
-          </div>
-          
-          
-          
-          <div class="modal-article-content" data-article-id="4" style="display: none;">
-            <h1 id="visualization">Visualization</h1>
-
-<p>Fest CLI gives you complete visibility into what agents will do, are doing, and have done.</p>
-
-<h2 id="see-before-they-do">See Before They Do</h2>
-
-<p>Every festival is a complete plan. Before any agent executes, you see:</p>
-
-<ul>
-<li>Every phase, sequence, and task</li>
-<li>The full hierarchy of work</li>
-<li>Dependencies and order of execution</li>
-</ul>
-
-<p>No surprises. You approve the plan before work begins.</p>
-
-<h2 id="see-during-execution">See During Execution</h2>
-
-<p>While agents work autonomously:</p>
-
-<ul>
-<li>Know exactly which task they&rsquo;re on</li>
-<li>See progress through sequences and phases</li>
-<li>Track multiple festivals simultaneously</li>
-</ul>
-
-<p>Manage many large-scale projects building at the same time.</p>
-
-<h2 id="audit-trail">Audit Trail</h2>
-
-<p>After execution:</p>
-
-<ul>
-<li>What they did</li>
-<li>When they did it</li>
-<li>Verification that claims match reality</li>
-</ul>
-
-<p>If an agent says it completed a task, you can verify. Quickly spot mistakes, understand why they happened, adjust for next time.</p>
-
-<h2 id="reduced-review-burden">Reduced Review Burden</h2>
-
-<p>High visibility means high confidence. You don&rsquo;t need to review every line of code. The structure tells you:</p>
-
-<ul>
-<li>What was supposed to happen</li>
-<li>What actually happened</li>
-<li>Where to look if something&rsquo;s wrong</li>
-</ul>
-
-<p><strong>Total visibility. Zero surprises.</strong></p>
+<p><a href="https://docs.fest.build">Full documentation →</a></p>
 
           </div>
           
@@ -813,42 +495,7 @@ Phase: 001_FOUNDATION (3 sequences)
           
           
           
-          <div class="modal-article-content" data-article-id="6" style="display: none;">
-            <h1 id="open-source">Open Source</h1>
-
-<p>Festival is built in the open and free to use.</p>
-
-<h2 id="what-s-included">What&rsquo;s Included</h2>
-
-<ul>
-<li><strong>fest CLI</strong> — Festival planning, execution, and navigation</li>
-<li><strong>camp CLI</strong> — Campaign workspace management and project coordination</li>
-<li><strong>Methodology docs</strong> — Complete documentation at <a href="https://docs.fest.build/">docs.fest.build</a></li>
-<li><strong>Templates</strong> — Ready-made festival structures for common project types</li>
-</ul>
-
-<h2 id="getting-started">Getting Started</h2>
-
-<p>Install with Homebrew:</p>
-
-<pre><code class="language-bash">brew install --cask Obedience-Corp/tap/festival
-</code></pre>
-
-<p>Or download binaries directly from <a href="https://github.com/Obedience-Corp/festival/releases">GitHub Releases</a>.</p>
-
-<h2 id="built-with-festival">Built With Festival</h2>
-
-<p>Festival was used to build festival. The methodology was used to formalize the methodology. It&rsquo;s been in daily production use since May 2025.</p>
-
-<ul>
-<li><strong>94% token reduction</strong> compared to upfront context loading</li>
-<li><strong>Nearly 100% execution accuracy</strong> across Claude Code, Codex, and other tools</li>
-<li><strong>1000+ hours production usage</strong> across multiple startups and products</li>
-</ul>
-
-<p><strong>Open source. Production tested. Getting better every day.</strong></p>
-
-          </div>
+          
           
           
           
