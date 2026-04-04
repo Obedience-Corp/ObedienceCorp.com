@@ -74,6 +74,7 @@ func main() {
 	// Pages to generate: directory -> output file mapping
 	pages := []PageDef{
 		{Dir: "landing", Output: "index", ConfigFile: "index.yml"},
+		{Dir: "thesis", Output: "thesis", ConfigFile: "thesis.yml"},
 		{Dir: "products", Output: "products", ConfigFile: "products.yml"},
 		{Dir: "obey", Output: "obey", ConfigFile: "obey.yml"},
 		{Dir: "fest", Output: "fest", ConfigFile: "fest.yml"},

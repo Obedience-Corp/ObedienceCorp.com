@@ -1,0 +1,20 @@
+page:
+  name: "thesis"
+  title: "Thesis - Obedience Corp"
+  description: "Obedience Corp thesis — frontier AI lab building cognitive infrastructure for ambitious work."
+  hero_title: "Thesis"
+  subtitle: "Why we exist."
+  tagline_line1: ""
+  tagline_line2: ""
+  mission: ""
+  layout: "hero-left"
+  animate_tagline: false
+
+cta:
+  headline: ""
+  description: ""
+  links: []
+  contact_text: ""
+  contact_email: ""
+
+sections: []

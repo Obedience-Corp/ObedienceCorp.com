@@ -1,7 +1,7 @@
 navigation:
   items:
     - label: "Thesis"
-      path: "/"
+      path: "/thesis"
       type: "internal"
     - label: "Products"
       path: "/products"

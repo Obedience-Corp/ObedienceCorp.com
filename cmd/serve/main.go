@@ -27,6 +27,8 @@ func main() {
 		switch path {
 		case "/":
 			htmlFile = "docs/index.html"
+		case "/thesis":
+			htmlFile = "docs/thesis.html"
 		case "/products":
 			htmlFile = "docs/products.html"
 		case "/obey":

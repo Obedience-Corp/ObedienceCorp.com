@@ -12,12 +12,12 @@ cta:
   headline: ""
   description: ""
   links:
+    - label: "Thesis"
+      path: "/thesis"
+      description: "Why we exist"
     - label: "Products"
       path: "/products"
       description: "What we've built"
-    - label: "GitHub"
-      path: "https://github.com/Obedience-Corp"
-      description: "Open source"
   contact_text: "Investors & partnerships"
   contact_email: "contact@obediencecorp.com"
 
