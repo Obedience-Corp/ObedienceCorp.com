@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Obey - Obedience Corp</title>
     <meta name="description" content="Obey: Agent runtime and control plane. Run AI agents at scale with safety, auditability, and real-time monitoring." />
-    <link rel="stylesheet" href="/static/css/styles.css?v=7" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/static/css/styles.css?v=8" />
   </head>
   <body>
     
@@ -328,8 +330,8 @@
       <div class="nav-right">
         <a href="mailto:contact@obediencecorp.com" class="nav-contact" title="contact@obediencecorp.com">Contact</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <span class="theme-icon-dark">◐</span>
-          <span class="theme-icon-light" style="display: none;">◑</span>
+          <span class="theme-icon-dark">&#9684;</span>
+          <span class="theme-icon-light" style="display: none;">&#9685;</span>
         </button>
       </div>
     </nav>
@@ -374,8 +376,7 @@
 
     <div class="container">
       
-      
-      <div class="article-box clickable" style="grid-column: 1 / 4; grid-row: 1;" data-modal-id="about">
+      <div class="article-box fade-in-section clickable" style="grid-column: 1 / 4; grid-row: 1;" data-modal-id="about">
         <h3 class="article-title">About Obey</h3>
         <div class="article-body">
           <p>The agent runtime that sits between you and your AI workforce. One daemon. Many agents. Total control.</p>
@@ -387,7 +388,7 @@
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 1 / 3; grid-row: 2;" data-modal-id="1">
+      <div class="article-box fade-in-section clickable" style="grid-column: 1 / 3; grid-row: 2;" data-modal-id="1">
         <h3 class="article-title">The Scale Problem</h3>
         <div class="article-body">
           <p>The industry is racing to build smarter models. That&rsquo;s not the bottleneck.</p>
@@ -399,7 +400,7 @@
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 3; grid-row: 2;" data-modal-id="2">
+      <div class="article-box fade-in-section clickable" style="grid-column: 3; grid-row: 2;" data-modal-id="2">
         <h3 class="article-title">Runtime, Not Planning</h3>
         <div class="article-body">
           <p>Festival structures work into campaigns, festivals, phases, and tasks. It&rsquo;s the planning layer — what needs to happen and in what order.</p>
@@ -411,7 +412,7 @@
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 1; grid-row: 3;" data-modal-id="3">
+      <div class="article-box fade-in-section clickable" style="grid-column: 1; grid-row: 3;" data-modal-id="3">
         <h3 class="article-title">Session Management</h3>
         <div class="article-body">
           <p>Run agent sessions across multiple providers — Claude Code, Codex, OpenAI, external tooling — through a single daemon.</p>
@@ -423,7 +424,7 @@
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 2; grid-row: 3;" data-modal-id="4">
+      <div class="article-box fade-in-section clickable" style="grid-column: 2; grid-row: 3;" data-modal-id="4">
         <h3 class="article-title">Safety &amp; Auditability</h3>
         <div class="article-body">
           <p>Campaign-scoped filesystem boundaries. Allowlisted command execution. Cryptographic audit trail for every agent action.</p>
@@ -435,7 +436,7 @@
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 3; grid-row: 3;" data-modal-id="5">
+      <div class="article-box fade-in-section clickable" style="grid-column: 3; grid-row: 3;" data-modal-id="5">
         <h3 class="article-title">Work From Anywhere</h3>
         <div class="article-body">
           <p>TUI first. Then mobile. iPhone, iPad, Android, desktop.</p>
@@ -447,7 +448,7 @@
         </div>
       </div>
       
-      <div class="article-box clickable" style="grid-column: 1 / 3; grid-row: 4;" data-modal-id="6">
+      <div class="article-box fade-in-section clickable" style="grid-column: 1 / 3; grid-row: 4;" data-modal-id="6">
         <h3 class="article-title">Proven in Production</h3>
         <div class="article-body">
           <p>This R&amp;D created a daily workflow used to ship complex products for multiple startups. Gaming backends, trading compliance systems, and more.</p>
@@ -457,7 +458,7 @@
         </div>
       </div>
       
-      <div class="article-box" style="grid-column: 3; grid-row: 4;">
+      <div class="article-box fade-in-section" style="grid-column: 3; grid-row: 4;">
         <h3 class="article-title">Contact</h3>
         <div class="article-body">
           <p>For investor inquiries, early access, or partnership opportunities.</p>
@@ -480,7 +481,6 @@
           <h2 class="modal-title" id="modal-title"></h2>
         </div>
         <div class="modal-content" id="modal-content">
-          
           
           
           <div class="modal-article-content" data-article-id="about" style="display: none;">
@@ -629,13 +629,13 @@
           
         </div>
         <footer class="modal-footer">
-          © <span class="modal-year"></span> Obedience Corp
+          &copy; <span class="modal-year"></span> Obedience Corp
         </footer>
       </div>
     </div>
 
-    <footer>© <span id="year"></span> Obedience Corp</footer>
+    <footer>&copy; <span id="year"></span> Obedience Corp</footer>
 
-    <script src="/static/js/main.js?v=2"></script>
+    <script src="/static/js/main.js?v=3"></script>
   </body>
 </html>

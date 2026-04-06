@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{.Page.Title}}</title>
     <meta name="description" content="{{.Page.Description}}" />
-    <link rel="stylesheet" href="/static/css/styles.css?v=7" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/static/css/styles.css?v=8" />
   </head>
   <body>
     {{if ne .Page.Name "index"}}
@@ -108,8 +110,8 @@
       <div class="nav-right">
         <a href="mailto:{{.Hero.ContactEmail}}" class="nav-contact" title="{{.Hero.ContactEmail}}">Contact</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <span class="theme-icon-dark">◐</span>
-          <span class="theme-icon-light" style="display: none;">◑</span>
+          <span class="theme-icon-dark">&#9684;</span>
+          <span class="theme-icon-light" style="display: none;">&#9685;</span>
         </button>
       </div>
     </nav>
@@ -159,7 +161,7 @@
       </div>
     </header>
     {{else}}
-    <!-- Product Pages: Page header above grid -->
+    <!-- Product Pages: Page header + flowing content sections -->
     <header class="page-header">
       <h1 class="page-title">{{.Page.HeroTitle}}</h1>
       {{if .Page.Subtitle}}<div class="page-subtitle">{{.Page.Subtitle}}</div>{{end}}
@@ -176,9 +178,8 @@
     </header>
 
     <div class="container">
-      <!-- Article Boxes -->
       {{range .Articles}}
-      <div class="article-box{{if .HasModal}} clickable{{end}}" style="{{.Style}}"{{if .HasModal}} data-modal-id="{{.ID}}"{{end}}>
+      <div class="article-box fade-in-section{{if .HasModal}} clickable{{end}}" style="{{.Style}}"{{if .HasModal}} data-modal-id="{{.ID}}"{{end}}>
         <h3 class="article-title">{{.Title}}</h3>
         <div class="article-body">
           {{.Content}}
@@ -196,7 +197,6 @@
           <h2 class="modal-title" id="modal-title"></h2>
         </div>
         <div class="modal-content" id="modal-content">
-          <!-- Content populated by JavaScript -->
           {{range .Articles}}
           {{if .HasModal}}
           <div class="modal-article-content" data-article-id="{{.ID}}" style="display: none;">
@@ -206,13 +206,13 @@
           {{end}}
         </div>
         <footer class="modal-footer">
-          © <span class="modal-year"></span> {{.Site.Name}}
+          &copy; <span class="modal-year"></span> {{.Site.Name}}
         </footer>
       </div>
     </div>
 
-    <footer>© <span id="year"></span> {{.Site.Name}}</footer>
+    <footer>&copy; <span id="year"></span> {{.Site.Name}}</footer>
 
-    <script src="/static/js/main.js?v=2"></script>
+    <script src="/static/js/main.js?v=3"></script>
   </body>
 </html>

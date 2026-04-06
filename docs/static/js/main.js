@@ -48,8 +48,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Set current year in footer
 const currentYear = new Date().getFullYear();
-document.getElementById("year").textContent = currentYear;
-document.querySelector(".modal-year").textContent = currentYear;
+const yearEl = document.getElementById("year");
+const modalYearEl = document.querySelector(".modal-year");
+if (yearEl) yearEl.textContent = currentYear;
+if (modalYearEl) modalYearEl.textContent = currentYear;
 
 // Simple typing animation for tagline with sentence pause
 function typeText(element, text, speed, callback) {
@@ -62,7 +64,7 @@ function typeText(element, text, speed, callback) {
       i++;
       // Add longer pause after sentence-ending punctuation followed by space
       if ((currentChar === '.' || currentChar === '!' || currentChar === '?') && nextChar === ' ') {
-        setTimeout(type, 800); // 800ms pause between sentences
+        setTimeout(type, 800);
       } else {
         setTimeout(type, speed);
       }
@@ -75,7 +77,6 @@ function typeText(element, text, speed, callback) {
 
 // Start typing after brief delay - read taglines from data attributes
 setTimeout(() => {
-  // Support landing hero, product pages (page-taglines), and legacy hero-box
   const landingHero = document.querySelector(".landing-hero");
   const heroBox = document.querySelector(".hero-box");
   const pageTaglines = document.querySelector(".page-taglines");
@@ -90,7 +91,6 @@ setTimeout(() => {
   if (!line1) return;
 
   if (shouldAnimate) {
-    // Animated typing effect
     typeText(line1, tagline1, 70, () => {
       const lastChar1 = tagline1.slice(-1);
       if (!['.', ',', '!', '?', ';', ':'].includes(lastChar1)) {
@@ -115,7 +115,6 @@ setTimeout(() => {
       }
     });
   } else {
-    // No animation - display immediately
     const needsPeriod1 = tagline1 && !['.', ',', '!', '?', ';', ':'].includes(tagline1.slice(-1));
     line1.textContent = tagline1 + (needsPeriod1 ? "." : "");
 
@@ -126,6 +125,141 @@ setTimeout(() => {
   }
 }, 300);
 
+// Scroll fade-in animation with Intersection Observer
+(function () {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const sections = document.querySelectorAll(".fade-in-section");
+
+  if (prefersReducedMotion) {
+    // If user prefers reduced motion, show everything immediately
+    sections.forEach((section) => section.classList.add("is-visible"));
+    return;
+  }
+
+  if (!sections.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -40px 0px",
+    }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+})();
+
+// Article layout: group same-row single-column articles into two-column rows
+(function () {
+  const container = document.querySelector(".page-header + .container");
+  if (!container) return;
+
+  const articles = Array.from(container.querySelectorAll(".article-box"));
+  if (!articles.length) return;
+
+  // Parse grid placement from inline styles
+  function parseGridInfo(el) {
+    const style = el.getAttribute("style") || "";
+    const colMatch = style.match(/grid-column:\s*([^;]+)/);
+    const rowMatch = style.match(/grid-row:\s*([^;]+)/);
+    return {
+      col: colMatch ? colMatch[1].trim() : "",
+      row: rowMatch ? rowMatch[1].trim() : "",
+    };
+  }
+
+  // Group articles by their grid-row
+  const rowGroups = {};
+  articles.forEach((article) => {
+    const info = parseGridInfo(article);
+    const rowKey = info.row || "auto";
+    if (!rowGroups[rowKey]) {
+      rowGroups[rowKey] = [];
+    }
+    rowGroups[rowKey].push({ el: article, col: info.col, row: info.row });
+  });
+
+  // Determine order: sort by row number
+  const sortedRows = Object.keys(rowGroups).sort((a, b) => {
+    const aNum = parseInt(a) || 999;
+    const bNum = parseInt(b) || 999;
+    return aNum - bNum;
+  });
+
+  // Rebuild the container with proper grouping
+  // Remove all articles first
+  articles.forEach((a) => a.remove());
+
+  sortedRows.forEach((rowKey) => {
+    const group = rowGroups[rowKey];
+    const isFullWidth = group.length === 1 && (group[0].col.includes("/") || group[0].col === "");
+    const isTwoColumn = group.length === 2 || (group.length === 1 && !group[0].col.includes("/") && group[0].col !== "");
+
+    if (isTwoColumn && group.length === 2) {
+      // Create a two-column row wrapper
+      const rowDiv = document.createElement("div");
+      rowDiv.className = "article-row";
+
+      // Sort by column number
+      group.sort((a, b) => {
+        const aCol = parseInt(a.col) || 1;
+        const bCol = parseInt(b.col) || 2;
+        return aCol - bCol;
+      });
+
+      group.forEach((item) => {
+        // Clear inline grid styles
+        item.el.style.gridColumn = "";
+        item.el.style.gridRow = "";
+        rowDiv.appendChild(item.el);
+      });
+
+      // Add fade-in to the row wrapper instead
+      rowDiv.classList.add("fade-in-section");
+      group.forEach((item) => item.el.classList.remove("fade-in-section"));
+
+      container.appendChild(rowDiv);
+    } else {
+      // Single full-width article
+      group.forEach((item) => {
+        item.el.style.gridColumn = "";
+        item.el.style.gridRow = "";
+        item.el.classList.add("article-full");
+        container.appendChild(item.el);
+      });
+    }
+  });
+
+  // Re-observe any new fade-in sections created by the layout
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const newSections = container.querySelectorAll(".fade-in-section:not(.is-visible)");
+
+  if (prefersReducedMotion) {
+    newSections.forEach((s) => s.classList.add("is-visible"));
+  } else if (newSections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+    newSections.forEach((s) => observer.observe(s));
+  }
+})();
+
 // Modal functionality
 (function () {
   const modalOverlay = document.getElementById("modal-overlay");
@@ -134,15 +268,14 @@ setTimeout(() => {
   const modalClose = document.querySelector(".modal-close");
   const clickableBoxes = document.querySelectorAll(".article-box.clickable");
 
-  // Open modal with specific article content
+  if (!modalOverlay || !modalClose) return;
+
   function openModal(articleId, title) {
-    // Hide all article content divs
     const allContent = modalContent.querySelectorAll(".modal-article-content");
     allContent.forEach((content) => {
       content.style.display = "none";
     });
 
-    // Show the selected article content
     const selectedContent = modalContent.querySelector(
       `[data-article-id="${articleId}"]`
     );
@@ -155,11 +288,9 @@ setTimeout(() => {
     }
   }
 
-  // Close modal
   function closeModal() {
     modalOverlay.classList.remove("active");
     document.body.classList.remove("modal-open");
-    // Reset scroll position
     setTimeout(() => {
       if (!modalOverlay.classList.contains("active")) {
         const allContent = modalContent.querySelectorAll(
@@ -169,10 +300,9 @@ setTimeout(() => {
           content.style.display = "none";
         });
       }
-    }, 300); // Match transition duration
+    }, 300);
   }
 
-  // Attach click handlers to clickable article boxes
   clickableBoxes.forEach((box) => {
     box.addEventListener("click", (e) => {
       e.preventDefault();
@@ -182,31 +312,29 @@ setTimeout(() => {
     });
   });
 
-  // Close button click
   modalClose.addEventListener("click", (e) => {
     e.stopPropagation();
     closeModal();
   });
 
-  // Backdrop click (clicking outside modal container)
   modalOverlay.addEventListener("click", (e) => {
     if (e.target === modalOverlay) {
       closeModal();
     }
   });
 
-  // ESC key to close
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
       closeModal();
     }
   });
 
-  // Prevent clicks inside modal container from closing modal
   const modalContainer = document.querySelector(".modal-container");
-  modalContainer.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
+  if (modalContainer) {
+    modalContainer.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
 })();
 
 // Drawer functionality with hover zones
@@ -236,15 +364,12 @@ setTimeout(() => {
     right: drawerOverlays.right?.querySelector(".drawer-scrim"),
   };
 
-  // Timers for delayed closing
   const closeTimers = {
     left: null,
     right: null,
   };
 
-  // Open drawer
   function openDrawer(side) {
-    // Clear any pending close timer
     if (closeTimers[side]) {
       clearTimeout(closeTimers[side]);
       closeTimers[side] = null;
@@ -257,7 +382,6 @@ setTimeout(() => {
     }
   }
 
-  // Close drawer with optional delay
   function closeDrawer(side, delay = 0) {
     if (closeTimers[side]) {
       clearTimeout(closeTimers[side]);
@@ -267,7 +391,6 @@ setTimeout(() => {
       const overlay = drawerOverlays[side];
       if (overlay) {
         overlay.classList.remove("active");
-        // Only remove modal-open if no other drawers or modals are open
         const anyDrawerOpen = document.querySelector(".drawer-overlay.active");
         const modalOpen = document.querySelector(".modal-overlay.active");
         if (!anyDrawerOpen && !modalOpen) {
@@ -278,7 +401,6 @@ setTimeout(() => {
     }, delay);
   }
 
-  // Hover zone handlers
   if (hoverZones.left) {
     hoverZones.left.addEventListener("mouseenter", () => openDrawer("left"));
     hoverZones.left.addEventListener("mouseleave", () => closeDrawer("left", 300));
@@ -289,7 +411,6 @@ setTimeout(() => {
     hoverZones.right.addEventListener("mouseleave", () => closeDrawer("right", 300));
   }
 
-  // Keep drawer open when hovering over the drawer itself
   if (drawerContainers.left) {
     drawerContainers.left.addEventListener("mouseenter", () => {
       if (closeTimers.left) {
@@ -319,7 +440,6 @@ setTimeout(() => {
     touchStartX = e.touches[0].clientX;
     touchStartY = e.touches[0].clientY;
 
-    // Detect edge swipe (within 30px of edge)
     if (touchStartX < 30) {
       touchingSide = "left";
     } else if (touchStartX > window.innerWidth - 30) {
@@ -335,7 +455,6 @@ setTimeout(() => {
     const touchX = e.touches[0].clientX;
     const deltaX = touchX - touchStartX;
 
-    // Require horizontal swipe (not vertical scroll)
     const touchY = e.touches[0].clientY;
     const deltaY = Math.abs(touchY - touchStartY);
     if (deltaY > Math.abs(deltaX)) {
@@ -343,7 +462,6 @@ setTimeout(() => {
       return;
     }
 
-    // Open drawer if swiped enough (50px)
     if (touchingSide === "left" && deltaX > 50) {
       openDrawer("left");
       touchingSide = null;
@@ -357,7 +475,6 @@ setTimeout(() => {
     touchingSide = null;
   });
 
-  // Close button handlers
   if (drawerCloseButtons.left) {
     drawerCloseButtons.left.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -372,7 +489,6 @@ setTimeout(() => {
     });
   }
 
-  // Scrim click handlers
   if (drawerScrims.left) {
     drawerScrims.left.addEventListener("click", () => closeDrawer("left", 0));
   }
@@ -381,7 +497,6 @@ setTimeout(() => {
     drawerScrims.right.addEventListener("click", () => closeDrawer("right", 0));
   }
 
-  // ESC key to close any open drawer
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       if (drawerOverlays.left?.classList.contains("active")) {
@@ -393,7 +508,6 @@ setTimeout(() => {
     }
   });
 
-  // Prevent clicks inside drawer container from closing drawer
   document.querySelectorAll(".drawer-container").forEach((container) => {
     container.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -426,22 +540,18 @@ setTimeout(() => {
     }
   }
 
-  // Hamburger click
   if (hamburger) {
     hamburger.addEventListener('click', openDrawer);
   }
 
-  // Close button click
   if (closeBtn) {
     closeBtn.addEventListener('click', closeDrawer);
   }
 
-  // Scrim click
   if (scrim) {
     scrim.addEventListener('click', closeDrawer);
   }
 
-  // ESC key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && drawer?.classList.contains('active')) {
       closeDrawer();

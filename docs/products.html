@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Products - Obedience Corp</title>
     <meta name="description" content="Products built by Obedience Corp. Cognitive infrastructure for AI workflows." />
-    <link rel="stylesheet" href="/static/css/styles.css?v=7" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/static/css/styles.css?v=8" />
   </head>
   <body>
     
@@ -328,8 +330,8 @@
       <div class="nav-right">
         <a href="mailto:contact@obediencecorp.com" class="nav-contact" title="contact@obediencecorp.com">Contact</a>
         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-          <span class="theme-icon-dark">◐</span>
-          <span class="theme-icon-light" style="display: none;">◑</span>
+          <span class="theme-icon-dark">&#9684;</span>
+          <span class="theme-icon-light" style="display: none;">&#9685;</span>
         </button>
       </div>
     </nav>
@@ -366,8 +368,7 @@
 
     <div class="container">
       
-      
-      <div class="article-box clickable" style="grid-column: 1 / 3; grid-row: 1;" data-modal-id="festival">
+      <div class="article-box fade-in-section clickable" style="grid-column: 1 / 3; grid-row: 1;" data-modal-id="festival">
         <h3 class="article-title">FESTIVAL</h3>
         <div class="article-body">
           <p><strong>STATUS: RELEASED</strong> | <a href="https://fest.build">fest.build</a> | <a href="https://docs.fest.build">Docs</a> | <a href="https://github.com/Obedience-Corp/festival">GitHub</a></p>
@@ -383,7 +384,7 @@
         </div>
       </div>
       
-      <div class="article-box" style="grid-column: 1; grid-row: 2;">
+      <div class="article-box fade-in-section" style="grid-column: 1; grid-row: 2;">
         <h3 class="article-title">FESTIVAL APP</h3>
         <div class="article-body">
           <p><strong>STATUS: IN DEVELOPMENT</strong></p>
@@ -398,7 +399,7 @@
         </div>
       </div>
       
-      <div class="article-box" style="grid-column: 2; grid-row: 2;">
+      <div class="article-box fade-in-section" style="grid-column: 2; grid-row: 2;">
         <h3 class="article-title">OBEY</h3>
         <div class="article-body">
           <p><strong>STATUS: IN DEVELOPMENT</strong></p>
@@ -412,7 +413,7 @@
         </div>
       </div>
       
-      <div class="article-box" style="grid-column: 1; grid-row: 3;">
+      <div class="article-box fade-in-section" style="grid-column: 1; grid-row: 3;">
         <h3 class="article-title">CLAUDE-CODE-GO</h3>
         <div class="article-body">
           <p><strong>STATUS: RELEASED</strong> | <a href="https://github.com/lancekrogers/claude-code-go">GitHub</a></p>
@@ -424,7 +425,7 @@
         </div>
       </div>
       
-      <div class="article-box" style="grid-column: 2; grid-row: 3;">
+      <div class="article-box fade-in-section" style="grid-column: 2; grid-row: 3;">
         <h3 class="article-title">CAMP</h3>
         <div class="article-body">
           <p><strong>STATUS: RELEASED</strong> | <a href="https://github.com/Obedience-Corp/camp">GitHub</a></p>
@@ -447,7 +448,6 @@
           <h2 class="modal-title" id="modal-title"></h2>
         </div>
         <div class="modal-content" id="modal-content">
-          
           
           
           <div class="modal-article-content" data-article-id="festival" style="display: none;">
@@ -502,13 +502,13 @@ fest next
           
         </div>
         <footer class="modal-footer">
-          © <span class="modal-year"></span> Obedience Corp
+          &copy; <span class="modal-year"></span> Obedience Corp
         </footer>
       </div>
     </div>
 
-    <footer>© <span id="year"></span> Obedience Corp</footer>
+    <footer>&copy; <span id="year"></span> Obedience Corp</footer>
 
-    <script src="/static/js/main.js?v=2"></script>
+    <script src="/static/js/main.js?v=3"></script>
   </body>
 </html>
