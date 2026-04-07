@@ -46,6 +46,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Product cards — click card to navigate to primary link
+document.querySelectorAll(".product-card").forEach((card) => {
+  const firstLink = card.querySelector(".product-card-body a");
+  if (firstLink) {
+    card.style.cursor = "pointer";
+    card.addEventListener("click", (e) => {
+      // Don't navigate if they clicked a specific link inside the card
+      if (e.target.tagName === "A" || e.target.closest("a")) return;
+      window.open(firstLink.href, "_blank", "noopener,noreferrer");
+    });
+  }
+});
+
 // Set current year in footer
 const currentYear = new Date().getFullYear();
 const yearEl = document.getElementById("year");

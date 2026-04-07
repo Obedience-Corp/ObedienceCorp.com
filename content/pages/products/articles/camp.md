@@ -1,5 +1,5 @@
-**STATUS: RELEASED** | [GitHub](https://github.com/Obedience-Corp/camp)
+**STATUS: RELEASED**
 
-Campaign workspace management CLI.
+Campaign workspace management. Initialize workspaces, manage projects, navigate between them, measure productivity leverage.
 
-Initialize campaigns, manage projects, navigate workspaces, track leverage metrics. The foundation layer that organizes multi-project AI work.
+[GitHub](https://github.com/Obedience-Corp/camp)

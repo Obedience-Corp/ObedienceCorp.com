@@ -670,6 +670,196 @@ body {
 }
 
 /* ═══════════════════════════════════════════
+   PRODUCTS PAGE
+   ═══════════════════════════════════════════ */
+
+.products-list {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 4vw, 2rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+/* --- Product Card --- */
+
+.product-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 16px;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  /* Override fade-in — products should be immediately visible */
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.product-card:hover {
+  border-color: var(--accent-green);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 255, 127, 0.06);
+}
+
+[data-theme="light"] .product-card {
+  background: #fff;
+  border-color: #e0dfda;
+}
+
+[data-theme="light"] .product-card:hover {
+  border-color: #0a7a3e;
+  box-shadow: 0 8px 32px rgba(0, 168, 84, 0.08);
+}
+
+/* --- Card Header --- */
+
+.product-card-header {
+  margin-bottom: 1rem;
+}
+
+.product-card-name {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.product-card:hover .product-card-name {
+  color: var(--accent-green);
+}
+
+/* --- Card Body --- */
+
+.product-card-body {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+}
+
+.product-card-body p {
+  margin-bottom: 0.75em;
+}
+
+.product-card-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- Status Badges --- */
+
+.product-card-body > p:first-child {
+  margin-bottom: 0.75em;
+}
+
+.product-card-body > p:first-child strong:first-child {
+  display: inline-block;
+  padding: 0.25em 0.7em;
+  border-radius: 6px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: "IBM Plex Mono", monospace;
+  background: rgba(0, 255, 127, 0.1);
+  color: var(--accent-green);
+}
+
+[data-theme="light"] .product-card-body > p:first-child strong:first-child {
+  background: rgba(0, 168, 84, 0.08);
+  color: #0a7a3e;
+}
+
+/* --- Links as pill buttons --- */
+
+.product-card-body a {
+  display: inline-block;
+  padding: 0.3em 0.85em;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.8125rem;
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.01em;
+  transition: all 0.2s ease;
+  margin-right: 0.4rem;
+  margin-top: 0.25rem;
+}
+
+.product-card-body a:hover {
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+  background: rgba(0, 255, 127, 0.06);
+}
+
+[data-theme="light"] .product-card-body a {
+  border-color: rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .product-card-body a:hover {
+  border-color: #0a7a3e;
+  color: #0a7a3e;
+  background: rgba(0, 168, 84, 0.04);
+}
+
+/* --- Inline text --- */
+
+.product-card-body strong {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.product-card-body code {
+  font-family: "IBM Plex Mono", monospace;
+  background: rgba(0, 255, 127, 0.06);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  color: var(--accent-green);
+}
+
+/* --- Flagship product (Festival) — spans two columns on wide screens --- */
+
+@media (min-width: 768px) {
+  .products-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .product-card:first-child {
+    grid-column: 1 / -1;
+    padding: clamp(2rem, 4vw, 3rem);
+  }
+
+  .product-card:first-child .product-card-name {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .product-card:first-child .product-card-body {
+    font-size: 1rem;
+    max-width: 640px;
+  }
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 767px) {
+  .products-list {
+    gap: 1rem;
+  }
+
+  .product-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+}
+
+/* ═══════════════════════════════════════════
    SCROLL FADE-IN ANIMATIONS
    ═══════════════════════════════════════════ */
 

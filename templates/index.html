@@ -7,10 +7,10 @@
     <meta name="description" content="{{.Page.Description}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="/static/css/styles.css?v=8" />
+    <link rel="stylesheet" href="/static/css/styles.css?v=12" />
   </head>
   <body>
-    {{if ne .Page.Name "index"}}
+    {{if and (ne .Page.Name "index") (ne .Page.Name "products")}}
     <!-- Hover Zones (visible < 1800px) -->
     <div class="hover-zone hover-zone-left" aria-label="Hover to view bulletins"></div>
     <div class="hover-zone hover-zone-right" aria-label="Hover to view dispatches"></div>
@@ -160,8 +160,28 @@
         {{end}}
       </div>
     </header>
+    {{else if eq .Page.Name "products"}}
+    <!-- Products Page: Clean vertical product cards -->
+    <header class="page-header">
+      <h1 class="page-title">{{.Page.HeroTitle}}</h1>
+      {{if .Page.Subtitle}}<div class="page-subtitle">{{.Page.Subtitle}}</div>{{end}}
+    </header>
+
+    <div class="products-list">
+      {{range .Articles}}
+      <div class="product-card fade-in-section" data-product-id="{{.ID}}">
+        <div class="product-card-header">
+          <h2 class="product-card-name">{{.Title}}</h2>
+        </div>
+        <div class="product-card-body">
+          {{.Content}}
+        </div>
+      </div>
+      {{end}}
+    </div>
+
     {{else}}
-    <!-- Product Pages: Page header + flowing content sections -->
+    <!-- Other Pages: Page header + flowing content sections -->
     <header class="page-header">
       <h1 class="page-title">{{.Page.HeroTitle}}</h1>
       {{if .Page.Subtitle}}<div class="page-subtitle">{{.Page.Subtitle}}</div>{{end}}
@@ -213,6 +233,6 @@
 
     <footer>&copy; <span id="year"></span> {{.Site.Name}}</footer>
 
-    <script src="/static/js/main.js?v=3"></script>
+    <script src="/static/js/main.js?v=4"></script>
   </body>
 </html>
