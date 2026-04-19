@@ -49,8 +49,12 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
   }
@@ -74,7 +78,9 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: color 150ms ease, border-color 150ms ease;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
 }
 
 a:hover {
@@ -82,7 +88,8 @@ a:hover {
 }
 
 /* Scroll margin so anchor jumps don't slide under the fixed/sticky nav. */
-#thesis, #contact {
+#thesis,
+#contact {
   scroll-margin-top: 5rem;
 }
 
