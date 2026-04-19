@@ -1,0 +1,365 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const all = await getCollection('products');
+const sorted = all.sort((a, b) => a.data.order - b.data.order);
+const flagship = sorted.find((p) => p.data.flagship);
+const rest = sorted.filter((p) => !p.data.flagship);
+
+const statusLabel: Record<string, string> = {
+  active: 'Released',
+  beta: 'Beta',
+  'coming-soon': 'In development',
+};
+
+function withDarkTheme(url: string) {
+  try {
+    const u = new URL(url);
+    u.searchParams.set('theme', 'dark');
+    return u.toString();
+  } catch {
+    return url;
+  }
+}
+---
+
+<BaseLayout
+  title="Work"
+  description="The Obedience Corp product stack. Festival and the cognitive infrastructure tools."
+>
+  <section class="work-page">
+    <header class="work-header">
+      <h1 class="work-h1">Work</h1>
+      <p class="work-intro">The cognitive infrastructure stack.</p>
+    </header>
+
+    {flagship && (
+      <article class="flagship" aria-labelledby="flagship-name">
+        <p class="mono-label flagship-eyebrow">{statusLabel[flagship.data.status]}</p>
+        <h2 id="flagship-name" class="flagship-name">{flagship.data.name}</h2>
+        <p class="flagship-tagline">{flagship.data.tagline}</p>
+
+        <a
+          href={flagship.data.primaryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flagship-preview"
+          aria-label={`Open ${new URL(flagship.data.primaryUrl).host} in a new tab`}
+        >
+          <div class="flagship-preview-bar">
+            <span class="mono-label">{new URL(flagship.data.primaryUrl).host}</span>
+            <span class="mono-label flagship-preview-visit">Visit <span aria-hidden="true">↗</span></span>
+          </div>
+          <div class="flagship-preview-viewport">
+            <iframe
+              src={withDarkTheme(flagship.data.primaryUrl)}
+              loading="lazy"
+              title={flagship.data.name}
+              tabindex="-1"
+              aria-hidden="true"
+              sandbox="allow-scripts allow-same-origin"
+              referrerpolicy="no-referrer"
+              style="color-scheme: dark;"
+            ></iframe>
+          </div>
+        </a>
+
+        <ul class="flagship-links">
+          <li><a href={flagship.data.primaryUrl} target="_blank" rel="noopener noreferrer" class="mono-label">{new URL(flagship.data.primaryUrl).host}</a></li>
+          {flagship.data.docsUrl && (
+            <li><a href={flagship.data.docsUrl} target="_blank" rel="noopener noreferrer" class="mono-label">Docs</a></li>
+          )}
+          {flagship.data.repoUrl && (
+            <li>
+              <a
+                href={flagship.data.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flagship-icon-link"
+                aria-label="GitHub repository"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.93c.575.106.786-.25.786-.555 0-.273-.01-.996-.016-1.956-3.2.695-3.877-1.543-3.877-1.543-.523-1.33-1.278-1.684-1.278-1.684-1.045-.714.079-.7.079-.7 1.156.082 1.765 1.187 1.765 1.187 1.027 1.76 2.695 1.252 3.353.957.104-.744.402-1.252.732-1.54-2.555-.29-5.24-1.278-5.24-5.686 0-1.256.45-2.283 1.187-3.088-.12-.29-.515-1.462.112-3.048 0 0 .967-.31 3.168 1.18a11 11 0 0 1 2.884-.387c.979.005 1.965.132 2.884.388 2.2-1.49 3.166-1.18 3.166-1.18.63 1.586.234 2.758.115 3.047.74.805 1.187 1.832 1.187 3.088 0 4.418-2.69 5.393-5.252 5.678.413.355.78 1.055.78 2.127 0 1.536-.014 2.775-.014 3.153 0 .308.208.667.792.553A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/>
+                </svg>
+              </a>
+            </li>
+          )}
+        </ul>
+      </article>
+    )}
+
+    <div class="other-label">
+      <p class="mono-label">Also shipping</p>
+    </div>
+
+    <ol class="other-list">
+      {rest.map((p) => {
+        const isComingSoon = p.data.status === 'coming-soon';
+        return (
+          <li class:list={['other-row', isComingSoon && 'muted']}>
+            {isComingSoon ? (
+              <div class="other-row-link">
+                <div class="other-row-top">
+                  <span class="mono-label">{statusLabel[p.data.status]}</span>
+                </div>
+                <h3 class="other-name">{p.data.name}</h3>
+                <p class="other-tagline">{p.data.tagline}</p>
+                <p class="other-desc">{p.data.description}</p>
+              </div>
+            ) : (
+              <a href={p.data.primaryUrl} target="_blank" rel="noopener noreferrer" class="other-row-link">
+                <div class="other-row-top">
+                  <span class="mono-label">{statusLabel[p.data.status]}</span>
+                </div>
+                <h3 class="other-name">{p.data.name}</h3>
+                <p class="other-tagline">{p.data.tagline}</p>
+                <p class="other-desc">{p.data.description}</p>
+              </a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+</BaseLayout>
+
+<style>
+  .work-page {
+    width: 100%;
+    padding: clamp(4rem, 10vh, 7rem) clamp(1.25rem, 3vw, 3.5rem) clamp(5rem, 10vh, 8rem);
+  }
+
+  .work-header {
+    margin-bottom: clamp(3rem, 6vh, 4rem);
+  }
+
+  .work-h1 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 5.5vw, 4.25rem);
+    line-height: 1.04;
+    letter-spacing: -0.022em;
+    color: var(--color-ink-primary);
+    margin: 0;
+  }
+
+  .work-intro {
+    font-family: var(--font-sans);
+    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    color: var(--color-ink-muted);
+    margin: 1rem 0 0;
+  }
+
+  /* Flagship */
+  .flagship {
+    padding: clamp(2rem, 4vh, 3rem) 0;
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .flagship-eyebrow {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .flagship-name {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--color-ink-primary);
+    margin: 0;
+  }
+
+  .flagship-tagline {
+    font-family: var(--font-sans);
+    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    color: var(--color-ink-body);
+    margin: 1rem 0 1rem;
+    max-width: 52ch;
+  }
+
+  .flagship-desc {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    color: var(--color-ink-body);
+    margin: 0 0 1.75rem;
+    max-width: 60ch;
+  }
+
+  /* Festival live preview — browser chrome + iframe of primaryUrl */
+  .flagship-preview {
+    display: block;
+    margin: 0 0 2rem;
+    border: 1px solid var(--color-rule);
+    background: var(--color-bg-elevated);
+    text-decoration: none;
+    transition: border-color 150ms ease;
+  }
+
+  .flagship-preview:hover {
+    border-color: var(--color-ink-primary);
+  }
+
+  .flagship-preview-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .flagship-preview-bar .mono-label {
+    color: var(--color-ink-muted);
+    transition: color 150ms ease;
+  }
+
+  .flagship-preview:hover .flagship-preview-bar .mono-label {
+    color: var(--color-ink-primary);
+  }
+
+  .flagship-preview-visit { opacity: 0.7; }
+  .flagship-preview:hover .flagship-preview-visit { opacity: 1; }
+
+  .flagship-preview-viewport {
+    position: relative;
+    height: clamp(320px, 42vw, 520px);
+    overflow: hidden;
+    background: var(--color-bg-primary);
+  }
+
+  .flagship-preview-viewport iframe {
+    position: absolute;
+    inset: 0;
+    width: 133.33%;
+    height: 133.33%;
+    transform: scale(0.75);
+    transform-origin: top left;
+    border: 0;
+    pointer-events: none;
+  }
+
+  .flagship-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .flagship-links a {
+    color: var(--color-ink-muted);
+  }
+
+  .flagship-links a:hover {
+    color: var(--color-ink-primary);
+  }
+
+  .flagship-icon-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-ink-muted);
+  }
+
+  .flagship-icon-link:hover {
+    color: var(--color-ink-primary);
+  }
+
+  /* Other products list */
+  .other-label {
+    margin: clamp(3rem, 6vh, 5rem) 0 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .other-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .other-row {
+    border-top: 1px solid var(--color-rule);
+  }
+
+  .other-row:last-child {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .other-row-link {
+    display: block;
+    padding: clamp(1.5rem, 3vh, 2rem) 0;
+    transition: opacity 150ms ease;
+  }
+
+  .other-row-link:hover {
+    opacity: 0.7;
+  }
+
+  .other-row.muted .other-row-link {
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  .other-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .other-name {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    color: var(--color-ink-primary);
+    margin: 0;
+  }
+
+  .other-tagline {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-ink-body);
+    margin: 0.25rem 0 0.75rem;
+    max-width: 60ch;
+  }
+
+  .other-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    color: var(--color-ink-muted);
+    margin: 0;
+    max-width: 70ch;
+  }
+
+  @media (min-width: 760px) {
+    .other-row-link {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    .other-row-top {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0;
+      grid-column: 1 / 2;
+      grid-row: 1 / 4;
+    }
+    .other-name,
+    .other-tagline,
+    .other-desc {
+      grid-column: 2 / 3;
+    }
+    .other-name { grid-row: 1; }
+    .other-tagline { grid-row: 2; }
+    .other-desc { grid-row: 3; }
+  }
+</style>

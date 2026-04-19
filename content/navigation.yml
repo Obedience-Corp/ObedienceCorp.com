@@ -1,8 +1,0 @@
-navigation:
-  items:
-    - label: "Obey"
-      path: "/obey"
-      type: "internal"
-    - label: "Festival"
-      path: "https://docs.fest.build/"
-      type: "external"
