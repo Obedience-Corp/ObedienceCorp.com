@@ -6,7 +6,7 @@ const products = defineCollection({
   schema: z.object({
     name: z.string(),
     tagline: z.string(),
-    status: z.enum(["active", "beta", "coming-soon"]),
+    status: z.enum(["active", "beta", "coming-soon", "internal"]),
     description: z.string(),
     primaryUrl: z.string().url(),
     repoUrl: z.string().url().optional(),
