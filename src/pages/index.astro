@@ -1,0 +1,458 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Obedience Corp"
+  description="Take back control of your attention. A system where you decide what reaches you, how it's ranked, when it appears, and how much noise is allowed into your day. From Obedience Corp."
+>
+  <!-- ════════════════════════════════════════════════════════════════
+       Hero — copy from the user's Landing Page Version, verbatim.
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h1 class="hero-h1">
+        Take back control<br />of your attention.
+      </h1>
+
+      <div class="hero-body">
+        <p>
+          You're running multiple parallel campaigns in your life: your family, your work, your health, your hobbies, your ideas, your investments, your side hustles. Each one is a distinct initiative with its own context, projects, and people.
+        </p>
+        <p>
+          But most of the information that reaches you is controlled by other systems. Social feeds, inboxes, apps, algorithms, news cycles, notifications. They decide what gets surfaced, what gets buried, and what steals your time.
+        </p>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#thesis" class="hero-cta hero-cta-primary">Read more <span aria-hidden="true">↓</span></a>
+        <a href="/work" class="hero-cta">See the work <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       Thesis section — continuation of the narrative, copy from the
+       user's Landing Page Version. Honest about shipping status.
+       ════════════════════════════════════════════════════════════════ -->
+  <section id="thesis" class="thesis">
+    <div class="thesis-inner">
+      <p class="mono-label thesis-eyebrow">Position</p>
+
+      <article class="thesis-body">
+        <p>AI gave us some control back. Now we can ask better questions, generate better outputs, and filter information more directly.</p>
+        <p>But we are still losing our time. We shifted from algorithmic feeds to conversations with machines. Instead of controlling our attention, most of us are now spending even more of it managing prompts, chats, tools, and tabs.</p>
+        <p>So people still spend hours sorting through noise, hoping to find the few things that actually matter.</p>
+
+        <h2>What if that changed?</h2>
+        <p>What if you controlled the filters?</p>
+        <p>What if you decided exactly what information deserved your attention, how it was ranked, when it appeared, and how much noise was allowed into your day?</p>
+        <p>What if you could set it up once, let it run, and only see what was actually worth your attention?</p>
+        <p>What if technology worked on your behalf for you, made the decisions you would make with unlimited time, what if the agents obeyed?</p>
+
+        <h2>That's what we're building</h2>
+        <p>It's a system for taking control of your inputs, your workflows, and your attention, so the right things reach you at the right time, without the constant drag of irrelevant noise.</p>
+        <p>Festival, the methodology and CLI at the base of the stack, is public at <a href="https://fest.build" target="_blank" rel="noopener noreferrer">fest.build</a>. The consumer-facing system is in active development. Obedience Corp is the company behind this work.</p>
+
+        <h2>Why it matters</h2>
+        <blockquote>
+          <p>The people who control their information flow will outperform the people who let algorithms, apps, and prompts control their day.</p>
+        </blockquote>
+      </article>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       Contact section — form copied verbatim from the previous
+       src/pages/contact.astro (which is deleted in Task 8).
+       ════════════════════════════════════════════════════════════════ -->
+  <section id="contact" class="contact">
+    <div class="contact-inner">
+      <h2 class="contact-h2">Contact</h2>
+      <p class="contact-intro">
+        Interested in what we're building? Whether you're a potential partner, investor, or fellow builder, we'd like to hear from you.
+      </p>
+
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/xgopdrej"
+        method="POST"
+        class="contact-form"
+      >
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <div class="form-field">
+          <label for="name" class="mono-label">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name" />
+        </div>
+
+        <div class="form-field">
+          <label for="email" class="mono-label">Email</label>
+          <input type="email" id="email" name="email" required placeholder="you@example.com" />
+        </div>
+
+        <div class="form-field">
+          <label for="message" class="mono-label">Message</label>
+          <textarea id="message" name="message" required rows="5" placeholder="Tell us what you're interested in..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn mono-label">
+          Send message <span aria-hidden="true">↗</span>
+        </button>
+
+        <p id="form-status" class="form-status"></p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    border-bottom: 1px solid var(--color-rule);
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-inner {
+    flex: 1;
+    width: 100%;
+    padding: clamp(3rem, 6vh, 5rem) clamp(1.25rem, 3vw, 3.5rem);
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: clamp(2rem, 5vw, 5rem);
+    row-gap: clamp(2rem, 4vh, 3rem);
+  }
+
+  @media (min-width: 960px) {
+    .hero-inner {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      align-items: end;
+    }
+    .hero-h1 { grid-column: 1 / 2; }
+    .hero-body { grid-column: 2 / 3; margin: 0; }
+    .hero-ctas { grid-column: 1 / -1; }
+  }
+
+  .hero-h1 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(2.25rem, 9vw, 10rem);
+    line-height: 1;
+    letter-spacing: -0.028em;
+    color: var(--color-ink-primary);
+    margin: 0;
+  }
+
+  .hero-lede {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+    line-height: 1.45;
+    color: var(--color-ink-muted);
+    max-width: 60ch;
+    margin: 1.5rem 0 3rem;
+  }
+
+  .hero-body {
+    max-width: 52ch;
+    margin: 2rem 0 2.5rem;
+  }
+
+  .hero-body p {
+    font-family: var(--font-sans);
+    font-size: clamp(1.0625rem, 1.15vw, 1.25rem);
+    line-height: 1.6;
+    color: var(--color-ink-body);
+    margin: 0 0 1.25em;
+  }
+
+  .hero-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .hero-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 1.15rem 2.25rem;
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--color-ink-primary);
+    background: transparent;
+    border: 1px solid var(--color-ink-primary);
+    border-radius: 999px;
+    transition: background-color 200ms ease, color 200ms ease,
+      transform 200ms ease, box-shadow 200ms ease;
+    will-change: transform;
+  }
+
+  .hero-cta > span {
+    display: inline-block;
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hero-cta:hover {
+    background: var(--color-ink-primary);
+    color: var(--color-bg-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.55);
+  }
+
+  .hero-cta:active {
+    transform: translateY(0);
+  }
+
+  .hero-cta:focus-visible {
+    outline: 2px solid var(--color-ink-primary);
+    outline-offset: 3px;
+  }
+
+  /* Secondary "See the work →" — arrow slides right on hover */
+  .hero-cta:not(.hero-cta-primary):hover > span {
+    transform: translateX(4px);
+  }
+
+  .hero-cta-primary {
+    background: var(--color-ink-primary);
+    color: var(--color-bg-primary);
+  }
+
+  .hero-cta-primary:hover {
+    background: transparent;
+    color: var(--color-ink-primary);
+  }
+
+  /* Primary "Read more ↓" — arrow nudges down on hover */
+  .hero-cta-primary:hover > span {
+    transform: translateY(3px);
+  }
+
+
+  /* ──────────────────────────────────────────────────────────────
+     Thesis section
+     ────────────────────────────────────────────────────────────── */
+  .thesis {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .thesis-inner {
+    max-width: 68ch;
+    margin: 0 auto;
+    padding: clamp(4rem, 9vh, 7rem) clamp(1.25rem, 3vw, 3.5rem);
+  }
+
+  .thesis-eyebrow {
+    display: block;
+    margin-bottom: 2rem;
+    color: var(--color-ink-muted);
+  }
+
+  .thesis-body {
+    font-family: var(--font-serif);
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--color-ink-body);
+    max-width: 64ch;
+  }
+
+  .thesis-body > p {
+    margin: 0 0 1.5em;
+  }
+
+  .thesis-body h2 {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: clamp(1.125rem, 1.75vw, 1.375rem);
+    letter-spacing: -0.005em;
+    color: var(--color-ink-primary);
+    margin: 3rem 0 1rem;
+  }
+
+  .thesis-body ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75em;
+  }
+
+  .thesis-body ul li {
+    position: relative;
+    padding-left: 1.75em;
+    margin-bottom: 0.25em;
+  }
+
+  .thesis-body ul li::before {
+    content: "·";
+    position: absolute;
+    left: 0.25em;
+    color: var(--color-ink-muted);
+  }
+
+  .thesis-body strong {
+    font-weight: 600;
+    color: var(--color-ink-primary);
+  }
+
+  .thesis-body blockquote {
+    margin: 3rem 0 0;
+    padding: 2rem 0;
+    border-top: 1px solid var(--color-rule);
+    border-bottom: 1px solid var(--color-rule);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--color-ink-primary);
+    text-align: center;
+  }
+
+  .thesis-body blockquote p {
+    margin: 0;
+    max-width: 32ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ──────────────────────────────────────────────────────────────
+     Contact section
+     ────────────────────────────────────────────────────────────── */
+  .contact-inner {
+    max-width: 52ch;
+    margin: 0 auto;
+    padding: clamp(4rem, 9vh, 7rem) clamp(1.25rem, 3vw, 3.5rem);
+  }
+
+  .contact-h2 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-ink-primary);
+    margin: 0 0 1rem;
+  }
+
+  .contact-intro {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--color-ink-muted);
+    max-width: 48ch;
+    margin: 0 0 clamp(2rem, 4vh, 3rem);
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  .form-field label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-rule);
+    padding: 0.65rem 0;
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    color: var(--color-ink-primary);
+    outline: none;
+    transition: border-color 150ms ease;
+    resize: none;
+  }
+
+  .form-field input::placeholder,
+  .form-field textarea::placeholder {
+    color: var(--color-ink-muted);
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-bottom-color: var(--color-ink-primary);
+  }
+
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    padding: 0.65rem 0;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid var(--color-ink-primary);
+    color: var(--color-ink-primary);
+    cursor: pointer;
+    transition: opacity 150ms ease;
+  }
+
+  .submit-btn:hover {
+    opacity: 0.6;
+  }
+
+  .form-status {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    min-height: 1.5em;
+    margin: 0;
+  }
+
+  .form-status[data-state="ok"] {
+    color: var(--color-ink-primary);
+  }
+
+  .form-status[data-state="err"] {
+    color: #b84a3d;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const status = document.getElementById('form-status') as HTMLElement | null;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (status) {
+        if (res.ok) {
+          status.textContent = "Message sent. We'll be in touch.";
+          status.dataset.state = 'ok';
+          form.reset();
+        } else {
+          status.textContent = 'Something went wrong. Please try again.';
+          status.dataset.state = 'err';
+        }
+      }
+    } catch {
+      if (status) {
+        status.textContent = 'Network error. Please try again.';
+        status.dataset.state = 'err';
+      }
+    }
+  });
+</script>

@@ -1,25 +1,27 @@
-# Go build artifacts
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-*.test
-*.out
+# build output
+dist/
+# generated types
+.astro/
 
-# Go workspace file
-go.work
+# dependencies
+node_modules/
 
-# IDE files
-.DS_Store
-.idea/
-*.swp
-*.swo
-*~
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Dev server
-.dev.pid
+
+# environment variables
 .env
+.env.production
 
-# Binaries
-bin/
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# design review screenshots
+screenshots/
