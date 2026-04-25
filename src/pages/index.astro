@@ -58,18 +58,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>And because your information stays yours, you stay free to use whatever AI models and tools serve you best. New tools should plug into your data, not lock you into someone else’s platform.</p>
 
         <h2>Why this matters</h2>
-        <p>Zoom out. What we are really building is AI tools and orchestration infrastructure for maximizing each user's personal leverage over AI.</p>
         <p>Throughout history, productive leverage has only been in the hands of a few people at the top. CEOs of large companies, politicians, heads of institutions. The modern world opens paths for individuals to reach those positions, but they still involve a lot of luck, a lot of work, and a lot of time.</p>
         <p>Problems in the world that required extreme amounts of human leverage to solve were gated by the cost of getting to the highest levels of society. If one person in the world knew how to solve a massive problem with huge societal impact, they would still have to spend decades proving themselves worthy of the human leverage required to solve it, and be extremely lucky.</p>
-        <p>As AI continues to get more capable and cheaper, solving massive problems requiring extreme amounts of coordinated effort becomes affordable to a wider pool of people. But coordinating that effort at scale, and ensuring AI is actually following your vision, is not a solved problem.</p>
-        <p>The barrier is not training a better model. It is making everything produced by the AI legible and verifiable at scale, without mentally overwhelming the human. The difficulty is that along the way, system performance increases at a rate faster than you are able to deal with the new capabilities. Even with exponential increases in capability, it still takes a lot of time and effort to direct.</p>
+        <p>As AI continues to get more capable and cheaper, solving massive problems requiring extreme amounts of coordinated effort becomes affordable to a wider pool of people. But very few people in society have experience effectively managing and organizing effort at scale, and the systems of organizing our work that people are familiar with are designed for a world that no longer exists.</p>
+        <p>When you build an AI orchestration system based around existing work management systems, the scaling ceiling is around the amount of work the human can imagine themselves doing if they had the human resources to do the work, and the scaling capacity of the system is limited by the user's ability to conceptualize the capability of the system.</p>
+        <p>When the capabilities start to expand beyond what the user has a mental model to support, the interface and the user become the bottleneck. Imagine if you woke up tomorrow and your baseline productivity increased by 10x. Within a few weeks you'll be able to adjust to that new normal.</p>
+        <p>Now imagine if you woke up tomorrow and your baseline increased 5,000x, or 100,000x. What would you do with that capacity? How would you reason about the work being done at that scale to even know that the system is working? If you're running a company, how do you manage people when everyone you hire has this same level of capacity?</p>
+        <p>The barrier to this scale of capability is not training a better model. It is making everything produced by the AI legible and verifiable and useful at scale, without mentally overwhelming the human director.</p>
 
         <blockquote>
           <p>The people who control their information flow will outperform the people who let algorithms, apps, and prompts control their day.</p>
         </blockquote>
+
+        <p class="founder-note-trigger">
+          <button type="button" id="founder-note-open" class="founder-note-link mono-label">
+            Founder's note <span aria-hidden="true">→</span>
+          </button>
+        </p>
       </article>
     </div>
   </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       Founder's note — modal dialog. Triggered from the thesis section.
+       Native <dialog> with ESC to close, click-outside to dismiss.
+       ════════════════════════════════════════════════════════════════ -->
+  <dialog id="founder-note" class="founder-note-dialog" aria-labelledby="founder-note-title">
+    <div class="founder-note-content">
+      <button
+        type="button"
+        id="founder-note-close"
+        class="founder-note-close"
+        aria-label="Close founder's note"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+
+      <p class="mono-label founder-note-eyebrow">Founder's note</p>
+      <h2 id="founder-note-title" class="founder-note-title">Where I am today</h2>
+
+      <div class="founder-note-body">
+        <p>I've been working on this system as a solo founder since early 2025, and I've been dogfooding it since May 2025. I've built more with this system in the past year than every team I've been on in my 11 years working in software, both in breadth and depth. I am completely reliant on my system because there is no viable alternative that can handle the workload that's now become normal to me.</p>
+        <p>What's missing now is packaging, positioning, and financing. Today I can use the system to build complex products and set up automated coding or research pipelines that require a level of specification and reliability that can't be done with other systems.</p>
+        <p>If I'm able to secure investment, the focus will be on productization, marketing, and demonstrations. If that doesn't work, I'm going to use it internally as either an employee or contractor until the next layer is done.</p>
+      </div>
+    </div>
+  </dialog>
 
   <!-- ════════════════════════════════════════════════════════════════
        Contact section — form copied verbatim from the previous
@@ -430,9 +464,157 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .form-status[data-state="err"] {
     color: #b84a3d;
   }
+
+  /* ──────────────────────────────────────────────────────────────
+     Founder's note — trigger + modal dialog
+     ────────────────────────────────────────────────────────────── */
+  .founder-note-trigger {
+    margin: 2.5rem 0 0;
+    text-align: center;
+  }
+
+  .founder-note-link {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 0;
+    color: var(--color-ink-muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid transparent;
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+
+  .founder-note-link:hover,
+  .founder-note-link:focus-visible {
+    color: var(--color-ink-primary);
+    border-bottom-color: var(--color-ink-primary);
+    outline: none;
+  }
+
+  .founder-note-link > span {
+    display: inline-block;
+    transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .founder-note-link:hover > span,
+  .founder-note-link:focus-visible > span {
+    transform: translateX(3px);
+  }
+
+  .founder-note-dialog {
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: var(--color-ink-body);
+    max-width: min(56ch, calc(100vw - 2rem));
+    width: 100%;
+    margin: auto;
+  }
+
+  .founder-note-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+  }
+
+  .founder-note-dialog[open] {
+    animation: founder-note-fade-in 180ms ease-out;
+  }
+
+  .founder-note-dialog[open]::backdrop {
+    animation: founder-note-backdrop-in 180ms ease-out;
+  }
+
+  @keyframes founder-note-fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes founder-note-backdrop-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .founder-note-content {
+    position: relative;
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-rule);
+    padding: clamp(1.75rem, 4vw, 2.75rem) clamp(1.5rem, 4vw, 2.75rem);
+  }
+
+  .founder-note-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    background: transparent;
+    border: none;
+    color: var(--color-ink-muted);
+    font-size: 1.5rem;
+    line-height: 1;
+    width: 2rem;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 999px;
+    transition: color 150ms ease, background-color 150ms ease;
+  }
+
+  .founder-note-close:hover,
+  .founder-note-close:focus-visible {
+    color: var(--color-ink-primary);
+    background: var(--color-rule);
+    outline: none;
+  }
+
+  .founder-note-eyebrow {
+    display: block;
+    margin: 0 0 0.5rem;
+    color: var(--color-ink-muted);
+  }
+
+  .founder-note-title {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: -0.012em;
+    color: var(--color-ink-primary);
+    margin: 0 0 1.5rem;
+  }
+
+  .founder-note-body {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-ink-body);
+  }
+
+  .founder-note-body > p {
+    margin: 0 0 1.25em;
+  }
+
+  .founder-note-body > p:last-child {
+    margin-bottom: 0;
+  }
 </style>
 
 <script>
+  // Founder's note modal — open/close wiring for the native <dialog>.
+  const founderDialog = document.getElementById('founder-note') as HTMLDialogElement | null;
+  const founderOpen = document.getElementById('founder-note-open');
+  const founderClose = document.getElementById('founder-note-close');
+
+  founderOpen?.addEventListener('click', () => founderDialog?.showModal());
+  founderClose?.addEventListener('click', () => founderDialog?.close());
+
+  // Click outside the content panel (i.e. on the backdrop) closes the dialog.
+  founderDialog?.addEventListener('click', (e) => {
+    if (e.target === founderDialog) founderDialog.close();
+  });
+
   const form = document.getElementById('contact-form') as HTMLFormElement | null;
   const status = document.getElementById('form-status') as HTMLElement | null;
 
