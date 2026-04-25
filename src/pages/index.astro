@@ -71,7 +71,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </blockquote>
 
         <p class="founder-note-trigger">
-          <button type="button" id="founder-note-open" class="founder-note-link mono-label">
+          <button type="button" id="founder-note-open" class="founder-note-link">
             Founder's note <span aria-hidden="true">→</span>
           </button>
         </p>
@@ -482,7 +482,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    border-bottom: 1px solid transparent;
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-ink-muted);
     transition: color 150ms ease, border-color 150ms ease;
   }
 
