@@ -1,43 +1,79 @@
-# Astro Starter Kit: Minimal
+# Obedience Corp Website
 
-```sh
-npm create astro@latest -- --template minimal
-```
+The marketing site for [Obedience Corp](https://obediencecorp.com), built with
+[Astro](https://astro.build) and [Tailwind CSS](https://tailwindcss.com) and
+deployed to GitHub Pages.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> _"Obedience Corp builds AI that does what you want, the way you want it done."_
 
-## 🚀 Project Structure
+## About Obedience Corp
 
-Inside of your Astro project, you'll see the following folders and files:
+Obedience Corp is researching **organized diffusion**: systems that turn vague
+user intent into expected results with minimal intervention between input and
+outcome. LLMs model language and diffusion models resolve visual noise.
+Organized diffusion models execution, turning ambiguous intent into structured
+work across agents, tools, context, workflows, and artifacts.
+
+The site presents the company thesis and the products built on the stack:
+
+| Product | Status | Summary |
+| :-------------------- | :--------- | :-------------------------------------------------------------------- |
+| **Festival** | Active | Methodology and CLI toolchain (`fest` + `camp`) for structured agent development. Flagship. |
+| **Obey** | Internal | The agent runtime that executes intent, structured by Festival. |
+| **Obedience** | Coming soon | The application layer for managing the information you consume and create. |
+| **Obey Agent Economy** | Active | Five autonomous agents across Hedera, 0G, and Base. Chainlink hackathon winner. Built on the stack. |
+
+## Tech Stack
+
+- **Astro 6** — static site generator
+- **Tailwind CSS 4** — styling via the `@tailwindcss/vite` plugin
+- **@astrojs/sitemap** — automatic sitemap generation
+- Self-hosted fonts via `@fontsource` (Inter, JetBrains Mono, Source Serif 4)
+- Node `>=22.12.0`
+
+## Project Structure
 
 ```text
 /
-├── public/
+├── public/                 # Static assets served as-is
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── pages/              # Routes (index.astro, work.astro)
+│   ├── layouts/           # BaseLayout.astro
+│   ├── components/        # Nav, Footer
+│   ├── content/
+│   │   └── products/      # Product entries (Markdown content collection)
+│   ├── styles/            # global.css
+│   └── content.config.ts  # Content collection schema
+├── astro.config.mjs        # Site config, redirects, integrations
+├── justfile                # Task runner entry point
+└── justfiles/dev.just      # Development recipes
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Pages live in `src/pages/` and are routed by file name. Product cards on the
+`/work` page are driven by the Markdown files in `src/content/products/`, each
+with frontmatter (`name`, `tagline`, `status`, `description`, links, ordering).
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Commands
 
-Any static assets, like images, can be placed in the `public/` directory.
+This project uses [`just`](https://github.com/casey/just) as its command runner.
+Run `just` with no arguments to list available recipes.
 
-## 🧞 Commands
+| Command         | Action                                       |
+| :-------------- | :------------------------------------------- |
+| `just install`  | Install dependencies                         |
+| `just dev`      | Start the local dev server                   |
+| `just build`    | Build the static site to `./dist/`           |
+| `just preview`  | Preview the production build locally          |
+| `just fmt`      | Format with Prettier                         |
+| `just fmt-check`| Check formatting without writing             |
+| `just clean`    | Remove build artifacts                       |
 
-All commands are run from the root of the project, from a terminal:
+The underlying `npm run dev`, `npm run build`, and `npm run preview` scripts are
+also available if you prefer running Astro directly.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Deployment
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Pushes to `main` trigger the **Deploy to GitHub Pages** workflow
+(`.github/workflows/deploy.yml`), which builds the site with `npx astro build`
+and publishes the `dist/` artifact. The production site is served at
+[obediencecorp.com](https://obediencecorp.com).
