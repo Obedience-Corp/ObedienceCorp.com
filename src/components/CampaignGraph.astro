@@ -360,12 +360,12 @@
     box-sizing: border-box;
     flex: 0 0 auto;
   }
-  .is-done { background: var(--color-ink-primary); }
-  .is-active {
+  .cg-dot.is-done { background: var(--color-ink-primary); }
+  .cg-dot.is-active {
     background: var(--color-ink-primary);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-ink-primary) 20%, transparent);
   }
-  .is-queued { background: transparent; border: 1.5px solid var(--color-ink-muted); }
+  .cg-dot.is-queued { background: transparent; border: 1.5px solid var(--color-ink-muted); }
 
   /* Drill-down inspector popover. */
   .cg-inspector {
