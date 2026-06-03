@@ -1,0 +1,409 @@
+---
+/**
+ * CampaignGraph — illustrative model of the organized-diffusion system over time.
+ *
+ * Time runs left -> right. Each campaign is a lane. Decisions land at their
+ * moment on the timeline; the link from a decision to the feature it produced
+ * is drawn at the point in time the work was done. Scroll right to watch the
+ * network of campaigns and decisions evolve.
+ *
+ * Standalone + self-contained so it can be iterated in isolation
+ * (see /graph-sandbox) before being placed on any page.
+ *
+ * Data is ILLUSTRATIVE and public-safe (a model, not live data).
+ */
+---
+
+<div class="cg" data-cg>
+  <div class="cg-scroll" tabindex="0" aria-label="Campaign timeline, scroll horizontally to move through time">
+    <div class="cg-canvas">
+      <svg class="cg-edges" aria-hidden="true"></svg>
+      <div class="cg-lanes"></div>
+      <div class="cg-axis"></div>
+    </div>
+  </div>
+  <p class="cg-legend">
+    <span class="cg-key"><i class="cg-dot is-done"></i> resolved</span>
+    <span class="cg-key"><i class="cg-dot is-active"></i> in&nbsp;progress</span>
+    <span class="cg-key"><i class="cg-dot is-queued"></i> queued</span>
+    <span class="cg-hint">Scroll right to move through time →</span>
+  </p>
+</div>
+
+<style is:global>
+  /* Global (not scoped): nodes are created at runtime via JS and would not get
+     Astro's scoping attribute. All selectors are cg-* prefixed (collision-safe). */
+  .cg {
+    font-family: var(--font-sans);
+    color: var(--color-ink-body);
+  }
+
+  .cg-scroll {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    outline: none;
+    scrollbar-width: thin;
+  }
+
+  .cg-canvas {
+    position: relative;
+    height: var(--cg-h, 460px);
+    min-width: 100%;
+  }
+
+  .cg-edges {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .cg-edges path {
+    fill: none;
+    stroke: var(--color-ink-muted);
+    stroke-width: 1.25;
+    opacity: 0;
+    transition: opacity 500ms ease, stroke-dashoffset 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cg-edges path.is-in {
+    opacity: 0.5;
+    stroke-dashoffset: 0;
+  }
+
+  .cg-lane {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: var(--lane-h, 132px);
+    border-top: 1px solid var(--color-rule);
+  }
+  .cg-lane:first-child { border-top: none; }
+
+  .cg-lane-label {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.7rem 0.9rem;
+    margin: 0.6rem 0 0 0;
+    background: color-mix(in srgb, var(--color-bg-primary) 86%, transparent);
+    backdrop-filter: blur(3px);
+    border-right: 1px solid var(--color-rule);
+    width: max-content;
+    max-width: 14rem;
+  }
+  .cg-lane-kind {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+  .cg-lane-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-ink-primary);
+    line-height: 1.1;
+  }
+  .cg-lane-mission {
+    font-size: 0.72rem;
+    color: var(--color-ink-muted);
+  }
+
+  .cg-node {
+    position: absolute;
+    z-index: 2;
+    transform: translate(-50%, -50%) translateY(8px);
+    opacity: 0;
+    transition: opacity 420ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    text-align: left;
+    background: transparent;
+    border: none;
+    cursor: default;
+    font-family: inherit;
+    color: var(--color-ink-body);
+  }
+  .cg-node.is-in {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  .cg-decision {
+    width: 9.5rem;
+  }
+  .cg-decision .cg-chip {
+    display: block;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-rule);
+    border-radius: 6px;
+    padding: 0.45rem 0.6rem;
+    font-size: 0.74rem;
+    line-height: 1.25;
+    color: var(--color-ink-primary);
+    position: relative;
+  }
+  .cg-decision .cg-kindline {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    margin-bottom: 0.25rem;
+  }
+
+  .cg-feature {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--color-ink-body);
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-rule);
+    border-radius: 999px;
+    padding: 0.28rem 0.7rem;
+  }
+
+  .cg-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+  }
+  .is-done { background: var(--color-ink-primary); }
+  .is-active {
+    background: var(--color-ink-primary);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-ink-primary) 20%, transparent);
+  }
+  .is-queued { background: transparent; border: 1.5px solid var(--color-ink-muted); }
+
+  .cg-tick {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    padding-top: 0.4rem;
+  }
+  .cg-tick::before {
+    content: "";
+    position: absolute;
+    top: -0.55rem;
+    left: 50%;
+    width: 1px;
+    height: 0.4rem;
+    background: var(--color-rule);
+  }
+  .cg-axisline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.1rem;
+    height: 1px;
+    background: var(--color-rule);
+  }
+
+  .cg-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.1rem;
+    margin: 1rem 0 0;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-muted);
+  }
+  .cg-key { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .cg-hint { margin-left: auto; opacity: 0.85; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cg-node, .cg-edges path {
+      transition: none;
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+    .cg-edges path { opacity: 0.5; }
+  }
+
+  @media (max-width: 700px) {
+    .cg-hint { margin-left: 0; flex-basis: 100%; }
+  }
+</style>
+
+<script>
+  type CGState = "done" | "active" | "queued";
+  interface CGEvent {
+    decision: string;
+    dt: number; // time index the decision was made
+    feature?: string;
+    ft?: number; // time index the linked work landed
+    state: CGState;
+  }
+  interface CGCampaign {
+    kind: string;
+    name: string;
+    mission: string;
+    start: number;
+    events: CGEvent[];
+  }
+
+  const TICKS = ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"];
+
+  const DATA: CGCampaign[] = [
+    {
+      kind: "Campaign", name: "Product Launch", mission: "Ship v2 to the public", start: 0,
+      events: [
+        { decision: "Ship the CLI before the app", dt: 0, feature: "core engine", ft: 1, state: "done" },
+        { decision: "Distribute as one installable stack", dt: 1, feature: "distribution", ft: 2, state: "done" },
+        { decision: "Defer the hub until single-user proves out", dt: 3, state: "done" },
+        { decision: "Read-only app before chat/session control", dt: 5, feature: "viewer MVP", ft: 6, state: "active" },
+      ],
+    },
+    {
+      kind: "Campaign", name: "Platform R&D", mission: "Agent control and audit", start: 2,
+      events: [
+        { decision: "Campaign-scoped filesystem boundary", dt: 2, feature: "sandbox", ft: 3, state: "done" },
+        { decision: "Gate tool calls behind approval", dt: 6, feature: "session control", ft: 7, state: "queued" },
+      ],
+    },
+    {
+      kind: "Campaign", name: "Go-to-Market", mission: "First design partners", start: 5,
+      events: [
+        { decision: "Lead with concrete demos", dt: 5, feature: "demo set", ft: 7, state: "active" },
+      ],
+    },
+  ];
+
+  const UNIT = 190;     // px per time tick
+  const PAD_L = 280;    // left padding so first nodes clear the sticky labels
+  const PAD_R = 120;
+  const LANE_H = 132;
+  const AXIS_H = 40;
+  const DEC_Y = 44;     // decision track offset within a lane
+  const FEAT_Y = 96;    // feature track offset within a lane
+
+  function initGraph(root: HTMLElement) {
+    const scroll = root.querySelector<HTMLElement>(".cg-scroll");
+    const canvas = root.querySelector<HTMLElement>(".cg-canvas");
+    const lanes = root.querySelector<HTMLElement>(".cg-lanes");
+    const axis = root.querySelector<HTMLElement>(".cg-axis");
+    const svg = root.querySelector<SVGSVGElement>(".cg-edges");
+    if (!scroll || !canvas || !lanes || !axis || !svg) return;
+
+    const maxT = TICKS.length - 1;
+    const xOf = (t: number) => PAD_L + t * UNIT;
+    const width = xOf(maxT) + PAD_R;
+    const height = DATA.length * LANE_H + AXIS_H;
+
+    canvas.style.setProperty("--cg-h", `${height}px`);
+    canvas.style.width = `${width}px`;
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    svg.setAttribute("width", String(width));
+    svg.setAttribute("height", String(height));
+
+    let edges = "";
+
+    DATA.forEach((camp, li) => {
+      const laneTop = li * LANE_H;
+      const lane = document.createElement("div");
+      lane.className = "cg-lane";
+      lane.style.top = `${laneTop}px`;
+      lane.style.setProperty("--lane-h", `${LANE_H}px`);
+
+      const label = document.createElement("div");
+      label.className = "cg-lane-label";
+      label.innerHTML =
+        `<span class="cg-lane-kind">${camp.kind}</span>` +
+        `<span class="cg-lane-name">${camp.name}</span>` +
+        `<span class="cg-lane-mission">${camp.mission}</span>`;
+      lane.appendChild(label);
+      lanes.appendChild(lane);
+
+      camp.events.forEach((ev, ei) => {
+        const decX = xOf(ev.dt);
+        const decY = laneTop + DEC_Y;
+
+        const dec = document.createElement("div");
+        dec.className = "cg-node cg-decision";
+        dec.style.left = `${decX}px`;
+        dec.style.top = `${decY}px`;
+        dec.dataset.reveal = "";
+        dec.innerHTML =
+          `<span class="cg-chip"><span class="cg-kindline">Decision · ${TICKS[ev.dt]}</span>${ev.decision}` +
+          `<i class="cg-dot is-${ev.state}" style="position:absolute;right:0.5rem;bottom:0.5rem"></i></span>`;
+        canvas.appendChild(dec);
+
+        if (ev.feature && ev.ft !== undefined) {
+          const featX = xOf(ev.ft);
+          const featY = laneTop + FEAT_Y;
+          const feat = document.createElement("div");
+          feat.className = "cg-node cg-feature";
+          feat.style.left = `${featX}px`;
+          feat.style.top = `${featY}px`;
+          feat.dataset.reveal = "";
+          feat.dataset.edge = `${li}-${ei}`;
+          feat.innerHTML = `<i class="cg-dot is-${ev.state}"></i>${ev.feature}`;
+          canvas.appendChild(feat);
+
+          const x1 = decX, y1 = decY + 16;
+          const x2 = featX, y2 = featY - 12;
+          const my = (y1 + y2) / 2;
+          edges += `<path data-edge="${li}-${ei}" d="M ${x1} ${y1} C ${x1} ${my}, ${x2} ${my}, ${x2} ${y2}" />`;
+        }
+      });
+    });
+
+    svg.innerHTML = edges;
+
+    // Time axis
+    const axisLine = document.createElement("div");
+    axisLine.className = "cg-axisline";
+    axis.appendChild(axisLine);
+    TICKS.forEach((t, i) => {
+      const tick = document.createElement("div");
+      tick.className = "cg-tick";
+      tick.style.left = `${xOf(i)}px`;
+      tick.textContent = t;
+      axis.appendChild(tick);
+    });
+
+    // Reveal nodes + their edges as they scroll into view
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          const el = e.target as HTMLElement;
+          el.classList.add("is-in");
+          const edgeId = el.dataset.edge;
+          if (edgeId) {
+            const path = svg.querySelector<SVGPathElement>(`path[data-edge="${edgeId}"]`);
+            if (path) {
+              const len = path.getTotalLength();
+              path.style.strokeDasharray = String(len);
+              path.style.strokeDashoffset = String(len);
+              requestAnimationFrame(() => path.classList.add("is-in"));
+            }
+          }
+          io.unobserve(el);
+        });
+      },
+      { root: scroll, threshold: 0.2, rootMargin: "0px -8% 0px -8%" }
+    );
+    canvas.querySelectorAll<HTMLElement>("[data-reveal]").forEach((n) => io.observe(n));
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-cg]").forEach(initGraph);
+</script>
