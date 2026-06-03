@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CampaignGraph from '../components/CampaignGraph.astro';
 ---
 
 <BaseLayout
@@ -11,13 +12,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
        ════════════════════════════════════════════════════════════════ -->
   <section class="hero">
     <div class="hero-inner">
-      <h1 class="hero-h1">
-        Organized<br />diffusion.
-      </h1>
+      <div class="hero-head">
+        <p class="mono-label hero-eyebrow">Organized diffusion</p>
+        <h1 class="hero-h1">
+          The executive<br />layer for AI.
+        </h1>
+      </div>
 
       <div class="hero-body">
         <p>
-          LLMs model language. Diffusion models resolve visual noise. Organized diffusion models execution, turning ambiguous intent into structured work across agents, tools, context, workflows, and artifacts.
+          AI can do more work than ever, and managing that work at scale is now the job. The executive layer lets you set the intent and direction, then keep the work legible and verifiable as it runs across agents, tools, and context.
         </p>
       </div>
 
@@ -25,6 +29,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="#thesis" class="hero-cta hero-cta-primary">Read more <span aria-hidden="true">↓</span></a>
         <a href="/work" class="hero-cta">See the work <span aria-hidden="true">→</span></a>
       </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       Organized-diffusion product visual — the campaign graph over time.
+       An illustrative model: campaigns as mission bands, decisions on the
+       timeline, the work each produced, and the network between campaigns.
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="diffusion-graph" aria-labelledby="diffusion-graph-title">
+    <div class="diffusion-graph-inner">
+      <p class="mono-label dg-eyebrow">The model</p>
+      <h2 id="diffusion-graph-title" class="dg-h2">
+        Every campaign, project, and decision has a place and a state.
+      </h2>
+      <p class="dg-lede">
+        Like a diffusion model, but organized. Steer at the level of missions and the decisions that shaped them. Drill into the detail only when you need it.
+      </p>
+      <CampaignGraph />
     </div>
   </section>
 
@@ -37,6 +59,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="mono-label thesis-eyebrow">The Shift</p>
 
       <article class="thesis-body">
+        <p class="thesis-lede">LLMs model language. Diffusion models resolve visual noise. <strong>Organized diffusion models execution</strong>, turning ambiguous intent into structured work across agents, tools, context, workflows, and artifacts.</p>
+
         <h2>Today you’re the connective tissue</h2>
         <p>AI agent harnesses do real work. They call tools, build things, search the web, write code, manipulate files. What they can’t do is reach the final outcome on their own. They run a few steps, stop, and hand control back. You review, redirect, kick off another loop. The work happens in fragments, and you are the connective tissue between every fragment.</p>
         <p>The gap isn’t that AI can’t do the work. It’s that today’s systems can’t sustain themselves through it. They need you to supply the structure, the judgment, the next step, every time.</p>
@@ -44,8 +68,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2>What changes with organized diffusion</h2>
         <p>A well-run company doesn’t work by the CEO talking to every person doing every task. It works because the systems and processes around them let competent people succeed in their roles without constant oversight and messages. The CEO supplies intent and strategy. The organization runs.</p>
         <p>We can build agentic harnesses today that can resemble that type of system by modeling the systems and processes we have in place at human organizations, but at scale we introduce many new points of failure and overload the user with information.</p>
-        <p>At it's core, organized diffusion standardizes the organization of the work being done so we can more easily abstract the work being done so the human can understand it, trust it and audit it. This has an additional benefit of compounding performance and autonomy increases through normal usage.</p>
-        <p></p>
+        <p>At its core, organized diffusion standardizes the organization of the work being done so we can more easily abstract the work being done so the human can understand it, trust it and audit it. This has an additional benefit of compounding performance and autonomy increases through normal usage.</p>
 
         <h2>User-owned by design</h2>
         <p>Your data, your context, and your history belong to you. They should be portable by default, easy to inspect, and easy to move. You shouldn’t have to fight to export your own information or rebuild your setup every time a tool changes direction.</p>
@@ -167,9 +190,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
       align-items: end;
     }
-    .hero-h1 { grid-column: 1 / 2; }
+    .hero-head { grid-column: 1 / 2; }
     .hero-body { grid-column: 2 / 3; margin: 0; }
     .hero-ctas { grid-column: 1 / -1; }
+  }
+
+  .hero-eyebrow {
+    display: block;
+    margin: 0 0 1.1rem;
+    color: var(--color-ink-muted);
   }
 
   .hero-h1 {
@@ -279,10 +308,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 
   /* ──────────────────────────────────────────────────────────────
+     Organized-diffusion product visual (campaign graph)
+     ────────────────────────────────────────────────────────────── */
+  .diffusion-graph {
+    border-bottom: 1px solid var(--color-rule);
+  }
+
+  .diffusion-graph-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(4rem, 9vh, 7rem) clamp(1.25rem, 3vw, 3.5rem);
+  }
+
+  .dg-eyebrow {
+    display: block;
+    margin-bottom: 1.1rem;
+    color: var(--color-ink-muted);
+  }
+
+  .dg-h2 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--color-ink-primary);
+    margin: 0 0 1rem;
+    max-width: 24ch;
+  }
+
+  .dg-lede {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    color: var(--color-ink-muted);
+    max-width: 60ch;
+    margin: 0 0 clamp(2.25rem, 5vh, 3rem);
+  }
+
+  /* ──────────────────────────────────────────────────────────────
      Thesis section
      ────────────────────────────────────────────────────────────── */
   .thesis {
     border-bottom: 1px solid var(--color-rule);
+  }
+
+  .thesis-lede {
+    font-family: var(--font-serif);
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--color-ink-primary);
+    margin: 0 0 2.75rem;
   }
 
   .thesis-inner {

@@ -2,37 +2,60 @@
 /**
  * CampaignGraph — illustrative model of the organized-diffusion system over time.
  *
- * Time runs left -> right. Each campaign is a lane. Decisions land at their
- * moment on the timeline; the link from a decision to the feature it produced
- * is drawn at the point in time the work was done. Scroll right to watch the
- * network of campaigns and decisions evolve.
+ * Time runs LEFT -> RIGHT across a month axis (Mar..Dec). Each campaign is a
+ * horizontal MISSION BAND that spans its active range (start tick -> latest
+ * event), like a refined Gantt bar. Decisions are milestone markers placed ON
+ * the band at their exact moment in time; the work each decision produced
+ * branches just below the band, with the link drawn at the moment the work
+ * landed. Cross-campaign threads connect a decision in one mission to the work
+ * it unblocked in another — the network of campaigns.
  *
- * Standalone + self-contained so it can be iterated in isolation
- * (see /graph-sandbox) before being placed on any page.
+ * "Organized diffusion" is made literal: the early/left of the timeline reads
+ * diffuse (a thinning scatter field, slightly softer nodes) and resolves into
+ * crisp, aligned structure on the right as the system organizes over time.
+ * Markers themselves are never jittered — a decision always sits precisely on
+ * its timestamp; only the backdrop carries the scatter.
+ *
+ * Click (or Enter/Space on) any decision to drill into the plan items it
+ * expands into (festivals, intents, design docs). One inspector open at a time;
+ * Escape or an outside click closes it.
+ *
+ * Self-contained: one .astro file, no external libraries, vanilla TS. Nodes are
+ * created at runtime, so all CSS lives in <style is:global> with cg-* prefixes
+ * (collision-safe). Colors derive ONLY from design tokens, so it is correct in
+ * both light and dark mode.
  *
  * Data is ILLUSTRATIVE and public-safe (a model, not live data).
  */
 ---
 
 <div class="cg" data-cg>
-  <div class="cg-scroll" tabindex="0" aria-label="Campaign timeline, scroll horizontally to move through time">
+  <div
+    class="cg-scroll"
+    tabindex="0"
+    role="group"
+    aria-label="Mission timeline — campaigns as bands across time. Scroll horizontally to move through time; activate a decision marker to inspect what it expands into."
+  >
     <div class="cg-canvas">
+      <div class="cg-grid" aria-hidden="true"></div>
+      <svg class="cg-field" aria-hidden="true"></svg>
       <svg class="cg-edges" aria-hidden="true"></svg>
-      <div class="cg-lanes"></div>
-      <div class="cg-axis"></div>
+      <div class="cg-bands"></div>
+      <div class="cg-axis" aria-hidden="true"></div>
     </div>
   </div>
   <p class="cg-legend">
     <span class="cg-key"><i class="cg-dot is-done"></i> resolved</span>
     <span class="cg-key"><i class="cg-dot is-active"></i> in&nbsp;progress</span>
     <span class="cg-key"><i class="cg-dot is-queued"></i> queued</span>
-    <span class="cg-hint">Scroll right to move through time →</span>
+    <span class="cg-key cg-key-thread"><i class="cg-thread-swatch"></i> cross&#8209;campaign&nbsp;link</span>
+    <span class="cg-hint">Diffuse → organized. Scroll right through time →</span>
   </p>
 </div>
 
 <style is:global>
-  /* Global (not scoped): nodes are created at runtime via JS and would not get
-     Astro's scoping attribute. All selectors are cg-* prefixed (collision-safe). */
+  /* Global (not scoped): runtime-created nodes do not receive Astro's scoping
+     attribute. Every selector is cg-* prefixed to stay collision-safe. */
   .cg {
     font-family: var(--font-sans);
     color: var(--color-ink-body);
@@ -45,14 +68,63 @@
     padding-bottom: 0.5rem;
     outline: none;
     scrollbar-width: thin;
+    scrollbar-color: var(--color-ink-muted) transparent;
+    scroll-behavior: smooth;
+  }
+  .cg-scroll:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   .cg-canvas {
     position: relative;
-    height: var(--cg-h, 460px);
+    height: var(--cg-h, 600px);
     min-width: 100%;
+    /* Subtle wash that condenses toward the right edge: the field resolving. */
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--color-bg-elevated) 0%, transparent) 30%,
+      color-mix(in srgb, var(--color-bg-elevated) 45%, transparent) 100%
+    );
   }
 
+  /* Faint vertical month gridlines spanning the whole canvas. */
+  .cg-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .cg-gridline {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--color-rule);
+    opacity: 0.45;
+  }
+
+  /* Diffuse scatter field: the "noise" that thins out as structure resolves.
+     Denser, larger, dimmer on the left; nearly gone on the right. */
+  .cg-field {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 0;
+  }
+  .cg-field circle {
+    fill: var(--color-ink-muted);
+    opacity: 0;
+    transition: opacity 700ms ease;
+  }
+  .cg-field circle.is-in { opacity: var(--mote-o, 0.16); }
+
+  /* ---- edges ---- */
   .cg-edges {
     position: absolute;
     inset: 0;
@@ -60,116 +132,225 @@
     height: 100%;
     pointer-events: none;
     overflow: visible;
+    z-index: 1;
   }
-  .cg-edges path {
+  /* Intra-campaign edge: decision -> the feature it produced (solid, quiet). */
+  .cg-edges path.cg-edge {
     fill: none;
     stroke: var(--color-ink-muted);
     stroke-width: 1.25;
     opacity: 0;
-    transition: opacity 500ms ease, stroke-dashoffset 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 500ms ease, stroke-dashoffset 650ms cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .cg-edges path.is-in {
-    opacity: 0.5;
+  .cg-edges path.cg-edge.is-in {
+    opacity: var(--edge-o, 0.5);
     stroke-dashoffset: 0;
   }
+  /* Cross-campaign thread: one campaign's decision unblocks another's work.
+     Distinct treatment — dashed, accent-toned, with a directional arrowhead. */
+  .cg-edges path.cg-thread {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 1.4;
+    stroke-dasharray: 4 4;
+    opacity: 0;
+    marker-end: url(#cg-arrow);
+    transition: opacity 600ms ease;
+  }
+  .cg-edges path.cg-thread.is-in { opacity: 0.7; }
+  .cg-edges .cg-arrow-fill { fill: var(--color-accent); }
 
-  .cg-lane {
+  /* Mission band: the Gantt bar spanning a campaign's active range. */
+  .cg-band {
     position: absolute;
     left: 0;
     right: 0;
-    height: var(--lane-h, 132px);
-    border-top: 1px solid var(--color-rule);
+    height: var(--band-h, 168px);
+    z-index: 1;
   }
-  .cg-lane:first-child { border-top: none; }
+  .cg-band-track {
+    position: absolute;
+    top: var(--track-y, 74px);
+    height: 6px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--color-ink-muted) 26%, transparent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    overflow: hidden;
+  }
+  .cg-band-track.is-in { transform: scaleX(1); }
+  /* The "resolved" portion of the band reads slightly heavier (ink). */
+  .cg-band-track::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: var(--done-frac, 0%);
+    background: color-mix(in srgb, var(--color-ink-primary) 52%, transparent);
+  }
+  /* Hairline rule between bands. */
+  .cg-band::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-rule);
+  }
+  .cg-band.is-first::before { display: none; }
 
-  .cg-lane-label {
+  .cg-band-label {
     position: sticky;
     left: 0;
-    z-index: 3;
+    z-index: 4;
     display: inline-flex;
     flex-direction: column;
-    gap: 0.15rem;
-    padding: 0.7rem 0.9rem;
-    margin: 0.6rem 0 0 0;
-    background: color-mix(in srgb, var(--color-bg-primary) 86%, transparent);
-    backdrop-filter: blur(3px);
+    gap: 0.18rem;
+    padding: 0.7rem 0.95rem;
+    margin: 0.85rem 0 0 0;
+    background: color-mix(in srgb, var(--color-bg-primary) 97%, transparent);
+    backdrop-filter: blur(6px);
     border-right: 1px solid var(--color-rule);
+    box-shadow: 10px 0 16px -10px var(--color-bg-primary);
     width: max-content;
-    max-width: 14rem;
+    max-width: 14.5rem;
   }
-  .cg-lane-kind {
+  .cg-band-kind {
     font-family: var(--font-mono);
     font-size: 0.6rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-ink-muted);
   }
-  .cg-lane-name {
+  .cg-band-name {
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--color-ink-primary);
-    line-height: 1.1;
+    line-height: 1.12;
   }
-  .cg-lane-mission {
+  .cg-band-mission {
     font-size: 0.72rem;
     color: var(--color-ink-muted);
+    line-height: 1.25;
+  }
+  .cg-band-span {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    color: var(--color-ink-muted);
+    margin-top: 0.15rem;
+    opacity: 0.85;
   }
 
+  /* Generic revealable node. --no: per-node resolution opacity; --scl: scale. */
   .cg-node {
     position: absolute;
-    z-index: 2;
-    transform: translate(-50%, -50%) translateY(8px);
+    z-index: 3;
     opacity: 0;
-    transition: opacity 420ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 440ms ease, transform 440ms cubic-bezier(0.22, 1, 0.36, 1);
     text-align: left;
     background: transparent;
     border: none;
-    cursor: default;
+    padding: 0;
+    margin: 0;
     font-family: inherit;
     color: var(--color-ink-body);
   }
-  .cg-node.is-in {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-  }
 
+  /* Decision milestone marker sitting ON the band. */
   .cg-decision {
-    width: 9.5rem;
+    transform: translate(-50%, -50%) translateY(8px) scale(var(--scl, 1));
+    cursor: pointer;
+    width: 1.05rem;
+    height: 1.05rem;
+    border-radius: 50%;
   }
-  .cg-decision .cg-chip {
-    display: block;
-    background: var(--color-bg-elevated);
-    border: 1px solid var(--color-rule);
-    border-radius: 6px;
-    padding: 0.45rem 0.6rem;
-    font-size: 0.74rem;
-    line-height: 1.25;
-    color: var(--color-ink-primary);
-    position: relative;
+  .cg-decision.is-in {
+    opacity: var(--no, 1);
+    transform: translate(-50%, -50%) scale(var(--scl, 1));
   }
-  .cg-decision .cg-kindline {
+  .cg-marker {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--color-bg-primary);
+    border: 1.5px solid var(--color-ink-primary);
+    box-sizing: border-box;
+    transition: box-shadow 180ms ease, transform 180ms ease;
+  }
+  .cg-marker.is-active {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-ink-primary) 16%, transparent);
+  }
+  .cg-marker.is-queued {
+    border-style: dashed;
+    border-color: var(--color-ink-muted);
+  }
+  .cg-marker.is-done {
+    background: var(--color-ink-primary);
+  }
+  .cg-decision:hover .cg-marker,
+  .cg-decision:focus-visible .cg-marker {
+    transform: scale(1.18);
+  }
+  .cg-decision:focus-visible { outline: none; }
+  .cg-decision:focus-visible .cg-marker {
+    box-shadow: 0 0 0 3px var(--color-accent);
+  }
+  .cg-decision.is-open .cg-marker {
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 35%, transparent);
+  }
+  /* Short caption ABOVE the marker naming the decision (kept tight, editorial). */
+  .cg-dec-caption {
+    position: absolute;
+    bottom: calc(100% + 0.45rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 9.6rem;
+    text-align: center;
+    font-size: 0.7rem;
+    line-height: 1.22;
+    color: var(--color-ink-body);
+    pointer-events: none;
+  }
+  .cg-dec-when {
     display: block;
     font-family: var(--font-mono);
-    font-size: 0.56rem;
+    font-size: 0.54rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--color-ink-muted);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.12rem;
+  }
+  .cg-dec-drill {
+    display: block;
+    margin-top: 0.12rem;
+    font-family: var(--font-mono);
+    font-size: 0.54rem;
+    letter-spacing: 0.06em;
+    color: var(--color-ink-muted);
+    opacity: 0.85;
   }
 
+  /* Feature/work node branching below the band. */
   .cg-feature {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
     white-space: nowrap;
+    transform: translate(-50%, -50%) translateY(8px) scale(var(--scl, 1));
     font-family: var(--font-mono);
     font-size: 0.7rem;
     letter-spacing: 0.02em;
     color: var(--color-ink-body);
     background: var(--color-bg-primary);
-    border: 1px solid var(--color-rule);
+    border: 1px solid color-mix(in srgb, var(--color-rule) var(--border-c, 100%), transparent);
     border-radius: 999px;
     padding: 0.28rem 0.7rem;
+  }
+  .cg-feature.is-in {
+    opacity: var(--no, 1);
+    transform: translate(-50%, -50%) scale(var(--scl, 1));
   }
 
   .cg-dot {
@@ -186,6 +367,114 @@
   }
   .is-queued { background: transparent; border: 1.5px solid var(--color-ink-muted); }
 
+  /* Drill-down inspector popover. */
+  .cg-inspector {
+    position: absolute;
+    z-index: 6;
+    width: 17rem;
+    transform: translate(-50%, 0) translateY(6px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 200ms ease, transform 200ms ease;
+    background: var(--color-bg-elevated);
+    border: 1px solid var(--color-accent);
+    border-radius: 8px;
+    box-shadow: 0 16px 40px -18px color-mix(in srgb, var(--color-ink-primary) 50%, transparent);
+    padding: 0.85rem 0.95rem;
+  }
+  .cg-inspector.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+  }
+  /* Pointer triangle — points up to the marker by default. */
+  .cg-inspector::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 11px;
+    height: 11px;
+    background: var(--color-bg-elevated);
+    border-left: 1px solid var(--color-accent);
+    border-top: 1px solid var(--color-accent);
+  }
+  /* Flipped (opens above the marker): triangle on the bottom. */
+  .cg-inspector.is-flip::before {
+    top: auto;
+    bottom: -6px;
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid var(--color-accent);
+    border-bottom: 1px solid var(--color-accent);
+  }
+  .cg-insp-kind {
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    margin-bottom: 0.3rem;
+  }
+  .cg-insp-title {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    line-height: 1.2;
+    color: var(--color-ink-primary);
+    margin: 0 0 0.6rem;
+  }
+  .cg-insp-sub {
+    font-size: 0.7rem;
+    color: var(--color-ink-muted);
+    margin: 0 0 0.55rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .cg-insp-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .cg-insp-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    color: var(--color-ink-body);
+  }
+  .cg-insp-item .cg-insp-tag {
+    font-family: var(--font-mono);
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    flex: 0 0 auto;
+    width: 4.1rem;
+  }
+  .cg-insp-foot {
+    margin-top: 0.65rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-rule);
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.05em;
+    color: var(--color-ink-muted);
+  }
+
+  /* Time axis. */
+  .cg-axis {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 44px;
+    z-index: 2;
+  }
   .cg-tick {
     position: absolute;
     bottom: 0;
@@ -215,6 +504,7 @@
     background: var(--color-rule);
   }
 
+  /* Legend. */
   .cg-legend {
     display: flex;
     flex-wrap: wrap;
@@ -227,15 +517,29 @@
     color: var(--color-ink-muted);
   }
   .cg-key { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .cg-thread-swatch {
+    display: inline-block;
+    width: 22px;
+    height: 0;
+    border-top: 1.5px dashed var(--color-accent);
+    opacity: 0.85;
+  }
   .cg-hint { margin-left: auto; opacity: 0.85; }
 
   @media (prefers-reduced-motion: reduce) {
-    .cg-node, .cg-edges path {
+    .cg-node,
+    .cg-edges path,
+    .cg-band-track,
+    .cg-field circle,
+    .cg-inspector {
       transition: none;
-      opacity: 1;
-      transform: translate(-50%, -50%);
     }
-    .cg-edges path { opacity: 0.5; }
+    .cg-decision { opacity: var(--no, 1); transform: translate(-50%, -50%) scale(var(--scl, 1)); }
+    .cg-feature { opacity: var(--no, 1); transform: translate(-50%, -50%) scale(var(--scl, 1)); }
+    .cg-band-track { transform: scaleX(1); }
+    .cg-edges path.cg-edge { opacity: var(--edge-o, 0.5); stroke-dashoffset: 0; }
+    .cg-edges path.cg-thread { opacity: 0.7; }
+    .cg-field circle { opacity: var(--mote-o, 0.16); }
   }
 
   @media (max-width: 700px) {
@@ -245,130 +549,406 @@
 
 <script>
   type CGState = "done" | "active" | "queued";
+
+  interface CGPlanItem {
+    tag: string;   // short kind label, e.g. "Festival", "Intent", "Design"
+    text: string;  // illustrative detail
+  }
   interface CGEvent {
+    id: string;          // stable id for cross-campaign references
     decision: string;
-    dt: number; // time index the decision was made
+    dt: number;          // time index the decision was made
     feature?: string;
-    ft?: number; // time index the linked work landed
+    ft?: number;         // time index the linked work landed
     state: CGState;
+    plan: CGPlanItem[];  // drill-down detail (illustrative)
   }
   interface CGCampaign {
     kind: string;
     name: string;
     mission: string;
-    start: number;
+    start: number;       // band start tick
     events: CGEvent[];
   }
+  // A cross-campaign thread: a decision in one campaign unblocks a feature in
+  // another. Referenced by event id; drawn distinctly from intra-lane edges.
+  interface CGLink {
+    from: string; // source event id (a decision)
+    to: string;   // target event id (whose feature it unblocked)
+  }
 
-  const TICKS = ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"];
+  const TICKS = ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+  // ILLUSTRATIVE dataset. Staggered starts; left = sparse/resolved (done),
+  // middle = in-progress (active), right = queued — diffusion resolving into
+  // structure as time runs left -> right.
   const DATA: CGCampaign[] = [
     {
-      kind: "Campaign", name: "Product Launch", mission: "Ship v2 to the public", start: 0,
+      kind: "Campaign", name: "Product Launch", mission: "Ship the stack to the public", start: 0,
       events: [
-        { decision: "Ship the CLI before the app", dt: 0, feature: "core engine", ft: 1, state: "done" },
-        { decision: "Distribute as one installable stack", dt: 1, feature: "distribution", ft: 2, state: "done" },
-        { decision: "Defer the hub until single-user proves out", dt: 3, state: "done" },
-        { decision: "Read-only app before chat/session control", dt: 5, feature: "viewer MVP", ft: 6, state: "active" },
+        {
+          id: "pl-cli", decision: "Ship the CLI before the app", dt: 0, feature: "core engine", ft: 1, state: "done",
+          plan: [
+            { tag: "Festival", text: "FP0007 — 3 phases" },
+            { tag: "Design", text: "engine boundary spec" },
+            { tag: "Intent", text: "#12 first-run < 5 min" },
+          ],
+        },
+        {
+          id: "pl-dist", decision: "Distribute as one installable stack", dt: 1, feature: "distribution", ft: 2, state: "done",
+          plan: [
+            { tag: "Festival", text: "FP0009 — 2 phases" },
+            { tag: "Intent", text: "#21 one-command install" },
+          ],
+        },
+        {
+          id: "pl-hub", decision: "Defer the hub until single-user proves out", dt: 3, state: "done",
+          plan: [
+            { tag: "Intent", text: "#28 hub deferral" },
+            { tag: "Design", text: "single-user-first note" },
+          ],
+        },
+        {
+          id: "pl-viewer", decision: "Read-only app before chat/session control", dt: 5, feature: "viewer MVP", ft: 6, state: "active",
+          plan: [
+            { tag: "Festival", text: "FP0012 — 3 phases" },
+            { tag: "Design", text: "read-only viewer scope" },
+            { tag: "Intent", text: "#44 timeline view" },
+          ],
+        },
       ],
     },
     {
       kind: "Campaign", name: "Platform R&D", mission: "Agent control and audit", start: 2,
       events: [
-        { decision: "Campaign-scoped filesystem boundary", dt: 2, feature: "sandbox", ft: 3, state: "done" },
-        { decision: "Gate tool calls behind approval", dt: 6, feature: "session control", ft: 7, state: "queued" },
+        {
+          id: "rd-sandbox", decision: "Campaign-scoped filesystem boundary", dt: 2, feature: "sandbox", ft: 3, state: "done",
+          plan: [
+            { tag: "Design", text: "sandbox boundary doc" },
+            { tag: "Festival", text: "FP0010 — 2 phases" },
+            { tag: "Intent", text: "#31 symlink escape guard" },
+          ],
+        },
+        {
+          id: "rd-audit", decision: "Make every tool call inspectable", dt: 4, feature: "audit log", ft: 5, state: "active",
+          plan: [
+            { tag: "Festival", text: "FP0014 — 2 phases" },
+            { tag: "Intent", text: "#39 audit trail" },
+          ],
+        },
+        {
+          id: "rd-gate", decision: "Gate tool calls behind approval", dt: 6, feature: "session control", ft: 8, state: "queued",
+          plan: [
+            { tag: "Design", text: "approval-gate protocol" },
+            { tag: "Intent", text: "#52 human-in-the-loop" },
+            { tag: "Festival", text: "FP0018 — planned" },
+          ],
+        },
       ],
     },
     {
-      kind: "Campaign", name: "Go-to-Market", mission: "First design partners", start: 5,
+      kind: "Campaign", name: "Memory & Context", mission: "Git-native agent context", start: 3,
       events: [
-        { decision: "Lead with concrete demos", dt: 5, feature: "demo set", ft: 7, state: "active" },
+        {
+          id: "mc-store", decision: "Treat campaigns as the memory layer", dt: 3, feature: "context store", ft: 4, state: "done",
+          plan: [
+            { tag: "Design", text: "context-layer concept" },
+            { tag: "Festival", text: "FP0013 — 3 phases" },
+          ],
+        },
+        {
+          id: "mc-index", decision: "Index decisions, not just files", dt: 5, feature: "decision index", ft: 7, state: "active",
+          plan: [
+            { tag: "Festival", text: "FP0021 — 2 phases" },
+            { tag: "Intent", text: "#52 decision schema" },
+          ],
+        },
+      ],
+    },
+    {
+      kind: "Campaign", name: "Go-to-Market", mission: "First design partners", start: 4,
+      events: [
+        {
+          id: "gtm-demos", decision: "Lead with concrete demos", dt: 4, feature: "demo set", ft: 6, state: "active",
+          plan: [
+            { tag: "Design", text: "demo narrative outline" },
+            { tag: "Intent", text: "#41 partner walkthrough" },
+          ],
+        },
+        {
+          id: "gtm-partners", decision: "Onboard three partners by Q4", dt: 7, feature: "pilot cohort", ft: 9, state: "queued",
+          plan: [
+            { tag: "Festival", text: "FP0019 — planned" },
+            { tag: "Intent", text: "#57 pilot intake" },
+          ],
+        },
+      ],
+    },
+    {
+      kind: "Campaign", name: "Site & Story", mission: "Public positioning", start: 5,
+      events: [
+        {
+          id: "site-story", decision: "Lead the site with the timeline model", dt: 5, feature: "hero graph", ft: 7, state: "active",
+          plan: [
+            { tag: "Design", text: "organized-diffusion concept" },
+            { tag: "Intent", text: "#46 hero visual" },
+          ],
+        },
+        {
+          id: "site-pitch", decision: "Ground the pitch in the running system", dt: 8, feature: "pitch flow", ft: 9, state: "queued",
+          plan: [
+            { tag: "Design", text: "pitch story outline" },
+            { tag: "Intent", text: "#60 live-demo path" },
+          ],
+        },
       ],
     },
   ];
 
-  const UNIT = 190;     // px per time tick
-  const PAD_L = 280;    // left padding so first nodes clear the sticky labels
-  const PAD_R = 120;
-  const LANE_H = 132;
-  const AXIS_H = 40;
-  const DEC_Y = 44;     // decision track offset within a lane
-  const FEAT_Y = 96;    // feature track offset within a lane
+  // Cross-campaign threads: source decision -> target event whose feature it
+  // unblocked. These are the "network of campaigns" links.
+  const LINKS: CGLink[] = [
+    { from: "pl-cli", to: "rd-sandbox" },      // engine unblocks platform R&D
+    { from: "rd-sandbox", to: "mc-store" },    // sandbox boundary feeds the context layer
+    { from: "mc-store", to: "pl-viewer" },     // context store feeds the read-only viewer
+    { from: "pl-viewer", to: "gtm-demos" },    // viewer MVP feeds the demos
+    { from: "rd-audit", to: "site-pitch" },    // audit log grounds the pitch
+    { from: "mc-index", to: "site-story" },    // decision index feeds the story
+  ];
+
+  const UNIT = 184;     // px per time tick
+  const PAD_L = 296;    // left padding so first nodes clear the sticky labels
+  const PAD_R = 140;
+  const BAND_H = 168;
+  const AXIS_H = 46;
+  const TRACK_Y = 74;   // band-track / marker centerline within a band
+  const FEAT_Y = 128;   // feature track offset within a band
+
+  // Hand-authored diffuse scatter field, in (timeIndex, bandFraction). Denser on
+  // the left; thins toward the right where structure takes over. No randomness.
+  const MOTES: Array<[number, number]> = [
+    [0.15, 0.22], [0.28, 0.74], [0.42, 0.4], [0.55, 0.18], [0.6, 0.66],
+    [0.7, 0.85], [0.82, 0.3], [0.9, 0.55], [1.1, 0.12], [1.18, 0.78],
+    [1.32, 0.46], [1.5, 0.7], [1.62, 0.25], [1.8, 0.9], [1.95, 0.5],
+    [2.1, 0.34], [2.25, 0.66], [2.5, 0.2], [2.7, 0.82], [2.9, 0.48],
+    [3.1, 0.6], [3.4, 0.28], [3.7, 0.74], [4.0, 0.42], [4.4, 0.66],
+    [4.9, 0.3], [5.4, 0.55], [5.9, 0.4],
+  ];
+
+  function resolution(t: number, maxT: number): number {
+    // 0 at the left edge -> 1 at the right edge. Eased so crystallization
+    // accelerates toward the end (structure "snaps" into place).
+    const lin = Math.max(0, Math.min(1, t / maxT));
+    return lin * lin;
+  }
+
+  function escapeHtml(s: string): string {
+    return s
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
 
   function initGraph(root: HTMLElement) {
     const scroll = root.querySelector<HTMLElement>(".cg-scroll");
     const canvas = root.querySelector<HTMLElement>(".cg-canvas");
-    const lanes = root.querySelector<HTMLElement>(".cg-lanes");
-    const axis = root.querySelector<HTMLElement>(".cg-axis");
+    const grid = root.querySelector<HTMLElement>(".cg-grid");
+    const field = root.querySelector<SVGSVGElement>(".cg-field");
     const svg = root.querySelector<SVGSVGElement>(".cg-edges");
-    if (!scroll || !canvas || !lanes || !axis || !svg) return;
+    const bands = root.querySelector<HTMLElement>(".cg-bands");
+    const axis = root.querySelector<HTMLElement>(".cg-axis");
+    if (!scroll || !canvas || !grid || !field || !svg || !bands || !axis) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     const maxT = TICKS.length - 1;
     const xOf = (t: number) => PAD_L + t * UNIT;
     const width = xOf(maxT) + PAD_R;
-    const height = DATA.length * LANE_H + AXIS_H;
+    const bandsBottom = DATA.length * BAND_H;
+    const height = bandsBottom + AXIS_H;
 
     canvas.style.setProperty("--cg-h", `${height}px`);
     canvas.style.width = `${width}px`;
-    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
-    svg.setAttribute("width", String(width));
-    svg.setAttribute("height", String(height));
+    for (const s of [field, svg]) {
+      s.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      s.setAttribute("width", String(width));
+      s.setAttribute("height", String(height));
+    }
 
-    let edges = "";
+    // Geometry registries (by event id) so cross-campaign threads can look up
+    // decision and feature coordinates after the build loop.
+    const decPos: Record<string, { x: number; y: number }> = {};
+    const featPos: Record<string, { x: number; y: number; state: CGState }> = {};
+    const eventById: Record<string, CGEvent> = {};
 
+    // ── Vertical month gridlines ──
+    TICKS.forEach((_, i) => {
+      const gl = document.createElement("div");
+      gl.className = "cg-gridline";
+      gl.style.left = `${xOf(i)}px`;
+      grid.appendChild(gl);
+    });
+
+    // ── Diffuse scatter field (thins toward the right) ──
+    let motes = "";
+    for (const [t, frac] of MOTES) {
+      const x = xOf(t);
+      const y = 24 + frac * (bandsBottom - 48);
+      const res = resolution(t, maxT);
+      const r = (2.8 - res * 1.7).toFixed(2);
+      const o = (0.2 - res * 0.13).toFixed(3);
+      motes += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" style="--mote-o:${o}" data-mote />`;
+    }
+    field.innerHTML = motes;
+
+    // ── Mission bands + milestone markers + feature nodes ──
     DATA.forEach((camp, li) => {
-      const laneTop = li * LANE_H;
-      const lane = document.createElement("div");
-      lane.className = "cg-lane";
-      lane.style.top = `${laneTop}px`;
-      lane.style.setProperty("--lane-h", `${LANE_H}px`);
+      const bandTop = li * BAND_H;
+      const band = document.createElement("div");
+      band.className = "cg-band" + (li === 0 ? " is-first" : "");
+      band.style.top = `${bandTop}px`;
+      band.style.setProperty("--band-h", `${BAND_H}px`);
+      band.style.setProperty("--track-y", `${TRACK_Y}px`);
 
+      // Span: from start tick to the latest event time (decision or feature).
+      const lastT = camp.events.reduce((m, ev) => {
+        const ft = ev.ft ?? ev.dt;
+        return Math.max(m, ev.dt, ft);
+      }, camp.start);
+      const spanX1 = xOf(camp.start);
+      const spanX2 = xOf(lastT);
+
+      // Fraction of the span that is "resolved" (done).
+      const doneMax = camp.events
+        .filter((e) => e.state === "done")
+        .reduce((m, e) => Math.max(m, e.ft ?? e.dt), camp.start);
+      const denom = lastT - camp.start || 1;
+      const doneFrac = Math.max(0, Math.min(1, (doneMax - camp.start) / denom)) * 100;
+
+      // The Gantt track bar.
+      const track = document.createElement("div");
+      track.className = "cg-band-track";
+      track.style.left = `${spanX1}px`;
+      track.style.width = `${spanX2 - spanX1}px`;
+      track.style.setProperty("--done-frac", `${doneFrac.toFixed(0)}%`);
+      track.dataset.reveal = "track";
+      band.appendChild(track);
+
+      // Sticky label.
       const label = document.createElement("div");
-      label.className = "cg-lane-label";
+      label.className = "cg-band-label";
       label.innerHTML =
-        `<span class="cg-lane-kind">${camp.kind}</span>` +
-        `<span class="cg-lane-name">${camp.name}</span>` +
-        `<span class="cg-lane-mission">${camp.mission}</span>`;
-      lane.appendChild(label);
-      lanes.appendChild(lane);
+        `<span class="cg-band-kind">${escapeHtml(camp.kind)}</span>` +
+        `<span class="cg-band-name">${escapeHtml(camp.name)}</span>` +
+        `<span class="cg-band-mission">${escapeHtml(camp.mission)}</span>` +
+        `<span class="cg-band-span">${TICKS[camp.start]} – ${TICKS[lastT]}</span>`;
+      band.appendChild(label);
 
-      camp.events.forEach((ev, ei) => {
+      bands.appendChild(band);
+
+      camp.events.forEach((ev) => {
+        eventById[ev.id] = ev;
+        const res = resolution(ev.dt, maxT);
+        const nodeO = (0.72 + res * 0.28).toFixed(3); // faint left -> full right
+        const scl = (0.94 + res * 0.06).toFixed(3);
+
         const decX = xOf(ev.dt);
-        const decY = laneTop + DEC_Y;
+        const decY = bandTop + TRACK_Y + 3; // sit on the track centerline
+        decPos[ev.id] = { x: decX, y: decY };
 
-        const dec = document.createElement("div");
+        // Decision milestone marker (button — drill-down trigger).
+        const dec = document.createElement("button");
+        dec.type = "button";
         dec.className = "cg-node cg-decision";
         dec.style.left = `${decX}px`;
         dec.style.top = `${decY}px`;
-        dec.dataset.reveal = "";
+        dec.style.setProperty("--no", nodeO);
+        dec.style.setProperty("--scl", scl);
+        dec.dataset.reveal = "node";
+        dec.dataset.eventId = ev.id;
+        dec.setAttribute("aria-haspopup", "dialog");
+        dec.setAttribute("aria-expanded", "false");
+        dec.setAttribute(
+          "aria-label",
+          `Decision, ${TICKS[ev.dt]}: ${ev.decision}. ${ev.state}. Activate to inspect the ${ev.plan.length} plan items it expands into.`
+        );
         dec.innerHTML =
-          `<span class="cg-chip"><span class="cg-kindline">Decision · ${TICKS[ev.dt]}</span>${ev.decision}` +
-          `<i class="cg-dot is-${ev.state}" style="position:absolute;right:0.5rem;bottom:0.5rem"></i></span>`;
+          `<span class="cg-marker is-${ev.state}"></span>` +
+          `<span class="cg-dec-caption">` +
+          `<span class="cg-dec-when">Decision · ${TICKS[ev.dt]}</span>` +
+          `${escapeHtml(ev.decision)}` +
+          `<span class="cg-dec-drill" aria-hidden="true">${ev.plan.length} plan items ↳</span>` +
+          `</span>`;
         canvas.appendChild(dec);
 
+        // Feature/work node branching below the band.
         if (ev.feature && ev.ft !== undefined) {
+          const fRes = resolution(ev.ft, maxT);
           const featX = xOf(ev.ft);
-          const featY = laneTop + FEAT_Y;
+          const featY = bandTop + FEAT_Y;
+          featPos[ev.id] = { x: featX, y: featY, state: ev.state };
+
           const feat = document.createElement("div");
           feat.className = "cg-node cg-feature";
           feat.style.left = `${featX}px`;
           feat.style.top = `${featY}px`;
-          feat.dataset.reveal = "";
-          feat.dataset.edge = `${li}-${ei}`;
-          feat.innerHTML = `<i class="cg-dot is-${ev.state}"></i>${ev.feature}`;
+          feat.style.setProperty("--no", (0.72 + fRes * 0.28).toFixed(3));
+          feat.style.setProperty("--scl", (0.94 + fRes * 0.06).toFixed(3));
+          feat.style.setProperty("--border-c", `${(50 + fRes * 50).toFixed(0)}%`);
+          feat.dataset.reveal = "node";
+          feat.dataset.edge = `f-${ev.id}`;
+          feat.innerHTML = `<i class="cg-dot is-${ev.state}"></i>${escapeHtml(ev.feature)}`;
           canvas.appendChild(feat);
-
-          const x1 = decX, y1 = decY + 16;
-          const x2 = featX, y2 = featY - 12;
-          const my = (y1 + y2) / 2;
-          edges += `<path data-edge="${li}-${ei}" d="M ${x1} ${y1} C ${x1} ${my}, ${x2} ${my}, ${x2} ${y2}" />`;
         }
       });
     });
 
+    // ── Edges (built after geometry is known) ──
+    let edges =
+      `<defs><marker id="cg-arrow" viewBox="0 0 10 10" refX="8" refY="5" ` +
+      `markerWidth="6" markerHeight="6" orient="auto-start-reverse">` +
+      `<path class="cg-arrow-fill" d="M0 0 L10 5 L0 10 z" /></marker></defs>`;
+
+    // Intra-campaign edges: decision -> its own feature.
+    DATA.forEach((camp) => {
+      camp.events.forEach((ev) => {
+        if (!(ev.feature && ev.ft !== undefined)) return;
+        const d = decPos[ev.id];
+        const f = featPos[ev.id];
+        if (!d || !f) return;
+        const fRes = resolution(ev.ft, maxT);
+        const edgeO = (0.32 + fRes * 0.36).toFixed(3);
+        const x1 = d.x, y1 = d.y + 10;
+        const x2 = f.x, y2 = f.y - 12;
+        const my = (y1 + y2) / 2;
+        edges += `<path class="cg-edge" data-edge="f-${ev.id}" style="--edge-o:${edgeO}" ` +
+          `d="M ${x1} ${y1} C ${x1} ${my}, ${x2} ${my}, ${x2} ${y2}" />`;
+      });
+    });
+
+    // Cross-campaign threads: source decision -> the feature it unblocked in
+    // another campaign. Distinct dashed accent stroke + arrowhead. Revealed when
+    // the TARGET feature scrolls in (the moment the unblocked work lands).
+    LINKS.forEach((lnk, i) => {
+      const src = decPos[lnk.from];
+      const dst = featPos[lnk.to] || decPos[lnk.to];
+      if (!src || !dst) return;
+      const x1 = src.x, y1 = src.y;
+      const x2 = dst.x, y2 = dst.y;
+      const down = y2 > y1;
+      const cx1 = x1 + (x2 - x1) * 0.2;
+      const cy1 = y1 + (down ? 50 : -50);
+      const cx2 = x2 - (x2 - x1) * 0.2;
+      const cy2 = y2 + (down ? -50 : 50);
+      const triggerEdge = featPos[lnk.to] ? `f-${lnk.to}` : `node-${lnk.to}`;
+      edges += `<path class="cg-thread" data-thread="t-${i}" data-thread-trigger="${triggerEdge}" ` +
+        `d="M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}" />`;
+    });
+
     svg.innerHTML = edges;
 
-    // Time axis
+    // ── Time axis ──
     const axisLine = document.createElement("div");
     axisLine.className = "cg-axisline";
     axis.appendChild(axisLine);
@@ -380,7 +960,110 @@
       axis.appendChild(tick);
     });
 
-    // Reveal nodes + their edges as they scroll into view
+    // ── Drill-down inspector (single shared popover, one open at a time) ──
+    const inspector = document.createElement("div");
+    inspector.className = "cg-inspector";
+    inspector.setAttribute("role", "dialog");
+    inspector.setAttribute("aria-label", "Decision detail");
+    inspector.setAttribute("aria-hidden", "true");
+    canvas.appendChild(inspector);
+
+    let openBtn: HTMLButtonElement | null = null;
+
+    function closeInspector() {
+      if (!openBtn) return;
+      inspector.classList.remove("is-open", "is-flip");
+      inspector.setAttribute("aria-hidden", "true");
+      openBtn.setAttribute("aria-expanded", "false");
+      openBtn.classList.remove("is-open");
+      openBtn = null;
+    }
+
+    function openInspector(btn: HTMLButtonElement) {
+      const ev = eventById[btn.dataset.eventId || ""];
+      if (!ev) return;
+      if (openBtn === btn) { closeInspector(); return; }
+      closeInspector();
+
+      const stateLabel = ev.state === "done" ? "Resolved" : ev.state === "active" ? "In progress" : "Queued";
+      const items = ev.plan
+        .map(
+          (p) =>
+            `<li class="cg-insp-item"><span class="cg-insp-tag">${escapeHtml(p.tag)}</span><span>${escapeHtml(p.text)}</span></li>`
+        )
+        .join("");
+      inspector.innerHTML =
+        `<div class="cg-insp-kind">Decision · ${TICKS[ev.dt]} · ${stateLabel}</div>` +
+        `<p class="cg-insp-title">${escapeHtml(ev.decision)}</p>` +
+        (ev.feature
+          ? `<p class="cg-insp-sub">Expands into ${ev.plan.length} linked items · produced “${escapeHtml(ev.feature)}”</p>`
+          : `<p class="cg-insp-sub">Expands into ${ev.plan.length} linked items</p>`) +
+        `<ul class="cg-insp-list">${items}</ul>` +
+        `<div class="cg-insp-foot">Illustrative — a model, not live data</div>`;
+
+      // Position below the marker; clamp horizontally; flip above near the bottom.
+      const left = parseFloat(btn.style.left);
+      const top = parseFloat(btn.style.top);
+      const half = (17 * 16) / 2; // half popover width (17rem)
+      const clampedLeft = Math.max(half + 8, Math.min(width - half - 8, left));
+      inspector.style.left = `${clampedLeft}px`;
+
+      // Reveal first to measure, then decide flip.
+      inspector.classList.add("is-open");
+      inspector.setAttribute("aria-hidden", "false");
+      const estH = inspector.offsetHeight || 180;
+      if (top + 18 + estH > height - 6) {
+        inspector.classList.add("is-flip");
+        inspector.style.top = `${Math.max(6, top - estH - 16)}px`;
+      } else {
+        inspector.style.top = `${top + 18}px`;
+      }
+
+      btn.setAttribute("aria-expanded", "true");
+      btn.classList.add("is-open");
+      openBtn = btn;
+    }
+
+    canvas.querySelectorAll<HTMLButtonElement>(".cg-decision").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openInspector(btn);
+      });
+    });
+    scroll.addEventListener("click", () => closeInspector());
+    inspector.addEventListener("click", (e) => e.stopPropagation());
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && openBtn) {
+        const btn = openBtn;
+        closeInspector();
+        btn.focus();
+      }
+    });
+
+    // ── Reveal nodes, tracks, motes, and edges as they scroll into view ──
+    const revealEdge = (edgeId: string) => {
+      const path = svg.querySelector<SVGPathElement>(`path[data-edge="${edgeId}"]`);
+      if (!path) return;
+      const len = path.getTotalLength();
+      path.style.strokeDasharray = String(len);
+      path.style.strokeDashoffset = String(len);
+      requestAnimationFrame(() => path.classList.add("is-in"));
+    };
+
+    const revealThreadsFor = (triggerEdge: string) => {
+      svg.querySelectorAll<SVGPathElement>(`path[data-thread-trigger="${triggerEdge}"]`).forEach((path) => {
+        requestAnimationFrame(() => path.classList.add("is-in"));
+      });
+    };
+
+    if (reduceMotion) {
+      canvas.querySelectorAll<HTMLElement>("[data-reveal]").forEach((n) => n.classList.add("is-in"));
+      field.querySelectorAll<SVGElement>("[data-mote]").forEach((m) => m.classList.add("is-in"));
+      svg.querySelectorAll<SVGPathElement>("path.cg-edge").forEach((p) => p.classList.add("is-in"));
+      svg.querySelectorAll<SVGPathElement>("path.cg-thread").forEach((p) => p.classList.add("is-in"));
+      return;
+    }
+
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
@@ -389,20 +1072,30 @@
           el.classList.add("is-in");
           const edgeId = el.dataset.edge;
           if (edgeId) {
-            const path = svg.querySelector<SVGPathElement>(`path[data-edge="${edgeId}"]`);
-            if (path) {
-              const len = path.getTotalLength();
-              path.style.strokeDasharray = String(len);
-              path.style.strokeDashoffset = String(len);
-              requestAnimationFrame(() => path.classList.add("is-in"));
-            }
+            revealEdge(edgeId);
+            revealThreadsFor(edgeId);
+          }
+          if (el.dataset.eventId) {
+            revealThreadsFor(`node-${el.dataset.eventId}`);
           }
           io.unobserve(el);
         });
       },
-      { root: scroll, threshold: 0.2, rootMargin: "0px -8% 0px -8%" }
+      { root: scroll, threshold: 0.18, rootMargin: "0px -6% 0px -6%" }
     );
     canvas.querySelectorAll<HTMLElement>("[data-reveal]").forEach((n) => io.observe(n));
+
+    const motesIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add("is-in");
+          motesIo.unobserve(e.target);
+        });
+      },
+      { root: scroll, threshold: 0.05 }
+    );
+    field.querySelectorAll<SVGElement>("[data-mote]").forEach((m) => motesIo.observe(m));
   }
 
   document.querySelectorAll<HTMLElement>("[data-cg]").forEach(initGraph);

@@ -26,9 +26,13 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-/* Dark-mode companion palette — swapped via prefers-color-scheme. */
+/* Dark-mode companion palette — overrides the emitted theme custom properties
+   via prefers-color-scheme. NOTE: this must override :root directly, NOT nest
+   @theme inside @media. Tailwind v4 hoists every @theme block to :root and
+   strips the surrounding @media, so a nested dark @theme (declared last) would
+   silently win at all times and force the site permanently dark. */
 @media (prefers-color-scheme: dark) {
-  @theme {
+  :root {
     --color-bg-primary: #12110e;
     --color-bg-elevated: #1a1814;
     --color-ink-primary: #f3f1ea;
