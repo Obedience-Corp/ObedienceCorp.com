@@ -40,7 +40,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="mono-label thesis-eyebrow">The Shift</p>
 
       <article class="thesis-body">
-        <p class="thesis-lede">LLMs model language. Diffusion models resolve visual noise. <strong>Organized diffusion models execution</strong>, turning ambiguous intent into structured work across agents, tools, context, workflows, and artifacts.</p>
+        <div class="od-taxonomy">
+          <p class="mono-label od-tax-label">What each system models</p>
+          <dl class="od-tax-grid">
+            <div class="od-tax-row">
+              <dt class="od-tax-name">LLMs</dt>
+              <dd class="od-tax-models">language</dd>
+              <dd class="od-tax-out">a plausible passage of text</dd>
+            </div>
+            <div class="od-tax-row">
+              <dt class="od-tax-name">Image diffusion</dt>
+              <dd class="od-tax-models">visual structure</dd>
+              <dd class="od-tax-out">a coherent image</dd>
+            </div>
+            <div class="od-tax-row is-od">
+              <dt class="od-tax-name">Organized diffusion</dt>
+              <dd class="od-tax-models">execution</dd>
+              <dd class="od-tax-out">an outcome, with evidence</dd>
+            </div>
+          </dl>
+          <p class="od-tax-note">
+            The first two produce something that looks right. Organized diffusion produces an outcome that
+            <em>is</em> right, because it did the work, and runs until it is done or proven impossible.
+          </p>
+        </div>
 
         <h2>Today you’re the connective tissue</h2>
         <p>AI agent harnesses do real work. They call tools, build things, search the web, write code, manipulate files. What they can’t do is reach the final outcome on their own. They run a few steps, stop, and hand control back. You review, redirect, kick off another loop. The work happens in fragments, and you are the connective tissue between every fragment.</p>
@@ -295,13 +318,83 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-bottom: 1px solid var(--color-rule);
   }
 
-  .thesis-lede {
+  /* Organized-diffusion taxonomy — a confident, scannable structure rather than
+     a prose slogan. Mirrors the canonical taxonomy (what each system models). */
+  .od-taxonomy {
+    margin: 0 0 3rem;
+  }
+  .od-tax-label {
+    display: block;
+    margin-bottom: 1.1rem;
+    color: var(--color-ink-muted);
+  }
+  .od-tax-grid {
+    margin: 0;
+  }
+  .od-tax-row {
+    display: grid;
+    grid-template-columns: minmax(8rem, 13rem) minmax(6.5rem, 9rem) 1fr;
+    gap: 0.4rem 1.5rem;
+    align-items: baseline;
+    padding: 0.95rem 0;
+    border-top: 1px solid var(--color-rule);
+  }
+  .od-tax-row:last-child {
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .od-tax-name {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--color-ink-muted);
+    margin: 0;
+  }
+  .od-tax-models {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    color: var(--color-ink-muted);
+    margin: 0;
+  }
+  .od-tax-out {
     font-family: var(--font-serif);
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
-    line-height: 1.4;
-    letter-spacing: -0.01em;
+    font-size: 1rem;
+    line-height: 1.35;
+    color: var(--color-ink-muted);
+    margin: 0;
+  }
+  /* The organized-diffusion row carries full ink weight — it is the point. */
+  .od-tax-row.is-od {
+    border-top-color: var(--color-ink-primary);
+  }
+  .od-tax-row.is-od .od-tax-name,
+  .od-tax-row.is-od .od-tax-models,
+  .od-tax-row.is-od .od-tax-out {
     color: var(--color-ink-primary);
-    margin: 0 0 2.75rem;
+  }
+  .od-tax-note {
+    font-family: var(--font-serif);
+    font-size: clamp(1.0625rem, 1.4vw, 1.25rem);
+    line-height: 1.5;
+    color: var(--color-ink-body);
+    margin: 1.4rem 0 0;
+    max-width: 54ch;
+  }
+  .od-tax-note em {
+    font-style: italic;
+    color: var(--color-ink-primary);
+  }
+
+  @media (max-width: 600px) {
+    .od-tax-row {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+      padding: 0.85rem 0;
+    }
+    .od-tax-models::before {
+      content: "models ";
+      color: var(--color-ink-muted);
+    }
   }
 
   .thesis-inner {
