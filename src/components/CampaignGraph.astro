@@ -1,40 +1,45 @@
 ---
 /**
- * CampaignGraph — illustrative model of the organized-diffusion system over time.
+ * CampaignGraph — illustrative model of the organized-diffusion system.
  *
- * Time runs LEFT -> RIGHT across a month axis (Mar..Dec). Each campaign is a
- * horizontal MISSION BAND that spans its active range (start tick -> latest
- * event), like a refined Gantt bar. Decisions are milestone markers placed ON
- * the band at their exact moment in time; the work each decision produced
- * branches just below the band, with the link drawn at the moment the work
- * landed. Cross-campaign threads connect a decision in one mission to the work
- * it unblocked in another — the network of campaigns.
+ * CORRECT MODEL (matches how Festival is actually used):
+ *   - A CAMPAIGN is a company / product / effort. You run many of them
+ *     (this user runs ~19). The rail at the top is your campaigns.
+ *   - INSIDE one campaign live its PROJECTS (repos), the decisions that shaped
+ *     them over time, and the work each decision produced — which expands into
+ *     festivals, intents, and design docs.
  *
- * "Organized diffusion" is made literal: the early/left of the timeline reads
- * diffuse (a thinning scatter field, slightly softer nodes) and resolves into
- * crisp, aligned structure on the right as the system organizes over time.
- * Markers themselves are never jittered — a decision always sits precisely on
- * its timestamp; only the backdrop carries the scatter.
+ * The graph shows ONE selected campaign expanded: lanes = its projects, decision
+ * markers sit on the timeline at their moment, the work each produced branches
+ * below, and cross-project threads show a decision in one project unblocking
+ * work in another (within the same campaign). Pick a different campaign in the
+ * rail to switch the view. The point of the visual: this much organized work
+ * fits inside ONE campaign, and you steer many at once.
  *
- * Click (or Enter/Space on) any decision to drill into the plan items it
- * expands into (festivals, intents, design docs). One inspector open at a time;
- * Escape or an outside click closes it.
+ * "Organized diffusion" is literal: the early/left of a campaign reads diffuse
+ * (a thinning scatter field, softer nodes) and resolves into crisp, aligned
+ * structure on the right. Decision markers are never jittered — a decision
+ * always sits precisely on its timestamp; only the backdrop carries the scatter.
+ *
+ * Click (or Enter/Space on) any decision to drill into what it expands into.
  *
  * Self-contained: one .astro file, no external libraries, vanilla TS. Nodes are
  * created at runtime, so all CSS lives in <style is:global> with cg-* prefixes
- * (collision-safe). Colors derive ONLY from design tokens, so it is correct in
- * both light and dark mode.
+ * (collision-safe; state classes are compound-scoped, never bare). Colors derive
+ * ONLY from design tokens, so it is correct in both light and dark mode.
  *
  * Data is ILLUSTRATIVE and public-safe (a model, not live data).
  */
 ---
 
 <div class="cg" data-cg>
+  <div class="cg-rail" role="tablist" aria-label="Your campaigns"></div>
+  <div class="cg-viewing"></div>
   <div
     class="cg-scroll"
     tabindex="0"
     role="group"
-    aria-label="Mission timeline — campaigns as bands across time. Scroll horizontally to move through time; activate a decision marker to inspect what it expands into."
+    aria-label="Campaign detail — the selected campaign's projects across time. Scroll horizontally to move through time; activate a decision marker to inspect what it expands into."
   >
     <div class="cg-canvas">
       <div class="cg-grid" aria-hidden="true"></div>
@@ -48,17 +53,93 @@
     <span class="cg-key"><i class="cg-dot is-done"></i> resolved</span>
     <span class="cg-key"><i class="cg-dot is-active"></i> in&nbsp;progress</span>
     <span class="cg-key"><i class="cg-dot is-queued"></i> queued</span>
-    <span class="cg-key cg-key-thread"><i class="cg-thread-swatch"></i> cross&#8209;campaign&nbsp;link</span>
+    <span class="cg-key cg-key-thread"><i class="cg-thread-swatch"></i> cross&#8209;project&nbsp;link</span>
     <span class="cg-hint">Diffuse → organized. Scroll right through time →</span>
   </p>
 </div>
 
 <style is:global>
   /* Global (not scoped): runtime-created nodes do not receive Astro's scoping
-     attribute. Every selector is cg-* prefixed to stay collision-safe. */
+     attribute. Every selector is cg-* prefixed to stay collision-safe; state
+     classes (.is-done etc.) are always compound-scoped under .cg-*. */
   .cg {
     font-family: var(--font-sans);
     color: var(--color-ink-body);
+  }
+
+  /* ---- campaign rail (the portfolio: each chip is a company/product) ---- */
+  .cg-rail {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .cg-rail-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+    margin-right: 0.25rem;
+  }
+  .cg-chip {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    line-height: 1;
+    padding: 0.4rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-rule);
+    background: transparent;
+    color: var(--color-ink-body);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+  }
+  .cg-chip:hover { border-color: var(--color-accent); }
+  .cg-chip:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+  .cg-chip.is-active {
+    background: var(--color-ink-primary);
+    color: var(--color-bg-primary);
+    border-color: var(--color-ink-primary);
+  }
+  .cg-rail-more {
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+    color: var(--color-ink-muted);
+    padding: 0.4rem 0.1rem;
+    white-space: nowrap;
+  }
+
+  /* ---- "now viewing" line: campaign name + what it holds ---- */
+  .cg-viewing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.9rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .cg-viewing-kind {
+    font-family: var(--font-mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-ink-muted);
+  }
+  .cg-viewing-name {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.1;
+    color: var(--color-ink-primary);
+  }
+  .cg-viewing-stat {
+    font-family: var(--font-mono);
+    font-size: 0.64rem;
+    letter-spacing: 0.05em;
+    color: var(--color-ink-muted);
   }
 
   .cg-scroll {
@@ -81,16 +162,15 @@
     position: relative;
     height: var(--cg-h, 600px);
     min-width: 100%;
-    /* Subtle wash that condenses toward the right edge: the field resolving. */
     background: linear-gradient(
       90deg,
       transparent 0%,
       color-mix(in srgb, var(--color-bg-elevated) 0%, transparent) 30%,
       color-mix(in srgb, var(--color-bg-elevated) 45%, transparent) 100%
     );
+    transition: height 220ms ease;
   }
 
-  /* Faint vertical month gridlines spanning the whole canvas. */
   .cg-grid {
     position: absolute;
     inset: 0;
@@ -106,8 +186,6 @@
     opacity: 0.45;
   }
 
-  /* Diffuse scatter field: the "noise" that thins out as structure resolves.
-     Denser, larger, dimmer on the left; nearly gone on the right. */
   .cg-field {
     position: absolute;
     inset: 0;
@@ -124,7 +202,6 @@
   }
   .cg-field circle.is-in { opacity: var(--mote-o, 0.16); }
 
-  /* ---- edges ---- */
   .cg-edges {
     position: absolute;
     inset: 0;
@@ -134,7 +211,6 @@
     overflow: visible;
     z-index: 1;
   }
-  /* Intra-campaign edge: decision -> the feature it produced (solid, quiet). */
   .cg-edges path.cg-edge {
     fill: none;
     stroke: var(--color-ink-muted);
@@ -146,8 +222,6 @@
     opacity: var(--edge-o, 0.5);
     stroke-dashoffset: 0;
   }
-  /* Cross-campaign thread: one campaign's decision unblocks another's work.
-     Distinct treatment — dashed, accent-toned, with a directional arrowhead. */
   .cg-edges path.cg-thread {
     fill: none;
     stroke: var(--color-accent);
@@ -160,7 +234,7 @@
   .cg-edges path.cg-thread.is-in { opacity: 0.7; }
   .cg-edges .cg-arrow-fill { fill: var(--color-accent); }
 
-  /* Mission band: the Gantt bar spanning a campaign's active range. */
+  /* Project band: the Gantt bar spanning a project's active range. */
   .cg-band {
     position: absolute;
     left: 0;
@@ -180,7 +254,6 @@
     overflow: hidden;
   }
   .cg-band-track.is-in { transform: scaleX(1); }
-  /* The "resolved" portion of the band reads slightly heavier (ink). */
   .cg-band-track::after {
     content: "";
     position: absolute;
@@ -188,7 +261,6 @@
     width: var(--done-frac, 0%);
     background: color-mix(in srgb, var(--color-ink-primary) 52%, transparent);
   }
-  /* Hairline rule between bands. */
   .cg-band::before {
     content: "";
     position: absolute;
@@ -229,7 +301,7 @@
     color: var(--color-ink-primary);
     line-height: 1.12;
   }
-  .cg-band-mission {
+  .cg-band-role {
     font-size: 0.72rem;
     color: var(--color-ink-muted);
     line-height: 1.25;
@@ -243,7 +315,6 @@
     opacity: 0.85;
   }
 
-  /* Generic revealable node. --no: per-node resolution opacity; --scl: scale. */
   .cg-node {
     position: absolute;
     z-index: 3;
@@ -258,7 +329,6 @@
     color: var(--color-ink-body);
   }
 
-  /* Decision milestone marker sitting ON the band. */
   .cg-decision {
     transform: translate(-50%, -50%) translateY(8px) scale(var(--scl, 1));
     cursor: pointer;
@@ -300,7 +370,6 @@
   .cg-decision.is-open .cg-marker {
     box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 35%, transparent);
   }
-  /* Short caption ABOVE the marker naming the decision (kept tight, editorial). */
   .cg-dec-caption {
     position: absolute;
     bottom: calc(100% + 0.45rem);
@@ -332,7 +401,6 @@
     opacity: 0.85;
   }
 
-  /* Feature/work node branching below the band. */
   .cg-feature {
     display: inline-flex;
     align-items: center;
@@ -387,7 +455,6 @@
     pointer-events: auto;
     transform: translate(-50%, 0);
   }
-  /* Pointer triangle — points up to the marker by default. */
   .cg-inspector::before {
     content: "";
     position: absolute;
@@ -400,7 +467,6 @@
     border-left: 1px solid var(--color-accent);
     border-top: 1px solid var(--color-accent);
   }
-  /* Flipped (opens above the marker): triangle on the bottom. */
   .cg-inspector.is-flip::before {
     top: auto;
     bottom: -6px;
@@ -466,7 +532,6 @@
     color: var(--color-ink-muted);
   }
 
-  /* Time axis. */
   .cg-axis {
     position: absolute;
     left: 0;
@@ -504,7 +569,6 @@
     background: var(--color-rule);
   }
 
-  /* Legend. */
   .cg-legend {
     display: flex;
     flex-wrap: wrap;
@@ -531,7 +595,8 @@
     .cg-edges path,
     .cg-band-track,
     .cg-field circle,
-    .cg-inspector {
+    .cg-inspector,
+    .cg-canvas {
       transition: none;
     }
     .cg-decision { opacity: var(--no, 1); transform: translate(-50%, -50%) scale(var(--scl, 1)); }
@@ -551,169 +616,302 @@
   type CGState = "done" | "active" | "queued";
 
   interface CGPlanItem {
-    tag: string;   // short kind label, e.g. "Festival", "Intent", "Design"
-    text: string;  // illustrative detail
+    tag: string;   // "Festival" | "Intent" | "Design" | "PR"
+    text: string;
   }
-  interface CGEvent {
-    id: string;          // stable id for cross-campaign references
+  interface CGDecision {
+    id: string;          // stable id for cross-project references
     decision: string;
     dt: number;          // time index the decision was made
-    feature?: string;
-    ft?: number;         // time index the linked work landed
+    work?: string;       // the work it produced
+    ft?: number;         // time index the work landed
     state: CGState;
-    plan: CGPlanItem[];  // drill-down detail (illustrative)
+    plan: CGPlanItem[];  // what the decision expands into (drill-down)
+  }
+  interface CGProject {
+    name: string;        // project / repo name (a lane within the campaign)
+    role: string;        // short descriptor (language / surface)
+    start: number;       // lane start tick
+    events: CGDecision[];
+  }
+  // Cross-project thread: a decision in one project unblocks work in another
+  // project WITHIN the same campaign.
+  interface CGLink {
+    from: string; // source decision id
+    to: string;   // target decision id (whose work it unblocked)
   }
   interface CGCampaign {
-    kind: string;
+    id: string;
     name: string;
-    mission: string;
-    start: number;       // band start tick
-    events: CGEvent[];
-  }
-  // A cross-campaign thread: a decision in one campaign unblocks a feature in
-  // another. Referenced by event id; drawn distinctly from intra-lane edges.
-  interface CGLink {
-    from: string; // source event id (a decision)
-    to: string;   // target event id (whose feature it unblocked)
+    kind: string;        // "Product" | "Consulting" | "Research" | ...
+    stat: string;        // what it holds, e.g. "4 projects · 14 festivals · 31 intents"
+    projects: CGProject[];
+    links: CGLink[];
   }
 
   const TICKS = ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-  // ILLUSTRATIVE dataset. Staggered starts; left = sparse/resolved (done),
-  // middle = in-progress (active), right = queued — diffusion resolving into
-  // structure as time runs left -> right.
-  const DATA: CGCampaign[] = [
-    {
-      kind: "Campaign", name: "Product Launch", mission: "Ship the stack to the public", start: 0,
-      events: [
-        {
-          id: "pl-cli", decision: "Ship the CLI before the app", dt: 0, feature: "core engine", ft: 1, state: "done",
-          plan: [
-            { tag: "Festival", text: "FP0007 — 3 phases" },
-            { tag: "Design", text: "engine boundary spec" },
-            { tag: "Intent", text: "#12 first-run < 5 min" },
-          ],
-        },
-        {
-          id: "pl-dist", decision: "Distribute as one installable stack", dt: 1, feature: "distribution", ft: 2, state: "done",
-          plan: [
-            { tag: "Festival", text: "FP0009 — 2 phases" },
-            { tag: "Intent", text: "#21 one-command install" },
-          ],
-        },
-        {
-          id: "pl-hub", decision: "Defer the hub until single-user proves out", dt: 3, state: "done",
-          plan: [
-            { tag: "Intent", text: "#28 hub deferral" },
-            { tag: "Design", text: "single-user-first note" },
-          ],
-        },
-        {
-          id: "pl-viewer", decision: "Read-only app before chat/session control", dt: 5, feature: "viewer MVP", ft: 6, state: "active",
-          plan: [
-            { tag: "Festival", text: "FP0012 — 3 phases" },
-            { tag: "Design", text: "read-only viewer scope" },
-            { tag: "Intent", text: "#44 timeline view" },
-          ],
-        },
-      ],
-    },
-    {
-      kind: "Campaign", name: "Platform R&D", mission: "Agent control and audit", start: 2,
-      events: [
-        {
-          id: "rd-sandbox", decision: "Campaign-scoped filesystem boundary", dt: 2, feature: "sandbox", ft: 3, state: "done",
-          plan: [
-            { tag: "Design", text: "sandbox boundary doc" },
-            { tag: "Festival", text: "FP0010 — 2 phases" },
-            { tag: "Intent", text: "#31 symlink escape guard" },
-          ],
-        },
-        {
-          id: "rd-audit", decision: "Make every tool call inspectable", dt: 4, feature: "audit log", ft: 5, state: "active",
-          plan: [
-            { tag: "Festival", text: "FP0014 — 2 phases" },
-            { tag: "Intent", text: "#39 audit trail" },
-          ],
-        },
-        {
-          id: "rd-gate", decision: "Gate tool calls behind approval", dt: 6, feature: "session control", ft: 8, state: "queued",
-          plan: [
-            { tag: "Design", text: "approval-gate protocol" },
-            { tag: "Intent", text: "#52 human-in-the-loop" },
-            { tag: "Festival", text: "FP0018 — planned" },
-          ],
-        },
-      ],
-    },
-    {
-      kind: "Campaign", name: "Memory & Context", mission: "Git-native agent context", start: 3,
-      events: [
-        {
-          id: "mc-store", decision: "Treat campaigns as the memory layer", dt: 3, feature: "context store", ft: 4, state: "done",
-          plan: [
-            { tag: "Design", text: "context-layer concept" },
-            { tag: "Festival", text: "FP0013 — 3 phases" },
-          ],
-        },
-        {
-          id: "mc-index", decision: "Index decisions, not just files", dt: 5, feature: "decision index", ft: 7, state: "active",
-          plan: [
-            { tag: "Festival", text: "FP0021 — 2 phases" },
-            { tag: "Intent", text: "#52 decision schema" },
-          ],
-        },
-      ],
-    },
-    {
-      kind: "Campaign", name: "Go-to-Market", mission: "First design partners", start: 4,
-      events: [
-        {
-          id: "gtm-demos", decision: "Lead with concrete demos", dt: 4, feature: "demo set", ft: 6, state: "active",
-          plan: [
-            { tag: "Design", text: "demo narrative outline" },
-            { tag: "Intent", text: "#41 partner walkthrough" },
-          ],
-        },
-        {
-          id: "gtm-partners", decision: "Onboard three partners by Q4", dt: 7, feature: "pilot cohort", ft: 9, state: "queued",
-          plan: [
-            { tag: "Festival", text: "FP0019 — planned" },
-            { tag: "Intent", text: "#57 pilot intake" },
-          ],
-        },
-      ],
-    },
-    {
-      kind: "Campaign", name: "Site & Story", mission: "Public positioning", start: 5,
-      events: [
-        {
-          id: "site-story", decision: "Lead the site with the timeline model", dt: 5, feature: "hero graph", ft: 7, state: "active",
-          plan: [
-            { tag: "Design", text: "organized-diffusion concept" },
-            { tag: "Intent", text: "#46 hero visual" },
-          ],
-        },
-        {
-          id: "site-pitch", decision: "Ground the pitch in the running system", dt: 8, feature: "pitch flow", ft: 9, state: "queued",
-          plan: [
-            { tag: "Design", text: "pitch story outline" },
-            { tag: "Intent", text: "#60 live-demo path" },
-          ],
-        },
-      ],
-    },
-  ];
+  // How many additional (unshown) campaigns to imply beyond the named ones, so
+  // the rail conveys the real scale (~19 total).
+  const MORE_CAMPAIGNS = 14;
 
-  // Cross-campaign threads: source decision -> target event whose feature it
-  // unblocked. These are the "network of campaigns" links.
-  const LINKS: CGLink[] = [
-    { from: "pl-cli", to: "rd-sandbox" },      // engine unblocks platform R&D
-    { from: "rd-sandbox", to: "mc-store" },    // sandbox boundary feeds the context layer
-    { from: "mc-store", to: "pl-viewer" },     // context store feeds the read-only viewer
-    { from: "pl-viewer", to: "gtm-demos" },    // viewer MVP feeds the demos
-    { from: "rd-audit", to: "site-pitch" },    // audit log grounds the pitch
-    { from: "mc-index", to: "site-story" },    // decision index feeds the story
+  // ILLUSTRATIVE portfolio. Each entry is a CAMPAIGN (a company / product /
+  // effort). The graph shows ONE expanded at a time: its projects, decisions,
+  // and the work they produced. Public-safe — a model, not live data.
+  const CAMPAIGNS: CGCampaign[] = [
+    {
+      id: "obey", name: "Obedience Corp", kind: "Product",
+      stat: "4 projects · 14 festivals · 31 intents · since Mar",
+      projects: [
+        {
+          name: "camp", role: "CLI · Go", start: 0,
+          events: [
+            {
+              id: "camp-cli", decision: "Ship the CLI before the app", dt: 0, work: "core engine", ft: 1, state: "done",
+              plan: [
+                { tag: "Festival", text: "FP0007 — 3 phases" },
+                { tag: "Design", text: "engine boundary spec" },
+                { tag: "Intent", text: "#12 first-run < 5 min" },
+              ],
+            },
+            {
+              id: "camp-intake", decision: "Standardize project intake", dt: 3, work: "intake flow", ft: 4, state: "done",
+              plan: [
+                { tag: "Festival", text: "FP0011 — 2 phases" },
+                { tag: "Intent", text: "#26 repair on init" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "fest", role: "Engine · Go", start: 1,
+          events: [
+            {
+              id: "fest-sandbox", decision: "Campaign-scoped filesystem boundary", dt: 2, work: "sandbox", ft: 3, state: "done",
+              plan: [
+                { tag: "Design", text: "sandbox boundary doc" },
+                { tag: "Festival", text: "FP0010 — 2 phases" },
+                { tag: "Intent", text: "#31 symlink escape guard" },
+              ],
+            },
+            {
+              id: "fest-gate", decision: "Gate tool calls behind approval", dt: 6, work: "session control", ft: 8, state: "queued",
+              plan: [
+                { tag: "Design", text: "approval-gate protocol" },
+                { tag: "Festival", text: "FP0018 — planned" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "festival-app", role: "App · TS", start: 4,
+          events: [
+            {
+              id: "app-viewer", decision: "Read-only app before session control", dt: 5, work: "viewer MVP", ft: 6, state: "active",
+              plan: [
+                { tag: "Festival", text: "FA0009 — 3 phases" },
+                { tag: "Design", text: "read-only viewer scope" },
+                { tag: "Intent", text: "#44 timeline view" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "corp-site", role: "Site · Astro", start: 5,
+          events: [
+            {
+              id: "site-model", decision: "Lead the site with the timeline model", dt: 6, work: "hero graph", ft: 8, state: "active",
+              plan: [
+                { tag: "Design", text: "organized-diffusion concept" },
+                { tag: "Intent", text: "#46 hero visual" },
+              ],
+            },
+          ],
+        },
+      ],
+      links: [
+        { from: "camp-cli", to: "fest-sandbox" },     // engine unblocks the boundary work
+        { from: "fest-sandbox", to: "app-viewer" },   // boundary makes the app safe
+        { from: "app-viewer", to: "site-model" },     // the app feeds the site demo
+      ],
+    },
+    {
+      id: "consulting", name: "Blockhead Consulting", kind: "Consulting",
+      stat: "6 engagements · 9 festivals · since Mar",
+      projects: [
+        {
+          name: "Client audits", role: "Delivery", start: 0,
+          events: [
+            {
+              id: "con-intake", decision: "Templatize the security intake", dt: 1, work: "intake kit", ft: 2, state: "done",
+              plan: [
+                { tag: "Festival", text: "BC0004 — 2 phases" },
+                { tag: "Design", text: "engagement checklist" },
+              ],
+            },
+            {
+              id: "con-report", decision: "Generate findings from the run log", dt: 5, work: "report builder", ft: 7, state: "active",
+              plan: [
+                { tag: "Festival", text: "BC0008 — 3 phases" },
+                { tag: "Intent", text: "#19 evidence linking" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Automation", role: "Pipelines", start: 3,
+          events: [
+            {
+              id: "con-pipe", decision: "Run scans on every engagement", dt: 4, work: "scan pipeline", ft: 5, state: "active",
+              plan: [
+                { tag: "Festival", text: "BC0006 — 2 phases" },
+                { tag: "Intent", text: "#22 nightly sweep" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Portal", role: "Client UI", start: 6,
+          events: [
+            {
+              id: "con-portal", decision: "Ship a read-only client portal", dt: 7, work: "portal", ft: 9, state: "queued",
+              plan: [
+                { tag: "Design", text: "portal access model" },
+                { tag: "Intent", text: "#27 per-client scoping" },
+              ],
+            },
+          ],
+        },
+      ],
+      links: [
+        { from: "con-intake", to: "con-pipe" },
+        { from: "con-pipe", to: "con-report" },
+      ],
+    },
+    {
+      id: "brainyard", name: "Brainyard", kind: "Product",
+      stat: "3 projects · 11 festivals · 18 intents",
+      projects: [
+        {
+          name: "ingest", role: "Pipeline · Go", start: 1,
+          events: [
+            {
+              id: "by-ingest", decision: "Index by decision, not by file", dt: 2, work: "decision index", ft: 3, state: "done",
+              plan: [
+                { tag: "Design", text: "decision schema" },
+                { tag: "Festival", text: "BY0005 — 2 phases" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "store", role: "Local-first", start: 2,
+          events: [
+            {
+              id: "by-store", decision: "Keep the store local-first", dt: 4, work: "context store", ft: 5, state: "active",
+              plan: [
+                { tag: "Festival", text: "BY0009 — 3 phases" },
+                { tag: "Intent", text: "#33 export by default" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "chat", role: "UI · TS", start: 5,
+          events: [
+            {
+              id: "by-chat", decision: "Ship the chat MVP behind a waitlist", dt: 6, work: "chat MVP", ft: 8, state: "queued",
+              plan: [
+                { tag: "Festival", text: "BY0012 — planned" },
+                { tag: "Intent", text: "#40 waitlist flow" },
+              ],
+            },
+          ],
+        },
+      ],
+      links: [
+        { from: "by-ingest", to: "by-store" },
+        { from: "by-store", to: "by-chat" },
+      ],
+    },
+    {
+      id: "agentecon", name: "Agent Economy", kind: "Research · Crypto",
+      stat: "3 projects · 7 festivals",
+      projects: [
+        {
+          name: "contracts", role: "Solidity", start: 2,
+          events: [
+            {
+              id: "ae-escrow", decision: "Escrow tasks on-chain", dt: 3, work: "task escrow", ft: 4, state: "done",
+              plan: [
+                { tag: "Design", text: "escrow state machine" },
+                { tag: "Festival", text: "AE0003 — 2 phases" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "indexer", role: "Go", start: 4,
+          events: [
+            {
+              id: "ae-index", decision: "Index agent runs for settlement", dt: 5, work: "run indexer", ft: 7, state: "active",
+              plan: [
+                { tag: "Festival", text: "AE0005 — 2 phases" },
+                { tag: "Intent", text: "#14 settlement proofs" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "sdk", role: "TS", start: 6,
+          events: [
+            {
+              id: "ae-sdk", decision: "SDK for agent payments", dt: 8, work: "payments SDK", ft: 9, state: "queued",
+              plan: [
+                { tag: "Design", text: "payments interface" },
+                { tag: "Intent", text: "#21 spend limits" },
+              ],
+            },
+          ],
+        },
+      ],
+      links: [
+        { from: "ae-escrow", to: "ae-index" },
+      ],
+    },
+    {
+      id: "research", name: "Research", kind: "R&D",
+      stat: "2 projects · 5 festivals",
+      projects: [
+        {
+          name: "benchmarks", role: "Harness", start: 1,
+          events: [
+            {
+              id: "re-bench", decision: "Standardize the benchmark harness", dt: 2, work: "bench harness", ft: 4, state: "done",
+              plan: [
+                { tag: "Design", text: "harness spec" },
+                { tag: "Festival", text: "RE0002 — 2 phases" },
+              ],
+            },
+          ],
+        },
+        {
+          name: "writeups", role: "Publishing", start: 4,
+          events: [
+            {
+              id: "re-pub", decision: "Publish findings as they land", dt: 5, work: "findings series", ft: 7, state: "active",
+              plan: [
+                { tag: "Intent", text: "#08 cadence" },
+                { tag: "Design", text: "review checklist" },
+              ],
+            },
+          ],
+        },
+      ],
+      links: [
+        { from: "re-bench", to: "re-pub" },
+      ],
+    },
   ];
 
   const UNIT = 184;     // px per time tick
@@ -722,10 +920,8 @@
   const BAND_H = 168;
   const AXIS_H = 46;
   const TRACK_Y = 74;   // band-track / marker centerline within a band
-  const FEAT_Y = 128;   // feature track offset within a band
+  const FEAT_Y = 128;   // work track offset within a band
 
-  // Hand-authored diffuse scatter field, in (timeIndex, bandFraction). Denser on
-  // the left; thins toward the right where structure takes over. No randomness.
   const MOTES: Array<[number, number]> = [
     [0.15, 0.22], [0.28, 0.74], [0.42, 0.4], [0.55, 0.18], [0.6, 0.66],
     [0.7, 0.85], [0.82, 0.3], [0.9, 0.55], [1.1, 0.12], [1.18, 0.78],
@@ -736,8 +932,6 @@
   ];
 
   function resolution(t: number, maxT: number): number {
-    // 0 at the left edge -> 1 at the right edge. Eased so crystallization
-    // accelerates toward the end (structure "snaps" into place).
     const lin = Math.max(0, Math.min(1, t / maxT));
     return lin * lin;
   }
@@ -751,6 +945,8 @@
   }
 
   function initGraph(root: HTMLElement) {
+    const rail = root.querySelector<HTMLElement>(".cg-rail");
+    const viewing = root.querySelector<HTMLElement>(".cg-viewing");
     const scroll = root.querySelector<HTMLElement>(".cg-scroll");
     const canvas = root.querySelector<HTMLElement>(".cg-canvas");
     const grid = root.querySelector<HTMLElement>(".cg-grid");
@@ -758,220 +954,28 @@
     const svg = root.querySelector<SVGSVGElement>(".cg-edges");
     const bands = root.querySelector<HTMLElement>(".cg-bands");
     const axis = root.querySelector<HTMLElement>(".cg-axis");
-    if (!scroll || !canvas || !grid || !field || !svg || !bands || !axis) return;
+    if (!rail || !viewing || !scroll || !canvas || !grid || !field || !svg || !bands || !axis) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
     const maxT = TICKS.length - 1;
     const xOf = (t: number) => PAD_L + t * UNIT;
     const width = xOf(maxT) + PAD_R;
-    const bandsBottom = DATA.length * BAND_H;
-    const height = bandsBottom + AXIS_H;
 
-    canvas.style.setProperty("--cg-h", `${height}px`);
-    canvas.style.width = `${width}px`;
     for (const s of [field, svg]) {
-      s.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      s.setAttribute("viewBox", `0 0 ${width} ${BAND_H}`);
       s.setAttribute("width", String(width));
-      s.setAttribute("height", String(height));
     }
+    canvas.style.width = `${width}px`;
 
-    // Geometry registries (by event id) so cross-campaign threads can look up
-    // decision and feature coordinates after the build loop.
-    const decPos: Record<string, { x: number; y: number }> = {};
-    const featPos: Record<string, { x: number; y: number; state: CGState }> = {};
-    const eventById: Record<string, CGEvent> = {};
-
-    // ── Vertical month gridlines ──
-    TICKS.forEach((_, i) => {
-      const gl = document.createElement("div");
-      gl.className = "cg-gridline";
-      gl.style.left = `${xOf(i)}px`;
-      grid.appendChild(gl);
-    });
-
-    // ── Diffuse scatter field (thins toward the right) ──
-    let motes = "";
-    for (const [t, frac] of MOTES) {
-      const x = xOf(t);
-      const y = 24 + frac * (bandsBottom - 48);
-      const res = resolution(t, maxT);
-      const r = (2.8 - res * 1.7).toFixed(2);
-      const o = (0.2 - res * 0.13).toFixed(3);
-      motes += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" style="--mote-o:${o}" data-mote />`;
-    }
-    field.innerHTML = motes;
-
-    // ── Mission bands + milestone markers + feature nodes ──
-    DATA.forEach((camp, li) => {
-      const bandTop = li * BAND_H;
-      const band = document.createElement("div");
-      band.className = "cg-band" + (li === 0 ? " is-first" : "");
-      band.style.top = `${bandTop}px`;
-      band.style.setProperty("--band-h", `${BAND_H}px`);
-      band.style.setProperty("--track-y", `${TRACK_Y}px`);
-
-      // Span: from start tick to the latest event time (decision or feature).
-      const lastT = camp.events.reduce((m, ev) => {
-        const ft = ev.ft ?? ev.dt;
-        return Math.max(m, ev.dt, ft);
-      }, camp.start);
-      const spanX1 = xOf(camp.start);
-      const spanX2 = xOf(lastT);
-
-      // Fraction of the span that is "resolved" (done).
-      const doneMax = camp.events
-        .filter((e) => e.state === "done")
-        .reduce((m, e) => Math.max(m, e.ft ?? e.dt), camp.start);
-      const denom = lastT - camp.start || 1;
-      const doneFrac = Math.max(0, Math.min(1, (doneMax - camp.start) / denom)) * 100;
-
-      // The Gantt track bar.
-      const track = document.createElement("div");
-      track.className = "cg-band-track";
-      track.style.left = `${spanX1}px`;
-      track.style.width = `${spanX2 - spanX1}px`;
-      track.style.setProperty("--done-frac", `${doneFrac.toFixed(0)}%`);
-      track.dataset.reveal = "track";
-      band.appendChild(track);
-
-      // Sticky label.
-      const label = document.createElement("div");
-      label.className = "cg-band-label";
-      label.innerHTML =
-        `<span class="cg-band-kind">${escapeHtml(camp.kind)}</span>` +
-        `<span class="cg-band-name">${escapeHtml(camp.name)}</span>` +
-        `<span class="cg-band-mission">${escapeHtml(camp.mission)}</span>` +
-        `<span class="cg-band-span">${TICKS[camp.start]} – ${TICKS[lastT]}</span>`;
-      band.appendChild(label);
-
-      bands.appendChild(band);
-
-      camp.events.forEach((ev) => {
-        eventById[ev.id] = ev;
-        const res = resolution(ev.dt, maxT);
-        const nodeO = (0.72 + res * 0.28).toFixed(3); // faint left -> full right
-        const scl = (0.94 + res * 0.06).toFixed(3);
-
-        const decX = xOf(ev.dt);
-        const decY = bandTop + TRACK_Y + 3; // sit on the track centerline
-        decPos[ev.id] = { x: decX, y: decY };
-
-        // Decision milestone marker (button — drill-down trigger).
-        const dec = document.createElement("button");
-        dec.type = "button";
-        dec.className = "cg-node cg-decision";
-        dec.style.left = `${decX}px`;
-        dec.style.top = `${decY}px`;
-        dec.style.setProperty("--no", nodeO);
-        dec.style.setProperty("--scl", scl);
-        dec.dataset.reveal = "node";
-        dec.dataset.eventId = ev.id;
-        dec.setAttribute("aria-haspopup", "dialog");
-        dec.setAttribute("aria-expanded", "false");
-        dec.setAttribute(
-          "aria-label",
-          `Decision, ${TICKS[ev.dt]}: ${ev.decision}. ${ev.state}. Activate to inspect the ${ev.plan.length} plan items it expands into.`
-        );
-        dec.innerHTML =
-          `<span class="cg-marker is-${ev.state}"></span>` +
-          `<span class="cg-dec-caption">` +
-          `<span class="cg-dec-when">Decision · ${TICKS[ev.dt]}</span>` +
-          `${escapeHtml(ev.decision)}` +
-          `<span class="cg-dec-drill" aria-hidden="true">${ev.plan.length} plan items ↳</span>` +
-          `</span>`;
-        canvas.appendChild(dec);
-
-        // Feature/work node branching below the band.
-        if (ev.feature && ev.ft !== undefined) {
-          const fRes = resolution(ev.ft, maxT);
-          const featX = xOf(ev.ft);
-          const featY = bandTop + FEAT_Y;
-          featPos[ev.id] = { x: featX, y: featY, state: ev.state };
-
-          const feat = document.createElement("div");
-          feat.className = "cg-node cg-feature";
-          feat.style.left = `${featX}px`;
-          feat.style.top = `${featY}px`;
-          feat.style.setProperty("--no", (0.72 + fRes * 0.28).toFixed(3));
-          feat.style.setProperty("--scl", (0.94 + fRes * 0.06).toFixed(3));
-          feat.style.setProperty("--border-c", `${(50 + fRes * 50).toFixed(0)}%`);
-          feat.dataset.reveal = "node";
-          feat.dataset.edge = `f-${ev.id}`;
-          feat.innerHTML = `<i class="cg-dot is-${ev.state}"></i>${escapeHtml(ev.feature)}`;
-          canvas.appendChild(feat);
-        }
-      });
-    });
-
-    // ── Edges (built after geometry is known) ──
-    let edges =
-      `<defs><marker id="cg-arrow" viewBox="0 0 10 10" refX="8" refY="5" ` +
-      `markerWidth="6" markerHeight="6" orient="auto-start-reverse">` +
-      `<path class="cg-arrow-fill" d="M0 0 L10 5 L0 10 z" /></marker></defs>`;
-
-    // Intra-campaign edges: decision -> its own feature.
-    DATA.forEach((camp) => {
-      camp.events.forEach((ev) => {
-        if (!(ev.feature && ev.ft !== undefined)) return;
-        const d = decPos[ev.id];
-        const f = featPos[ev.id];
-        if (!d || !f) return;
-        const fRes = resolution(ev.ft, maxT);
-        const edgeO = (0.32 + fRes * 0.36).toFixed(3);
-        const x1 = d.x, y1 = d.y + 10;
-        const x2 = f.x, y2 = f.y - 12;
-        const my = (y1 + y2) / 2;
-        edges += `<path class="cg-edge" data-edge="f-${ev.id}" style="--edge-o:${edgeO}" ` +
-          `d="M ${x1} ${y1} C ${x1} ${my}, ${x2} ${my}, ${x2} ${y2}" />`;
-      });
-    });
-
-    // Cross-campaign threads: source decision -> the feature it unblocked in
-    // another campaign. Distinct dashed accent stroke + arrowhead. Revealed when
-    // the TARGET feature scrolls in (the moment the unblocked work lands).
-    LINKS.forEach((lnk, i) => {
-      const src = decPos[lnk.from];
-      const dst = featPos[lnk.to] || decPos[lnk.to];
-      if (!src || !dst) return;
-      const x1 = src.x, y1 = src.y;
-      const x2 = dst.x, y2 = dst.y;
-      const down = y2 > y1;
-      const cx1 = x1 + (x2 - x1) * 0.2;
-      const cy1 = y1 + (down ? 50 : -50);
-      const cx2 = x2 - (x2 - x1) * 0.2;
-      const cy2 = y2 + (down ? -50 : 50);
-      const triggerEdge = featPos[lnk.to] ? `f-${lnk.to}` : `node-${lnk.to}`;
-      edges += `<path class="cg-thread" data-thread="t-${i}" data-thread-trigger="${triggerEdge}" ` +
-        `d="M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}" />`;
-    });
-
-    svg.innerHTML = edges;
-
-    // ── Time axis ──
-    const axisLine = document.createElement("div");
-    axisLine.className = "cg-axisline";
-    axis.appendChild(axisLine);
-    TICKS.forEach((t, i) => {
-      const tick = document.createElement("div");
-      tick.className = "cg-tick";
-      tick.style.left = `${xOf(i)}px`;
-      tick.textContent = t;
-      axis.appendChild(tick);
-    });
-
-    // ── Drill-down inspector (single shared popover, one open at a time) ──
-    const inspector = document.createElement("div");
-    inspector.className = "cg-inspector";
-    inspector.setAttribute("role", "dialog");
-    inspector.setAttribute("aria-label", "Decision detail");
-    inspector.setAttribute("aria-hidden", "true");
-    canvas.appendChild(inspector);
-
+    // Per-render observer + inspector state (managed across campaign switches).
+    let io: IntersectionObserver | null = null;
+    let motesIo: IntersectionObserver | null = null;
+    let inspector: HTMLElement | null = null;
     let openBtn: HTMLButtonElement | null = null;
+    let renderHeight = BAND_H + AXIS_H;
 
     function closeInspector() {
-      if (!openBtn) return;
+      if (!openBtn || !inspector) return;
       inspector.classList.remove("is-open", "is-flip");
       inspector.setAttribute("aria-hidden", "true");
       openBtn.setAttribute("aria-expanded", "false");
@@ -979,59 +983,8 @@
       openBtn = null;
     }
 
-    function openInspector(btn: HTMLButtonElement) {
-      const ev = eventById[btn.dataset.eventId || ""];
-      if (!ev) return;
-      if (openBtn === btn) { closeInspector(); return; }
-      closeInspector();
-
-      const stateLabel = ev.state === "done" ? "Resolved" : ev.state === "active" ? "In progress" : "Queued";
-      const items = ev.plan
-        .map(
-          (p) =>
-            `<li class="cg-insp-item"><span class="cg-insp-tag">${escapeHtml(p.tag)}</span><span>${escapeHtml(p.text)}</span></li>`
-        )
-        .join("");
-      inspector.innerHTML =
-        `<div class="cg-insp-kind">Decision · ${TICKS[ev.dt]} · ${stateLabel}</div>` +
-        `<p class="cg-insp-title">${escapeHtml(ev.decision)}</p>` +
-        (ev.feature
-          ? `<p class="cg-insp-sub">Expands into ${ev.plan.length} linked items · produced “${escapeHtml(ev.feature)}”</p>`
-          : `<p class="cg-insp-sub">Expands into ${ev.plan.length} linked items</p>`) +
-        `<ul class="cg-insp-list">${items}</ul>` +
-        `<div class="cg-insp-foot">Illustrative — a model, not live data</div>`;
-
-      // Position below the marker; clamp horizontally; flip above near the bottom.
-      const left = parseFloat(btn.style.left);
-      const top = parseFloat(btn.style.top);
-      const half = (17 * 16) / 2; // half popover width (17rem)
-      const clampedLeft = Math.max(half + 8, Math.min(width - half - 8, left));
-      inspector.style.left = `${clampedLeft}px`;
-
-      // Reveal first to measure, then decide flip.
-      inspector.classList.add("is-open");
-      inspector.setAttribute("aria-hidden", "false");
-      const estH = inspector.offsetHeight || 180;
-      if (top + 18 + estH > height - 6) {
-        inspector.classList.add("is-flip");
-        inspector.style.top = `${Math.max(6, top - estH - 16)}px`;
-      } else {
-        inspector.style.top = `${top + 18}px`;
-      }
-
-      btn.setAttribute("aria-expanded", "true");
-      btn.classList.add("is-open");
-      openBtn = btn;
-    }
-
-    canvas.querySelectorAll<HTMLButtonElement>(".cg-decision").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        openInspector(btn);
-      });
-    });
+    // One-time interaction wiring (survives re-renders).
     scroll.addEventListener("click", () => closeInspector());
-    inspector.addEventListener("click", (e) => e.stopPropagation());
     root.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && openBtn) {
         const btn = openBtn;
@@ -1040,62 +993,361 @@
       }
     });
 
-    // ── Reveal nodes, tracks, motes, and edges as they scroll into view ──
-    const revealEdge = (edgeId: string) => {
-      const path = svg.querySelector<SVGPathElement>(`path[data-edge="${edgeId}"]`);
-      if (!path) return;
-      const len = path.getTotalLength();
-      path.style.strokeDasharray = String(len);
-      path.style.strokeDashoffset = String(len);
-      requestAnimationFrame(() => path.classList.add("is-in"));
-    };
+    function renderCampaign(camp: CGCampaign) {
+      // Tear down previous render.
+      io?.disconnect();
+      motesIo?.disconnect();
+      io = null;
+      motesIo = null;
+      openBtn = null;
+      grid.innerHTML = "";
+      field.innerHTML = "";
+      svg.innerHTML = "";
+      bands.innerHTML = "";
+      axis.innerHTML = "";
+      // Decision markers, work pills, and the inspector are direct children of
+      // the canvas (not of bands/grid/etc.), so clear them explicitly or they
+      // leak across campaign switches.
+      canvas.querySelectorAll(".cg-node, .cg-inspector").forEach((n) => n.remove());
 
-    const revealThreadsFor = (triggerEdge: string) => {
-      svg.querySelectorAll<SVGPathElement>(`path[data-thread-trigger="${triggerEdge}"]`).forEach((path) => {
-        requestAnimationFrame(() => path.classList.add("is-in"));
+      const projects = camp.projects;
+      const bandsBottom = projects.length * BAND_H;
+      renderHeight = bandsBottom + AXIS_H;
+      canvas.style.setProperty("--cg-h", `${renderHeight}px`);
+      for (const s of [field, svg]) {
+        s.setAttribute("viewBox", `0 0 ${width} ${renderHeight}`);
+        s.setAttribute("height", String(renderHeight));
+      }
+
+      const decPos: Record<string, { x: number; y: number }> = {};
+      const workPos: Record<string, { x: number; y: number; state: CGState }> = {};
+      const decById: Record<string, CGDecision> = {};
+
+      // Gridlines.
+      TICKS.forEach((_, i) => {
+        const gl = document.createElement("div");
+        gl.className = "cg-gridline";
+        gl.style.left = `${xOf(i)}px`;
+        grid.appendChild(gl);
       });
-    };
 
-    if (reduceMotion) {
-      canvas.querySelectorAll<HTMLElement>("[data-reveal]").forEach((n) => n.classList.add("is-in"));
-      field.querySelectorAll<SVGElement>("[data-mote]").forEach((m) => m.classList.add("is-in"));
-      svg.querySelectorAll<SVGPathElement>("path.cg-edge").forEach((p) => p.classList.add("is-in"));
-      svg.querySelectorAll<SVGPathElement>("path.cg-thread").forEach((p) => p.classList.add("is-in"));
-      return;
+      // Diffuse scatter field.
+      let motes = "";
+      for (const [t, frac] of MOTES) {
+        const x = xOf(t);
+        const y = 24 + frac * (bandsBottom - 48);
+        const res = resolution(t, maxT);
+        const r = (2.8 - res * 1.7).toFixed(2);
+        const o = (0.2 - res * 0.13).toFixed(3);
+        motes += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r}" style="--mote-o:${o}" data-mote />`;
+      }
+      field.innerHTML = motes;
+
+      // Project bands + decision markers + work nodes.
+      projects.forEach((proj, li) => {
+        const bandTop = li * BAND_H;
+        const band = document.createElement("div");
+        band.className = "cg-band" + (li === 0 ? " is-first" : "");
+        band.style.top = `${bandTop}px`;
+        band.style.setProperty("--band-h", `${BAND_H}px`);
+        band.style.setProperty("--track-y", `${TRACK_Y}px`);
+
+        const lastT = proj.events.reduce((m, ev) => {
+          const ft = ev.ft ?? ev.dt;
+          return Math.max(m, ev.dt, ft);
+        }, proj.start);
+        const spanX1 = xOf(proj.start);
+        const spanX2 = xOf(lastT);
+
+        const doneMax = proj.events
+          .filter((e) => e.state === "done")
+          .reduce((m, e) => Math.max(m, e.ft ?? e.dt), proj.start);
+        const denom = lastT - proj.start || 1;
+        const doneFrac = Math.max(0, Math.min(1, (doneMax - proj.start) / denom)) * 100;
+
+        const track = document.createElement("div");
+        track.className = "cg-band-track";
+        track.style.left = `${spanX1}px`;
+        track.style.width = `${spanX2 - spanX1}px`;
+        track.style.setProperty("--done-frac", `${doneFrac.toFixed(0)}%`);
+        track.dataset.reveal = "track";
+        band.appendChild(track);
+
+        const label = document.createElement("div");
+        label.className = "cg-band-label";
+        label.innerHTML =
+          `<span class="cg-band-kind">Project</span>` +
+          `<span class="cg-band-name">${escapeHtml(proj.name)}</span>` +
+          `<span class="cg-band-role">${escapeHtml(proj.role)}</span>` +
+          `<span class="cg-band-span">${TICKS[proj.start]} – ${TICKS[lastT]}</span>`;
+        band.appendChild(label);
+
+        bands.appendChild(band);
+
+        proj.events.forEach((ev) => {
+          decById[ev.id] = ev;
+          const res = resolution(ev.dt, maxT);
+          const nodeO = (0.72 + res * 0.28).toFixed(3);
+          const scl = (0.94 + res * 0.06).toFixed(3);
+
+          const decX = xOf(ev.dt);
+          const decY = bandTop + TRACK_Y + 3;
+          decPos[ev.id] = { x: decX, y: decY };
+
+          const dec = document.createElement("button");
+          dec.type = "button";
+          dec.className = "cg-node cg-decision";
+          dec.style.left = `${decX}px`;
+          dec.style.top = `${decY}px`;
+          dec.style.setProperty("--no", nodeO);
+          dec.style.setProperty("--scl", scl);
+          dec.dataset.reveal = "node";
+          dec.dataset.decId = ev.id;
+          dec.setAttribute("aria-haspopup", "dialog");
+          dec.setAttribute("aria-expanded", "false");
+          dec.setAttribute(
+            "aria-label",
+            `Decision, ${TICKS[ev.dt]}: ${ev.decision}. ${ev.state}. Activate to inspect the ${ev.plan.length} items it expands into.`
+          );
+          dec.innerHTML =
+            `<span class="cg-marker is-${ev.state}"></span>` +
+            `<span class="cg-dec-caption">` +
+            `<span class="cg-dec-when">Decision · ${TICKS[ev.dt]}</span>` +
+            `${escapeHtml(ev.decision)}` +
+            `<span class="cg-dec-drill" aria-hidden="true">${ev.plan.length} items ↳</span>` +
+            `</span>`;
+          canvas.appendChild(dec);
+
+          if (ev.work && ev.ft !== undefined) {
+            const fRes = resolution(ev.ft, maxT);
+            const featX = xOf(ev.ft);
+            const featY = bandTop + FEAT_Y;
+            workPos[ev.id] = { x: featX, y: featY, state: ev.state };
+
+            const feat = document.createElement("div");
+            feat.className = "cg-node cg-feature";
+            feat.style.left = `${featX}px`;
+            feat.style.top = `${featY}px`;
+            feat.style.setProperty("--no", (0.72 + fRes * 0.28).toFixed(3));
+            feat.style.setProperty("--scl", (0.94 + fRes * 0.06).toFixed(3));
+            feat.style.setProperty("--border-c", `${(50 + fRes * 50).toFixed(0)}%`);
+            feat.dataset.reveal = "node";
+            feat.dataset.edge = `f-${ev.id}`;
+            feat.innerHTML = `<i class="cg-dot is-${ev.state}"></i>${escapeHtml(ev.work)}`;
+            canvas.appendChild(feat);
+          }
+        });
+      });
+
+      // Edges.
+      let edges =
+        `<defs><marker id="cg-arrow" viewBox="0 0 10 10" refX="8" refY="5" ` +
+        `markerWidth="6" markerHeight="6" orient="auto-start-reverse">` +
+        `<path class="cg-arrow-fill" d="M0 0 L10 5 L0 10 z" /></marker></defs>`;
+
+      // Intra-project: decision -> its own work.
+      projects.forEach((proj) => {
+        proj.events.forEach((ev) => {
+          if (!(ev.work && ev.ft !== undefined)) return;
+          const d = decPos[ev.id];
+          const f = workPos[ev.id];
+          if (!d || !f) return;
+          const fRes = resolution(ev.ft, maxT);
+          const edgeO = (0.32 + fRes * 0.36).toFixed(3);
+          const x1 = d.x, y1 = d.y + 10;
+          const x2 = f.x, y2 = f.y - 12;
+          const my = (y1 + y2) / 2;
+          edges += `<path class="cg-edge" data-edge="f-${ev.id}" style="--edge-o:${edgeO}" ` +
+            `d="M ${x1} ${y1} C ${x1} ${my}, ${x2} ${my}, ${x2} ${y2}" />`;
+        });
+      });
+
+      // Cross-project threads (within this campaign).
+      camp.links.forEach((lnk, i) => {
+        const src = decPos[lnk.from];
+        const dst = workPos[lnk.to] || decPos[lnk.to];
+        if (!src || !dst) return;
+        const x1 = src.x, y1 = src.y;
+        const x2 = dst.x, y2 = dst.y;
+        const down = y2 > y1;
+        const cx1 = x1 + (x2 - x1) * 0.2;
+        const cy1 = y1 + (down ? 50 : -50);
+        const cx2 = x2 - (x2 - x1) * 0.2;
+        const cy2 = y2 + (down ? -50 : 50);
+        const triggerEdge = workPos[lnk.to] ? `f-${lnk.to}` : `node-${lnk.to}`;
+        edges += `<path class="cg-thread" data-thread="t-${i}" data-thread-trigger="${triggerEdge}" ` +
+          `d="M ${x1} ${y1} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x2} ${y2}" />`;
+      });
+
+      svg.innerHTML = edges;
+
+      // Axis.
+      const axisLine = document.createElement("div");
+      axisLine.className = "cg-axisline";
+      axis.appendChild(axisLine);
+      TICKS.forEach((t, i) => {
+        const tick = document.createElement("div");
+        tick.className = "cg-tick";
+        tick.style.left = `${xOf(i)}px`;
+        tick.textContent = t;
+        axis.appendChild(tick);
+      });
+
+      // Inspector.
+      inspector = document.createElement("div");
+      inspector.className = "cg-inspector";
+      inspector.setAttribute("role", "dialog");
+      inspector.setAttribute("aria-label", "Decision detail");
+      inspector.setAttribute("aria-hidden", "true");
+      canvas.appendChild(inspector);
+
+      function openInspector(btn: HTMLButtonElement) {
+        const ev = decById[btn.dataset.decId || ""];
+        if (!ev || !inspector) return;
+        if (openBtn === btn) { closeInspector(); return; }
+        closeInspector();
+
+        const stateLabel = ev.state === "done" ? "Resolved" : ev.state === "active" ? "In progress" : "Queued";
+        const items = ev.plan
+          .map(
+            (p) =>
+              `<li class="cg-insp-item"><span class="cg-insp-tag">${escapeHtml(p.tag)}</span><span>${escapeHtml(p.text)}</span></li>`
+          )
+          .join("");
+        inspector.innerHTML =
+          `<div class="cg-insp-kind">Decision · ${TICKS[ev.dt]} · ${stateLabel}</div>` +
+          `<p class="cg-insp-title">${escapeHtml(ev.decision)}</p>` +
+          (ev.work
+            ? `<p class="cg-insp-sub">Expands into ${ev.plan.length} linked items · produced “${escapeHtml(ev.work)}”</p>`
+            : `<p class="cg-insp-sub">Expands into ${ev.plan.length} linked items</p>`) +
+          `<ul class="cg-insp-list">${items}</ul>` +
+          `<div class="cg-insp-foot">Illustrative — a model, not live data</div>`;
+
+        const left = parseFloat(btn.style.left);
+        const top = parseFloat(btn.style.top);
+        const half = (17 * 16) / 2;
+        const clampedLeft = Math.max(half + 8, Math.min(width - half - 8, left));
+        inspector.style.left = `${clampedLeft}px`;
+
+        inspector.classList.add("is-open");
+        inspector.setAttribute("aria-hidden", "false");
+        const estH = inspector.offsetHeight || 180;
+        if (top + 18 + estH > renderHeight - 6) {
+          inspector.classList.add("is-flip");
+          inspector.style.top = `${Math.max(6, top - estH - 16)}px`;
+        } else {
+          inspector.style.top = `${top + 18}px`;
+        }
+
+        btn.setAttribute("aria-expanded", "true");
+        btn.classList.add("is-open");
+        openBtn = btn;
+      }
+
+      inspector.addEventListener("click", (e) => e.stopPropagation());
+      canvas.querySelectorAll<HTMLButtonElement>(".cg-decision").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openInspector(btn);
+        });
+      });
+
+      // Reveal-on-scroll.
+      const revealEdge = (edgeId: string) => {
+        const path = svg.querySelector<SVGPathElement>(`path[data-edge="${edgeId}"]`);
+        if (!path) return;
+        const len = path.getTotalLength();
+        path.style.strokeDasharray = String(len);
+        path.style.strokeDashoffset = String(len);
+        requestAnimationFrame(() => path.classList.add("is-in"));
+      };
+      const revealThreadsFor = (triggerEdge: string) => {
+        svg.querySelectorAll<SVGPathElement>(`path[data-thread-trigger="${triggerEdge}"]`).forEach((path) => {
+          requestAnimationFrame(() => path.classList.add("is-in"));
+        });
+      };
+
+      if (reduceMotion) {
+        canvas.querySelectorAll<HTMLElement>("[data-reveal]").forEach((n) => n.classList.add("is-in"));
+        field.querySelectorAll<SVGElement>("[data-mote]").forEach((m) => m.classList.add("is-in"));
+        svg.querySelectorAll<SVGPathElement>("path.cg-edge").forEach((p) => p.classList.add("is-in"));
+        svg.querySelectorAll<SVGPathElement>("path.cg-thread").forEach((p) => p.classList.add("is-in"));
+        return;
+      }
+
+      io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            const el = e.target as HTMLElement;
+            el.classList.add("is-in");
+            const edgeId = el.dataset.edge;
+            if (edgeId) {
+              revealEdge(edgeId);
+              revealThreadsFor(edgeId);
+            }
+            if (el.dataset.decId) revealThreadsFor(`node-${el.dataset.decId}`);
+            io?.unobserve(el);
+          });
+        },
+        { root: scroll, threshold: 0.18, rootMargin: "0px -6% 0px -6%" }
+      );
+      canvas.querySelectorAll<HTMLElement>("[data-reveal]").forEach((n) => io!.observe(n));
+
+      motesIo = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (!e.isIntersecting) return;
+            e.target.classList.add("is-in");
+            motesIo?.unobserve(e.target);
+          });
+        },
+        { root: scroll, threshold: 0.05 }
+      );
+      field.querySelectorAll<SVGElement>("[data-mote]").forEach((m) => motesIo!.observe(m));
     }
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          const el = e.target as HTMLElement;
-          el.classList.add("is-in");
-          const edgeId = el.dataset.edge;
-          if (edgeId) {
-            revealEdge(edgeId);
-            revealThreadsFor(edgeId);
-          }
-          if (el.dataset.eventId) {
-            revealThreadsFor(`node-${el.dataset.eventId}`);
-          }
-          io.unobserve(el);
-        });
-      },
-      { root: scroll, threshold: 0.18, rootMargin: "0px -6% 0px -6%" }
-    );
-    canvas.querySelectorAll<HTMLElement>("[data-reveal]").forEach((n) => io.observe(n));
+    // ── Build the campaign rail (once) ──
+    let activeIdx = -1;
+    const railLabel = document.createElement("span");
+    railLabel.className = "cg-rail-label";
+    railLabel.textContent = "Campaigns";
+    rail.appendChild(railLabel);
 
-    const motesIo = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (!e.isIntersecting) return;
-          e.target.classList.add("is-in");
-          motesIo.unobserve(e.target);
-        });
-      },
-      { root: scroll, threshold: 0.05 }
-    );
-    field.querySelectorAll<SVGElement>("[data-mote]").forEach((m) => motesIo.observe(m));
+    const chips: HTMLButtonElement[] = [];
+    CAMPAIGNS.forEach((camp, i) => {
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "cg-chip";
+      chip.setAttribute("role", "tab");
+      chip.textContent = camp.name;
+      chip.addEventListener("click", () => select(i));
+      rail.appendChild(chip);
+      chips.push(chip);
+    });
+    const more = document.createElement("span");
+    more.className = "cg-rail-more";
+    more.textContent = `+${MORE_CAMPAIGNS} more · ${CAMPAIGNS.length + MORE_CAMPAIGNS} total`;
+    rail.appendChild(more);
+
+    function select(i: number) {
+      if (i === activeIdx) return;
+      activeIdx = i;
+      const camp = CAMPAIGNS[i];
+      chips.forEach((c, j) => {
+        c.classList.toggle("is-active", j === i);
+        c.setAttribute("aria-selected", j === i ? "true" : "false");
+      });
+      viewing.innerHTML =
+        `<span class="cg-viewing-kind">Campaign</span>` +
+        `<span class="cg-viewing-name">${escapeHtml(camp.name)}</span>` +
+        `<span class="cg-viewing-stat">${escapeHtml(camp.kind)} · ${escapeHtml(camp.stat)}</span>`;
+      closeInspector();
+      renderCampaign(camp);
+      scroll.scrollLeft = 0;
+    }
+
+    select(0);
   }
 
   document.querySelectorAll<HTMLElement>("[data-cg]").forEach(initGraph);
