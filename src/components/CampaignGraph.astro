@@ -33,7 +33,7 @@
 ---
 
 <div class="cg" data-cg>
-  <div class="cg-rail" role="tablist" aria-label="Your campaigns"></div>
+  <div class="cg-rail" role="group" aria-label="Select a campaign"></div>
   <div class="cg-viewing"></div>
   <div
     class="cg-scroll"
@@ -4204,7 +4204,7 @@
       const chip = document.createElement("button");
       chip.type = "button";
       chip.className = "cg-chip";
-      chip.setAttribute("role", "tab");
+      chip.setAttribute("aria-pressed", "false");
       chip.textContent = camp.name;
       chip.addEventListener("click", () => select(i));
       rail.appendChild(chip);
@@ -4221,7 +4221,7 @@
       const camp = CAMPAIGNS[i];
       chips.forEach((c, j) => {
         c.classList.toggle("is-active", j === i);
-        c.setAttribute("aria-selected", j === i ? "true" : "false");
+        c.setAttribute("aria-pressed", j === i ? "true" : "false");
       });
       viewing.innerHTML =
         `<span class="cg-viewing-kind">Campaign</span>` +
