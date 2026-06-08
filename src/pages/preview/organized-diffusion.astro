@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CampaignGraph from '../../components/CampaignGraph.astro';
+import { FEATURES } from '../../config/features';
+---
+
+<BaseLayout
+  title="Organized diffusion — preview"
+  description="Preview of the organized-diffusion campaign graph (work in progress)."
+  noindex={true}
+>
+  {
+    FEATURES.diffusionGraph ? (
+      <section class="dg">
+        <div class="dg-inner">
+          <p class="mono-label dg-eyebrow">The model · preview</p>
+          <h1 class="dg-h1">Every campaign, project, and decision has a place and a state.</h1>
+          <p class="dg-lede">
+            Each campaign is a company or product you run. Inside it: every project, the decisions that
+            shaped it, and the work they produced. Steer many campaigns at once; drill into the detail only
+            when you need it.
+          </p>
+          <CampaignGraph />
+        </div>
+      </section>
+    ) : (
+      <section class="dg dg-off">
+        <div class="dg-inner">
+          <p class="mono-label">Not available.</p>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .dg {
+    min-height: 70vh;
+  }
+  .dg-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(3.5rem, 8vh, 6rem) clamp(1.25rem, 3vw, 3.5rem);
+  }
+  .dg-off .dg-inner {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+  }
+  .dg-eyebrow {
+    display: block;
+    margin-bottom: 1.1rem;
+    color: var(--color-ink-muted);
+  }
+  .dg-h1 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--color-ink-primary);
+    margin: 0 0 1rem;
+    max-width: 24ch;
+  }
+  .dg-lede {
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+    color: var(--color-ink-muted);
+    max-width: 62ch;
+    margin: 0 0 clamp(2.25rem, 5vh, 3rem);
+  }
+</style>

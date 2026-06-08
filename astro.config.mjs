@@ -6,7 +6,12 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://obediencecorp.com",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Keep the unlinked preview routes out of the sitemap.
+      filter: (page) => !page.includes("/preview/"),
+    }),
+  ],
   redirects: {
     "/products": "/work",
     "/thesis": "/#thesis",
