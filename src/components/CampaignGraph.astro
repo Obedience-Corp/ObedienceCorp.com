@@ -653,265 +653,3150 @@
 
   // How many additional (unshown) campaigns to imply beyond the named ones, so
   // the rail conveys the real scale (~19 total).
-  const MORE_CAMPAIGNS = 14;
+  const MORE_CAMPAIGNS = 13;
 
   // ILLUSTRATIVE portfolio. Each entry is a CAMPAIGN (a company / product /
   // effort). The graph shows ONE expanded at a time: its projects, decisions,
   // and the work they produced. Public-safe — a model, not live data.
   const CAMPAIGNS: CGCampaign[] = [
     {
-      id: "obey", name: "Obedience Corp", kind: "Product",
-      stat: "4 projects · 14 festivals · 31 intents · since Mar",
-      projects: [
+      "id": "nw",
+      "name": "Northwind Robotics",
+      "kind": "Robotics",
+      "stat": "7 projects · 24 festivals · 47 intents · since Mar",
+      "projects": [
         {
-          name: "camp", role: "CLI · Go", start: 0,
-          events: [
+          "name": "fleet-core",
+          "role": "API · Go",
+          "start": 0,
+          "events": [
             {
-              id: "camp-cli", decision: "Ship the CLI before the app", dt: 0, work: "core engine", ft: 1, state: "done",
-              plan: [
-                { tag: "Festival", text: "FP0007 — 3 phases" },
-                { tag: "Design", text: "engine boundary spec" },
-                { tag: "Intent", text: "#12 first-run < 5 min" },
-              ],
+              "id": "nw-fleet-1",
+              "decision": "Adopt gRPC fleet control plane",
+              "dt": 0,
+              "ft": 2,
+              "state": "done",
+              "work": "control plane",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "control plane v1"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "NW0002 — 3 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #14"
+                }
+              ]
             },
             {
-              id: "camp-intake", decision: "Standardize project intake", dt: 3, work: "intake flow", ft: 4, state: "done",
-              plan: [
-                { tag: "Festival", text: "FP0011 — 2 phases" },
-                { tag: "Intent", text: "#26 repair on init" },
-              ],
+              "id": "nw-fleet-2",
+              "decision": "Add per-robot task lease arbitration",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "lease scheduler",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "lease model"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#31 stuck-robot recovery"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #58"
+                }
+              ]
             },
-          ],
+            {
+              "id": "nw-fleet-3",
+              "decision": "Stream fleet state over WebSocket",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "state stream",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "event schema v2"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "NW0011 — 2 phases"
+                }
+              ]
+            },
+            {
+              "id": "nw-fleet-4",
+              "decision": "Region-shard the dispatch queue",
+              "dt": 8,
+              "ft": 9,
+              "state": "queued",
+              "work": "sharded dispatch",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "shard key model"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#72 multi-DC fleets"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "fest", role: "Engine · Go", start: 1,
-          events: [
+          "name": "percept",
+          "role": "ML · Py",
+          "start": 1,
+          "events": [
             {
-              id: "fest-sandbox", decision: "Campaign-scoped filesystem boundary", dt: 2, work: "sandbox", ft: 3, state: "done",
-              plan: [
-                { tag: "Design", text: "sandbox boundary doc" },
-                { tag: "Festival", text: "FP0010 — 2 phases" },
-                { tag: "Intent", text: "#31 symlink escape guard" },
-              ],
+              "id": "nw-percept-1",
+              "decision": "Train pallet-detection model on depth+RGB",
+              "dt": 1,
+              "ft": 3,
+              "state": "done",
+              "work": "pallet detector",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "fusion model"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "NW0004 — 3 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #27"
+                }
+              ]
             },
             {
-              id: "fest-gate", decision: "Gate tool calls behind approval", dt: 6, work: "session control", ft: 8, state: "queued",
-              plan: [
-                { tag: "Design", text: "approval-gate protocol" },
-                { tag: "Festival", text: "FP0018 — planned" },
-              ],
+              "id": "nw-percept-2",
+              "decision": "Quantize model for on-robot inference",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "int8 weights",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#48 edge latency"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #61"
+                }
+              ]
             },
-          ],
+            {
+              "id": "nw-percept-3",
+              "decision": "Auto-label from sim-generated frames",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "label pipeline",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "NW0016 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "dataset schema"
+                }
+              ]
+            },
+            {
+              "id": "nw-percept-4",
+              "decision": "Add hazard-zone segmentation head",
+              "dt": 9,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#80 safety zones"
+                },
+                {
+                  "tag": "Design",
+                  "text": "seg head v1"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "festival-app", role: "App · TS", start: 4,
-          events: [
+          "name": "warp-sim",
+          "role": "Sim · C++",
+          "start": 2,
+          "events": [
             {
-              id: "app-viewer", decision: "Read-only app before session control", dt: 5, work: "viewer MVP", ft: 6, state: "active",
-              plan: [
-                { tag: "Festival", text: "FA0009 — 3 phases" },
-                { tag: "Design", text: "read-only viewer scope" },
-                { tag: "Intent", text: "#44 timeline view" },
-              ],
+              "id": "nw-sim-1",
+              "decision": "Build warehouse physics sandbox",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "sim sandbox",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "physics core"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "NW0007 — 3 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #33"
+                }
+              ]
             },
-          ],
+            {
+              "id": "nw-sim-2",
+              "decision": "Generate synthetic perception frames",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "frame generator",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#55 sim2real gap"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #66"
+                }
+              ]
+            },
+            {
+              "id": "nw-sim-3",
+              "decision": "Replay real incidents in sim",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "incident replay",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "NW0019 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "trace format"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "corp-site", role: "Site · Astro", start: 5,
-          events: [
+          "name": "robot-fw",
+          "role": "Firmware · Rust",
+          "start": 3,
+          "events": [
             {
-              id: "site-model", decision: "Lead the site with the timeline model", dt: 6, work: "hero graph", ft: 8, state: "active",
-              plan: [
-                { tag: "Design", text: "organized-diffusion concept" },
-                { tag: "Intent", text: "#46 hero visual" },
-              ],
+              "id": "nw-fw-1",
+              "decision": "Standardize motor-control HAL",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "motor HAL",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "HAL contract"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "NW0009 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #41"
+                }
+              ]
             },
-          ],
+            {
+              "id": "nw-fw-2",
+              "decision": "Add OTA firmware rollout with rollback",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "OTA pipeline",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#63 safe updates"
+                },
+                {
+                  "tag": "Design",
+                  "text": "rollout phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #74"
+                }
+              ]
+            },
+            {
+              "id": "nw-fw-3",
+              "decision": "Run on-robot inference via NPU offload",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "npu runtime",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "NW0021 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "tensor ABI"
+                }
+              ]
+            }
+          ]
         },
+        {
+          "name": "ops-console",
+          "role": "Web · TS",
+          "start": 4,
+          "events": [
+            {
+              "id": "nw-ops-1",
+              "decision": "Ship live fleet map dashboard",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "fleet console",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "map UI v1"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "NW0013 — 3 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #59"
+                }
+              ]
+            },
+            {
+              "id": "nw-ops-2",
+              "decision": "Surface incident replay viewer",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "replay viewer",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#69 ops triage"
+                },
+                {
+                  "tag": "Design",
+                  "text": "timeline UI"
+                }
+              ]
+            },
+            {
+              "id": "nw-ops-3",
+              "decision": "Add role-based access for floor leads",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "auth model"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#77 RBAC"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "edge-infra",
+          "role": "Infra · TF",
+          "start": 1,
+          "events": [
+            {
+              "id": "nw-infra-1",
+              "decision": "Provision per-site edge clusters",
+              "dt": 1,
+              "ft": 3,
+              "state": "done",
+              "work": "edge clusters",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "cluster topology"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "NW0005 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #22"
+                }
+              ]
+            },
+            {
+              "id": "nw-infra-2",
+              "decision": "Standardize site-to-cloud VPN mesh",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "vpn mesh",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#52 offline sites"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #60"
+                }
+              ]
+            },
+            {
+              "id": "nw-infra-3",
+              "decision": "Autoscale GPU pool for sim jobs",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "gpu autoscaler",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "NW0017 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "scaling policy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "billing-svc",
+          "role": "API · Go",
+          "start": 5,
+          "events": [
+            {
+              "id": "nw-bill-1",
+              "decision": "Meter robot-hours per customer site",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "usage metering",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "usage schema v2"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "NW0014 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #63"
+                }
+              ]
+            },
+            {
+              "id": "nw-bill-2",
+              "decision": "Generate monthly invoices from metering",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "invoice engine",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#70 invoice export"
+                },
+                {
+                  "tag": "Design",
+                  "text": "invoice model"
+                }
+              ]
+            },
+            {
+              "id": "nw-bill-3",
+              "decision": "Defer multi-currency until GA",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#81 FX support"
+                },
+                {
+                  "tag": "Design",
+                  "text": "currency model"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      links: [
-        { from: "camp-cli", to: "fest-sandbox" },     // engine unblocks the boundary work
-        { from: "fest-sandbox", to: "app-viewer" },   // boundary makes the app safe
-        { from: "app-viewer", to: "site-model" },     // the app feeds the site demo
-      ],
+      "links": [
+        {
+          "from": "nw-fleet-1",
+          "to": "nw-ops-1"
+        },
+        {
+          "from": "nw-fleet-1",
+          "to": "nw-infra-1"
+        },
+        {
+          "from": "nw-sim-1",
+          "to": "nw-percept-3"
+        },
+        {
+          "from": "nw-sim-2",
+          "to": "nw-percept-2"
+        },
+        {
+          "from": "nw-percept-1",
+          "to": "nw-fw-3"
+        },
+        {
+          "from": "nw-infra-3",
+          "to": "nw-sim-2"
+        },
+        {
+          "from": "nw-fleet-2",
+          "to": "nw-bill-1"
+        },
+        {
+          "from": "nw-sim-3",
+          "to": "nw-ops-2"
+        }
+      ]
     },
     {
-      id: "consulting", name: "Blockhead Consulting", kind: "Consulting",
-      stat: "6 engagements · 9 festivals · since Mar",
-      projects: [
+      "id": "at",
+      "name": "Atlas Health",
+      "kind": "Healthtech",
+      "stat": "7 projects · 24 festivals · 47 intents · since Mar",
+      "projects": [
         {
-          name: "Client audits", role: "Delivery", start: 0,
-          events: [
+          "name": "ehr-sync",
+          "role": "API · Go",
+          "start": 0,
+          "events": [
             {
-              id: "con-intake", decision: "Templatize the security intake", dt: 1, work: "intake kit", ft: 2, state: "done",
-              plan: [
-                { tag: "Festival", text: "BC0004 — 2 phases" },
-                { tag: "Design", text: "engagement checklist" },
-              ],
+              "id": "at-ehr-1",
+              "decision": "Adopt FHIR R4 as canonical model",
+              "dt": 0,
+              "ft": 2,
+              "state": "done",
+              "work": "FHIR mapper",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "schema v1"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0001 — 3 phases"
+                }
+              ]
             },
             {
-              id: "con-report", decision: "Generate findings from the run log", dt: 5, work: "report builder", ft: 7, state: "active",
-              plan: [
-                { tag: "Festival", text: "BC0008 — 3 phases" },
-                { tag: "Intent", text: "#19 evidence linking" },
-              ],
+              "id": "at-ehr-2",
+              "decision": "Pull Epic via bulk export not webhooks",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "bulk ingest",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "ingest model"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#22 epic backfill"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #61"
+                }
+              ]
             },
-          ],
+            {
+              "id": "at-ehr-3",
+              "decision": "Encrypt PHI at rest with per-tenant keys",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "envelope crypto",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "key model"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0012 — 2 phases"
+                }
+              ]
+            },
+            {
+              "id": "at-ehr-4",
+              "decision": "Stream deltas over Kafka topics",
+              "dt": 8,
+              "ft": 9,
+              "state": "queued",
+              "work": "delta bus",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "event v2"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#71 cdc stream"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "Automation", role: "Pipelines", start: 3,
-          events: [
+          "name": "scheduling",
+          "role": "API · Go",
+          "start": 1,
+          "events": [
             {
-              id: "con-pipe", decision: "Run scans on every engagement", dt: 4, work: "scan pipeline", ft: 5, state: "active",
-              plan: [
-                { tag: "Festival", text: "BC0006 — 2 phases" },
-                { tag: "Intent", text: "#22 nightly sweep" },
-              ],
+              "id": "at-sched-1",
+              "decision": "Model slots as interval tree",
+              "dt": 1,
+              "ft": 3,
+              "state": "done",
+              "work": "slot engine",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "slot model"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0003 — 3 phases"
+                }
+              ]
             },
-          ],
+            {
+              "id": "at-sched-2",
+              "decision": "Hold bookings with optimistic locks",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "booking holds",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#34 double-book bug"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #88"
+                }
+              ]
+            },
+            {
+              "id": "at-sched-3",
+              "decision": "Rank slots by triage urgency",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "priority booking",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "urgency rank"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0017 — 2 phases"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#58 urgent slots"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "Portal", role: "Client UI", start: 6,
-          events: [
+          "name": "ml-triage",
+          "role": "ML · Py",
+          "start": 2,
+          "events": [
             {
-              id: "con-portal", decision: "Ship a read-only client portal", dt: 7, work: "portal", ft: 9, state: "queued",
-              plan: [
-                { tag: "Design", text: "portal access model" },
-                { tag: "Intent", text: "#27 per-client scoping" },
-              ],
+              "id": "at-triage-1",
+              "decision": "Baseline triage on gradient boosting",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "triage v0",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "feature set"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0006 — 3 phases"
+                }
+              ]
             },
-          ],
+            {
+              "id": "at-triage-2",
+              "decision": "Train on FHIR-derived features only",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "feature store",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "feature store"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#45 leakage audit"
+                }
+              ]
+            },
+            {
+              "id": "at-triage-3",
+              "decision": "Gate model behind clinician override",
+              "dt": 7,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "override policy"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#64 safety gate"
+                }
+              ]
+            },
+            {
+              "id": "at-triage-4",
+              "decision": "Ship explainability via SHAP cards",
+              "dt": 8,
+              "ft": 9,
+              "state": "queued",
+              "work": "explain cards",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "AT0021 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #140"
+                }
+              ]
+            }
+          ]
         },
+        {
+          "name": "patient-app",
+          "role": "Mobile · Swift",
+          "start": 3,
+          "events": [
+            {
+              "id": "at-app-1",
+              "decision": "Build offline-first with local cache",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "offline sync",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "cache model"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0009 — 3 phases"
+                }
+              ]
+            },
+            {
+              "id": "at-app-2",
+              "decision": "Surface triage results in app",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "triage screen",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#52 result view"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #103"
+                }
+              ]
+            },
+            {
+              "id": "at-app-3",
+              "decision": "Add Face ID for record access",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "biometric auth",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "auth model"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0020 — 2 phases"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "billing-svc",
+          "role": "API · Go",
+          "start": 4,
+          "events": [
+            {
+              "id": "at-bill-1",
+              "decision": "Generate claims as X12 837",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "claim builder",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "claim schema"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0013 — 3 phases"
+                }
+              ]
+            },
+            {
+              "id": "at-bill-2",
+              "decision": "Price visits from scheduling events",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "charge capture",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#55 charge sync"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #118"
+                }
+              ]
+            },
+            {
+              "id": "at-bill-3",
+              "decision": "Defer payer eligibility checks to Q1",
+              "dt": 9,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "eligibility api"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#80 270/271"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "patient-portal",
+          "role": "Web · TS",
+          "start": 2,
+          "events": [
+            {
+              "id": "at-portal-1",
+              "decision": "Render records from FHIR API",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "record viewer",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "view model"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0008 — 3 phases"
+                }
+              ]
+            },
+            {
+              "id": "at-portal-2",
+              "decision": "Add self-serve appointment booking",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "booking flow",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#48 self booking"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #99"
+                }
+              ]
+            },
+            {
+              "id": "at-portal-3",
+              "decision": "Expose statements and pay link",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "billing page",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "statement v2"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0019 — 2 phases"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "platform-infra",
+          "role": "Infra · TF",
+          "start": 0,
+          "events": [
+            {
+              "id": "at-infra-1",
+              "decision": "Run HIPAA-scoped VPC per tenant",
+              "dt": 0,
+              "ft": 2,
+              "state": "done",
+              "work": "tenant vpc",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "network v1"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0002 — 3 phases"
+                }
+              ]
+            },
+            {
+              "id": "at-infra-2",
+              "decision": "Centralize secrets in KMS + Vault",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "secrets mgr",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "key model"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#46 vault rollout"
+                }
+              ]
+            },
+            {
+              "id": "at-infra-3",
+              "decision": "Provision Kafka cluster for deltas",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "kafka cluster",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "event v2"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "AT0018 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #131"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      links: [
-        { from: "con-intake", to: "con-pipe" },
-        { from: "con-pipe", to: "con-report" },
-      ],
+      "links": [
+        {
+          "from": "at-ehr-1",
+          "to": "at-triage-1"
+        },
+        {
+          "from": "at-ehr-1",
+          "to": "at-portal-1"
+        },
+        {
+          "from": "at-sched-1",
+          "to": "at-portal-2"
+        },
+        {
+          "from": "at-triage-2",
+          "to": "at-sched-3"
+        },
+        {
+          "from": "at-triage-1",
+          "to": "at-app-2"
+        },
+        {
+          "from": "at-sched-2",
+          "to": "at-bill-2"
+        },
+        {
+          "from": "at-infra-2",
+          "to": "at-ehr-3"
+        },
+        {
+          "from": "at-infra-3",
+          "to": "at-ehr-4"
+        }
+      ]
     },
     {
-      id: "brainyard", name: "Brainyard", kind: "Product",
-      stat: "3 projects · 11 festivals · 18 intents",
-      projects: [
+      "id": "mc",
+      "name": "Meridian Capital",
+      "kind": "Fintech",
+      "stat": "7 projects · 24 festivals · 39 intents · since Mar",
+      "projects": [
         {
-          name: "ingest", role: "Pipeline · Go", start: 1,
-          events: [
+          "name": "market-data",
+          "role": "Ingest · Rust",
+          "start": 0,
+          "events": [
             {
-              id: "by-ingest", decision: "Index by decision, not by file", dt: 2, work: "decision index", ft: 3, state: "done",
-              plan: [
-                { tag: "Design", text: "decision schema" },
-                { tag: "Festival", text: "BY0005 — 2 phases" },
-              ],
+              "id": "mc-md-1",
+              "decision": "Normalize feeds to unified tick schema",
+              "dt": 0,
+              "ft": 2,
+              "state": "done",
+              "work": "tick normalizer",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "tick schema v1"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0001 — 3 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #14"
+                }
+              ]
             },
-          ],
+            {
+              "id": "mc-md-2",
+              "decision": "Add gap-fill replay from snapshots",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "replay engine",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#22 feed gaps"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0006 — 2 phases"
+                }
+              ]
+            },
+            {
+              "id": "mc-md-3",
+              "decision": "Tier hot symbols into in-memory cache",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "symbol cache",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "cache LRU model"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #71"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "store", role: "Local-first", start: 2,
-          events: [
+          "name": "execution-engine",
+          "role": "Core · Go",
+          "start": 1,
+          "events": [
             {
-              id: "by-store", decision: "Keep the store local-first", dt: 4, work: "context store", ft: 5, state: "active",
-              plan: [
-                { tag: "Festival", text: "BY0009 — 3 phases" },
-                { tag: "Intent", text: "#33 export by default" },
-              ],
+              "id": "mc-ex-1",
+              "decision": "Adopt FIX 4.4 order gateway",
+              "dt": 1,
+              "ft": 4,
+              "state": "done",
+              "work": "FIX gateway",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "order model v1"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0003 — 3 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #28"
+                }
+              ]
             },
-          ],
+            {
+              "id": "mc-ex-2",
+              "decision": "Smart-order router across venues",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "venue router",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#41 venue split"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0011 — 4 phases"
+                }
+              ]
+            },
+            {
+              "id": "mc-ex-3",
+              "decision": "Pre-trade risk check inline on send",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "inline risk hook",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "check pipeline"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #63"
+                }
+              ]
+            },
+            {
+              "id": "mc-ex-4",
+              "decision": "Throttle order bursts per venue limit",
+              "dt": 8,
+              "ft": 9,
+              "state": "queued",
+              "work": "rate limiter",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#58 burst cap"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0021 — 2 phases"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "chat", role: "UI · TS", start: 5,
-          events: [
+          "name": "risk-engine",
+          "role": "Risk · Py",
+          "start": 2,
+          "events": [
             {
-              id: "by-chat", decision: "Ship the chat MVP behind a waitlist", dt: 6, work: "chat MVP", ft: 8, state: "queued",
-              plan: [
-                { tag: "Festival", text: "BY0012 — planned" },
-                { tag: "Intent", text: "#40 waitlist flow" },
-              ],
+              "id": "mc-rk-1",
+              "decision": "Compute portfolio VaR every minute",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "VaR service",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "VaR model v1"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0005 — 2 phases"
+                }
+              ]
             },
-          ],
+            {
+              "id": "mc-rk-2",
+              "decision": "Set per-desk exposure limits",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "limit store",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#47 desk caps"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #58"
+                }
+              ]
+            },
+            {
+              "id": "mc-rk-3",
+              "decision": "Stress-test against 2020 scenarios",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "scenario suite",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "scenario set"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0019 — 3 phases"
+                }
+              ]
+            }
+          ]
         },
+        {
+          "name": "ledger-svc",
+          "role": "API · Go",
+          "start": 2,
+          "events": [
+            {
+              "id": "mc-lg-1",
+              "decision": "Use double-entry append-only ledger",
+              "dt": 2,
+              "ft": 5,
+              "state": "done",
+              "work": "ledger core",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "ledger schema v2"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0007 — 3 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #33"
+                }
+              ]
+            },
+            {
+              "id": "mc-lg-2",
+              "decision": "Reconcile fills against ledger nightly",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "recon job",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#49 nightly recon"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #66"
+                }
+              ]
+            },
+            {
+              "id": "mc-lg-3",
+              "decision": "Freeze ledger schema before audit",
+              "dt": 7,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "schema freeze"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#60 audit prep"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "trader-dash",
+          "role": "Web · TS",
+          "start": 3,
+          "events": [
+            {
+              "id": "mc-db-1",
+              "decision": "Stream live P&L over websocket",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "live P&L view",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "ws contract"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0009 — 2 phases"
+                }
+              ]
+            },
+            {
+              "id": "mc-db-2",
+              "decision": "Surface risk limits as live gauges",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "risk panel",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#52 risk widgets"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #69"
+                }
+              ]
+            },
+            {
+              "id": "mc-db-3",
+              "decision": "Add order blotter with cancel/replace",
+              "dt": 8,
+              "ft": 9,
+              "state": "queued",
+              "work": "order blotter",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "blotter UX"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0022 — 3 phases"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "compliance-svc",
+          "role": "API · Go",
+          "start": 5,
+          "events": [
+            {
+              "id": "mc-cp-1",
+              "decision": "Log every order for trade surveillance",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "audit log",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "surveillance schema"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0014 — 2 phases"
+                }
+              ]
+            },
+            {
+              "id": "mc-cp-2",
+              "decision": "Flag wash trades in near-real-time",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "wash detector",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#55 wash rules"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #74"
+                }
+              ]
+            },
+            {
+              "id": "mc-cp-3",
+              "decision": "Hold MiFID reporting until legal review",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "MiFID mapping"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#61 reg report"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "platform-infra",
+          "role": "Infra · TF",
+          "start": 0,
+          "events": [
+            {
+              "id": "mc-in-1",
+              "decision": "Co-locate engine in exchange region",
+              "dt": 0,
+              "ft": 3,
+              "state": "done",
+              "work": "colo cluster",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "network topology"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0002 — 2 phases"
+                }
+              ]
+            },
+            {
+              "id": "mc-in-2",
+              "decision": "Provision timeseries store for ticks",
+              "dt": 1,
+              "ft": 3,
+              "state": "done",
+              "work": "tsdb cluster",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#18 tick store"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #21"
+                }
+              ]
+            },
+            {
+              "id": "mc-in-3",
+              "decision": "Blue-green deploy for the engine",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "deploy pipeline",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "rollout model"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "MC0017 — 3 phases"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      links: [
-        { from: "by-ingest", to: "by-store" },
-        { from: "by-store", to: "by-chat" },
-      ],
+      "links": [
+        {
+          "from": "mc-md-1",
+          "to": "mc-ex-1"
+        },
+        {
+          "from": "mc-in-2",
+          "to": "mc-md-2"
+        },
+        {
+          "from": "mc-ex-1",
+          "to": "mc-lg-1"
+        },
+        {
+          "from": "mc-rk-1",
+          "to": "mc-ex-3"
+        },
+        {
+          "from": "mc-lg-1",
+          "to": "mc-db-1"
+        },
+        {
+          "from": "mc-rk-2",
+          "to": "mc-db-2"
+        },
+        {
+          "from": "mc-ex-1",
+          "to": "mc-cp-1"
+        },
+        {
+          "from": "mc-md-1",
+          "to": "mc-rk-1"
+        }
+      ]
     },
     {
-      id: "agentecon", name: "Agent Economy", kind: "Research · Crypto",
-      stat: "3 projects · 7 festivals",
-      projects: [
+      "id": "ll",
+      "name": "Lumen Labs",
+      "kind": "Research",
+      "stat": "7 projects · 26 festivals · 48 intents · since Mar",
+      "projects": [
         {
-          name: "contracts", role: "Solidity", start: 2,
-          events: [
+          "name": "eval-harness",
+          "role": "Eval · Py",
+          "start": 0,
+          "events": [
             {
-              id: "ae-escrow", decision: "Escrow tasks on-chain", dt: 3, work: "task escrow", ft: 4, state: "done",
-              plan: [
-                { tag: "Design", text: "escrow state machine" },
-                { tag: "Festival", text: "AE0003 — 2 phases" },
-              ],
+              "id": "ll-eval-1",
+              "decision": "Adopt deterministic eval seeds",
+              "dt": 0,
+              "ft": 2,
+              "state": "done",
+              "work": "seeded runner",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "seed contract v1"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0003 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #41"
+                }
+              ]
             },
-          ],
+            {
+              "id": "ll-eval-2",
+              "decision": "Split eval suites by capability",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "suite registry",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#52 suite tags"
+                },
+                {
+                  "tag": "Design",
+                  "text": "registry schema"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #88"
+                }
+              ]
+            },
+            {
+              "id": "ll-eval-3",
+              "decision": "Gate releases on regression score",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "regression gate",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "LL0014 — 3 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "threshold policy"
+                }
+              ]
+            },
+            {
+              "id": "ll-eval-4",
+              "decision": "Standardize human-rater rubric",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#91 rubric v2"
+                },
+                {
+                  "tag": "Design",
+                  "text": "rater guide"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "indexer", role: "Go", start: 4,
-          events: [
+          "name": "data-pipeline",
+          "role": "Data · Py",
+          "start": 0,
+          "events": [
             {
-              id: "ae-index", decision: "Index agent runs for settlement", dt: 5, work: "run indexer", ft: 7, state: "active",
-              plan: [
-                { tag: "Festival", text: "AE0005 — 2 phases" },
-                { tag: "Intent", text: "#14 settlement proofs" },
-              ],
+              "id": "ll-data-1",
+              "decision": "Version datasets with content hashes",
+              "dt": 1,
+              "ft": 3,
+              "state": "done",
+              "work": "dataset registry",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "hash manifest"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0005 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #57"
+                }
+              ]
             },
-          ],
+            {
+              "id": "ll-data-2",
+              "decision": "Dedup corpus before training",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "dedup stage",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#63 near-dup filter"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #74"
+                }
+              ]
+            },
+            {
+              "id": "ll-data-3",
+              "decision": "Track per-source license metadata",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "license ledger",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "provenance schema"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0012 — 3 phases"
+                }
+              ]
+            },
+            {
+              "id": "ll-data-4",
+              "decision": "Quarantine PII at ingest",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "PII scrubber",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#102 PII scan"
+                },
+                {
+                  "tag": "Design",
+                  "text": "redaction rules"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "sdk", role: "TS", start: 6,
-          events: [
+          "name": "train-core",
+          "role": "Training · Py",
+          "start": 1,
+          "events": [
             {
-              id: "ae-sdk", decision: "SDK for agent payments", dt: 8, work: "payments SDK", ft: 9, state: "queued",
-              plan: [
-                { tag: "Design", text: "payments interface" },
-                { tag: "Intent", text: "#21 spend limits" },
-              ],
+              "id": "ll-train-1",
+              "decision": "Checkpoint every N steps to object store",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "ckpt sync",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "ckpt layout"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #69"
+                }
+              ]
             },
-          ],
+            {
+              "id": "ll-train-2",
+              "decision": "Resume training from sharded state",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "resume loader",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "LL0011 — 2 phases"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#77 resume bug"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #95"
+                }
+              ]
+            },
+            {
+              "id": "ll-train-3",
+              "decision": "Adopt curriculum from dataset tags",
+              "dt": 5,
+              "ft": 8,
+              "state": "active",
+              "work": "curriculum sampler",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "sampler weights"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0016 — 3 phases"
+                }
+              ]
+            },
+            {
+              "id": "ll-train-4",
+              "decision": "Defer MoE routing experiment",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#110 MoE spike"
+                },
+                {
+                  "tag": "Design",
+                  "text": "router sketch"
+                }
+              ]
+            }
+          ]
         },
+        {
+          "name": "serve-infra",
+          "role": "Infra · TF",
+          "start": 2,
+          "events": [
+            {
+              "id": "ll-serve-1",
+              "decision": "Pin GPU pools per model size",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "pool autoscaler",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "pool topology"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0009 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #84"
+                }
+              ]
+            },
+            {
+              "id": "ll-serve-2",
+              "decision": "Cache KV across requests",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "kv cache layer",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#86 kv reuse"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0017 — 3 phases"
+                }
+              ]
+            },
+            {
+              "id": "ll-serve-3",
+              "decision": "Roll canary by traffic slice",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "canary router",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "rollout policy"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #121"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "inference-api",
+          "role": "API · Go",
+          "start": 3,
+          "events": [
+            {
+              "id": "ll-api-1",
+              "decision": "Stream tokens over SSE",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "streaming endpoint",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "SSE contract"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #79"
+                }
+              ]
+            },
+            {
+              "id": "ll-api-2",
+              "decision": "Enforce per-key rate limits",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "rate limiter",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#83 quota tiers"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0015 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #101"
+                }
+              ]
+            },
+            {
+              "id": "ll-api-3",
+              "decision": "Expose eval scores in response meta",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "score passthrough",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "meta schema v2"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#108 score field"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "research-web",
+          "role": "Web · TS",
+          "start": 4,
+          "events": [
+            {
+              "id": "ll-web-1",
+              "decision": "Render eval dashboards from registry",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "eval dashboard",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "chart spec"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0018 — 2 phases"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #104"
+                }
+              ]
+            },
+            {
+              "id": "ll-web-2",
+              "decision": "Add dataset lineage explorer",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "lineage view",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#99 lineage UI"
+                },
+                {
+                  "tag": "Design",
+                  "text": "graph layout"
+                }
+              ]
+            },
+            {
+              "id": "ll-web-3",
+              "decision": "Freeze design tokens before launch",
+              "dt": 9,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "token freeze"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #130"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "paper-publish",
+          "role": "Publish · Py",
+          "start": 5,
+          "events": [
+            {
+              "id": "ll-pub-1",
+              "decision": "Auto-build result tables from runs",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "table generator",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#94 table gen"
+                },
+                {
+                  "tag": "Festival",
+                  "text": "LL0019 — 2 phases"
+                }
+              ]
+            },
+            {
+              "id": "ll-pub-2",
+              "decision": "Attach reproducible run bundles",
+              "dt": 8,
+              "ft": 9,
+              "state": "queued",
+              "work": "repro bundle",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "bundle manifest"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #126"
+                }
+              ]
+            },
+            {
+              "id": "ll-pub-3",
+              "decision": "Embargo drafts until eval gate green",
+              "dt": 9,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "embargo policy"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#129 gate hook"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      links: [
-        { from: "ae-escrow", to: "ae-index" },
-      ],
+      "links": [
+        {
+          "from": "ll-data-1",
+          "to": "ll-train-1"
+        },
+        {
+          "from": "ll-eval-1",
+          "to": "ll-serve-1"
+        },
+        {
+          "from": "ll-data-2",
+          "to": "ll-train-3"
+        },
+        {
+          "from": "ll-eval-2",
+          "to": "ll-web-1"
+        },
+        {
+          "from": "ll-train-1",
+          "to": "ll-serve-2"
+        },
+        {
+          "from": "ll-serve-1",
+          "to": "ll-api-1"
+        },
+        {
+          "from": "ll-eval-3",
+          "to": "ll-api-3"
+        },
+        {
+          "from": "ll-data-1",
+          "to": "ll-pub-2"
+        }
+      ]
     },
     {
-      id: "research", name: "Research", kind: "R&D",
-      stat: "2 projects · 5 festivals",
-      projects: [
+      "id": "ds",
+      "name": "Drift Studio",
+      "kind": "Game",
+      "stat": "7 projects · 26 festivals · 48 intents · since Mar",
+      "projects": [
         {
-          name: "benchmarks", role: "Harness", start: 1,
-          events: [
+          "name": "drift-engine",
+          "role": "Engine · C++",
+          "start": 0,
+          "events": [
             {
-              id: "re-bench", decision: "Standardize the benchmark harness", dt: 2, work: "bench harness", ft: 4, state: "done",
-              plan: [
-                { tag: "Design", text: "harness spec" },
-                { tag: "Festival", text: "RE0002 — 2 phases" },
-              ],
+              "id": "ds-engine-1",
+              "decision": "Adopt ECS scene architecture",
+              "dt": 0,
+              "ft": 2,
+              "state": "done",
+              "work": "ECS core",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0003 — 3 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "ecs model v1"
+                }
+              ]
             },
-          ],
+            {
+              "id": "ds-engine-2",
+              "decision": "Fixed 60Hz simulation tick",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "deterministic loop",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "tick schedule"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #88"
+                }
+              ]
+            },
+            {
+              "id": "ds-engine-3",
+              "decision": "Split render thread from sim",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "render pipeline",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0014 — 2 phases"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#71 frame pacing"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #211"
+                }
+              ]
+            },
+            {
+              "id": "ds-engine-4",
+              "decision": "GPU particle system rewrite",
+              "dt": 8,
+              "ft": 9,
+              "state": "queued",
+              "work": "vfx backend",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "compute pass"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#119 fx budget"
+                }
+              ]
+            }
+          ]
         },
         {
-          name: "writeups", role: "Publishing", start: 4,
-          events: [
+          "name": "drift-net",
+          "role": "Netcode · C++",
+          "start": 1,
+          "events": [
             {
-              id: "re-pub", decision: "Publish findings as they land", dt: 5, work: "findings series", ft: 7, state: "active",
-              plan: [
-                { tag: "Intent", text: "#08 cadence" },
-                { tag: "Design", text: "review checklist" },
-              ],
+              "id": "ds-net-1",
+              "decision": "Rollback netcode over lockstep",
+              "dt": 1,
+              "ft": 3,
+              "state": "done",
+              "work": "rollback core",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0006 — 3 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "rollback model"
+                }
+              ]
             },
-          ],
+            {
+              "id": "ds-net-2",
+              "decision": "Snapshot delta compression",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "delta encoder",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#52 bandwidth"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #134"
+                }
+              ]
+            },
+            {
+              "id": "ds-net-3",
+              "decision": "Client-side prediction for movement",
+              "dt": 5,
+              "ft": 8,
+              "state": "active",
+              "work": "prediction layer",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0017 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "reconcile v2"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #240"
+                }
+              ]
+            },
+            {
+              "id": "ds-net-4",
+              "decision": "Region failover protocol",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "failover spec"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#131 dc loss"
+                }
+              ]
+            }
+          ]
         },
+        {
+          "name": "drift-client",
+          "role": "Client · C#",
+          "start": 2,
+          "events": [
+            {
+              "id": "ds-client-1",
+              "decision": "Unity client over custom UI",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "client shell",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0009 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "ui kit v1"
+                }
+              ]
+            },
+            {
+              "id": "ds-client-2",
+              "decision": "Bind client to delta snapshots",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "state sync",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#83 interp jitter"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #225"
+                }
+              ]
+            },
+            {
+              "id": "ds-client-3",
+              "decision": "In-game store UI surface",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "store screen",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0022 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "store flow"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "drift-match",
+          "role": "Matchmaking · Go",
+          "start": 3,
+          "events": [
+            {
+              "id": "ds-match-1",
+              "decision": "Skill-based MMR queues",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "mmr service",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0011 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "mmr model"
+                }
+              ]
+            },
+            {
+              "id": "ds-match-2",
+              "decision": "Latency-aware server placement",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "ping router",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#97 cross-region"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #233"
+                }
+              ]
+            },
+            {
+              "id": "ds-match-3",
+              "decision": "Backfill for early leavers",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "backfill loop",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "backfill spec"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#124 leaver penalty"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "drift-economy",
+          "role": "Economy · Go",
+          "start": 4,
+          "events": [
+            {
+              "id": "ds-econ-1",
+              "decision": "Server-authoritative inventory",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "inventory svc",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0015 — 3 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "ledger schema"
+                }
+              ]
+            },
+            {
+              "id": "ds-econ-2",
+              "decision": "Soft + hard currency split",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "currency model",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "wallet v2"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #248"
+                }
+              ]
+            },
+            {
+              "id": "ds-econ-3",
+              "decision": "Idempotent purchase grants",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "grant pipeline",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#128 double-grant"
+                },
+                {
+                  "tag": "Design",
+                  "text": "txn keys"
+                }
+              ]
+            },
+            {
+              "id": "ds-econ-4",
+              "decision": "No pay-to-win items policy",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "monetize rules"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#140 cosmetic only"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "drift-liveops",
+          "role": "Live-ops · TS",
+          "start": 5,
+          "events": [
+            {
+              "id": "ds-liveops-1",
+              "decision": "Server-driven event calendar",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "event engine",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0019 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "schedule schema"
+                }
+              ]
+            },
+            {
+              "id": "ds-liveops-2",
+              "decision": "Battle pass progression system",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "pass service",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0024 — 3 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "tier model"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#136 season 1"
+                }
+              ]
+            },
+            {
+              "id": "ds-liveops-3",
+              "decision": "Remote config feature flags",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "config service",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#108 hot toggle"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #251"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "drift-infra",
+          "role": "Infra · TF",
+          "start": 1,
+          "events": [
+            {
+              "id": "ds-infra-1",
+              "decision": "Multi-region game server fleet",
+              "dt": 1,
+              "ft": 3,
+              "state": "done",
+              "work": "fleet terraform",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0007 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "region map"
+                }
+              ]
+            },
+            {
+              "id": "ds-infra-2",
+              "decision": "Autoscale on concurrent players",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "autoscaler",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#79 ccu spikes"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #229"
+                }
+              ]
+            },
+            {
+              "id": "ds-infra-3",
+              "decision": "Telemetry pipeline to warehouse",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "telemetry etl",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "FP0021 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "events schema"
+                }
+              ]
+            },
+            {
+              "id": "ds-infra-4",
+              "decision": "Crash-recovery snapshots",
+              "dt": 9,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "snapshot spec"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#144 session restore"
+                }
+              ]
+            }
+          ]
+        }
       ],
-      links: [
-        { from: "re-bench", to: "re-pub" },
-      ],
+      "links": [
+        {
+          "from": "ds-engine-2",
+          "to": "ds-net-1"
+        },
+        {
+          "from": "ds-net-2",
+          "to": "ds-client-2"
+        },
+        {
+          "from": "ds-infra-1",
+          "to": "ds-match-1"
+        },
+        {
+          "from": "ds-net-1",
+          "to": "ds-net-3"
+        },
+        {
+          "from": "ds-match-2",
+          "to": "ds-infra-2"
+        },
+        {
+          "from": "ds-econ-1",
+          "to": "ds-client-3"
+        },
+        {
+          "from": "ds-liveops-1",
+          "to": "ds-econ-2"
+        },
+        {
+          "from": "ds-infra-3",
+          "to": "ds-liveops-3"
+        }
+      ]
     },
+    {
+      "id": "hl",
+      "name": "Harbor Logistics",
+      "kind": "Logistics",
+      "stat": "7 projects · 21 festivals · 38 intents · since Mar",
+      "projects": [
+        {
+          "name": "routing-engine",
+          "role": "API · Go",
+          "start": 0,
+          "events": [
+            {
+              "id": "hl-routing-1",
+              "decision": "Pick contraction-hierarchy router",
+              "dt": 0,
+              "ft": 2,
+              "state": "done",
+              "work": "CH router core",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0001 — 3 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "router model v1"
+                }
+              ]
+            },
+            {
+              "id": "hl-routing-2",
+              "decision": "Add live traffic re-route",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "dynamic re-route",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0004 — 2 phases"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#62 traffic feed"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #133"
+                }
+              ]
+            },
+            {
+              "id": "hl-routing-3",
+              "decision": "Expose route ETA gRPC API",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "ETA service",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "eta proto v1"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #181"
+                }
+              ]
+            },
+            {
+              "id": "hl-routing-4",
+              "decision": "Plan multi-stop optimizer",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0019 — 4 phases"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#104 vrp solver"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "track-svc",
+          "role": "API · Go",
+          "start": 1,
+          "events": [
+            {
+              "id": "hl-track-1",
+              "decision": "Ingest GPS pings via stream",
+              "dt": 1,
+              "ft": 3,
+              "state": "done",
+              "work": "ping ingest",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0002 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "ping schema v1"
+                }
+              ]
+            },
+            {
+              "id": "hl-track-2",
+              "decision": "Add geofence event webhooks",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "geofence hooks",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#71 geofence alerts"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #156"
+                }
+              ]
+            },
+            {
+              "id": "hl-track-3",
+              "decision": "Consume route ETA for arrival board",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "arrival board",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "arrival model"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #194"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "edi-gateway",
+          "role": "Integrations · Go",
+          "start": 2,
+          "events": [
+            {
+              "id": "hl-edi-1",
+              "decision": "Adopt X12 parser library",
+              "dt": 2,
+              "ft": 4,
+              "state": "done",
+              "work": "X12 parser",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0005 — 3 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "edi mapping v1"
+                }
+              ]
+            },
+            {
+              "id": "hl-edi-2",
+              "decision": "Map 214 status to tracking events",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "214 mapping",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#83 edi 214"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #177"
+                }
+              ]
+            },
+            {
+              "id": "hl-edi-3",
+              "decision": "Add 210 invoice export",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "210 export",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0017 — 2 phases"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#97 edi 210"
+                }
+              ]
+            },
+            {
+              "id": "hl-edi-4",
+              "decision": "Defer AS2 transport to next quarter",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "as2 transport"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#110 as2"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "shipper-web",
+          "role": "Web · TS",
+          "start": 2,
+          "events": [
+            {
+              "id": "hl-web-1",
+              "decision": "Standardize on design tokens",
+              "dt": 2,
+              "ft": 3,
+              "state": "done",
+              "work": "token system",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "tokens v1"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #121"
+                }
+              ]
+            },
+            {
+              "id": "hl-web-2",
+              "decision": "Build live shipment map view",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "map dashboard",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0009 — 3 phases"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#74 map view"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #160"
+                }
+              ]
+            },
+            {
+              "id": "hl-web-3",
+              "decision": "Add invoice center to portal",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "invoice center",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#99 invoice ui"
+                },
+                {
+                  "tag": "Design",
+                  "text": "invoice flow"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "driver-app",
+          "role": "Mobile · Swift",
+          "start": 4,
+          "events": [
+            {
+              "id": "hl-mob-1",
+              "decision": "Ship offline POD capture",
+              "dt": 4,
+              "ft": 6,
+              "state": "active",
+              "work": "offline POD",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0011 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "sync model v1"
+                }
+              ]
+            },
+            {
+              "id": "hl-mob-2",
+              "decision": "Stream pings from driver app",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "ping uploader",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#88 ping upload"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #185"
+                }
+              ]
+            },
+            {
+              "id": "hl-mob-3",
+              "decision": "Plan turn-by-turn nav",
+              "dt": 8,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0020 — 3 phases"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#108 nav"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "billing-svc",
+          "role": "API · Go",
+          "start": 5,
+          "events": [
+            {
+              "id": "hl-bill-1",
+              "decision": "Model rate cards and accessorials",
+              "dt": 5,
+              "ft": 7,
+              "state": "active",
+              "work": "rating engine",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0013 — 3 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "rate schema v1"
+                }
+              ]
+            },
+            {
+              "id": "hl-bill-2",
+              "decision": "Generate invoices from POD",
+              "dt": 7,
+              "ft": 9,
+              "state": "queued",
+              "work": "invoice gen",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#101 auto invoice"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #201"
+                }
+              ]
+            },
+            {
+              "id": "hl-bill-3",
+              "decision": "Defer Stripe payouts integration",
+              "dt": 9,
+              "state": "queued",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "payouts model"
+                },
+                {
+                  "tag": "Intent",
+                  "text": "#119 payouts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "platform-infra",
+          "role": "Infra · TF",
+          "start": 0,
+          "events": [
+            {
+              "id": "hl-infra-1",
+              "decision": "Adopt managed Kafka for streams",
+              "dt": 1,
+              "ft": 2,
+              "state": "done",
+              "work": "stream bus",
+              "plan": [
+                {
+                  "tag": "Design",
+                  "text": "topics v1"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #110"
+                }
+              ]
+            },
+            {
+              "id": "hl-infra-2",
+              "decision": "Stand up multi-region clusters",
+              "dt": 3,
+              "ft": 5,
+              "state": "done",
+              "work": "region rollout",
+              "plan": [
+                {
+                  "tag": "Festival",
+                  "text": "HL0006 — 2 phases"
+                },
+                {
+                  "tag": "Design",
+                  "text": "region topology"
+                }
+              ]
+            },
+            {
+              "id": "hl-infra-3",
+              "decision": "Enforce per-service SLO alerts",
+              "dt": 6,
+              "ft": 8,
+              "state": "active",
+              "work": "SLO alerting",
+              "plan": [
+                {
+                  "tag": "Intent",
+                  "text": "#92 slo alerts"
+                },
+                {
+                  "tag": "PR",
+                  "text": "PR #190"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "from": "hl-infra-1",
+          "to": "hl-track-1"
+        },
+        {
+          "from": "hl-track-1",
+          "to": "hl-mob-2"
+        },
+        {
+          "from": "hl-routing-3",
+          "to": "hl-track-3"
+        },
+        {
+          "from": "hl-edi-2",
+          "to": "hl-track-2"
+        },
+        {
+          "from": "hl-web-1",
+          "to": "hl-web-2"
+        },
+        {
+          "from": "hl-mob-1",
+          "to": "hl-bill-2"
+        },
+        {
+          "from": "hl-bill-1",
+          "to": "hl-web-3"
+        },
+        {
+          "from": "hl-infra-2",
+          "to": "hl-routing-2"
+        }
+      ]
+    }
   ];
 
   const UNIT = 184;     // px per time tick

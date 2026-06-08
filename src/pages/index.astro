@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CampaignGraph from '../components/CampaignGraph.astro';
 ---
 
 <BaseLayout
@@ -29,24 +28,6 @@ import CampaignGraph from '../components/CampaignGraph.astro';
         <a href="#thesis" class="hero-cta hero-cta-primary">Read more <span aria-hidden="true">↓</span></a>
         <a href="/work" class="hero-cta">See the work <span aria-hidden="true">→</span></a>
       </div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       Organized-diffusion product visual — the campaign graph over time.
-       An illustrative model: campaigns as mission bands, decisions on the
-       timeline, the work each produced, and the network between campaigns.
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="diffusion-graph" aria-labelledby="diffusion-graph-title">
-    <div class="diffusion-graph-inner">
-      <p class="mono-label dg-eyebrow">The model</p>
-      <h2 id="diffusion-graph-title" class="dg-h2">
-        Every campaign, project, and decision has a place and a state.
-      </h2>
-      <p class="dg-lede">
-        Each campaign is a company or product you run. Inside it: every project, the decisions that shaped it, and the work they produced. Steer many campaigns at once; drill into the detail only when you need it.
-      </p>
-      <CampaignGraph />
     </div>
   </section>
 
@@ -306,45 +287,6 @@ import CampaignGraph from '../components/CampaignGraph.astro';
     transform: translateY(3px);
   }
 
-
-  /* ──────────────────────────────────────────────────────────────
-     Organized-diffusion product visual (campaign graph)
-     ────────────────────────────────────────────────────────────── */
-  .diffusion-graph {
-    border-bottom: 1px solid var(--color-rule);
-  }
-
-  .diffusion-graph-inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    padding: clamp(4rem, 9vh, 7rem) clamp(1.25rem, 3vw, 3.5rem);
-  }
-
-  .dg-eyebrow {
-    display: block;
-    margin-bottom: 1.1rem;
-    color: var(--color-ink-muted);
-  }
-
-  .dg-h2 {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-    line-height: 1.12;
-    letter-spacing: -0.02em;
-    color: var(--color-ink-primary);
-    margin: 0 0 1rem;
-    max-width: 24ch;
-  }
-
-  .dg-lede {
-    font-family: var(--font-sans);
-    font-size: 1.0625rem;
-    line-height: 1.5;
-    color: var(--color-ink-muted);
-    max-width: 60ch;
-    margin: 0 0 clamp(2.25rem, 5vh, 3rem);
-  }
 
   /* ──────────────────────────────────────────────────────────────
      Thesis section

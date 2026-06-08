@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   canonicalUrl?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'Obedience Corp. AI systems that give individuals the productive capacity of entire organizations.',
   canonicalUrl,
   ogImage = '/og-default.svg',
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = 'https://obediencecorp.com';
@@ -31,6 +33,7 @@ const fullTitle =
 
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
     <link rel="canonical" href={pageUrl} />
 
     <meta property="og:type" content="website" />
