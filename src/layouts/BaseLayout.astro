@@ -49,6 +49,20 @@ const fullTitle =
     <meta name="twitter:image" content={`${siteUrl}${ogImage}`} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MEXG0YQYHQ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-MEXG0YQYHQ');
+    </script>
   </head>
   <body class="flex min-h-screen flex-col bg-bg-primary text-ink-body">
     <Nav />
