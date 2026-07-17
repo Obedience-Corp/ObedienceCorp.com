@@ -92,6 +92,7 @@ a:hover {
 }
 
 /* Scroll margin so anchor jumps don't slide under the fixed/sticky nav. */
+#system,
 #thesis,
 #contact {
   scroll-margin-top: 5rem;
