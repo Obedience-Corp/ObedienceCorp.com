@@ -14,7 +14,6 @@ export default defineConfig({
   ],
   redirects: {
     "/products": "/work",
-    "/thesis": "/#thesis",
     "/contact": "/#contact",
   },
   vite: {

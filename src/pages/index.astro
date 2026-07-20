@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Obedience Corp"
+  title="The executive layer for AI"
   description="Obedience Corp is researching organized diffusion: systems aimed at turning vague user intent into expected results with minimal intervention between input and outcome."
 >
   <!-- ════════════════════════════════════════════════════════════════
@@ -92,6 +92,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <a href="/work" class="system-link">Explore Festival <span aria-hidden="true">↗</span></a>
         </div>
       </article>
+
+      <figure class="system-demo">
+        <img
+          src="/images/demos/tui-delegate.gif"
+          alt="Terminal capture of Festival's interface: a plain-language intent for a new app is typed in and delegated to an agent, which turns it into structured work."
+          width="860"
+          height="556"
+          loading="lazy"
+        />
+        <figcaption class="mono-label">
+          Real capture · an intent delegated through Festival's terminal interface
+        </figcaption>
+      </figure>
     </div>
   </section>
 
@@ -112,7 +125,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <h2>What changes with organized diffusion</h2>
         <p>A well-run company doesn’t work by the CEO talking to every person doing every task. It works because the systems and processes around them let competent people succeed in their roles without constant oversight and messages. The CEO supplies intent and strategy. The organization runs.</p>
-        <p>We can build agentic harnesses today that can resemble that type of system by modeling the systems and processes we have in place at human organizations, but at scale we introduce many new points of failure and overload the user with information.</p>
+        <p>You can approximate that today by wiring agent harnesses into the shape of a human organization. But at scale the seams show: more points of failure, and far more information than one person can absorb.</p>
         <p>Organized diffusion is that operating layer: it standardizes how work is organized, abstracts progress into a form a human can understand, trust, and audit, and lets that structure compound through normal usage.</p>
 
         <h2>User-owned by design</h2>
@@ -120,16 +133,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p>And because your information stays yours, you stay free to use whatever AI models and tools serve you best. New tools should plug into your data, not lock you into someone else’s platform.</p>
 
         <h2>Why this matters</h2>
-        <p>Throughout history, productive leverage has only been in the hands of a few people at the top. CEOs of large companies, politicians, heads of institutions. The modern world opens paths for individuals to reach those positions, but they still involve a lot of luck, a lot of work, and a lot of time.</p>
-        <p>Problems in the world that required extreme amounts of human leverage to solve were gated by the cost of getting to the highest levels of society. If one person in the world knew how to solve a massive problem with huge societal impact, they would still have to spend decades proving themselves worthy of the human leverage required to solve it, and be extremely lucky.</p>
-        <p>As AI continues to get more capable and cheaper, solving massive problems requiring extreme amounts of coordinated effort becomes affordable to a wider pool of people. But very few people in society have experience effectively managing and organizing effort at scale, and the systems of organizing our work that people are familiar with are designed for a world that no longer exists.</p>
-        <p>When you build an AI orchestration system based around existing work management systems, the scaling ceiling is around the amount of work the human can imagine themselves doing if they had the human resources to do the work, and the scaling capacity of the system is limited by the user's ability to conceptualize the capability of the system.</p>
-        <p>When the capabilities start to expand beyond what the user has a mental model to support, the interface and the user become the bottleneck. Imagine if you woke up tomorrow and your baseline productivity increased by 10x. Within a few weeks you'll be able to adjust to that new normal.</p>
-        <p>Now imagine if you woke up tomorrow and your baseline increased 5,000x, or 100,000x. What would you do with that capacity? How would you reason about the work being done at that scale to even know that the system is working? If you're running a company, how do you manage people when everyone you hire has this same level of capacity?</p>
-        <p>The barrier to this scale of capability is not training a better llm model. It is making everything produced by the AI legible and verifiable and useful at scale, without mentally overwhelming the human director. And that's what organized diffusion enables us to build.</p>
+        <p>Imagine if you woke up tomorrow and your baseline productivity increased by 10x. Within a few weeks you would adjust to the new normal. Now imagine it increased 5,000x, or 100,000x. What would you do with that capacity? How would you reason about work happening at that scale to even know the system is working?</p>
+        <p>Throughout history, that kind of productive leverage has belonged to a few people at the top: CEOs of large companies, politicians, heads of institutions. As AI gets more capable and cheaper, it becomes affordable to a far wider pool of people. But very few people have experience directing effort at that scale, and the systems we use to organize work were designed for a world that no longer exists.</p>
+        <p>The barrier to this scale of capability is not training a better LLM. It is making everything produced by the AI legible, verifiable, and useful at scale, without mentally overwhelming the human director. And that's what organized diffusion enables us to build.</p>
+
+        <p class="thesis-more">
+          <a href="/thesis">Read the full thesis <span aria-hidden="true">→</span></a>
+        </p>
 
         <blockquote>
-          <p>The people who control their information flow will outperform the people who let algorithms, apps, and prompts control their day.</p>
+          <p>The people who can direct and verify work at scale will outperform the people who supervise it one conversation at a time.</p>
         </blockquote>
 
         <p class="founder-note-trigger">
@@ -162,7 +175,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="founder-note-body">
         <p>I've been working on this system as a solo founder since early 2025, and I've been dogfooding it since May 2025. I've built more with this system in the past year than every team I've been on in my 11 years working in software, both in breadth and depth. I am completely reliant on my system because there is no viable alternative that can handle the workload that's now become normal to me.</p>
         <p>Festival is already released at <a href="https://fest.build" target="_blank" rel="noopener noreferrer">fest.build</a>. What's missing now is packaging, positioning, and financing for the rest of the stack. Today I use the system to build complex products and set up automated coding or research pipelines that require a level of specification and reliability that can't be done with ordinary agent loops.</p>
-        <p>If I'm able to secure investment, the focus will be on productization, marketing, and demonstrations. If that doesn't work, I'm going to use it internally as either an employee or contractor until the next layer is done.</p>
+        <p>I'm building this regardless. Investment changes the speed, not the direction: with backing, the focus goes to productization, marketing, and demonstrations. Without it, the stack keeps growing the way it has so far, through daily use on real work.</p>
       </div>
     </div>
   </dialog>
@@ -487,6 +500,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-ink-muted);
   }
 
+  .system-demo {
+    margin: clamp(2rem, 5vh, 3.5rem) auto 0;
+    max-width: 860px;
+  }
+
+  .system-demo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--color-rule);
+    background: var(--color-bg-elevated);
+  }
+
+  .system-demo figcaption {
+    margin-top: 0.8rem;
+    color: var(--color-ink-muted);
+    text-align: center;
+  }
 
   /* ──────────────────────────────────────────────────────────────
      Thesis section
@@ -550,6 +581,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .thesis-body strong {
     font-weight: 600;
     color: var(--color-ink-primary);
+  }
+
+  .thesis-more {
+    margin: 2rem 0 0;
+  }
+
+  .thesis-more a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-ink-primary);
+  }
+
+  .thesis-more a:hover {
+    color: var(--color-ink-muted);
   }
 
   .thesis-body blockquote {
