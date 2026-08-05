@@ -54,7 +54,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <ol class="system-steps">
           <li class="system-step">
-            <span class="system-step-index">01</span>
+            <span class="system-step-index" aria-hidden="true">01</span>
             <div>
               <p class="mono-label">Intent</p>
               <h3>Ship a public launch</h3>
@@ -62,7 +62,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </li>
           <li class="system-step">
-            <span class="system-step-index">02</span>
+            <span class="system-step-index" aria-hidden="true">02</span>
             <div>
               <p class="mono-label">Structure</p>
               <h3>Define phases, sequences, and tasks</h3>
@@ -70,7 +70,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </li>
           <li class="system-step">
-            <span class="system-step-index">03</span>
+            <span class="system-step-index" aria-hidden="true">03</span>
             <div>
               <p class="mono-label">Execution</p>
               <h3>Continue across sessions and tools</h3>
@@ -78,7 +78,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </li>
           <li class="system-step">
-            <span class="system-step-index">04</span>
+            <span class="system-step-index" aria-hidden="true">04</span>
             <div>
               <p class="mono-label">Verification</p>
               <h3>Review the outcome and decide what is next</h3>
@@ -89,22 +89,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <div class="system-example-footer">
           <span class="mono-label">Illustrative flow · Festival is available now</span>
-          <a href="/work" class="system-link">Explore Festival <span aria-hidden="true">↗</span></a>
+          <a href="/work" class="system-link">Explore Festival <span aria-hidden="true">→</span></a>
         </div>
       </article>
 
-      <figure class="system-demo">
-        <img
-          src="/images/demos/tui-delegate.gif"
-          alt="Terminal capture of Festival's interface: a plain-language intent for a new app is typed in and delegated to an agent, which turns it into structured work."
-          width="860"
-          height="556"
-          loading="lazy"
-        />
+      <!-- Poster first; GIF only after explicit play. Reduced-motion users never load the animation. -->
+      <figure class="system-demo" data-system-demo>
+        <div class="system-demo-frame">
+          <img
+            data-system-demo-img
+            src="/images/demos/tui-delegate-poster.png"
+            alt="Terminal capture of Festival's interface: a plain-language intent for a new app is typed in and delegated to an agent, which turns it into structured work."
+            width="860"
+            height="556"
+            loading="lazy"
+          />
+          <button type="button" class="system-demo-play" data-system-demo-play>
+            Play demo
+          </button>
+        </div>
         <figcaption class="mono-label">
           Real capture · an intent delegated through Festival's terminal interface
         </figcaption>
       </figure>
+      <script>
+        const root = document.querySelector("[data-system-demo]");
+        if (root) {
+          const img = root.querySelector("[data-system-demo-img]");
+          const play = root.querySelector("[data-system-demo-play]");
+          const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if (reduce || !img || !play) {
+            if (play) play.hidden = true;
+          } else {
+            play.addEventListener("click", () => {
+              img.setAttribute("src", "/images/demos/tui-delegate.gif");
+              play.hidden = true;
+            });
+          }
+        }
+      </script>
     </div>
   </section>
 
@@ -350,7 +373,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     outline-offset: 3px;
   }
 
-  /* Secondary "See the work →" — arrow slides right on hover */
+  /* Secondary "Start a conversation →" — arrow slides right on hover */
   .hero-cta:not(.hero-cta-primary):hover > span {
     transform: translateX(4px);
   }
@@ -365,7 +388,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-ink-primary);
   }
 
-  /* Primary "Read more ↓" — arrow nudges down on hover */
+  /* Primary "See the system ↓" — arrow nudges down on hover */
   .hero-cta-primary:hover > span {
     transform: translateY(3px);
   }
@@ -500,17 +523,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-ink-muted);
   }
 
+  .system-link:focus-visible {
+    outline: 2px solid var(--color-ink-primary);
+    outline-offset: 3px;
+  }
+
   .system-demo {
     margin: clamp(2rem, 5vh, 3.5rem) auto 0;
     max-width: 860px;
+  }
+
+  .system-demo-frame {
+    position: relative;
+    border: 1px solid var(--color-rule);
+    background: var(--color-bg-elevated);
   }
 
   .system-demo img {
     display: block;
     width: 100%;
     height: auto;
+  }
+
+  .system-demo-play {
+    position: absolute;
+    inset: auto 50% 1.1rem auto;
+    transform: translateX(50%);
+    padding: 0.55rem 1rem;
     border: 1px solid var(--color-rule);
-    background: var(--color-bg-elevated);
+    border-radius: 999px;
+    background: var(--color-bg-primary);
+    color: var(--color-ink-primary);
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .system-demo-play:hover {
+    background: var(--color-ink-primary);
+    color: var(--color-bg-primary);
+  }
+
+  .system-demo-play:focus-visible {
+    outline: 2px solid var(--color-ink-primary);
+    outline-offset: 3px;
   }
 
   .system-demo figcaption {
@@ -601,6 +660,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .thesis-more a:hover {
     color: var(--color-ink-muted);
+  }
+
+  .thesis-more a:focus-visible {
+    outline: 2px solid var(--color-ink-primary);
+    outline-offset: 3px;
   }
 
   .thesis-body blockquote {
