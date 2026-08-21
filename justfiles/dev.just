@@ -12,6 +12,13 @@ dev:
 build:
     npx astro build
 
+# Verify the blog list, post, drafts, and RSS after a production build
+blog-check: build
+    node scripts/check-blog.mjs
+
+# Project gate: production build plus blog assertions
+test: blog-check
+
 # Preview built site locally
 preview:
     npx astro preview

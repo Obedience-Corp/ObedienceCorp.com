@@ -9,7 +9,8 @@ export default defineConfig({
   integrations: [
     sitemap({
       // Keep the unlinked preview routes out of the sitemap.
-      filter: (page) => !page.includes("/preview/"),
+      filter: (page) =>
+        !page.includes("/preview/") && !page.endsWith("/rss.xml"),
     }),
   ],
   redirects: {

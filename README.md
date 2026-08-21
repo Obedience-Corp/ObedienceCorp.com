@@ -37,10 +37,11 @@ The site presents the company thesis and the products built on the stack:
 /
 ├── public/                 # Static assets served as-is
 ├── src/
-│   ├── pages/              # Routes (index.astro, work.astro)
+│   ├── pages/              # Routes (index.astro, work.astro, blog/)
 │   ├── layouts/           # BaseLayout.astro
 │   ├── components/        # Nav, Footer
 │   ├── content/
+│   │   ├── blog/          # Company essays (Markdown content collection)
 │   │   └── products/      # Product entries (Markdown content collection)
 │   ├── styles/            # global.css
 │   └── content.config.ts  # Content collection schema
@@ -63,6 +64,7 @@ Run `just` with no arguments to list available recipes.
 | `just install`  | Install dependencies                         |
 | `just dev`      | Start the local dev server                   |
 | `just build`    | Build the static site to `./dist/`           |
+| `just test`     | Production build plus blog list/RSS checks   |
 | `just preview`  | Preview the production build locally          |
 | `just fmt`      | Format with Prettier                         |
 | `just fmt-check`| Check formatting without writing             |
