@@ -1,0 +1,35 @@
+---
+interface Props {
+  current?: string;
+}
+
+const { current } = Astro.props;
+
+const links = [
+  { href: "/work", label: "WORK" },
+  { href: "/blog", label: "WRITING" },
+  { href: "/thesis", label: "THESIS" },
+  { href: "/about", label: "ABOUT" },
+];
+---
+
+<header class="chrome">
+  <a class="wordmark" href="/" aria-label="Obedience Corp home">
+    <img class="mark" src="/brand/logo.svg" width="28" height="28" alt="" />
+    <span>OBEDIENCE CORP</span>
+  </a>
+  <nav class="nav" aria-label="Primary">
+    {links.map((link) => (
+      <a
+        href={link.href}
+        aria-current={current === link.href ? "page" : undefined}
+      >
+        {link.label}
+      </a>
+    ))}
+    <a
+      class="nav-contact"
+      href="/#contact"
+    >CONTACT</a>
+  </nav>
+</header>

@@ -1,33 +1,30 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
-const products = defineCollection({
-  loader: glob({ pattern: "**/*.md", base: "./src/content/products" }),
+const work = defineCollection({
+  loader: glob({ base: "./src/content/work", pattern: "**/*.md" }),
   schema: z.object({
     name: z.string(),
-    tagline: z.string(),
-    status: z.enum(["active", "beta", "coming-soon", "internal"]),
-    description: z.string(),
-    primaryUrl: z.string().url(),
-    repoUrl: z.string().url().optional(),
-    docsUrl: z.string().url().optional(),
-    order: z.number(),
-    flagship: z.boolean().default(false),
+    type: z.string(),
+    license: z.string().optional(),
+    detail: z.string(),
+    url: z.string().url().optional(),
+    order: z.number().optional(),
+    date: z.coerce.date().optional(),
   }),
 });
 
 const blog = defineCollection({
-  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
+  loader: glob({ base: "./src/content/blog", pattern: "**/*.md" }),
   schema: z.object({
     title: z.string(),
-    description: z.string(),
-    pubDate: z.coerce.date(),
-    author: z.string().default("Lance Rogers"),
-    canonical: z.string().url().optional(),
-    ogImage: z.string().optional(),
-    tags: z.array(z.string()).default([]),
+    date: z.coerce.date(),
+    author: z.string(),
+    summary: z.string(),
+    image: z.string().optional(),
     draft: z.boolean().default(false),
   }),
 });
 
-export const collections = { products, blog };
+export const collections = { work, blog };

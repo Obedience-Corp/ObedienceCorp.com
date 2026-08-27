@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img" aria-label="Obedience Corp logo">
+  <title>Obedience Corp</title>
+  <desc>Concentric orbital rings — cyan and white C-mark.</desc>
+  <circle cx="256" cy="256" r="41.8410" fill="#2A333D" opacity="1"/>
+  <path d="M 326.5146 196.8313 A 92.0502 92.0502 0 1 0 346.0387 275.1383 L 318.2086 269.2228 A 63.5983 63.5983 0 1 1 304.7191 215.1198 Z" fill="#00E5E8" opacity="1"/>
+  <path d="M 358.9595 153.0405 A 145.6067 145.6067 0 1 0 382.0991 183.1967 L 357.4590 197.4226 A 117.1548 117.1548 0 1 1 338.8410 173.1590 Z" fill="#FFFFFF" opacity="1"/>
+  <path d="M 238.5689 56.7611 A 200.0000 200.0000 0 0 0 105.0581 387.2118 L 121.4777 361.1004 A 170.7113 170.7113 0 0 1 232.2416 86.9501 Z" fill="#00E5E8"/>
+  <path d="M 141.2847 419.8304 A 200.0000 200.0000 0 1 0 266.4672 56.2741 L 273.8442 86.2239 A 170.7113 170.7113 0 1 1 165.5368 400.7714 Z" fill="#00E5E8"/>
+</svg>

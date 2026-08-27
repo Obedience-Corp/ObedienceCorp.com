@@ -1,0 +1,183 @@
+---
+import Base from "../layouts/Base.astro";
+import SystemField from "../components/visual/SystemField.astro";
+---
+
+<Base
+  title="About — Obedience Corp"
+  description="Obedience Corp is a forward deployed engineering company founded by software engineer Lance Rogers."
+  current="/about"
+>
+  <section class="inner-hero inner-hero-split about-hero">
+    <div>
+      <p class="eyebrow">ABOUT OBEDIENCE CORP</p>
+      <h1>A small forward deployed engineering company working on a large operational problem.</h1>
+      <p>
+        Obedience Corp builds the systems around AI models that make them useful
+        in sustained, real-world work: dependable software, durable workflows,
+        and tools people can understand and control.
+      </p>
+    </div>
+    <SystemField label="LAB IDENTITY / OBEDIENCE" status="INDEPENDENT" compact />
+  </section>
+
+  <section class="about-block">
+    <p class="section-label">WHY THE LAB EXISTS</p>
+    <div class="about-copy">
+      <h2>Capability is advancing faster than our ability to operate it.</h2>
+      <div>
+        <p>
+          Modern agents can write code, use tools, search, and produce real
+          output. But most useful work is larger than one interaction. It has
+          history, constraints, judgment calls, handoffs, and a standard for
+          what “done” means.
+        </p>
+        <p>
+          Obedience Corp is focused on that operational layer. The goal is not
+          to make AI sound autonomous. It is to build systems that are genuinely
+          more reliable, legible, and useful to the people responsible for the
+          outcome.
+        </p>
+      </div>
+    </div>
+    <div class="about-principle-strip" aria-label="Obedience Corp operating principles">
+      <span><small>01</small> BUILD THE SYSTEM</span>
+      <span><small>02</small> OPERATE IT FOR REAL</span>
+      <span><small>03</small> PUBLISH WHAT HOLDS</span>
+    </div>
+  </section>
+
+  <section class="about-block founder-profile">
+    <p class="section-label">FOUNDER</p>
+    <div class="about-copy">
+      <div class="founder-identity">
+        <h2>Lance Rogers</h2>
+        <div class="founder-monogram" aria-hidden="true">
+          <span>LR</span>
+          <small>FOUNDER / ENGINEER</small>
+        </div>
+      </div>
+      <div class="founder-narrative">
+        <p>
+          I’m a software engineer with 11 years of experience building products
+          and infrastructure. I started Obedience Corp after agent capability
+          let me produce more work than I could reliably coordinate with the
+          tools that existed.
+        </p>
+        <p>
+          Since 2025 I have used the systems behind this lab to build software,
+          run research, and operate across hundreds of repositories, including
+          launching products for three startups in 2025. That
+          daily use produced <a href="https://fest.build">Festival</a>, the
+          lab’s open-source project, and the research published in
+          the <a href="/blog">field notes</a>.
+        </p>
+        <p>
+          I care about ambitious systems, honest evidence, and software that
+          gives people leverage without taking away their understanding or
+          control.
+        </p>
+        <dl class="founder-record">
+          <div><dt>EXPERIENCE</dt><dd>11 years building products and infrastructure</dd></div>
+          <div><dt>PUBLIC WORK</dt><dd>Festival and open field notes</dd></div>
+          <div><dt>METHOD</dt><dd>Build, operate, inspect, improve</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-block">
+    <p class="section-label">THE AGENT TEAM</p>
+    <div class="about-copy">
+      <h2>The rest of the team isn’t human.</h2>
+      <div>
+        <p>
+          Obedience Corp runs on the systems it sells. Alongside the founder,
+          named agents carry real responsibilities: they plan, build, and ship
+          under human direction, and their work lands as reviewed pull
+          requests like anyone else’s.
+        </p>
+        <p>
+          This is the reliability argument, not a novelty. Every control a
+          client gets is a control this company already depends on to ship
+          its own software: defined scope, verification gates, an audit
+          trail, a human who signs off. Nothing goes out that a person did not
+          review.
+        </p>
+        <ul class="agent-roster">
+          <li>
+            <div class="agent-identity">
+              <strong>Obey Agent</strong>
+              <span>AI AGENT · ENGINEERING</span>
+            </div>
+            <p>
+              Builds and reviews code across the lab’s repositories,
+              including public pull requests on Festival.
+            </p>
+            <a
+              href="https://github.com/Obedience-Corp/festival/pulls?q=is%3Apr+author%3Aobey-agent"
+              >ITS PULL REQUESTS ↗</a
+            >
+          </li>
+          <li>
+            <div class="agent-identity">
+              <strong>Veronica</strong>
+              <span>AI AGENT · VOICE &amp; LOCAL INFERENCE</span>
+            </div>
+            <p>
+              Works on voice pipelines, local inference, and festival tooling
+              for the lab.
+            </p>
+            <a href="https://github.com/veronica-agent">GITHUB ↗</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-block">
+    <p class="section-label">FOR INVESTORS</p>
+    <div class="about-copy">
+      <h2>The evidence is public.</h2>
+      <div>
+        <p>
+          Obedience Corp is building the operational layer that turns agent
+          capability into dependable work. The bet is that this layer, not
+          the models, is where durable value accrues, and the lab already
+          runs on it daily.
+        </p>
+        <p>
+          The fastest way to evaluate us is to read what has shipped:
+          the <a href="/thesis">thesis</a>,
+          <a href="https://fest.build">Festival</a>, installed 850+ times
+          since its first release, and the <a href="/blog">field notes</a>
+          measured from real operation. If what you read holds up, write.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-block availability">
+    <p class="section-label">WORK WITH THE LAB</p>
+    <div class="about-copy">
+      <h2>Open to serious conversations.</h2>
+      <div>
+        <p>
+          Obedience Corp is available for process automation, paid pilots,
+          applied engineering engagements, research partnerships, and
+          investment conversations.
+        </p>
+        <p>
+          If that sounds relevant, write with a sentence or two about the
+          problem. You do not need a polished brief.
+        </p>
+        <div class="inline-links">
+          <a href="/#contact">Use the contact form →</a>
+          <a href="https://github.com/Obedience-Corp">GitHub ↗</a>
+          <a href="https://x.com/LKRBuilds">@LKRBuilds ↗</a>
+          <a href="https://www.linkedin.com/in/lancekrogers">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

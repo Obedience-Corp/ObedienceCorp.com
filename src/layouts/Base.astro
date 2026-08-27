@@ -1,0 +1,126 @@
+---
+import Chrome from "../components/Chrome.astro";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/500.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "../styles/site.css";
+
+interface Props {
+  title: string;
+  description: string;
+  current?: string;
+  landing?: boolean;
+  image?: string;
+}
+
+const { title, description, current, landing = false, image } = Astro.props;
+const site = Astro.site ?? new URL("https://obediencecorp.com");
+const canonical = new URL(Astro.url.pathname, site);
+const socialImage = new URL(image ?? "/og.png", site);
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Obedience Corp" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    {
+      !image && (
+        <>
+          <meta property="og:image:width" content="1734" />
+          <meta property="og:image:height" content="907" />
+          <meta
+            property="og:image:alt"
+            content="Obedience Corp: building AI systems that keep working after the demo."
+          />
+        </>
+      )
+    }
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Obedience Corp"
+      href={new URL("/rss.xml", site)}
+    />
+    <title>{title}</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      is:inline
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MEXG0YQYHQ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-MEXG0YQYHQ");
+    </script>
+  </head>
+  <body class={landing ? "is-landing" : undefined}>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <Chrome current={current} />
+    <main id="main-content">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="/brand/logo.svg" width="32" height="32" alt="" />
+          <div>
+            <strong>OBEDIENCE CORP</strong>
+            <p>
+              Forward deployed engineering. We embed with your team and
+              remove the work that is eating it.
+            </p>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h2>EXPLORE</h2>
+          <ul>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/blog">Writing</a></li>
+            <li><a href="/thesis">Thesis</a></li>
+            <li><a href="https://fest.build">Festival ↗</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h2>CONNECT</h2>
+          <ul>
+            <li><a href="/#contact">Contact form</a></li>
+            <li><a href="https://github.com/Obedience-Corp">GitHub ↗</a></li>
+            <li><a href="https://x.com/ObedienceCorp">X ↗</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/lancekrogers">LinkedIn ↗</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© {year} OBEDIENCE CORP</span>
+        <span>OBEDIENCECORP.COM</span>
+      </div>
+    </footer>
+  </body>
+</html>

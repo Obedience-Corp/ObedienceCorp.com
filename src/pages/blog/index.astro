@@ -1,118 +1,46 @@
 ---
-import { getCollection } from 'astro:content';
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
 
-const posts = (await getCollection('blog', ({ data }) => data.draft !== true)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-function formatDate(date: Date) {
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    timeZone: 'UTC',
-  });
-}
+const posts = (await getCollection("blog"))
+  .filter((p) => !p.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout
-  title="Blog"
-  description="Company essays from Obedience Corp. Canonical home for organized diffusion and related writing."
-  canonicalUrl="https://obediencecorp.com/blog/"
+<Base
+  title="Writing — Obedience Corp"
+  description="Field notes on building and operating dependable AI systems."
+  current="/blog"
 >
-  <section class="blog-index">
-    <header class="blog-header">
-      <p class="mono-label">Company writing</p>
-      <h1 class="blog-h1">Blog</h1>
-      <p class="blog-intro">
-        Essays under Lance's byline. One canonical home per post.{' '}
-        <a href="/rss.xml">RSS</a>
+  <section class="index">
+    <header class="index-head">
+      <p class="eyebrow">WRITING / FIELD NOTES</p>
+      <h1>Evidence from building AI systems in the real world.</h1>
+      <p>
+        Technical essays, operating lessons, and honest reports from the work
+        behind Obedience Corp.
       </p>
     </header>
-
-    <ul class="post-list">
-      {
-        posts.map((post) => (
+    {posts.length === 0 ? (
+      <p class="empty">Nothing published yet.</p>
+    ) : (
+      <ul class="post-list">
+        {posts.map((post, index) => (
           <li>
-            <article class="post-tease">
-              <p class="mono-label">
-                <time datetime={post.data.pubDate.toISOString()}>
-                  {formatDate(post.data.pubDate)}
-                </time>
-              </p>
-              <h2 class="post-title">
-                <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-              </h2>
-              <p class="post-desc">{post.data.description}</p>
-              <p class="post-byline">By {post.data.author}</p>
-            </article>
+            <a href={`/blog/${post.id}`}>
+              <span class="post-meta post-rail">
+                <span>{String(index + 1).padStart(2, "0")} / FIELD NOTE</span>
+                <span>{post.data.date.toISOString().slice(0, 10)}</span>
+              </span>
+              <span class="post-copy">
+                <span class="post-title">{post.data.title}</span>
+                <p class="post-dek">{post.data.summary}</p>
+                <span class="post-card-link">READ →</span>
+              </span>
+            </a>
           </li>
-        ))
-      }
-    </ul>
+        ))}
+      </ul>
+    )}
   </section>
-</BaseLayout>
-
-<style>
-  .blog-index {
-    max-width: 68ch;
-    margin: 0 auto;
-    padding: clamp(4rem, 9vh, 7rem) clamp(1.25rem, 3vw, 3.5rem);
-  }
-
-  .blog-header {
-    margin-bottom: clamp(2.5rem, 6vh, 4rem);
-  }
-
-  .blog-h1 {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    font-size: clamp(2.25rem, 5vw, 3.5rem);
-    letter-spacing: -0.02em;
-    color: var(--color-ink-primary);
-    margin: 0.75rem 0 1rem;
-  }
-
-  .blog-intro {
-    font-family: var(--font-sans);
-    color: var(--color-ink-muted);
-    max-width: 52ch;
-  }
-
-  .post-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .post-tease {
-    padding: 2rem 0;
-    border-top: 1px solid var(--color-rule);
-  }
-
-  .post-title {
-    font-family: var(--font-serif);
-    font-weight: 400;
-    font-size: clamp(1.5rem, 2.5vw, 1.85rem);
-    letter-spacing: -0.015em;
-    margin: 0.65rem 0 0.75rem;
-  }
-
-  .post-title a {
-    color: var(--color-ink-primary);
-  }
-
-  .post-desc {
-    color: var(--color-ink-body);
-    margin: 0 0 0.75rem;
-  }
-
-  .post-byline {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--color-ink-muted);
-  }
-</style>
+</Base>

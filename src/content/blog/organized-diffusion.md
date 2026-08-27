@@ -1,12 +1,8 @@
 ---
 title: "Organized diffusion"
-description: "Organized diffusion models execution. It turns ambiguous intent into an outcome with evidence by doing real work across agents, tools, context, workflows, and artifacts."
-pubDate: 2026-08-21
+date: 2026-08-21
 author: "Lance Rogers"
-canonical: "https://obediencecorp.com/blog/organized-diffusion/"
-tags:
-  - organized-diffusion
-  - thesis
+summary: "Organized diffusion models execution. It turns ambiguous intent into an outcome with evidence by doing real work across agents, tools, context, workflows, and artifacts."
 draft: false
 ---
 
