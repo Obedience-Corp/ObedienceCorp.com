@@ -1,0 +1,88 @@
+---
+interface Props {
+  label?: string;
+  status?: string;
+  compact?: boolean;
+}
+
+const {
+  label = "OPERATING FIELD / 01",
+  status = "SYSTEM MODEL",
+  compact = false,
+} = Astro.props;
+---
+
+<figure class:list={["system-field", { "system-field-compact": compact }]}>
+  <figcaption class="system-field-head">
+    <span>{label}</span>
+    <span>{status}</span>
+  </figcaption>
+
+  <div class="system-field-canvas" aria-hidden="true">
+    <svg viewBox="0 0 720 480" role="presentation">
+      <defs>
+        <pattern id="system-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" class="system-grid-line"></path>
+        </pattern>
+        <linearGradient id="system-fade" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" class="system-fade-start"></stop>
+          <stop offset="1" class="system-fade-end"></stop>
+        </linearGradient>
+      </defs>
+
+      <rect width="720" height="480" fill="url(#system-grid)"></rect>
+      <rect width="720" height="480" fill="url(#system-fade)"></rect>
+
+      <g class="system-connections">
+        <path d="M118 104 H260 L320 184"></path>
+        <path d="M602 104 H460 L400 184"></path>
+        <path d="M118 376 H260 L320 296"></path>
+        <path d="M602 376 H460 L400 296"></path>
+        <path d="M360 86 V154"></path>
+        <path d="M360 326 V394"></path>
+      </g>
+
+      <g class="system-orbits" transform="translate(360 240)">
+        <circle r="118"></circle>
+        <circle r="82"></circle>
+        <circle r="48"></circle>
+        <circle class="system-orbit-pulse" r="22"></circle>
+        <path d="M0-118 A118 118 0 0 1 118 0"></path>
+        <path d="M0 82 A82 82 0 0 1 -82 0"></path>
+      </g>
+
+      <g class="system-nodes">
+        <circle cx="118" cy="104" r="5"></circle>
+        <circle cx="602" cy="104" r="5"></circle>
+        <circle cx="118" cy="376" r="5"></circle>
+        <circle cx="602" cy="376" r="5"></circle>
+        <circle cx="360" cy="86" r="5"></circle>
+        <circle cx="360" cy="394" r="5"></circle>
+      </g>
+
+      <g class="system-labels">
+        <text x="90" y="83">INTENT</text>
+        <text x="554" y="83">CONTEXT</text>
+        <text x="84" y="405">DIRECTION</text>
+        <text x="542" y="405">EVIDENCE</text>
+        <text x="332" y="61">HUMAN</text>
+        <text x="332" y="427">OUTCOME</text>
+      </g>
+
+      <g class="system-core" transform="translate(360 240)">
+        <circle r="30"></circle>
+        <circle r="20"></circle>
+        <circle r="10"></circle>
+        <path d="M-13 0 H13 M0 -13 V13"></path>
+      </g>
+    </svg>
+    <span class="system-coordinate system-coordinate-a">OBC / FIELD 01</span>
+    <span class="system-coordinate system-coordinate-b">SYSTEM / LAB</span>
+  </div>
+
+  <div class="system-field-foot">
+    <span>USER-OWNED CONTEXT</span>
+    <span>LEGIBLE EXECUTION</span>
+    <span>VERIFIABLE OUTCOME</span>
+  </div>
+</figure>

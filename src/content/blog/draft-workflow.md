@@ -1,10 +1,8 @@
 ---
 title: "Draft workflow example"
-description: "Fixture that verifies drafts stay out of the public list and RSS feed."
-pubDate: 2026-08-21
+date: 2026-08-21
 author: "Lance Rogers"
-tags:
-  - meta
+summary: "Fixture that verifies drafts stay out of the public list and RSS feed."
 draft: true
 ---
 

@@ -1,24 +1,39 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
+import { satteri } from "@astrojs/markdown-satteri";
 
-// https://astro.build/config
+const stripHtmlComments = {
+  name: "strip-html-comments",
+  comment(node, context) {
+    context.removeNode(node);
+  },
+  raw(node, context) {
+    if (/^<!--[\s\S]*-->$/.test(node.value.trim())) {
+      context.removeNode(node);
+    }
+  },
+};
+
 export default defineConfig({
   site: "https://obediencecorp.com",
-  integrations: [
-    sitemap({
-      // Keep the unlinked preview routes out of the sitemap.
-      filter: (page) =>
-        !page.includes("/preview/") && !page.endsWith("/rss.xml"),
-    }),
-  ],
+  integrations: [sitemap()],
+  // Inbound links from the previous obediencecorp.com. /thesis is deliberately
+  // absent: it is a real route here, and the old /thesis -> /#thesis redirect
+  // would shadow it.
   redirects: {
     "/products": "/work",
-    "/thesis": "/#thesis",
     "/contact": "/#contact",
   },
-  vite: {
-    plugins: [tailwindcss()],
+  markdown: {
+    processor: satteri({ hastPlugins: [stripHtmlComments] }),
+    syntaxHighlight: {
+      type: "shiki",
+      excludeLangs: ["mermaid"],
+    },
+    shikiConfig: {
+      theme: "github-dark",
+      wrap: true,
+    },
   },
 });

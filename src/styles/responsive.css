@@ -1,0 +1,284 @@
+@media (max-width: 960px) {
+  .home-hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .home-hero-copy h1 {
+    max-width: 15ch;
+  }
+
+  .hero-instrument {
+    width: 100%;
+  }
+
+  .hero-ledger {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-ledger a {
+    min-height: 8.5rem;
+  }
+
+  .hero-ledger a + a {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .section-intro,
+  .founder-grid,
+  .about-copy {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+
+  .festival-feature,
+  .work-case-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .engagement-section {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-emblem {
+    width: min(100%, 19rem);
+  }
+
+  .engagement-note {
+    grid-column: 1;
+    margin-top: -1rem;
+  }
+
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 16px;
+    scroll-padding-top: 7.1rem;
+  }
+
+  .chrome {
+    min-height: 0;
+    padding: 0.8rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0.4rem 0.65rem;
+    font-size: 0.61rem;
+  }
+
+  .nav .nav-contact {
+    padding: 0.35rem 0.45rem;
+  }
+
+  .home-hero {
+    padding-top: 3.25rem;
+    padding-bottom: 3.25rem;
+    gap: 3rem;
+  }
+
+  .home-hero-copy h1 {
+    margin-top: 0.85rem;
+    font-size: clamp(2.7rem, 11.8vw, 3.4rem);
+    line-height: 1;
+  }
+
+  .home-hero-lede {
+    font-size: 1.03rem;
+  }
+
+  .hero-actions .action {
+    width: 100%;
+  }
+
+  .hero-instrument .system-field-canvas {
+    height: clamp(17rem, 82vw, 20rem);
+  }
+
+  .hero-ledger {
+    padding: 0 var(--gutter);
+  }
+
+  .home-section,
+  .work-case,
+  .work-proof,
+  .work-cta,
+  .about-block {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .principles {
+    grid-template-columns: 1fr;
+  }
+
+  .principles article {
+    min-height: 0;
+    padding: 1.25rem 0 1.5rem;
+  }
+
+  .principles article + article {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .principles h3 {
+    margin-top: 1.75rem;
+  }
+
+  .section-heading-row,
+  .work-case-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .section-heading-row h2,
+  .work-case-head h2 {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+
+  .engagement-section {
+    padding: 4.5rem var(--gutter);
+  }
+
+  .engagement-intro h2 {
+    font-size: clamp(2.7rem, 13vw, 4rem);
+  }
+
+  .engagement-list article {
+    grid-template-columns: 1.5rem 1fr;
+  }
+
+  .engagement-list p {
+    grid-column: 2;
+  }
+
+  .operating-map-flow {
+    padding: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  .operating-map-flow > i {
+    min-height: 2rem;
+    transform: rotate(90deg);
+  }
+
+  .operating-map-flow article {
+    min-height: 8rem;
+  }
+
+  .operating-map-flow article > strong {
+    margin-top: 1rem;
+  }
+
+  .home-post-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-post-grid li + li {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .home-post-grid a {
+    padding: 1rem 0;
+  }
+
+  .inner-hero {
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .inner-hero h1 {
+    font-size: clamp(3rem, 14vw, 4.35rem);
+  }
+
+  .work-proof {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .work-facts div {
+    grid-template-columns: 5.5rem 1fr;
+  }
+
+  .index {
+    padding-top: 3.5rem;
+  }
+
+  .index-head h1,
+  .thesis-title {
+    font-size: clamp(3rem, 14vw, 4.3rem);
+  }
+
+  .article {
+    width: calc(100% - 1.5rem);
+    padding-top: 2.5rem;
+  }
+
+  .post-list a {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .post-rail {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.9rem;
+  }
+
+  .article-head {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .article-signal {
+    display: grid;
+    grid-template-columns: minmax(8rem, 0.55fr) minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: end;
+  }
+
+  .article-title-block h1 {
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
+  }
+
+  .article-body pre {
+    padding: 0.9rem;
+    font-size: 0.78rem;
+  }
+
+  .thesis {
+    width: calc(100% - 2rem);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    margin-top: 3rem;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}

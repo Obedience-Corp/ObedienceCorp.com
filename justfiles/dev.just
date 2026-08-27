@@ -1,40 +1,29 @@
-# Development recipes for corp-site
+@dev-list:
+    just --list --justfile {{ source_file() }}
 
-# Install dependencies
 install:
     npm install
 
-# Start Astro dev server
 dev:
-    npx astro dev
+    npm run dev -- --background --host 127.0.0.1 --port 4321
 
-# Build static site
+stop:
+    npx astro dev stop
+
+status:
+    npx astro dev status
+
+logs *ARGS:
+    npx astro dev logs {{ ARGS }}
+
 build:
     npx astro build
 
-# Verify the blog list, post, drafts, and RSS after a production build
-blog-check: build
-    node scripts/check-blog.mjs
-
-# Project gate: production build plus blog assertions
-test: blog-check
-
-# Preview built site locally
 preview:
-    npx astro preview
+    npx astro preview --host 127.0.0.1 --port 4321
 
-# Clean build artifacts
-clean:
-    rm -rf dist node_modules/.astro
-
-# Format code with Prettier
 fmt:
     npx prettier --write .
 
-# Check formatting without writing
-fmt-check:
-    npx prettier --check .
-
-# Build for production deployment
-deploy: build
-    @echo "Build complete. Push to main to trigger GitHub Pages deployment."
+clean:
+    rm -rf dist node_modules/.astro

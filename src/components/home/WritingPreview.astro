@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  posts: CollectionEntry<"blog">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<section class="home-section writing-section">
+  <div class="section-heading-row">
+    <div>
+      <p class="section-label">FIELD NOTES</p>
+      <h2>What we are learning in public.</h2>
+    </div>
+    <a class="section-link" href="/blog">All writing →</a>
+  </div>
+  <ol class="home-post-grid">
+    {posts.map((post, index) => (
+      <li>
+        <a href={`/blog/${post.id}`}>
+          <div class="home-post-meta">
+            <span>{String(index + 1).padStart(2, "0")} / NOTE</span>
+            <span>{post.data.date.toISOString().slice(0, 10)}</span>
+          </div>
+          <h3>{post.data.title}</h3>
+          <p>{post.data.summary}</p>
+          <span class="home-post-link">READ FIELD NOTE →</span>
+        </a>
+      </li>
+    ))}
+  </ol>
+</section>

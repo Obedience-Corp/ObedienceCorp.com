@@ -1,0 +1,68 @@
+---
+interface Props {
+  title?: string;
+  compact?: boolean;
+}
+
+const { title = "FESTIVAL / EXECUTION TRACE", compact = false } = Astro.props;
+---
+
+<figure class:list={["execution-trace", { "execution-trace-compact": compact }]}>
+  <figcaption class="execution-trace-head">
+    <span>{title}</span>
+    <span>OPEN SOURCE · APACHE 2.0</span>
+  </figcaption>
+
+  <div class="execution-trace-body">
+    <div class="execution-command">
+      <span class="trace-prompt">$</span>
+      <code>fest next</code>
+      <span class="trace-return">TASK READY</span>
+    </div>
+
+    <ol class="execution-stages">
+      <li>
+        <span class="trace-index">01</span>
+        <span class="trace-node"></span>
+        <div>
+          <strong>READ CONTEXT</strong>
+          <small>goal / constraints / history</small>
+        </div>
+        <span class="trace-state">BOUND</span>
+      </li>
+      <li>
+        <span class="trace-index">02</span>
+        <span class="trace-node"></span>
+        <div>
+          <strong>EXECUTE TASK</strong>
+          <small>one scoped unit of work</small>
+        </div>
+        <span class="trace-state">RUN</span>
+      </li>
+      <li>
+        <span class="trace-index">03</span>
+        <span class="trace-node"></span>
+        <div>
+          <strong>VERIFY ARTIFACT</strong>
+          <small>evidence against acceptance</small>
+        </div>
+        <span class="trace-state">GATE</span>
+      </li>
+      <li>
+        <span class="trace-index">04</span>
+        <span class="trace-node"></span>
+        <div>
+          <strong>RECORD STATE</strong>
+          <small>files / decision / next task</small>
+        </div>
+        <span class="trace-state">DURABLE</span>
+      </li>
+    </ol>
+  </div>
+
+  <div class="execution-trace-foot">
+    <span>MODEL-AGNOSTIC</span>
+    <span>FILES ON DISK</span>
+    <span>RESUMABLE BY DESIGN</span>
+  </div>
+</figure>

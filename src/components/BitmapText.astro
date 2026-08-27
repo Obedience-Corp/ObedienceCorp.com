@@ -1,0 +1,30 @@
+---
+import { bitmapLine } from "../lib/bitmap";
+
+interface Props {
+  text: string;
+  scale?: number;
+  class?: string;
+  fit?: boolean;
+}
+
+const { text, scale = 3, class: className, fit = false } = Astro.props;
+const { width, height, cells } = bitmapLine(text, scale);
+const box = fit
+  ? `aspect-ratio:${width}/${height};width:100%;height:auto`
+  : `aspect-ratio:${width}/${height};width:${width}px;max-width:100%;height:auto`;
+const align = fit ? "xMinYMid meet" : "xMidYMid meet";
+---
+
+<svg
+  class={className}
+  viewBox={`0 0 ${width} ${height}`}
+  preserveAspectRatio={align}
+  style={box}
+  role="img"
+  aria-label={text}
+>
+  {cells.map((c) => (
+    <rect x={c.x} y={c.y} width={c.w} height={c.h} fill="currentColor" />
+  ))}
+</svg>

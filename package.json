@@ -1,5 +1,5 @@
 {
-  "name": "corp-site",
+  "name": "obediencecorp-web",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,13 +12,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/markdown-satteri": "^0.3.7",
     "@astrojs/rss": "^4.0.19",
-    "@astrojs/sitemap": "^3.7.2",
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/jetbrains-mono": "^5.2.8",
-    "@fontsource/source-serif-4": "^5.2.9",
-    "@tailwindcss/vite": "^4.2.2",
-    "astro": "^6.1.4",
-    "tailwindcss": "^4.2.2"
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "astro": "^7.2.4",
+    "mermaid": "^11.17.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
