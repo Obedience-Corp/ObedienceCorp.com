@@ -16,4 +16,18 @@ const products = defineCollection({
   }),
 });
 
-export const collections = { products };
+const blog = defineCollection({
+  loader: glob({ pattern: "**/[^_]*.md", base: "./src/content/blog" }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    author: z.string().default("Lance Rogers"),
+    canonical: z.string().url().optional(),
+    ogImage: z.string().optional(),
+    tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { products, blog };
