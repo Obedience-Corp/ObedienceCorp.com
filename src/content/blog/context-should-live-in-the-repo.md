@@ -17,7 +17,7 @@ Start with the observation that made me stop looking for a memory database. Almo
 
 We already learned this lesson once. Nobody stores a project's git history in a company-wide database. The history lives with the project, moves with it, clones with it. My working setup is that pattern one level up. Projects, plans, research, decisions, work in flight: plain files, in git. When an agent needs context, it reads files. When it produces something worth keeping, it writes files, and the commit is the memory-write. I never migrated my context into this system. It accumulates as a side effect of the work.
 
-![A campaign directory: projects, docs, festivals, workflow, all files next to the work they describe](./assets/campaign-tree.png)
+![A camp directory: projects, docs, festivals, workflow, all files next to the work they describe](./assets/campaign-tree.png)
 
 ## What git gives you for free
 
