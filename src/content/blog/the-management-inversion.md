@@ -15,7 +15,7 @@ Because the work didn't shrink. It moved. Every unit of output an agent produces
 
 I call this the management inversion. The bottleneck of knowledge work used to be production. Production is now cheap, and the bottleneck has moved up a level, to the organizational function: deciding what the fragments mean, what happens next, and when something is actually done. Today that function lives almost entirely in the human.
 
-![Nine months of work as a campaign timeline: repositories and plans hanging off workspaces instead of living in someone's head](./assets/camp-timeline.gif)
+![Nine months of work as a camp timeline: repositories and plans hanging off workspaces instead of living in someone's head](./assets/camp-timeline.gif)
 
 ## This is not a complaint about agents
 

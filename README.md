@@ -9,7 +9,7 @@ any deploy that could touch the public domain without explicit authorization.
 
 ## Preview
 
-Private local preview of the redesign. Design notes live in the campaign
+Private local preview of the redesign. Design notes live in the camp
 work item `WI-bb2a7f`
 (`workflow/design/obediencecorp-web`).
 

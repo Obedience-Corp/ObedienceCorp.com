@@ -19,7 +19,7 @@ Festival is a free, open command-line tool (`npm install -g @obedience-corp/fest
 
 The idea is that solving a hard, multi-step problem with AI takes three things, and Festival provides a layer for each:
 
-- **Context.** Festival creates a workspace it calls a *campaign*: one git-tracked directory that holds your projects, docs, and research together, so an agent starting a session has the full picture instead of a blank slate.
+- **Context.** Festival creates a workspace it calls a *camp*, previously called a campaign: one git-tracked directory that holds your projects, docs, and research together, so an agent starting a session has the full picture instead of a blank slate.
 - **Direction.** You describe an outcome, and Festival turns it into a *festival*: a structured plan broken into phases, then sequences, then individual tasks. Agents execute that plan step by step, and because it lives in files, they can pause and resume without losing the thread.
 - **Verification.** Every step lands as a reviewable file committed to git. You can trace what was decided, what was done, and why, and audit any of it after the fact.
 
@@ -35,13 +35,13 @@ flowchart LR
 
 ## What it looks like to use
 
-The loop is small enough to describe in a paragraph. You create a campaign and add your projects to it. You create a festival for the thing you want to build and let the tool generate the plan skeleton. You fill in the goal, validate the structure, and then point your agent at it. The agent works one task at a time, marks each done, and commits as it goes. When you come back, the state is all there on disk: which tasks are finished, which decisions were made, what is next. You are reviewing a structured trail, not reconstructing where the agent left off from a wall of chat scrollback.
+The loop is small enough to describe in a paragraph. You create a camp and add your projects to it. You create a festival for the thing you want to build and let the tool generate the plan skeleton. You fill in the goal, validate the structure, and then point your agent at it. The agent works one task at a time, marks each done, and commits as it goes. When you come back, the state is all there on disk: which tasks are finished, which decisions were made, what is next. You are reviewing a structured trail, not reconstructing where the agent left off from a wall of chat scrollback.
 
 That structure is the actual product. The numbers below are only interesting because of what they say about whether the structure holds up when you lean on it hard, for a long time.
 
 ## Does it hold up? Nine months of real use
 
-I do not just build the Festival tools, I run everything through them. The data that follows spans my whole working life over this period: fifteen separate campaign workspaces, from the Obedience Corp product itself to client consulting, a crypto project, and personal tooling, holding 138 repositories and 256 festivals between them. It was captured from local agent logs and git history between September 30, 2025 and June 25, 2026. Not a demo. The real record.
+I do not just build the Festival tools, I run everything through them. The data that follows spans my whole working life over this period: fifteen separate camps, from the Obedience Corp product itself to client consulting, a crypto project, and personal tooling, holding 138 repositories and 256 festivals between them. It was captured from local agent logs and git history between September 30, 2025 and June 25, 2026. Not a demo. The real record.
 
 ### What nine months of organized work looks like
 
@@ -53,11 +53,11 @@ That is 14,965 contributions in the trailing year, 706 of them pull requests, sp
 
 That is also the problem in one image. It is a huge amount of work across a huge number of projects, and if I tried to explain why each one exists and how it connects to the rest, it would take forever and lose you a third of the way through. Removing exactly that cost is the point of Festival. It keeps all of this organized so I never have to hold it in my head, and so the work can be shown instead of narrated.
 
-Here is the same body of work as a graph, with every piece linked to the campaign workspace it belongs to:
+Here is the same body of work as a graph, with every piece linked to the camp it belongs to:
 
-![The camp-timeline graph: a year of work organized into campaign workspaces, each branching into its repositories and plans](./assets/camp-timeline.gif)
+![The camp-timeline graph: a year of work organized into camps, each branching into its repositories and plans](./assets/camp-timeline.gif)
 
-This is `camp timeline`, scrubbed across the nine months. Every node is real work, and every node hangs off the campaign workspace it lives in. The root fans out into fifteen separate workspaces, each into its repositories, and the slider walks the whole thing forward month by month. By June it covers 138 repositories and 256 festivals.
+This is `camp timeline`, scrubbed across the nine months. Every node is real work, and every node hangs off the camp it lives in. The root fans out into fifteen separate workspaces, each into its repositories, and the slider walks the whole thing forward month by month. By June it covers 138 repositories and 256 festivals.
 
 The point is not the node count. It is that none of it had to be explained to make sense. Each branch is a structured plan with its decisions and tasks recorded in files, every contribution sitting under the workspace and the intent that produced it. That is what makes running this much, across this many fronts, survivable for one person.
 
