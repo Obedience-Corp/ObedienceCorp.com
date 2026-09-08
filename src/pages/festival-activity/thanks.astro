@@ -1,0 +1,344 @@
+---
+import Base from "../../layouts/Base.astro";
+
+// The licensing service. With nothing configured the page shows the manual
+// delivery message and makes no request at all, which is the whole post
+// purchase experience if the owner never deploys a service.
+const LICENSE_API = import.meta.env.PUBLIC_FA_LICENSE_API ?? "";
+
+// Where a buyer writes when the key does not arrive. The address is an owner
+// decision, like the price. Until one is set the page names the contact form,
+// which is a real route on this site, rather than an address that might not
+// exist or a "contact us" with no way to.
+const SUPPORT_EMAIL = import.meta.env.PUBLIC_FA_SUPPORT_EMAIL ?? "";
+
+const RELEASES =
+  "https://github.com/Obedience-Corp/festival-activity-releases/releases/latest";
+---
+
+<Base
+  title="Your Festival Activity key"
+  description="Your Festival Activity license key and downloads."
+  analytics={false}
+>
+  <section class="inner-hero fa-thanks-hero">
+    <p class="eyebrow">PAYMENT RECEIVED</p>
+    <h1>Thank you.</h1>
+    <p>
+      Your payment went through. Your license key is below, and the downloads
+      are underneath it.
+    </p>
+  </section>
+
+  <section class="work-case fa-key-section">
+    <div id="fa-working" class="fa-panel">
+      <p class="section-label">PREPARING YOUR KEY</p>
+      <p class="fa-panel-lede">This takes a few seconds.</p>
+      <p>
+        Stripe tells us about the payment a moment after it sends you here, so
+        this page waits for it. Leave it open.
+      </p>
+    </div>
+
+    <div id="fa-key" class="fa-panel" hidden>
+      <p class="section-label">YOUR LICENSE KEY</p>
+      <p class="fa-key-value"><code id="fa-key-text">&nbsp;</code></p>
+      <button id="fa-copy" class="action action-secondary" type="button">
+        Copy key
+      </button>
+      <p class="fa-key-note">
+        This key is shown once here, and it also appears on your Stripe receipt
+        page. Save it now. If you lose it, a person can find it for you, but
+        there is no automated recovery.
+      </p>
+      <p id="fa-licensee" class="fa-key-note" hidden></p>
+    </div>
+
+    <div id="fa-fallback" class="fa-panel" hidden>
+      <p class="section-label">YOUR KEY IS ON ITS WAY</p>
+      <p class="fa-panel-lede">
+        The payment is complete. The key is sent by email within one business
+        day.
+      </p>
+      <p>
+        Keys are issued by a person here, not by an automated system, so it can
+        take a few hours. If nothing arrives by the end of the next business
+        day,
+        {
+          SUPPORT_EMAIL ? (
+            <>
+              write to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+            </>
+          ) : (
+            <>
+              write through the <a href="/#contact">contact form</a>
+            </>
+          )
+        } with the email address you paid with, and it will be sorted out by hand.
+      </p>
+    </div>
+  </section>
+
+  <section class="work-case client-work">
+    <header class="work-case-head">
+      <div>
+        <p class="section-label">DOWNLOADS</p>
+        <h2>Pick the one for your machine.</h2>
+      </div>
+      <p>MACOS AND LINUX</p>
+    </header>
+
+    <div class="work-case-grid">
+      <div class="work-case-copy">
+        <ul class="fa-downloads">
+          <li>
+            <a href={RELEASES}>macOS, Apple silicon ↗</a>
+            <span>The file ending <code>aarch64.dmg</code></span>
+          </li>
+          <li>
+            <a href={RELEASES}>macOS, Intel ↗</a>
+            <span>The file ending <code>x64.dmg</code></span>
+          </li>
+          <li>
+            <a href={RELEASES}>Linux, x86_64 ↗</a>
+            <span
+              >The file ending <code>.AppImage</code>, or <code>.deb</code> on Debian
+              and Ubuntu</span
+            >
+          </li>
+        </ul>
+        <p>
+          Not sure which Mac you have? Open the Apple menu, choose About This
+          Mac, and read the Chip or Processor line. Anything beginning with
+          Apple is Apple silicon. Anything beginning with Intel is Intel.
+        </p>
+        <div class="inline-links">
+          <a href="https://docs.fest.build">Install Camp and Fest first ↗</a>
+          <a href="/festival-activity/terms">Terms of sale</a>
+        </div>
+      </div>
+
+      <dl class="work-facts">
+        <div>
+          <dt>ACTIVATE</dt>
+          <dd>Open the app and paste your key</dd>
+        </div>
+        <div>
+          <dt>INSTALLS</dt>
+          <dd>Two at a time</dd>
+        </div>
+        <div>
+          <dt>OFFLINE</dt>
+          <dd>90 days between checks</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+</Base>
+
+<script define:vars={{ LICENSE_API }}>
+  // The key is displayed and nothing else. It is never logged, never put in a
+  // URL, and never sent anywhere. This page also carries no analytics, which is
+  // set in the layout: see the analytics prop on Base.astro.
+  const params = new URLSearchParams(window.location.search);
+  const session = params.get("session_id");
+
+  const working = document.getElementById("fa-working");
+  const found = document.getElementById("fa-key");
+  const fallback = document.getElementById("fa-fallback");
+  const keyText = document.getElementById("fa-key-text");
+  const licensee = document.getElementById("fa-licensee");
+  const copy = document.getElementById("fa-copy");
+
+  // How long to keep asking before giving the buyer the manual message. A
+  // minute is longer than the webhook has ever taken and short enough that
+  // nobody sits watching a spinner.
+  const BUDGET_MS = 60000;
+  const DEFAULT_RETRY_MS = 2000;
+
+  function show(panel) {
+    for (const candidate of [working, found, fallback]) {
+      candidate.hidden = candidate !== panel;
+    }
+  }
+
+  function showKey(key, address) {
+    keyText.textContent = key;
+    if (address) {
+      licensee.textContent = `Licensed to ${address}.`;
+      licensee.hidden = false;
+    }
+    show(found);
+  }
+
+  copy.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(keyText.textContent ?? "");
+      copy.textContent = "Copied";
+      setTimeout(() => {
+        copy.textContent = "Copy key";
+      }, 2000);
+    } catch {
+      // Some browsers refuse clipboard access, and an automated one always
+      // does. That is not a failure worth an error message: select the key
+      // instead, so the buyer's own copy shortcut takes it.
+      selectKey();
+      copy.textContent = "Key selected, press copy";
+    }
+  });
+
+  function selectKey() {
+    const selection = window.getSelection();
+    if (!selection) return;
+    const range = document.createRange();
+    range.selectNodeContents(keyText);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+
+  async function poll() {
+    const deadline = Date.now() + BUDGET_MS;
+    const url = `${LICENSE_API.replace(/\/$/, "")}/v1/checkout/${encodeURIComponent(session)}/key`;
+
+    while (Date.now() < deadline) {
+      let response;
+      try {
+        response = await fetch(url, {
+          headers: { Accept: "application/json" },
+        });
+      } catch {
+        // Unreachable, blocked, or offline. The buyer cannot act on which, and
+        // the manual path is the same answer for all of them.
+        show(fallback);
+        return;
+      }
+
+      if (response.status === 200) {
+        const body = await response.json();
+        if (body && body.key) {
+          showKey(body.key, body.licensee);
+          return;
+        }
+        show(fallback);
+        return;
+      }
+
+      if (response.status !== 202) {
+        // Unknown, expired, or refused. A buyer cannot act on the difference,
+        // and the manual path handles all of them.
+        show(fallback);
+        return;
+      }
+
+      let wait = DEFAULT_RETRY_MS;
+      try {
+        const body = await response.json();
+        if (body && Number.isFinite(body.retry_after_ms)) {
+          wait = Math.min(Math.max(body.retry_after_ms, 500), 10000);
+        }
+      } catch {
+        // A 202 with no body still means wait.
+      }
+      await new Promise((resolve) => setTimeout(resolve, wait));
+    }
+    // The budget ran out. The outcome for the buyer is the same as an outage,
+    // and the wording should be reassuring rather than an error.
+    show(fallback);
+  }
+
+  if (!session || !LICENSE_API) {
+    // No request at all. Under manual issuance this is every purchase.
+    show(fallback);
+  } else {
+    poll();
+  }
+</script>
+
+<style>
+  .fa-thanks-hero h1 {
+    max-width: none;
+  }
+
+  .fa-key-section {
+    padding-top: 0;
+  }
+
+  .fa-panel {
+    max-width: 46rem;
+    padding: clamp(1.6rem, 3vw, 2.4rem);
+    background: var(--panel);
+    border: 1px solid var(--line-strong);
+    box-shadow: 0.65rem 0.65rem 0 rgba(0, 229, 232, 0.04);
+  }
+
+  .fa-panel-lede {
+    margin: 0.9rem 0 1rem;
+    color: var(--ink);
+    font-size: clamp(1.2rem, 1vw + 1rem, 1.6rem);
+    line-height: 1.34;
+    letter-spacing: -0.02em;
+  }
+
+  .fa-panel p:last-child {
+    margin-bottom: 0;
+  }
+
+  .fa-key-value {
+    margin: 1rem 0 1.4rem;
+    overflow-wrap: anywhere;
+  }
+
+  .fa-key-value code {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: clamp(1.1rem, 2.5vw, 1.75rem);
+    letter-spacing: 0.04em;
+    user-select: all;
+  }
+
+  .fa-key-note {
+    max-width: 48ch;
+    margin: 1.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .fa-downloads {
+    margin: 0 0 1.6rem;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .fa-downloads li {
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .fa-downloads a {
+    color: var(--ink);
+    font-size: 1.02rem;
+    text-decoration: none;
+  }
+
+  .fa-downloads a:hover {
+    color: var(--accent);
+  }
+
+  .fa-downloads span {
+    color: var(--muted);
+    font-size: 0.85rem;
+  }
+
+  .fa-downloads code {
+    color: var(--body);
+    font-family: var(--mono);
+    font-size: 0.8rem;
+  }
+</style>

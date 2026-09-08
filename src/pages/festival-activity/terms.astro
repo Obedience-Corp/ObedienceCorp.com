@@ -1,0 +1,202 @@
+---
+import Base from "../../layouts/Base.astro";
+
+const PRICE = "$PRICE";
+
+// The refund window and its conditions are the owner's to set. Nothing is
+// invented here: until a policy is written, the page says plainly that one has
+// not been published yet and names the route to ask.
+const REFUND_POLICY = import.meta.env.PUBLIC_FA_REFUND_POLICY ?? "";
+const SUPPORT_EMAIL = import.meta.env.PUBLIC_FA_SUPPORT_EMAIL ?? "";
+---
+
+<Base
+  title="Festival Activity terms of sale"
+  description="What you buy when you buy Festival Activity, and the three limits worth knowing before you do."
+>
+  <section class="inner-hero">
+    <p class="eyebrow">FESTIVAL ACTIVITY</p>
+    <h1>Terms of sale.</h1>
+    <p>
+      Every sentence here describes something the software actually does. The
+      three limits that would be easier to leave out are in sections three,
+      four, and five.
+    </p>
+  </section>
+
+  <section class="work-case fa-terms">
+    <div class="fa-terms-body">
+      <h2>1. What you are buying</h2>
+      <p>
+        A license to use Festival Activity version 1 on up to two of your own
+        installations, for as long as you like. The price is {PRICE}, paid once.
+        There is no subscription and nothing renews on your card.
+      </p>
+
+      <h2>2. How activation works</h2>
+      <p>
+        You paste your key into the app once. The app exchanges it for a lease
+        that lasts 90 days and is tied to that installation. While the app can
+        reach the internet it renews the lease on its own, before it runs out.
+      </p>
+      <p>
+        Between renewals the app needs no network at all. You can use it with no
+        internet connection for the whole 90 days, because it checks the lease
+        on your own machine rather than asking us.
+      </p>
+
+      <h2>3. Installations, and what one is</h2>
+      <p>
+        Two at a time. You can release one from inside the app, or ask us to
+        release it for you.
+      </p>
+      <p>
+        An installation is a copy of the app on a machine, identified by a
+        random id stored alongside your data. It is not a fingerprint of your
+        hardware. Reinstalling the app keeps the same installation and the same
+        seat. Reinstalling your operating system, restoring to a new machine, or
+        moving to a different computer creates a new installation and uses one
+        of your two.
+      </p>
+      <p>
+        That is a real limit and we would rather say it than dress it up.
+        Hardware fingerprinting would break for anyone who replaced a component
+        and would promise something this product does not do. If you run out of
+        seats, ask and one will be freed.
+      </p>
+
+      <h2>4. Refunds, and what a refund does not do</h2>
+      <p>
+        {
+          REFUND_POLICY ? (
+            REFUND_POLICY
+          ) : (
+            <>
+              A refund policy has not been published yet. Until it is, ask
+              {SUPPORT_EMAIL ? (
+                <>
+                  {" "}
+                  at <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+                </>
+              ) : (
+                <>
+                  {" "}
+                  through the <a href="/#contact">contact form</a>
+                </>
+              )}{" "}
+              and you will get a straight answer.
+            </>
+          )
+        }
+      </p>
+      <p>
+        Whatever the policy, one thing is true of every refund and every
+        revocation: any lease already issued keeps working until it expires. The
+        app checks your license on your own machine with no network, so revoking
+        a license stops new activations and renewals and reaches no installation
+        that already holds a lease. In the worst case that is 90 days of working
+        software after a refund. We would rather tell you that than pretend
+        otherwise.
+      </p>
+
+      <h2>5. Lost keys</h2>
+      <p>
+        {
+          SUPPORT_EMAIL ? (
+            <>
+              Write to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
+            </>
+          ) : (
+            <>
+              Write through the <a href="/#contact">contact form</a>
+            </>
+          )
+        } with the email address you paid with. A person reads it and answers. There
+        is no automated recovery and no self service portal, because this is one product
+        at one price and an automated recovery flow would be a second system to secure.
+      </p>
+
+      <h2>6. Your data</h2>
+      <p>
+        The timeline is built on your machine, from your own repositories, and
+        stays in <code>~/.obey/plugins/camp-timeline</code>. Nothing about your
+        work is sent anywhere. We never see your repository names, your commit
+        messages, your file paths, or your timeline.
+      </p>
+      <p>
+        The only network requests the app makes are activating, renewing, and
+        deactivating your license. Those carry your license key, your
+        installation id, the platform you are on, and the app version, and
+        nothing else.
+      </p>
+
+      <h2>7. Updates</h2>
+      <p>
+        Every version 1 update is included, for as long as version 1 is
+        maintained. A future major version is a separate purchase, and your
+        version 1 license keeps working when it arrives.
+      </p>
+
+      <h2>8. Requirements</h2>
+      <p>
+        macOS 13 or later on Apple silicon or Intel, and Linux on x86_64. There
+        is no Windows build. Camp and Fest are installed separately and are
+        free, and <code>git</code> must be on your PATH.
+      </p>
+
+      <h2>9. Who you are buying from</h2>
+      <p>
+        Obedience Corp. Payment is taken by Stripe, which handles your card
+        details; we never see them. Tax is calculated and collected at checkout
+        where we are registered to collect it.
+      </p>
+
+      <p class="fa-terms-back">
+        <a href="/festival-activity">Back to Festival Activity</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .fa-terms {
+    background: none;
+  }
+
+  .fa-terms-body {
+    max-width: 46rem;
+  }
+
+  .fa-terms-body h2 {
+    margin: 3rem 0 0.9rem;
+    color: var(--ink);
+    font-size: clamp(1.35rem, 1.2vw + 1.05rem, 1.75rem);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  .fa-terms-body h2:first-child {
+    margin-top: 0;
+  }
+
+  .fa-terms-body p {
+    margin: 0 0 1.1rem;
+    font-size: 1.02rem;
+    line-height: 1.68;
+  }
+
+  .fa-terms-body code {
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.92em;
+  }
+
+  .fa-terms-back {
+    margin-top: 3rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+</style>

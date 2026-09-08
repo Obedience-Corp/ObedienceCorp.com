@@ -12,9 +12,22 @@ interface Props {
   current?: string;
   landing?: boolean;
   image?: string;
+  // analytics is on everywhere except one page. The Festival Activity success
+  // page carries a customer's license key in its DOM, so it gets no analytics,
+  // no session recorder, and no third party script of any kind. Anything added
+  // to the head below has to respect this flag, or that key ends up in a
+  // vendor's logs.
+  analytics?: boolean;
 }
 
-const { title, description, current, landing = false, image } = Astro.props;
+const {
+  title,
+  description,
+  current,
+  landing = false,
+  image,
+  analytics = true,
+} = Astro.props;
 const site = Astro.site ?? new URL("https://obediencecorp.com");
 const canonical = new URL(Astro.url.pathname, site);
 const socialImage = new URL(image ?? "/og.png", site);
@@ -64,19 +77,26 @@ const year = new Date().getFullYear();
     />
     <title>{title}</title>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      is:inline
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MEXG0YQYHQ"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-MEXG0YQYHQ");
-    </script>
+    {
+      analytics && (
+        <>
+          {/* Google tag (gtag.js) */}
+          <script
+            is:inline
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-MEXG0YQYHQ"
+          />
+          <script is:inline>
+            {`window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", "G-MEXG0YQYHQ");`}
+          </script>
+        </>
+      )
+    }
   </head>
   <body class={landing ? "is-landing" : undefined}>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -91,8 +111,8 @@ const year = new Date().getFullYear();
           <div>
             <strong>OBEDIENCE CORP</strong>
             <p>
-              Forward deployed engineering. We embed with your team and
-              remove the work that is eating it.
+              Forward deployed engineering. We embed with your team and remove
+              the work that is eating it.
             </p>
           </div>
         </div>

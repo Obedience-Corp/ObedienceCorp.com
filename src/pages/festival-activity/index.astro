@@ -1,0 +1,281 @@
+---
+import Base from "../../layouts/Base.astro";
+
+// The price is not decided. It stays a placeholder until the owner sets it, and
+// it lives here as one constant so replacing it is a single edit.
+const PRICE = "$PRICE";
+
+// The Payment Link is created in Stripe by the owner. With nothing configured
+// the button renders disabled and says so, rather than becoming a dead link
+// that takes a buyer's click and does nothing with it.
+const CHECKOUT_URL = import.meta.env.PUBLIC_FA_CHECKOUT_URL ?? "";
+
+// Downloads live in the public releases repository, never on this site. This
+// site is GitHub Pages, which publishes a 1 GB limit and builds from the
+// repository, so bundles here would break the site rather than serve it.
+const RELEASES =
+  "https://github.com/Obedience-Corp/festival-activity-releases/releases/latest";
+---
+
+<Base
+  title="Festival Activity from Obedience Corp"
+  description="A desktop timeline of the work in your camps, built on your machine from git history and Festival progress."
+  current="/work"
+>
+  <section class="inner-hero">
+    <p class="eyebrow">FESTIVAL ACTIVITY</p>
+    <h1>See what actually happened in your camps.</h1>
+    <p>
+      Festival Activity is a desktop app that builds a timeline of your work
+      from git history and Festival progress, across every camp you have. It
+      reads your repositories on your machine and shows you the shape of a
+      month, a quarter, or a single afternoon.
+    </p>
+  </section>
+
+  <section class="work-case">
+    <header class="work-case-head">
+      <div>
+        <p class="section-label">01 / WHAT YOU SEE</p>
+        <h2>One path, from the whole workspace down to a document.</h2>
+      </div>
+      <p>MACOS AND LINUX</p>
+    </header>
+
+    <div class="work-case-grid">
+      <div class="work-case-copy">
+        <p class="work-case-lede">
+          The app is built around one movement: start wide, then narrow until
+          you are looking at the file that explains the week.
+        </p>
+        <ol class="fa-path">
+          <li>
+            <strong>The overview.</strong> Every camp in one graph, sized by what
+            happened in the period you picked. A strip along the bottom shows each
+            bucket, so a quiet fortnight and a heavy one are visible before you read
+            a single number.
+          </li>
+          <li>
+            <strong>A camp.</strong> Click one and the graph redraws around it: its
+            projects, their commits, files changed, insertions and deletions, and
+            the festivals running inside it.
+          </li>
+          <li>
+            <strong>A project.</strong> The repository under that camp, with its own
+            activity and the work items that touched it.
+          </li>
+          <li>
+            <strong>A work item.</strong> The festival, intent, or design folder the
+            work belongs to, linked to the commits that moved it.
+          </li>
+          <li>
+            <strong>A document.</strong> The markdown itself, rendered in the app,
+            so the phase goal or the design note is one click from the commit that
+            changed it.
+          </li>
+        </ol>
+        <p>
+          Work is split by who did it. Commits you authored, commits an agent
+          authored, and commits from automation are counted separately, because
+          a month where an agent wrote most of the code is a different month
+          from one where you did.
+        </p>
+      </div>
+
+      <dl class="work-facts">
+        <div>
+          <dt>BUILDS FROM</dt>
+          <dd>git history and Festival progress</dd>
+        </div>
+        <div>
+          <dt>PERIODS</dt>
+          <dd>Week, month, quarter</dd>
+        </div>
+        <div>
+          <dt>SCOPE</dt>
+          <dd>Every camp, one camp, one project</dd>
+        </div>
+        <div>
+          <dt>STORAGE</dt>
+          <dd>~/.obey/plugins/camp-timeline</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="work-case client-work">
+    <header class="work-case-head">
+      <div>
+        <p class="section-label">02 / WHAT IT DOES NOT DO</p>
+        <h2>It reads. That is all.</h2>
+      </div>
+      <p>NO AGENTS, NO UPLOADS</p>
+    </header>
+
+    <div class="work-case-grid">
+      <div class="work-case-copy">
+        <p>
+          It does not edit your documents, run agents, or change anything in
+          your repositories. It reads git history and the files Festival already
+          writes, and it builds a timeline from them.
+        </p>
+        <p>
+          Nothing about your work is sent anywhere. The timeline is built on
+          your machine and stays there. The only network requests the app makes
+          are activating, renewing, and deactivating your license.
+        </p>
+      </div>
+
+      <dl class="work-facts">
+        <div>
+          <dt>WRITES</dt>
+          <dd>Its own data directory, nothing else</dd>
+        </div>
+        <div>
+          <dt>SENDS</dt>
+          <dd>License activation and renewal only</dd>
+        </div>
+        <div>
+          <dt>NEEDS</dt>
+          <dd>No account, no sign in</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="work-case">
+    <header class="work-case-head">
+      <div>
+        <p class="section-label">03 / REQUIREMENTS</p>
+        <h2>What it runs on.</h2>
+      </div>
+      <p>NOT WINDOWS</p>
+    </header>
+
+    <div class="work-case-grid">
+      <div class="work-case-copy">
+        <p>
+          macOS 13 or later, on Apple silicon or Intel. Linux on x86_64, as an
+          AppImage or a deb. There is no Windows build.
+        </p>
+        <p>
+          <a href="https://fest.build">Camp and Fest</a> are installed separately
+          and are free. Festival Activity reads the camps they manage, so it needs
+          them present. It also needs <code>git</code> on your PATH.
+        </p>
+        <p>
+          You do not have to check any of that yourself. If something is
+          missing, the app names the tool and what to install, and rechecks
+          without restarting.
+        </p>
+        <div class="inline-links">
+          <a href={RELEASES}>Downloads ↗</a>
+          <a href="https://docs.fest.build">Festival documentation ↗</a>
+        </div>
+      </div>
+
+      <dl class="work-facts">
+        <div>
+          <dt>MACOS</dt>
+          <dd>13 or later, Apple silicon or Intel</dd>
+        </div>
+        <div>
+          <dt>LINUX</dt>
+          <dd>x86_64, AppImage or deb</dd>
+        </div>
+        <div>
+          <dt>ALSO NEEDS</dt>
+          <dd>Camp, Fest, and git</dd>
+        </div>
+        <div>
+          <dt>INSTALLS</dt>
+          <dd>Two, per purchase</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="work-cta">
+    <p class="section-label">BUY</p>
+    <h2>{PRICE}, once, for version 1.</h2>
+    <p class="fa-buy-note">
+      One purchase covers Festival Activity version 1 on up to two of your own
+      installations, with every version 1 update included. A future major
+      version is a separate purchase.
+    </p>
+    {
+      CHECKOUT_URL ? (
+        <a class="action action-primary" href={CHECKOUT_URL}>
+          Buy Festival Activity →
+        </a>
+      ) : (
+        <span class="action action-secondary is-disabled" aria-disabled="true">
+          Available soon
+        </span>
+      )
+    }
+    <p class="fa-terms-link">
+      <a href="/festival-activity/terms">Terms of sale</a>
+    </p>
+  </section>
+</Base>
+
+<style>
+  .fa-path {
+    max-width: 43rem;
+    margin: 0 0 1.6rem;
+    padding: 0;
+    list-style: none;
+    counter-reset: fa-step;
+  }
+
+  .fa-path li {
+    padding: 1.1rem 0 1.1rem 2.6rem;
+    position: relative;
+    font-size: 1.02rem;
+    line-height: 1.66;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .fa-path li::before {
+    counter-increment: fa-step;
+    content: counter(fa-step, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 1.35rem;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+  }
+
+  .fa-path strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .fa-buy-note {
+    max-width: 46ch;
+    margin: 0 auto 2.2rem;
+    color: var(--body);
+    font-size: 1rem;
+    line-height: 1.62;
+  }
+
+  .fa-terms-link {
+    margin: 2.2rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .fa-terms-link a {
+    color: var(--muted);
+  }
+
+  .is-disabled {
+    color: var(--muted);
+    border-color: var(--line);
+    cursor: not-allowed;
+  }
+</style>
