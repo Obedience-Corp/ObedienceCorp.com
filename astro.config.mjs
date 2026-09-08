@@ -17,7 +17,15 @@ const stripHtmlComments = {
 
 export default defineConfig({
   site: "https://obediencecorp.com",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // The Festival Activity success page is reached with a checkout session
+      // id in its query string, which reads a license key for 24 hours. Listing
+      // it invites a crawler onto the delivery page. The page also carries a
+      // noindex, set through the noindex prop on Base.astro.
+      filter: (page) => !page.endsWith("/festival-activity/thanks/"),
+    }),
+  ],
   // Inbound links from the previous obediencecorp.com. /thesis is deliberately
   // absent: it is a real route here, and the old /thesis -> /#thesis redirect
   // would shadow it.

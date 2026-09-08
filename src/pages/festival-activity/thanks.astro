@@ -20,6 +20,7 @@ const RELEASES =
   title="Your Festival Activity key"
   description="Your Festival Activity license key and downloads."
   analytics={false}
+  noindex
 >
   <section class="inner-hero fa-thanks-hero">
     <p class="eyebrow">PAYMENT RECEIVED</p>
@@ -47,34 +48,40 @@ const RELEASES =
         Copy key
       </button>
       <p class="fa-key-note">
-        This key is shown once here, and it also appears on your Stripe receipt
-        page. Save it now. If you lose it, a person can find it for you, but
-        there is no automated recovery.
+        This page is the only place your key is shown. Save it now. If you lose
+        it, a person can find it for you, but there is no automated recovery and
+        it is not on your receipt.
       </p>
       <p id="fa-licensee" class="fa-key-note" hidden></p>
     </div>
 
     <div id="fa-fallback" class="fa-panel" hidden>
-      <p class="section-label">YOUR KEY IS ON ITS WAY</p>
+      <p class="section-label">YOUR KEY IS NOT READY YET</p>
       <p class="fa-panel-lede">
-        The payment is complete. The key is sent by email within one business
-        day.
+        Your payment went through. The key is not ready on this page yet.
       </p>
       <p>
-        Keys are issued by a person here, not by an automated system, so it can
-        take a few hours. If nothing arrives by the end of the next business
-        day,
+        Nothing is lost. Keep this page open and it will appear here, or come
+        back to this exact link later: the address in your browser's bar is what
+        finds your key, so bookmark it or save it somewhere before you close the
+        tab. It works for 24 hours.
+      </p>
+      <p>
+        If it is still not here after that, or you have already closed the page,
         {
           SUPPORT_EMAIL ? (
             <>
+              {" "}
               write to <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
             </>
           ) : (
             <>
+              {" "}
               write through the <a href="/#contact">contact form</a>
             </>
           )
-        } with the email address you paid with, and it will be sorted out by hand.
+        } with the email address you paid with. A person will read it and send you
+        the key by hand.
       </p>
     </div>
   </section>
@@ -150,11 +157,17 @@ const RELEASES =
   const licensee = document.getElementById("fa-licensee");
   const copy = document.getElementById("fa-copy");
 
-  // How long to keep asking before giving the buyer the manual message. A
-  // minute is longer than the webhook has ever taken and short enough that
-  // nobody sits watching a spinner.
-  const BUDGET_MS = 60000;
-  const DEFAULT_RETRY_MS = 2000;
+  // How long to keep asking before telling the buyer the key is not ready.
+  //
+  // Ten minutes with exponential backoff from two seconds to thirty. The first
+  // version polled every two seconds for a minute, thirty requests, against a
+  // service that allows sixty a minute per session; that ran out twenty seconds
+  // in on the version before this one and showed the buyer a message saying
+  // their key had been emailed, which nothing does. The service's limit and
+  // this schedule are pinned against each other by a test on the service side.
+  const BUDGET_MS = 10 * 60 * 1000;
+  const FIRST_WAIT_MS = 2000;
+  const LONGEST_WAIT_MS = 30000;
 
   function show(panel) {
     for (const candidate of [working, found, fallback]) {
@@ -196,9 +209,37 @@ const RELEASES =
     selection.addRange(range);
   }
 
+  // waitFor reads what the service asked for, in whichever form it sent it.
+  // Retry-After is seconds by the HTTP specification; retry_after_ms is the
+  // hint in our own body. Either is clamped, because a header is something a
+  // proxy can also set.
+  function waitFor(response, body, fallbackMs) {
+    const header = Number(response.headers.get("Retry-After"));
+    if (Number.isFinite(header) && header > 0) {
+      return clampWait(header * 1000);
+    }
+    if (body && Number.isFinite(body.retry_after_ms)) {
+      return clampWait(body.retry_after_ms);
+    }
+    return clampWait(fallbackMs);
+  }
+
+  function clampWait(ms) {
+    return Math.min(Math.max(ms, 500), LONGEST_WAIT_MS);
+  }
+
+  async function readBody(response) {
+    try {
+      return await response.json();
+    } catch {
+      return null;
+    }
+  }
+
   async function poll() {
     const deadline = Date.now() + BUDGET_MS;
     const url = `${LICENSE_API.replace(/\/$/, "")}/v1/checkout/${encodeURIComponent(session)}/key`;
+    let backoff = FIRST_WAIT_MS;
 
     while (Date.now() < deadline) {
       let response;
@@ -207,14 +248,15 @@ const RELEASES =
           headers: { Accept: "application/json" },
         });
       } catch {
-        // Unreachable, blocked, or offline. The buyer cannot act on which, and
-        // the manual path is the same answer for all of them.
-        show(fallback);
-        return;
+        // Unreachable, blocked, or offline. Keep trying: a buyer who was on a
+        // train when the page loaded should not be told their key is missing.
+        await sleep(backoff);
+        backoff = nextBackoff(backoff);
+        continue;
       }
 
       if (response.status === 200) {
-        const body = await response.json();
+        const body = await readBody(response);
         if (body && body.key) {
           showKey(body.key, body.licensee);
           return;
@@ -223,27 +265,32 @@ const RELEASES =
         return;
       }
 
-      if (response.status !== 202) {
-        // Unknown, expired, or refused. A buyer cannot act on the difference,
-        // and the manual path handles all of them.
-        show(fallback);
-        return;
+      // 202 is the webhook not having landed. 429 is the service asking us to
+      // slow down. Both mean wait, and treating either as terminal is what put
+      // a buyer on a working deployment in front of the manual message.
+      if (response.status === 202 || response.status === 429) {
+        const body = await readBody(response);
+        await sleep(waitFor(response, body, backoff));
+        backoff = nextBackoff(backoff);
+        continue;
       }
 
-      let wait = DEFAULT_RETRY_MS;
-      try {
-        const body = await response.json();
-        if (body && Number.isFinite(body.retry_after_ms)) {
-          wait = Math.min(Math.max(body.retry_after_ms, 500), 10000);
-        }
-      } catch {
-        // A 202 with no body still means wait.
-      }
-      await new Promise((resolve) => setTimeout(resolve, wait));
+      // 404 after the delivery window, or anything else. A buyer cannot act on
+      // the difference and the support path handles all of them.
+      show(fallback);
+      return;
     }
-    // The budget ran out. The outcome for the buyer is the same as an outage,
-    // and the wording should be reassuring rather than an error.
+    // The budget ran out. Say that the key is not ready, not that it is on its
+    // way to an inbox.
     show(fallback);
+  }
+
+  function nextBackoff(current) {
+    return Math.min(current * 2, LONGEST_WAIT_MS);
+  }
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
   if (!session || !LICENSE_API) {

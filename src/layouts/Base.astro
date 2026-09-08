@@ -18,6 +18,11 @@ interface Props {
   // to the head below has to respect this flag, or that key ends up in a
   // vendor's logs.
   analytics?: boolean;
+  // noindex keeps a page out of search results and out of the sitemap. The same
+  // success page carries a checkout session id in its URL, which is a bearer
+  // credential on the key lookup for 24 hours, so a crawler has no business on
+  // it. The sitemap filter in astro.config.mjs excludes the same route.
+  noindex?: boolean;
 }
 
 const {
@@ -27,6 +32,7 @@ const {
   landing = false,
   image,
   analytics = true,
+  noindex = false,
 } = Astro.props;
 const site = Astro.site ?? new URL("https://obediencecorp.com");
 const canonical = new URL(Astro.url.pathname, site);
@@ -40,6 +46,18 @@ const year = new Date().getFullYear();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    {
+      noindex && (
+        <>
+          <meta name="robots" content="noindex, nofollow" />
+          {/* The URL carries a session id that reads a license key. Browsers
+              already withhold a query string cross origin by default; this
+              states it rather than relying on the default, and withholds it
+              from same origin links too. */}
+          <meta name="referrer" content="no-referrer" />
+        </>
+      )
+    }
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#000000" />
     <link rel="canonical" href={canonical} />
