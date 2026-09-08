@@ -159,15 +159,26 @@ const RELEASES =
 
   // How long to keep asking before telling the buyer the key is not ready.
   //
-  // Ten minutes with exponential backoff from two seconds to thirty. The first
-  // version polled every two seconds for a minute, thirty requests, against a
-  // service that allows sixty a minute per session; that ran out twenty seconds
-  // in on the version before this one and showed the buyer a message saying
-  // their key had been emailed, which nothing does. The service's limit and
-  // this schedule are pinned against each other by a test on the service side.
+  // The service sets the cadence, not this page. Every answer it can loop on
+  // carries a Retry-After header and a retry_after_ms body value, and it slows
+  // them down as a session keeps waiting: two seconds for the first minute,
+  // then five, fifteen, and thirty. The page follows what it is told, because
+  // the service can see load and this page cannot.
+  //
+  // The backoff below is only for the case where there is no answer at all, a
+  // fetch that throws. An earlier version doubled its own wait on every
+  // response as well, which meant the schedule this comment described and the
+  // one the code ran were different things.
   const BUDGET_MS = 10 * 60 * 1000;
   const FIRST_WAIT_MS = 2000;
+  // The ceiling on the local backoff, which only governs a run of failed
+  // connections.
   const LONGEST_WAIT_MS = 30000;
+  // The ceiling on a wait the service asked for. It is higher, because the
+  // service can legitimately ask for a whole rate limit window and clamping
+  // that to thirty seconds would send a second request it already refused. It
+  // is not unbounded, because Retry-After is a header a proxy can also set.
+  const LONGEST_SERVER_WAIT_MS = 60000;
 
   function show(panel) {
     for (const candidate of [working, found, fallback]) {
@@ -210,22 +221,27 @@ const RELEASES =
   }
 
   // waitFor reads what the service asked for, in whichever form it sent it.
-  // Retry-After is seconds by the HTTP specification; retry_after_ms is the
-  // hint in our own body. Either is clamped, because a header is something a
-  // proxy can also set.
+  //
+  // Retry-After is seconds by the HTTP specification, and the service exposes
+  // it to this page through CORS; without that a cross origin page cannot read
+  // it at all. retry_after_ms in the body carries the same number for a client
+  // that cannot see headers. The last branch is the transport fallback and is
+  // reached only when neither arrived.
+  //
+  // Both are clamped, because a header is something a proxy can also set.
   function waitFor(response, body, fallbackMs) {
     const header = Number(response.headers.get("Retry-After"));
     if (Number.isFinite(header) && header > 0) {
-      return clampWait(header * 1000);
+      return clampWait(header * 1000, LONGEST_SERVER_WAIT_MS);
     }
     if (body && Number.isFinite(body.retry_after_ms)) {
-      return clampWait(body.retry_after_ms);
+      return clampWait(body.retry_after_ms, LONGEST_SERVER_WAIT_MS);
     }
-    return clampWait(fallbackMs);
+    return clampWait(fallbackMs, LONGEST_WAIT_MS);
   }
 
-  function clampWait(ms) {
-    return Math.min(Math.max(ms, 500), LONGEST_WAIT_MS);
+  function clampWait(ms, ceiling) {
+    return Math.min(Math.max(ms, 500), ceiling);
   }
 
   async function readBody(response) {
@@ -248,9 +264,11 @@ const RELEASES =
           headers: { Accept: "application/json" },
         });
       } catch {
-        // Unreachable, blocked, or offline. Keep trying: a buyer who was on a
-        // train when the page loaded should not be told their key is missing.
-        await sleep(backoff);
+        // Unreachable, blocked, or offline. There is no answer to take a
+        // cadence from, so this is the one place the local backoff governs.
+        // Keep trying: a buyer who was on a train when the page loaded should
+        // not be told their key is missing.
+        await sleep(clampWait(backoff, LONGEST_WAIT_MS));
         backoff = nextBackoff(backoff);
         continue;
       }
@@ -268,10 +286,14 @@ const RELEASES =
       // 202 is the webhook not having landed. 429 is the service asking us to
       // slow down. Both mean wait, and treating either as terminal is what put
       // a buyer on a working deployment in front of the manual message.
+      //
+      // The wait comes from the answer. The local backoff is reset here rather
+      // than advanced, because it exists for a run of failed connections and a
+      // response is not one.
       if (response.status === 202 || response.status === 429) {
         const body = await readBody(response);
-        await sleep(waitFor(response, body, backoff));
-        backoff = nextBackoff(backoff);
+        await sleep(waitFor(response, body, FIRST_WAIT_MS));
+        backoff = FIRST_WAIT_MS;
         continue;
       }
 
