@@ -1,0 +1,25 @@
+<aside class="local-preview">Local preview. Messages will not be sent.</aside>
+<script is:inline>
+  function preventLocalSubmission(event) {
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const status = document.getElementById("form-status");
+    if (status) {
+      status.textContent =
+        "Local preview only. Your message has not been sent.";
+      status.dataset.state = "preview";
+    }
+  }
+  document.addEventListener("submit", preventLocalSubmission, true);
+</script>
+<style>
+  .local-preview {
+    padding: 8px 20px;
+    background: #14251e;
+    color: #c2d4ca;
+    font:
+      11px/1.5 "IBM Plex Mono",
+      monospace;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,109 @@
+<figure class="proof-media">
+  <div class="media-label">
+    <span>Camp hardening</span><span>Recorded work</span>
+  </div>
+  <video
+    width="720"
+    height="976"
+    muted
+    loop
+    playsinline
+    controls
+    preload="none"
+    poster="/media/camp-hardening-poster.png"
+    aria-label="Historical replay of the Camp Hardening festival progressing through its plan. This is not a live CLI recording."
+    aria-describedby="replay-caption"
+  >
+    <source src="/media/camp-hardening-replay.mp4" type="video/mp4" />
+    <p>
+      Your browser cannot play this replay. <a
+        href="https://fest.build/stories/camp-hardening"
+        >Read the completed festival.</a
+      >
+    </p>
+  </video>
+  <figcaption id="replay-caption">
+    <span>Historical plan replay. Original colors.</span><button
+      type="button"
+      class="media-toggle">Play replay</button
+    >
+  </figcaption>
+  <p class="media-error" hidden>
+    The replay could not load. <a
+      href="https://fest.build/stories/camp-hardening"
+      >Read the completed festival instead.</a
+    >
+  </p>
+</figure>
+<script>
+  document.querySelectorAll<HTMLElement>(".proof-media").forEach((figure) => {
+    const video = figure.querySelector("video");
+    const button = figure.querySelector("button");
+    if (!video || !button) return;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)");
+    let permitted = !reduce.matches;
+    let visible = false;
+    let manuallyPaused = false;
+    let autoPausing = false;
+    let autoPlaying = false;
+    const pause = () => {
+      if (!video.paused) {
+        autoPausing = true;
+        video.pause();
+      }
+    };
+    const update = () => {
+      if (visible && !document.hidden && permitted && !manuallyPaused) {
+        if (video.paused) {
+          autoPlaying = true;
+          video.play().catch(() => {
+            autoPlaying = false;
+          });
+        }
+      } else pause();
+    };
+    video.addEventListener("play", () => {
+      if (!autoPlaying) {
+        permitted = true;
+        manuallyPaused = false;
+      }
+      autoPlaying = false;
+      button.textContent = "Pause replay";
+    });
+    video.addEventListener("pause", () => {
+      if (!autoPausing) manuallyPaused = true;
+      autoPausing = false;
+      button.textContent = "Play replay";
+    });
+    const showError = () => {
+      button.textContent = "Replay unavailable";
+      button.disabled = true;
+      const message = figure.querySelector<HTMLElement>(".media-error");
+      if (message) message.hidden = false;
+    };
+    video.addEventListener("error", showError);
+    video.querySelector("source")?.addEventListener("error", showError);
+    button.addEventListener("click", () => {
+      if (video.paused) {
+        permitted = true;
+        manuallyPaused = false;
+        video.play().catch(() => {});
+      } else {
+        manuallyPaused = true;
+        video.pause();
+      }
+    });
+    new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+        update();
+      },
+      { threshold: 0.2 },
+    ).observe(video);
+    document.addEventListener("visibilitychange", update);
+    reduce.addEventListener("change", () => {
+      permitted = !reduce.matches;
+      update();
+    });
+  });
+</script>

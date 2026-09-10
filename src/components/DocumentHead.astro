@@ -1,0 +1,94 @@
+---
+import Analytics from "./Analytics.astro";
+interface Props {
+  title: string;
+  description: string;
+  themeColor?: string;
+  image?: string;
+  // analytics is on everywhere except one page. The Festival Activity success
+  // page carries a customer's license key in its DOM, so it gets no analytics,
+  // no session recorder, and no third party script of any kind. Anything added
+  // to the head below has to respect this flag, or that key ends up in a
+  // vendor's logs.
+  analytics?: boolean;
+  // noindex keeps a page out of search results and out of the sitemap. The same
+  // success page carries a checkout session id in its URL, which is a bearer
+  // credential on the key lookup for 24 hours, so a crawler has no business on
+  // it. The sitemap filter in astro.config.mjs excludes the same route.
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  themeColor = "#000000",
+  image,
+  analytics = true,
+  noindex = false,
+} = Astro.props;
+const site = Astro.site ?? new URL("https://obediencecorp.com");
+const canonical = new URL(Astro.url.pathname, site);
+const socialImage = new URL(image ?? "/og.png", site);
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+{
+  import.meta.env.DEV && (
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="connect-src 'self' ws:; form-action 'none'"
+    />
+  )
+}
+<meta name="description" content={description} />
+{
+  (noindex || import.meta.env.DEV) && (
+    <>
+      <meta name="robots" content="noindex, nofollow" />
+      {/* The URL carries a session id that reads a license key. Browsers
+              already withhold a query string cross origin by default; this
+              states it rather than relying on the default, and withholds it
+              from same origin links too. */}
+      <meta name="referrer" content="no-referrer" />
+    </>
+  )
+}
+<meta name="color-scheme" content="dark" />
+<meta name="theme-color" content={themeColor} />
+<link rel="canonical" href={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Obedience Corp" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={socialImage} />
+{
+  !image && (
+    <>
+      <meta property="og:image:width" content="1734" />
+      <meta property="og:image:height" content="907" />
+      <meta
+        property="og:image:alt"
+        content="Obedience Corp: building AI systems that keep working after the demo."
+      />
+    </>
+  )
+}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={socialImage} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="Obedience Corp"
+  href={new URL("/rss.xml", site)}
+/>
+<title>{title}</title>
+
+{analytics && import.meta.env.PROD && <Analytics />}

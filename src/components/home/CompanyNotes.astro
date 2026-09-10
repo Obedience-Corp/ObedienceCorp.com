@@ -1,0 +1,130 @@
+---
+import { getCollection } from "astro:content";
+
+// Keep editorial titles, dates, and summaries owned by the published collection.
+const featuredIds = [
+  "nine-months-of-festival",
+  "gates-are-decisions",
+  "loop-engineering",
+];
+const published = (await getCollection("blog")).filter(
+  (post) => !post.data.draft,
+);
+const posts = featuredIds.flatMap((id) =>
+  published.filter((post) => post.id === id),
+);
+const dateLabel = (date: Date) =>
+  date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
+---
+
+<div class="home-company-notes wrap">
+  <section id="products" aria-labelledby="products-title">
+    <div class="notes-heading">
+      <p class="kicker">Products</p>
+      <h2 id="products-title">Tools from the work.</h2>
+      <p>
+        Explore the software we build alongside our engineering engagements.
+      </p>
+    </div>
+    <div class="home-product-list">
+      <article>
+        <p class="small-label">Open source</p>
+        <h3>
+          <a href="https://fest.build"
+            >Festival <span aria-hidden="true">↗</span></a
+          >
+        </h3>
+        <p>
+          An operating environment for long-running work with agents. Goals,
+          context, plans, and evidence stay with the work in files and git.
+        </p>
+        <a class="quiet-link" href="https://fest.build"
+          >Explore Festival <span aria-hidden="true">↗</span></a
+        >
+      </article>
+      <article>
+        <p class="small-label">Desktop app</p>
+        <h3>
+          <a href="/festival-activity/"
+            >Festival Activity <span aria-hidden="true">→</span></a
+          >
+        </h3>
+        <p>
+          A timeline of work across your camps, built on your machine from git
+          history and Festival progress.
+        </p>
+        <a class="quiet-link" href="/festival-activity/"
+          >About Festival Activity <span aria-hidden="true">→</span></a
+        >
+      </article>
+    </div>
+    <a class="notes-index" href="/work/"
+      >All work <span aria-hidden="true">→</span></a
+    >
+  </section>
+  <section id="writing" aria-labelledby="writing-title">
+    <div class="notes-heading">
+      <p class="kicker">Selected writing</p>
+      <h2 id="writing-title">What holds up in practice.</h2>
+      <p>
+        Field notes by Lance Rogers on running agents, reviewing their work, and
+        learning from the results.
+      </p>
+    </div>
+    <ol class="home-writing-list">
+      {
+        posts.map((post) => (
+          <li>
+            <time datetime={post.data.date.toISOString().slice(0, 10)}>
+              {dateLabel(post.data.date)}
+            </time>
+            <h3>
+              <a href={`/blog/${post.id}/`}>
+                {post.data.title}
+                <span aria-hidden="true">→</span>
+              </a>
+            </h3>
+            <p>{post.data.summary}</p>
+          </li>
+        ))
+      }
+    </ol>
+    {
+      posts.length === 0 && (
+        <p class="writing-empty">
+          Read the published field notes in the writing archive.
+        </p>
+      )
+    }
+    <a class="notes-index" href="/blog/"
+      >All writing <span aria-hidden="true">→</span></a
+    >
+  </section>
+</div>
+<section class="home-company-footnote wrap" aria-labelledby="company-title">
+  <div>
+    <p class="kicker">The company</p>
+    <h2 id="company-title">Founded by software engineer Lance Rogers.</h2>
+    <p>
+      Obedience Corp’s own engineering runs on the systems we develop. The code
+      and field notes are public where we can share them.
+    </p>
+  </div>
+  <div class="company-reading">
+    <a class="quiet-link" href="/about/"
+      >About Obedience Corp <span aria-hidden="true">→</span></a
+    >
+    <p>
+      For research and investment conversations, the thesis explains the
+      company’s direction.
+    </p>
+    <a class="quiet-link" href="/thesis/"
+      >Read the thesis <span aria-hidden="true">→</span></a
+    >
+  </div>
+</section>

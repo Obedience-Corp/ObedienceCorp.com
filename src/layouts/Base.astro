@@ -1,5 +1,7 @@
 ---
 import Chrome from "../components/Chrome.astro";
+import DocumentHead from "../components/DocumentHead.astro";
+import LocalPreview from "../components/LocalPreview.astro";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/500.css";
 import "@fontsource/ibm-plex-mono/400.css";
@@ -34,89 +36,16 @@ const {
   analytics = true,
   noindex = false,
 } = Astro.props;
-const site = Astro.site ?? new URL("https://obediencecorp.com");
-const canonical = new URL(Astro.url.pathname, site);
-const socialImage = new URL(image ?? "/og.png", site);
 const year = new Date().getFullYear();
 ---
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    {
-      noindex && (
-        <>
-          <meta name="robots" content="noindex, nofollow" />
-          {/* The URL carries a session id that reads a license key. Browsers
-              already withhold a query string cross origin by default; this
-              states it rather than relying on the default, and withholds it
-              from same origin links too. */}
-          <meta name="referrer" content="no-referrer" />
-        </>
-      )
-    }
-    <meta name="color-scheme" content="dark" />
-    <meta name="theme-color" content="#000000" />
-    <link rel="canonical" href={canonical} />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Obedience Corp" />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={socialImage} />
-    {
-      !image && (
-        <>
-          <meta property="og:image:width" content="1734" />
-          <meta property="og:image:height" content="907" />
-          <meta
-            property="og:image:alt"
-            content="Obedience Corp: building AI systems that keep working after the demo."
-          />
-        </>
-      )
-    }
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={socialImage} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="Obedience Corp"
-      href={new URL("/rss.xml", site)}
-    />
-    <title>{title}</title>
-
-    {
-      analytics && (
-        <>
-          {/* Google tag (gtag.js) */}
-          <script
-            is:inline
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-MEXG0YQYHQ"
-          />
-          <script is:inline>
-            {`window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag("js", new Date());
-            gtag("config", "G-MEXG0YQYHQ");`}
-          </script>
-        </>
-      )
-    }
-  </head>
+  <head
+    ><DocumentHead {title} {description} {image} {analytics} {noindex} /></head
+  >
   <body class={landing ? "is-landing" : undefined}>
+    {import.meta.env.DEV && <LocalPreview />}
     <a class="skip-link" href="#main-content">Skip to content</a>
     <Chrome current={current} />
     <main id="main-content">

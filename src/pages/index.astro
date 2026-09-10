@@ -1,30 +1,100 @@
 ---
-import Base from "../layouts/Base.astro";
+import Homepage from "../layouts/Homepage.astro";
+import ProofMedia from "../components/home/ProofMedia.astro";
 import ContactForm from "../components/ContactForm.astro";
-import Engagements from "../components/home/Engagements.astro";
-import FestivalFeature from "../components/home/FestivalFeature.astro";
-import FounderIntro from "../components/home/FounderIntro.astro";
-import HomeHero from "../components/home/HomeHero.astro";
-import OperatingGap from "../components/home/OperatingGap.astro";
-import WritingPreview from "../components/home/WritingPreview.astro";
-import { getCollection } from "astro:content";
-
-const posts = (await getCollection("blog"))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
+import EngagementDetails from "../components/home/EngagementDetails.astro";
+import PracticalQuestions from "../components/home/PracticalQuestions.astro";
+import CompanyNotes from "../components/home/CompanyNotes.astro";
+import { homepageCopy as c } from "../data/homepage-copy";
 ---
 
-<Base
-  title="Obedience Corp — Forward Deployed Engineering"
-  description="Forward deployed engineering for teams with work that needs removing."
-  landing
+<Homepage
+  title="Obedience Corp | Forward Deployed Engineering"
+  description="We embed with your team, find the work that is eating it, and deliver a working result. Your team reviews every change and keeps the result."
 >
-  <HomeHero />
-  <OperatingGap />
-  <Engagements />
-  <FestivalFeature />
+  <section class="home-hero wrap" aria-labelledby="hero-title">
+    <p class="kicker">{c.eyebrow}</p>
+    <div class="home-hero-grid">
+      <h1 id="hero-title">
+        The problem stops<br class="wide-break" /> being <span
+          >your problem.</span
+        >
+      </h1>
+      <div class="home-intro">
+        <p>{c.body}</p><p class="home-support">{c.supporting}</p><a
+          class="home-button"
+          href="#contact">{c.primary}<span aria-hidden="true">↗</span></a
+        ><a class="quiet-link" href="#proof"
+          >{c.secondary}<span aria-hidden="true">↓</span></a
+        >
+      </div>
+    </div>
+    <div class="home-hero-end"><p>{c.firstPhase}</p></div>
+  </section>
+  <section class="home-situations wrap" aria-labelledby="situations-title">
+    <div class="home-section-heading">
+      <p class="kicker">Where we can help</p><div>
+        <h2 id="situations-title">{c.situationsHeading}</h2><p>
+          {c.situationsIntro}
+        </p>
+      </div>
+    </div>
+    <div class="home-situation-list">
+      {
+        c.situations.map((s, i) => (
+          <article>
+            <>
+              <span class="situation-index">0{i + 1}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+              <span class="row-mark" aria-hidden="true">
+                ↗
+              </span>
+            </>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  <EngagementDetails />
+  <section class="home-proof" id="proof" aria-labelledby="proof-title">
+    <div class="wrap home-proof-grid">
+      <div class="home-proof-copy">
+        <p class="kicker">{c.proofLabel}</p><h2 id="proof-title">
+          {c.proofHeading}
+        </h2><p class="proof-lede">{c.proofBody}</p>
+        <div class="home-outcomes">
+          <p class="small-label">The work delivered</p><ul>
+            {
+              c.outcomes.map((o) => (
+                <li>
+                  <span aria-hidden="true">↳</span>
+                  {o}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <p class="attribution">{c.attribution}</p>
+        <a class="quiet-link" href={c.proofUrl}
+          >Explore the completed festival <span aria-hidden="true">↗</span></a
+        >
+        <p class="proof-context">
+          Festival keeps the plan, decisions, and verification with the work.
+          You can inspect the completed festival and the changes it produced.
+        </p>
+        <div class="home-client-note">
+          <p>
+            Client work includes products launched by three startups in 2025.
+            The companies and code are covered by NDA.
+          </p>
+          <a href="/work/">Read the public work record →</a>
+        </div>
+      </div>
+      <div class="home-proof-artifact"><ProofMedia /></div>
+    </div>
+  </section>
+  <PracticalQuestions />
   <ContactForm />
-  <WritingPreview posts={posts} />
-  <FounderIntro />
-</Base>
+  <CompanyNotes />
+</Homepage>

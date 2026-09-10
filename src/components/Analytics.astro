@@ -1,0 +1,21 @@
+<!-- Included by DocumentHead only for production pages that permit analytics. -->
+<script is:inline>
+  (() => {
+    // Local production previews must not pollute the live property's traffic.
+    const host = window.location.hostname;
+    if (host !== "obediencecorp.com" && host !== "www.obediencecorp.com")
+      return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag("js", new Date());
+    window.gtag("config", "G-MEXG0YQYHQ");
+
+    const tag = document.createElement("script");
+    tag.async = true;
+    tag.src = "https://www.googletagmanager.com/gtag/js?id=G-MEXG0YQYHQ";
+    document.head.appendChild(tag);
+  })();
+</script>
