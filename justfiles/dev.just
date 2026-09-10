@@ -19,6 +19,10 @@ logs *ARGS:
 build:
     npx astro build
 
+# Test the production output, including analytics and checkout privacy.
+test: build
+    npm test
+
 preview:
     npx astro preview --host 127.0.0.1 --port 4321
 
