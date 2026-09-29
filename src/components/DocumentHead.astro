@@ -89,6 +89,12 @@ const socialImage = new URL(image ?? "/og.png", site);
   title="Obedience Corp"
   href={new URL("/rss.xml", site)}
 />
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title="Obedience Corp releases"
+  href={new URL("/releases/feed.xml", site)}
+/>
 <title>{title}</title>
 
 {analytics && import.meta.env.PROD && <Analytics />}

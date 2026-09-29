@@ -27,10 +27,16 @@ const { title, description } = Astro.props;
         <>
           <a href="/work/">Work</a>
           <a href="/blog/">Writing</a>
+          <a
+            href="/releases/"
+            aria-current={Astro.url.pathname.startsWith("/releases/")
+              ? "page"
+              : undefined}>Releases</a
+          >
           <a href="/thesis/">Thesis</a>
           <a href="/about/">About</a>
         </>
-        <a class="nav-contact" href="#contact">
+        <a class="nav-contact" href="/#contact">
           Contact <span aria-hidden="true">↗</span>
         </a>
       </nav>
@@ -43,9 +49,10 @@ const { title, description } = Astro.props;
         <span>Forward deployed engineering.</span>
       </div>
       <nav aria-label="Company and products">
-        <a href="/work/">Work</a><a href="/blog/">Writing</a><a href="/about/"
-          >About</a
-        ><a href="/thesis/">Thesis</a>
+        <a href="/work/">Work</a><a href="/blog/">Writing</a><a
+          href="/releases/">Releases</a
+        ><a href="/releases/feed.xml">Release RSS</a>
+        <a href="/about/">About</a><a href="/thesis/">Thesis</a>
         <a href="https://fest.build">Festival ↗</a><a href="/festival-activity/"
           >Festival Activity</a
         >

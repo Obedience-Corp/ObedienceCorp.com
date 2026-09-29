@@ -13,6 +13,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-latest
+    container: node:24-bookworm
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -26,5 +27,7 @@ jobs:
         run: npm run build
       - name: Check production output
         run: npm test
+      - name: Check release importer filesystem behavior
+        run: npm run test:sync
       - name: Audit dependencies
         run: npm audit --audit-level=high
