@@ -1,0 +1,99 @@
+---
+import Homepage from "../../../layouts/Homepage.astro";
+import { releases, repositories } from "../../../lib/release-data";
+import {
+  isFestivalRelease,
+  releaseHref,
+  releaseSummary,
+  releaseTitle,
+  dateLabel,
+} from "../../../lib/releases.mjs";
+import { renderReleaseNotes } from "../../../lib/release-markdown.mjs";
+import "../../../styles/releases.css";
+export function getStaticPaths() {
+  return releases
+    .filter((release) => !isFestivalRelease(release))
+    .map((release) => ({
+      params: { repo: release.repo, version: release.slug },
+      props: { release },
+    }));
+}
+const { release } = Astro.props;
+const repository = repositories.find((repo) => repo.slug === release.repo)!;
+const html = await renderReleaseNotes(release);
+const related = releases.filter((entry) => entry.repo === release.repo);
+const position = related.findIndex((entry) => entry.id === release.id);
+---
+
+<Homepage
+  title={`${releaseTitle(release)} release notes | Obedience Corp`}
+  description={releaseSummary(release)}
+>
+  <article class="release-article wrap">
+    <header class="release-heading">
+      <a class="release-back" href={`/releases/${release.repo}/`}
+        >← All {repository.name} releases</a
+      >
+      <p class="kicker">
+        Release notes {
+          release.prerelease && <span class="release-badge">Prerelease</span>
+        }
+      </p>
+      <h1>{releaseTitle(release)}</h1>
+      <p>{releaseSummary(release)}</p>
+    </header>
+    <div class="release-detail-grid">
+      <aside class="release-meta" aria-label="Release information">
+        <p>
+          Published <time datetime={release.publishedAt}
+            >{dateLabel(release.publishedAt)}</time>
+        </p>
+        {
+          release.updatedAt !== release.publishedAt && (
+            <p>
+              Updated{" "}
+              <time datetime={release.updatedAt}>
+                {dateLabel(release.updatedAt)}
+              </time>
+            </p>
+          )
+        }
+        <a href={release.sourceUrl}>GitHub release ↗</a>
+        <a href={`${release.sourceUrl}#assets`}>Release downloads ↗</a>
+        <p>Synced from the published GitHub release.</p>
+      </aside>
+      <div>
+        <div class="release-notes">
+          {
+            release.body ? (
+              <Fragment set:html={html} />
+            ) : (
+              <p>
+                No written notes were published for this release.{" "}
+                <a href={release.sourceUrl}>
+                  View the release and downloads on GitHub.
+                </a>
+              </p>
+            )
+          }
+        </div>
+        <nav class="release-neighbors" aria-label="Adjacent releases">
+          {
+            related[position + 1] && (
+              <a href={releaseHref(related[position + 1])}>
+                ← Previous: {related[position + 1].tag}
+              </a>
+            )
+          }
+          {
+            related[position - 1] && (
+              <a href={releaseHref(related[position - 1])}>
+                Next: {related[position - 1].tag} →
+              </a>
+            )
+          }
+        </nav>
+      </div>
+    </div>
+  </article>
+</Homepage>

@@ -1,0 +1,165 @@
+---
+import Homepage from "../../layouts/Homepage.astro";
+import { releases, repositories } from "../../lib/release-data";
+import {
+  releaseHref,
+  releaseTitle,
+  releaseSummary,
+  dateLabel,
+  isFestivalRelease,
+} from "../../lib/releases.mjs";
+import "../../styles/releases.css";
+const { repository } = Astro.props;
+const entries = releases.filter(
+  (release) => !repository || release.repo === repository.slug,
+);
+const title = repository ? `${repository.name} releases` : "Releases";
+---
+
+<Homepage
+  title={`${title} | Obedience Corp`}
+  description={repository
+    ? `Every published release of ${repository.name}. ${repository.description}`
+    : "Release notes from every public Obedience Corp repository. Browse new versions, fixes, and the complete release history."}
+>
+  <section class="release-archive wrap">
+    <header class="release-heading">
+      <p class="kicker">Public engineering / Releases</p>
+      <h1>{repository ? repository.name : "What we’re shipping."}</h1>
+      <p>
+        {
+          repository
+            ? repository.description ||
+              `Published versions of ${repository.name}.`
+            : "The complete release history of our public tools and libraries. Notes from GitHub, updated automatically."
+        }
+      </p>
+      <div class="release-links">
+        <a class="quiet-link" href="/releases/feed.xml"
+          >Subscribe via RSS <span aria-hidden="true">↗</span></a
+        >
+        {
+          repository && (
+            <a class="quiet-link" href={repository.url}>
+              Repository on GitHub <span aria-hidden="true">↗</span>
+            </a>
+          )
+        }
+      </div>
+      {
+        repository?.fork && (
+          <p class="release-context">
+            Fork of an upstream project. These releases are published by
+            Obedience Corp.
+          </p>
+        )
+      }
+      {
+        repository?.archived && (
+          <p class="release-context">
+            This repository is archived. Its published release history remains
+            available.
+          </p>
+        )
+      }
+    </header>
+    <nav class="release-repositories" aria-label="Releases by repository">
+      <a href="/releases/" aria-current={!repository ? "page" : undefined}
+        >All releases <span>{releases.length}</span></a
+      >
+      {
+        repositories.map((repo) => (
+          <a
+            href={`/releases/${repo.slug}/`}
+            aria-current={repository?.slug === repo.slug ? "page" : undefined}
+          >
+            {repo.name}{" "}
+            <span>
+              {releases.filter((release) => release.repo === repo.slug).length}
+            </span>
+          </a>
+        ))
+      }
+    </nav>
+    <div class="release-filter" data-release-controls hidden>
+      <label for="release-search"
+        >Find a release<input
+          id="release-search"
+          type="search"
+          placeholder="Repository, version, or headline"
+        /></label
+      >
+      <label class="release-stable"
+        ><input id="release-stable" type="checkbox" /> Stable releases only</label
+      >
+    </div>
+    <p class="release-count" role="status" data-release-count>
+      {entries.length} releases
+    </p>
+    <ol class="release-list">
+      {
+        entries.map((release) => (
+          <li
+            data-release-entry
+            data-search={`${releaseTitle(release)} ${release.name} ${releaseSummary(release)}`.toLowerCase()}
+            data-prerelease={String(release.prerelease)}
+          >
+            <time datetime={release.publishedAt}>
+              {dateLabel(release.publishedAt)}
+            </time>
+            <article>
+              <p class="release-label">
+                {release.repo}{" "}
+                {release.prerelease && (
+                  <span class="release-badge">Prerelease</span>
+                )}
+              </p>
+              <h2>
+                <a href={releaseHref(release)}>{releaseTitle(release)}</a>
+              </h2>
+              <p>{releaseSummary(release)}</p>
+              <a class="release-read" href={releaseHref(release)}>
+                Read release notes
+                {isFestivalRelease(release) ? " on fest.build" : ""}{" "}
+                <>
+                  <span aria-hidden="true">↗</span>
+                  <span class="release-sr"> for {releaseTitle(release)}</span>
+                </>
+              </a>
+            </article>
+          </li>
+        ))
+      }
+    </ol>
+    <p class="release-empty" data-release-empty hidden>
+      No releases match. Try another version or clear the filters.
+    </p>
+    {entries.length === 0 && <p>No releases have been published yet.</p>}
+  </section>
+</Homepage>
+<script>
+  const search = document.querySelector<HTMLInputElement>("#release-search");
+  const stable = document.querySelector<HTMLInputElement>("#release-stable");
+  const entries = [
+    ...document.querySelectorAll<HTMLElement>("[data-release-entry]"),
+  ];
+  const count = document.querySelector("[data-release-count]");
+  const empty = document.querySelector<HTMLElement>("[data-release-empty]");
+  if (search && stable && count && empty) {
+    document.querySelector<HTMLElement>("[data-release-controls]")!.hidden =
+      false;
+    const update = () => {
+      let visible = 0;
+      for (const entry of entries) {
+        entry.hidden =
+          (stable.checked && entry.dataset.prerelease === "true") ||
+          !entry.dataset.search?.includes(search.value.trim().toLowerCase());
+        if (!entry.hidden) visible++;
+      }
+      count.textContent = `${visible} ${visible === 1 ? "release" : "releases"}`;
+      empty.hidden = visible !== 0;
+    };
+    search.addEventListener("input", update);
+    stable.addEventListener("change", update);
+  }
+</script>

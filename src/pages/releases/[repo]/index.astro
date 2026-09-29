@@ -1,0 +1,13 @@
+---
+import ReleaseArchive from "../../../components/releases/ReleaseArchive.astro";
+import { repositories } from "../../../lib/release-data";
+export function getStaticPaths() {
+  return repositories.map((repository) => ({
+    params: { repo: repository.slug },
+    props: { repository },
+  }));
+}
+const { repository } = Astro.props;
+---
+
+<ReleaseArchive {repository} />

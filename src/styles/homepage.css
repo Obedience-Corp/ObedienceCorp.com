@@ -106,6 +106,7 @@ figure {
 }
 .home-chrome nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1.875rem;
   font-size: 0.8125rem;

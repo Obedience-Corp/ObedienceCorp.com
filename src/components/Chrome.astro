@@ -8,6 +8,7 @@ const { current } = Astro.props;
 const links = [
   { href: "/work", label: "WORK" },
   { href: "/blog", label: "WRITING" },
+  { href: "/releases/", label: "RELEASES" },
   { href: "/thesis", label: "THESIS" },
   { href: "/about", label: "ABOUT" },
 ];
@@ -19,17 +20,16 @@ const links = [
     <span>OBEDIENCE CORP</span>
   </a>
   <nav class="nav" aria-label="Primary">
-    {links.map((link) => (
-      <a
-        href={link.href}
-        aria-current={current === link.href ? "page" : undefined}
-      >
-        {link.label}
-      </a>
-    ))}
-    <a
-      class="nav-contact"
-      href="/#contact"
-    >CONTACT</a>
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          aria-current={current === link.href ? "page" : undefined}
+        >
+          {link.label}
+        </a>
+      ))
+    }
+    <a class="nav-contact" href="/#contact">CONTACT</a>
   </nav>
 </header>

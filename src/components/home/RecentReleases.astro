@@ -1,0 +1,119 @@
+---
+import { releases } from "../../lib/release-data";
+import {
+  releaseHref,
+  releaseTitle,
+  releaseSummary,
+  dateLabel,
+} from "../../lib/releases.mjs";
+// Show the newest stable release from three different repositories.
+const seen = new Set<string>();
+const recent = releases
+  .filter((release) => {
+    if (release.prerelease || seen.has(release.repo)) return false;
+    seen.add(release.repo);
+    return true;
+  })
+  .slice(0, 3);
+---
+
+{
+  recent.length > 0 && (
+    <section class="home-releases wrap" aria-labelledby="recent-releases-title">
+      <header>
+        <>
+          <div>
+            <>
+              <p class="kicker">Public engineering</p>
+              <h2 id="recent-releases-title">Recently shipped.</h2>
+            </>
+          </div>
+          <a class="quiet-link" href="/releases/">
+            All releases <span aria-hidden="true">→</span>
+          </a>
+        </>
+      </header>
+      <ol>
+        {recent.map((release) => (
+          <li>
+            <time datetime={release.publishedAt}>
+              {dateLabel(release.publishedAt)}
+            </time>
+            <h3>
+              <a href={releaseHref(release)}>
+                {releaseTitle(release)} <span aria-hidden="true">↗</span>
+              </a>
+            </h3>
+            <p>{releaseSummary(release)}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+<style>
+  .home-releases {
+    margin-block: 4rem;
+    padding: 2rem;
+    background: #101b19;
+    border: 1px solid #2e4944;
+  }
+  header {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    margin-top: 0.75rem;
+  }
+  ol {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    gap: 2rem;
+  }
+  li {
+    border-top: 1px solid var(--line);
+    padding-top: 1.25rem;
+  }
+  time {
+    color: var(--muted);
+    font: 0.6875rem/1.5 var(--mono);
+  }
+  h3 {
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-top: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+  h3 a {
+    text-decoration: none;
+  }
+  h3 span {
+    color: var(--accent);
+  }
+  li p {
+    color: var(--body);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+  @media (max-width: 760px) {
+    .home-releases {
+      padding: 1.5rem;
+    }
+    header {
+      align-items: start;
+      flex-direction: column;
+    }
+    ol {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
