@@ -15,11 +15,14 @@ import { homepageCopy as c } from "../data/homepage-copy";
   <section class="home-hero wrap" aria-labelledby="hero-title">
     <p class="kicker">{c.eyebrow}</p>
     <div class="home-hero-grid">
-      <h1 id="hero-title">
-        The problem stops<br class="wide-break" /> being <span
-          >your problem.</span
-        >
-      </h1>
+      <div class="home-headline">
+        <h1 id="hero-title">
+          The problem stops<br class="wide-break" /> being <span
+            >your problem.</span
+          >
+        </h1>
+        <div class="home-hero-end"><p>{c.firstPhase}</p></div>
+      </div>
       <div class="home-intro">
         <p>{c.body}</p><p class="home-support">{c.supporting}</p><a
           class="home-button"
@@ -29,7 +32,6 @@ import { homepageCopy as c } from "../data/homepage-copy";
         >
       </div>
     </div>
-    <div class="home-hero-end"><p>{c.firstPhase}</p></div>
   </section>
   <section class="home-situations wrap" aria-labelledby="situations-title">
     <div class="home-section-heading">
@@ -47,9 +49,6 @@ import { homepageCopy as c } from "../data/homepage-copy";
               <span class="situation-index">0{i + 1}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
-              <span class="row-mark" aria-hidden="true">
-                ↗
-              </span>
             </>
           </article>
         ))
