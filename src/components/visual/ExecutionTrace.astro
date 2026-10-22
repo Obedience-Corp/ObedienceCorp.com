@@ -7,10 +7,12 @@ interface Props {
 const { title = "FESTIVAL / EXECUTION TRACE", compact = false } = Astro.props;
 ---
 
-<figure class:list={["execution-trace", { "execution-trace-compact": compact }]}>
+<figure
+  class:list={["execution-trace", { "execution-trace-compact": compact }]}
+>
   <figcaption class="execution-trace-head">
     <span>{title}</span>
-    <span>OPEN SOURCE · APACHE 2.0</span>
+    <span>ILLUSTRATIVE WORKFLOW</span>
   </figcaption>
 
   <div class="execution-trace-body">
