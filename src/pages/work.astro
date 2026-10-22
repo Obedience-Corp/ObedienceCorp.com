@@ -45,10 +45,11 @@ if (!festival) {
           Keep the way you work across agents and projects.
         </p>
         <p>
-          A camp keeps plans, research, scripts, and workflow templates beside
-          separately linked project repositories. You set the goal and review
-          the plan. Your agent follows the steps with <code>fest next</code>,
-          records results, and returns at the review points you set. A fresh
+          A Festival camp workspace keeps plans, research, scripts, and workflow
+          templates beside separately linked project repositories. You set the
+          goal and review the plan. Your agent follows the steps with <code
+            >fest next</code
+          >, records results, and returns at the review points you set. A fresh
           session reads the saved state and instructions before continuing.
         </p>
         <p>
@@ -60,8 +61,10 @@ if (!festival) {
           The public CodeSignal Practice Simulator shows the result of three
           completed festivals: a Python engine, browser IDE, and practice
           library. Its repository includes the plans, review findings, and
-          verification records. It is an open-source example you can run and
-          inspect.
+          verification records. One review found that repeated edits could hide
+          older saved versions despite passing browser tests. The record shows
+          the failing regression tests, the correction, and verification that a
+          user could restore an older version.
         </p>
         <div class="inline-links">
           <a href="https://fest.build/stories/codesignal-practice-simulator"
@@ -94,10 +97,62 @@ if (!festival) {
     </div>
   </section>
 
+  <section class="work-case" id="clipsync">
+    <header class="work-case-head">
+      <div>
+        <p class="section-label">02 / PUBLIC ENGINEERING</p>
+        <h2>Copy on one computer. Paste on another.</h2>
+      </div>
+      <p>CLIPSYNC · EXPERIMENTAL</p>
+    </header>
+    <div class="work-case-grid">
+      <div class="work-case-copy">
+        <p class="work-case-lede">
+          ClipSync shares plain-text clipboards between trusted Mac and Linux
+          computers.
+        </p>
+        <p>
+          The goal is familiar; the difficult work is in the details. Which
+          devices may receive a copy? What happens when a service restarts? Can
+          an update preserve the existing clipboard history?
+        </p>
+        <p>
+          The public repair record follows those questions through authenticated
+          connections, recovery checks, and tests that preserve existing history
+          keys. It records isolated clipboard tests and an installed Mac–Arch
+          Linux setup with automatic reconnection after service restarts.
+        </p>
+        <p>
+          It also states what remains: broader desktop compatibility,
+          sleep/wake, and login/logout acceptance. Lance built this open-source
+          project for his own use. The public record lets you assess the
+          implementation and its remaining limits.
+        </p>
+        <div class="inline-links">
+          <a href="https://github.com/lancekrogers/clipsync"
+            >See the app and its scope ↗</a
+          >
+          <a
+            href="https://github.com/lancekrogers/clipsync/blob/main/docs/REPAIR_VALIDATION.md"
+            >Read the verification and limits ↗</a
+          >
+        </div>
+      </div>
+      <dl class="work-facts">
+        <div><dt>USER GOAL</dt><dd>Move copied text between computers</dd></div>
+        <div>
+          <dt>WORK</dt><dd>Desktop integration, device trust, recovery</dd>
+        </div>
+        <div><dt>EVIDENCE</dt><dd>Public source and recorded checks</dd></div>
+        <div><dt>STATUS</dt><dd>Experimental; release checks remain</dd></div>
+      </dl>
+    </div>
+  </section>
+
   <section class="work-case">
     <header class="work-case-head">
       <div>
-        <p class="section-label">02 / PRODUCT</p>
+        <p class="section-label">03 / PRODUCT</p>
         <h2>Festival Activity</h2>
       </div>
       <p>MACOS AND LINUX · PAID</p>
@@ -148,7 +203,7 @@ if (!festival) {
   <section class="work-case client-work">
     <header class="work-case-head">
       <div>
-        <p class="section-label">03 / CLIENT WORK</p>
+        <p class="section-label">04 / CLIENT WORK</p>
         <h2>Under NDA</h2>
       </div>
       <p>2025 · NAMES WITHHELD</p>
