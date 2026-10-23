@@ -13,3 +13,38 @@ of plan progress, not a live CLI recording or customer case study.
 
 Attribution: Drafted by Fathom. Execution started with Grok, finished with Codex.
 The festival ran for four days while other work continued in parallel.
+
+## October 2026 Blockhead articles
+
+Imported on October 22 from `Blockhead-Consulting/Blockhead.Consulting` at
+`cc74be62e6eadd5f2d8592509e1609f694c0bb7c`:
+
+- `ai/a-year-of-festival-measuring-ai-development.md` (October 21).
+- `engineering/run-github-actions-on-your-own-machine.md` (October 20).
+- `ai/using-humanizer-to-improve-blog-readability.md` (October 7).
+
+All retain Lance Rogers's authorship and original publication dates. Each new
+article's `canonical` frontmatter points to its Blockhead original; the page
+shows that source link and uses it for canonical and Open Graph URL metadata.
+Existing articles without overrides continue to use their own local URL.
+
+The retrospective's chart SVGs, portfolio PNG, GIF, and downloadable JSON are
+unchanged copies of its published source assets. Its GIF is also converted to
+MP4 with a first-frame poster for native, non-autoplay playback. Both chart
+layouts remain available. The complete Markdown tables are wrapped in accessible
+scroll regions, and the original code examples and measurement caveats remain.
+Explain “Festival camp workspace” on first mention; call the displayed video a
+replay while retaining the original GIF link.
+
+The runner article carries two accuracy corrections also proposed upstream:
+Docker Desktop 4.34+ supports opt-in host networking for Linux containers at
+TCP/UDP level, and free GitHub runner usage does not imply free hardware or
+artifact/cache storage. Sources:
+
+- https://docs.docker.com/engine/network/drivers/host/
+- https://docs.github.com/en/billing/concepts/product-billing/github-actions
+- https://docs.github.com/en/billing/reference/actions-runner-pricing
+
+No new client results, revenue, savings, or productivity measurements are added.
+The author's retrospective measurements have been preserved, not independently
+reproduced. The tutorials' commands have not been rerun as installation tests.

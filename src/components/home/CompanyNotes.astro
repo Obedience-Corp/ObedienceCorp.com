@@ -3,9 +3,9 @@ import { getCollection } from "astro:content";
 
 // Keep editorial titles, dates, and summaries owned by the published collection.
 const featuredIds = [
-  "nine-months-of-festival",
-  "gates-are-decisions",
-  "loop-engineering",
+  "a-year-of-festival-measuring-ai-development",
+  "run-github-actions-on-your-own-machine",
+  "using-humanizer-to-improve-blog-readability",
 ];
 const published = (await getCollection("blog")).filter(
   (post) => !post.data.draft,

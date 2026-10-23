@@ -14,6 +14,7 @@ interface Props {
   current?: string;
   landing?: boolean;
   image?: string;
+  canonical?: string;
   // analytics is on everywhere except one page. The Festival Activity success
   // page carries a customer's license key in its DOM, so it gets no analytics,
   // no session recorder, and no third party script of any kind. Anything added
@@ -33,6 +34,7 @@ const {
   current,
   landing = false,
   image,
+  canonical: canonicalOverride,
   analytics = true,
   noindex = false,
 } = Astro.props;
@@ -42,7 +44,14 @@ const year = new Date().getFullYear();
 <!doctype html>
 <html lang="en">
   <head
-    ><DocumentHead {title} {description} {image} {analytics} {noindex} /></head
+    ><DocumentHead
+      {title}
+      {description}
+      {image}
+      canonical={canonicalOverride}
+      {analytics}
+      {noindex}
+    /></head
   >
   <body class={landing ? "is-landing" : undefined}>
     {import.meta.env.DEV && <LocalPreview />}

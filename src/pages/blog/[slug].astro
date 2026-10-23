@@ -19,6 +19,7 @@ const { Content } = await render(post);
   description={post.data.summary}
   current="/blog"
   image={post.data.image}
+  canonical={post.data.canonical}
 >
   <article class="article">
     <header class="article-head">
@@ -36,6 +37,22 @@ const { Content } = await render(post);
       </div>
     </header>
     <div class="article-body">
+      {
+        post.data.canonical &&
+          new URL(post.data.canonical).origin !== Astro.site?.origin && (
+            <p class="article-source">
+              Originally published at{" "}
+              <a href={post.data.canonical}>
+                {new URL(post.data.canonical).hostname ===
+                "blockhead.consulting"
+                  ? "Blockhead Consulting"
+                  : new URL(post.data.canonical).hostname}
+              </a>
+              . By {post.data.author},{" "}
+              {post.data.date.toISOString().slice(0, 10)}.
+            </p>
+          )
+      }
       <Content />
     </div>
   </article>
