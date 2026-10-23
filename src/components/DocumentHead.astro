@@ -5,6 +5,7 @@ interface Props {
   description: string;
   themeColor?: string;
   image?: string;
+  canonical?: string;
   // analytics is on everywhere except one page. The Festival Activity success
   // page carries a customer's license key in its DOM, so it gets no analytics,
   // no session recorder, and no third party script of any kind. Anything added
@@ -23,11 +24,12 @@ const {
   description,
   themeColor = "#000000",
   image,
+  canonical: canonicalOverride,
   analytics = true,
   noindex = false,
 } = Astro.props;
 const site = Astro.site ?? new URL("https://obediencecorp.com");
-const canonical = new URL(Astro.url.pathname, site);
+const canonical = new URL(canonicalOverride ?? Astro.url.pathname, site);
 const socialImage = new URL(image ?? "/og.png", site);
 ---
 

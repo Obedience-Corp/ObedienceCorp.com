@@ -1,0 +1,6347 @@
+{
+  "captured_on": "2026-10-21",
+  "window": {
+    "from": "2025-04-01",
+    "through": "2026-10-21",
+    "partial_final_month": true
+  },
+  "github": {
+    "captured_at": "2026-10-21T20:48:39Z",
+    "scope": "Each author queried using its own existing GitHub login; private repositories visible to that author included. PR creation window April 1, 2025 through October 21, 2026; current state at capture.",
+    "accounts": [
+      {
+        "login": "lancekrogers",
+        "profile": "https://github.com/lancekrogers",
+        "total_contributions": 38104,
+        "active_days": 470,
+        "review_contributions": 75,
+        "restricted_contributions": 25544,
+        "monthly": {
+          "2025-04": 35,
+          "2025-05": 413,
+          "2025-06": 1004,
+          "2025-07": 158,
+          "2025-08": 92,
+          "2025-09": 218,
+          "2025-10": 205,
+          "2025-11": 346,
+          "2025-12": 1128,
+          "2026-01": 1498,
+          "2026-02": 2548,
+          "2026-03": 2968,
+          "2026-04": 1536,
+          "2026-05": 1550,
+          "2026-06": 3104,
+          "2026-07": 7171,
+          "2026-08": 5908,
+          "2026-09": 4174,
+          "2026-10": 4048
+        },
+        "pull_requests": {
+          "created": 3636,
+          "merged": 3544,
+          "open": 5,
+          "closed_unmerged": 87
+        }
+      },
+      {
+        "login": "obey-agent",
+        "profile": "https://github.com/obey-agent",
+        "total_contributions": 2372,
+        "active_days": 186,
+        "review_contributions": 1055,
+        "restricted_contributions": 1189,
+        "monthly": {
+          "2025-04": 0,
+          "2025-05": 0,
+          "2025-06": 0,
+          "2025-07": 0,
+          "2025-08": 0,
+          "2025-09": 0,
+          "2025-10": 0,
+          "2025-11": 0,
+          "2025-12": 0,
+          "2026-01": 0,
+          "2026-02": 0,
+          "2026-03": 184,
+          "2026-04": 128,
+          "2026-05": 101,
+          "2026-06": 165,
+          "2026-07": 474,
+          "2026-08": 611,
+          "2026-09": 369,
+          "2026-10": 340
+        },
+        "pull_requests": {
+          "created": 127,
+          "merged": 118,
+          "open": 0,
+          "closed_unmerged": 9
+        }
+      },
+      {
+        "login": "veronica-agent",
+        "profile": "https://github.com/veronica-agent",
+        "total_contributions": 579,
+        "active_days": 33,
+        "review_contributions": 3,
+        "restricted_contributions": 403,
+        "monthly": {
+          "2025-04": 0,
+          "2025-05": 0,
+          "2025-06": 0,
+          "2025-07": 0,
+          "2025-08": 0,
+          "2025-09": 0,
+          "2025-10": 0,
+          "2025-11": 0,
+          "2025-12": 0,
+          "2026-01": 0,
+          "2026-02": 0,
+          "2026-03": 0,
+          "2026-04": 0,
+          "2026-05": 0,
+          "2026-06": 0,
+          "2026-07": 0,
+          "2026-08": 393,
+          "2026-09": 162,
+          "2026-10": 24
+        },
+        "pull_requests": {
+          "created": 63,
+          "merged": 61,
+          "open": 1,
+          "closed_unmerged": 1
+        }
+      }
+    ],
+    "pull_requests": {
+      "created": 3826,
+      "merged": 3723,
+      "open": 6,
+      "closed_unmerged": 97
+    },
+    "total_contributions": 41055,
+    "active_days": 470,
+    "monthly": {
+      "2025-04": 35,
+      "2025-05": 413,
+      "2025-06": 1004,
+      "2025-07": 158,
+      "2025-08": 92,
+      "2025-09": 218,
+      "2025-10": 205,
+      "2025-11": 346,
+      "2025-12": 1128,
+      "2026-01": 1498,
+      "2026-02": 2548,
+      "2026-03": 3152,
+      "2026-04": 1664,
+      "2026-05": 1651,
+      "2026-06": 3269,
+      "2026-07": 7645,
+      "2026-08": 6912,
+      "2026-09": 4705,
+      "2026-10": 4412
+    },
+    "contribution_scope": "Sum of account contribution calendars, including private contribution counts. This is account activity, not a deduplicated count of unique underlying commits or events. Active days count distinct dates with activity on any of the three accounts.",
+    "review_scope": "GitHub totalPullRequestReviewContributions fields returned for each account; restricted activity can be omitted from this category."
+  },
+  "leverage_all": {
+    "version": "0.3.0",
+    "complete": false,
+    "camp_count": 28,
+    "active_camps": 25,
+    "inactive_camps": 3,
+    "discovery_adjustment": "Only the registry discovery command adds --all. Scoring, attribution, deduplication and timeline code are unchanged. Original unmodified active-only capture retained as ../leverage-all.json.",
+    "discovered_repositories": 166,
+    "scored_repositories": 151,
+    "summary": {
+      "full_leverage": 514.5969317019294,
+      "estimated_person_months": 20626.63394739371,
+      "estimated_cost_usd": 232173391.7118636,
+      "actual_person_months": 40.0830877074512,
+      "first_commit": "2023-06-19T11:40:04-06:00",
+      "last_commit": "2026-10-21T14:46:06-06:00",
+      "commit_count": 19741,
+      "lines_added": 13430182,
+      "lines_deleted": 3105225,
+      "current_owned_lines": 13656013,
+      "estimated_current_code_lines": 6486582,
+      "current_code_lines": 7119257
+    },
+    "cost_model": {
+      "currency": "USD",
+      "project_type": "organic",
+      "annual_wage_usd": 56286,
+      "overhead_multiplier": 2.4,
+      "source": "scc.estimatedCost"
+    },
+    "monthly": {
+      "2025-04": {
+        "active_repositories": 3,
+        "commit_count": 19,
+        "lines_added": 3299,
+        "lines_deleted": 253
+      },
+      "2025-05": {
+        "active_repositories": 12,
+        "commit_count": 222,
+        "lines_added": 248361,
+        "lines_deleted": 55744
+      },
+      "2025-06": {
+        "active_repositories": 8,
+        "commit_count": 580,
+        "lines_added": 873646,
+        "lines_deleted": 213491
+      },
+      "2025-07": {
+        "active_repositories": 4,
+        "commit_count": 56,
+        "lines_added": 231029,
+        "lines_deleted": 68578
+      },
+      "2025-08": {
+        "active_repositories": 5,
+        "commit_count": 89,
+        "lines_added": 189961,
+        "lines_deleted": 91747
+      },
+      "2025-09": {
+        "active_repositories": 8,
+        "commit_count": 144,
+        "lines_added": 222467,
+        "lines_deleted": 73832
+      },
+      "2025-10": {
+        "active_repositories": 6,
+        "commit_count": 237,
+        "lines_added": 266963,
+        "lines_deleted": 83988
+      },
+      "2025-11": {
+        "active_repositories": 8,
+        "commit_count": 178,
+        "lines_added": 49679,
+        "lines_deleted": 23867
+      },
+      "2025-12": {
+        "active_repositories": 21,
+        "commit_count": 575,
+        "lines_added": 485378,
+        "lines_deleted": 137818
+      },
+      "2026-01": {
+        "active_repositories": 26,
+        "commit_count": 953,
+        "lines_added": 1299917,
+        "lines_deleted": 467030
+      },
+      "2026-02": {
+        "active_repositories": 25,
+        "commit_count": 1430,
+        "lines_added": 1266299,
+        "lines_deleted": 500981
+      },
+      "2026-03": {
+        "active_repositories": 39,
+        "commit_count": 1712,
+        "lines_added": 3255688,
+        "lines_deleted": 160833
+      },
+      "2026-04": {
+        "active_repositories": 33,
+        "commit_count": 881,
+        "lines_added": 265474,
+        "lines_deleted": 281426
+      },
+      "2026-05": {
+        "active_repositories": 31,
+        "commit_count": 691,
+        "lines_added": 175058,
+        "lines_deleted": 33995
+      },
+      "2026-06": {
+        "active_repositories": 27,
+        "commit_count": 1272,
+        "lines_added": 257200,
+        "lines_deleted": 70880
+      },
+      "2026-07": {
+        "active_repositories": 43,
+        "commit_count": 3291,
+        "lines_added": 1201108,
+        "lines_deleted": 256443
+      },
+      "2026-08": {
+        "active_repositories": 54,
+        "commit_count": 2768,
+        "lines_added": 1353614,
+        "lines_deleted": 122363
+      },
+      "2026-09": {
+        "active_repositories": 48,
+        "commit_count": 2374,
+        "lines_added": 1052298,
+        "lines_deleted": 335950
+      },
+      "2026-10": {
+        "active_repositories": 37,
+        "commit_count": 2207,
+        "lines_added": 730423,
+        "lines_deleted": 124879
+      }
+    },
+    "repositories": [
+      {
+        "repository": "blockhead-consulting/drwise-plastix",
+        "estimated_owned_code_lines": 1316504,
+        "estimated_cost_usd": 50931752.29935225,
+        "estimated_person_months": 4524.853615791778,
+        "commit_count": 3,
+        "lines_added": 1347116,
+        "lines_deleted": 0,
+        "first_commit": "2026-03-19T16:40:19-06:00",
+        "last_commit": "2026-03-19T20:47:14-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "plastix"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 3,
+            "lines_added": 1347116,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/drwisehair-plastix",
+        "estimated_owned_code_lines": 832429,
+        "estimated_cost_usd": 31474575.96638027,
+        "estimated_person_months": 2796.248753232078,
+        "commit_count": 2,
+        "lines_added": 1364732,
+        "lines_deleted": 0,
+        "first_commit": "2026-03-19T16:40:17-06:00",
+        "last_commit": "2026-03-19T16:55:48-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "plastix"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 2,
+            "lines_added": 1364732,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey",
+        "estimated_owned_code_lines": 493889,
+        "estimated_cost_usd": 18193150.555392355,
+        "estimated_person_months": 1616.3069079062145,
+        "commit_count": 1902,
+        "lines_added": 754955,
+        "lines_deleted": 130627,
+        "first_commit": "2026-01-26T13:01:30-07:00",
+        "last_commit": "2026-10-21T11:35:13-06:00",
+        "author_share": 0.9999275365899049,
+        "dirty": true,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 42,
+            "lines_added": 28307,
+            "lines_deleted": 9081
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 124,
+            "lines_added": 49244,
+            "lines_deleted": 4423
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 174,
+            "lines_added": 82080,
+            "lines_deleted": 9272
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 108,
+            "lines_added": 22943,
+            "lines_deleted": 4075
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 111,
+            "lines_added": 25101,
+            "lines_deleted": 5868
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 98,
+            "lines_added": 17515,
+            "lines_deleted": 5001
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 409,
+            "lines_added": 157987,
+            "lines_deleted": 34813
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 463,
+            "lines_added": 199497,
+            "lines_deleted": 33693
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 192,
+            "lines_added": 119913,
+            "lines_deleted": 14927
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 181,
+            "lines_added": 52368,
+            "lines_deleted": 9474
+          }
+        ]
+      },
+      {
+        "repository": "guild-ventures/guild-core",
+        "estimated_owned_code_lines": 412864,
+        "estimated_cost_usd": 15115039.416552942,
+        "estimated_person_months": 1342.842876381747,
+        "commit_count": 572,
+        "lines_added": 1777373,
+        "lines_deleted": 677991,
+        "first_commit": "2025-04-28T20:58:53-06:00",
+        "last_commit": "2026-07-18T16:14:16-06:00",
+        "author_share": 0.9455358451839906,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2025-04",
+            "commit_count": 3,
+            "lines_added": 1341,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2025-05",
+            "commit_count": 51,
+            "lines_added": 97812,
+            "lines_deleted": 40141
+          },
+          {
+            "month": "2025-06",
+            "commit_count": 410,
+            "lines_added": 593207,
+            "lines_deleted": 168084
+          },
+          {
+            "month": "2025-07",
+            "commit_count": 48,
+            "lines_added": 222093,
+            "lines_deleted": 68229
+          },
+          {
+            "month": "2025-08",
+            "commit_count": 8,
+            "lines_added": 3785,
+            "lines_deleted": 900
+          },
+          {
+            "month": "2025-11",
+            "commit_count": 1,
+            "lines_added": 570,
+            "lines_deleted": 12
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 22,
+            "lines_added": 9564,
+            "lines_deleted": 6726
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 26,
+            "lines_added": 848953,
+            "lines_deleted": 393899
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 2,
+            "lines_added": 0,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 1,
+            "lines_added": 48,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp",
+        "estimated_owned_code_lines": 404126,
+        "estimated_cost_usd": 14738039.936081117,
+        "estimated_person_months": 1309.349674491926,
+        "commit_count": 2881,
+        "lines_added": 1059719,
+        "lines_deleted": 113829,
+        "first_commit": "2026-01-15T19:18:22-07:00",
+        "last_commit": "2026-10-21T12:40:59-06:00",
+        "author_share": 0.9999183440907433,
+        "dirty": false,
+        "camps": [
+          "David-Overview",
+          "Veronica",
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 185,
+            "lines_added": 73140,
+            "lines_deleted": 6991
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 347,
+            "lines_added": 69739,
+            "lines_deleted": 10172
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 359,
+            "lines_added": 48213,
+            "lines_deleted": 15457
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 202,
+            "lines_added": 31464,
+            "lines_deleted": 13966
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 175,
+            "lines_added": 32310,
+            "lines_deleted": 6421
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 253,
+            "lines_added": 43840,
+            "lines_deleted": 15495
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 648,
+            "lines_added": 132899,
+            "lines_deleted": 13559
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 373,
+            "lines_added": 526493,
+            "lines_deleted": 14849
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 111,
+            "lines_added": 27989,
+            "lines_deleted": 6353
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 228,
+            "lines_added": 73632,
+            "lines_deleted": 10566
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-voice",
+        "estimated_owned_code_lines": 357261,
+        "estimated_cost_usd": 12948820.66472424,
+        "estimated_person_months": 1150.3927385149468,
+        "commit_count": 1740,
+        "lines_added": 512473,
+        "lines_deleted": 70609,
+        "first_commit": "2026-03-16T03:44:40-06:00",
+        "last_commit": "2026-10-19T20:08:39-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 48,
+            "lines_added": 11311,
+            "lines_deleted": 1182
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 107,
+            "lines_added": 13658,
+            "lines_deleted": 1395
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 504,
+            "lines_added": 105085,
+            "lines_deleted": 16281
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 561,
+            "lines_added": 202507,
+            "lines_deleted": 22964
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 496,
+            "lines_added": 164136,
+            "lines_deleted": 26310
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 24,
+            "lines_added": 15776,
+            "lines_deleted": 2477
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/festival-app",
+        "estimated_owned_code_lines": 339105,
+        "estimated_cost_usd": 12258751.153452141,
+        "estimated_person_months": 1089.0859233699487,
+        "commit_count": 1861,
+        "lines_added": 628479,
+        "lines_deleted": 210008,
+        "first_commit": "2026-03-02T01:09:01-07:00",
+        "last_commit": "2026-10-21T13:00:19-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 208,
+            "lines_added": 81214,
+            "lines_deleted": 14361
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 25,
+            "lines_added": 21434,
+            "lines_deleted": 7200
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 471,
+            "lines_added": 86837,
+            "lines_deleted": 34948
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 112,
+            "lines_added": 36806,
+            "lines_deleted": 10287
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 79,
+            "lines_added": 11589,
+            "lines_deleted": 3090
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 335,
+            "lines_added": 197581,
+            "lines_deleted": 114080
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 630,
+            "lines_added": 193017,
+            "lines_deleted": 26042
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/fest",
+        "estimated_owned_code_lines": 230065,
+        "estimated_cost_usd": 8157174.490027951,
+        "estimated_person_months": 724.6956725326893,
+        "commit_count": 1790,
+        "lines_added": 412588,
+        "lines_deleted": 107751,
+        "first_commit": "2025-09-09T15:48:47-06:00",
+        "last_commit": "2026-10-20T02:29:51-06:00",
+        "author_share": 0.9999620219513121,
+        "dirty": false,
+        "camps": [
+          "David-Overview",
+          "Veronica",
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2025-09",
+            "commit_count": 16,
+            "lines_added": 20198,
+            "lines_deleted": 1409
+          },
+          {
+            "month": "2025-10",
+            "commit_count": 4,
+            "lines_added": 4753,
+            "lines_deleted": 27
+          },
+          {
+            "month": "2025-11",
+            "commit_count": 12,
+            "lines_added": 1462,
+            "lines_deleted": 649
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 134,
+            "lines_added": 70123,
+            "lines_deleted": 15009
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 301,
+            "lines_added": 85726,
+            "lines_deleted": 15975
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 298,
+            "lines_added": 64434,
+            "lines_deleted": 18955
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 195,
+            "lines_added": 20175,
+            "lines_deleted": 14652
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 42,
+            "lines_added": 4164,
+            "lines_deleted": 2644
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 114,
+            "lines_added": 13434,
+            "lines_deleted": 1184
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 79,
+            "lines_added": 9952,
+            "lines_deleted": 2636
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 304,
+            "lines_added": 46073,
+            "lines_deleted": 17540
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 159,
+            "lines_added": 32412,
+            "lines_deleted": 4739
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 68,
+            "lines_added": 28790,
+            "lines_deleted": 11175
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 64,
+            "lines_added": 10892,
+            "lines_deleted": 1157
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/festival-activity",
+        "estimated_owned_code_lines": 132257,
+        "estimated_cost_usd": 4561261.032670985,
+        "estimated_person_months": 405.2293028314663,
+        "commit_count": 342,
+        "lines_added": 298276,
+        "lines_deleted": 140033,
+        "first_commit": "2026-05-18T05:25:51-06:00",
+        "last_commit": "2026-10-19T16:41:08-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 23,
+            "lines_added": 51460,
+            "lines_deleted": 11071
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 17,
+            "lines_added": 4674,
+            "lines_deleted": 2509
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 212,
+            "lines_added": 203076,
+            "lines_deleted": 123844
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 90,
+            "lines_added": 39066,
+            "lines_deleted": 2609
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/cryptofraud-ai-django",
+        "estimated_owned_code_lines": 119193,
+        "estimated_cost_usd": 4089390.7891907063,
+        "estimated_person_months": 363.30763940926676,
+        "commit_count": 32,
+        "lines_added": 138590,
+        "lines_deleted": 14175,
+        "first_commit": "2025-06-13T13:04:54-06:00",
+        "last_commit": "2025-06-17T09:03:06-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2025-06",
+            "commit_count": 32,
+            "lines_added": 138590,
+            "lines_deleted": 14175
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/bizscraper",
+        "estimated_owned_code_lines": 109367,
+        "estimated_cost_usd": 3761333.010205526,
+        "estimated_person_months": 334.1624920225236,
+        "commit_count": 6,
+        "lines_added": 109810,
+        "lines_deleted": 128,
+        "first_commit": "2025-12-25T16:46:08-07:00",
+        "last_commit": "2025-12-25T19:10:24-07:00",
+        "author_share": 0.8743265644426026,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2025-12",
+            "commit_count": 6,
+            "lines_added": 109810,
+            "lines_deleted": 128
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/keepshot",
+        "estimated_owned_code_lines": 105549,
+        "estimated_cost_usd": 3599334.053652843,
+        "estimated_person_months": 319.77026063013886,
+        "commit_count": 701,
+        "lines_added": 167462,
+        "lines_deleted": 33865,
+        "first_commit": "2026-09-12T00:57:14-06:00",
+        "last_commit": "2026-10-21T11:15:00-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 380,
+            "lines_added": 77781,
+            "lines_deleted": 13371
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 321,
+            "lines_added": 89681,
+            "lines_deleted": 20494
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/habitat",
+        "estimated_owned_code_lines": 105353,
+        "estimated_cost_usd": 3592316.3790202183,
+        "estimated_person_months": 319.1467998418815,
+        "commit_count": 299,
+        "lines_added": 156092,
+        "lines_deleted": 31254,
+        "first_commit": "2026-07-15T00:46:07-06:00",
+        "last_commit": "2026-08-22T19:52:21-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 297,
+            "lines_added": 155480,
+            "lines_deleted": 31045
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 2,
+            "lines_added": 612,
+            "lines_deleted": 209
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/codesignal-practice-simulator",
+        "estimated_owned_code_lines": 99698,
+        "estimated_cost_usd": 3390127.989177227,
+        "estimated_person_months": 301.1840786404786,
+        "commit_count": 49,
+        "lines_added": 124077,
+        "lines_deleted": 8212,
+        "first_commit": "2026-09-08T18:50:51-06:00",
+        "last_commit": "2026-10-02T13:05:11-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 45,
+            "lines_added": 86140,
+            "lines_deleted": 8195
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 4,
+            "lines_added": 37937,
+            "lines_deleted": 17
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/guild",
+        "estimated_owned_code_lines": 75623,
+        "estimated_cost_usd": 2536190.8026687377,
+        "estimated_person_months": 225.3190123195396,
+        "commit_count": 10,
+        "lines_added": 129701,
+        "lines_deleted": 26334,
+        "first_commit": "2025-10-30T13:11:47-06:00",
+        "last_commit": "2025-12-28T23:30:57-07:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2025-10",
+            "commit_count": 2,
+            "lines_added": 97170,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2025-11",
+            "commit_count": 1,
+            "lines_added": 756,
+            "lines_deleted": 266
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 7,
+            "lines_added": 31775,
+            "lines_deleted": 26068
+          }
+        ]
+      },
+      {
+        "repository": "brainyard-ai/brainyardapp",
+        "estimated_owned_code_lines": 71472,
+        "estimated_cost_usd": 2393283.9112090617,
+        "estimated_person_months": 212.62294875702395,
+        "commit_count": 325,
+        "lines_added": 250136,
+        "lines_deleted": 66984,
+        "first_commit": "2025-08-24T21:18:16-06:00",
+        "last_commit": "2026-07-17T12:01:18-06:00",
+        "author_share": 0.974855383761347,
+        "dirty": false,
+        "camps": [
+          "Brainyard"
+        ],
+        "activity": [
+          {
+            "month": "2025-08",
+            "commit_count": 9,
+            "lines_added": 56821,
+            "lines_deleted": 5055
+          },
+          {
+            "month": "2025-09",
+            "commit_count": 42,
+            "lines_added": 43762,
+            "lines_deleted": 24159
+          },
+          {
+            "month": "2025-10",
+            "commit_count": 48,
+            "lines_added": 33105,
+            "lines_deleted": 11720
+          },
+          {
+            "month": "2025-11",
+            "commit_count": 67,
+            "lines_added": 18556,
+            "lines_deleted": 12149
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 136,
+            "lines_added": 16624,
+            "lines_deleted": 13757
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 21,
+            "lines_added": 2168,
+            "lines_deleted": 144
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 2,
+            "lines_added": 79100,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-voice-apple",
+        "estimated_owned_code_lines": 57276,
+        "estimated_cost_usd": 1894377.996063025,
+        "estimated_person_months": 168.29939552798731,
+        "commit_count": 339,
+        "lines_added": 89508,
+        "lines_deleted": 10698,
+        "first_commit": "2026-07-19T05:01:49-06:00",
+        "last_commit": "2026-09-18T11:53:40-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 54,
+            "lines_added": 15184,
+            "lines_deleted": 875
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 196,
+            "lines_added": 62758,
+            "lines_deleted": 8330
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 89,
+            "lines_added": 11566,
+            "lines_deleted": 1493
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/guild-chat",
+        "estimated_owned_code_lines": 53476,
+        "estimated_cost_usd": 1762634.176047838,
+        "estimated_person_months": 156.5950760525798,
+        "commit_count": 238,
+        "lines_added": 167441,
+        "lines_deleted": 43888,
+        "first_commit": "2025-12-30T16:55:15-07:00",
+        "last_commit": "2026-08-11T12:10:19-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2025-12",
+            "commit_count": 1,
+            "lines_added": 0,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 18,
+            "lines_added": 20830,
+            "lines_deleted": 593
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 199,
+            "lines_added": 145511,
+            "lines_deleted": 42918
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 20,
+            "lines_added": 1100,
+            "lines_deleted": 377
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/campaign-companion-ios",
+        "estimated_owned_code_lines": 52298,
+        "estimated_cost_usd": 1721887.0544029775,
+        "estimated_person_months": 152.97504036984517,
+        "commit_count": 174,
+        "lines_added": 128058,
+        "lines_deleted": 55990,
+        "first_commit": "2026-07-13T02:26:58-06:00",
+        "last_commit": "2026-08-10T16:58:41-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 135,
+            "lines_added": 119104,
+            "lines_deleted": 54916
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 39,
+            "lines_added": 8954,
+            "lines_deleted": 1074
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/clipsync",
+        "estimated_owned_code_lines": 51075,
+        "estimated_cost_usd": 1680113.6391616194,
+        "estimated_person_months": 149.26382721762786,
+        "commit_count": 96,
+        "lines_added": 82413,
+        "lines_deleted": 11248,
+        "first_commit": "2025-06-11T14:19:16-06:00",
+        "last_commit": "2026-10-20T21:07:52-06:00",
+        "author_share": 0.9943781027774051,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2025-06",
+            "commit_count": 32,
+            "lines_added": 45271,
+            "lines_deleted": 5810
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 1,
+            "lines_added": 0,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 8,
+            "lines_added": 329,
+            "lines_deleted": 540
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 54,
+            "lines_added": 36812,
+            "lines_deleted": 4898
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/reachout",
+        "estimated_owned_code_lines": 48288,
+        "estimated_cost_usd": 1583530.7643816657,
+        "estimated_person_months": 140.68325909574145,
+        "commit_count": 68,
+        "lines_added": 62711,
+        "lines_deleted": 4665,
+        "first_commit": "2026-04-09T06:18:21-06:00",
+        "last_commit": "2026-09-27T14:54:37-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch",
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 50,
+            "lines_added": 56726,
+            "lines_deleted": 2819
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 13,
+            "lines_added": 4404,
+            "lines_deleted": 346
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 4,
+            "lines_added": 1565,
+            "lines_deleted": 1500
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 16,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/brainshare",
+        "estimated_owned_code_lines": 44436,
+        "estimated_cost_usd": 1464643.5344644317,
+        "estimated_person_months": 130.1211384563283,
+        "commit_count": 119,
+        "lines_added": 119666,
+        "lines_deleted": 12954,
+        "first_commit": "2025-12-20T23:59:53-07:00",
+        "last_commit": "2026-08-24T15:58:06-06:00",
+        "author_share": 0.8313155875736337,
+        "dirty": false,
+        "camps": [
+          "Brainshare-Planning"
+        ],
+        "activity": [
+          {
+            "month": "2025-12",
+            "commit_count": 91,
+            "lines_added": 54256,
+            "lines_deleted": 4500
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 27,
+            "lines_added": 65410,
+            "lines_deleted": 8454
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 1,
+            "lines_added": 0,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/claude-code-go",
+        "estimated_owned_code_lines": 44244,
+        "estimated_cost_usd": 1444663.4743564303,
+        "estimated_person_months": 128.34607981133885,
+        "commit_count": 70,
+        "lines_added": 57602,
+        "lines_deleted": 5910,
+        "first_commit": "2025-05-21T15:22:28-06:00",
+        "last_commit": "2026-09-29T00:33:33-06:00",
+        "author_share": 0.9991074152326934,
+        "dirty": false,
+        "camps": [
+          "CC_GO_PLANNING"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 24,
+            "lines_added": 35323,
+            "lines_deleted": 2134
+          },
+          {
+            "month": "2025-06",
+            "commit_count": 1,
+            "lines_added": 2410,
+            "lines_deleted": 77
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 7,
+            "lines_added": 13484,
+            "lines_deleted": 1821
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 2,
+            "lines_added": 70,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 10,
+            "lines_added": 4340,
+            "lines_deleted": 1278
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 1,
+            "lines_added": 302,
+            "lines_deleted": 44
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 11,
+            "lines_added": 828,
+            "lines_deleted": 16
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 14,
+            "lines_added": 845,
+            "lines_deleted": 540
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/guild-v2",
+        "estimated_owned_code_lines": 42335,
+        "estimated_cost_usd": 1379208.320332539,
+        "estimated_person_months": 122.53094530317512,
+        "commit_count": 9,
+        "lines_added": 63126,
+        "lines_deleted": 2888,
+        "first_commit": "2025-09-06T17:07:45-06:00",
+        "last_commit": "2025-12-03T16:53:08-07:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2025-09",
+            "commit_count": 8,
+            "lines_added": 63108,
+            "lines_deleted": 2875
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 1,
+            "lines_added": 18,
+            "lines_deleted": 13
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/blockhead.consulting",
+        "estimated_owned_code_lines": 40091,
+        "estimated_cost_usd": 1302550.4692957005,
+        "estimated_person_months": 115.72054631269552,
+        "commit_count": 321,
+        "lines_added": 337843,
+        "lines_deleted": 256089,
+        "first_commit": "2025-05-25T12:56:30-06:00",
+        "last_commit": "2026-10-21T14:46:06-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 38,
+            "lines_added": 46643,
+            "lines_deleted": 4173
+          },
+          {
+            "month": "2025-06",
+            "commit_count": 97,
+            "lines_added": 93996,
+            "lines_deleted": 25268
+          },
+          {
+            "month": "2025-07",
+            "commit_count": 3,
+            "lines_added": 3049,
+            "lines_deleted": 100
+          },
+          {
+            "month": "2025-08",
+            "commit_count": 2,
+            "lines_added": 775,
+            "lines_deleted": 720
+          },
+          {
+            "month": "2025-09",
+            "commit_count": 4,
+            "lines_added": 221,
+            "lines_deleted": 71
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 14,
+            "lines_added": 153318,
+            "lines_deleted": 521
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 24,
+            "lines_added": 6208,
+            "lines_deleted": 217265
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 32,
+            "lines_added": 572,
+            "lines_deleted": 358
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 43,
+            "lines_added": 848,
+            "lines_deleted": 332
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 7,
+            "lines_added": 938,
+            "lines_deleted": 660
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 23,
+            "lines_added": 1295,
+            "lines_deleted": 309
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 16,
+            "lines_added": 4402,
+            "lines_deleted": 3250
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 18,
+            "lines_added": 25578,
+            "lines_deleted": 3062
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/spotter",
+        "estimated_owned_code_lines": 39192,
+        "estimated_cost_usd": 1271898.9942602732,
+        "estimated_person_months": 112.99742308637822,
+        "commit_count": 29,
+        "lines_added": 47686,
+        "lines_deleted": 734,
+        "first_commit": "2026-09-06T21:18:34-06:00",
+        "last_commit": "2026-09-07T22:16:03-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 29,
+            "lines_added": 47686,
+            "lines_deleted": 734
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/festival-installer",
+        "estimated_owned_code_lines": 38682,
+        "estimated_cost_usd": 1254526.0759239697,
+        "estimated_person_months": 111.45398684470236,
+        "commit_count": 314,
+        "lines_added": 56002,
+        "lines_deleted": 6576,
+        "first_commit": "2026-05-21T01:49:01-06:00",
+        "last_commit": "2026-10-21T12:24:58-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 29,
+            "lines_added": 3667,
+            "lines_deleted": 268
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 40,
+            "lines_added": 9222,
+            "lines_deleted": 360
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 45,
+            "lines_added": 8934,
+            "lines_deleted": 2181
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 102,
+            "lines_added": 11993,
+            "lines_deleted": 1335
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 68,
+            "lines_added": 17158,
+            "lines_deleted": 1975
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 30,
+            "lines_added": 5028,
+            "lines_deleted": 457
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/wp-migration-plastix",
+        "estimated_owned_code_lines": 32442,
+        "estimated_cost_usd": 1042937.6051992183,
+        "estimated_person_months": 92.65614829417363,
+        "commit_count": 21,
+        "lines_added": 40072,
+        "lines_deleted": 384,
+        "first_commit": "2026-03-20T07:49:03-06:00",
+        "last_commit": "2026-03-21T20:50:51-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "plastix"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 21,
+            "lines_added": 40072,
+            "lines_deleted": 384
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/festival",
+        "estimated_owned_code_lines": 30940,
+        "estimated_cost_usd": 992305.1087342903,
+        "estimated_person_months": 88.1578810176164,
+        "commit_count": 741,
+        "lines_added": 98103,
+        "lines_deleted": 35201,
+        "first_commit": "2026-02-19T10:27:42-07:00",
+        "last_commit": "2026-10-18T13:03:14-06:00",
+        "author_share": 0.999838578196757,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 22,
+            "lines_added": 30955,
+            "lines_deleted": 877
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 178,
+            "lines_added": 15349,
+            "lines_deleted": 22651
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 18,
+            "lines_added": 3306,
+            "lines_deleted": 887
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 26,
+            "lines_added": 2667,
+            "lines_deleted": 170
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 89,
+            "lines_added": 8672,
+            "lines_deleted": 1036
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 67,
+            "lines_added": 6995,
+            "lines_deleted": 2070
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 146,
+            "lines_added": 15003,
+            "lines_deleted": 2738
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 57,
+            "lines_added": 6623,
+            "lines_deleted": 3596
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 138,
+            "lines_added": 8533,
+            "lines_deleted": 1176
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/agent-stream-dbg",
+        "estimated_owned_code_lines": 28666,
+        "estimated_cost_usd": 915863.5550794717,
+        "estimated_person_months": 81.36669821246196,
+        "commit_count": 192,
+        "lines_added": 56205,
+        "lines_deleted": 17278,
+        "first_commit": "2025-10-29T11:59:47-06:00",
+        "last_commit": "2026-07-23T15:56:34-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Brainyard",
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2025-10",
+            "commit_count": 4,
+            "lines_added": 7761,
+            "lines_deleted": 396
+          },
+          {
+            "month": "2025-11",
+            "commit_count": 4,
+            "lines_added": 1077,
+            "lines_deleted": 243
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 38,
+            "lines_added": 6467,
+            "lines_deleted": 3028
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 146,
+            "lines_added": 40900,
+            "lines_deleted": 13611
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/algoscales",
+        "estimated_owned_code_lines": 28203,
+        "estimated_cost_usd": 900337.6234942196,
+        "estimated_person_months": 79.9873510567004,
+        "commit_count": 61,
+        "lines_added": 44465,
+        "lines_deleted": 6288,
+        "first_commit": "2025-05-07T11:05:57-06:00",
+        "last_commit": "2025-06-22T22:47:32-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 60,
+            "lines_added": 44441,
+            "lines_deleted": 6287
+          },
+          {
+            "month": "2025-06",
+            "commit_count": 1,
+            "lines_added": 24,
+            "lines_deleted": 1
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/guild-scaffold",
+        "estimated_owned_code_lines": 26226,
+        "estimated_cost_usd": 834210.1739153366,
+        "estimated_person_months": 74.11248879844852,
+        "commit_count": 41,
+        "lines_added": 38702,
+        "lines_deleted": 4120,
+        "first_commit": "2025-09-09T11:25:26-06:00",
+        "last_commit": "2026-05-18T18:46:30-06:00",
+        "author_share": 0.999866345896819,
+        "dirty": true,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2025-09",
+            "commit_count": 4,
+            "lines_added": 13459,
+            "lines_deleted": 99
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 16,
+            "lines_added": 10138,
+            "lines_deleted": 2728
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 19,
+            "lines_added": 15030,
+            "lines_deleted": 1153
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 2,
+            "lines_added": 75,
+            "lines_deleted": 140
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp-scaffold",
+        "estimated_owned_code_lines": 26225,
+        "estimated_cost_usd": 834154.6936591285,
+        "estimated_person_months": 74.10755984889201,
+        "commit_count": 51,
+        "lines_added": 39705,
+        "lines_deleted": 5174,
+        "first_commit": "2025-09-09T11:25:26-06:00",
+        "last_commit": "2026-08-31T20:10:32-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2025-09",
+            "commit_count": 4,
+            "lines_added": 13459,
+            "lines_deleted": 99
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 16,
+            "lines_added": 10138,
+            "lines_deleted": 2728
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 19,
+            "lines_added": 15030,
+            "lines_deleted": 1153
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 3,
+            "lines_added": 700,
+            "lines_deleted": 694
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 2,
+            "lines_added": 75,
+            "lines_deleted": 140
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 6,
+            "lines_added": 174,
+            "lines_deleted": 239
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 129,
+            "lines_deleted": 121
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/keepshot-editor",
+        "estimated_owned_code_lines": 25383,
+        "estimated_cost_usd": 806056.3866697631,
+        "estimated_person_months": 71.61126391877782,
+        "commit_count": 70,
+        "lines_added": 41941,
+        "lines_deleted": 6123,
+        "first_commit": "2026-10-05T18:25:33-06:00",
+        "last_commit": "2026-10-12T15:26:23-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-10",
+            "commit_count": 70,
+            "lines_added": 41941,
+            "lines_deleted": 6123
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/lance-thing3",
+        "estimated_owned_code_lines": 22197,
+        "estimated_cost_usd": 700171.3277384249,
+        "estimated_person_months": 62.204275740798224,
+        "commit_count": 8,
+        "lines_added": 28123,
+        "lines_deleted": 195,
+        "first_commit": "2026-08-22T15:47:05-06:00",
+        "last_commit": "2026-08-23T00:38:26-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 8,
+            "lines_added": 28123,
+            "lines_deleted": 195
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/signal-harvester",
+        "estimated_owned_code_lines": 21996,
+        "estimated_cost_usd": 693515.5810318644,
+        "estimated_person_months": 61.61296917482804,
+        "commit_count": 69,
+        "lines_added": 32596,
+        "lines_deleted": 5695,
+        "first_commit": "2026-04-16T22:38:03-06:00",
+        "last_commit": "2026-08-26T03:26:30-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch",
+          "My_Tools",
+          "market-research"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 45,
+            "lines_added": 28070,
+            "lines_deleted": 5111
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 21,
+            "lines_added": 4110,
+            "lines_deleted": 541
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 1,
+            "lines_added": 210,
+            "lines_deleted": 21
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 2,
+            "lines_added": 206,
+            "lines_deleted": 22
+          }
+        ]
+      },
+      {
+        "repository": "festival-examples/example-camp-hardening-festival",
+        "estimated_owned_code_lines": 19378,
+        "estimated_cost_usd": 607113.2695846912,
+        "estimated_person_months": 53.936857639009524,
+        "commit_count": 10,
+        "lines_added": 25898,
+        "lines_deleted": 159,
+        "first_commit": "2026-06-17T18:54:32-06:00",
+        "last_commit": "2026-06-18T18:36:58-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 10,
+            "lines_added": 25898,
+            "lines_deleted": 159
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/blogkit",
+        "estimated_owned_code_lines": 19060,
+        "estimated_cost_usd": 596656.4877016973,
+        "estimated_person_months": 53.00786138074782,
+        "commit_count": 4,
+        "lines_added": 25114,
+        "lines_deleted": 263,
+        "first_commit": "2026-07-14T20:45:19-06:00",
+        "last_commit": "2026-07-17T15:42:53-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 4,
+            "lines_added": 25114,
+            "lines_deleted": 263
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/job-search-automation",
+        "estimated_owned_code_lines": 18430,
+        "estimated_cost_usd": 575966.1072770761,
+        "estimated_person_months": 51.16969680855332,
+        "commit_count": 70,
+        "lines_added": 113949,
+        "lines_deleted": 2856,
+        "first_commit": "2026-04-11T07:46:28-06:00",
+        "last_commit": "2026-08-30T10:57:13-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 29,
+            "lines_added": 17447,
+            "lines_deleted": 308
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 41,
+            "lines_added": 96502,
+            "lines_deleted": 2548
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/fest-direction",
+        "estimated_owned_code_lines": 17680,
+        "estimated_cost_usd": 551380.8770331569,
+        "estimated_person_months": 48.98550790983982,
+        "commit_count": 33,
+        "lines_added": 23694,
+        "lines_deleted": 461,
+        "first_commit": "2026-08-21T03:46:56-06:00",
+        "last_commit": "2026-10-08T13:56:56-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 12,
+            "lines_added": 22490,
+            "lines_deleted": 158
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 21,
+            "lines_added": 1204,
+            "lines_deleted": 303
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp-graph",
+        "estimated_owned_code_lines": 17321,
+        "estimated_cost_usd": 539631.0564546806,
+        "estimated_person_months": 47.94163614558285,
+        "commit_count": 158,
+        "lines_added": 26706,
+        "lines_deleted": 3391,
+        "first_commit": "2026-02-26T02:55:52-07:00",
+        "last_commit": "2026-08-31T19:45:15-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 36,
+            "lines_added": 5143,
+            "lines_deleted": 127
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 22,
+            "lines_added": 1611,
+            "lines_deleted": 194
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 88,
+            "lines_added": 17928,
+            "lines_deleted": 2322
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 9,
+            "lines_added": 1974,
+            "lines_deleted": 704
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 2,
+            "lines_added": 7,
+            "lines_deleted": 4
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 43,
+            "lines_deleted": 40
+          }
+        ]
+      },
+      {
+        "repository": "obey-agent/obey-agent-code-reviewer",
+        "estimated_owned_code_lines": 16770,
+        "estimated_cost_usd": 521620.96935719973,
+        "estimated_person_months": 46.341592871108716,
+        "commit_count": 27,
+        "lines_added": 54228,
+        "lines_deleted": 2173,
+        "first_commit": "2026-07-24T10:08:30-06:00",
+        "last_commit": "2026-08-17T11:39:03-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 25,
+            "lines_added": 54197,
+            "lines_deleted": 2171
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 2,
+            "lines_added": 31,
+            "lines_deleted": 2
+          }
+        ]
+      },
+      {
+        "repository": "neonmachine-shrapnel/hermes",
+        "estimated_owned_code_lines": 15495,
+        "estimated_cost_usd": 510018.5466448191,
+        "estimated_person_months": 45.310816155367725,
+        "commit_count": 667,
+        "lines_added": 399397,
+        "lines_deleted": 279355,
+        "first_commit": "2025-07-23T12:03:16-06:00",
+        "last_commit": "2026-02-26T10:54:45-08:00",
+        "author_share": 0.29811846293769895,
+        "dirty": false,
+        "camps": [
+          "Shrapnel"
+        ],
+        "activity": [
+          {
+            "month": "2025-07",
+            "commit_count": 4,
+            "lines_added": 3544,
+            "lines_deleted": 169
+          },
+          {
+            "month": "2025-08",
+            "commit_count": 67,
+            "lines_added": 128537,
+            "lines_deleted": 85060
+          },
+          {
+            "month": "2025-09",
+            "commit_count": 65,
+            "lines_added": 68223,
+            "lines_deleted": 45099
+          },
+          {
+            "month": "2025-10",
+            "commit_count": 176,
+            "lines_added": 124002,
+            "lines_deleted": 71788
+          },
+          {
+            "month": "2025-11",
+            "commit_count": 64,
+            "lines_added": 17115,
+            "lines_deleted": 5772
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 69,
+            "lines_added": 6020,
+            "lines_deleted": 60897
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 79,
+            "lines_added": 31293,
+            "lines_deleted": 6724
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 143,
+            "lines_added": 20663,
+            "lines_deleted": 3846
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/technical_videos::projects/obey-campaign-activity-reel",
+        "estimated_owned_code_lines": 15464,
+        "estimated_cost_usd": 479052.66355914756,
+        "estimated_person_months": 42.559760444131804,
+        "commit_count": 4,
+        "lines_added": 22342,
+        "lines_deleted": 1075,
+        "first_commit": "2026-05-14T01:45:25-06:00",
+        "last_commit": "2026-05-18T21:13:53-06:00",
+        "author_share": 1.0,
+        "dirty": true,
+        "camps": [
+          "technical_videos"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 4,
+            "lines_added": 22342,
+            "lines_deleted": 1075
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/jobsearchcampaign::projects/paxel",
+        "estimated_owned_code_lines": 15347,
+        "estimated_cost_usd": 475247.66735993826,
+        "estimated_person_months": 42.22171884860859,
+        "commit_count": 1,
+        "lines_added": 18460,
+        "lines_deleted": 0,
+        "first_commit": "2026-06-09T15:54:28-06:00",
+        "last_commit": "2026-06-09T15:54:28-06:00",
+        "author_share": 1.0,
+        "dirty": true,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 1,
+            "lines_added": 18460,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/tcount",
+        "estimated_owned_code_lines": 13869,
+        "estimated_cost_usd": 427309.6805372798,
+        "estimated_person_months": 37.96283586862827,
+        "commit_count": 146,
+        "lines_added": 829073,
+        "lines_deleted": 411404,
+        "first_commit": "2026-01-28T15:33:22-07:00",
+        "last_commit": "2026-09-22T01:01:48-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 56,
+            "lines_added": 814424,
+            "lines_deleted": 408191
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 3,
+            "lines_added": 577,
+            "lines_deleted": 12
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 47,
+            "lines_added": 10566,
+            "lines_deleted": 1082
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 20,
+            "lines_added": 2197,
+            "lines_deleted": 780
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 18,
+            "lines_added": 1307,
+            "lines_deleted": 1339
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/micbridge",
+        "estimated_owned_code_lines": 12980,
+        "estimated_cost_usd": 398602.8718029274,
+        "estimated_person_months": 35.412479726628234,
+        "commit_count": 45,
+        "lines_added": 16700,
+        "lines_deleted": 1265,
+        "first_commit": "2026-07-24T10:01:35-06:00",
+        "last_commit": "2026-08-22T19:44:46-06:00",
+        "author_share": 0.9996918810660915,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 40,
+            "lines_added": 16019,
+            "lines_deleted": 1043
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 5,
+            "lines_added": 681,
+            "lines_deleted": 222
+          }
+        ]
+      },
+      {
+        "repository": "veronica-agent/cans",
+        "estimated_owned_code_lines": 12952,
+        "estimated_cost_usd": 397693.96779038856,
+        "estimated_person_months": 35.33173132466139,
+        "commit_count": 54,
+        "lines_added": 20113,
+        "lines_deleted": 3355,
+        "first_commit": "2026-08-19T04:51:31-06:00",
+        "last_commit": "2026-10-04T22:20:17-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Veronica"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 52,
+            "lines_added": 19984,
+            "lines_deleted": 3345
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 2,
+            "lines_added": 129,
+            "lines_deleted": 10
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/helix",
+        "estimated_owned_code_lines": 12709,
+        "estimated_cost_usd": 440268.7283955827,
+        "estimated_person_months": 39.1141372064306,
+        "commit_count": 56,
+        "lines_added": 18680,
+        "lines_deleted": 2205,
+        "first_commit": "2026-10-08T11:42:08-06:00",
+        "last_commit": "2026-10-11T16:29:44-06:00",
+        "author_share": 0.08781858554893984,
+        "dirty": false,
+        "camps": [
+          "azx"
+        ],
+        "activity": [
+          {
+            "month": "2026-10",
+            "commit_count": 56,
+            "lines_added": 18680,
+            "lines_deleted": 2205
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/lazysql",
+        "estimated_owned_code_lines": 12205,
+        "estimated_cost_usd": 387840.62433649786,
+        "estimated_person_months": 34.45634544567323,
+        "commit_count": 30,
+        "lines_added": 16420,
+        "lines_deleted": 908,
+        "first_commit": "2026-01-02T17:13:19-07:00",
+        "last_commit": "2026-10-06T17:36:56-06:00",
+        "author_share": 0.4741922314242389,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 29,
+            "lines_added": 15851,
+            "lines_deleted": 842
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 1,
+            "lines_added": 569,
+            "lines_deleted": 66
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/grok-go-sdk",
+        "estimated_owned_code_lines": 11698,
+        "estimated_cost_usd": 357365.4181525695,
+        "estimated_person_months": 31.748882209716555,
+        "commit_count": 109,
+        "lines_added": 18487,
+        "lines_deleted": 6489,
+        "first_commit": "2026-05-15T01:50:44-06:00",
+        "last_commit": "2026-09-12T09:08:11-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "CC_GO_PLANNING",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 76,
+            "lines_added": 11918,
+            "lines_deleted": 5447
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 8,
+            "lines_added": 409,
+            "lines_deleted": 142
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 22,
+            "lines_added": 5756,
+            "lines_deleted": 755
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 3,
+            "lines_added": 404,
+            "lines_deleted": 145
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/agent-defi",
+        "estimated_owned_code_lines": 11481,
+        "estimated_cost_usd": 350408.0130286625,
+        "estimated_person_months": 31.130775855424883,
+        "commit_count": 55,
+        "lines_added": 17104,
+        "lines_deleted": 1484,
+        "first_commit": "2026-02-18T13:16:39-07:00",
+        "last_commit": "2026-03-22T19:01:29-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 19,
+            "lines_added": 8296,
+            "lines_deleted": 838
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 36,
+            "lines_added": 8808,
+            "lines_deleted": 646
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-hub",
+        "estimated_owned_code_lines": 9402,
+        "estimated_cost_usd": 284103.5008545817,
+        "estimated_person_months": 25.240183089426235,
+        "commit_count": 22,
+        "lines_added": 13733,
+        "lines_deleted": 592,
+        "first_commit": "2026-01-28T16:21:12-07:00",
+        "last_commit": "2026-07-29T13:53:18-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 14,
+            "lines_added": 12966,
+            "lines_deleted": 486
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 6,
+            "lines_added": 245,
+            "lines_deleted": 47
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 1,
+            "lines_added": 39,
+            "lines_deleted": 29
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 1,
+            "lines_added": 483,
+            "lines_deleted": 30
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp-activity",
+        "estimated_owned_code_lines": 9258,
+        "estimated_cost_usd": 279536.39587173675,
+        "estimated_person_months": 24.834434601255932,
+        "commit_count": 13,
+        "lines_added": 10560,
+        "lines_deleted": 214,
+        "first_commit": "2026-04-17T05:52:36-06:00",
+        "last_commit": "2026-08-31T19:45:15-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 12,
+            "lines_added": 10501,
+            "lines_deleted": 178
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 59,
+            "lines_deleted": 36
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-campaign::projects/prototypes",
+        "estimated_owned_code_lines": 9174,
+        "estimated_cost_usd": 276873.88761547866,
+        "estimated_person_months": 24.597893356030443,
+        "commit_count": 14,
+        "lines_added": 14222,
+        "lines_deleted": 3332,
+        "first_commit": "2026-01-05T16:01:26-07:00",
+        "last_commit": "2026-07-15T15:54:41-06:00",
+        "author_share": 1.0,
+        "dirty": true,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 13,
+            "lines_added": 14222,
+            "lines_deleted": 3332
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 1,
+            "lines_added": 0,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/festival-app-design",
+        "estimated_owned_code_lines": 8859,
+        "estimated_cost_usd": 266900.4235057524,
+        "estimated_person_months": 23.711835776985822,
+        "commit_count": 41,
+        "lines_added": 18568,
+        "lines_deleted": 1700,
+        "first_commit": "2026-03-16T05:43:25-06:00",
+        "last_commit": "2026-03-18T03:29:59-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 41,
+            "lines_added": 18568,
+            "lines_deleted": 1700
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/agent-simulator",
+        "estimated_owned_code_lines": 8653,
+        "estimated_cost_usd": 260387.63976609719,
+        "estimated_person_months": 23.133230256405223,
+        "commit_count": 42,
+        "lines_added": 47263,
+        "lines_deleted": 34902,
+        "first_commit": "2026-02-02T13:04:01-07:00",
+        "last_commit": "2026-03-04T15:41:27-07:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 38,
+            "lines_added": 41063,
+            "lines_deleted": 34164
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 4,
+            "lines_added": 6200,
+            "lines_deleted": 738
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp-app",
+        "estimated_owned_code_lines": 8467,
+        "estimated_cost_usd": 254513.81681574212,
+        "estimated_person_months": 22.611390975101468,
+        "commit_count": 30,
+        "lines_added": 9952,
+        "lines_deleted": 580,
+        "first_commit": "2026-10-19T14:03:47-06:00",
+        "last_commit": "2026-10-21T10:38:17-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-10",
+            "commit_count": 30,
+            "lines_added": 9952,
+            "lines_deleted": 580
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/codex-go",
+        "estimated_owned_code_lines": 8396,
+        "estimated_cost_usd": 252273.35186044226,
+        "estimated_person_months": 22.41234469264768,
+        "commit_count": 6,
+        "lines_added": 10869,
+        "lines_deleted": 214,
+        "first_commit": "2026-03-06T10:21:22-07:00",
+        "last_commit": "2026-03-09T14:56:46-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "CC_GO_PLANNING"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 6,
+            "lines_added": 10869,
+            "lines_deleted": 214
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/veronica-voice",
+        "estimated_owned_code_lines": 8304,
+        "estimated_cost_usd": 249371.62405057714,
+        "estimated_person_months": 22.154550821835212,
+        "commit_count": 77,
+        "lines_added": 13520,
+        "lines_deleted": 2191,
+        "first_commit": "2026-08-15T21:46:17-06:00",
+        "last_commit": "2026-10-04T22:12:24-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools",
+          "Veronica"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 75,
+            "lines_added": 13356,
+            "lines_deleted": 2179
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 2,
+            "lines_added": 164,
+            "lines_deleted": 12
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/portable-desktop",
+        "estimated_owned_code_lines": 8027,
+        "estimated_cost_usd": 240644.6729159596,
+        "estimated_person_months": 21.379235333685113,
+        "commit_count": 2,
+        "lines_added": 10560,
+        "lines_deleted": 0,
+        "first_commit": "2026-03-10T20:16:44-06:00",
+        "last_commit": "2026-03-10T21:45:09-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 2,
+            "lines_added": 10560,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/agent-coordinator",
+        "estimated_owned_code_lines": 7928,
+        "estimated_cost_usd": 237529.27856501687,
+        "estimated_person_months": 21.10245900542083,
+        "commit_count": 51,
+        "lines_added": 10670,
+        "lines_deleted": 337,
+        "first_commit": "2026-02-18T13:16:35-07:00",
+        "last_commit": "2026-03-22T18:26:22-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 27,
+            "lines_added": 7528,
+            "lines_deleted": 187
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 24,
+            "lines_added": 3142,
+            "lines_deleted": 150
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/vercel-fx-go",
+        "estimated_owned_code_lines": 7866,
+        "estimated_cost_usd": 235579.21230317757,
+        "estimated_person_months": 20.929212180452875,
+        "commit_count": 25,
+        "lines_added": 10211,
+        "lines_deleted": 668,
+        "first_commit": "2026-08-21T13:29:21-06:00",
+        "last_commit": "2026-09-01T13:19:45-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 24,
+            "lines_added": 10203,
+            "lines_deleted": 668
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 8,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-shared",
+        "estimated_owned_code_lines": 7428,
+        "estimated_cost_usd": 221825.16639311754,
+        "estimated_person_months": 19.707282017867584,
+        "commit_count": 56,
+        "lines_added": 10780,
+        "lines_deleted": 1076,
+        "first_commit": "2026-02-18T13:01:27-07:00",
+        "last_commit": "2026-07-29T02:28:52-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 7,
+            "lines_added": 1546,
+            "lines_deleted": 331
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 23,
+            "lines_added": 4580,
+            "lines_deleted": 419
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 14,
+            "lines_added": 1527,
+            "lines_deleted": 140
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 4,
+            "lines_added": 208,
+            "lines_deleted": 78
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 8,
+            "lines_added": 2919,
+            "lines_deleted": 108
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/algoscaleplanning",
+        "estimated_owned_code_lines": 7395,
+        "estimated_cost_usd": 220790.51546016755,
+        "estimated_person_months": 19.615362070021995,
+        "commit_count": 6,
+        "lines_added": 9572,
+        "lines_deleted": 76,
+        "first_commit": "2025-05-20T12:24:22-06:00",
+        "last_commit": "2025-12-29T17:01:14-07:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 3,
+            "lines_added": 8570,
+            "lines_deleted": 71
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 3,
+            "lines_added": 1002,
+            "lines_deleted": 5
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-voice-agent",
+        "estimated_owned_code_lines": 7307,
+        "estimated_cost_usd": 218032.5774820768,
+        "estimated_person_months": 19.37034270451997,
+        "commit_count": 16,
+        "lines_added": 15567,
+        "lines_deleted": 3393,
+        "first_commit": "2026-10-19T17:41:28-06:00",
+        "last_commit": "2026-10-21T01:17:26-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-10",
+            "commit_count": 16,
+            "lines_added": 15567,
+            "lines_deleted": 3393
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-quality",
+        "estimated_owned_code_lines": 6967,
+        "estimated_cost_usd": 207438.895506754,
+        "estimated_person_months": 18.429184035781272,
+        "commit_count": 24,
+        "lines_added": 11133,
+        "lines_deleted": 1186,
+        "first_commit": "2026-02-25T19:55:17-07:00",
+        "last_commit": "2026-03-16T08:58:45-06:00",
+        "author_share": 0.9964680414720292,
+        "dirty": true,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 20,
+            "lines_added": 10655,
+            "lines_deleted": 977
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 4,
+            "lines_added": 478,
+            "lines_deleted": 209
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/keepshot-licensing",
+        "estimated_owned_code_lines": 6748,
+        "estimated_cost_usd": 200552.9958117696,
+        "estimated_person_months": 17.817430331536034,
+        "commit_count": 93,
+        "lines_added": 16518,
+        "lines_deleted": 3839,
+        "first_commit": "2026-09-22T00:10:12-06:00",
+        "last_commit": "2026-10-17T22:37:10-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 6,
+            "lines_added": 3886,
+            "lines_deleted": 25
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 87,
+            "lines_added": 12632,
+            "lines_deleted": 3814
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obc-license-server",
+        "estimated_owned_code_lines": 6584,
+        "estimated_cost_usd": 195438.28341111497,
+        "estimated_person_months": 17.36303157525897,
+        "commit_count": 21,
+        "lines_added": 29645,
+        "lines_deleted": 20372,
+        "first_commit": "2026-10-13T00:37:14-06:00",
+        "last_commit": "2026-10-16T15:16:38-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-10",
+            "commit_count": 21,
+            "lines_added": 29645,
+            "lines_deleted": 20372
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/dashboard",
+        "estimated_owned_code_lines": 6188,
+        "estimated_cost_usd": 183114.6732756302,
+        "estimated_person_months": 16.268183482198847,
+        "commit_count": 33,
+        "lines_added": 22827,
+        "lines_deleted": 4114,
+        "first_commit": "2026-02-18T13:16:43-07:00",
+        "last_commit": "2026-03-22T20:15:53-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 23,
+            "lines_added": 20928,
+            "lines_deleted": 3493
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 10,
+            "lines_added": 1899,
+            "lines_deleted": 621
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/qwen3-tts-native",
+        "estimated_owned_code_lines": 5828,
+        "estimated_cost_usd": 171945.51268581988,
+        "estimated_person_months": 15.275898426245547,
+        "commit_count": 65,
+        "lines_added": 9819,
+        "lines_deleted": 1545,
+        "first_commit": "2026-07-28T21:23:57-06:00",
+        "last_commit": "2026-10-20T21:38:58-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 26,
+            "lines_added": 6158,
+            "lines_deleted": 975
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 32,
+            "lines_added": 3211,
+            "lines_deleted": 450
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 3,
+            "lines_added": 110,
+            "lines_deleted": 14
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 4,
+            "lines_added": 340,
+            "lines_deleted": 106
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/agent-inference",
+        "estimated_owned_code_lines": 4998,
+        "estimated_cost_usd": 146329.33216531287,
+        "estimated_person_months": 13.000118351573638,
+        "commit_count": 32,
+        "lines_added": 8304,
+        "lines_deleted": 1581,
+        "first_commit": "2026-02-18T13:16:37-07:00",
+        "last_commit": "2026-05-13T00:04:33-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 20,
+            "lines_added": 7605,
+            "lines_deleted": 1461
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 11,
+            "lines_added": 697,
+            "lines_deleted": 118
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 1,
+            "lines_added": 2,
+            "lines_deleted": 2
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/kindle-userspace",
+        "estimated_owned_code_lines": 4942,
+        "estimated_cost_usd": 144608.29454971172,
+        "estimated_person_months": 12.84721877662684,
+        "commit_count": 6,
+        "lines_added": 6174,
+        "lines_deleted": 309,
+        "first_commit": "2026-08-17T17:56:33-06:00",
+        "last_commit": "2026-09-27T14:53:57-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 5,
+            "lines_added": 1597,
+            "lines_deleted": 308
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 4577,
+            "lines_deleted": 1
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/kotlin-ktor-realworld-example-app",
+        "estimated_owned_code_lines": 4553,
+        "estimated_cost_usd": 134859.8866631897,
+        "estimated_person_months": 11.981155531555588,
+        "commit_count": 63,
+        "lines_added": 4413,
+        "lines_deleted": 679,
+        "first_commit": "2026-09-10T11:02:20-06:00",
+        "last_commit": "2026-09-17T14:03:47-06:00",
+        "author_share": 0.7233391026494475,
+        "dirty": false,
+        "camps": [
+          "amex"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 63,
+            "lines_added": 4413,
+            "lines_deleted": 679
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obediencecorp.com",
+        "estimated_owned_code_lines": 4523,
+        "estimated_cost_usd": 131762.9298897152,
+        "estimated_person_months": 11.706017225454442,
+        "commit_count": 196,
+        "lines_added": 103181,
+        "lines_deleted": 81160,
+        "first_commit": "2025-11-07T15:35:14-07:00",
+        "last_commit": "2026-09-28T23:24:55-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2025-11",
+            "commit_count": 28,
+            "lines_added": 9682,
+            "lines_deleted": 4776
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 2,
+            "lines_added": 656,
+            "lines_deleted": 323
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 48,
+            "lines_added": 14311,
+            "lines_deleted": 5386
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 38,
+            "lines_added": 42585,
+            "lines_deleted": 43194
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 24,
+            "lines_added": 12169,
+            "lines_deleted": 14741
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 16,
+            "lines_added": 100,
+            "lines_deleted": 70
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 11,
+            "lines_added": 5346,
+            "lines_deleted": 984
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 2,
+            "lines_added": 450,
+            "lines_deleted": 19
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 16,
+            "lines_added": 9256,
+            "lines_deleted": 10720
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 11,
+            "lines_added": 8626,
+            "lines_deleted": 947
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obediencecorp-web",
+        "estimated_owned_code_lines": 4471,
+        "estimated_cost_usd": 130172.79488430753,
+        "estimated_person_months": 11.564747235634998,
+        "commit_count": 37,
+        "lines_added": 13448,
+        "lines_deleted": 2528,
+        "first_commit": "2026-08-20T16:27:41-06:00",
+        "last_commit": "2026-09-13T14:45:30-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 36,
+            "lines_added": 13446,
+            "lines_deleted": 2528
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 2,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/yt_summarizer",
+        "estimated_owned_code_lines": 4332,
+        "estimated_cost_usd": 125926.80843827513,
+        "estimated_person_months": 11.187527402121104,
+        "commit_count": 29,
+        "lines_added": 9318,
+        "lines_deleted": 1432,
+        "first_commit": "2025-05-21T23:43:22-06:00",
+        "last_commit": "2026-04-19T00:48:31-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 12,
+            "lines_added": 6600,
+            "lines_deleted": 819
+          },
+          {
+            "month": "2025-06",
+            "commit_count": 3,
+            "lines_added": 119,
+            "lines_deleted": 65
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 2,
+            "lines_added": 63,
+            "lines_deleted": 17
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 2,
+            "lines_added": 842,
+            "lines_deleted": 60
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 7,
+            "lines_added": 1480,
+            "lines_deleted": 164
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 3,
+            "lines_added": 214,
+            "lines_deleted": 307
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/build-util",
+        "estimated_owned_code_lines": 4082,
+        "estimated_cost_usd": 118307.4180907699,
+        "estimated_person_months": 10.510609283117441,
+        "commit_count": 8,
+        "lines_added": 5718,
+        "lines_deleted": 577,
+        "first_commit": "2026-08-22T16:52:57-06:00",
+        "last_commit": "2026-08-25T00:07:54-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 8,
+            "lines_added": 5718,
+            "lines_deleted": 577
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-search",
+        "estimated_owned_code_lines": 3944,
+        "estimated_cost_usd": 114111.41158329959,
+        "estimated_person_months": 10.137829742652771,
+        "commit_count": 7,
+        "lines_added": 5807,
+        "lines_deleted": 131,
+        "first_commit": "2026-02-05T15:54:05-07:00",
+        "last_commit": "2026-02-17T13:48:33-07:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 7,
+            "lines_added": 5807,
+            "lines_deleted": 131
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp-buzz",
+        "estimated_owned_code_lines": 3797,
+        "estimated_cost_usd": 109649.82758803687,
+        "estimated_person_months": 9.741455898013227,
+        "commit_count": 41,
+        "lines_added": 5661,
+        "lines_deleted": 621,
+        "first_commit": "2026-08-11T01:48:20-06:00",
+        "last_commit": "2026-08-31T19:45:15-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 40,
+            "lines_added": 5641,
+            "lines_deleted": 604
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 20,
+            "lines_deleted": 17
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/protos",
+        "estimated_owned_code_lines": 3726,
+        "estimated_cost_usd": 107497.98389796914,
+        "estimated_person_months": 9.550282862292923,
+        "commit_count": 177,
+        "lines_added": 14348,
+        "lines_deleted": 8220,
+        "first_commit": "2026-01-30T18:15:49-07:00",
+        "last_commit": "2026-10-20T23:47:34-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch",
+          "My_Tools",
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 3,
+            "lines_added": 6934,
+            "lines_deleted": 33
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 9,
+            "lines_added": 1053,
+            "lines_deleted": 6620
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 17,
+            "lines_added": 1702,
+            "lines_deleted": 1375
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 9,
+            "lines_added": 196,
+            "lines_deleted": 9
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 13,
+            "lines_added": 180,
+            "lines_deleted": 26
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 59,
+            "lines_added": 1851,
+            "lines_deleted": 126
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 37,
+            "lines_added": 1691,
+            "lines_deleted": 21
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 14,
+            "lines_added": 406,
+            "lines_deleted": 2
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 16,
+            "lines_added": 335,
+            "lines_deleted": 8
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/gaze",
+        "estimated_owned_code_lines": 3410,
+        "estimated_cost_usd": 97946.16226054484,
+        "estimated_person_months": 8.701684635798227,
+        "commit_count": 26,
+        "lines_added": 4858,
+        "lines_deleted": 817,
+        "first_commit": "2026-08-21T15:18:06-06:00",
+        "last_commit": "2026-10-05T23:31:05-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Veronica"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 18,
+            "lines_added": 3809,
+            "lines_deleted": 682
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 5,
+            "lines_added": 960,
+            "lines_deleted": 112
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 3,
+            "lines_added": 89,
+            "lines_deleted": 23
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/tree2scaffold",
+        "estimated_owned_code_lines": 3363,
+        "estimated_cost_usd": 96529.16219095192,
+        "estimated_person_months": 8.575796214547967,
+        "commit_count": 30,
+        "lines_added": 6695,
+        "lines_deleted": 1517,
+        "first_commit": "2025-04-28T23:09:02-06:00",
+        "last_commit": "2026-08-03T18:39:30-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2025-04",
+            "commit_count": 11,
+            "lines_added": 1045,
+            "lines_deleted": 149
+          },
+          {
+            "month": "2025-05",
+            "commit_count": 7,
+            "lines_added": 3205,
+            "lines_deleted": 809
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 3,
+            "lines_added": 1507,
+            "lines_deleted": 502
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 5,
+            "lines_added": 806,
+            "lines_deleted": 4
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 3,
+            "lines_added": 131,
+            "lines_deleted": 53
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp-gh",
+        "estimated_owned_code_lines": 3209,
+        "estimated_cost_usd": 91893.23255292086,
+        "estimated_person_months": 8.163933240309245,
+        "commit_count": 12,
+        "lines_added": 4215,
+        "lines_deleted": 174,
+        "first_commit": "2026-07-09T16:13:23-06:00",
+        "last_commit": "2026-09-01T01:17:31-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 10,
+            "lines_added": 4183,
+            "lines_deleted": 147
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 2,
+            "lines_added": 32,
+            "lines_deleted": 27
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/etsy-research",
+        "estimated_owned_code_lines": 3031,
+        "estimated_cost_usd": 86548.70206466687,
+        "estimated_person_months": 7.689117098851001,
+        "commit_count": 3,
+        "lines_added": 5083,
+        "lines_deleted": 10,
+        "first_commit": "2026-08-26T03:58:47-06:00",
+        "last_commit": "2026-08-26T17:57:23-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 3,
+            "lines_added": 5083,
+            "lines_deleted": 10
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp-leverage-all",
+        "estimated_owned_code_lines": 2994,
+        "estimated_cost_usd": 85444.51058454116,
+        "estimated_person_months": 7.591019064013961,
+        "commit_count": 36,
+        "lines_added": 4770,
+        "lines_deleted": 607,
+        "first_commit": "2026-09-19T16:54:52-06:00",
+        "last_commit": "2026-10-05T16:33:45-06:00",
+        "author_share": 0.9997057092407299,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 26,
+            "lines_added": 4160,
+            "lines_deleted": 551
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 10,
+            "lines_added": 610,
+            "lines_deleted": 56
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-chat",
+        "estimated_owned_code_lines": 2974,
+        "estimated_cost_usd": 84840.52328704455,
+        "estimated_person_months": 7.537359922445322,
+        "commit_count": 13,
+        "lines_added": 4443,
+        "lines_deleted": 388,
+        "first_commit": "2026-01-20T12:48:06-07:00",
+        "last_commit": "2026-08-31T19:32:36-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 12,
+            "lines_added": 4424,
+            "lines_deleted": 369
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 19,
+            "lines_deleted": 19
+          }
+        ]
+      },
+      {
+        "repository": "veronica-agent/pad",
+        "estimated_owned_code_lines": 2960,
+        "estimated_cost_usd": 84428.1590521579,
+        "estimated_person_months": 7.500724862487376,
+        "commit_count": 30,
+        "lines_added": 4639,
+        "lines_deleted": 342,
+        "first_commit": "2026-08-21T05:44:44-06:00",
+        "last_commit": "2026-10-04T22:13:06-06:00",
+        "author_share": 0.9993731717509402,
+        "dirty": true,
+        "camps": [
+          "Veronica"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 29,
+            "lines_added": 4539,
+            "lines_deleted": 337
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 1,
+            "lines_added": 100,
+            "lines_deleted": 5
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/yt-channel-pattern-analyzer",
+        "estimated_owned_code_lines": 2916,
+        "estimated_cost_usd": 83104.05622314783,
+        "estimated_person_months": 7.3830895720635965,
+        "commit_count": 5,
+        "lines_added": 4649,
+        "lines_deleted": 559,
+        "first_commit": "2026-07-19T23:23:10-06:00",
+        "last_commit": "2026-07-24T11:33:55-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "technical_videos"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 5,
+            "lines_added": 4649,
+            "lines_deleted": 559
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/cre-risk-router",
+        "estimated_owned_code_lines": 2905,
+        "estimated_cost_usd": 82774.92000228445,
+        "estimated_person_months": 7.353848614275448,
+        "commit_count": 32,
+        "lines_added": 4775,
+        "lines_deleted": 534,
+        "first_commit": "2026-03-02T00:42:57-07:00",
+        "last_commit": "2026-04-28T22:59:48-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 28,
+            "lines_added": 4772,
+            "lines_deleted": 532
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 4,
+            "lines_added": 3,
+            "lines_deleted": 2
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-agent-economy-remotion-video",
+        "estimated_owned_code_lines": 2825,
+        "estimated_cost_usd": 80376.51416737708,
+        "estimated_person_months": 7.140770626099599,
+        "commit_count": 4,
+        "lines_added": 8461,
+        "lines_deleted": 174,
+        "first_commit": "2026-03-22T22:44:16-06:00",
+        "last_commit": "2026-07-27T11:03:52-06:00",
+        "author_share": 0.9984337349397591,
+        "dirty": true,
+        "camps": [
+          "technical_videos"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 2,
+            "lines_added": 8258,
+            "lines_deleted": 174
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 2,
+            "lines_added": 203,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/rhflow",
+        "estimated_owned_code_lines": 2804,
+        "estimated_cost_usd": 79755.79270264509,
+        "estimated_person_months": 7.0856247958995295,
+        "commit_count": 4,
+        "lines_added": 3685,
+        "lines_deleted": 181,
+        "first_commit": "2026-09-12T19:46:45-06:00",
+        "last_commit": "2026-09-12T23:46:36-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 4,
+            "lines_added": 3685,
+            "lines_deleted": 181
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/work-index",
+        "estimated_owned_code_lines": 2746,
+        "estimated_cost_usd": 78024.4804896052,
+        "estimated_person_months": 6.931812410235003,
+        "commit_count": 45,
+        "lines_added": 8466,
+        "lines_deleted": 5326,
+        "first_commit": "2026-04-09T15:44:12-06:00",
+        "last_commit": "2026-10-15T10:44:43-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 30,
+            "lines_added": 5518,
+            "lines_deleted": 2878
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 2,
+            "lines_added": 243,
+            "lines_deleted": 187
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 6,
+            "lines_added": 1316,
+            "lines_deleted": 1291
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 4,
+            "lines_added": 21,
+            "lines_deleted": 16
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 3,
+            "lines_added": 1368,
+            "lines_deleted": 954
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/festivalfrontend",
+        "estimated_owned_code_lines": 2687,
+        "estimated_cost_usd": 76630.87068128737,
+        "estimated_person_months": 6.808002015039746,
+        "commit_count": 81,
+        "lines_added": 15682,
+        "lines_deleted": 8050,
+        "first_commit": "2026-03-12T03:21:49-06:00",
+        "last_commit": "2026-10-19T10:00:51-06:00",
+        "author_share": 0.9061132922041503,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 25,
+            "lines_added": 3358,
+            "lines_deleted": 6369
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 2,
+            "lines_added": 14,
+            "lines_deleted": 3
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 5,
+            "lines_added": 25,
+            "lines_deleted": 18
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 5,
+            "lines_added": 69,
+            "lines_deleted": 272
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 4,
+            "lines_added": 182,
+            "lines_deleted": 220
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 10,
+            "lines_added": 1225,
+            "lines_deleted": 99
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 14,
+            "lines_added": 10091,
+            "lines_deleted": 858
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 16,
+            "lines_added": 718,
+            "lines_deleted": 211
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/hiero-plugin",
+        "estimated_owned_code_lines": 2668,
+        "estimated_cost_usd": 75699.05233115422,
+        "estimated_person_months": 6.725217868794796,
+        "commit_count": 20,
+        "lines_added": 8154,
+        "lines_deleted": 100,
+        "first_commit": "2026-02-18T13:16:41-07:00",
+        "last_commit": "2026-03-22T15:04:06-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 16,
+            "lines_added": 8125,
+            "lines_deleted": 95
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 4,
+            "lines_added": 29,
+            "lines_deleted": 5
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/contracts",
+        "estimated_owned_code_lines": 2634,
+        "estimated_cost_usd": 74686.46174097453,
+        "estimated_person_months": 6.635257795040381,
+        "commit_count": 16,
+        "lines_added": 3314,
+        "lines_deleted": 92,
+        "first_commit": "2026-02-18T13:16:46-07:00",
+        "last_commit": "2026-03-17T01:17:29-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-02",
+            "commit_count": 9,
+            "lines_added": 967,
+            "lines_deleted": 10
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 7,
+            "lines_added": 2347,
+            "lines_deleted": 82
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/festival-wails",
+        "estimated_owned_code_lines": 2459,
+        "estimated_cost_usd": 69485.11511055847,
+        "estimated_person_months": 6.173162323255017,
+        "commit_count": 6,
+        "lines_added": 5521,
+        "lines_deleted": 186,
+        "first_commit": "2026-08-27T00:25:39-06:00",
+        "last_commit": "2026-08-27T14:43:36-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 6,
+            "lines_added": 5521,
+            "lines_deleted": 186
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/algo-scales-nvim",
+        "estimated_owned_code_lines": 2384,
+        "estimated_cost_usd": 67261.55288432773,
+        "estimated_person_months": 5.975617704719947,
+        "commit_count": 9,
+        "lines_added": 3914,
+        "lines_deleted": 1092,
+        "first_commit": "2025-05-20T12:21:46-06:00",
+        "last_commit": "2025-05-28T15:37:56-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 9,
+            "lines_added": 3914,
+            "lines_deleted": 1092
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/fest-run",
+        "estimated_owned_code_lines": 2308,
+        "estimated_cost_usd": 65011.90930853156,
+        "estimated_person_months": 5.775755979791361,
+        "commit_count": 5,
+        "lines_added": 2828,
+        "lines_deleted": 14,
+        "first_commit": "2026-08-24T15:57:26-06:00",
+        "last_commit": "2026-08-28T00:37:26-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 5,
+            "lines_added": 2828,
+            "lines_deleted": 14
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/recurly-technical-challenge",
+        "estimated_owned_code_lines": 2216,
+        "estimated_cost_usd": 62293.620102818844,
+        "estimated_person_months": 5.53425907096827,
+        "commit_count": 17,
+        "lines_added": 2875,
+        "lines_deleted": 84,
+        "first_commit": "2026-09-18T13:57:58-06:00",
+        "last_commit": "2026-10-06T23:19:23-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 13,
+            "lines_added": 2487,
+            "lines_deleted": 81
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 4,
+            "lines_added": 388,
+            "lines_deleted": 3
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/fresh",
+        "estimated_owned_code_lines": 2215,
+        "estimated_cost_usd": 62264.104054491676,
+        "estimated_person_months": 5.531636820761521,
+        "commit_count": 19,
+        "lines_added": 3727,
+        "lines_deleted": 315,
+        "first_commit": "2026-10-09T23:24:25-06:00",
+        "last_commit": "2026-10-13T17:04:16-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd"
+        ],
+        "activity": [
+          {
+            "month": "2026-10",
+            "commit_count": 19,
+            "lines_added": 3727,
+            "lines_deleted": 315
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obey-platform-monorepo",
+        "estimated_owned_code_lines": 2135,
+        "estimated_cost_usd": 59905.003719426255,
+        "estimated_person_months": 5.322050792415268,
+        "commit_count": 481,
+        "lines_added": 232042,
+        "lines_deleted": 43007,
+        "first_commit": "2026-01-26T13:01:30-07:00",
+        "last_commit": "2026-10-21T14:25:11-06:00",
+        "author_share": 1.0,
+        "dirty": true,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 51,
+            "lines_added": 29036,
+            "lines_deleted": 9137
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 180,
+            "lines_added": 95682,
+            "lines_deleted": 5709
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 184,
+            "lines_added": 98211,
+            "lines_deleted": 24891
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 53,
+            "lines_added": 6820,
+            "lines_deleted": 944
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 1,
+            "lines_added": 4,
+            "lines_deleted": 4
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 4,
+            "lines_added": 3,
+            "lines_deleted": 3
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 4,
+            "lines_added": 59,
+            "lines_deleted": 1
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 4,
+            "lines_added": 2227,
+            "lines_deleted": 2318
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/termcast",
+        "estimated_owned_code_lines": 2094,
+        "estimated_cost_usd": 58697.666627616396,
+        "estimated_person_months": 5.2147891460213565,
+        "commit_count": 51,
+        "lines_added": 8939,
+        "lines_deleted": 4841,
+        "first_commit": "2026-07-09T00:58:32-06:00",
+        "last_commit": "2026-08-23T15:34:01-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 38,
+            "lines_added": 7436,
+            "lines_deleted": 4610
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 13,
+            "lines_added": 1503,
+            "lines_deleted": 231
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/fest-gif",
+        "estimated_owned_code_lines": 2048,
+        "estimated_cost_usd": 57344.50075004451,
+        "estimated_person_months": 5.094571850572541,
+        "commit_count": 15,
+        "lines_added": 10154,
+        "lines_deleted": 4794,
+        "first_commit": "2026-06-18T16:18:09-06:00",
+        "last_commit": "2026-09-11T13:14:39-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obedience-growth-rd",
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 6,
+            "lines_added": 8980,
+            "lines_deleted": 4596
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 4,
+            "lines_added": 99,
+            "lines_deleted": 26
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 5,
+            "lines_added": 1075,
+            "lines_deleted": 172
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/cursor-agent-go",
+        "estimated_owned_code_lines": 2021,
+        "estimated_cost_usd": 56550.95654830982,
+        "estimated_person_months": 5.024072188016153,
+        "commit_count": 28,
+        "lines_added": 8052,
+        "lines_deleted": 197,
+        "first_commit": "2026-08-31T16:54:28-06:00",
+        "last_commit": "2026-10-08T21:25:31-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 1,
+            "lines_added": 273,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 26,
+            "lines_added": 7671,
+            "lines_deleted": 195
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 1,
+            "lines_added": 108,
+            "lines_deleted": 2
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/obey-agent-economy::projects/obey-demo-video",
+        "estimated_owned_code_lines": 1907,
+        "estimated_cost_usd": 53206.360640647224,
+        "estimated_person_months": 4.726933248102988,
+        "commit_count": 5,
+        "lines_added": 8276,
+        "lines_deleted": 294,
+        "first_commit": "2026-03-22T14:17:17-06:00",
+        "last_commit": "2026-03-22T20:26:30-06:00",
+        "author_share": 1.0,
+        "dirty": true,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 5,
+            "lines_added": 8276,
+            "lines_deleted": 294
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/keepshot-site",
+        "estimated_owned_code_lines": 1761,
+        "estimated_cost_usd": 48937.59809065519,
+        "estimated_person_months": 4.34768995119538,
+        "commit_count": 21,
+        "lines_added": 3539,
+        "lines_deleted": 1712,
+        "first_commit": "2026-09-21T17:25:07-06:00",
+        "last_commit": "2026-10-17T22:37:12-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 5,
+            "lines_added": 2308,
+            "lines_deleted": 159
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 16,
+            "lines_added": 1231,
+            "lines_deleted": 1553
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/release-operator",
+        "estimated_owned_code_lines": 1758,
+        "estimated_cost_usd": 48850.06437962012,
+        "estimated_person_months": 4.339913324415433,
+        "commit_count": 3,
+        "lines_added": 2073,
+        "lines_deleted": 1,
+        "first_commit": "2026-03-06T11:22:07-07:00",
+        "last_commit": "2026-03-06T14:20:18-07:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 3,
+            "lines_added": 2073,
+            "lines_deleted": 1
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/resume",
+        "estimated_owned_code_lines": 1559,
+        "estimated_cost_usd": 43060.96390067214,
+        "estimated_person_months": 3.8256009151272337,
+        "commit_count": 154,
+        "lines_added": 5842,
+        "lines_deleted": 3324,
+        "first_commit": "2023-06-19T11:40:04-06:00",
+        "last_commit": "2026-09-01T14:34:03-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2023-06",
+            "commit_count": 14,
+            "lines_added": 432,
+            "lines_deleted": 128
+          },
+          {
+            "month": "2023-07",
+            "commit_count": 5,
+            "lines_added": 54,
+            "lines_deleted": 48
+          },
+          {
+            "month": "2023-09",
+            "commit_count": 6,
+            "lines_added": 36,
+            "lines_deleted": 29
+          },
+          {
+            "month": "2023-10",
+            "commit_count": 8,
+            "lines_added": 218,
+            "lines_deleted": 181
+          },
+          {
+            "month": "2023-11",
+            "commit_count": 7,
+            "lines_added": 42,
+            "lines_deleted": 17
+          },
+          {
+            "month": "2023-12",
+            "commit_count": 6,
+            "lines_added": 26,
+            "lines_deleted": 16
+          },
+          {
+            "month": "2024-02",
+            "commit_count": 1,
+            "lines_added": 0,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2024-03",
+            "commit_count": 8,
+            "lines_added": 49,
+            "lines_deleted": 44
+          },
+          {
+            "month": "2024-04",
+            "commit_count": 2,
+            "lines_added": 729,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2024-06",
+            "commit_count": 2,
+            "lines_added": 20,
+            "lines_deleted": 32
+          },
+          {
+            "month": "2024-08",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 1
+          },
+          {
+            "month": "2024-12",
+            "commit_count": 2,
+            "lines_added": 713,
+            "lines_deleted": 631
+          },
+          {
+            "month": "2025-04",
+            "commit_count": 5,
+            "lines_added": 913,
+            "lines_deleted": 104
+          },
+          {
+            "month": "2025-05",
+            "commit_count": 2,
+            "lines_added": 6,
+            "lines_deleted": 3
+          },
+          {
+            "month": "2025-06",
+            "commit_count": 4,
+            "lines_added": 29,
+            "lines_deleted": 11
+          },
+          {
+            "month": "2025-08",
+            "commit_count": 3,
+            "lines_added": 43,
+            "lines_deleted": 12
+          },
+          {
+            "month": "2025-09",
+            "commit_count": 1,
+            "lines_added": 37,
+            "lines_deleted": 21
+          },
+          {
+            "month": "2025-10",
+            "commit_count": 3,
+            "lines_added": 172,
+            "lines_deleted": 57
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 1,
+            "lines_added": 266,
+            "lines_deleted": 1
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 14,
+            "lines_added": 877,
+            "lines_deleted": 864
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 12,
+            "lines_added": 263,
+            "lines_deleted": 142
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 5,
+            "lines_added": 77,
+            "lines_deleted": 529
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 7,
+            "lines_added": 68,
+            "lines_deleted": 39
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 4,
+            "lines_added": 286,
+            "lines_deleted": 58
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 28,
+            "lines_added": 465,
+            "lines_deleted": 348
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 3,
+            "lines_added": 20,
+            "lines_deleted": 8
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/samantha-cli",
+        "estimated_owned_code_lines": 1552,
+        "estimated_cost_usd": 43286.93698190141,
+        "estimated_person_months": 3.845676704149024,
+        "commit_count": 13,
+        "lines_added": 4432,
+        "lines_deleted": 465,
+        "first_commit": "2026-03-15T23:57:12-06:00",
+        "last_commit": "2026-03-16T02:50:14-06:00",
+        "author_share": 0.8140151515151515,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 13,
+            "lines_added": 4432,
+            "lines_deleted": 465
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/gomod-rename",
+        "estimated_owned_code_lines": 1530,
+        "estimated_cost_usd": 42220.30132185347,
+        "estimated_person_months": 3.7509151849549993,
+        "commit_count": 9,
+        "lines_added": 2637,
+        "lines_deleted": 496,
+        "first_commit": "2025-12-09T09:28:12-07:00",
+        "last_commit": "2026-04-19T00:48:34-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2025-12",
+            "commit_count": 4,
+            "lines_added": 2178,
+            "lines_deleted": 386
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 4,
+            "lines_added": 458,
+            "lines_deleted": 110
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/mermaider.nvim",
+        "estimated_owned_code_lines": 1498,
+        "estimated_cost_usd": 42656.67046925804,
+        "estimated_person_months": 3.7896828775104865,
+        "commit_count": 3,
+        "lines_added": 2384,
+        "lines_deleted": 123,
+        "first_commit": "2025-07-25T16:45:40-06:00",
+        "last_commit": "2026-04-19T00:48:42-06:00",
+        "author_share": 0.5213618157543392,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2025-07",
+            "commit_count": 1,
+            "lines_added": 2343,
+            "lines_deleted": 80
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 1,
+            "lines_added": 40,
+            "lines_deleted": 43
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "veronica-agent/obey-veronica",
+        "estimated_owned_code_lines": 1496,
+        "estimated_cost_usd": 41235.71215152937,
+        "estimated_person_months": 3.663442799531749,
+        "commit_count": 19,
+        "lines_added": 9986,
+        "lines_deleted": 226,
+        "first_commit": "2026-08-31T16:06:44-06:00",
+        "last_commit": "2026-09-06T19:28:52-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Veronica"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 8,
+            "lines_added": 9647,
+            "lines_deleted": 88
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 11,
+            "lines_added": 339,
+            "lines_deleted": 138
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/cryptofraud-ai",
+        "estimated_owned_code_lines": 1340,
+        "estimated_cost_usd": 36732.91251045791,
+        "estimated_person_months": 3.2634072948168003,
+        "commit_count": 1,
+        "lines_added": 1817,
+        "lines_deleted": 0,
+        "first_commit": "2026-08-22T19:50:57-06:00",
+        "last_commit": "2026-08-22T19:50:57-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 1,
+            "lines_added": 1817,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/passenger-advocate",
+        "estimated_owned_code_lines": 1253,
+        "estimated_cost_usd": 34232.92043421212,
+        "estimated_person_months": 3.041304231895178,
+        "commit_count": 1,
+        "lines_added": 1772,
+        "lines_deleted": 0,
+        "first_commit": "2026-08-05T13:32:27-06:00",
+        "last_commit": "2026-08-05T13:32:27-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 1,
+            "lines_added": 1772,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/algo-scales-vim",
+        "estimated_owned_code_lines": 1197,
+        "estimated_cost_usd": 32628.28026372577,
+        "estimated_person_months": 2.8987455813544574,
+        "commit_count": 6,
+        "lines_added": 1895,
+        "lines_deleted": 234,
+        "first_commit": "2025-05-28T16:47:30-06:00",
+        "last_commit": "2025-12-29T17:00:37-07:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 5,
+            "lines_added": 1235,
+            "lines_deleted": 94
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 1,
+            "lines_added": 660,
+            "lines_deleted": 140
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/corp-site",
+        "estimated_owned_code_lines": 1144,
+        "estimated_cost_usd": 31113.054649900798,
+        "estimated_person_months": 2.764130654753092,
+        "commit_count": 60,
+        "lines_added": 10779,
+        "lines_deleted": 3151,
+        "first_commit": "2026-04-07T07:40:20-06:00",
+        "last_commit": "2026-04-18T21:16:35-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 60,
+            "lines_added": 10779,
+            "lines_deleted": 3151
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/camp-marks",
+        "estimated_owned_code_lines": 1041,
+        "estimated_cost_usd": 28178.546789515236,
+        "estimated_person_months": 2.503424554860984,
+        "commit_count": 6,
+        "lines_added": 1643,
+        "lines_deleted": 183,
+        "first_commit": "2026-03-22T16:43:19-06:00",
+        "last_commit": "2026-08-31T19:45:15-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 4,
+            "lines_added": 1622,
+            "lines_deleted": 169
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 20,
+            "lines_deleted": 14
+          }
+        ]
+      },
+      {
+        "repository": "veronica-agent/link",
+        "estimated_owned_code_lines": 1023,
+        "estimated_cost_usd": 27667.17018674968,
+        "estimated_person_months": 2.4579930869535964,
+        "commit_count": 5,
+        "lines_added": 1297,
+        "lines_deleted": 75,
+        "first_commit": "2026-08-21T04:32:38-06:00",
+        "last_commit": "2026-08-21T06:47:22-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Veronica"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 5,
+            "lines_added": 1297,
+            "lines_deleted": 75
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/json_ical",
+        "estimated_owned_code_lines": 751,
+        "estimated_cost_usd": 19999.41350926134,
+        "estimated_person_months": 1.7767780303181717,
+        "commit_count": 3,
+        "lines_added": 1382,
+        "lines_deleted": 393,
+        "first_commit": "2025-11-19T13:05:30-07:00",
+        "last_commit": "2026-03-16T08:13:24-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2025-11",
+            "commit_count": 1,
+            "lines_added": 461,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-03",
+            "commit_count": 2,
+            "lines_added": 921,
+            "lines_deleted": 393
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/website-2.0",
+        "estimated_owned_code_lines": 749,
+        "estimated_cost_usd": 19943.493442924908,
+        "estimated_person_months": 1.7718100073671734,
+        "commit_count": 1,
+        "lines_added": 826,
+        "lines_deleted": 0,
+        "first_commit": "2026-05-01T00:42:31-06:00",
+        "last_commit": "2026-05-01T00:42:31-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 1,
+            "lines_added": 826,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/blogposts",
+        "estimated_owned_code_lines": 720,
+        "estimated_cost_usd": 19156.22085684336,
+        "estimated_person_months": 1.7018675245951813,
+        "commit_count": 6,
+        "lines_added": 951,
+        "lines_deleted": 155,
+        "first_commit": "2026-04-27T17:17:13-06:00",
+        "last_commit": "2026-09-06T18:35:49-06:00",
+        "author_share": 0.9783467446964155,
+        "dirty": true,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 5,
+            "lines_added": 800,
+            "lines_deleted": 155
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 151,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/marketplace",
+        "estimated_owned_code_lines": 697,
+        "estimated_cost_usd": 18488.927246274197,
+        "estimated_person_months": 1.6425841547862647,
+        "commit_count": 62,
+        "lines_added": 1870,
+        "lines_deleted": 534,
+        "first_commit": "2026-06-25T00:42:01-06:00",
+        "last_commit": "2026-10-15T15:12:47-06:00",
+        "author_share": 0.9953216374269006,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 5,
+            "lines_added": 266,
+            "lines_deleted": 91
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 2,
+            "lines_added": 1,
+            "lines_deleted": 1
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 24,
+            "lines_added": 1219,
+            "lines_deleted": 417
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 12,
+            "lines_added": 26,
+            "lines_deleted": 10
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 19,
+            "lines_added": 358,
+            "lines_deleted": 15
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/jobsearchcampaign::projects/rearc-ai-quest-original",
+        "estimated_owned_code_lines": 663,
+        "estimated_cost_usd": 17546.258809333915,
+        "estimated_person_months": 1.5588360704809803,
+        "commit_count": 1,
+        "lines_added": 923,
+        "lines_deleted": 0,
+        "first_commit": "2026-06-30T03:42:34-06:00",
+        "last_commit": "2026-06-30T03:42:34-06:00",
+        "author_share": 1.0,
+        "dirty": true,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 1,
+            "lines_added": 923,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/nvim-token-counter",
+        "estimated_owned_code_lines": 589,
+        "estimated_cost_usd": 15495.885035047944,
+        "estimated_person_months": 1.376677774968723,
+        "commit_count": 9,
+        "lines_added": 1036,
+        "lines_deleted": 103,
+        "first_commit": "2026-01-13T14:14:49-07:00",
+        "last_commit": "2026-08-03T22:42:01-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 2,
+            "lines_added": 692,
+            "lines_deleted": 22
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 4,
+            "lines_added": 173,
+            "lines_deleted": 43
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2026-07",
+            "commit_count": 1,
+            "lines_added": 85,
+            "lines_deleted": 19
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 1,
+            "lines_added": 85,
+            "lines_deleted": 19
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/kindle-notes-sync",
+        "estimated_owned_code_lines": 563,
+        "estimated_cost_usd": 14778.458648479453,
+        "estimated_person_months": 1.312940533802368,
+        "commit_count": 5,
+        "lines_added": 1749,
+        "lines_deleted": 151,
+        "first_commit": "2026-08-18T22:54:53-06:00",
+        "last_commit": "2026-08-19T21:22:46-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 5,
+            "lines_added": 1749,
+            "lines_deleted": 151
+          }
+        ]
+      },
+      {
+        "repository": "neonmachine-shrapnel/hermes-infrastructure",
+        "estimated_owned_code_lines": 477,
+        "estimated_cost_usd": 14191.047413951947,
+        "estimated_person_months": 1.2607540346439183,
+        "commit_count": 23,
+        "lines_added": 2413,
+        "lines_deleted": 1107,
+        "first_commit": "2025-12-19T11:56:04-07:00",
+        "last_commit": "2026-02-18T11:19:16-07:00",
+        "author_share": 0.06852925672113865,
+        "dirty": false,
+        "camps": [
+          "Shrapnel"
+        ],
+        "activity": [
+          {
+            "month": "2025-12",
+            "commit_count": 10,
+            "lines_added": 2147,
+            "lines_deleted": 843
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 7,
+            "lines_added": 250,
+            "lines_deleted": 254
+          },
+          {
+            "month": "2026-02",
+            "commit_count": 6,
+            "lines_added": 16,
+            "lines_deleted": 10
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/blockhead-logo-extractor",
+        "estimated_owned_code_lines": 473,
+        "estimated_cost_usd": 12308.34111714967,
+        "estimated_person_months": 1.0934915704646118,
+        "commit_count": 2,
+        "lines_added": 531,
+        "lines_deleted": 0,
+        "first_commit": "2025-05-25T21:14:27-06:00",
+        "last_commit": "2025-12-29T17:05:05-07:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "BlockheadConsulting"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 1,
+            "lines_added": 376,
+            "lines_deleted": 0
+          },
+          {
+            "month": "2025-12",
+            "commit_count": 1,
+            "lines_added": 155,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/openmontage",
+        "estimated_owned_code_lines": 449,
+        "estimated_cost_usd": 16250.039174235013,
+        "estimated_person_months": 1.443677965017325,
+        "commit_count": 4,
+        "lines_added": 1483,
+        "lines_deleted": 46,
+        "first_commit": "2026-08-27T16:46:26-06:00",
+        "last_commit": "2026-08-31T12:10:21-06:00",
+        "author_share": 0.001298632460510972,
+        "dirty": false,
+        "camps": [
+          "technical_videos"
+        ],
+        "activity": [
+          {
+            "month": "2026-08",
+            "commit_count": 4,
+            "lines_added": 1483,
+            "lines_deleted": 46
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/who-keeps-it",
+        "estimated_owned_code_lines": 431,
+        "estimated_cost_usd": 11163.399316706027,
+        "estimated_person_months": 0.991773215769903,
+        "commit_count": 2,
+        "lines_added": 723,
+        "lines_deleted": 193,
+        "first_commit": "2026-09-13T12:42:04-06:00",
+        "last_commit": "2026-09-13T17:25:05-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 2,
+            "lines_added": 723,
+            "lines_deleted": 193
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/loop-lab",
+        "estimated_owned_code_lines": 415,
+        "estimated_cost_usd": 10728.66853075961,
+        "estimated_person_months": 0.953151077714962,
+        "commit_count": 3,
+        "lines_added": 968,
+        "lines_deleted": 0,
+        "first_commit": "2026-07-15T17:10:56-06:00",
+        "last_commit": "2026-07-15T18:15:55-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-07",
+            "commit_count": 3,
+            "lines_added": 968,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "obedience-corp/obedience.dev",
+        "estimated_owned_code_lines": 396,
+        "estimated_cost_usd": 10213.515947810067,
+        "estimated_person_months": 0.9073841460385632,
+        "commit_count": 1,
+        "lines_added": 487,
+        "lines_deleted": 0,
+        "first_commit": "2026-06-22T18:51:02-06:00",
+        "last_commit": "2026-06-22T18:51:02-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "obey-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 1,
+            "lines_added": 487,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/lancekrogers-ai-resume-site",
+        "estimated_owned_code_lines": 334,
+        "estimated_cost_usd": 9025.981004300338,
+        "estimated_person_months": 0.8018817523365617,
+        "commit_count": 2,
+        "lines_added": 692,
+        "lines_deleted": 2,
+        "first_commit": "2026-06-08T18:47:56-06:00",
+        "last_commit": "2026-06-08T18:55:42-06:00",
+        "author_share": 0.3292753623188406,
+        "dirty": true,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 2,
+            "lines_added": 692,
+            "lines_deleted": 2
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/technical_videos::projects/camp-dungeon-crawl-2026-04-21",
+        "estimated_owned_code_lines": 300,
+        "estimated_cost_usd": 7630.8452015174735,
+        "estimated_person_months": 0.6779357854937343,
+        "commit_count": 2,
+        "lines_added": 441,
+        "lines_deleted": 29,
+        "first_commit": "2026-04-21T11:12:47-06:00",
+        "last_commit": "2026-04-21T14:31:52-06:00",
+        "author_share": 1.0,
+        "dirty": true,
+        "camps": [
+          "technical_videos"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 2,
+            "lines_added": 441,
+            "lines_deleted": 29
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/interview-luna-test",
+        "estimated_owned_code_lines": 276,
+        "estimated_cost_usd": 6991.169993180697,
+        "estimated_person_months": 0.6211060761532247,
+        "commit_count": 3,
+        "lines_added": 749,
+        "lines_deleted": 2,
+        "first_commit": "2026-09-21T21:07:25-06:00",
+        "last_commit": "2026-09-21T23:03:21-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 3,
+            "lines_added": 749,
+            "lines_deleted": 2
+          }
+        ]
+      },
+      {
+        "repository": "festival-examples/starter-todo-workflow",
+        "estimated_owned_code_lines": 249,
+        "estimated_cost_usd": 6274.868668792219,
+        "estimated_person_months": 0.5574687872061318,
+        "commit_count": 3,
+        "lines_added": 326,
+        "lines_deleted": 1,
+        "first_commit": "2026-05-29T14:42:08-06:00",
+        "last_commit": "2026-05-30T23:36:59-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "example-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 3,
+            "lines_added": 326,
+            "lines_deleted": 1
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/go-reddit",
+        "estimated_owned_code_lines": 166,
+        "estimated_cost_usd": 5248.164081431632,
+        "estimated_person_months": 0.46625480467587355,
+        "commit_count": 3,
+        "lines_added": 200,
+        "lines_deleted": 7,
+        "first_commit": "2026-04-17T19:38:21-06:00",
+        "last_commit": "2026-08-16T21:53:46-06:00",
+        "author_share": 0.007001575354454752,
+        "dirty": false,
+        "camps": [
+          "JobSearch",
+          "My_Tools",
+          "market-research"
+        ],
+        "activity": [
+          {
+            "month": "2026-04",
+            "commit_count": 2,
+            "lines_added": 10,
+            "lines_deleted": 7
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 1,
+            "lines_added": 190,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/agent-prediction",
+        "estimated_owned_code_lines": 118,
+        "estimated_cost_usd": 2864.649115592415,
+        "estimated_person_months": 0.2544997437448841,
+        "commit_count": 2,
+        "lines_added": 310,
+        "lines_deleted": 0,
+        "first_commit": "2026-03-13T02:05:05-06:00",
+        "last_commit": "2026-03-13T02:07:42-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 2,
+            "lines_added": 310,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "techops-recsys-lateral-hiring/aiengineer-llm-python",
+        "estimated_owned_code_lines": 69,
+        "estimated_cost_usd": 1919.8520329718076,
+        "estimated_person_months": 0.17056254735001844,
+        "commit_count": 3,
+        "lines_added": 248,
+        "lines_deleted": 48,
+        "first_commit": "2026-06-10T13:23:18-06:00",
+        "last_commit": "2026-06-10T16:09:56-06:00",
+        "author_share": 0.044138489572788014,
+        "dirty": false,
+        "camps": [
+          "pair-programming"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 3,
+            "lines_added": 248,
+            "lines_deleted": 48
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/obey-platform",
+        "estimated_owned_code_lines": 62,
+        "estimated_cost_usd": 1457.4934110794554,
+        "estimated_person_months": 0.12948591072134466,
+        "commit_count": 2,
+        "lines_added": 162,
+        "lines_deleted": 0,
+        "first_commit": "2026-03-13T02:05:05-06:00",
+        "last_commit": "2026-03-13T02:07:46-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 2,
+            "lines_added": 162,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "blockhead-consulting/agent-bags",
+        "estimated_owned_code_lines": 56,
+        "estimated_cost_usd": 1309.763110925672,
+        "estimated_person_months": 0.11636132826276403,
+        "commit_count": 2,
+        "lines_added": 202,
+        "lines_deleted": 0,
+        "first_commit": "2026-03-13T02:05:06-06:00",
+        "last_commit": "2026-03-13T02:07:45-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 2,
+            "lines_added": 202,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "ethanplusai/festcourse",
+        "estimated_owned_code_lines": 39,
+        "estimated_cost_usd": 1153.898745922359,
+        "estimated_person_months": 0.1025141032269331,
+        "commit_count": 1,
+        "lines_added": 89,
+        "lines_deleted": 20,
+        "first_commit": "2026-09-27T14:53:59-06:00",
+        "last_commit": "2026-09-27T14:53:59-06:00",
+        "author_share": 0.005248569912130683,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 89,
+            "lines_deleted": 20
+          }
+        ]
+      },
+      {
+        "repository": "festival-examples/example-campaign::projects/todo-app",
+        "estimated_owned_code_lines": 21,
+        "estimated_cost_usd": 467.6550038564776,
+        "estimated_person_months": 0.04154717518270057,
+        "commit_count": 1,
+        "lines_added": 28,
+        "lines_deleted": 0,
+        "first_commit": "2026-06-03T00:57:05-06:00",
+        "last_commit": "2026-06-03T00:57:05-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "example-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-06",
+            "commit_count": 1,
+            "lines_added": 28,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/lancekrogers",
+        "estimated_owned_code_lines": 16,
+        "estimated_cost_usd": 351.49674523682194,
+        "estimated_person_months": 0.031227500465247155,
+        "commit_count": 40,
+        "lines_added": 433,
+        "lines_deleted": 378,
+        "first_commit": "2025-05-10T17:39:10-06:00",
+        "last_commit": "2026-10-17T07:31:20-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "JobSearch"
+        ],
+        "activity": [
+          {
+            "month": "2025-05",
+            "commit_count": 10,
+            "lines_added": 236,
+            "lines_deleted": 121
+          },
+          {
+            "month": "2026-01",
+            "commit_count": 11,
+            "lines_added": 100,
+            "lines_deleted": 214
+          },
+          {
+            "month": "2026-04",
+            "commit_count": 4,
+            "lines_added": 57,
+            "lines_deleted": 11
+          },
+          {
+            "month": "2026-05",
+            "commit_count": 4,
+            "lines_added": 16,
+            "lines_deleted": 12
+          },
+          {
+            "month": "2026-06",
+            "commit_count": 4,
+            "lines_added": 4,
+            "lines_deleted": 4
+          },
+          {
+            "month": "2026-08",
+            "commit_count": 5,
+            "lines_added": 16,
+            "lines_deleted": 12
+          },
+          {
+            "month": "2026-09",
+            "commit_count": 1,
+            "lines_added": 1,
+            "lines_deleted": 1
+          },
+          {
+            "month": "2026-10",
+            "commit_count": 1,
+            "lines_added": 3,
+            "lines_deleted": 3
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/ironwood-intent-escrow",
+        "estimated_owned_code_lines": 9,
+        "estimated_cost_usd": 192.10999515490127,
+        "estimated_person_months": 0.01706734143167211,
+        "commit_count": 2,
+        "lines_added": 18,
+        "lines_deleted": 0,
+        "first_commit": "2026-10-20T23:40:31-06:00",
+        "last_commit": "2026-10-20T23:41:08-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "Obey-Agent-Economy"
+        ],
+        "activity": [
+          {
+            "month": "2026-10",
+            "commit_count": 2,
+            "lines_added": 18,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "festival-examples/civic-permit-navigator",
+        "estimated_owned_code_lines": 5,
+        "estimated_cost_usd": 103.63676084240372,
+        "estimated_person_months": 0.009207245988131104,
+        "commit_count": 2,
+        "lines_added": 6,
+        "lines_deleted": 0,
+        "first_commit": "2026-05-29T14:42:11-06:00",
+        "last_commit": "2026-05-30T23:40:38-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "example-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 2,
+            "lines_added": 6,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "festival-examples/community-tool-library",
+        "estimated_owned_code_lines": 5,
+        "estimated_cost_usd": 103.63676084240372,
+        "estimated_person_months": 0.009207245988131104,
+        "commit_count": 2,
+        "lines_added": 6,
+        "lines_deleted": 0,
+        "first_commit": "2026-05-29T14:42:17-06:00",
+        "last_commit": "2026-05-30T23:40:38-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "example-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 2,
+            "lines_added": 6,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "festival-examples/research-evidence-map",
+        "estimated_owned_code_lines": 5,
+        "estimated_cost_usd": 103.63676084240372,
+        "estimated_person_months": 0.009207245988131104,
+        "commit_count": 2,
+        "lines_added": 6,
+        "lines_deleted": 0,
+        "first_commit": "2026-05-29T14:42:14-06:00",
+        "last_commit": "2026-05-30T23:40:38-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "example-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 2,
+            "lines_added": 6,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "festival-examples/example-campaign-template",
+        "estimated_owned_code_lines": 2,
+        "estimated_cost_usd": 39.598325531360864,
+        "estimated_person_months": 0.003517974905060489,
+        "commit_count": 1,
+        "lines_added": 2,
+        "lines_deleted": 0,
+        "first_commit": "2026-05-29T14:42:05-06:00",
+        "last_commit": "2026-05-29T14:42:05-06:00",
+        "author_share": 1.0,
+        "dirty": false,
+        "camps": [
+          "example-campaign"
+        ],
+        "activity": [
+          {
+            "month": "2026-05",
+            "commit_count": 1,
+            "lines_added": 2,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/brainyard-planning::projects/discord_bot",
+        "estimated_owned_code_lines": 0,
+        "estimated_cost_usd": 0.0,
+        "estimated_person_months": 0.0,
+        "commit_count": 1,
+        "lines_added": 0,
+        "lines_deleted": 0,
+        "first_commit": "2026-01-19T15:45:13-07:00",
+        "last_commit": "2026-01-19T15:45:13-07:00",
+        "author_share": 0.0,
+        "dirty": true,
+        "camps": [
+          "Brainyard"
+        ],
+        "activity": [
+          {
+            "month": "2026-01",
+            "commit_count": 1,
+            "lines_added": 0,
+            "lines_deleted": 0
+          }
+        ]
+      },
+      {
+        "repository": "lancekrogers/superpowers",
+        "estimated_owned_code_lines": 0,
+        "estimated_cost_usd": 0.0,
+        "estimated_person_months": 0.0,
+        "commit_count": 3,
+        "lines_added": 336,
+        "lines_deleted": 61,
+        "first_commit": "2026-03-05T16:42:32-07:00",
+        "last_commit": "2026-03-05T16:53:04-07:00",
+        "author_share": 0.0,
+        "dirty": false,
+        "camps": [
+          "My_Tools"
+        ],
+        "activity": [
+          {
+            "month": "2026-03",
+            "commit_count": 3,
+            "lines_added": 336,
+            "lines_deleted": 61
+          }
+        ]
+      }
+    ],
+    "coverage": {
+      "error_count": 1,
+      "warning_count": 1,
+      "notes": [
+        "Capture changes only registry discovery to camp list --all so all 28 camps, including three inactive camps, are scored. Original active-only output and the one-line patch are retained in campaign research.",
+        "One linked ClipSync checkout failed a path-containment check; the same remote is scored through My_Tools.",
+        "One absent project path was reported as stale.",
+        "The scan is not atomic; dirty working trees are included.",
+        "Repository ownership is unrestricted. This is the scored inventory of available local checkouts, not an exhaustive GitHub account or organization catalog.",
+        "Two archived website exports, drwise-plastix and drwisehair-plastix, contribute 2,148,933 imported code lines across five commits. Imported code can be attributed to the importing author; these lines are not claimed as agent-written output."
+      ]
+    }
+  },
+  "native_camp_leverage": {
+    "command": "camp leverage --json --no-commit",
+    "scope": "All 28 registered camps, including inactive camps. Native project entries and code totals can overlap. Do not sum these as personal output.",
+    "camps": [
+      {
+        "camp": "BlockheadConsulting",
+        "status": "active",
+        "projects": 10,
+        "estimated_people": 24.442207670119124,
+        "estimated_months": 11.529879322829611,
+        "estimated_cost": 3172117.573454075,
+        "actual_people": 1,
+        "elapsed_months": 17.48141262834447,
+        "actual_person_months": 17.012819379918195,
+        "author_count": 1,
+        "full_leverage": 16.56490311962443,
+        "simple_leverage": 24.442207670119124,
+        "total_files": 706,
+        "total_lines": 127746,
+        "total_code": 100291
+      },
+      {
+        "camp": "JobSearch",
+        "status": "active",
+        "projects": 16,
+        "estimated_people": 48.55484774040032,
+        "estimated_months": 14.235477715831498,
+        "estimated_cost": 7780163.5550136985,
+        "actual_people": 3,
+        "elapsed_months": 40.08247552206413,
+        "actual_person_months": 37.30434123087947,
+        "author_count": 3,
+        "full_leverage": 18.528713554440234,
+        "simple_leverage": 16.184949246800105,
+        "total_files": 1542,
+        "total_lines": 279752,
+        "total_code": 238793
+      },
+      {
+        "camp": "My_Tools",
+        "status": "active",
+        "projects": 33,
+        "estimated_people": 154.67831563191544,
+        "estimated_months": 19.043596818426103,
+        "estimated_cost": 33156027.932660535,
+        "actual_people": 1,
+        "elapsed_months": 54.76923817407499,
+        "actual_person_months": 17.7563779079671,
+        "author_count": 36,
+        "full_leverage": 165.8914613506722,
+        "simple_leverage": 154.67831563191544,
+        "total_files": 5607,
+        "total_lines": 1315468,
+        "total_code": 1130385
+      },
+      {
+        "camp": "obey-campaign",
+        "status": "active",
+        "projects": 52,
+        "estimated_people": 325.1946372470802,
+        "estimated_months": 25.882945032954208,
+        "estimated_cost": 94741694.82939894,
+        "actual_people": 1,
+        "elapsed_months": 17.76355464623333,
+        "actual_person_months": 17.392162953601762,
+        "author_count": 5,
+        "full_leverage": 483.9533152565464,
+        "simple_leverage": 325.1946372470802,
+        "total_files": 16846,
+        "total_lines": 3292248,
+        "total_code": 2682689
+      },
+      {
+        "camp": "Obey-Agent-Economy",
+        "status": "active",
+        "projects": 17,
+        "estimated_people": 38.19321444101041,
+        "estimated_months": 13.905458572775082,
+        "estimated_cost": 5977995.878136107,
+        "actual_people": 2,
+        "elapsed_months": 8.04868694357601,
+        "actual_person_months": 16.063094291375535,
+        "author_count": 2,
+        "full_leverage": 33.06300464510975,
+        "simple_leverage": 19.096607220505206,
+        "total_files": 807,
+        "total_lines": 201593,
+        "total_code": 182402
+      },
+      {
+        "camp": "ironman",
+        "status": "active",
+        "projects": 1,
+        "estimated_people": 5.6819833052538415,
+        "estimated_months": 12.713764977504018,
+        "estimated_cost": 813126.6903294562,
+        "actual_people": 1,
+        "elapsed_months": 16.327206672085648,
+        "actual_person_months": 15.934558573027692,
+        "author_count": 1,
+        "full_leverage": 4.533504961435073,
+        "simple_leverage": 5.6819833052538415,
+        "total_files": 192,
+        "total_lines": 33432,
+        "total_code": 25595
+      },
+      {
+        "camp": "azx",
+        "status": "active",
+        "projects": 1,
+        "estimated_people": 17.55025083186438,
+        "estimated_months": 25.378385445416303,
+        "estimated_cost": 5013388.972773061,
+        "actual_people": 4,
+        "elapsed_months": 4.333428038055282,
+        "actual_person_months": 3.5087822123205497,
+        "author_count": 4,
+        "full_leverage": 126.93778163570514,
+        "simple_leverage": 4.387562707966095,
+        "total_files": 1010,
+        "total_lines": 192324,
+        "total_code": 144714
+      },
+      {
+        "camp": "obedience-growth-rd",
+        "status": "active",
+        "projects": 18,
+        "estimated_people": 230.5892164830842,
+        "estimated_months": 37.12444728961986,
+        "estimated_cost": 96356956.62818857,
+        "actual_people": 3,
+        "elapsed_months": 17.763594707132583,
+        "actual_person_months": 10.548438765323098,
+        "author_count": 3,
+        "full_leverage": 811.5416322103279,
+        "simple_leverage": 76.86307216102806,
+        "total_files": 10727,
+        "total_lines": 3318458,
+        "total_code": 2622738
+      },
+      {
+        "camp": "market-research",
+        "status": "active",
+        "projects": 2,
+        "estimated_people": 10.568861615106098,
+        "estimated_months": 12.163921038697405,
+        "estimated_cost": 1447057.8320334733,
+        "actual_people": 3,
+        "elapsed_months": 77.91852671143712,
+        "actual_person_months": 6.783805838248032,
+        "author_count": 3,
+        "full_leverage": 18.950836922577924,
+        "simple_leverage": 3.5229538717020326,
+        "total_files": 208,
+        "total_lines": 55097,
+        "total_code": 45802
+      },
+      {
+        "camp": "Veronica",
+        "status": "active",
+        "projects": 8,
+        "estimated_people": 65.27635693603767,
+        "estimated_months": 29.171194671862313,
+        "estimated_cost": 21433554.936969057,
+        "actual_people": 3,
+        "elapsed_months": 13.368535715359148,
+        "actual_person_months": 12.130489577829533,
+        "author_count": 3,
+        "full_leverage": 156.9754710585914,
+        "simple_leverage": 21.758785645345892,
+        "total_files": 4197,
+        "total_lines": 760675,
+        "total_code": 602281
+      },
+      {
+        "camp": "amex",
+        "status": "active",
+        "projects": 1,
+        "estimated_people": 2.2800122706715658,
+        "estimated_months": 7.2647316821869525,
+        "estimated_cost": 186440.75257265192,
+        "actual_people": 4,
+        "elapsed_months": 90.85809433317175,
+        "actual_person_months": 17.793115102212166,
+        "author_count": 4,
+        "full_leverage": 0.930903739079585,
+        "simple_leverage": 0.5700030676678914,
+        "total_files": 75,
+        "total_lines": 7447,
+        "total_code": 6295
+      },
+      {
+        "camp": "CC_GO_PLANNING",
+        "status": "active",
+        "projects": 4,
+        "estimated_people": 16.006261442338896,
+        "estimated_months": 12.047901973879295,
+        "estimated_cost": 2170628.0755007607,
+        "actual_people": 3,
+        "elapsed_months": 17.015649975490263,
+        "actual_person_months": 15.593975865337436,
+        "author_count": 3,
+        "full_leverage": 12.366433710740514,
+        "simple_leverage": 5.335420480779632,
+        "total_files": 311,
+        "total_lines": 77148,
+        "total_code": 68371
+      },
+      {
+        "camp": "sarah",
+        "status": "active",
+        "projects": 0,
+        "estimated_people": 0,
+        "estimated_months": 0,
+        "estimated_cost": 0,
+        "actual_people": 1,
+        "elapsed_months": 3506.964230200416,
+        "actual_person_months": 0.1,
+        "full_leverage": 0,
+        "simple_leverage": 0,
+        "total_files": 0,
+        "total_lines": 0,
+        "total_code": 0
+      },
+      {
+        "camp": "MusicProd",
+        "status": "active",
+        "projects": 2,
+        "estimated_people": 67.4861864038205,
+        "estimated_months": 52.56855313784698,
+        "estimated_cost": 39932361.637504935,
+        "actual_people": 5,
+        "elapsed_months": 36.59869890788269,
+        "actual_person_months": 25.4072210403915,
+        "author_count": 5,
+        "full_leverage": 139.63160986398134,
+        "simple_leverage": 13.4972372807641,
+        "total_files": 2082,
+        "total_lines": 1516080,
+        "total_code": 1048200
+      },
+      {
+        "camp": "technical_videos",
+        "status": "active",
+        "projects": 5,
+        "estimated_people": 38.08699650771093,
+        "estimated_months": 30.70506535663019,
+        "estimated_cost": 13163483.598630903,
+        "actual_people": 45,
+        "elapsed_months": 7.984811773466398,
+        "actual_person_months": 4.951926380691798,
+        "author_count": 45,
+        "full_leverage": 236.1633891745443,
+        "simple_leverage": 0.8463777001713539,
+        "total_files": 2056,
+        "total_lines": 452541,
+        "total_code": 367314
+      },
+      {
+        "camp": "writing-books",
+        "status": "active",
+        "projects": 0,
+        "estimated_people": 0,
+        "estimated_months": 0,
+        "estimated_cost": 0,
+        "actual_people": 1,
+        "elapsed_months": 3506.964230200416,
+        "actual_person_months": 0.1,
+        "full_leverage": 0,
+        "simple_leverage": 0,
+        "total_files": 0,
+        "total_lines": 0,
+        "total_code": 0
+      },
+      {
+        "camp": "Brainyard",
+        "status": "active",
+        "projects": 3,
+        "estimated_people": 14.096549193070945,
+        "estimated_months": 17.131363275138977,
+        "estimated_cost": 2718246.391595027,
+        "actual_people": 2,
+        "elapsed_months": 13.886650419419503,
+        "actual_person_months": 13.19141075421283,
+        "author_count": 2,
+        "full_leverage": 18.30684448024196,
+        "simple_leverage": 7.048274596535473,
+        "total_files": 552,
+        "total_lines": 107192,
+        "total_code": 82059
+      },
+      {
+        "camp": "Brainshare-Planning",
+        "status": "active",
+        "projects": 1,
+        "estimated_people": 9.177001195194194,
+        "estimated_months": 17.056155322350794,
+        "estimated_cost": 1761838.1711562711,
+        "actual_people": 3,
+        "elapsed_months": 10.005638236728979,
+        "actual_person_months": 6.809654903096005,
+        "author_count": 3,
+        "full_leverage": 22.985651990597546,
+        "simple_leverage": 3.0590003983980645,
+        "total_files": 347,
+        "total_lines": 66716,
+        "total_code": 53453
+      },
+      {
+        "camp": "Festival Method Kit",
+        "status": "active",
+        "projects": 0,
+        "estimated_people": 0,
+        "estimated_months": 0,
+        "estimated_cost": 0,
+        "actual_people": 1,
+        "elapsed_months": 3506.964230200416,
+        "actual_person_months": 0.1,
+        "full_leverage": 0,
+        "simple_leverage": 0,
+        "total_files": 0,
+        "total_lines": 0,
+        "total_code": 0
+      },
+      {
+        "camp": "festival",
+        "status": "active",
+        "projects": 0,
+        "estimated_people": 0,
+        "estimated_months": 0,
+        "estimated_cost": 0,
+        "actual_people": 1,
+        "elapsed_months": 3506.964230200416,
+        "actual_person_months": 0.1,
+        "full_leverage": 0,
+        "simple_leverage": 0,
+        "total_files": 0,
+        "total_lines": 0,
+        "total_code": 0
+      },
+      {
+        "camp": "ObsidianVault",
+        "status": "active",
+        "projects": 0,
+        "estimated_people": 0,
+        "estimated_months": 0,
+        "estimated_cost": 0,
+        "actual_people": 1,
+        "elapsed_months": 3506.964230200416,
+        "actual_person_months": 0.1,
+        "full_leverage": 0,
+        "simple_leverage": 0,
+        "total_files": 0,
+        "total_lines": 0,
+        "total_code": 0
+      },
+      {
+        "camp": "festival-demo",
+        "status": "active",
+        "projects": 0,
+        "estimated_people": 0,
+        "estimated_months": 0,
+        "estimated_cost": 0,
+        "actual_people": 1,
+        "elapsed_months": 3506.964230200416,
+        "actual_person_months": 0.1,
+        "full_leverage": 0,
+        "simple_leverage": 0,
+        "total_files": 0,
+        "total_lines": 0,
+        "total_code": 0
+      },
+      {
+        "camp": "example-campaign",
+        "status": "active",
+        "projects": 6,
+        "estimated_people": 0.41174151963081623,
+        "estimated_months": 1.5304642481120407,
+        "estimated_cost": 7093.032280707269,
+        "actual_people": 1,
+        "elapsed_months": 4.762968330697229,
+        "actual_person_months": 0.3138178627050178,
+        "author_count": 1,
+        "full_leverage": 2.0080299758163203,
+        "simple_leverage": 0.41174151963081623,
+        "total_files": 8,
+        "total_lines": 342,
+        "total_code": 287
+      },
+      {
+        "camp": "David-Overview",
+        "status": "active",
+        "projects": 2,
+        "estimated_people": 30.701951136667656,
+        "estimated_months": 23.58967821331416,
+        "estimated_cost": 8152148.408029465,
+        "actual_people": 1,
+        "elapsed_months": 13.368544216092983,
+        "actual_person_months": 5.597324883194627,
+        "author_count": 1,
+        "full_leverage": 129.39201546248742,
+        "simple_leverage": 30.701951136667656,
+        "total_files": 1498,
+        "total_lines": 310244,
+        "total_code": 237394
+      },
+      {
+        "camp": "simulation_campaign",
+        "status": "active",
+        "projects": 0,
+        "estimated_people": 0,
+        "estimated_months": 0,
+        "estimated_cost": 0,
+        "actual_people": 1,
+        "elapsed_months": 3506.964230200416,
+        "actual_person_months": 0.1,
+        "full_leverage": 0,
+        "simple_leverage": 0,
+        "total_files": 0,
+        "total_lines": 0,
+        "total_code": 0
+      },
+      {
+        "camp": "Shrapnel",
+        "status": "inactive",
+        "projects": 2,
+        "estimated_people": 11.4445970640935,
+        "estimated_months": 14.88795181613027,
+        "estimated_cost": 1917871.6781669338,
+        "actual_people": 1,
+        "elapsed_months": 48.37908080145596,
+        "actual_person_months": 3.264564093063702,
+        "author_count": 11,
+        "full_leverage": 52.192759825813965,
+        "simple_leverage": 11.4445970640935,
+        "total_files": 651,
+        "total_lines": 73956,
+        "total_code": 58934
+      },
+      {
+        "camp": "plastix",
+        "status": "inactive",
+        "projects": 3,
+        "estimated_people": 135.3312185051301,
+        "estimated_months": 54.782322949652524,
+        "estimated_cost": 83449265.87093174,
+        "actual_people": 1,
+        "elapsed_months": 7.092745499677569,
+        "actual_person_months": 0.1,
+        "author_count": 1,
+        "full_leverage": 74137.58517318028,
+        "simple_leverage": 135.3312185051301,
+        "total_files": 8023,
+        "total_lines": 2724564,
+        "total_code": 2181375
+      },
+      {
+        "camp": "pair-programming",
+        "status": "inactive",
+        "projects": 1,
+        "estimated_people": 0.9247855584324177,
+        "estimated_months": 4.178545802700663,
+        "estimated_cost": 43496.09720572366,
+        "actual_people": 2,
+        "elapsed_months": 8.342681411281529,
+        "actual_person_months": 0.1,
+        "author_count": 2,
+        "full_leverage": 38.642588135859675,
+        "simple_leverage": 0.46239277921620886,
+        "total_files": 15,
+        "total_lines": 1964,
+        "total_code": 1574
+      }
+    ]
+  },
+  "festival_activity": {
+    "source_commit": "3bce71f4531269a422746ea40035dcc5ff623aa5",
+    "generated_at": "2026-10-21T20:22:43Z",
+    "summary": {
+      "authored_commits": 30302,
+      "campaigns_with_authored_activity": 28,
+      "campaigns_with_leverage": 0,
+      "completed_festivals": 302,
+      "deletions": 12885506,
+      "festivals": 451,
+      "files_changed": 684793,
+      "insertions": 37970715,
+      "progress_events": 41619,
+      "progress_events_window": 41619,
+      "projects_with_snapshots": 0,
+      "registered_campaigns": 28,
+      "repo_paths_scanned": 902,
+      "repos_scanned": 345,
+      "snapshot_files": 0
+    },
+    "monthly": {
+      "2025-04": {
+        "authored_commits": 19,
+        "festival_events": 0
+      },
+      "2025-05": {
+        "authored_commits": 236,
+        "festival_events": 0
+      },
+      "2025-06": {
+        "authored_commits": 464,
+        "festival_events": 0
+      },
+      "2025-07": {
+        "authored_commits": 98,
+        "festival_events": 0
+      },
+      "2025-08": {
+        "authored_commits": 150,
+        "festival_events": 0
+      },
+      "2025-09": {
+        "authored_commits": 111,
+        "festival_events": 0
+      },
+      "2025-10": {
+        "authored_commits": 92,
+        "festival_events": 0
+      },
+      "2025-11": {
+        "authored_commits": 161,
+        "festival_events": 0
+      },
+      "2025-12": {
+        "authored_commits": 686,
+        "festival_events": 0
+      },
+      "2026-01": {
+        "authored_commits": 1192,
+        "festival_events": 4169
+      },
+      "2026-02": {
+        "authored_commits": 2083,
+        "festival_events": 3351
+      },
+      "2026-03": {
+        "authored_commits": 2169,
+        "festival_events": 3515
+      },
+      "2026-04": {
+        "authored_commits": 1301,
+        "festival_events": 1998
+      },
+      "2026-05": {
+        "authored_commits": 1346,
+        "festival_events": 2421
+      },
+      "2026-06": {
+        "authored_commits": 2725,
+        "festival_events": 3516
+      },
+      "2026-07": {
+        "authored_commits": 5284,
+        "festival_events": 6764
+      },
+      "2026-08": {
+        "authored_commits": 5004,
+        "festival_events": 7991
+      },
+      "2026-09": {
+        "authored_commits": 3735,
+        "festival_events": 5779
+      },
+      "2026-10": {
+        "authored_commits": 3446,
+        "festival_events": 2115
+      }
+    },
+    "coverage": {
+      "warning_counts": {
+        "audit_log_line_unparseable": 15,
+        "duplicate_record_id": 40,
+        "workitem_marker_outside_workflow": 4
+      },
+      "skipped_source_count": 0,
+      "notes": [
+        "28 registered camps, with inactive paths passed explicitly using --root.",
+        "345 repositories scanned includes repositories without selected-author activity.",
+        "Current Festival inventory includes development, research, examples, and repeated workflow runs.",
+        "Per-camp activity can overlap; use the global summary.",
+        "The 451-festival inventory counts one work-item type. Intents, designs, explorations and custom work items have not been tallied in this report."
+      ]
+    }
+  },
+  "local_capture_scope": "The author also worked on other machines during this period. Local code, Git activity, native Camp and Festival Activity captures cover only checkouts and records available on the scanned machine; work from other machines may be missing. GitHub account queries are independent of local checkout availability."
+}

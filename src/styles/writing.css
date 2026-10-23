@@ -300,3 +300,32 @@
   font-size: 16px;
   line-height: 1.25;
 }
+
+/* Keep the full evidence tables usable without widening the article on phones. */
+.article-body .article-table {
+  max-width: 100%;
+  overflow: auto;
+  margin: 2rem 0;
+  border: 1px solid var(--line);
+}
+.article-body .article-table:has(tbody tr:nth-child(30)) {
+  max-height: 36rem;
+}
+.article-body .article-table table {
+  margin: 0;
+}
+.article-body .article-table th,
+.article-body .article-table td {
+  padding: 0.65rem;
+}
+.article-body .article-table:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.article-body .article-source {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.article-body picture img {
+  display: block;
+}
