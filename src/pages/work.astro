@@ -14,7 +14,7 @@ if (!festival) {
 
 <Base
   title="Work — Obedience Corp"
-  description="Forward deployed engagements, and Festival, the open-source system that runs them."
+  description="Explore Camp and Fest, the Obey agent runtime, Festival App, Festival Activity, and our engineering engagements."
   current="/work"
 >
   <section class="inner-hero inner-hero-split work-hero">
@@ -23,14 +23,15 @@ if (!festival) {
       <h1>Work you can inspect, run, and judge for yourself.</h1>
       <p>
         Obedience Corp builds in the open where it can, and under NDA where it
-        can’t. Festival is public and runnable today; the client work is
-        described without naming the companies.
+        can’t. Camp and Fest organize our agent work, Obey manages execution,
+        and Festival App brings the workspace to the desktop. Explore the
+        available tools and the upcoming desktop app below.
       </p>
     </div>
     <ExecutionTrace title="PUBLIC ARTIFACT / FESTIVAL" compact />
   </section>
 
-  <section class="work-case">
+  <section class="work-case" id="festival">
     <header class="work-case-head">
       <div>
         <p class="section-label">01 / OPEN SOURCE</p>
@@ -53,9 +54,15 @@ if (!festival) {
           session reads the saved state and instructions before continuing.
         </p>
         <p>
-          The project includes the <code>camp</code> and <code>fest</code>{" "}
-          command-line tools and works alongside shell-capable agents such as Claude
-          Code and Codex.
+          <strong>Camp</strong> keeps projects, worktrees, research, and decisions
+          together across agent sessions. Link your existing repositories into a camp;
+          each keeps its own Git history.
+        </p>
+        <p>
+          <strong>Fest</strong> turns goals into phases and tasks, guides agents to
+          the next step, and tracks progress through review gates. Camp and Fest work
+          with shell-capable agents such as Claude Code and Codex; Obey adds background
+          execution when you want it.
         </p>
         <p>
           The public CodeSignal Practice Simulator shows the result of three
@@ -73,6 +80,8 @@ if (!festival) {
           <a href={festival.data.url}>Product site ↗</a>
           <a href="https://docs.fest.build">Documentation ↗</a>
           <a href="https://github.com/Obedience-Corp/festival">Source ↗</a>
+          <a href="https://github.com/Obedience-Corp/camp">Camp source ↗</a>
+          <a href="https://github.com/Obedience-Corp/fest">Fest source ↗</a>
         </div>
       </div>
 
@@ -97,62 +106,94 @@ if (!festival) {
     </div>
   </section>
 
-  <section class="work-case" id="clipsync">
+  <section class="work-case" id="obey">
     <header class="work-case-head">
       <div>
-        <p class="section-label">02 / PUBLIC ENGINEERING</p>
-        <h2>Copy on one computer. Paste on another.</h2>
+        <p class="section-label">02 / AGENT RUNTIME</p>
+        <h2>Obey</h2>
       </div>
-      <p>CLIPSYNC · EXPERIMENTAL</p>
+      <p>PROPRIETARY · AVAILABLE NOW</p>
     </header>
+
     <div class="work-case-grid">
       <div class="work-case-copy">
         <p class="work-case-lede">
-          ClipSync shares plain-text clipboards between trusted Mac and Linux
-          computers.
+          Follow your agents. Let Obey carry the execution.
         </p>
         <p>
-          The goal is familiar; the difficult work is in the details. Which
-          devices may receive a copy? What happens when a service restarts? Can
-          an update preserve the existing clipboard history?
+          Obey is a local runtime that tracks agent sessions across your camps.
+          It can observe supported sessions you start yourself, or launch and
+          supervise agents for you. The live session view helps you see the work
+          that needs your attention.
         </p>
         <p>
-          The public repair record follows those questions through authenticated
-          connections, recovery checks, and tests that preserve existing history
-          keys. It records isolated clipboard tests and an installed Mac–Arch
-          Linux setup with automatic reconnection after service restarts.
+          Camp holds the workspace and Fest holds the plan. Obey reads that
+          context to drive festival execution. Its companion <code>ob</code>{
+            " "
+          }
+          CLI also handles developer tasks such as planning and reviewing changes.
         </p>
         <p>
-          It also states what remains: broader desktop compatibility,
-          sleep/wake, and login/logout acceptance. Lance built this open-source
-          project for his own use. The public record lets you assess the
-          implementation and its remaining limits.
+          Start with Camp and Fest and the agent you already use. Add Obey when
+          you want daemon-managed execution. Obey binaries are publicly
+          available; its source is private.
         </p>
         <div class="inline-links">
-          <a href="https://github.com/lancekrogers/clipsync"
-            >See the app and its scope ↗</a
-          >
-          <a
-            href="https://github.com/lancekrogers/clipsync/blob/main/docs/REPAIR_VALIDATION.md"
-            >Read the verification and limits ↗</a
-          >
+          <a href="https://fest.build/#obey">Install and configure Obey ↗</a>
+          <a href="https://fest.build/releases/obey/">Obey releases ↗</a>
         </div>
       </div>
       <dl class="work-facts">
-        <div><dt>USER GOAL</dt><dd>Move copied text between computers</dd></div>
-        <div>
-          <dt>WORK</dt><dd>Desktop integration, device trust, recovery</dd>
-        </div>
-        <div><dt>EVIDENCE</dt><dd>Public source and recorded checks</dd></div>
-        <div><dt>STATUS</dt><dd>Experimental; release checks remain</dd></div>
+        <div><dt>STATUS</dt><dd>Available now</dd></div>
+        <div><dt>LICENSE</dt><dd>Proprietary</dd></div>
+        <div><dt>SURFACE</dt><dd>Local daemon and CLI</dd></div>
+        <div><dt>FOCUS</dt><dd>Agent sessions and execution</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="work-case">
+  <section class="work-case" id="festival-app">
     <header class="work-case-head">
       <div>
-        <p class="section-label">03 / PRODUCT</p>
+        <p class="section-label">03 / DESKTOP APP</p>
+        <h2>Festival App</h2>
+      </div>
+      <p>PUBLIC RELEASE COMING SOON</p>
+    </header>
+
+    <div class="work-case-grid">
+      <div class="work-case-copy">
+        <p class="work-case-lede">
+          A desktop home for your camps, agents, and festivals.
+        </p>
+        <p>
+          Festival App brings camp browsing, saved context, agent sessions, and
+          festival progress into one desktop workspace. It connects to Obey for
+          agent sessions and uses Camp and Fest for the work kept on disk.
+        </p>
+        <p>
+          Festival App is preparing for its first public release. Camp, Fest,
+          and Obey are available through the CLI today. The app’s public launch
+          will be announced on fest.build.
+        </p>
+        <div class="inline-links">
+          <a href="https://fest.build/#app">About the upcoming app ↗</a>
+          <a href="https://fest.build/#start">Use the CLI today ↗</a>
+        </div>
+      </div>
+      <dl class="work-facts">
+        <div><dt>STATUS</dt><dd>Public release pending</dd></div>
+        <div><dt>SURFACE</dt><dd>Desktop app</dd></div>
+        <div><dt>CONNECTS</dt><dd>Camp, Fest, and Obey</dd></div>
+        <div><dt>FOCUS</dt><dd>Workspace and agent interaction</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="work-case" id="festival-activity">
+    <header class="work-case-head">
+      <div>
+        <p class="section-label">04 / ACTIVITY TIMELINE</p>
         <h2>Festival Activity</h2>
       </div>
       <p>MACOS AND LINUX · PAID</p>
@@ -170,8 +211,8 @@ if (!festival) {
           edit your documents, run agents, or send anything anywhere.
         </p>
         <p>
-          It is the one thing here you buy rather than clone. Festival itself
-          stays free and open.
+          Festival Activity is the separate, paid timeline product. Camp and
+          Fest stay free and open source.
         </p>
         <div class="inline-links">
           <a href="/festival-activity">Festival Activity →</a>
@@ -203,7 +244,7 @@ if (!festival) {
   <section class="work-case client-work">
     <header class="work-case-head">
       <div>
-        <p class="section-label">04 / CLIENT WORK</p>
+        <p class="section-label">05 / CLIENT WORK</p>
         <h2>Under NDA</h2>
       </div>
       <p>2025 · NAMES WITHHELD</p>
