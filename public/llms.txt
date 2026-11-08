@@ -1,0 +1,19 @@
+# Obedience Corp
+
+> Forward deployed engineering for teams building and operating software with AI.
+
+Obedience Corp embeds with teams to solve engineering problems and deliver working results that the team can review and keep. It also builds Festival, an open-source framework for organizing human and AI work using files and Git.
+
+## Company
+
+- [Home and contact](https://obediencecorp.com/#contact): Learn about engagements or contact the team.
+- [About](https://obediencecorp.com/about/): The company, its founder, and approach.
+- [Work](https://obediencecorp.com/work/): Public engineering examples and projects.
+- [Field notes](https://obediencecorp.com/blog/): Writing from the company's work.
+- [Releases](https://obediencecorp.com/releases/): Public project release history.
+
+## Festival
+
+- [Festival](https://fest.build/): Product overview.
+- [Documentation](https://docs.fest.build/): Guides and CLI reference.
+- [Source repository](https://github.com/Obedience-Corp/festival): Source, releases, and issues.
