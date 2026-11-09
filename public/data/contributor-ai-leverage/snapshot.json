@@ -1,0 +1,45 @@
+{
+  "repository": "https://github.com/pingdotgg/t3code",
+  "revision": "25bf84ab07f53f141c20239c63e383823a9d5ea0",
+  "report_date": "2026-11-08",
+  "tools": {
+    "camp": "v0.18.2",
+    "git": "git version 2.56.0",
+    "scc": "scc version 4.1.0"
+  },
+  "source_sha256": "e074655939903fdb099a142618da41bff7045eb7940d1abe1f77e41aef516a50",
+  "manifest_digest": "fd7edea8a02def2ccf04f58dbf9da4bce4077f2d3224e0d0b6743756dc651bfe",
+  "threshold_percent": 0,
+  "contributor_identities": 416,
+  "repository_ratio": 947.6371384278605,
+  "summary": {
+    "files": 7198,
+    "lines": 2101875,
+    "code_lines": 1894416,
+    "estimated_person_months": 6630.715013137796,
+    "attribution_coverage": 1,
+    "buckets": {
+      "contributors": {
+        "lines": 1844714,
+        "share": 0.8776516205768659,
+        "estimated_person_months": 5819.457776863909
+      },
+      "excluded_identities": {
+        "lines": 257161,
+        "share": 0.1223483794231341,
+        "estimated_person_months": 811.2572362740374
+      },
+      "unavailable": {
+        "lines": 0,
+        "share": 0,
+        "estimated_person_months": 0
+      },
+      "uncommitted": {
+        "lines": 0,
+        "share": 0,
+        "estimated_person_months": 0
+      }
+    }
+  },
+  "exclude_rule": ".repos/"
+}
