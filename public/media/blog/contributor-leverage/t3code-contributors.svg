@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1060" viewBox="0 0 1200 1060" role="img" aria-labelledby="title desc">
+<title id="title">T3 Code contributor report, November 8, 2026</title>
+<desc id="desc">Eight largest owners of counted physical lines, sorted by ownership. Julius Marminge owns 62.28 percent and Theo Browne 10.34 percent. Ratios are estimated effort divided by calendar commit span, not measured AI productivity. Excluded identities retain 12.23 percent of counted lines.</desc>
+<rect width="1200" height="1060" rx="24" fill="#0b1522"/>
+<style>text{font-family:Inter,Arial,sans-serif;fill:#edf4fa}.muted{fill:#a5b6c7}.label{font-size:13px;letter-spacing:1.6px}.mono{font-family:Menlo,Consolas,monospace}</style>
+<text x="52" y="54" font-size="13" class="label" style="fill:#5ee7cc">CAMP / REPOSITORY LEVERAGE</text>
+<text x="52" y="108" font-size="40">T3 Code, by contributor</text>
+<text x="52" y="143" font-size="19" class="muted">Observed source ownership and model-based effort allocation</text>
+<text x="1148" y="54" font-size="13" class="label muted" text-anchor="end">08 NOV 2026</text>
+<text x="1148" y="82" font-size="14" class="mono muted" text-anchor="end">25bf84ab07f5</text>
+<rect x="52" y="180" width="350" height="116" fill="#142438" rx="14"/>
+<text x="76" y="227" font-size="31">1,894,416</text>
+<text x="76" y="265" font-size="12" class="label muted">COUNTED CODE LINES</text>
+<rect x="425" y="180" width="350" height="116" fill="#142438" rx="14"/>
+<text x="449" y="227" font-size="31">416</text>
+<text x="449" y="265" font-size="12" class="label muted">ATTRIBUTABLE IDENTITIES</text>
+<rect x="798" y="180" width="350" height="116" fill="#142438" rx="14"/>
+<text x="822" y="227" font-size="31">6,630.7</text>
+<text x="822" y="265" font-size="12" class="label muted">ESTIMATED PERSON-MONTHS</text>
+<text x="52" y="346" font-size="25">Largest surviving line owners</text>
+<text x="52" y="374" font-size="15" class="muted">Bar length = share of all counted physical lines, including excluded identities.</text>
+<text x="52" y="418" font-size="12" class="label muted">CONTRIBUTOR</text>
+<text x="932" y="418" font-size="12" class="label muted" text-anchor="end">SHARE</text>
+<text x="1148" y="418" font-size="12" class="label muted" text-anchor="end">MODEL RATIO</text>
+<path d="M302.0 435 V 827" stroke="#23344a" stroke-width="1"/>
+<text x="302.0" y="850" font-size="12" class="muted" text-anchor="middle">0%</text>
+<path d="M474.3 435 V 827" stroke="#23344a" stroke-width="1"/>
+<text x="474.3076923076923" y="850" font-size="12" class="muted" text-anchor="middle">20%</text>
+<path d="M646.6 435 V 827" stroke="#23344a" stroke-width="1"/>
+<text x="646.6153846153846" y="850" font-size="12" class="muted" text-anchor="middle">40%</text>
+<path d="M818.9 435 V 827" stroke="#23344a" stroke-width="1"/>
+<text x="818.9230769230769" y="850" font-size="12" class="muted" text-anchor="middle">60%</text>
+<text x="52" y="466" font-size="18">Julius Marminge</text>
+<rect x="302" y="445" width="536.6051959102449" height="26" fill="#5ee7cc" rx="4"/>
+<text x="932" y="465" font-size="17" class="mono" text-anchor="end">62.28%</text>
+<text x="1148" y="465" font-size="17" class="mono" text-anchor="end">462.77x</text>
+<text x="52" y="515" font-size="18">Theo Browne</text>
+<rect x="302" y="494" width="89.05074681488597" height="26" fill="#72aefa" rx="4"/>
+<text x="932" y="514" font-size="17" class="mono" text-anchor="end">10.34%</text>
+<text x="1148" y="514" font-size="17" class="mono" text-anchor="end">76.65x</text>
+<text x="52" y="564" font-size="18">maria-rcks</text>
+<rect x="302" y="543" width="38.67685171207027" height="26" fill="#72aefa" rx="4"/>
+<text x="932" y="563" font-size="17" class="mono" text-anchor="end">4.49%</text>
+<text x="1148" y="563" font-size="17" class="mono" text-anchor="end">37.69x</text>
+<text x="52" y="613" font-size="18">Yash Singh</text>
+<rect x="302" y="592" width="14.752776595988013" height="26" fill="#72aefa" rx="4"/>
+<text x="932" y="612" font-size="17" class="mono" text-anchor="end">1.71%</text>
+<text x="1148" y="612" font-size="17" class="mono" text-anchor="end">14.03x</text>
+<text x="52" y="662" font-size="18">Chris Deeming</text>
+<rect x="302" y="641" width="9.13358859992223" height="26" fill="#72aefa" rx="4"/>
+<text x="932" y="661" font-size="17" class="mono" text-anchor="end">1.06%</text>
+<text x="1148" y="661" font-size="17" class="mono" text-anchor="end">34.99x</text>
+<text x="52" y="711" font-size="18">Alex Southwell</text>
+<rect x="302" y="690" width="7.324332212539171" height="26" fill="#72aefa" rx="4"/>
+<text x="932" y="710" font-size="17" class="mono" text-anchor="end">0.85%</text>
+<text x="1148" y="710" font-size="17" class="mono" text-anchor="end">16.76x</text>
+<text x="52" y="760" font-size="18">Victor</text>
+<rect x="302" y="739" width="6.818117523273633" height="26" fill="#72aefa" rx="4"/>
+<text x="932" y="759" font-size="17" class="mono" text-anchor="end">0.79%</text>
+<text x="1148" y="759" font-size="17" class="mono" text-anchor="end">87.32x</text>
+<text x="52" y="809" font-size="18">Yordis Prieto</text>
+<rect x="302" y="788" width="6.403308401381549" height="26" fill="#72aefa" rx="4"/>
+<text x="932" y="808" font-size="17" class="mono" text-anchor="end">0.74%</text>
+<text x="1148" y="808" font-size="17" class="mono" text-anchor="end">13.39x</text>
+<rect x="52" y="886" width="1096" height="114" fill="#142438" rx="14"/>
+<text x="76" y="918" font-size="12" class="label muted">EVERY COUNTED LINE IS ACCOUNTED FOR</text>
+<rect x="76" y="937" width="919.7788983645554" height="14" fill="#5ee7cc" rx="4"/>
+<rect x="995.7788983645554" y="937" width="128.2211016354446" height="14" fill="#f4b46a" rx="4"/>
+<text x="76" y="980" font-size="15" style="fill:#5ee7cc">Eligible contributors 87.77%</text>
+<text x="1124" y="980" font-size="15" style="fill:#f4b46a" text-anchor="end">Excluded identities 12.23%</text>
+<text x="52" y="1032" font-size="14" class="muted">Scope: .repos/ excluded. Ratios use estimated PM / calendar commit span; they do not measure AI use.</text>
+</svg>
