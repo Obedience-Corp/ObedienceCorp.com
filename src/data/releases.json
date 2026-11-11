@@ -283,6 +283,43 @@
   ],
   "releases": [
     {
+      "id": 442262683,
+      "repo": "fest",
+      "tag": "v0.11.0",
+      "slug": "v0.11.0",
+      "name": "v0.11.0",
+      "publishedAt": "2026-11-11T22:34:39.000Z",
+      "updatedAt": "2026-11-11T22:34:39.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/fest/releases/tag/v0.11.0",
+      "body": "## Release v0.11.0\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 feature\n- 2 fixes\n- 1 documentation update\n- 2 other changes\n\nCompare: https://github.com/Obedience-Corp/fest/compare/v0.10.1...v0.11.0\n\n## Highlights\n\n- Discard approval notifications cleared within a command\n- Notify when human approval is needed\n- Add opt-in PRESENT and approval notifications\n\n## Features\n\n- Add opt-in PRESENT and approval notifications\n\n## Fixes\n\n- Discard approval notifications cleared within a command\n- Notify when human approval is needed\n\n## Documentation\n\n- Update README.md\n\n## Other Changes\n\n- Honor fest.yaml excluded_patterns in fest validate quality gates ([#449](https://github.com/Obedience-Corp/fest/pull/449))\n- Add opt-in PRESENT and human-approval notification hooks ([#448](https://github.com/Obedience-Corp/fest/pull/448))"
+    },
+    {
+      "id": 442254272,
+      "repo": "camp",
+      "tag": "v0.18.4",
+      "slug": "v0.18.4",
+      "name": "v0.18.4",
+      "publishedAt": "2026-11-11T22:23:37.000Z",
+      "updatedAt": "2026-11-11T22:23:37.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/camp/releases/tag/v0.18.4",
+      "body": "## Release v0.18.4\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 fix\n- 1 maintenance change\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.18.3...v0.18.4\n\n## Fixes\n\n- Return to the hop's origin camp without dialing it ([#787](https://github.com/Obedience-Corp/camp/pull/787))\n\n## Maintenance\n\n- Install golangci-lint v2 in install-tools ([#788](https://github.com/Obedience-Corp/camp/pull/788))\n  - Install golangci-lint v2 so local lint matches CI and current Go"
+    },
+    {
+      "id": 442091061,
+      "repo": "obey-releases",
+      "product": "obey",
+      "tag": "v0.6.2",
+      "slug": "v0.6.2",
+      "name": "Obey 0.6.2",
+      "publishedAt": "2026-11-11T18:55:14.000Z",
+      "updatedAt": "2026-11-11T18:55:14.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/obey-releases/releases/tag/v0.6.2",
+      "body": "### Added\n\n- Festival App can show the images you attach in your own sent messages,\n  including after a reload. `ReadSessionImage` also accepts an attachment's\n  exact `sha256:` digest and serves it only to the session that uploaded or\n  sent it. Only PNG, JPEG, GIF and WebP whose bytes match the digest are\n  served; other sessions, camps and media types get the same unavailable\n  result.\n\nSource: `a23dac3c550b06a3e7e96831624950eaf2c532a4`.\n\nAll six platform archives passed [native source, SQLite and CLI startup verification](https://github.com/Obedience-Corp/obey-releases/actions/runs/43081615106), including service lifecycle checks on both Windows architectures."
+    },
+    {
       "id": 441306378,
       "repo": "obey-releases",
       "product": "obey",
