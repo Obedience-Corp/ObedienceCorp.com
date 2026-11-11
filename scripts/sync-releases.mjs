@@ -6,6 +6,7 @@ import {
   ORGANIZATION,
   normalizeRepository,
   normalizeRelease,
+  selectReleases,
   sortReleases,
 } from "../src/lib/releases.mjs";
 
@@ -95,9 +96,11 @@ export async function syncReleases({
     const entries = rows
       .map((raw) => normalizeRelease(raw, repo))
       .filter(Boolean);
-    groups.push([
-      ...new Map(entries.map((release) => [release.id, release])).values(),
-    ]);
+    groups.push(
+      selectReleases([
+        ...new Map(entries.map((release) => [release.id, release])).values(),
+      ]),
+    );
   }
   const releases = sortReleases(groups.flat());
   const paths = new Set();

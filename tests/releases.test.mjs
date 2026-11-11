@@ -2,10 +2,13 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync, existsSync } from "node:fs";
 import {
+  appReleaseVersion,
   normalizeRepository,
   normalizeRelease,
   releaseHref,
+  releaseTitle,
   isFestivalRelease,
+  selectReleases,
   versionSlug,
   releaseSummary,
 } from "../src/lib/releases.mjs";
@@ -223,4 +226,54 @@ test("every imported release appears in exported HTML and RSS; local pages have 
       existsSync(new URL(`releases/${repo.slug}/index.html`, dist)),
       releases.some((release) => release.repo === repo.slug),
     );
+});
+
+const SHARED = normalizeRepository(rawRepo({ id: 7, name: "obey-releases" }));
+const SHA = "a".repeat(40);
+const appBody = (version, source = SHA) =>
+  `# Festival App ${version}\n\nOpen a camp and save a plan.\n\nRelease components:\n\`\`\`json\n${JSON.stringify({ source, version })}\n\`\`\``;
+
+test("obey-releases links Obey and public Festival App releases to fest.build by version", () => {
+  const app = normalizeRelease(
+    rawRelease({ tag_name: `app-test-${SHA}`, prerelease: true, body: appBody("0.1.7") }),
+    SHARED,
+  );
+  assert.equal(app.product, "app");
+  assert.equal(app.slug, "v0.1.7");
+  assert.equal(releaseTitle(app), "Festival App v0.1.7");
+  assert.equal(releaseHref(app), "https://fest.build/releases/app/v0.1.7");
+  assert.equal(isFestivalRelease(app), true);
+  assert.doesNotMatch(app.body, /Release components|^# Festival App/m);
+  const obey = normalizeRelease(rawRelease({ tag_name: "v0.6.0" }), SHARED);
+  assert.equal(releaseTitle(obey), "Obey v0.6.0");
+  assert.equal(releaseHref(obey), "https://fest.build/releases/obey/v0.6.0");
+  const plain = normalizeRelease(rawRelease(), repository);
+  assert.equal(Object.hasOwn(plain, "product"), false);
+  assert.equal(releaseTitle(plain), "example v1.0.0");
+});
+
+test("obey-releases skips internal App builds, invite-only betas, and companion apps without throwing", () => {
+  for (const values of [
+    { tag_name: `app-test-${SHA}`, body: "Festival App B7 test candidate" },
+    { tag_name: `app-test-${SHA}`, body: appBody("0.1.5") },
+    { tag_name: `app-test-${SHA}`, body: appBody("0.1.7", "b".repeat(40)) },
+    { tag_name: `app-test-${SHA}`, body: appBody("0.1.7").replace("{", "{{") },
+    { tag_name: "camp-app-v0.2.1", body: "" },
+    { tag_name: `app-build-${SHA}`, body: appBody("0.1.7") },
+  ])
+    assert.equal(normalizeRelease(rawRelease({ prerelease: true, ...values }), SHARED), null, values.tag_name);
+  assert.equal(appReleaseVersion({ tag_name: `app-test-${SHA}`, body: null }), null);
+});
+
+test("a stable Festival App release replaces the early build of the same version", () => {
+  const early = normalizeRelease(
+    rawRelease({ id: 1, tag_name: `app-test-${SHA}`, prerelease: true, body: appBody("0.2.0") }),
+    SHARED,
+  );
+  const stable = normalizeRelease(rawRelease({ id: 2, tag_name: "app-v0.2.0" }), SHARED);
+  const obey = normalizeRelease(rawRelease({ id: 3, tag_name: "v0.2.0" }), SHARED);
+  assert.deepEqual(
+    selectReleases([early, stable, obey]).map((release) => release.tag).sort(),
+    ["app-v0.2.0", "v0.2.0"],
+  );
 });
