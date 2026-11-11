@@ -283,6 +283,43 @@
   ],
   "releases": [
     {
+      "id": 441306378,
+      "repo": "obey-releases",
+      "product": "obey",
+      "tag": "v0.6.1",
+      "slug": "v0.6.1",
+      "name": "Obey 0.6.1",
+      "publishedAt": "2026-11-11T06:22:08.000Z",
+      "updatedAt": "2026-11-11T06:22:08.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/obey-releases/releases/tag/v0.6.1",
+      "body": "### Added\n\n- Claude Code sessions accept attached images. PNG and JPEG attachments reach\n  the model as native image blocks on new and resumed sessions, and text-only\n  turns are unchanged. PDFs are still refused with the existing\n  message. Requires claude-code-go 1.6.0.\n- `ob jobs` browses the current camp's `ob`-launched sessions and opens one in\n  Obey chat; `ob jobs list [--json]` and `ob jobs open <session>` script the\n  same view. Leaving chat restores the browser's selection, search and history.\n- Images an external agent explicitly displays are captured into the session's\n  blob store, so Festival App can show them after the source file moves or the\n  daemon restarts. Reads are limited to the owning session.\n\n### Fixed\n\n- Stop duplicate agent replies and tool calls in claude-code provider sessions\n  when the bridge hooks also report them.\n- Profileless local agents can discover Camp's agent-allowed commands and run\n  them, including `idea add`. Camp's allow/refuse policy, capability gates and\n  path boundaries still apply.\n\nSource: `9d317dd1b947c02afc0e1a7cf0ef825469c07a03`.\n\nAll six platform archives passed [native source, SQLite and CLI startup verification](https://github.com/Obedience-Corp/obey-releases/actions/runs/42971419355), including service lifecycle checks on both Windows architectures."
+    },
+    {
+      "id": 441197979,
+      "repo": "festival",
+      "tag": "v0.3.33",
+      "slug": "v0.3.33",
+      "name": "v0.3.33",
+      "publishedAt": "2026-11-11T03:19:47.000Z",
+      "updatedAt": "2026-11-11T03:20:20.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/festival/releases/tag/v0.3.33",
+      "body": "## Festival v0.3.33\n\nFestival Methodology CLI suite release.\n\nThis release installs:\n- `fest` v0.10.1 ([release](https://github.com/Obedience-Corp/fest/releases/tag/v0.10.1))\n- `camp` v0.18.3 ([release](https://github.com/Obedience-Corp/camp/releases/tag/v0.18.3))\n- `festival` v0.3.12 ([release](https://github.com/Obedience-Corp/festival-installer/releases/tag/v0.3.12))\n\nThis release also includes Festival distribution, packaging, documentation, and plugin changes.\n\n## Festival Changes\n\n### What's Changed\n* Release: pin camp v0.18.3 by @lancekrogers in https://github.com/Obedience-Corp/festival/pull/268\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival/compare/v0.3.32...v0.3.33\n\nThe component release notes below describe the bundled CLI changes.\n\n## fest v0.10.1\n\n## Release v0.10.1\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 fix\n- 2 other changes\n\nCompare: https://github.com/Obedience-Corp/fest/compare/v0.10.0...v0.10.1\n\n## Fixes\n\n- Honor Camp tag preferences and suppress all tags with no-tag\n\n## Other Changes\n\n- Pin Camp to stable v0.17.2 for the Fest release ([#447](https://github.com/Obedience-Corp/fest/pull/447))\n- Honor Camp commit tag settings in fest commit ([#446](https://github.com/Obedience-Corp/fest/pull/446))\n\n## camp v0.18.3\n\n## Release v0.18.3\n\nThis stable release includes the following changes.\n\nSummary:\n- 2 fixes\n- 1 maintenance change\n- 1 other change\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.18.2...v0.18.3\n\n## Fixes\n\n- Create a type's first dungeon with the camp's spelling ([#786](https://github.com/Obedience-Corp/camp/pull/786))\n- Fix empty worktree directory cleanup on project removal ([#785](https://github.com/Obedience-Corp/camp/pull/785))\n  - Clean up empty worktree directories when removing projects\n\n## Maintenance\n\n- Create a type's first dungeon with the camp's spelling ([#786](https://github.com/Obedience-Corp/camp/pull/786))\n  - Pin global config to tracked fixtures\n\n## Other Changes\n\n- Fix empty worktree directory cleanup on project removal ([#785](https://github.com/Obedience-Corp/camp/pull/785))\n\n## festival v0.3.12\n\n## What's Changed\n* Retain and configure Linux terminal input in normal installs by @lancekrogers in https://github.com/Obedience-Corp/festival-installer/pull/78\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival-installer/compare/v0.3.11...v0.3.12\n\n## Festival Packaging Notes\n\nThis release bundles the `camp` and `fest` CLIs together with `festival`, the installer and launcher for the suite.\n\n## Installation\n\nSee [full installation guide](https://fest.build/install/) for all platforms.\n\n| Platform | Command |\n|----------|---------|\n| macOS | `brew install --cask Obedience-Corp/tap/festival` |\n| Arch Linux | `yay -S festival-bin` |\n| Debian/Ubuntu | Download `.deb` from assets below |\n| Fedora/RHEL | Download `.rpm` from assets below |\n| Windows x64 | [Install with Scoop or a checksummed ZIP](https://docs.fest.build/getting-started/installation/) |"
+    },
+    {
+      "id": 441179848,
+      "repo": "camp",
+      "tag": "v0.18.3",
+      "slug": "v0.18.3",
+      "name": "v0.18.3",
+      "publishedAt": "2026-11-11T02:49:11.000Z",
+      "updatedAt": "2026-11-11T02:49:11.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/camp/releases/tag/v0.18.3",
+      "body": "## Release v0.18.3\n\nThis stable release includes the following changes.\n\nSummary:\n- 2 fixes\n- 1 maintenance change\n- 1 other change\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.18.2...v0.18.3\n\n## Fixes\n\n- Create a type's first dungeon with the camp's spelling ([#786](https://github.com/Obedience-Corp/camp/pull/786))\n- Fix empty worktree directory cleanup on project removal ([#785](https://github.com/Obedience-Corp/camp/pull/785))\n  - Clean up empty worktree directories when removing projects\n\n## Maintenance\n\n- Create a type's first dungeon with the camp's spelling ([#786](https://github.com/Obedience-Corp/camp/pull/786))\n  - Pin global config to tracked fixtures\n\n## Other Changes\n\n- Fix empty worktree directory cleanup on project removal ([#785](https://github.com/Obedience-Corp/camp/pull/785))"
+    },
+    {
       "id": 440818663,
       "repo": "obey-releases",
       "product": "app",
