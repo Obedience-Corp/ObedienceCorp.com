@@ -283,6 +283,30 @@
   ],
   "releases": [
     {
+      "id": 442464130,
+      "repo": "festival",
+      "tag": "v0.3.34",
+      "slug": "v0.3.34",
+      "name": "v0.3.34",
+      "publishedAt": "2026-11-12T03:32:43.000Z",
+      "updatedAt": "2026-11-12T03:33:12.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/festival/releases/tag/v0.3.34",
+      "body": "## Festival v0.3.34\n\nFestival Methodology CLI suite release.\n\nThis release installs:\n- `fest` v0.11.0 ([release](https://github.com/Obedience-Corp/fest/releases/tag/v0.11.0))\n- `camp` v0.18.4 ([release](https://github.com/Obedience-Corp/camp/releases/tag/v0.18.4))\n- `festival` v0.4.0 ([release](https://github.com/Obedience-Corp/festival-installer/releases/tag/v0.4.0))\n\nThis release also includes Festival distribution, packaging, documentation, and plugin changes.\n\n## Festival Changes\n\n### What's Changed\n* Release: pin fest v0.11.0, camp v0.18.4, and festival-installer v0.4.0 by @lancekrogers in https://github.com/Obedience-Corp/festival/pull/269\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival/compare/v0.3.33...v0.3.34\n\nThe component release notes below describe the bundled CLI changes.\n\n## fest v0.11.0\n\n## Release v0.11.0\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 feature\n- 2 fixes\n- 1 documentation update\n- 2 other changes\n\nCompare: https://github.com/Obedience-Corp/fest/compare/v0.10.1...v0.11.0\n\n## Highlights\n\n- Discard approval notifications cleared within a command\n- Notify when human approval is needed\n- Add opt-in PRESENT and approval notifications\n\n## Features\n\n- Add opt-in PRESENT and approval notifications\n\n## Fixes\n\n- Discard approval notifications cleared within a command\n- Notify when human approval is needed\n\n## Documentation\n\n- Update README.md\n\n## Other Changes\n\n- Honor fest.yaml excluded_patterns in fest validate quality gates ([#449](https://github.com/Obedience-Corp/fest/pull/449))\n- Add opt-in PRESENT and human-approval notification hooks ([#448](https://github.com/Obedience-Corp/fest/pull/448))\n\n## camp v0.18.4\n\n## Release v0.18.4\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 fix\n- 1 maintenance change\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.18.3...v0.18.4\n\n## Fixes\n\n- Return to the hop's origin camp without dialing it ([#787](https://github.com/Obedience-Corp/camp/pull/787))\n\n## Maintenance\n\n- Install golangci-lint v2 in install-tools ([#788](https://github.com/Obedience-Corp/camp/pull/788))\n  - Install golangci-lint v2 so local lint matches CI and current Go\n\n## festival v0.4.0\n\n## What's Changed\n* Install Festival App with festival install app by @lancekrogers in https://github.com/Obedience-Corp/festival-installer/pull/79\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival-installer/compare/v0.3.12...v0.4.0\n\n## Festival Packaging Notes\n\nThis release bundles the `camp` and `fest` CLIs together with `festival`, the installer and launcher for the suite.\n\n## Installation\n\nSee [full installation guide](https://fest.build/install/) for all platforms.\n\n| Platform | Command |\n|----------|---------|\n| macOS | `brew install --cask Obedience-Corp/tap/festival` |\n| Arch Linux | `yay -S festival-bin` |\n| Debian/Ubuntu | Download `.deb` from assets below |\n| Fedora/RHEL | Download `.rpm` from assets below |\n| Windows x64 | [Install with Scoop or a checksummed ZIP](https://docs.fest.build/getting-started/installation/) |"
+    },
+    {
+      "id": 442379859,
+      "repo": "festival-installer",
+      "tag": "v0.4.0",
+      "slug": "v0.4.0",
+      "name": "v0.4.0",
+      "publishedAt": "2026-11-12T01:25:26.000Z",
+      "updatedAt": "2026-11-12T01:25:26.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/festival-installer/releases/tag/v0.4.0",
+      "body": "## What's Changed\n* Install Festival App with festival install app by @lancekrogers in https://github.com/Obedience-Corp/festival-installer/pull/79\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival-installer/compare/v0.3.12...v0.4.0"
+    },
+    {
       "id": 442262683,
       "repo": "fest",
       "tag": "v0.11.0",
