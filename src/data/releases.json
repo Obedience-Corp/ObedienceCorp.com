@@ -283,6 +283,18 @@
   ],
   "releases": [
     {
+      "id": 443701725,
+      "repo": "camp",
+      "tag": "v0.18.5",
+      "slug": "v0.18.5",
+      "name": "v0.18.5",
+      "publishedAt": "2026-11-13T01:20:10.000Z",
+      "updatedAt": "2026-11-13T01:20:10.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/camp/releases/tag/v0.18.5",
+      "body": "## Release v0.18.5\n\nThis stable release includes the following changes.\n\nSummary:\n- 2 features\n- 8 fixes\n- 2 documentation updates\n- 2 maintenance changes\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.18.4...v0.18.5\n\n## Highlights\n\n- Add camp approvals to list and act on pending requests ([#790](https://github.com/Obedience-Corp/camp/pull/790))\n- Add a committed approvals ledger and pending index ([#789](https://github.com/Obedience-Corp/camp/pull/789))\n- Retry exclusive lock create on transient Windows access denial ([#791](https://github.com/Obedience-Corp/camp/pull/791))\n\n## Features\n\n- Add camp approvals to list and act on pending requests ([#790](https://github.com/Obedience-Corp/camp/pull/790))\n- Add a committed approvals ledger and pending index ([#789](https://github.com/Obedience-Corp/camp/pull/789))\n  - Commit the approvals ledger from the public package\n\n## Fixes\n\n- Add camp approvals to list and act on pending requests ([#790](https://github.com/Obedience-Corp/camp/pull/790))\n  - Withdraw one request, and only call a request stale when its source is past it\n  - Harden the inbox against ledger content and slow sources\n- Add a committed approvals ledger and pending index ([#789](https://github.com/Obedience-Corp/camp/pull/789))\n  - Strip format characters, resolve one request, drop key-only resolutions\n  - Resolve requests by the ids a decision names; sanitize ledger text\n  - A decision settles earlier duplicate requests for the same checkpoint\n  - Version the pending index by fold rules\n  - Match a resolution to its request by id, not by time\n- Retry exclusive lock create on transient Windows access denial ([#791](https://github.com/Obedience-Corp/camp/pull/791))\n\n## Documentation\n\n- Add camp approvals to list and act on pending requests ([#790](https://github.com/Obedience-Corp/camp/pull/790))\n  - Describe batched ledger commits in camp approvals help\n- Add a committed approvals ledger and pending index ([#789](https://github.com/Obedience-Corp/camp/pull/789))\n  - Say when the ledger is committed\n\n## Maintenance\n\n- Name the branch in the nested-submodule fixture ([#793](https://github.com/Obedience-Corp/camp/pull/793))\n- Derive TestIsSelfMachine's id with the production detector ([#792](https://github.com/Obedience-Corp/camp/pull/792))"
+    },
+    {
       "id": 442464130,
       "repo": "festival",
       "tag": "v0.3.34",
