@@ -283,6 +283,43 @@
   ],
   "releases": [
     {
+      "id": 443971824,
+      "repo": "festival",
+      "tag": "v0.3.35",
+      "slug": "v0.3.35",
+      "name": "v0.3.35",
+      "publishedAt": "2026-11-13T08:13:41.000Z",
+      "updatedAt": "2026-11-13T08:14:17.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/festival/releases/tag/v0.3.35",
+      "body": "## Festival v0.3.35\n\nFestival Methodology CLI suite release.\n\nThis release installs:\n- `fest` v0.12.0 ([release](https://github.com/Obedience-Corp/fest/releases/tag/v0.12.0))\n- `camp` v0.18.5 ([release](https://github.com/Obedience-Corp/camp/releases/tag/v0.18.5))\n- `festival` v0.4.0 ([release](https://github.com/Obedience-Corp/festival-installer/releases/tag/v0.4.0))\n\nThis release also includes Festival distribution, packaging, documentation, and plugin changes.\n\n## Festival Changes\n\n### What's Changed\n* Reconcile Festival App releases into the marketplace by @lancekrogers in https://github.com/Obedience-Corp/festival/pull/270\n* Release: pin fest v0.12.0 and camp v0.18.5 by @lancekrogers in https://github.com/Obedience-Corp/festival/pull/271\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival/compare/v0.3.34...v0.3.35\n\nThe component release notes below describe the bundled CLI changes.\n\n## fest v0.12.0\n\n## Release v0.12.0\n\nThis stable release includes the following changes.\n\nSummary:\n- 3 features\n- 3 fixes\n- 3 maintenance changes\n\nCompare: https://github.com/Obedience-Corp/fest/compare/v0.11.0...v0.12.0\n\n## Highlights\n\n- Report waiting checkpoints to the camp approvals ledger ([#451](https://github.com/Obedience-Corp/fest/pull/451))\n- Blocking checkpoints for standalone workflows ([#450](https://github.com/Obedience-Corp/fest/pull/450))\n- Stop committing each approval event\n\n## Features\n\n- Report waiting checkpoints to the camp approvals ledger ([#451](https://github.com/Obedience-Corp/fest/pull/451))\n- Blocking checkpoints for standalone workflows ([#450](https://github.com/Obedience-Corp/fest/pull/450))\n- Commit an approval event when it is recorded\n\n## Fixes\n\n- Stop committing each approval event\n- Do not carry a failed transition's approval outcome forward\n- Refuse --summary on a standalone reject; document approve's appends\n\n## Maintenance\n\n- Link Linux binaries statically so they run in the Alpine test containers ([#452](https://github.com/Obedience-Corp/fest/pull/452))\n- Pin camp v0.18.5\n- Re-pin camp to the current approvals ledger head\n\n## camp v0.18.5\n\n## Release v0.18.5\n\nThis stable release includes the following changes.\n\nSummary:\n- 2 features\n- 8 fixes\n- 2 documentation updates\n- 2 maintenance changes\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.18.4...v0.18.5\n\n## Highlights\n\n- Add camp approvals to list and act on pending requests ([#790](https://github.com/Obedience-Corp/camp/pull/790))\n- Add a committed approvals ledger and pending index ([#789](https://github.com/Obedience-Corp/camp/pull/789))\n- Retry exclusive lock create on transient Windows access denial ([#791](https://github.com/Obedience-Corp/camp/pull/791))\n\n## Features\n\n- Add camp approvals to list and act on pending requests ([#790](https://github.com/Obedience-Corp/camp/pull/790))\n- Add a committed approvals ledger and pending index ([#789](https://github.com/Obedience-Corp/camp/pull/789))\n  - Commit the approvals ledger from the public package\n\n## Fixes\n\n- Add camp approvals to list and act on pending requests ([#790](https://github.com/Obedience-Corp/camp/pull/790))\n  - Withdraw one request, and only call a request stale when its source is past it\n  - Harden the inbox against ledger content and slow sources\n- Add a committed approvals ledger and pending index ([#789](https://github.com/Obedience-Corp/camp/pull/789))\n  - Strip format characters, resolve one request, drop key-only resolutions\n  - Resolve requests by the ids a decision names; sanitize ledger text\n  - A decision settles earlier duplicate requests for the same checkpoint\n  - Version the pending index by fold rules\n  - Match a resolution to its request by id, not by time\n- Retry exclusive lock create on transient Windows access denial ([#791](https://github.com/Obedience-Corp/camp/pull/791))\n\n## Documentation\n\n- Add camp approvals to list and act on pending requests ([#790](https://github.com/Obedience-Corp/camp/pull/790))\n  - Describe batched ledger commits in camp approvals help\n- Add a committed approvals ledger and pending index ([#789](https://github.com/Obedience-Corp/camp/pull/789))\n  - Say when the ledger is committed\n\n## Maintenance\n\n- Name the branch in the nested-submodule fixture ([#793](https://github.com/Obedience-Corp/camp/pull/793))\n- Derive TestIsSelfMachine's id with the production detector ([#792](https://github.com/Obedience-Corp/camp/pull/792))\n\n## festival v0.4.0\n\n## What's Changed\n* Install Festival App with festival install app by @lancekrogers in https://github.com/Obedience-Corp/festival-installer/pull/79\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival-installer/compare/v0.3.12...v0.4.0\n\n## Festival Packaging Notes\n\nThis release bundles the `camp` and `fest` CLIs together with `festival`, the installer and launcher for the suite.\n\n## Installation\n\nSee [full installation guide](https://fest.build/install/) for all platforms.\n\n| Platform | Command |\n|----------|---------|\n| macOS | `brew install --cask Obedience-Corp/tap/festival` |\n| Arch Linux | `yay -S festival-bin` |\n| Debian/Ubuntu | Download `.deb` from assets below |\n| Fedora/RHEL | Download `.rpm` from assets below |\n| Windows x64 | [Install with Scoop or a checksummed ZIP](https://docs.fest.build/getting-started/installation/) |"
+    },
+    {
+      "id": 443760505,
+      "repo": "obey-releases",
+      "product": "app",
+      "tag": "app-v0.1.8",
+      "slug": "v0.1.8",
+      "name": "Festival App app-v0.1.8",
+      "publishedAt": "2026-11-13T06:22:59.000Z",
+      "updatedAt": "2026-11-13T06:22:59.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/obey-releases/releases/tag/app-v0.1.8",
+      "body": "Source revision: 0e211863b614f8d438bcd7f072de7b71235fd98f\nSource tag: refs/tags/v0.1.8\n\n## Build metadata\n\n- App version: 0.1.8\n- Bundled installer version: v0.4.0\n- Platforms: macOS (arm64, x64), Linux (x64), Windows (x64)\n- Integrity: SHA256SUMS attached; verify with `sha256sum -c SHA256SUMS`\n- SBOM: deferred (tracked separately; not generated for this release)\n- macOS: no Developer ID/notarization. Use System Settings > Privacy & Security > Open Anyway for this app if Gatekeeper blocks it. Updater integrity remains independently verified.\n- Windows: installer unsigned (no Authenticode certificate); SmartScreen warns before it runs."
+    },
+    {
+      "id": 443747973,
+      "repo": "fest",
+      "tag": "v0.12.0",
+      "slug": "v0.12.0",
+      "name": "v0.12.0",
+      "publishedAt": "2026-11-13T02:34:45.000Z",
+      "updatedAt": "2026-11-13T02:34:45.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/fest/releases/tag/v0.12.0",
+      "body": "## Release v0.12.0\n\nThis stable release includes the following changes.\n\nSummary:\n- 3 features\n- 3 fixes\n- 3 maintenance changes\n\nCompare: https://github.com/Obedience-Corp/fest/compare/v0.11.0...v0.12.0\n\n## Highlights\n\n- Report waiting checkpoints to the camp approvals ledger ([#451](https://github.com/Obedience-Corp/fest/pull/451))\n- Blocking checkpoints for standalone workflows ([#450](https://github.com/Obedience-Corp/fest/pull/450))\n- Stop committing each approval event\n\n## Features\n\n- Report waiting checkpoints to the camp approvals ledger ([#451](https://github.com/Obedience-Corp/fest/pull/451))\n- Blocking checkpoints for standalone workflows ([#450](https://github.com/Obedience-Corp/fest/pull/450))\n- Commit an approval event when it is recorded\n\n## Fixes\n\n- Stop committing each approval event\n- Do not carry a failed transition's approval outcome forward\n- Refuse --summary on a standalone reject; document approve's appends\n\n## Maintenance\n\n- Link Linux binaries statically so they run in the Alpine test containers ([#452](https://github.com/Obedience-Corp/fest/pull/452))\n- Pin camp v0.18.5\n- Re-pin camp to the current approvals ledger head"
+    },
+    {
       "id": 443701725,
       "repo": "camp",
       "tag": "v0.18.5",
