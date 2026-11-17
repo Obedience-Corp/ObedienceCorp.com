@@ -283,6 +283,19 @@
   ],
   "releases": [
     {
+      "id": 448250939,
+      "repo": "obey-releases",
+      "product": "obey",
+      "tag": "v0.7.0",
+      "slug": "v0.7.0",
+      "name": "Obey 0.7.0",
+      "publishedAt": "2026-11-17T06:42:36.000Z",
+      "updatedAt": "2026-11-17T06:42:36.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/obey-releases/releases/tag/v0.7.0",
+      "body": "### Added\n\n- Festival can connect to Claude Code sessions already running in a terminal\n  on Linux and macOS, and send input to them.\n- A Claude Code session that switches model with `/model` now reports the new\n  model. Festival App's session card and composer follow it; subagent turns on\n  another model do not change it.\n\n### Changed\n\n- Local models load at their trained context window by default and shrink only\n  when memory requires it. Idle models obey loaded may be released to make\n  room; busy, pinned and foreign models are never released. An explicit chat\n  target or per-model tier still wins. This fixes `ob commit` failing with\n  `CONTEXT_BUDGET_EXCEEDED` on models loaded at a short tier.\n- Memory estimates for hybrid models whose convolution layers hold no KV cache\n  (for example lfm3) no longer assume a dense model.\n- Claude Code slash commands and their output appear as quiet context rows in\n  imported transcripts instead of user messages, and CLI-injected meta notes\n  are dropped.\n\n### Fixed\n\n- On Linux, one daemon owns the input relay for a provider terminal. A second\n  daemon of the same user can no longer attach to the same terminal, a replaced\n  session retires its old relay, and a relay exits within about two minutes of\n  its daemon going away for good.\n- On Windows, the obey daemon no longer leaves a blank PowerShell console\n  window open on the desktop. The Task Scheduler task now runs its start script\n  under a headless console host. `obey service install` re-registers a task\n  that still has the old action, even while the daemon runs; the window goes\n  away at the next daemon start, such as `obey service restart`.\n\nSource: `d858532e1d37260a67270162a97f8eeec6f292e9`.\n\nAll six platform archives passed [native source, SQLite and CLI startup verification](https://github.com/Obedience-Corp/obey-releases/actions/runs/44032653248), including service lifecycle checks on both Windows architectures."
+    },
+    {
       "id": 445933707,
       "repo": "obey-releases",
       "product": "app",
