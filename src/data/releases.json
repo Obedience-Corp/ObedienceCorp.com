@@ -283,6 +283,42 @@
   ],
   "releases": [
     {
+      "id": 449120408,
+      "repo": "festival",
+      "tag": "v0.3.37",
+      "slug": "v0.3.37",
+      "name": "v0.3.37",
+      "publishedAt": "2026-11-17T19:50:34.000Z",
+      "updatedAt": "2026-11-17T19:51:05.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/festival/releases/tag/v0.3.37",
+      "body": "## Festival v0.3.37\n\nFestival Methodology CLI suite release.\n\nThis release installs:\n- `fest` v0.12.1 ([release](https://github.com/Obedience-Corp/fest/releases/tag/v0.12.1))\n- `camp` v0.19.1 ([release](https://github.com/Obedience-Corp/camp/releases/tag/v0.19.1))\n- `festival` v0.4.0 ([release](https://github.com/Obedience-Corp/festival-installer/releases/tag/v0.4.0))\n\nThis release also includes Festival distribution, packaging, documentation, and plugin changes.\n\n## Festival Changes\n\n### What's Changed\n* Release: pin fest v0.12.1 and camp v0.19.1 by @lancekrogers in https://github.com/Obedience-Corp/festival/pull/275\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival/compare/v0.3.36...v0.3.37\n\nThe component release notes below describe the bundled CLI changes.\n\n## fest v0.12.1\n\n## Release v0.12.1\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 fix\n- 2 maintenance changes\n- 1 other change\n\nCompare: https://github.com/Obedience-Corp/fest/compare/v0.12.0...v0.12.1\n\n## Fixes\n\n- Keep a not-yet-written checkpoint document inside the camp ([#454](https://github.com/Obedience-Corp/fest/pull/454))\n\n## Maintenance\n\n- Bump go.opentelemetry.io/otel/trace from 1.45.0 to 1.47.0 in the go_modules group across 1 directory ([#453](https://github.com/Obedience-Corp/fest/pull/453))\n- Bump go.opentelemetry.io/otel/trace\n\n## Other Changes\n\n- Deps: pin obey-shared v0.7.0 so the suite update notice repeats daily ([#455](https://github.com/Obedience-Corp/fest/pull/455))\n\n## camp v0.19.1\n\n## Release v0.19.1\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 maintenance change\n- 1 other change\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.19.0...v0.19.1\n\n## Highlights\n\n- Deps: pin obey-shared v0.7.0 so the suite update notice repeats daily ([#800](https://github.com/Obedience-Corp/camp/pull/800))\n- Bump go.opentelemetry.io/otel/sdk from 1.45.0 to 1.47.0 in the go_modules group across 1 directory ([#799](https://github.com/Obedience-Corp/camp/pull/799))\n\n## Maintenance\n\n- Bump go.opentelemetry.io/otel/sdk from 1.45.0 to 1.47.0 in the go_modules group across 1 directory ([#799](https://github.com/Obedience-Corp/camp/pull/799))\n  - Bump go.opentelemetry.io/otel/sdk\n\n## Other Changes\n\n- Deps: pin obey-shared v0.7.0 so the suite update notice repeats daily ([#800](https://github.com/Obedience-Corp/camp/pull/800))\n\n## festival v0.4.0\n\n## What's Changed\n* Install Festival App with festival install app by @lancekrogers in https://github.com/Obedience-Corp/festival-installer/pull/79\n\n\n**Full Changelog**: https://github.com/Obedience-Corp/festival-installer/compare/v0.3.12...v0.4.0\n\n## Festival Packaging Notes\n\nThis release bundles the `camp` and `fest` CLIs together with `festival`, the installer and launcher for the suite.\n\n## Installation\n\nSee [full installation guide](https://fest.build/install/) for all platforms.\n\n| Platform | Command |\n|----------|---------|\n| macOS | `brew install --cask Obedience-Corp/tap/festival` |\n| Arch Linux | `yay -S festival-bin` |\n| Debian/Ubuntu | Download `.deb` from assets below |\n| Fedora/RHEL | Download `.rpm` from assets below |\n| Windows x64 | [Install with Scoop or a checksummed ZIP](https://docs.fest.build/getting-started/installation/) |"
+    },
+    {
+      "id": 449089883,
+      "repo": "fest",
+      "tag": "v0.12.1",
+      "slug": "v0.12.1",
+      "name": "v0.12.1",
+      "publishedAt": "2026-11-17T19:21:26.000Z",
+      "updatedAt": "2026-11-17T19:21:26.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/fest/releases/tag/v0.12.1",
+      "body": "## Release v0.12.1\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 fix\n- 2 maintenance changes\n- 1 other change\n\nCompare: https://github.com/Obedience-Corp/fest/compare/v0.12.0...v0.12.1\n\n## Fixes\n\n- Keep a not-yet-written checkpoint document inside the camp ([#454](https://github.com/Obedience-Corp/fest/pull/454))\n\n## Maintenance\n\n- Bump go.opentelemetry.io/otel/trace from 1.45.0 to 1.47.0 in the go_modules group across 1 directory ([#453](https://github.com/Obedience-Corp/fest/pull/453))\n- Bump go.opentelemetry.io/otel/trace\n\n## Other Changes\n\n- Deps: pin obey-shared v0.7.0 so the suite update notice repeats daily ([#455](https://github.com/Obedience-Corp/fest/pull/455))"
+    },
+    {
+      "id": 449089715,
+      "repo": "camp",
+      "tag": "v0.19.1",
+      "slug": "v0.19.1",
+      "name": "v0.19.1",
+      "publishedAt": "2026-11-17T19:21:15.000Z",
+      "updatedAt": "2026-11-17T19:21:15.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/camp/releases/tag/v0.19.1",
+      "body": "## Release v0.19.1\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 maintenance change\n- 1 other change\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.19.0...v0.19.1\n\n## Highlights\n\n- Deps: pin obey-shared v0.7.0 so the suite update notice repeats daily ([#800](https://github.com/Obedience-Corp/camp/pull/800))\n- Bump go.opentelemetry.io/otel/sdk from 1.45.0 to 1.47.0 in the go_modules group across 1 directory ([#799](https://github.com/Obedience-Corp/camp/pull/799))\n\n## Maintenance\n\n- Bump go.opentelemetry.io/otel/sdk from 1.45.0 to 1.47.0 in the go_modules group across 1 directory ([#799](https://github.com/Obedience-Corp/camp/pull/799))\n  - Bump go.opentelemetry.io/otel/sdk\n\n## Other Changes\n\n- Deps: pin obey-shared v0.7.0 so the suite update notice repeats daily ([#800](https://github.com/Obedience-Corp/camp/pull/800))"
+    },
+    {
       "id": 448250939,
       "repo": "obey-releases",
       "product": "obey",
