@@ -290,7 +290,7 @@
       "slug": "v0.1.13",
       "name": "Festival App app-v0.1.13",
       "publishedAt": "2026-11-20T09:01:09.000Z",
-      "updatedAt": "2026-11-20T09:01:09.000Z",
+      "updatedAt": "2026-11-20T19:04:02.000Z",
       "prerelease": false,
       "sourceUrl": "https://github.com/Obedience-Corp/obey-releases/releases/tag/app-v0.1.13",
       "body": "Source revision: 2b02cbe35dbd2dec0c7613a67d9d7c4a181a40be\nSource tag: refs/tags/v0.1.13\n\n## Build metadata\n\n- App version: 0.1.13\n- Bundled installer version: v0.4.0\n- Platforms: macOS (arm64, x64), Linux (x64), Windows (x64)\n- Integrity: SHA256SUMS attached; verify with `sha256sum -c SHA256SUMS`\n- SBOM: deferred (tracked separately; not generated for this release)\n- macOS: no Developer ID/notarization. Use System Settings > Privacy & Security > Open Anyway for this app if Gatekeeper blocks it. Updater integrity remains independently verified.\n- Windows: installer unsigned (no Authenticode certificate); SmartScreen warns before it runs."
