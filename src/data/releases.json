@@ -283,6 +283,18 @@
   ],
   "releases": [
     {
+      "id": 453536099,
+      "repo": "camp",
+      "tag": "v0.21.0",
+      "slug": "v0.21.0",
+      "name": "v0.21.0",
+      "publishedAt": "2026-11-21T08:05:33.000Z",
+      "updatedAt": "2026-11-21T08:05:33.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/camp/releases/tag/v0.21.0",
+      "body": "## Release v0.21.0\n\nThis stable release includes the following changes.\n\nSummary:\n- 1 fix\n- 1 maintenance change\n- 2 other changes\n\nCompare: https://github.com/Obedience-Corp/camp/compare/v0.20.0...v0.21.0\n\n## Highlights\n\n- Camp list browser: filter by org, key help, org headers while scrolling ([#803](https://github.com/Obedience-Corp/camp/pull/803))\n- Size the camp org Orgs pane from its content ([#802](https://github.com/Obedience-Corp/camp/pull/802))\n\n## Fixes\n\n- Size the camp org Orgs pane from its content ([#802](https://github.com/Obedience-Corp/camp/pull/802))\n  - Size the Orgs pane from its content and align count and status columns\n\n## Maintenance\n\n- Size the camp org Orgs pane from its content ([#802](https://github.com/Obedience-Corp/camp/pull/802))\n  - Neutral fixture org names; add the org browser VHS tape and fixture\n\n## Other Changes\n\n- Camp list browser: filter by org, key help, org headers while scrolling ([#803](https://github.com/Obedience-Corp/camp/pull/803))\n  - List: org picker, key help, and org headers while scrolling in the camp browser\n- Size the camp org Orgs pane from its content ([#802](https://github.com/Obedience-Corp/camp/pull/802))"
+    },
+    {
       "id": 452452950,
       "repo": "obey-releases",
       "product": "app",
