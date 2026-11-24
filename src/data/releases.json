@@ -283,6 +283,19 @@
   ],
   "releases": [
     {
+      "id": 455848114,
+      "repo": "obey-releases",
+      "product": "app",
+      "tag": "app-v0.1.14",
+      "slug": "v0.1.14",
+      "name": "Festival App app-v0.1.14",
+      "publishedAt": "2026-11-23T19:05:26.000Z",
+      "updatedAt": "2026-11-23T19:37:19.000Z",
+      "prerelease": false,
+      "sourceUrl": "https://github.com/Obedience-Corp/obey-releases/releases/tag/app-v0.1.14",
+      "body": "Source revision: fed92e40ae2be09b9318cffae07f4a9d7020dbfc\nSource tag: refs/tags/v0.1.14\n\n## Build metadata\n\n- App version: 0.1.14\n- Bundled installer version: v0.4.0\n- Platforms: macOS (arm64, x64), Linux (x64), Windows (x64)\n- Integrity: SHA256SUMS attached; verify with `sha256sum -c SHA256SUMS`\n- SBOM: deferred (tracked separately; not generated for this release)\n- macOS: no Developer ID/notarization. Use System Settings > Privacy & Security > Open Anyway for this app if Gatekeeper blocks it. Updater integrity remains independently verified.\n- Windows: installer unsigned (no Authenticode certificate); SmartScreen warns before it runs."
+    },
+    {
       "id": 453701946,
       "repo": "festival",
       "tag": "v0.3.39",
