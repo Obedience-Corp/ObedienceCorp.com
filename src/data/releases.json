@@ -41,7 +41,7 @@
       "id": 1135372015,
       "slug": "camp",
       "name": "camp",
-      "description": "AI Workspace and context management",
+      "description": "Shared agent workspacs and memory",
       "archived": false,
       "fork": false,
       "url": "https://github.com/Obedience-Corp/camp"
